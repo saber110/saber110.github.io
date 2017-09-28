@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F28%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ajax跨域]]></title>
+    <url>%2F2017%2F09%2F28%2FajaxCross%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718var url = "http://www.huhaobin.cn/yiban/Email/send";$.ajax(&#123;type: "GET",url: url,data: $("#ContactForm").serialize(),headers: &#123;'Access-Control-Allow-Origin': '*'&#125;,success: function confirm(data)&#123;console.log(data);alert('你的老板已经看见了');&#125;,error: function del()&#123;alert('你的老板没收到');&#125;&#125;); 跨域要加header,并且注意只能用get]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器操作规范]]></title>
+    <url>%2F2017%2F09%2F28%2FserverOption%2F</url>
+    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[random]]></title>
+    <url>%2F2017%2F09%2F28%2Frandom%2F</url>
+    <content type="text"><![CDATA[还是太年轻了，投入的越深越容易受伤，道不同不相为谋。 正好最近一段时间可以不用应付各种东西，好好做自己该做的事，别让以后的自己成为现在讨厌的人。 见贤思齐，见不贤自省。修身养性。积极面对事情，没想象中那么脆弱，好好跟各种老师相处。调节自己的心情，不能乱发脾气，尽量做一个不说别人坏话，不当面发脾气的人 你的身体是你的本钱，请你自己珍惜。自己不能再找借口不锻炼了，其实你明确的知道你的身体状况。 你对别人好，别人才能对你好 加油，你可以自己调节。给自己每天说一个晚安]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F09%2F28%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[c_multipthread]]></title>
+    <url>%2F2017%2F09%2F28%2Fc_multipthread%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include#include #include#include#include#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123;printf ("thread1 : I'm thread 1\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread1 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2);&#125;printf("thread1 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void *thread2()&#123; printf("thread2 : I'm thread 2\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread2 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3);&#125;printf("thread2 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf("线程1创建失败!\n"); else printf("线程1被创建\n"); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0)//comment3 printf("线程2创建失败"); else printf("线程2被创建\n");&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf("线程1已经结束\n"); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf("线程2已经结束\n"); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf("我是主函数哦，我正在创建线程，呵呵\n"); thread_create(); printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n"); thread_wait(); return 0; &#125;编译指令gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[cordova开发安卓]]></title>
+    <url>%2F2017%2F09%2F28%2Fcordova%2F</url>
+    <content type="text"><![CDATA[命令1234561. cordova create hello com.example.hello HelloWorld2. cordova platform add android/ios/browser –save3. cordova build &lt;ios/android&gt;4. cordova run &lt;ios/android&gt;5. cordova plugin add cordova-plugin-camera6. cordova plugin add cordova-plugin-camera]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[qt画图]]></title>
+    <url>%2F2017%2F09%2F28%2FqtPainting%2F</url>
+    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[集成库的学习]]></title>
+    <url>%2F2017%2F09%2F28%2Flib_int%2F</url>
+    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[新博客站的第一篇文章]]></title>
     <url>%2F2017%2F09%2F28%2Fnew_blog%2F</url>
     <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
