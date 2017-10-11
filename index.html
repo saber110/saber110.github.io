@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo" />
 
 
 
@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/ajaxCross/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/faceRecognize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/ajaxCross/" itemprop="url">ajax跨域</a></h1>
+                <a class="post-title-link" href="/2017/10/10/faceRecognize/" itemprop="url">树莓派上搭建python脸部识别环境</a></h1>
         
 
         <div class="post-meta">
@@ -287,416 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:05:21+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/ajaxCross/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/ajaxCross/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> url = <span class="string">"http://www.huhaobin.cn/yiban/Email/send"</span>;</div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">type: <span class="string">"GET"</span>,</div><div class="line">url: url,</div><div class="line">data: $(<span class="string">"#ContactForm"</span>).serialize(),</div><div class="line">headers: &#123;</div><div class="line"><span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'*'</span></div><div class="line">&#125;,</div><div class="line">success: <span class="function"><span class="keyword">function</span> <span class="title">confirm</span>(<span class="params">data</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="built_in">console</span>.log(data);</div><div class="line">alert(<span class="string">'你的老板已经看见了'</span>);</div><div class="line">&#125;,</div><div class="line">error: <span class="function"><span class="keyword">function</span> <span class="title">del</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="string">'你的老板没收到'</span>);</div><div class="line">&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><strong>跨域要加header,并且注意只能用get</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/c_multipthread/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/c_multipthread/" itemprop="url">c_multipthread</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:05:21+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/c_multipthread/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/c_multipthread/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> #<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 10</span></div><div class="line"><span class="keyword">pthread_t</span> thread[<span class="number">2</span>];</div><div class="line"><span class="keyword">pthread_mutex_t</span> mut;</div><div class="line"><span class="keyword">int</span> number=<span class="number">0</span>, i;</div><div class="line"><span class="function"><span class="keyword">void</span> *<span class="title">thread1</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="built_in">printf</span> (<span class="string">"thread1 : I'm thread 1\n"</span>);</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; MAX; i++)</div><div class="line">&#123;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"thread1 : number = %d\n"</span>,number);</div><div class="line">  pthread_mutex_lock(&amp;mut);</div><div class="line">  number++;</div><div class="line">  pthread_mutex_unlock(&amp;mut);</div><div class="line">  sleep(<span class="number">2</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"thread1 :主函数在等我完成任务吗？\n"</span>);</div><div class="line">pthread_exit(<span class="literal">NULL</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> *<span class="title">thread2</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123; <span class="built_in">printf</span>(<span class="string">"thread2 : I'm thread 2\n"</span>);</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; MAX; i++)</div><div class="line">&#123;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"thread2 : number = %d\n"</span>,number);</div><div class="line">  pthread_mutex_lock(&amp;mut);</div><div class="line">  number++;</div><div class="line">  pthread_mutex_unlock(&amp;mut);</div><div class="line">  sleep(<span class="number">3</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"thread2 :主函数在等我完成任务吗？\n"</span>);</div><div class="line">pthread_exit(<span class="literal">NULL</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">thread_create</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">int</span> temp;</div><div class="line">  <span class="built_in">memset</span>(&amp;thread, <span class="number">0</span>, <span class="keyword">sizeof</span>(thread)); <span class="comment">//comment1 /*创建线程*/</span></div><div class="line">  <span class="keyword">if</span>((temp = pthread_create(&amp;thread[<span class="number">0</span>], <span class="literal">NULL</span>, thread1, <span class="literal">NULL</span>)) != <span class="number">0</span>) <span class="comment">//comment2</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程1创建失败!\n"</span>);</div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程1被创建\n"</span>);</div><div class="line">  <span class="keyword">if</span>((temp = pthread_create(&amp;thread[<span class="number">1</span>], <span class="literal">NULL</span>, thread2, <span class="literal">NULL</span>)) != <span class="number">0</span>)<span class="comment">//comment3    </span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程2创建失败"</span>);</div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程2被创建\n"</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">thread_wait</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="comment">/*等待线程结束*/</span></div><div class="line">  <span class="keyword">if</span>(thread[<span class="number">0</span>] !=<span class="number">0</span>)</div><div class="line">  &#123; <span class="comment">//comment4</span></div><div class="line">    pthread_join(thread[<span class="number">0</span>],<span class="literal">NULL</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程1已经结束\n"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>(thread[<span class="number">1</span>] !=<span class="number">0</span>)</div><div class="line">  &#123; <span class="comment">//comment5</span></div><div class="line">    pthread_join(thread[<span class="number">1</span>],<span class="literal">NULL</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程2已经结束\n"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="comment">/*用默认属性初始化互斥锁*/</span></div><div class="line">  pthread_mutex_init(&amp;mut,<span class="literal">NULL</span>);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"我是主函数哦，我正在创建线程，呵呵\n"</span>);</div><div class="line">  thread_create();</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"我是主函数哦，我正在等待线程完成任务阿，呵呵\n"</span>);</div><div class="line">  thread_wait();</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line"> &#125;</div><div class="line"></div><div class="line">编译指令</div><div class="line"></div><div class="line">gcc -o thread_example thread_example.c　-lpthread</div></pre></td></tr></table></figure>
-<p><strong>ubuntu下面-plthread 选项要放在最后面</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/a_bigHole_ofC (1)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/a_bigHole_ofC (1)/" itemprop="url">C语言大坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:05:21+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/a_bigHole_ofC (1)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/a_bigHole_ofC (1)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h2><ol>
-<li>单引号表示表示整数值</li>
-</ol>
-<ul>
-<li>双引号表示字符串首的地址</li>
-<li>以0开头的整数默认为八进制</li>
-<li>按位与、按位或、或运算、与运算</li>
-<li>注意使用移位运算加快程序执行速度</li>
-<li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li>
-<li>a[i] = i[a]</li>
-<li>C语言的不对称边界</li>
-<li>errno 外部出错变量，可以检测出错信息</li>
-<li>break 跳出离他最近的那层循环或switch</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/ci-library/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/ci-library/" itemprop="url">ci  library</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:56+08:00">
-                2017-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T15:47:26+08:00">
+                2017-10-10
               </time>
             
 
@@ -718,8 +310,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
                   </a>
                 </span>
 
@@ -736,9 +328,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/30/ci-library/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/faceRecognize/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/ci-library/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/faceRecognize/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -768,420 +360,36 @@
       
         
           
-            <p>调用时库名必须全部小写</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/new_blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/new_blog/" itemprop="url">新博客站的第一篇文章</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:36+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/new_blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/new_blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="百废待兴"><a href="#百废待兴" class="headerlink" title="百废待兴"></a>百废待兴</h2><p>自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本</p>
-<h2 id="移花接木"><a href="#移花接木" class="headerlink" title="移花接木"></a>移花接木</h2><p>虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺.</p>
-<h2 id="后悔莫及"><a href="#后悔莫及" class="headerlink" title="后悔莫及"></a>后悔莫及</h2><p>前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞</p>
-<h3 id="有时间继续更新"><a href="#有时间继续更新" class="headerlink" title="有时间继续更新"></a>有时间继续更新</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:36+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/lib_int/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/lib_int/" itemprop="url">集成库的学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:36+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/lib_int/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/lib_int/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误</p>
-<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><ol>
-<li><p>在PCB library和SCH library里面可以更改器件的名字</p>
+            <ol>
+<li><p>更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div><div class="line">sudo apt upgrade</div></pre></td></tr></table></figure>
 </li>
-<li><p>在model manager里面进行原理图元器件和PCB元器件的映射</p>
+<li><p>设置树莓派</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<ul>
+<li>开启摄像头</li>
+<li>gpu memory 设置为16</li>
+</ul>
 </li>
-<li><p>board insight提供了PCB图观察的各种视图</p>
+<li><p>安装依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential \</div><div class="line">    cmake \</div><div class="line">    gfortran \</div><div class="line">    git \</div><div class="line">    wget \</div><div class="line">    curl \</div><div class="line">    graphicsmagick \</div><div class="line">    libgraphicsmagick1-dev \</div><div class="line">    libatlas-dev \</div><div class="line">    libavcodec-dev \</div><div class="line">    libavformat-dev \</div><div class="line">    libboost-all-dev \</div><div class="line">    libgtk2.0-dev \</div><div class="line">    libjpeg-dev \</div><div class="line">    liblapack-dev \</div><div class="line">    libswscale-dev \</div><div class="line">    pkg-config \</div><div class="line">    python3-dev \</div><div class="line">    python3-numpy \</div><div class="line">    python3-pip \</div><div class="line">    zip</div><div class="line">sudo apt-get clean</div></pre></td></tr></table></figure>
 </li>
-<li><p>同时布多条线，放置—–交互式多跟布线</p>
+<li><p>安装python的摄像头操作模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3-picamera</div><div class="line">sudo pip3 install --upgrade picamera[array]</div></pre></td></tr></table></figure>
+</li>
+<li><p>暂时增大交换内存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/dphys-swapfile</div><div class="line"></div><div class="line">&lt; change CONF_SWAPSIZE=100 to CONF_SWAPSIZE=1024 and save / exit nano &gt;</div><div class="line"></div><div class="line">sudo /etc/init.d/dphys-swapfile restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载安装dlib</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mkdir -p dlib</div><div class="line">git clone -b &apos;v19.6&apos; --single-branch https://github.com/davisking/dlib.git dlib/</div><div class="line">cd ./dlib</div><div class="line">sudo python3 setup.py install --compiler-flags &quot;-mfpu=neon&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装face_recognition</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pip3 install face_recognition</div></pre></td></tr></table></figure>
+</li>
+<li><p>恢复交换内存</p>
 </li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/dphys-swapfile</div><div class="line"></div><div class="line">&lt; change CONF_SWAPSIZE=1024 to CONF_SWAPSIZE=100 and save / exit nano &gt;</div><div class="line"></div><div class="line">sudo /etc/init.d/dphys-swapfile restart</div></pre></td></tr></table></figure>
 
           
         
@@ -1230,7 +438,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/cameraOnRaspberry/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -1249,7 +457,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/git/" itemprop="url">git</a></h1>
+                <a class="post-title-link" href="/2017/10/10/cameraOnRaspberry/" itemprop="url">cameraOnRaspberry</a></h1>
         
 
         <div class="post-meta">
@@ -1261,8 +469,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:36+08:00">
-                2017-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T15:00:00+08:00">
+                2017-10-10
               </time>
             
 
@@ -1272,6 +480,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1280,9 +510,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/30/git/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/cameraOnRaspberry/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/git/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/cameraOnRaspberry/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1312,7 +542,7 @@
       
         
           
-            <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">raspistill -o image.jpg  </div><div class="line"></div><div class="line">常用命令：  </div><div class="line"># 两秒钟（时间单位为毫秒）延迟后拍摄一张照片，并保存为 image.jpg  </div><div class="line">raspistill -t 2000 -o image.jpg  </div><div class="line"></div><div class="line"># 拍摄一张自定义大小的照片。  </div><div class="line">raspistill -t 2000 -o image.jpg -w 640 -h 480  </div><div class="line"></div><div class="line"># 降低图像质量，减小文件尺寸  </div><div class="line">raspistill -t 2000 -o image.jpg -q 5  </div><div class="line"></div><div class="line"># 强制使预览窗口出现在坐标为 100,100 的位置，并且尺寸为宽 300 和高 200 像素。  </div><div class="line">raspistill -t 2000 -o image.jpg -p 100,100,300,200  </div><div class="line"></div><div class="line"># 禁用预览窗口  </div><div class="line">raspistill -t 2000 -o image.jpg -n  </div><div class="line"></div><div class="line"># 将图像保存为 PNG 文件（无损压缩格式，但是要比 JPEG 速度慢）。注意，当选择图像编码时，文件扩展名将被忽略。  </div><div class="line">raspistill -t 2000 -o image.png –e png  </div><div class="line"></div><div class="line"># 向 JPEG 文件中添加一些 EXIF 信息。该命令将会把作者名称标签设置为 Dreamcolor，GPS 海拔高度为 123.5米。  </div><div class="line">raspistill -t 2000 -o image.jpg -x IFD0.Artist=Dreamcolor -x GPS.GPSAltitude=1235/10  </div><div class="line"></div><div class="line"># 设置浮雕风格图像特效  </div><div class="line">raspistill -t 2000 -o image.jpg -ifx emboss  </div><div class="line"></div><div class="line"># 设置 YUV 图像的 U 和 V 通道为指定的值（128:128 为黑白图像）  </div><div class="line">raspistill -t 2000 -o image.jpg -cfx 128:128  </div><div class="line"></div><div class="line"># 仅显示两秒钟预览图像，而不对图像进行保存。  </div><div class="line">raspistill -t 2000  </div><div class="line"></div><div class="line"># 间隔获取图片，在 10 分钟（10 分钟 = 600000 毫秒）的时间里，每 10 秒获取一张，并且命名为 image_number_1_today.jpg，image_number_2_today.jpg... 的形式。  </div><div class="line">raspistill -t 600000 -tl 10000 -o image_num_%d_today.jpg  </div><div class="line"></div><div class="line"># 获取一张照片并发送至标准输出设备  </div><div class="line">raspistill -t 2000 -o -  </div><div class="line"></div><div class="line"># 获取一张照片并保存为一个文件  </div><div class="line">raspistill -t 2000 -o - &gt; my_file.jpg</div></pre></td></tr></table></figure>
 
           
         
@@ -1361,7 +591,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/random/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/ftp_raspberrry/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -1380,7 +610,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/random/" itemprop="url">random</a></h1>
+                <a class="post-title-link" href="/2017/10/10/ftp_raspberrry/" itemprop="url">ftp_raspberry</a></h1>
         
 
         <div class="post-meta">
@@ -1392,8 +622,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:11+08:00">
-                2017-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T10:03:59+08:00">
+                2017-10-10
               </time>
             
 
@@ -1403,6 +633,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1411,9 +663,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/30/random/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/ftp_raspberrry/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/random/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/ftp_raspberrry/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1443,12 +695,11 @@
       
         
           
-            <p>还是太年轻了，投入的越深越容易受伤，道不同不相为谋。</p>
-<p>正好最近一段时间可以不用应付各种东西，好好做自己该做的事，别让以后的自己成为现在讨厌的人。</p>
-<p>见贤思齐，见不贤自省。修身养性。积极面对事情，没想象中那么脆弱，好好跟各种老师相处。调节自己的心情，不能乱发脾气，尽量做一个不说别人坏话，不当面发脾气的人</p>
-<p>你的身体是你的本钱，请你自己珍惜。自己不能再找借口不锻炼了，其实你明确的知道你的身体状况。</p>
-<p><strong>你对别人好，别人才能对你好</strong></p>
-<p>加油，你可以自己调节。<br>给自己每天说一个晚安</p>
+            <h2 id="ftp配置"><a href="#ftp配置" class="headerlink" title="ftp配置"></a>ftp配置</h2><p>sudo apt-get install vsftpd<br>sudo nano /etc/vsftpd.conf<br>推荐以下配置</p>
+<h1 id="不允许匿名访问"><a href="#不允许匿名访问" class="headerlink" title="不允许匿名访问"></a>不允许匿名访问</h1><p>anonymous_enable=NO</p>
+<h1 id="设定可以进行写操作"><a href="#设定可以进行写操作" class="headerlink" title="设定可以进行写操作"></a>设定可以进行写操作</h1><p>write_enable=YES</p>
+<h1 id="设定本地用户可以访问"><a href="#设定本地用户可以访问" class="headerlink" title="设定本地用户可以访问"></a>设定本地用户可以访问</h1><p>local_enable=YES<br>ascii_upload_enable=YES<br>ascii_download_enable=YES</p>
+<p>sudo service vsftpd restart<br>重启服务</p>
 
           
         
@@ -1497,7 +748,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/qtPainting/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/AutoStartInUbuntuMate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -1516,7 +767,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/qtPainting/" itemprop="url">qt画图</a></h1>
+                <a class="post-title-link" href="/2017/10/10/AutoStartInUbuntuMate/" itemprop="url">AutoStartInUbuntuMate</a></h1>
         
 
         <div class="post-meta">
@@ -1528,8 +779,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:11+08:00">
-                2017-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T09:03:59+08:00">
+                2017-10-10
               </time>
             
 
@@ -1539,6 +790,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1547,9 +820,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/30/qtPainting/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/AutoStartInUbuntuMate/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/qtPainting/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/AutoStartInUbuntuMate/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1579,17 +852,168 @@
       
         
           
-            <h2 id="QcustomPlot"><a href="#QcustomPlot" class="headerlink" title="QcustomPlot"></a>QcustomPlot</h2><ol>
-<li><p>下载</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.qcustomplot.com</div></pre></td></tr></table></figure>
-</li>
-<li><p>把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可</p>
-</li>
-<li>pro文件中QT += widgets printsupport</li>
-<li><p>使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">QVector x(101), y(101); // initialize with entries 0..100</div><div class="line">for (int i=0; i&lt;101; ++i)</div><div class="line">&#123;</div><div class="line">x[i] = i/50.0 – 1; // x goes from -1 to 1</div><div class="line">y[i] = x[i]*x[i]; // let’s plot a quadratic function</div><div class="line">&#125;</div><div class="line">qDebug()&lt;&lt;“data has been created”;</div><div class="line">ui-&gt;black_line-&gt;addGraph();</div><div class="line">qDebug()&lt;&lt;“begin painting”;</div><div class="line">ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);</div><div class="line">ui-&gt;black_line-&gt;replot();</div><div class="line">qDebug()&lt;&lt;“finish”;</div></pre></td></tr></table></figure>
-</li>
-</ol>
+            <h2 id="只有登录之后ubuntumate才会联网"><a href="#只有登录之后ubuntumate才会联网" class="headerlink" title="只有登录之后ubuntumate才会联网"></a>只有登录之后ubuntumate才会联网</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano  /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file</div></pre></td></tr></table></figure>
+<p>在文件末尾添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/uart_raspberry3B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/10/uart_raspberry3B/" itemprop="url">uart_raspberry</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T09:03:59+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/uart_raspberry3B/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/10/uart_raspberry3B/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="串口配置"><a href="#串口配置" class="headerlink" title="串口配置"></a>串口配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">interface</div><div class="line"></div><div class="line">disable shell and enable hardware</div></pre></td></tr></table></figure>
+<p>禁用蓝牙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt</div></pre></td></tr></table></figure>
+<p>禁用串行控制台</p>
+<p>串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles</div><div class="line"></div><div class="line">dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y</div></pre></td></tr></table></figure>
+<p><em>注意:打开第一句就是打开串口命令行</em></p>
 
           
         
@@ -1629,7 +1053,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1689,7 +1113,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1700,7 +1124,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1711,6 +1135,20 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/saber110" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/haha.hu.750" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
           
         </div>
 
