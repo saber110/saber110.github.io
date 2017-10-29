@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[unix环境高级编程]]></title>
+    <url>%2F2017%2F10%2F26%2Funix3%2F</url>
+    <content type="text"><![CDATA[第四章 文件和目录 文件类型包括 普通文件 目录文件 块特殊文件 提供对设备带缓冲的访问，每次访问以固定的长度为单位进行 字符特殊文件 不带缓冲，长度可变系统中的所有设备要么是字符特殊文件要么是块特殊文件 FIFO（命名管道），用于进程间通信 套接字 符号链接 对于目录的读权限和执行权限是不一样的，读权限允许读目录，获得在该目录中所有文件名的列表。对目录的执行权限使我们可通过该目录（也就是搜索该目录 ，寻找一个特定的文件名）删除一个现有文件，必须对包含该文件的目录拥有写和执行权限，对文件本身不要求 内核以进程的有效用户ID和有效组ID为基础执行其访问权限测试。有时进程也希望用实际用户id和实际组id进行测试 unix系统大多数用户从不处理他们的umask（文件模式创建屏蔽字）值。通常在登陆的时候由shell设置一次然后再不改变 chmod 更新的是i节点的修改时间（状态更改时间），系统的排序方式是修改文件内容的时间（修改时间） ls查看得到文件，cat却找不到的时候一般是符号连接，ls -l/-f 查看 对于目录通常至少要设置一个执行权限位，以允许该目录中的文件名]]></content>
+      <categories>
+        <category>unix</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[unix环境高级编程]]></title>
+    <url>%2F2017%2F10%2F21%2Funix2%2F</url>
+    <content type="text"><![CDATA[第3章 文件IO unix系统shell把文件描述符0与进程的标准输入关联，文件描述符1与进程的标准输出关联 open和 openat函数返回的文件描述符一定是最小的未用的描述符数值 3.1ISO C中void *表示通用指针 文件偏移量可以大于当前文件的长度，在这种情况下，对该文件的下一次写将加长该文件，并在文件中构成一个空洞，位于文件中但没有写过的字节都被读为0 123STDIN_FILENO 标准输入STDOUT_FILENO 标准输出STDERR_FILENO 标准错误 unix支持在不同进程之间共享打开文件 内核使用三种数据结构表示打开文件 每个进程在进程表中都有一个记录项 文件描述符标志 指向一个文件表项的指针 内核为所有打开文件维持一张文件表，包含 文件标志状态 当前文件偏移量 指向文件v节点表项的指针 每个打开文件或设备都有一个v节点结构 文件类型 对文件进行各种操作的函数指针 大多数文件都有i节点（索引节点） 包含了文件的所有者，文件长度，指向文件实际数据块在磁盘上所在位置的指针 在unix系统中，通常write只是将数据排入队列，而实际的写磁盘操作可能在以后的某个时刻进行。而数据库系统需要使用O_SYVN，这样一来，当它从write返回的时候数据就已经写到磁盘上了 打开文件/dev/fd/n等效于复制描述符n（假设n是打开的）]]></content>
+      <categories>
+        <category>unix</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[unix环境高级编程]]></title>
+    <url>%2F2017%2F10%2F19%2Funix1%2F</url>
+    <content type="text"><![CDATA[第一章 unix基础知识 unix的口令文件在/etc/passed 登录项由7个冒号分割的字段组成，依次是登录名，加密口令，数字用户ID,数字组ID,注释字段，起始目录(/home/usr/),shell 程序 只有斜线和空字符不能出现在文件名 创建新目录时自动创建 点和点点文件 按照惯例，每当运行一个新的程序时，所有的shell都为其打开三个文件描述符，即标准输入，标准输出和标准错误12ls &gt; file.list将标准输出重定向到file.list]]></content>
+      <categories>
+        <category>unix</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[树莓派上搭建python脸部识别环境]]></title>
     <url>%2F2017%2F10%2F10%2FfaceRecognize%2F</url>
     <content type="text"><![CDATA[更新 12sudo apt updatesudo apt upgrade 设置树莓派 1sudo raspi-config 开启摄像头 gpu memory 设置为16 安装依赖 12345678910111213141516171819202122sudo apt-get install build-essential \ cmake \ gfortran \ git \ wget \ curl \ graphicsmagick \ libgraphicsmagick1-dev \ libatlas-dev \ libavcodec-dev \ libavformat-dev \ libboost-all-dev \ libgtk2.0-dev \ libjpeg-dev \ liblapack-dev \ libswscale-dev \ pkg-config \ python3-dev \ python3-numpy \ python3-pip \ zipsudo apt-get clean 安装python的摄像头操作模块 12sudo apt-get install python3-picamerasudo pip3 install --upgrade picamera[array] 暂时增大交换内存 12345sudo nano /etc/dphys-swapfile&lt; change CONF_SWAPSIZE=100 to CONF_SWAPSIZE=1024 and save / exit nano &gt;sudo /etc/init.d/dphys-swapfile restart 下载安装dlib 1234mkdir -p dlibgit clone -b &apos;v19.6&apos; --single-branch https://github.com/davisking/dlib.git dlib/cd ./dlibsudo python3 setup.py install --compiler-flags &quot;-mfpu=neon&quot; 安装face_recognition 1sudo pip3 install face_recognition 恢复交换内存 12345sudo nano /etc/dphys-swapfile&lt; change CONF_SWAPSIZE=1024 to CONF_SWAPSIZE=100 and save / exit nano &gt;sudo /etc/init.d/dphys-swapfile restart]]></content>
@@ -33,14 +57,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[StartWithBoot]]></title>
     <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
     <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
@@ -58,6 +74,14 @@
       <tags>
         <tag>mysql</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[ci library]]></title>
@@ -127,17 +151,6 @@
     <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
   </entry>
   <entry>
-    <title><![CDATA[hexo个人博客的搭建]]></title>
-    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试 在source目录下面新建CNAME文件,内容为自己独立的域名, 在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
     <url>%2F2017%2F09%2F30%2Fraspberry_ubuntumate%2F</url>
     <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启ssh windows用户可以打开powershell 进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
@@ -155,6 +168,17 @@
       <categories>
         <category>树莓派</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo个人博客的搭建]]></title>
+    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试 在source目录下面新建CNAME文件,内容为自己独立的域名, 在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -224,17 +248,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[shell]]></title>
-    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[服务器操作规范]]></title>
     <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
     <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
@@ -243,6 +256,17 @@
       </categories>
       <tags>
         <tag>服务器操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell]]></title>
+    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
