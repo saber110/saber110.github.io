@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/c_multipthread/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/cameraOnRaspberry/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/c_multipthread/" itemprop="url">c_multipthread</a></h1>
+                <a class="post-title-link" href="/2017/10/10/cameraOnRaspberry/" itemprop="url">cameraOnRaspberry</a></h1>
         
 
         <div class="post-meta">
@@ -287,415 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:05:21+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/c_multipthread/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/c_multipthread/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> #<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 10</span></div><div class="line"><span class="keyword">pthread_t</span> thread[<span class="number">2</span>];</div><div class="line"><span class="keyword">pthread_mutex_t</span> mut;</div><div class="line"><span class="keyword">int</span> number=<span class="number">0</span>, i;</div><div class="line"><span class="function"><span class="keyword">void</span> *<span class="title">thread1</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="built_in">printf</span> (<span class="string">"thread1 : I'm thread 1\n"</span>);</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; MAX; i++)</div><div class="line">&#123;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"thread1 : number = %d\n"</span>,number);</div><div class="line">  pthread_mutex_lock(&amp;mut);</div><div class="line">  number++;</div><div class="line">  pthread_mutex_unlock(&amp;mut);</div><div class="line">  sleep(<span class="number">2</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"thread1 :主函数在等我完成任务吗？\n"</span>);</div><div class="line">pthread_exit(<span class="literal">NULL</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> *<span class="title">thread2</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123; <span class="built_in">printf</span>(<span class="string">"thread2 : I'm thread 2\n"</span>);</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; MAX; i++)</div><div class="line">&#123;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"thread2 : number = %d\n"</span>,number);</div><div class="line">  pthread_mutex_lock(&amp;mut);</div><div class="line">  number++;</div><div class="line">  pthread_mutex_unlock(&amp;mut);</div><div class="line">  sleep(<span class="number">3</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"thread2 :主函数在等我完成任务吗？\n"</span>);</div><div class="line">pthread_exit(<span class="literal">NULL</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">thread_create</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">int</span> temp;</div><div class="line">  <span class="built_in">memset</span>(&amp;thread, <span class="number">0</span>, <span class="keyword">sizeof</span>(thread)); <span class="comment">//comment1 /*创建线程*/</span></div><div class="line">  <span class="keyword">if</span>((temp = pthread_create(&amp;thread[<span class="number">0</span>], <span class="literal">NULL</span>, thread1, <span class="literal">NULL</span>)) != <span class="number">0</span>) <span class="comment">//comment2</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程1创建失败!\n"</span>);</div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程1被创建\n"</span>);</div><div class="line">  <span class="keyword">if</span>((temp = pthread_create(&amp;thread[<span class="number">1</span>], <span class="literal">NULL</span>, thread2, <span class="literal">NULL</span>)) != <span class="number">0</span>)<span class="comment">//comment3    </span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程2创建失败"</span>);</div><div class="line">  <span class="keyword">else</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程2被创建\n"</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">thread_wait</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="comment">/*等待线程结束*/</span></div><div class="line">  <span class="keyword">if</span>(thread[<span class="number">0</span>] !=<span class="number">0</span>)</div><div class="line">  &#123; <span class="comment">//comment4</span></div><div class="line">    pthread_join(thread[<span class="number">0</span>],<span class="literal">NULL</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程1已经结束\n"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>(thread[<span class="number">1</span>] !=<span class="number">0</span>)</div><div class="line">  &#123; <span class="comment">//comment5</span></div><div class="line">    pthread_join(thread[<span class="number">1</span>],<span class="literal">NULL</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"线程2已经结束\n"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="comment">/*用默认属性初始化互斥锁*/</span></div><div class="line">  pthread_mutex_init(&amp;mut,<span class="literal">NULL</span>);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"我是主函数哦，我正在创建线程，呵呵\n"</span>);</div><div class="line">  thread_create();</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"我是主函数哦，我正在等待线程完成任务阿，呵呵\n"</span>);</div><div class="line">  thread_wait();</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line"> &#125;</div><div class="line"></div><div class="line">编译指令</div><div class="line"></div><div class="line">gcc -o thread_example thread_example.c　-lpthread</div></pre></td></tr></table></figure>
-<p><strong>ubuntu下面-plthread 选项要放在最后面</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/git/" itemprop="url">git</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T14:04:36+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/git/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/git/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/a_bigHole_ofC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/a_bigHole_ofC/" itemprop="url">C语言大坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T13:23:02+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/a_bigHole_ofC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/a_bigHole_ofC/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h2><ol>
-<li>单引号表示表示整数值</li>
-</ol>
-<ul>
-<li>双引号表示字符串首的地址</li>
-<li>以0开头的整数默认为八进制</li>
-<li>按位与、按位或、或运算、与运算</li>
-<li>注意使用移位运算加快程序执行速度</li>
-<li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li>
-<li>a[i] = i[a]</li>
-<li>C语言的不对称边界</li>
-<li>errno 外部出错变量，可以检测出错信息</li>
-<li>break 跳出离他最近的那层循环或switch</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/raspberry_ubuntumate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/raspberry_ubuntumate/" itemprop="url">ubuntu mate 在树莓派上的应用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T00:00:00+08:00">
-                2017-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T15:00:00+08:00">
+                2017-10-10
               </time>
             
 
@@ -735,9 +328,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/30/raspberry_ubuntumate/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/cameraOnRaspberry/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/raspberry_ubuntumate/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/cameraOnRaspberry/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -767,24 +360,7 @@
       
         
           
-            <ol>
-<li><p>下载安装系统,并启动</p>
-<p>系统默认没有开启ssh,所以要新建文件以开启ssh</p>
-<p>windows用户可以打开powershell</p>
-<p>进入SD卡根目录,执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new-item ssh -type file</div></pre></td></tr></table></figure>
-</li>
-<li><p>开机</p>
-<p>开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的.</p>
-<p>接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用</p>
-</li>
-<li><p>重启</p>
-<p>没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面</p>
-</li>
-<li><p>自动登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4</div></pre></td></tr></table></figure>
-</li>
-</ol>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">raspistill -o image.jpg  </div><div class="line"></div><div class="line">常用命令：  </div><div class="line"># 两秒钟（时间单位为毫秒）延迟后拍摄一张照片，并保存为 image.jpg  </div><div class="line">raspistill -t 2000 -o image.jpg  </div><div class="line"></div><div class="line"># 拍摄一张自定义大小的照片。  </div><div class="line">raspistill -t 2000 -o image.jpg -w 640 -h 480  </div><div class="line"></div><div class="line"># 降低图像质量，减小文件尺寸  </div><div class="line">raspistill -t 2000 -o image.jpg -q 5  </div><div class="line"></div><div class="line"># 强制使预览窗口出现在坐标为 100,100 的位置，并且尺寸为宽 300 和高 200 像素。  </div><div class="line">raspistill -t 2000 -o image.jpg -p 100,100,300,200  </div><div class="line"></div><div class="line"># 禁用预览窗口  </div><div class="line">raspistill -t 2000 -o image.jpg -n  </div><div class="line"></div><div class="line"># 将图像保存为 PNG 文件（无损压缩格式，但是要比 JPEG 速度慢）。注意，当选择图像编码时，文件扩展名将被忽略。  </div><div class="line">raspistill -t 2000 -o image.png –e png  </div><div class="line"></div><div class="line"># 向 JPEG 文件中添加一些 EXIF 信息。该命令将会把作者名称标签设置为 Dreamcolor，GPS 海拔高度为 123.5米。  </div><div class="line">raspistill -t 2000 -o image.jpg -x IFD0.Artist=Dreamcolor -x GPS.GPSAltitude=1235/10  </div><div class="line"></div><div class="line"># 设置浮雕风格图像特效  </div><div class="line">raspistill -t 2000 -o image.jpg -ifx emboss  </div><div class="line"></div><div class="line"># 设置 YUV 图像的 U 和 V 通道为指定的值（128:128 为黑白图像）  </div><div class="line">raspistill -t 2000 -o image.jpg -cfx 128:128  </div><div class="line"></div><div class="line"># 仅显示两秒钟预览图像，而不对图像进行保存。  </div><div class="line">raspistill -t 2000  </div><div class="line"></div><div class="line"># 间隔获取图片，在 10 分钟（10 分钟 = 600000 毫秒）的时间里，每 10 秒获取一张，并且命名为 image_number_1_today.jpg，image_number_2_today.jpg... 的形式。  </div><div class="line">raspistill -t 600000 -tl 10000 -o image_num_%d_today.jpg  </div><div class="line"></div><div class="line"># 获取一张照片并发送至标准输出设备  </div><div class="line">raspistill -t 2000 -o -  </div><div class="line"></div><div class="line"># 获取一张照片并保存为一个文件  </div><div class="line">raspistill -t 2000 -o - &gt; my_file.jpg</div></pre></td></tr></table></figure>
 
           
         
@@ -833,7 +409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/raspberryWifi/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/ftp_raspberrry/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -852,7 +428,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/raspberryWifi/" itemprop="url">树莓派连接隐藏wifi</a></h1>
+                <a class="post-title-link" href="/2017/10/10/ftp_raspberrry/" itemprop="url">ftp_raspberry</a></h1>
         
 
         <div class="post-meta">
@@ -864,8 +440,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T00:00:00+08:00">
-                2017-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T10:03:59+08:00">
+                2017-10-10
               </time>
             
 
@@ -905,9 +481,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/30/raspberryWifi/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/ftp_raspberrry/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/raspberryWifi/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/ftp_raspberrry/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -937,16 +513,508 @@
       
         
           
-            <ol>
-<li><p>编辑wifi文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</div></pre></td></tr></table></figure>
+            <h2 id="ftp配置"><a href="#ftp配置" class="headerlink" title="ftp配置"></a>ftp配置</h2><p>sudo apt-get install vsftpd<br>sudo nano /etc/vsftpd.conf<br>推荐以下配置</p>
+<h1 id="不允许匿名访问"><a href="#不允许匿名访问" class="headerlink" title="不允许匿名访问"></a>不允许匿名访问</h1><p>anonymous_enable=NO</p>
+<h1 id="设定可以进行写操作"><a href="#设定可以进行写操作" class="headerlink" title="设定可以进行写操作"></a>设定可以进行写操作</h1><p>write_enable=YES</p>
+<h1 id="设定本地用户可以访问"><a href="#设定本地用户可以访问" class="headerlink" title="设定本地用户可以访问"></a>设定本地用户可以访问</h1><p>local_enable=YES<br>ascii_upload_enable=YES<br>ascii_download_enable=YES</p>
+<p>sudo service vsftpd restart<br>重启服务</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/mysqlInstallation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/10/mysqlInstallation/" itemprop="url">mysqlInstallation</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T09:03:59+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/mysqlInstallation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/10/mysqlInstallation/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="问题阐述"><a href="#问题阐述" class="headerlink" title="问题阐述"></a>问题阐述</h2><p>最近mysql进行了大面积的更新,内置的数据库存储器换成了mariaDB,但是大公司的更新怎么会没有大坑呢,他们更新完之后在安装过程中不会让你设置root用户的密码,但是密码在哪儿呢,据说是在某个文件里存着(当然这是PC机的特权).</p>
+<h2 id="方法步骤"><a href="#方法步骤" class="headerlink" title="方法步骤"></a>方法步骤</h2><ol>
+<li><p>删除数据库文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -r /etc/mysql</div></pre></td></tr></table></figure>
 </li>
-<li><p>在该文件最后添加下面的话</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">  ssid=<span class="string">"WIFINAME"</span></div><div class="line">    scan_ssid=1</div><div class="line">  psk=<span class="string">"password"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">spt install mysql_server</div></pre></td></tr></table></figure>
 </li>
-<li><p>重启</p>
+<li><p>初始化数据库(<strong>先别在里面设置root用户的密码</strong>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_secure_installation</div></pre></td></tr></table></figure>
+</li>
+<li><p>登录数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mysql -u root -p</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<p><em>大坑标注:必须使用sudo,不使用su权限根本进不去,默认是空密码(对于树莓派)</em></p>
+<ol>
+<li><p>删除原有的root用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DROP USER &apos;root&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建root账户(<strong>先别设置密码</strong>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置root用户权限(<strong>设置密码</strong>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>刷新权限表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="多说一句"><a href="#多说一句" class="headerlink" title="多说一句"></a>多说一句</h2><p>5.6步如果省略就算更改密码之后也只能用su权限链接,删除重新添加之后就所有用户都可以链接了(迷)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/uart_raspberry3B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/10/uart_raspberry3B/" itemprop="url">uart_raspberry</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T09:03:59+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/uart_raspberry3B/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/10/uart_raspberry3B/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="串口配置"><a href="#串口配置" class="headerlink" title="串口配置"></a>串口配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">interface</div><div class="line"></div><div class="line">disable shell and enable hardware</div></pre></td></tr></table></figure>
+<p>禁用蓝牙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt</div></pre></td></tr></table></figure>
+<p>禁用串行控制台</p>
+<p>串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles</div><div class="line"></div><div class="line">dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y</div></pre></td></tr></table></figure>
+<p><em>注意:打开第一句就是打开串口命令行</em></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/AutoStartInUbuntuMate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/10/AutoStartInUbuntuMate/" itemprop="url">AutoStartInUbuntuMate</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T09:03:59+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/AutoStartInUbuntuMate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/10/AutoStartInUbuntuMate/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="只有登录之后ubuntumate才会联网"><a href="#只有登录之后ubuntumate才会联网" class="headerlink" title="只有登录之后ubuntumate才会联网"></a>只有登录之后ubuntumate才会联网</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano  /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file</div></pre></td></tr></table></figure>
+<p>在文件末尾添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username</div></pre></td></tr></table></figure></p>
 
           
         
@@ -986,7 +1054,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1035,7 +1103,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1046,7 +1114,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1057,7 +1125,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

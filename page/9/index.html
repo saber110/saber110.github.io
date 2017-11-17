@@ -256,6 +256,620 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/10/font-spider/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/10/font-spider/" itemprop="url">使用 字蛛 压缩字体文件实现网站加速</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T01:19:32+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网站/" itemprop="url" rel="index">
+                    <span itemprop="name">网站</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/10/font-spider/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/10/font-spider/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="这是一个神奇的东西"><a href="#这是一个神奇的东西" class="headerlink" title="这是一个神奇的东西"></a>这是一个神奇的<a href="http://font-spider.org/" target="_blank" rel="external">东西</a></h1><p>个人开发的时候使用了<strong>艺术字体</strong>，由于谷歌和微软等巨头没有收录,为了缩短服务加载时间，本人找到两种方法<br>1. <strong> cdn加速</strong>，腾讯云目前进行免费cdn加速服务，但是由于使用的域名没有进行备案，所以 <del>pass</del><br>2.  <strong>使用字蛛</strong> 压缩所使用的字体文件</p>
+<h2 id="下面是坑"><a href="#下面是坑" class="headerlink" title="下面是坑"></a>下面是坑</h2><pre><code>@font-face {
+    font-family: &apos;xixinkaijian&apos;;
+    src:url(&apos;../fonts/xixinkaijian.eot&apos;);
+    src:
+        url(&apos;../fonts/xixinkaijian.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;),
+        url(&apos;../fonts/xixinkaijian.woff&apos;) format(&apos;woff&apos;),
+        url(&apos;../fonts/xixinkaijian.ttf&apos;) format(&apos;truetype&apos;),
+        url(&apos;../fonts/xixinkaijian.svg&apos;) format(&apos;svg&apos;);
+    font-weight: normal;
+    font-style: normal;
+}
+`&lt;/pre&gt;
+
+&lt;pre&gt;`@font-face {
+    font-family: &apos;hycgj&apos;;
+    src:url(&apos;../fonts/hycgj.eot&apos;);
+    src:
+        url(&apos;../fonts/hycgj.ttf&apos;) format(&apos;truetype&apos;),
+        url(&apos;../fonts/hycgj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;),
+        url(&apos;../fonts/hycgj.woff&apos;) format(&apos;woff&apos;),
+        url(&apos;../fonts/hycgj.svg&apos;) format(&apos;svg&apos;);
+    font-weight: normal;
+    font-style: normal;
+}
+`&lt;/pre&gt;
+
+&lt;pre&gt;`@font-face {
+    font-family: &apos;hyngj&apos;;
+    src:url(&apos;../fonts/hyngj.eot&apos;);
+    src:
+        url(&apos;../fonts/hyngj.ttf&apos;) format(&apos;truetype&apos;),
+        url(&apos;../fonts/hyngj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;),
+        url(&apos;../fonts/hyngj.woff&apos;) format(&apos;woff&apos;),
+        url(&apos;../fonts/hyngj.svg&apos;) format(&apos;svg&apos;);
+    font-weight: normal;
+    font-style: normal;
+}
+`&lt;/pre&gt;
+
+#此处需注意font_1前面没有像平常引用地址的**小数点**
+
+&lt;pre&gt;`font_1 p {
+    font-family: &apos;xixinkaijian&apos;;
+}
+`&lt;/pre&gt;
+
+&lt;pre&gt;`font_2 p {
+    font-family: &apos;hycgj&apos;;
+}
+`&lt;/pre&gt;
+
+&lt;pre&gt;`font_3 p {
+    font-family: &apos;hyngj&apos;;
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/09/remote-lock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/09/remote-lock/" itemprop="url">智能指纹门锁开发</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-09T01:38:32+08:00">
+                2016-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/09/remote-lock/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/09/remote-lock/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><span style="color: #0000ff;">专业开挂二十年</span></p>
+<ul>
+<li><h2 id="需求起源"><a href="#需求起源" class="headerlink" title="需求起源"></a>需求起源</h2></li>
+<li><p>由于本人所在学校组织成员较多，然后钥匙管理就成了一个很大的问题，基本上会很频繁的发生钥匙找不到啊、钥匙被锁在办公室里面了啊等多种事情，所以萌发了这个念头。</p>
+</li>
+<li><h2 id="动力"><a href="#动力" class="headerlink" title="动力"></a><strong>动力</strong></h2></li>
+<li><p>正好借着<a href="https://segmentfault.com/e/1160000007129021" target="_blank" rel="external">武汉黑客马拉松</a>的借口，然后跟着我们<a href="http://www.yunlugu.org" target="_blank" rel="external">云麓谷</a>大佬的脚步一起去混了次比赛，当时大佬就说咱们做这个智能门锁吧。本着为组织服务，提升自身逼格的理念我们就开搞了。</p>
+</li>
+<li><h2 id="艰辛的通信之路"><a href="#艰辛的通信之路" class="headerlink" title="艰辛的通信之路"></a>艰辛的通信之路</h2></li>
+<li><p>本人在团队中充当一个硬件开发（划水）的角色，为了开发方便就直接选用了某宝的自动指纹对比模块—–PS1802指纹识别模块，树莓派开发板—–Raspberry Pi B+，usb转TTL—–CH340以及杜邦线若干。</p>
+<hr>
+</li>
+<li><p>跟据千古不变的硬件开发理念，拿到东西首先测试是否完好、功能是否异常、外观是否破损、有没有送女朋友之类的。所以诞生了如下步骤：</p>
+<hr>
+</li>
+</ul>
+<ol>
+<li>检查硬件连接以及货物清单。</li>
+<li>用usb转TTL工具连接指纹模块和电脑，用老板发我的<a href="../../../../../attach/shangweiji.rar">上位机</a>进行测试，目测一切正常。（硬件测试方法和上位机试用方法都在链接里）。</li>
+<li>既然确保硬件没问题了就可以开始开发了，选用C语言进行硬件底层开发，php调用C的接口实现高级开发和管理 。硬件使用<a href="http://baike.baidu.com/link?url=GkOWtTkykzGz5rK1i4ywo3RWE2hYVkAjVs35XM8j6nikRxQsDUZXoGXoqIpUn1MMYNyK6XM2BZpIrT9birzF_a" target="_blank" rel="external">UART[通用异步收发传输器]</a>进行树莓派和指纹模块之间的通信</li>
+<li><p>首先设置模块的通信速率为115200，加快系统响应。其次给树莓派安装<a href="http://wiringpi.com/" target="_blank" rel="external">wiringpi</a>，然后开发的代码都在<a href="https://github.com/saber110/remote_lock" target="_blank" rel="external">此处</a>。</p>
+<hr>
+</li>
+</ol>
+<ul>
+<li><h3 id="接下来真正来通信（接下来说到的陌生的东西都在SendUART-c里）"><a href="#接下来真正来通信（接下来说到的陌生的东西都在SendUART-c里）" class="headerlink" title="接下来真正来通信（接下来说到的陌生的东西都在SendUART.c里）"></a>接下来真正来通信（接下来说到的陌生的东西都在SendUART.c里）</h3></li>
+<li><p>树莓派的官方库是不支持直接发十六进制的东西的，但是指纹模块的命令必须是十六进制才能响应。</p>
+</li>
+<li><strong>讲默认发送的ascii转为十六进制ASCI_16()</strong></li>
+<li>很快就出现了新的问题，用这种方法发送的数据总是单个单个发出去 然后前面以0补足缺的位，所以还是不能成功的控制树莓派。</li>
+<li><strong>所以就催生了implode()</strong></li>
+<li>经过这样的折腾总算是能单向操作树莓派了，但是要接受树莓派回过来的消息并且确定其工作状态是一件很不容易的事情呐，由于不太熟悉wiringpi库的试用，我就分为几种接收长度的情况进行命令和数据接收（指纹模块回的指令分为命令应答、数据应答和普通应答，他们的长度不一），跟据不同的数据长度进行读取数据并且存入数组一并返回</li>
+<li><p>C语言涉及到的差不多就是这些了，试用之前一定记得在树莓派上编译哦</p>
+<p>sudo gcc SendUART.c -o SendUART -lwiringPi<br>sudo gcc close.c -o close -lwiringPi</p>
+</li>
+<li><p>close文件是在长期加载失败之后手工关掉树莓派的uart设备的。</p>
+<hr>
+</li>
+<li><h2 id="PHP篇"><a href="#PHP篇" class="headerlink" title="PHP篇"></a>PHP篇</h2></li>
+<li><p>C语言写完接口之后为了更方便的给大家使用继而写了php的接口，顺便加进去了状态码用于判断指纹模块响应的正误——–本人做的工作到此结束</p>
+</li>
+<li>如果大家调用了什么不该调用的接口或者自己开发接口的时候碰到死活执行不完的情况那么请大家重启Apache</li>
+<li><p><code>sudo service apache2 restart</code></p>
+<hr>
+</li>
+<li><h2 id="接下来是胡扯"><a href="#接下来是胡扯" class="headerlink" title="接下来是胡扯"></a>接下来是胡扯</h2></li>
+<li><p>搭完硬件和部署完我们的代码之后就可以在浏览器上访问<strong>树莓派的ip</strong>加我们的访问链接进行控制。</p>
+</li>
+<li>这只是一个小小的开头，现在只是局域网控制，到后面可以抽时间做一下<strong>内网穿透</strong>，然后和已有的员工信息库绑定进行更强大更智能的开发工作。</li>
+<li>要不就先更到这儿吧</li>
+<li><h1 id="此处是代码"><a href="#此处是代码" class="headerlink" title="此处是代码"></a><a href="https://github.com/saber110/remote_lock" target="_blank" rel="external">此处是代码</a></h1></li>
+</ul>
+<p>*</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/25/ci-changecode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/25/ci-changecode/" itemprop="url">CI上传文件文件名乱码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-25T10:35:59+08:00">
+                2016-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/25/ci-changecode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/10/25/ci-changecode/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>修改system—-libraries —–upload—–do_upload中的相对应内容为</li>
+<li><ol>
+<li><span class="keyword">if</span> ( ! @<span class="func">copy</span>(<span class="vars">$this</span>-&gt;file_temp, iconv(<span class="string">“UTF-8”</span>, <span class="string">“gb2312”</span>, <span class="vars">$this</span>-&gt;upload_path.<span class="vars">$this</span>-&gt;file_name)))</li>
+<li>{</li>
+<li><span class="keyword">if</span> ( ! @move_uploaded_file(<span class="vars">$this</span>-&gt;file_temp,  iconv(<span class="string">“UTF-8”</span>, <span class="string">“gb2312”</span>, <span class="vars">$this</span>-&gt;upload_path.<span class="vars">$this</span>-&gt;file_name)))</li>
+<li>{</li>
+<li><span class="vars">$this</span>-&gt;set_error(<span class="string">‘upload_destination_error’</span>);</li>
+<li><span class="keyword">return</span> FALSE;</li>
+<li>}</li>
+<li>}</li>
+</ol>
+</li>
+<li><p>修改同文件中的set_filename</p>
+</li>
+<li><ol>
+<li><span class="keyword">public</span> <span class="keyword">function</span> set_filename(<span class="vars">$path</span>, <span class="vars">$filename</span>)</li>
+<li>{</li>
+<li><span class="keyword">if</span> (<span class="vars">$this</span>-&gt;encrypt_name == TRUE)</li>
+<li>{</li>
+<li>mt_srand();</li>
+<li><span class="vars">$filename</span> = md5(uniqid(mt_rand())).<span class="vars">$this</span>-&gt;file_ext;</li>
+<li>}<br>8.9.  <span class="vars">$filename</span> = iconv(<span class="string">‘UTF-8’</span>, <span class="string">‘GB2312’</span>, <span class="vars">$filename</span>);<span class="comment">//将$filename中的文件名转换为GB2312编码</span></li>
+<li><span class="keyword">if</span> ( ! <span class="func">file_exists</span>(<span class="vars">$path</span>.<span class="vars">$filename</span>))</li>
+<li>{</li>
+<li><span class="vars">$filename</span> = iconv(<span class="string">‘GB2312’</span>, <span class="string">‘UTF-8’</span>, <span class="vars">$filename</span>);<span class="comment">//将编码转回UTF-8</span></li>
+<li><span class="keyword">return</span> <span class="vars">$filename</span>;</li>
+<li>}<br>15.16.  <span class="vars">$filename</span> = <span class="func">str_replace</span>(<span class="vars">$this</span>-&gt;file_ext, <span class="string">‘’</span>, <span class="vars">$filename</span>);</li>
+<li><span class="vars">$new_filename</span> = <span class="string">‘’</span>;</li>
+<li><span class="keyword">for</span> (<span class="vars">$i</span> = 1; <span class="vars">$i</span> &lt; 100; <span class="vars">$i</span>++)</li>
+<li>{</li>
+<li><span class="keyword">if</span> ( ! <span class="func">file_exists</span>(<span class="vars">$path</span>.<span class="vars">$filename</span>.<span class="vars">$i</span>.<span class="vars">$this</span>-&gt;file_ext))</li>
+<li>{</li>
+<li><span class="vars">$new_filename</span> = <span class="vars">$filename</span>.<span class="vars">$i</span>.<span class="vars">$this</span>-&gt;file_ext;</li>
+<li><span class="keyword">break</span>;</li>
+<li>}</li>
+<li>}<br>26.27.  <span class="keyword">if</span> (<span class="vars">$new_filename</span> == <span class="string">‘’</span>)</li>
+<li>{</li>
+<li><span class="vars">$this</span>-&gt;set_error(<span class="string">‘upload_bad_filename’</span>);</li>
+<li><span class="keyword">return</span> FALSE;</li>
+<li>}</li>
+<li><span class="keyword">else</span></li>
+<li>{</li>
+<li><span class="vars">$new_filename</span> = iconv(<span class="string">‘GB2312’</span>, <span class="string">‘UTF-8’</span>, <span class="vars">$new_filename</span>);<span class="comment">//将编码转回UTF-8</span></li>
+<li><span class="keyword">return</span> <span class="vars">$new_filename</span>;</li>
+<li>}</li>
+<li>}</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/18/raspberry-fingerprint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -565,521 +1179,11 @@ sudo chmod g+rw /dev/ttyAMA0</pre></li>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/" itemprop="url">linux配置Call to undefined function mcrypt_decrypt()+大杂烩</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-05T21:56:20+08:00">
-                2016-10-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>1\. php5.4 ubuntu14.04
-$ sudo php5enmod mcrypt
-$ sudo service apache2 restart
-
-2\. php7.0 ubuntu16.04
-sudo apt php-mcrypt
-sudo phpenmod mcrypt
-sudo service [apache](http://www.111cn.net/list-121/)2 restart
-
-3\. ubuntu安装curl
-sudo apt-get install php-curl
-更改php.ini 开启curl(`/etc/php/7.0/apache2/php.ini)
-重启apache2 sudo service apache2 restart
-
-4.php gd库的安装&lt;/pre&gt;
-&lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt;sudo apt&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; install php&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;gd
-&lt;/span&gt;`&lt;/pre&gt;
-&lt;pre&gt;`更改php.ini 开启curl(`/etc/php/7.0/apache2/php.ini)&lt;/pre&gt;
-&lt;pre&gt;重启apache2 sudo service apache2 restart
-
-5\. ubuntu 开启对.htaccess的支持
-sudo a2enmod
-输入rewrite
-配置/etc/apache2/apache2.conf
-    AccessFileName .htaccess
-      &amp;lt;Directory /var/www/&amp;gt;
-       # Options Indexes FollowSymLinks
-       AllowOverride All
-       # Require all granted
-      &amp;lt;/Directory&amp;gt;
-重启apache2   sudo service apache2 restart&lt;/pre&gt;
-&lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt; 
-6.mysql自增起始值设置&lt;/span&gt;`&lt;/pre&gt;
-&lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt;
-alter table users（表名） AUTO_INCREMENT=10000（起始值）;
-
-7.ssl  https配置
-
-http://www.linuxidc.com/Linux/2015-02/113588.htm
-&lt;/span&gt;
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/05/windows-linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/05/windows-linux/" itemprop="url">windows和linux互传文件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-05T16:12:54+08:00">
-                2016-10-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/05/windows-linux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/05/windows-linux/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>给windows安装winscp</p>
-<p>1.填写连接</p>
-<p><img src="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/10/QQ截图20161005161022-300x244.png" alt="QQ截图20161005161022"><img src="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/10/QQ截图20161005161119-300x244.png" alt="QQ截图20161005161119"></p>
-<p>2.权限问题</p>
-<p>permission denied</p>
-<p>可以先传到/tmp文件夹再mv</p>
-<p>也可以直接更改目标文件夹为777</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/22/zhiwen/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/22/zhiwen/" itemprop="url">zhiwen</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-22T20:24:47+08:00">
-                2016-09-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/09/22/zhiwen/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/09/22/zhiwen/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>&lt;!DOCTYPE HTML&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;meta charset=utf-8&gt;<br>&lt;title&gt;css指纹效果&lt;/title&gt;<br>&lt;meta name=”viewport” content=”width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no”&gt;<br>&lt;style&gt;<br>.start<br>{<br>animation-play-state:paused;position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(<a href="http://denghao.me/demo/2015/fingerScan/line.png" target="_blank" rel="external">http://denghao.me/demo/2015/fingerScan/line.png</a>) center no-repeat; background-size: 100%; -webkit-animation:act-scan 2s linear infinite alternate;<br>}<br>.finish<br>{<br>position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(<a href="http://denghao.me/demo/2015/fingerScan/line.png" target="_blank" rel="external">http://denghao.me/demo/2015/fingerScan/line.png</a>) center no-repeat; background-size: 100%;animation-play-state: paused;<br>}<br>.beijing<br>{<br>background: #009;color: #9FF;<br>}<br>.print<br>{<br>width: 100px; height:132px; background:<br>url(<a href="http://denghao.me/demo/2015/fingerScan/finger.png" target="_blank" rel="external">http://denghao.me/demo/2015/fingerScan/finger.png</a>) center no-repeat; background-size: 100%; position: relative;<br>}<br>.print .scan<br>{<br>position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(<a href="http://denghao.me/demo/2015/fingerScan/line.png" target="_blank" rel="external">http://denghao.me/demo/2015/fingerScan/line.png</a>) center no-repeat; background-size: 100%;-webkit-animation:act-scan 2s linear infinite alternate;animation-play-state: paused;<br>}<br>@-webkit-keyframes act-scan{<br>0%{ top:0; }<br>50%{ top:120px; }<br>100%{ top:0;}<br>}<br>@keyframes act-scan{<br>0%{ top:0; }<br>50%{ top:120px; }<br>100%{ top:0;}<br>}<br>&lt;/style&gt;</p>
-<p>&lt;/head&gt;<br>&lt;body &gt;<br>&lt;table&gt;<br>&lt;td class=”beijing”&gt;<br>&lt;div class=”print” &gt;<br>&lt;div class=”scan” align = “center” id = “scannow” &gt;&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;/td&gt;&lt;/table&gt;</p>
-<p>&lt;script src=”<a href="http://denghao.me/js/jquery.min.js&quot;&gt;&lt;/script&amp;gt" target="_blank" rel="external">http://denghao.me/js/jquery.min.js&quot;&gt;&lt;/script&amp;gt</a>;<br>&lt;script&gt;<br>$(function(){<br>var it = document.getElementById(‘scannow’);<br>$(“.print”).on(“touchstart”, function(event) {<br>event.preventDefault();<br>call();<br>it.className=”start”;<br>});</p>
-<p>$(“.print”).on(“touchend”,function(event){<br>event.preventDefault();<br>clearInterval(timer1);<br>});</p>
-<p>function call() {<br>timer1 = window.setTimeout(function() {<br>alert(“你好啊”);<br>}, 1000);<br>document.getElementById(‘scannow’).className=”finish”;</p>
-<p>}</p>
-<p>})<br>&lt;/script&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1128,7 +1232,7 @@ http://www.linuxidc.com/Linux/2015-02/113588.htm
             
               <a href="/archives">
             
-                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1139,7 +1243,7 @@ http://www.linuxidc.com/Linux/2015-02/113588.htm
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1150,7 +1254,7 @@ http://www.linuxidc.com/Linux/2015-02/113588.htm
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
