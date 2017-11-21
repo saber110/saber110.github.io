@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[zsh美化终端]]></title>
+    <url>%2F2017%2F11%2F21%2Fzsh%2F</url>
+    <content type="text"><![CDATA[本文仅仅为了提升装逼技能不想装的可以关掉了 安装 1apt install zsh 安装on-my-zsh配置zsh 1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 切换终端 1chsh -s /usr/bin/zsh 重启机器 1reboot 问题 zsh没有导入npm的环境123nano ~/.zshrcexport PATH=&quot;$PATH:/usr/local/share/npm/bin&quot;source ~/.zshrc]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu16.04不能访除系统以外的硬盘]]></title>
     <url>%2F2017%2F11%2F16%2Fubuntu_can_not_use_harddrive%2F</url>
     <content type="text"><![CDATA[12sudo apt install ntfsfixsudo ntfsfix /dev/sdb1]]></content>
@@ -39,33 +47,20 @@
     <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
   </entry>
   <entry>
-    <title><![CDATA[c_multipthread]]></title>
-    <url>%2F2017%2F11%2F15%2Fc_multipthread%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include#include #include#include#include#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123;printf ("thread1 : I'm thread 1\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread1 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2);&#125;printf("thread1 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void *thread2()&#123; printf("thread2 : I'm thread 2\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread2 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3);&#125;printf("thread2 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf("线程1创建失败!\n"); else printf("线程1被创建\n"); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0)//comment3 printf("线程2创建失败"); else printf("线程2被创建\n");&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf("线程1已经结束\n"); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf("线程2已经结束\n"); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf("我是主函数哦，我正在创建线程，呵呵\n"); thread_create(); printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n"); thread_wait(); return 0; &#125;编译指令gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[新博客站的第一篇文章]]></title>
-    <url>%2F2017%2F11%2F15%2Fnew_blog%2F</url>
-    <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
+    <title><![CDATA[qt画图]]></title>
+    <url>%2F2017%2F11%2F15%2FqtPainting%2F</url>
+    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
       <categories>
-        <category>肺腑之言</category>
+        <category>Qt</category>
       </categories>
       <tags>
-        <tag>肺腑之言</tag>
+        <tag>上位机</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ci library]]></title>
-    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
-    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
+    <title><![CDATA[c_multipthread]]></title>
+    <url>%2F2017%2F11%2F15%2Fc_multipthread%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include#include #include#include#include#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123;printf ("thread1 : I'm thread 1\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread1 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2);&#125;printf("thread1 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void *thread2()&#123; printf("thread2 : I'm thread 2\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread2 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3);&#125;printf("thread2 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf("线程1创建失败!\n"); else printf("线程1被创建\n"); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0)//comment3 printf("线程2创建失败"); else printf("线程2被创建\n");&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf("线程1已经结束\n"); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf("线程2已经结束\n"); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf("我是主函数哦，我正在创建线程，呵呵\n"); thread_create(); printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n"); thread_wait(); return 0; &#125;编译指令gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -79,14 +74,27 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[qt画图]]></title>
-    <url>%2F2017%2F11%2F15%2FqtPainting%2F</url>
-    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ci library]]></title>
+    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
+    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
       <categories>
-        <category>Qt</category>
+        <category>PHP</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[新博客站的第一篇文章]]></title>
+    <url>%2F2017%2F11%2F15%2Fnew_blog%2F</url>
+    <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
+      <categories>
+        <category>肺腑之言</category>
       </categories>
       <tags>
-        <tag>上位机</tag>
+        <tag>肺腑之言</tag>
       </tags>
   </entry>
   <entry>
@@ -149,6 +157,22 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntumate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[mysqlInstallation]]></title>
     <url>%2F2017%2F10%2F10%2FmysqlInstallation%2F</url>
     <content type="text"><![CDATA[问题阐述最近mysql进行了大面积的更新,内置的数据库存储器换成了mariaDB,但是大公司的更新怎么会没有大坑呢,他们更新完之后在安装过程中不会让你设置root用户的密码,但是密码在哪儿呢,据说是在某个文件里存着(当然这是PC机的特权). 方法步骤 删除数据库文件 1rm -r /etc/mysql 安装 1spt install mysql_server 初始化数据库(先别在里面设置root用户的密码) 1mysql_secure_installation 登录数据库 1sudo mysql -u root -p 大坑标注:必须使用sudo,不使用su权限根本进不去,默认是空密码(对于树莓派) 删除原有的root用户 1DROP USER &apos;root&apos;@&apos;localhost&apos;; 创建root账户(先别设置密码) 1CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;; 设置root用户权限(设置密码) 1GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;; 刷新权限表 1FLUSH PRIVILEGES; 多说一句5.6步如果省略就算更改密码之后也只能用su权限链接,删除重新添加之后就所有用户都可以链接了(迷)]]></content>
@@ -168,20 +192,15 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntumate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+    <title><![CDATA[hexo个人博客的搭建]]></title>
+    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试 在source目录下面新建CNAME文件,内容为自己独立的域名, 在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
       <categories>
-        <category>树莓派</category>
+        <category>hexo</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[树莓派连接隐藏wifi]]></title>
@@ -200,17 +219,6 @@
       </categories>
       <tags>
         <tag>树莓派</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hexo个人博客的搭建]]></title>
-    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试 在source目录下面新建CNAME文件,内容为自己独立的域名, 在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -281,17 +289,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[shell]]></title>
-    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[服务器操作规范]]></title>
     <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
     <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
@@ -300,6 +297,17 @@
       </categories>
       <tags>
         <tag>服务器操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell]]></title>
+    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
