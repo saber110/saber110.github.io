@@ -77,7 +77,7 @@
 <meta property="og:site_name" content="Saber110">
 <meta property="og:description" content="1\. php5.4 ubuntu14.04 $ sudo php5enmod mcrypt $ sudo service apache2 restart  2\. php7.0 ubuntu16.04 sudo apt php-mcrypt sudo phpenmod mcrypt sudo service [apache](http://www.111cn.net/list-121/)2 re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T08:48:46.000Z">
+<meta property="og:updated_time" content="2017-11-23T11:39:35.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置Call to undefined function mcrypt_decrypt()+大杂烩">
 <meta name="twitter:description" content="1\. php5.4 ubuntu14.04 $ sudo php5enmod mcrypt $ sudo service apache2 restart  2\. php7.0 ubuntu16.04 sudo apt php-mcrypt sudo phpenmod mcrypt sudo service [apache](http://www.111cn.net/list-121/)2 re">
@@ -382,11 +382,12 @@ sudo a2enmod
 输入rewrite
 配置/etc/apache2/apache2.conf
     AccessFileName .htaccess
-      &amp;lt;Directory /var/www/&amp;gt;
-       # Options Indexes FollowSymLinks
-       AllowOverride All
-       # Require all granted
-      &amp;lt;/Directory&amp;gt;
+    &lt;Directory /var/www/html&gt;
+                    Options Indexes FollowSymLinks MultiViews
+                    AllowOverride All
+                    Order allow,deny
+                    allow from all
+    &lt;/Directory&gt;
 重启apache2   sudo service apache2 restart&lt;/pre&gt;
 &lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt; 
 6.mysql自增起始值设置&lt;/span&gt;`&lt;/pre&gt;
@@ -517,7 +518,7 @@ http://www.linuxidc.com/Linux/2015-02/113588.htm
             
               <a href="/archives">
             
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

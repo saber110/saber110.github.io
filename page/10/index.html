@@ -549,11 +549,12 @@ sudo a2enmod
 输入rewrite
 配置/etc/apache2/apache2.conf
     AccessFileName .htaccess
-      &amp;lt;Directory /var/www/&amp;gt;
-       # Options Indexes FollowSymLinks
-       AllowOverride All
-       # Require all granted
-      &amp;lt;/Directory&amp;gt;
+    &lt;Directory /var/www/html&gt;
+                    Options Indexes FollowSymLinks MultiViews
+                    AllowOverride All
+                    Order allow,deny
+                    allow from all
+    &lt;/Directory&gt;
 重启apache2   sudo service apache2 restart&lt;/pre&gt;
 &lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt; 
 6.mysql自增起始值设置&lt;/span&gt;`&lt;/pre&gt;
@@ -1138,7 +1139,7 @@ http://www.linuxidc.com/Linux/2015-02/113588.htm
             
               <a href="/archives">
             
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
