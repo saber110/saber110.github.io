@@ -256,6 +256,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/24/raspberry-without-routet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/06/24/raspberry-without-routet/" itemprop="url">树莓派无路由器连接</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-24T21:02:11+08:00">
+                2016-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/06/24/raspberry-without-routet/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/06/24/raspberry-without-routet/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>树莓派+一根网线直连笔记本电脑</p>
+<p><strong>树莓派**</strong>+<strong>**一根网线直连笔记本电脑</strong></p>
+<p>用网线直连电脑，不经过路由器。这个方法最大的特点用最少的工具玩树莓派。</p>
+<p>一、材料：树莓派一部、网线一根，笔记本电脑一台。<br>1、树莓派：带供电系统和烧好Raspbian系统的SD卡；<br>2、网线：交叉或直连；<br>3、笔记本电脑：双网卡，现在应该都是这个配置的。</p>
+<p>二、操作步骤。<br>1、连线。<br>树莓派接好供电线；<br>将网线一端接到树莓派，另一端接到笔记本。</p>
+<p>注意：先连接WiFi，再进行其他配置</p>
+<p><img src="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/06/教育厅果然飞-256x300.jpg" alt="教育厅果然飞"></p>
+<p>2、共享互联网。<br>如果现在笔记本已经通过WIFI连接到互联网，可以将无线网卡的互联网资源共享给本地连接。以win7系统为例，开始——控制面板——网络和Internet——网络和共享中心——查看网络状态和任务——更改适配器设置，找到无线网络连接右键“属性”，在共享选项卡上选中“允许其他网络用户通过此计算机的Internet连接来连接（N）”选项，点确定。</p>
+<p>3、查找树莓派的IP地址。<br>运行DOS窗口，输入arp -a，在接口192.168.137.1下的为动态类型的IP地址就是树莓派的地址</p>
+<p><img src="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/06/但是-300x253.png" alt="但是"></p>
+<p>为什么是接口192.168.137.1的呢？因为上部共享互联网的时候已把“本地连接”的IP地址自动设置成静态IP192.168.137.1了，当然这个IP地址也可以自己设置成其他自己常用的静态IP地址。因为此时树莓派的IP地址是动态的，只能用此方法查找。也可以通过修改SD卡中的cmdline.txt文件（在里面加入语句ip=<strong><em>.</em></strong>.<strong><em>.</em></strong>），将树莓派设置成静态IP地址，但此时只有将电脑的“本地连接”的静态IP地址设置成与树莓派静态IP地址同一号段才能成功连接。</p>
+<p><a href="http://tieba.baidu.com/p/2632749888" target="_blank" rel="external">via</a></p>
+<p>本文来自：<a href="http://shumeipai.nxez.com/" target="_blank" rel="external">树莓派实验室</a><br>链接地址：<a href="http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html" target="_blank" rel="external">http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html</a></p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/24/windows-in-raspberry/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -631,7 +797,7 @@ sudo unrar x name.rar
             
               <a href="/archives">
             
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -642,7 +808,7 @@ sudo unrar x name.rar
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -653,7 +819,7 @@ sudo unrar x name.rar
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

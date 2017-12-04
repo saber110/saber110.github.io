@@ -256,6 +256,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/15/serverOption/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/15/serverOption/" itemprop="url">服务器操作规范</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-15T00:36:51+08:00">
+                2016-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/15/serverOption/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/12/15/serverOption/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书</p>
+<p>熟悉至少一个内置编辑器: vi, nano</p>
+<p>至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版</p>
+<p>个人使用/开发尽量在Linux上</p>
+<p>熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置</p>
+<p>服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。</p>
+<p><code>危险操作前一定要备份（操作均需要备份）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm -rf dir/filename</div><div class="line">– kill -9 pid</div><div class="line">– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）</div><div class="line">– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件）</div></pre></td></tr></table></figure></p>
+<h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><p>非必要情况下，以非root用户登录操作</p>
+<ul>
+<li><p>密码建议自己备份，但不要外漏。</p>
+</li>
+<li><p>若有修改密码的需求则报告给组长，等组长回复</p>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3></li>
+<li><p>限制端口访问机器</p>
+</li>
+<li><p>禁止修改登录端口</p>
+</li>
+</ul>
+<h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><ul>
+<li>开启监控 比如开启监控日志，nginx，apache默认自带开启日志</li>
+<li>学会查看日志解决问题</li>
+</ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>学会最基本的sql语言（增删查改）<ul>
+<li>绑定内网ip</li>
+</ul>
+</li>
+<li>设置登录密码<ul>
+<li>删除默认数据库及用户</li>
+<li>新建mysql用户和组，相关权限给到mysql用户</li>
+<li>库，表级别操作慎重</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h2><p><strong>git</strong></p>
+<h2 id="服务器更新"><a href="#服务器更新" class="headerlink" title="服务器更新"></a>服务器更新</h2><ul>
+<li>可以访问外网的服务器：配置ssh key，使用git pull</li>
+<li>不能访问外网的服务器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">git log</div><div class="line"></div><div class="line">git log –stat</div><div class="line"></div><div class="line">git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">M : modify</div><div class="line"></div><div class="line">A : ADD</div><div class="line"></div><div class="line">D : DELETE</div></pre></td></tr></table></figure>
+<ul>
+<li><p>在每个项目的根目录下面的update.txt文件里添加写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">操作人姓名-电话-邮箱-修改日期-git版本号</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新完成之后一定要多访问几次确保没有出问题</p>
+</li>
+<li>所有的服务更新完需要重启</li>
+<li>建议更新时间选在访问人数较少的深夜</li>
+</ul>
+<p><em>实用技巧</em></p>
+<ol>
+<li><p>导出最后一次提交修改过的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../updated.zip HEAD git diff --name-only HEAD^</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出两次提交之间修改过的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><ul>
+<li>windows：注销（禁止使用关闭）</li>
+<li>linux：logout(禁止使用shut down)</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/21/c-exam/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -777,7 +991,7 @@ pointer = &amp;amp;a;
 <li>数组/指针作为形参时，传递的是对应的地址，改变形参的值<strong>可以改变</strong>实参</li>
 <li>调用函数时形参指向实参，实际上指向同一个内存单元</li>
 <li><p>如果用指针变量作为实参，指针变量必须要有具体的值，即必须<strong>指向对应已定义的对象</strong></p>
-<p><strong>REMARK：</strong>最重要的是可以改变指针的指向地址啊！！！！</p>
+<p><strong>REMARK：</strong> 最重要的是可以改变指针的指向地址啊！！！！</p>
 <h1 id="通过指针引用数组"><a href="#通过指针引用数组" class="headerlink" title="通过指针引用数组"></a>通过指针引用数组</h1><pre>`若p-&gt;a[0],则++p-&gt;a[1]
 若p-&gt;&amp;a[0]，则++p-&gt;&amp;a[1]
 p1,p2指向同一个数组时，p2-p1表示相差元素的个数
@@ -1006,175 +1220,6 @@ scanf("%d\n",a);
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/study-c-again/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/14/study-c-again/" itemprop="url">回头C语言</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T13:34:07+08:00">
-                2016-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C语言/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/14/study-c-again/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/14/study-c-again/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">代码：https://github.com/saber110/C_review</div></pre></td></tr></table></figure>
-<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">break: 跳出本层循环</div><div class="line">continue : 跳出本次循环接而执行下次循环</div></pre></td></tr></table></figure>
-<h1 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h1><ol>
-<li><p><strong> 数字型数组 </strong> 默认初始化为0, <strong> 字符型数组 </strong>默认初始化为’\0’（空格符）**</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int a[3][4] = &#123;</div><div class="line">                &#123;1,2,3,4&#125;,</div><div class="line">                &#123;5,6,7,8&#125;,</div><div class="line">                &#123;9,10,11,12,&#125;</div><div class="line">                &#125;;</div><div class="line">int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;</div><div class="line">int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;;</div></pre></td></tr></table></figure>
-<p><strong>前两种初始化的方法效果完全一致</strong>，但是前面的清晰可读<em>推荐使用</em></p>
-<p>第三种方法相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    a[0][0]= 1;</div><div class="line">    a[1][0] = 5;</div><div class="line">    a[2][0] = 9;</div><div class="line">    其余元素全为0</div><div class="line">```    </div><div class="line"></div><div class="line">### Remark</div><div class="line"></div><div class="line">初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度</div><div class="line">**数组长度**</div></pre></td></tr></table></figure>
-<p>char c[] = “i am a student”;<br>sizeof(c) = 11;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">系统在后面自动添加&amp;#039;\0&amp;#039;表示字符串终结  (10+1)</div></pre></td></tr></table></figure>
-<p>char C[5] = “CHINA”;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    也是**合法**的表达</div><div class="line"></div><div class="line">    ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间</div><div class="line"></div><div class="line"></div><div class="line"># 这儿有个关于字符数组的大坑</div><div class="line"></div><div class="line">1.  C语言的**字符**数组可以在初始化的时候直接赋值</div><div class="line">2.  但不可以用</div></pre></td></tr></table></figure>
-<p>str=”china”;    //尝试之间赋值给已声明的字符数组str<br>str1 = str2;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 在后面要改变字符数组的内容需要使用</div></pre></td></tr></table></figure>
-<p>gets(str);<br>strcat(str,str1);<br>strcpy(str,str1);<br>strncpy(str,str1,2);//将str1中的前两个字符赋值到str中<br>```</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1228,7 +1273,7 @@ scanf("%d\n",a);
             
               <a href="/archives">
             
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1239,7 +1284,7 @@ scanf("%d\n",a);
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1250,7 +1295,7 @@ scanf("%d\n",a);
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

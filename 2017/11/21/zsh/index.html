@@ -76,7 +76,7 @@
 <meta property="og:site_name" content="Saber110">
 <meta property="og:description" content="本文仅仅为了提升装逼技能不想装的可以关掉了  安装 1apt install zsh  安装on-my-zsh配置zsh 1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh  切换终端 1chsh -s /usr/bin/zsh  重启机器 1reboot   问题 zsh没有导">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-21T05:42:58.272Z">
+<meta property="og:updated_time" content="2017-12-04T02:53:55.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zsh美化终端">
 <meta name="twitter:description" content="本文仅仅为了提升装逼技能不想装的可以关掉了  安装 1apt install zsh  安装on-my-zsh配置zsh 1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh  切换终端 1chsh -s /usr/bin/zsh  重启机器 1reboot   问题 zsh没有导">
@@ -372,7 +372,15 @@
 </li>
 </ol>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
-<li>zsh没有导入npm的环境<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">nano ~/.zshrc</div><div class="line">export PATH=&quot;$PATH:/usr/local/bin&quot;</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure>
+<li>zsh没有导入npm的环境<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">nano ~/.zshrc</div><div class="line">export PATH=&quot;$PATH:/path/to/your/npm/bin&quot;</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><ol>
+<li><p>换回bash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec bash</div></pre></td></tr></table></figure>
+</li>
+<li><p>切换到zsh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec zsh</div></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -408,6 +416,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/02/uinstallpythonmodules/" rel="prev" title="卸载python安装的模块">
+                卸载python安装的模块 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -494,7 +506,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -505,7 +517,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -516,7 +528,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -565,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文仅仅为了提升装逼技能"><span class="nav-number">1.</span> <span class="nav-text">本文仅仅为了提升装逼技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文仅仅为了提升装逼技能"><span class="nav-number">1.</span> <span class="nav-text">本文仅仅为了提升装逼技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备注"><span class="nav-number">3.</span> <span class="nav-text">备注</span></a></li></ol></div>
             
 
           </div>

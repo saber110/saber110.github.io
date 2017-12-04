@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[卸载python安装的模块]]></title>
+    <url>%2F2017%2F12%2F02%2Fuinstallpythonmodules%2F</url>
+    <content type="text"><![CDATA[pip使用pip安装的可以用pip卸载 1pip uinstall *** easy_install使用easy_install安装的可以用easy_install卸载 1easy_install -m PackageName setup.py 通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命令行手动卸载： 12345671. python setup.py install --record files.txt2. 创建del.sh脚本内容 #!/bin/bash for i in $(less files.txt) do rm -rf $i done3. 执行脚本]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[zsh美化终端]]></title>
     <url>%2F2017%2F11%2F21%2Fzsh%2F</url>
-    <content type="text"><![CDATA[本文仅仅为了提升装逼技能不想装的可以关掉了 安装 1apt install zsh 安装on-my-zsh配置zsh 1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 切换终端 1chsh -s /usr/bin/zsh 重启机器 1reboot 问题 zsh没有导入npm的环境123nano ~/.zshrcexport PATH=&quot;$PATH:/usr/local/bin&quot;source ~/.zshrc]]></content>
+    <content type="text"><![CDATA[本文仅仅为了提升装逼技能不想装的可以关掉了 安装 1apt install zsh 安装on-my-zsh配置zsh 1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 切换终端 1chsh -s /usr/bin/zsh 重启机器 1reboot 问题 zsh没有导入npm的环境123nano ~/.zshrcexport PATH=&quot;$PATH:/path/to/your/npm/bin&quot;source ~/.zshrc 备注 换回bash 1exec bash 切换到zsh 1exec zsh]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -42,22 +53,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C语言大坑]]></title>
-    <url>%2F2017%2F11%2F15%2Fa_bigHole_ofC%2F</url>
-    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[新博客站的第一篇文章]]></title>
-    <url>%2F2017%2F11%2F15%2Fnew_blog%2F</url>
-    <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
-      <categories>
-        <category>肺腑之言</category>
-      </categories>
-      <tags>
-        <tag>肺腑之言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -74,15 +69,9 @@
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include#include #include#include#include#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123;printf ("thread1 : I'm thread 1\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread1 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2);&#125;printf("thread1 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void *thread2()&#123; printf("thread2 : I'm thread 2\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread2 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3);&#125;printf("thread2 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf("线程1创建失败!\n"); else printf("线程1被创建\n"); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0)//comment3 printf("线程2创建失败"); else printf("线程2被创建\n");&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf("线程1已经结束\n"); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf("线程2已经结束\n"); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf("我是主函数哦，我正在创建线程，呵呵\n"); thread_create(); printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n"); thread_wait(); return 0; &#125;编译指令gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
   </entry>
   <entry>
-    <title><![CDATA[qt画图]]></title>
-    <url>%2F2017%2F11%2F15%2FqtPainting%2F</url>
-    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
-      <categories>
-        <category>Qt</category>
-      </categories>
-      <tags>
-        <tag>上位机</tag>
-      </tags>
+    <title><![CDATA[C语言大坑]]></title>
+    <url>%2F2017%2F11%2F15%2Fa_bigHole_ofC%2F</url>
+    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
   </entry>
   <entry>
     <title><![CDATA[git]]></title>
@@ -96,6 +85,28 @@
       <categories>
         <category>PHP</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[新博客站的第一篇文章]]></title>
+    <url>%2F2017%2F11%2F15%2Fnew_blog%2F</url>
+    <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
+      <categories>
+        <category>肺腑之言</category>
+      </categories>
+      <tags>
+        <tag>肺腑之言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[qt画图]]></title>
+    <url>%2F2017%2F11%2F15%2FqtPainting%2F</url>
+    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>上位机</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[linux下arm-none-linux-gnueabi交叉编译环境的建立]]></title>
@@ -157,17 +168,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntumate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -184,9 +187,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntumate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -329,7 +340,7 @@
   <entry>
     <title><![CDATA[指针]]></title>
     <url>%2F2016%2F11%2F14%2Fpointer%2F</url>
-    <content type="text"><![CDATA[代码：https://github.com/saber110/C_review `&lt;/pre&gt; # 初始化 ’*‘ 表示对应地址的内容 &lt;pre&gt;` 指针变量名表示地址 `&lt;/pre&gt; ### 指针变量中只能存放地址 指针在初始化值的时候，一定要用变量的地址，在初始化完成之后可以不用地址改变指针的值 &lt;pre&gt;`int a = 200,* pointer; pointer = a; `&lt;/pre&gt; **这是不合法的** &lt;pre&gt;`int a = 200,* pointer; *pointer = a;//未进行初始化，存储单元无法预测 `&lt;/pre&gt; **这也是不合法的** &lt;pre&gt;`int a = 200,* pointer; pointer = &amp;amp;a; `&lt;/pre&gt; **这也是合法的** &lt;pre&gt;`int a = 200,* pointer; pointer = &amp;amp;a; *pointer = a;//等价于pointer = &amp;amp;a; `&lt;/pre&gt; **迷之合法** 综上，数组初始化只能有 &lt;pre&gt;`int *pointer = &amp;amp;a; 或者 int * pointer; pointer = &amp;amp;a; `&lt;/pre&gt; **两种方法** # 参数传递 不能通过改变指针形参的值而企图使指针实参的值发生改变（C语言在函数调用时只能单向值传递） 数组/指针作为形参时，传递的是对应的地址，改变形参的值可以改变实参 调用函数时形参指向实参，实际上指向同一个内存单元 如果用指针变量作为实参，指针变量必须要有具体的值，即必须指向对应已定义的对象 REMARK：最重要的是可以改变指针的指向地址啊！！！！ 通过指针引用数组`若p-&gt;a[0],则++p-&gt;a[1] 若p-&gt;&amp;a[0]，则++p-&gt;&amp;a[1] p1,p2指向同一个数组时，p2-p1表示相差元素的个数 a[i] = *(a+i) &amp;a[i] = &amp;(a+i) ` 数组一维数组`int a[10]; 1\. *a代表a[0]的内容即a[0] 2\. a代表a[0]的地址即&amp;a[0] 3\. *(a + 1) 代表a[i]的内容 ` 多维数组`int a[10][10]; 1\. *a代表a[0][0]的内容即a[0][0] 2\. a代表a[0][0]的地址即&amp;a[0][0] 3\. *(a + 1) 代表a[i] 行 的地址 4\. *(a + 1) +1代表a[1][1]的地址，即&amp;a[1][1] 5\. *(*(a + 1) +1)代表a[1][1]的内容,即a[1][1] ` 字符指针`char *a; scanf("%d\n",a); 坚决不能使用上面这种，a的指向地址无法预测，可能会修改系统中敏感位置的值 char *a,arr[10]; a=arr; scanf("%d\n",a); 正确用法 ` 函数指针`int (p)(int x,int y);//指向返回值位int的函数指针int p(int x,int y) = int * (p(int x,int y))//返回值为指针的函数]]></content>
+    <content type="text"><![CDATA[代码：https://github.com/saber110/C_review `&lt;/pre&gt; # 初始化 ’*‘ 表示对应地址的内容 &lt;pre&gt;` 指针变量名表示地址 `&lt;/pre&gt; ### 指针变量中只能存放地址 指针在初始化值的时候，一定要用变量的地址，在初始化完成之后可以不用地址改变指针的值 &lt;pre&gt;`int a = 200,* pointer; pointer = a; `&lt;/pre&gt; **这是不合法的** &lt;pre&gt;`int a = 200,* pointer; *pointer = a;//未进行初始化，存储单元无法预测 `&lt;/pre&gt; **这也是不合法的** &lt;pre&gt;`int a = 200,* pointer; pointer = &amp;amp;a; `&lt;/pre&gt; **这也是合法的** &lt;pre&gt;`int a = 200,* pointer; pointer = &amp;amp;a; *pointer = a;//等价于pointer = &amp;amp;a; `&lt;/pre&gt; **迷之合法** 综上，数组初始化只能有 &lt;pre&gt;`int *pointer = &amp;amp;a; 或者 int * pointer; pointer = &amp;amp;a; `&lt;/pre&gt; **两种方法** # 参数传递 不能通过改变指针形参的值而企图使指针实参的值发生改变（C语言在函数调用时只能单向值传递） 数组/指针作为形参时，传递的是对应的地址，改变形参的值可以改变实参 调用函数时形参指向实参，实际上指向同一个内存单元 如果用指针变量作为实参，指针变量必须要有具体的值，即必须指向对应已定义的对象 REMARK： 最重要的是可以改变指针的指向地址啊！！！！ 通过指针引用数组`若p-&gt;a[0],则++p-&gt;a[1] 若p-&gt;&amp;a[0]，则++p-&gt;&amp;a[1] p1,p2指向同一个数组时，p2-p1表示相差元素的个数 a[i] = *(a+i) &amp;a[i] = &amp;(a+i) ` 数组一维数组`int a[10]; 1\. *a代表a[0]的内容即a[0] 2\. a代表a[0]的地址即&amp;a[0] 3\. *(a + 1) 代表a[i]的内容 ` 多维数组`int a[10][10]; 1\. *a代表a[0][0]的内容即a[0][0] 2\. a代表a[0][0]的地址即&amp;a[0][0] 3\. *(a + 1) 代表a[i] 行 的地址 4\. *(a + 1) +1代表a[1][1]的地址，即&amp;a[1][1] 5\. *(*(a + 1) +1)代表a[1][1]的内容,即a[1][1] ` 字符指针`char *a; scanf("%d\n",a); 坚决不能使用上面这种，a的指向地址无法预测，可能会修改系统中敏感位置的值 char *a,arr[10]; a=arr; scanf("%d\n",a); 正确用法 ` 函数指针`int (p)(int x,int y);//指向返回值位int的函数指针int p(int x,int y) = int * (p(int x,int y))//返回值为指针的函数]]></content>
       <categories>
         <category>C语言</category>
       </categories>
