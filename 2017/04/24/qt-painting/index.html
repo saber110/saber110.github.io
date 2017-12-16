@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo" />
+  <meta name="keywords" content="Qt," />
 
 
 
@@ -70,13 +70,14 @@
 
 
 <meta name="description" content="QcustomPlot download  http://www.qcustomplot.com2. 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可3. pro文件中QT += widgets printsupport4. 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot">
+<meta name="keywords" content="Qt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="qt画图">
 <meta property="og:url" content="http://yoursite.com/2017/04/24/qt-painting/index.html">
 <meta property="og:site_name" content="Saber110">
 <meta property="og:description" content="QcustomPlot download  http://www.qcustomplot.com2. 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可3. pro文件中QT += widgets printsupport4. 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T05:06:40.000Z">
+<meta property="og:updated_time" content="2017-12-13T03:06:49.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="qt画图">
 <meta name="twitter:description" content="QcustomPlot download  http://www.qcustomplot.com2. 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可3. pro文件中QT += widgets printsupport4. 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot">
@@ -361,6 +362,7 @@
 </ol>
 <p><code>http://www.qcustomplot.com</code><br>2. 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可<br>3. pro文件中QT += widgets printsupport<br>4. 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。<br>xxx为widget的名字</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">QVector&lt;double&gt; x(101), y(101); // initialize with entries 0..100</div><div class="line">for (int i=0; i&amp;lt;101; ++i)</div><div class="line">&#123;</div><div class="line">  x[i] = i/50.0 - 1; // x goes from -1 to 1</div><div class="line">  y[i] = x[i]*x[i]; // let&apos;s plot a quadratic function</div><div class="line">&#125;</div><div class="line">qDebug()&amp;lt;&amp;lt;&quot;data has been created&quot;;</div><div class="line">ui-&gt;black_line-&gt;addGraph();</div><div class="line">qDebug()&amp;lt;&amp;lt;&quot;begin painting&quot;;</div><div class="line">ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setLabel(&quot;x&quot;);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setLabel(&quot;y&quot;);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);</div><div class="line">ui-&gt;black_line-&gt;replot();</div><div class="line">qDebug()&amp;lt;&amp;lt;&quot;finish&quot;;</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -374,6 +376,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Qt/" rel="tag"># Qt</a>
+          
+        </div>
       
 
       
@@ -483,7 +491,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

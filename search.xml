@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[qt画图]]></title>
+    <url>%2F2017%2F12%2F13%2FqtPainting%2F</url>
+    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>上位机 Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[qt使用mysql]]></title>
+    <url>%2F2017%2F12%2F13%2Fqtmysql%2F</url>
+    <content type="text"><![CDATA[Qt使用mysql虽然qt自己编译生成了libmysqlclient.so,但是这个文件还依赖于系统的libmysqlclient.so.18，但是很多主机都没有安装这个 查看缺少的文件12cd /the/path/to/libmysqlclient.soldd libmysqlclient.so 下载 1https://dev.mysql.com/downloads/connector/c/ 复制 1cp libmysqlclient.so.18 /usr/lib 使用重新编译工程并使用]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[卸载python安装的模块]]></title>
     <url>%2F2017%2F12%2F02%2Fuinstallpythonmodules%2F</url>
     <content type="text"><![CDATA[pip使用pip安装的可以用pip卸载 1pip uinstall *** easy_install使用easy_install安装的可以用easy_install卸载 1easy_install -m PackageName setup.py 通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命令行手动卸载： 12345671. python setup.py install --record files.txt2. 创建del.sh脚本内容 #!/bin/bash for i in $(less files.txt) do rm -rf $i done3. 执行脚本]]></content>
@@ -53,38 +75,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[集成库的学习]]></title>
-    <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
-    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>AD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[c_multipthread]]></title>
     <url>%2F2017%2F11%2F15%2Fc_multipthread%2F</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include#include #include#include#include#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123;printf ("thread1 : I'm thread 1\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread1 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2);&#125;printf("thread1 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void *thread2()&#123; printf("thread2 : I'm thread 2\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread2 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3);&#125;printf("thread2 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf("线程1创建失败!\n"); else printf("线程1被创建\n"); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0)//comment3 printf("线程2创建失败"); else printf("线程2被创建\n");&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf("线程1已经结束\n"); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf("线程2已经结束\n"); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf("我是主函数哦，我正在创建线程，呵呵\n"); thread_create(); printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n"); thread_wait(); return 0; &#125;编译指令gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[C语言大坑]]></title>
-    <url>%2F2017%2F11%2F15%2Fa_bigHole_ofC%2F</url>
-    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[ci library]]></title>
-    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
-    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[新博客站的第一篇文章]]></title>
@@ -98,15 +91,33 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[qt画图]]></title>
-    <url>%2F2017%2F11%2F15%2FqtPainting%2F</url>
-    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
+    <title><![CDATA[ci library]]></title>
+    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
+    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
       <categories>
-        <category>Qt</category>
+        <category>PHP</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[集成库的学习]]></title>
+    <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
+    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
+      <categories>
+        <category>硬件</category>
       </categories>
       <tags>
-        <tag>上位机</tag>
+        <tag>AD</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[C语言大坑]]></title>
+    <url>%2F2017%2F11%2F15%2Fa_bigHole_ofC%2F</url>
+    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
   </entry>
   <entry>
     <title><![CDATA[linux下arm-none-linux-gnueabi交叉编译环境的建立]]></title>
@@ -176,6 +187,14 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[mysqlInstallation]]></title>
     <url>%2F2017%2F10%2F10%2FmysqlInstallation%2F</url>
     <content type="text"><![CDATA[问题阐述最近mysql进行了大面积的更新,内置的数据库存储器换成了mariaDB,但是大公司的更新怎么会没有大坑呢,他们更新完之后在安装过程中不会让你设置root用户的密码,但是密码在哪儿呢,据说是在某个文件里存着(当然这是PC机的特权). 方法步骤 删除数据库文件 1rm -r /etc/mysql 安装 1spt install mysql_server 初始化数据库(先别在里面设置root用户的密码) 1mysql_secure_installation 登录数据库 1sudo mysql -u root -p 大坑标注:必须使用sudo,不使用su权限根本进不去,默认是空密码(对于树莓派) 删除原有的root用户 1DROP USER &apos;root&apos;@&apos;localhost&apos;; 创建root账户(先别设置密码) 1CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;; 设置root用户权限(设置密码) 1GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;; 刷新权限表 1FLUSH PRIVILEGES; 多说一句5.6步如果省略就算更改密码之后也只能用su权限链接,删除重新添加之后就所有用户都可以链接了(迷)]]></content>
@@ -187,36 +206,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[AutoStartInUbuntuMate]]></title>
     <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
     <content type="text"><![CDATA[只有登录之后ubuntumate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
-    <url>%2F2017%2F09%2F30%2Fraspberry_ubuntumate%2F</url>
-    <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启ssh windows用户可以打开powershell 进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-      <tags>
-        <tag>树莓派</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[树莓派连接隐藏wifi]]></title>
-    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
-    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -230,6 +222,25 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
+    <url>%2F2017%2F09%2F30%2Fraspberry_ubuntumate%2F</url>
+    <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启ssh windows用户可以打开powershell 进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+      <tags>
+        <tag>树莓派</tag>
       </tags>
   </entry>
   <entry>
@@ -255,6 +266,9 @@
       <categories>
         <category>智能小车</category>
       </categories>
+      <tags>
+        <tag>Qt</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[cordova开发安卓]]></title>
@@ -300,17 +314,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[shell]]></title>
-    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[服务器操作规范]]></title>
     <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
     <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
@@ -319,6 +322,17 @@
       </categories>
       <tags>
         <tag>服务器操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell]]></title>
+    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
