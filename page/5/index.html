@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/startwithboot/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/faceRecognize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/10/startwithboot/" itemprop="url">StartWithBoot</a></h1>
+                <a class="post-title-link" href="/2017/10/10/faceRecognize/" itemprop="url">树莓派上搭建python脸部识别环境</a></h1>
         
 
         <div class="post-meta">
@@ -287,7 +287,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T09:03:59+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T15:47:26+08:00">
                 2017-10-10
               </time>
             
@@ -328,9 +328,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/10/startwithboot/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/faceRecognize/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/startwithboot/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/faceRecognize/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -360,10 +360,346 @@
       
         
           
-            <p><strong>定时任务的方法是使用cron和crontab。</strong></p>
-<h2 id="开机自启动任务"><a href="#开机自启动任务" class="headerlink" title="开机自启动任务"></a>开机自启动任务</h2><p>树莓派开机启动任务是由rc.local控制的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/rc.local</div></pre></td></tr></table></figure></p>
-<p>在注释后面添加命令，但是要保证<strong>exit 0</strong>这行代码在最后，然后保存文件退出。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，</p>
+            <ol>
+<li><p>更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div><div class="line">sudo apt upgrade</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置树莓派</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<ul>
+<li>开启摄像头</li>
+<li>gpu memory 设置为16</li>
+</ul>
+</li>
+<li><p>安装依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential \</div><div class="line">    cmake \</div><div class="line">    gfortran \</div><div class="line">    git \</div><div class="line">    wget \</div><div class="line">    curl \</div><div class="line">    graphicsmagick \</div><div class="line">    libgraphicsmagick1-dev \</div><div class="line">    libatlas-dev \</div><div class="line">    libavcodec-dev \</div><div class="line">    libavformat-dev \</div><div class="line">    libboost-all-dev \</div><div class="line">    libgtk2.0-dev \</div><div class="line">    libjpeg-dev \</div><div class="line">    liblapack-dev \</div><div class="line">    libswscale-dev \</div><div class="line">    pkg-config \</div><div class="line">    python3-dev \</div><div class="line">    python3-numpy \</div><div class="line">    python3-pip \</div><div class="line">    zip</div><div class="line">sudo apt-get clean</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装python的摄像头操作模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3-picamera</div><div class="line">sudo pip3 install --upgrade picamera[array]</div></pre></td></tr></table></figure>
+</li>
+<li><p>暂时增大交换内存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/dphys-swapfile</div><div class="line"></div><div class="line">&lt; change CONF_SWAPSIZE=100 to CONF_SWAPSIZE=1024 and save / exit nano &gt;</div><div class="line"></div><div class="line">sudo /etc/init.d/dphys-swapfile restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载安装dlib</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mkdir -p dlib</div><div class="line">git clone -b &apos;v19.6&apos; --single-branch https://github.com/davisking/dlib.git dlib/</div><div class="line">cd ./dlib</div><div class="line">sudo python3 setup.py install --compiler-flags &quot;-mfpu=neon&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装face_recognition</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pip3 install face_recognition</div></pre></td></tr></table></figure>
+</li>
+<li><p>恢复交换内存</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/dphys-swapfile</div><div class="line"></div><div class="line">&lt; change CONF_SWAPSIZE=1024 to CONF_SWAPSIZE=100 and save / exit nano &gt;</div><div class="line"></div><div class="line">sudo /etc/init.d/dphys-swapfile restart</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/cameraOnRaspberry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/10/cameraOnRaspberry/" itemprop="url">cameraOnRaspberry</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T15:00:00+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/cameraOnRaspberry/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/10/cameraOnRaspberry/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">raspistill -o image.jpg  </div><div class="line"></div><div class="line">常用命令：  </div><div class="line"># 两秒钟（时间单位为毫秒）延迟后拍摄一张照片，并保存为 image.jpg  </div><div class="line">raspistill -t 2000 -o image.jpg  </div><div class="line"></div><div class="line"># 拍摄一张自定义大小的照片。  </div><div class="line">raspistill -t 2000 -o image.jpg -w 640 -h 480  </div><div class="line"></div><div class="line"># 降低图像质量，减小文件尺寸  </div><div class="line">raspistill -t 2000 -o image.jpg -q 5  </div><div class="line"></div><div class="line"># 强制使预览窗口出现在坐标为 100,100 的位置，并且尺寸为宽 300 和高 200 像素。  </div><div class="line">raspistill -t 2000 -o image.jpg -p 100,100,300,200  </div><div class="line"></div><div class="line"># 禁用预览窗口  </div><div class="line">raspistill -t 2000 -o image.jpg -n  </div><div class="line"></div><div class="line"># 将图像保存为 PNG 文件（无损压缩格式，但是要比 JPEG 速度慢）。注意，当选择图像编码时，文件扩展名将被忽略。  </div><div class="line">raspistill -t 2000 -o image.png –e png  </div><div class="line"></div><div class="line"># 向 JPEG 文件中添加一些 EXIF 信息。该命令将会把作者名称标签设置为 Dreamcolor，GPS 海拔高度为 123.5米。  </div><div class="line">raspistill -t 2000 -o image.jpg -x IFD0.Artist=Dreamcolor -x GPS.GPSAltitude=1235/10  </div><div class="line"></div><div class="line"># 设置浮雕风格图像特效  </div><div class="line">raspistill -t 2000 -o image.jpg -ifx emboss  </div><div class="line"></div><div class="line"># 设置 YUV 图像的 U 和 V 通道为指定的值（128:128 为黑白图像）  </div><div class="line">raspistill -t 2000 -o image.jpg -cfx 128:128  </div><div class="line"></div><div class="line"># 仅显示两秒钟预览图像，而不对图像进行保存。  </div><div class="line">raspistill -t 2000  </div><div class="line"></div><div class="line"># 间隔获取图片，在 10 分钟（10 分钟 = 600000 毫秒）的时间里，每 10 秒获取一张，并且命名为 image_number_1_today.jpg，image_number_2_today.jpg... 的形式。  </div><div class="line">raspistill -t 600000 -tl 10000 -o image_num_%d_today.jpg  </div><div class="line"></div><div class="line"># 获取一张照片并发送至标准输出设备  </div><div class="line">raspistill -t 2000 -o -  </div><div class="line"></div><div class="line"># 获取一张照片并保存为一个文件  </div><div class="line">raspistill -t 2000 -o - &gt; my_file.jpg</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/ftp_raspberrry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/10/ftp_raspberrry/" itemprop="url">ftp_raspberry</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T10:03:59+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/ftp_raspberrry/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/10/ftp_raspberrry/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ftp配置"><a href="#ftp配置" class="headerlink" title="ftp配置"></a>ftp配置</h2><p>sudo apt-get install vsftpd<br>sudo nano /etc/vsftpd.conf<br>推荐以下配置</p>
+<h1 id="不允许匿名访问"><a href="#不允许匿名访问" class="headerlink" title="不允许匿名访问"></a>不允许匿名访问</h1><p>anonymous_enable=NO</p>
+<h1 id="设定可以进行写操作"><a href="#设定可以进行写操作" class="headerlink" title="设定可以进行写操作"></a>设定可以进行写操作</h1><p>write_enable=YES</p>
+<h1 id="设定本地用户可以访问"><a href="#设定本地用户可以访问" class="headerlink" title="设定本地用户可以访问"></a>设定本地用户可以访问</h1><p>local_enable=YES<br>ascii_upload_enable=YES<br>ascii_download_enable=YES</p>
+<p>sudo service vsftpd restart<br>重启服务</p>
 
           
         
@@ -572,7 +908,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/mysqlInstallation/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/startwithboot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -591,7 +927,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/10/mysqlInstallation/" itemprop="url">mysqlInstallation</a></h1>
+                <a class="post-title-link" href="/2017/10/10/startwithboot/" itemprop="url">StartWithBoot</a></h1>
         
 
         <div class="post-meta">
@@ -644,9 +980,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/10/mysqlInstallation/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/10/startwithboot/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/mysqlInstallation/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/10/startwithboot/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -676,378 +1012,10 @@
       
         
           
-            <h2 id="问题阐述"><a href="#问题阐述" class="headerlink" title="问题阐述"></a>问题阐述</h2><p>最近mysql进行了大面积的更新,内置的数据库存储器换成了mariaDB,但是大公司的更新怎么会没有大坑呢,他们更新完之后在安装过程中不会让你设置root用户的密码,但是密码在哪儿呢,据说是在某个文件里存着(当然这是PC机的特权).</p>
-<h2 id="方法步骤"><a href="#方法步骤" class="headerlink" title="方法步骤"></a>方法步骤</h2><ol>
-<li><p>删除数据库文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -r /etc/mysql</div></pre></td></tr></table></figure>
-</li>
-<li><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">spt install mysql_server</div></pre></td></tr></table></figure>
-</li>
-<li><p>初始化数据库(<strong>先别在里面设置root用户的密码</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_secure_installation</div></pre></td></tr></table></figure>
-</li>
-<li><p>登录数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mysql -u root -p</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><em>大坑标注:必须使用sudo,不使用su权限根本进不去,默认是空密码(对于树莓派)</em></p>
-<ol>
-<li><p>删除原有的root用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DROP USER &apos;root&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建root账户(<strong>先别设置密码</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置root用户权限(<strong>设置密码</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>刷新权限表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="多说一句"><a href="#多说一句" class="headerlink" title="多说一句"></a>多说一句</h2><p>5.6步如果省略就算更改密码之后也只能用su权限链接,删除重新添加之后就所有用户都可以链接了(迷)</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/AutoStartInUbuntuMate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/10/AutoStartInUbuntuMate/" itemprop="url">AutoStartInUbuntuMate</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T09:03:59+08:00">
-                2017-10-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/10/AutoStartInUbuntuMate/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/AutoStartInUbuntuMate/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="只有登录之后ubuntumate才会联网"><a href="#只有登录之后ubuntumate才会联网" class="headerlink" title="只有登录之后ubuntumate才会联网"></a>只有登录之后ubuntumate才会联网</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano  /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file</div></pre></td></tr></table></figure>
-<p>在文件末尾添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/blogofhexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/30/blogofhexo/" itemprop="url">hexo个人博客的搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T00:00:00+08:00">
-                2017-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/30/blogofhexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/30/blogofhexo/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><ol>
-<li>最讨厌的就是原封不动的抄别人,所以我直接用别人的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><em>备注: window10/windows8/Linux 均可以</em><br><em>搭建在本地进行测试</em></p>
-<p>  <strong> 在source目录下面新建CNAME文件,内容为自己独立的域名, </strong>在弄完解析之后就可以通过自己的域名访问了</p>
-<ol>
-<li><p>markdown 书写语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.jianshu.com/p/q81RER</div></pre></td></tr></table></figure>
-</li>
-<li><p>sublime text markdown 插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.jianshu.com/p/aa30cc25c91b</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><ol>
-<li><p>在./source/_posts里面新建.md文件,用markdown语法写文件</p>
-</li>
-<li><p>更新到git pages</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. hexo clean #清除hexo缓存</div><div class="line">2. hexo g     #产生静态文件</div><div class="line">3. hexo s     #开启本地服务器以供测试</div><div class="line">4. hexo d     #将网站上传到git,进行远程使用</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用分类和标签功能</p>
-<ul>
-<li>新建分类<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page categories</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>执行完之后会在<code>source/categories</code>里面生成index.md<br>里面的内容应该<em>完善</em>为</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 未分类</div><div class="line">date: 2017-09-30 13:28:39</div><div class="line"><span class="built_in">type</span>: <span class="string">"categories"</span></div><div class="line">---</div></pre></td></tr></table></figure>
-<ul>
-<li>新建标签<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page tags</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>执行完之后会在<code>source/tags</code>里面生成index.md<br>里面的内容应该<em>完善</em>为</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 未分类</div><div class="line">date: 2017-09-30 13:28:39</div><div class="line"><span class="built_in">type</span>: <span class="string">"tags"</span></div><div class="line">---</div></pre></td></tr></table></figure>
-</li>
-</ol>
+            <p><strong>定时任务的方法是使用cron和crontab。</strong></p>
+<h2 id="开机自启动任务"><a href="#开机自启动任务" class="headerlink" title="开机自启动任务"></a>开机自启动任务</h2><p>树莓派开机启动任务是由rc.local控制的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/rc.local</div></pre></td></tr></table></figure></p>
+<p>在注释后面添加命令，但是要保证<strong>exit 0</strong>这行代码在最后，然后保存文件退出。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，</p>
 
           
         
@@ -1087,7 +1055,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1136,7 +1104,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1147,7 +1115,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1158,7 +1126,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1214,7 +1182,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

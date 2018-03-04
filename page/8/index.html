@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/15/serverOption/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/git-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/15/serverOption/" itemprop="url">服务器操作规范</a></h1>
+                <a class="post-title-link" href="/2017/04/04/git-1/" itemprop="url">git</a></h1>
         
 
         <div class="post-meta">
@@ -287,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-15T00:36:51+08:00">
-                2016-12-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T03:27:26+08:00">
+                2017-04-04
               </time>
             
 
@@ -310,8 +310,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -328,9 +328,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/15/serverOption/#comments" itemprop="discussionUrl">
+                <a href="/2017/04/04/git-1/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/15/serverOption/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/04/04/git-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -360,68 +360,324 @@
       
         
           
-            <h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书</p>
-<p>熟悉至少一个内置编辑器: vi, nano</p>
-<p>至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版</p>
-<p>个人使用/开发尽量在Linux上</p>
-<p>熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置</p>
-<p>服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。</p>
-<p><code>危险操作前一定要备份（操作均需要备份）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm -rf dir/filename</div><div class="line">– kill -9 pid</div><div class="line">– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）</div><div class="line">– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件）</div></pre></td></tr></table></figure></p>
-<h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><p>非必要情况下，以非root用户登录操作</p>
-<ul>
-<li><p>密码建议自己备份，但不要外漏。</p>
-</li>
-<li><p>若有修改密码的需求则报告给组长，等组长回复</p>
-<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3></li>
-<li><p>限制端口访问机器</p>
-</li>
-<li><p>禁止修改登录端口</p>
-</li>
-</ul>
-<h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><ul>
-<li>开启监控 比如开启监控日志，nginx，apache默认自带开启日志</li>
-<li>学会查看日志解决问题</li>
-</ul>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
-<li>学会最基本的sql语言（增删查改）<ul>
-<li>绑定内网ip</li>
-</ul>
-</li>
-<li>设置登录密码<ul>
-<li>删除默认数据库及用户</li>
-<li>新建mysql用户和组，相关权限给到mysql用户</li>
-<li>库，表级别操作慎重</li>
-</ul>
-</li>
-</ul>
-<h2 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h2><p><strong>git</strong></p>
-<h2 id="服务器更新"><a href="#服务器更新" class="headerlink" title="服务器更新"></a>服务器更新</h2><ul>
-<li>可以访问外网的服务器：配置ssh key，使用git pull</li>
-<li>不能访问外网的服务器</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">git log</div><div class="line"></div><div class="line">git log –stat</div><div class="line"></div><div class="line">git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">M : modify</div><div class="line"></div><div class="line">A : ADD</div><div class="line"></div><div class="line">D : DELETE</div></pre></td></tr></table></figure>
-<ul>
-<li><p>在每个项目的根目录下面的update.txt文件里添加写入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">操作人姓名-电话-邮箱-修改日期-git版本号</div></pre></td></tr></table></figure>
-</li>
-<li><p>更新完成之后一定要多访问几次确保没有出问题</p>
-</li>
-<li>所有的服务更新完需要重启</li>
-<li>建议更新时间选在访问人数较少的深夜</li>
-</ul>
-<p><em>实用技巧</em></p>
-<ol>
-<li><p>导出最后一次提交修改过的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../updated.zip HEAD git diff --name-only HEAD^</div></pre></td></tr></table></figure>
-</li>
-<li><p>导出两次提交之间修改过的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><ul>
-<li>windows：注销（禁止使用关闭）</li>
-<li>linux：logout(禁止使用shut down)</li>
-</ul>
+            <p>`<br>git push origin 本地分支名:远程分支名<br>git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</p>
+<p>git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记<br>git checkout BRANCH_ID   切换分支<br>git branch -r 列出远程分支<br>git branch -a<br>git branch name  新建分支<br>git branch -d | -D branchname 删除branchname分支<br>git branch -d -r branchname 删除远程branchname分支</p>
+<p>git log<br>git log –stat<br>git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE<br>git diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</p>
+<p>git checkout COMMIT_ID   版本回退</p>
+<p>git stash list  查看堆栈情况<br>git stash     将当前工作压栈<br>git stash pop stash${id}    弹出工作栈<br>git stash clear             清除栈<br>`</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/26/random-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/26/random-1/" itemprop="url">random</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T23:54:26+08:00">
+                2017-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/26/random-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/03/26/random-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>还是太年轻了，投入的越深越容易受伤，道不同不相为谋。</p>
+<p>正好最近一段时间可以不用应付各种东西，好好做自己该做的事，别让以后的自己成为现在讨厌的人。</p>
+<p>见贤思齐，见不贤自省。修身养性。积极面对事情，没想象中那么脆弱，好好跟各种老师相处。调节自己的心情，不能乱发脾气，尽量做一个不说别人坏话，不当面发脾气的人</p>
+<p>你的身体是你的本钱，请你自己珍惜。自己不能再找借口不锻炼了，其实你明确的知道你的身体状况。</p>
+<p><strong>你对别人好，别人才能对你好</strong></p>
+<p>加油，你可以自己调节。<br>给自己每天说一个晚安</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/15/ajax-access/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/15/ajax-access/" itemprop="url">ajax跨域</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-15T15:47:26+08:00">
+                2017-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/15/ajax-access/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/02/15/ajax-access/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>`var url = “<a href="http://www.huhaobin.cn/yiban/Email/send" target="_blank" rel="external">http://www.huhaobin.cn/yiban/Email/send</a>“;</p>
+<p>  $.ajax({<br>         type: “GET”,<br>         url: url,<br>         data: $(“#ContactForm”).serialize(),<br>         headers: {<br>            ‘Access-Control-Allow-Origin’: ‘*’<br>            },<br>         success: function confirm(data)<br>         {<br>           console.log(data);<br>            alert(‘你的老板已经看见了’);<br>         },<br>         error: function del(){<br>          alert(‘你的老板没收到’);<br>        }<br>       });<br>`</p>
+<p><strong>跨域要加header,并且注意只能用get</strong></p>
 
           
         
@@ -628,7 +884,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/21/c-exam/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/15/serverOption/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -647,7 +903,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/11/21/c-exam/" itemprop="url">C语言大坑</a></h1>
+                <a class="post-title-link" href="/2016/12/15/serverOption/" itemprop="url">服务器操作规范</a></h1>
         
 
         <div class="post-meta">
@@ -659,8 +915,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-21T20:45:12+08:00">
-                2016-11-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-15T00:36:51+08:00">
+                2016-12-15
               </time>
             
 
@@ -682,8 +938,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C语言/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -700,9 +956,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/11/21/c-exam/#comments" itemprop="discussionUrl">
+                <a href="/2016/12/15/serverOption/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/21/c-exam/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/12/15/serverOption/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -732,461 +988,68 @@
       
         
           
-            <h1 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h1><ol>
-<li>单引号表示表示整数值</li>
-<li>双引号表示字符串首的地址</li>
-<li>以0开头的整数默认为八进制</li>
-<li>按位与、按位或、或运算、与运算</li>
-<li>注意使用<strong>移位运算</strong>加快程序执行速度</li>
-<li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li>
-<li>a[i]  = i[a]</li>
-<li>C语言的不对称边界</li>
-<li>errno 外部出错变量，可以检测出错信息<br>10.break 跳出离他最近的那层循环或switch</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/17/file/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/17/file/" itemprop="url">文件操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-17T00:59:20+08:00">
-                2016-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C语言/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/17/file/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/17/file/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>代码：https://github.com/saber110/C_review
-</code></pre><h1 id="操作函数"><a href="#操作函数" class="headerlink" title="操作函数"></a>操作函数</h1><ol>
-<li><p>fopen(filename,method)</p>
-<p>method:r,w,a,rb,wb,ab,r+,w+,a+,rb+,wb+,ab+</p>
-<p>eg: if((fp = fopen(filename,”w”))==NULL)//判断是否打开成功</p><p></p>
+            <h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书</p>
+<p>熟悉至少一个内置编辑器: vi, nano</p>
+<p>至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版</p>
+<p>个人使用/开发尽量在Linux上</p>
+<p>熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置</p>
+<p>服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。</p>
+<p><code>危险操作前一定要备份（操作均需要备份）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm -rf dir/filename</div><div class="line">– kill -9 pid</div><div class="line">– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）</div><div class="line">– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件）</div></pre></td></tr></table></figure></p>
+<h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><p>非必要情况下，以非root用户登录操作</p>
+<ul>
+<li><p>密码建议自己备份，但不要外漏。</p>
 </li>
-<li><p>fclose(filepointer)</p>
-<p><strong>return:</strong> <em>success</em> : 0,<em>fail</em> : EOF(即-1)</p>
+<li><p>若有修改密码的需求则报告给组长，等组长回复</p>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3></li>
+<li><p>限制端口访问机器</p>
 </li>
-<li><p>ch = fgetc(fp)</p>
-<p><strong>return</strong> :  <em>fail</em> : EOF</p>
+<li><p>禁止修改登录端口</p>
 </li>
-<li><p>fputc(ch,fp)</p>
-<p><strong>return</strong> :  <em>fail</em> : EOF</p>
+</ul>
+<h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><ul>
+<li>开启监控 比如开启监控日志，nginx，apache默认自带开启日志</li>
+<li>学会查看日志解决问题</li>
+</ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>学会最基本的sql语言（增删查改）<ul>
+<li>绑定内网ip</li>
+</ul>
 </li>
-<li><p>fof(fp)</p>
-<p><strong>return</strong> : 文件结尾时返回0</p>
+<li>设置登录密码<ul>
+<li>删除默认数据库及用户</li>
+<li>新建mysql用户和组，相关权限给到mysql用户</li>
+<li>库，表级别操作慎重</li>
+</ul>
 </li>
-<li><p>fgets(str,n,fp)</p>
-<p>remark :  从fp读入一个长度为n-1的字符串并存放到str</p>
-<p><strong>return :</strong> <em>success :</em> str地址   <em>fail :</em> NULL</p>
+</ul>
+<h2 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h2><p><strong>git</strong></p>
+<h2 id="服务器更新"><a href="#服务器更新" class="headerlink" title="服务器更新"></a>服务器更新</h2><ul>
+<li>可以访问外网的服务器：配置ssh key，使用git pull</li>
+<li>不能访问外网的服务器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">git log</div><div class="line"></div><div class="line">git log –stat</div><div class="line"></div><div class="line">git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">M : modify</div><div class="line"></div><div class="line">A : ADD</div><div class="line"></div><div class="line">D : DELETE</div></pre></td></tr></table></figure>
+<ul>
+<li><p>在每个项目的根目录下面的update.txt文件里添加写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">操作人姓名-电话-邮箱-修改日期-git版本号</div></pre></td></tr></table></figure>
 </li>
-<li><p>fputs(str,fp)</p>
-<p>remark : 把str的内容读到fp指向的文件</p>
-<p><strong>return :</strong> <em>success</em> : 0,<em>fail</em> : !0</p>
+<li><p>更新完成之后一定要多访问几次确保没有出问题</p>
 </li>
-<li><p>fread(buffer, size, count, fp)</p>
-<p>fwrite(buffer, size, count, fp)</p>
-<p><strong>remark :</strong></p>
-<pre><code>buffer : 要读入或输出的数据的地址
- size : 要读写的字节书
- count : 要读写的数据项个数(每个数据项的长度为size)
-</code></pre><p><strong>return :</strong> <em>success :</em> 1</p>
+<li>所有的服务更新完需要重启</li>
+<li>建议更新时间选在访问人数较少的深夜</li>
+</ul>
+<p><em>实用技巧</em></p>
+<ol>
+<li><p>导出最后一次提交修改过的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../updated.zip HEAD git diff --name-only HEAD^</div></pre></td></tr></table></figure>
 </li>
-<li><p>rewind(fp)</p>
-<p><strong>remark  :</strong> 将指针位置返回到开头，无返回值</p>
-</li>
-<li><p>fseek(fp,offset,type)</p>
-<p>para : type : 0—文件开始位置，1—当前位置，2—文件结束位置</p>
+<li><p>导出两次提交之间修改过的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="出错检测"><a href="#出错检测" class="headerlink" title="出错检测"></a>出错检测</h2><ol>
-<li><p>ferror(fp)</p>
-<p><strong>return :</strong> 未出错为0，出错不为0</p>
-<p></p><p><em>一定要调用clearerr(fp)清掉报错</em></p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/pointer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/14/pointer/" itemprop="url">指针</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T20:58:00+08:00">
-                2016-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C语言/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/14/pointer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/14/pointer/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>代码：https://github.com/saber110/C_review
-`&lt;/pre&gt;
-
-# 初始化
-
-’*‘ 表示对应地址的内容
-
-&lt;pre&gt;` 指针变量名表示地址
-`&lt;/pre&gt;
-
-### 指针变量中只能存放地址
-
-指针在初始化值的时候，一定要用变量的地址，在初始化完成之后可以不用地址改变指针的值
-
-&lt;pre&gt;`int a = 200,* pointer;
-pointer = a;
-`&lt;/pre&gt;
-
-**这是不合法的**
-
-&lt;pre&gt;`int a = 200,* pointer;
-*pointer = a;//未进行初始化，存储单元无法预测
-`&lt;/pre&gt;
-
-**这也是不合法的**
-
-&lt;pre&gt;`int a = 200,* pointer;
-pointer = &amp;amp;a;
-`&lt;/pre&gt;
-
-**这也是合法的**
-
-&lt;pre&gt;`int a = 200,* pointer;
-pointer = &amp;amp;a;
-*pointer = a;//等价于pointer = &amp;amp;a;
-`&lt;/pre&gt;
-
-**迷之合法**
-
-综上，数组初始化只能有
-
-&lt;pre&gt;`int *pointer = &amp;amp;a;
-或者
-int * pointer;
-pointer = &amp;amp;a;
-`&lt;/pre&gt;
-
-**两种方法**
-
-# 参数传递
-</code></pre><ol>
-<li>不能通过改变指针形参的值而企图使指针实参的值发生改变（C语言在函数调用时只能<strong>单向值传递</strong>）</li>
-<li>数组/指针作为形参时，传递的是对应的地址，改变形参的值<strong>可以改变</strong>实参</li>
-<li>调用函数时形参指向实参，实际上指向同一个内存单元</li>
-<li><p>如果用指针变量作为实参，指针变量必须要有具体的值，即必须<strong>指向对应已定义的对象</strong></p>
-<p><strong>REMARK：</strong> 最重要的是可以改变指针的指向地址啊！！！！</p>
-<h1 id="通过指针引用数组"><a href="#通过指针引用数组" class="headerlink" title="通过指针引用数组"></a>通过指针引用数组</h1><pre>`若p-&gt;a[0],则++p-&gt;a[1]
-若p-&gt;&amp;a[0]，则++p-&gt;&amp;a[1]
-p1,p2指向同一个数组时，p2-p1表示相差元素的个数
-
-a[i] = *(a+i)
-&amp;a[i] = &amp;(a+i)
-`</pre>
-
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><pre>`int a[10];
-1\. *a代表a[0]的内容即a[0]
-2\.   a代表a[0]的地址即&amp;a[0]
-3\.   *(a + 1) 代表a[i]的内容
-`</pre>
-
-<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><pre>`int a[10][10];
-1\. *a代表a[0][0]的内容即a[0][0]
-2\.   a代表a[0][0]的地址即&amp;a[0][0]
-3\.   *(a + 1) 代表a[i]         行            的地址
-4\.   *(a + 1) +1代表a[1][1]的地址，即&amp;a[1][1]
-5\.   *(*(a + 1) +1)代表a[1][1]的内容,即a[1][1]
-`</pre>
-
-<h1 id="字符指针"><a href="#字符指针" class="headerlink" title="字符指针"></a>字符指针</h1><pre>`char *a;
-scanf("%d\n",a);
-
-坚决不能使用上面这种，a的指向地址无法预测，可能会修改系统中敏感位置的值
-
-char *a,arr[10];
-a=arr;
-scanf("%d\n",a);
-
-正确用法
-`</pre>
-
-<h1 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h1><p><pre>`int (<em>p)(int x,int y);//指向返回值位int的函数指针<br>int </em> p(int x,int y) = int * (p(int x,int y))//返回值为指针的函数</pre></p>
-</li>
-</ol>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><ul>
+<li>windows：注销（禁止使用关闭）</li>
+<li>linux：logout(禁止使用shut down)</li>
+</ul>
 
           
         
@@ -1226,7 +1089,7 @@ scanf("%d\n",a);
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1275,7 +1138,7 @@ scanf("%d\n",a);
             
               <a href="/archives">
             
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1286,7 +1149,7 @@ scanf("%d\n",a);
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1297,7 +1160,7 @@ scanf("%d\n",a);
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1353,7 +1216,7 @@ scanf("%d\n",a);
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

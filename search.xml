@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2018%2F03%2F04%2Fcsu%2F</url>
+    <content type="text"><![CDATA[http://123.206.64.174]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Qt mysql 数据库找不到]]></title>
+    <url>%2F2018%2F03%2F04%2FQt_mysqlDriver%2F</url>
+    <content type="text"><![CDATA[12QSqlDatabase: QMYSQL driver not loadedQSqlDatabase: available drivers: QSQLITE QMYSQL QMYSQL3 QODBC QODBC3 QPSQL QPSQL 7 原因： 应用程序找不到libmysql.dll解决方法： 把libmysql.dll 放在.exe应用程序运次的同目录下 比如在debug时，放在debug的目录下面； release时，放在release的目录下面]]></content>
+      <categories>
+        <category>qt</category>
+      </categories>
+      <tags>
+        <tag>qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C语言大坑]]></title>
+    <url>%2F2018%2F02%2F08%2Fa_bigHole_ofC%2F</url>
+    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C语言的数据存储空间-. 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆）-. 局部变量在return之后出栈销毁，不要尝试返回局部指针地址-. 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换-. 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同-. 占用空间小的转化为占用空间大的： 考虑内存越界访问-. 结构体强制转换 ： 考虑字节对齐 字符串-. 通过索引读取字符串时，一定要判断索引的正确性]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[apache2跨域]]></title>
+    <url>%2F2017%2F12%2F15%2Fapache2cors%2F</url>
+    <content type="text"><![CDATA[加载服务器组件1a2enmod headers 修改服务器配置 在想要可以跨域访问的目录下 Header set Access-Control-Allow-Origin * 重启服务器1service apache2 restart]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[qt画图]]></title>
     <url>%2F2017%2F12%2F13%2FqtPainting%2F</url>
     <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
@@ -75,6 +107,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[ci library]]></title>
+    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
+    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[c_multipthread]]></title>
     <url>%2F2017%2F11%2F15%2Fc_multipthread%2F</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include#include #include#include#include#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123;printf ("thread1 : I'm thread 1\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread1 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2);&#125;printf("thread1 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void *thread2()&#123; printf("thread2 : I'm thread 2\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread2 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3);&#125;printf("thread2 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf("线程1创建失败!\n"); else printf("线程1被创建\n"); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0)//comment3 printf("线程2创建失败"); else printf("线程2被创建\n");&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf("线程1已经结束\n"); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf("线程2已经结束\n"); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf("我是主函数哦，我正在创建线程，呵呵\n"); thread_create(); printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n"); thread_wait(); return 0; &#125;编译指令gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
@@ -91,12 +131,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ci library]]></title>
-    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
-    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -108,16 +145,6 @@
       <tags>
         <tag>AD</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[C语言大坑]]></title>
-    <url>%2F2017%2F11%2F15%2Fa_bigHole_ofC%2F</url>
-    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
   </entry>
   <entry>
     <title><![CDATA[linux下arm-none-linux-gnueabi交叉编译环境的建立]]></title>
@@ -179,17 +206,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -314,17 +341,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[服务器操作规范]]></title>
-    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
-    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>服务器操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[shell]]></title>
     <url>%2F2016%2F12%2F15%2Fshell%2F</url>
     <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
@@ -333,6 +349,17 @@
       </categories>
       <tags>
         <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器操作规范]]></title>
+    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
+    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>服务器操作</tag>
       </tags>
   </entry>
   <entry>
