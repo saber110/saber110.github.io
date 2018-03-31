@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/a_bigHole_ofC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/ProgrammingPearlsKnown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/11/a_bigHole_ofC/" itemprop="url">C语言大坑</a></h1>
+                <a class="post-title-link" href="/2018/04/01/ProgrammingPearlsKnown/" itemprop="url">编程珠玑</a></h1>
         
 
         <div class="post-meta">
@@ -287,8 +287,528 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T17:30:16+08:00">
-                2018-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T22:11:07+08:00">
+                2018-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/01/ProgrammingPearlsKnown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/01/ProgrammingPearlsKnown/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol>
+<li>位图，位向量<ul>
+<li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li>
+<li>算法分析<ol>
+<li>初始化集合，每个位都置为0；</li>
+<li>读入文件的每个整数，将对应的位置为1；</li>
+<li>遍历二进制数据，如果该位为1，则输出相应的整数。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure>
+<ul>
+<li>相关函数</li>
+</ul>
+<ol>
+<li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li>
+<li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li>
+<li>count(); // count()操作返回被设置为1的位的个数.</li>
+<li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li>
+<li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li>
+<li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li>
+</ol>
+</li>
+<li>wc -l/c/w filename 统计文件行/字节/字数</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/processCom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/01/processCom/" itemprop="url">进程间通信</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T22:11:07+08:00">
+                2018-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/01/processCom/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/01/processCom/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>信号</p>
+<ul>
+<li>由于某些错误而产生的事件</li>
+<li>可以设定信号触发之后的处理方式，但信号是系统已经确定的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">void (*signals(int signum, void(*hangdler)(int)))(int);</div><div class="line">int sigaction(int signum, const struct sigaction * act, struct sigaction * addr)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>管道和命名管道<br><strong>实质是先进先出，半双工的数据结构，双方通信需要两个管道</strong></p>
+<ul>
+<li>管道：只能用于相互关联的进程间通信，如：父子进程</li>
+<li>命名管道： = 特殊文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkfifo(const char * pathname, mode_t mode); //建立管道文件</div><div class="line">read() write() close() 均可操作</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>信号量<br>主要用于控制多个线程对临界区资源的访问</p>
+</li>
+<li><p>消息队列<br>将消息按队列方式组成的链表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int msgget(key_t key, int msgflg);</div><div class="line">int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);</div><div class="line">int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);</div><div class="line">int msgctl(int msgid, int cmd, struct msgid_ds *buf);</div></pre></td></tr></table></figure>
+</li>
+<li><p>共享内存<br>直接操作内存，不用复制文件 <strong>系统创建的特殊地址空间，允许多个不相关的进程使用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int shmget(key_t key, int shmflg);</div><div class="line">int shmat(int shmid, const void * shmaddr, int shmflg);</div><div class="line">int shmdt(const void * shmaddr);</div><div class="line">int shmctl(int shmid, int cmd, struct shmid_ds *buf);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/DOBeforeShutdownInLinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/31/DOBeforeShutdownInLinux/" itemprop="url">linux关机前执行脚本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T22:11:07+08:00">
+                2018-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/31/DOBeforeShutdownInLinux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/31/DOBeforeShutdownInLinux/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>建立关机需要执行的脚本文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>K99文件名用来保证运行优先级</p>
+<ol>
+<li><p>赋予执行权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod +x /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建关机和重启软连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc0.d/K99shutdownbefore</div><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc6.d/K99shutdownbefore</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/a_bigHole_ofC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/24/a_bigHole_ofC/" itemprop="url">C语言大坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-24T12:10:48+08:00">
+                2018-03-24
               </time>
             
 
@@ -306,9 +826,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/11/a_bigHole_ofC/#comments" itemprop="discussionUrl">
+                <a href="/2018/03/24/a_bigHole_ofC/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/11/a_bigHole_ofC/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/03/24/a_bigHole_ofC/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -339,8 +859,7 @@
         
           
             <h2 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h2><ol>
-<li>单引号表示表示整数值</li>
-</ol>
+<li><p>单引号表示表示整数值</p>
 <ul>
 <li>双引号表示字符串首的地址</li>
 <li>以0开头的整数默认为八进制</li>
@@ -352,16 +871,71 @@
 <li>break 跳出离他最近的那层循环或switch</li>
 <li>C 语言不能省略形参，即使不使用</li>
 </ul>
-<ol>
-<li><p>C语言的数据存储空间<br>-. 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆）<br>-. 局部变量在return之后出栈销毁，不要尝试返回局部指针地址<br>-. 堆  申请、释放原则 <strong>哪儿申请哪儿释放</strong><br> 记得判断 堆 申请成功与否</p>
+</li>
+<li><p>C语言的数据存储空间</p>
+<ul>
+<li>程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆）</li>
+<li>局部变量在return之后出栈销毁，不要尝试返回局部指针地址</li>
+<li>堆  申请、释放原则 <strong>哪儿申请哪儿释放</strong><br> 记得判断 堆 申请成功与否</li>
+</ul>
 </li>
 <li><p>一个程序将操作系统分配给其运行的内存块分为4个区域：<br>　　(1)代码区，存放程序的代码，即程序中的各个函数代码块。<br>　　(2)全局数据区，存放程序的全局数据和静态数据。<br>　　(3)堆区，存放程序的动态数据。<br>　　(4)栈区，存放程序的局部数据，即各个函数中的数据。</p>
 </li>
-<li><p>强制类型转换<br>-. 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同<br>-. 占用空间小的转化为占用空间大的： 考虑内存越界访问<br>-. 结构体强制转换             ： 考虑字节对齐</p>
+<li><p>强制类型转换</p>
 </li>
-<li><p>字符串<br>-. 通过索引读取字符串时，一定要判断索引的正确性</p>
+</ol>
+<ul>
+<li>占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同</li>
+<li>占用空间小的转化为占用空间大的： 考虑内存越界访问</li>
+<li>结构体强制转换             ： 考虑字节对齐</li>
+</ul>
+<ol>
+<li>字符串</li>
+</ol>
+<ul>
+<li>通过索引读取字符串时，一定要判断索引的正确性</li>
+</ul>
+<ol>
+<li>多线程编程</li>
+</ol>
+<ul>
+<li>互斥量用来对临界区的互斥进入</li>
+<li>条件变量用于线程的阻塞等待</li>
+</ul>
+<ol>
+<li><p>指针</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int * p = NULL;</div><div class="line"></div><div class="line">&amp;p 表示p的地址</div><div class="line">p 表示变量p的内容</div><div class="line">*p 表示p指向的存储单元的内容</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>数字0是唯一能输给指针的数值</strong>(相当于NULL)  </li>
+<li>void * :指向任何类型的指针</li>
+<li><strong>注意深复制和浅复制的区别</strong><h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int *p, *q;</div><div class="line">*p = 58;</div><div class="line">q = p;        // q 和 P 指向同一内存单元</div><div class="line">free(q);</div><div class="line">printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放</div></pre></td></tr></table></figure>
 </li>
-<li>多线程编程<br>-. 互斥量用来对临界区的互斥进入<br>-. 条件变量用于线程的阻塞等待</li>
+</ul>
+</li>
+<li><p>动态变量</p>
+<p>在程序运行过程中产生的变量称为动态变量</p>
+<ul>
+<li><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int * p; char *q;</div><div class="line">p = new int;  // 在内存中创建一个变量，存储所分配的内存地址到p中</div><div class="line">q = new char[19];   // 在内存中创建一个数组，并将数组地址存储到q中</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*p = 28;</div><div class="line">*q = &quot;hello&quot;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>销毁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete p;</div><div class="line">delete [] q;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>动态数组</p>
+<ul>
+<li><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int *p;</div><div class="line">p = new int[10];</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* p = 25;   //25存到第一个存储空间里  = p[0] = 25；</div><div class="line">p ++;</div><div class="line">* p = 35;   //35存到第二个存储空间里  = p[1] = 35；</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
 </ol>
 
           
@@ -551,451 +1125,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/04/csu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/04/csu/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T13:31:56+08:00">
-                2018-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/04/csu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/04/csu/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://123.206.64.174" target="_blank" rel="external">http://123.206.64.174</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/04/Qt_mysqlDriver/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/04/Qt_mysqlDriver/" itemprop="url">Qt mysql 数据库找不到</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T00:00:00+08:00">
-                2018-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/qt/" itemprop="url" rel="index">
-                    <span itemprop="name">qt</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/04/Qt_mysqlDriver/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/04/Qt_mysqlDriver/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">QSqlDatabase: QMYSQL driver not loaded</div><div class="line">QSqlDatabase: available drivers: QSQLITE QMYSQL QMYSQL3 QODBC QODBC3 QPSQL QPSQL 7</div></pre></td></tr></table></figure>
-<p>原因： 应用程序找不到libmysql.dll<br>解决方法： 把libmysql.dll 放在.exe应用程序运次的同目录下<br>    比如在debug时，放在debug的目录下面； release时，放在release的目录下面</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/apache2cors/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/15/apache2cors/" itemprop="url">apache2跨域</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T15:47:26+08:00">
-                2017-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/15/apache2cors/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/15/apache2cors/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="加载服务器组件"><a href="#加载服务器组件" class="headerlink" title="加载服务器组件"></a>加载服务器组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a2enmod headers</div></pre></td></tr></table></figure>
-<h2 id="修改服务器配置"><a href="#修改服务器配置" class="headerlink" title="修改服务器配置"></a>修改服务器配置</h2><p>  在想要可以跨域访问的目录下<br>  <directory ****=""><br>    Header set Access-Control-Allow-Origin *<br>  </directory></p>
-<h2 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service apache2 restart</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1044,7 +1178,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">66</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1055,7 +1189,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1066,7 +1200,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
