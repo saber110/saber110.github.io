@@ -256,6 +256,383 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/15/serverOption/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/15/serverOption/" itemprop="url">服务器操作规范</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-15T00:36:51+08:00">
+                2016-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/15/serverOption/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/12/15/serverOption/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书</p>
+<p>熟悉至少一个内置编辑器: vi, nano</p>
+<p>至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版</p>
+<p>个人使用/开发尽量在Linux上</p>
+<p>熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置</p>
+<p>服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。</p>
+<p><code>危险操作前一定要备份（操作均需要备份）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm -rf dir/filename</div><div class="line">– kill -9 pid</div><div class="line">– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）</div><div class="line">– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件）</div></pre></td></tr></table></figure></p>
+<h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><p>非必要情况下，以非root用户登录操作</p>
+<ul>
+<li><p>密码建议自己备份，但不要外漏。</p>
+</li>
+<li><p>若有修改密码的需求则报告给组长，等组长回复</p>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3></li>
+<li><p>限制端口访问机器</p>
+</li>
+<li><p>禁止修改登录端口</p>
+</li>
+</ul>
+<h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><ul>
+<li>开启监控 比如开启监控日志，nginx，apache默认自带开启日志</li>
+<li>学会查看日志解决问题</li>
+</ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>学会最基本的sql语言（增删查改）<ul>
+<li>绑定内网ip</li>
+</ul>
+</li>
+<li>设置登录密码<ul>
+<li>删除默认数据库及用户</li>
+<li>新建mysql用户和组，相关权限给到mysql用户</li>
+<li>库，表级别操作慎重</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码更新"><a href="#代码更新" class="headerlink" title="代码更新"></a>代码更新</h2><p><strong>git</strong></p>
+<h2 id="服务器更新"><a href="#服务器更新" class="headerlink" title="服务器更新"></a>服务器更新</h2><ul>
+<li>可以访问外网的服务器：配置ssh key，使用git pull</li>
+<li>不能访问外网的服务器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">git log</div><div class="line"></div><div class="line">git log –stat</div><div class="line"></div><div class="line">git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">M : modify</div><div class="line"></div><div class="line">A : ADD</div><div class="line"></div><div class="line">D : DELETE</div></pre></td></tr></table></figure>
+<ul>
+<li><p>在每个项目的根目录下面的update.txt文件里添加写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">操作人姓名-电话-邮箱-修改日期-git版本号</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新完成之后一定要多访问几次确保没有出问题</p>
+</li>
+<li>所有的服务更新完需要重启</li>
+<li>建议更新时间选在访问人数较少的深夜</li>
+</ul>
+<p><em>实用技巧</em></p>
+<ol>
+<li><p>导出最后一次提交修改过的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../updated.zip HEAD git diff --name-only HEAD^</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出两次提交之间修改过的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><ul>
+<li>windows：注销（禁止使用关闭）</li>
+<li>linux：logout(禁止使用shut down)</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/21/c-exam/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/21/c-exam/" itemprop="url">C语言大坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-21T20:45:12+08:00">
+                2016-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/21/c-exam/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/21/c-exam/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h1><ol>
+<li>单引号表示表示整数值</li>
+<li>双引号表示字符串首的地址</li>
+<li>以0开头的整数默认为八进制</li>
+<li>按位与、按位或、或运算、与运算</li>
+<li>注意使用<strong>移位运算</strong>加快程序执行速度</li>
+<li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li>
+<li>a[i]  = i[a]</li>
+<li>C语言的不对称边界</li>
+<li>errno 外部出错变量，可以检测出错信息<br>10.break 跳出离他最近的那层循环或switch</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/17/file/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -843,473 +1220,6 @@ scanf("%d\n",a);
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/study-c-again/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/14/study-c-again/" itemprop="url">回头C语言</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T13:34:07+08:00">
-                2016-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C语言/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/14/study-c-again/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/14/study-c-again/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">代码：https://github.com/saber110/C_review</div></pre></td></tr></table></figure>
-<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">break: 跳出本层循环</div><div class="line">continue : 跳出本次循环接而执行下次循环</div></pre></td></tr></table></figure>
-<h1 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h1><ol>
-<li><p><strong> 数字型数组 </strong> 默认初始化为0, <strong> 字符型数组 </strong>默认初始化为’\0’（空格符）**</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int a[3][4] = &#123;</div><div class="line">                &#123;1,2,3,4&#125;,</div><div class="line">                &#123;5,6,7,8&#125;,</div><div class="line">                &#123;9,10,11,12,&#125;</div><div class="line">                &#125;;</div><div class="line">int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;</div><div class="line">int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;;</div></pre></td></tr></table></figure>
-<p><strong>前两种初始化的方法效果完全一致</strong>，但是前面的清晰可读<em>推荐使用</em></p>
-<p>第三种方法相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    a[0][0]= 1;</div><div class="line">    a[1][0] = 5;</div><div class="line">    a[2][0] = 9;</div><div class="line">    其余元素全为0</div><div class="line">```    </div><div class="line"></div><div class="line">### Remark</div><div class="line"></div><div class="line">初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度</div><div class="line">**数组长度**</div></pre></td></tr></table></figure>
-<p>char c[] = “i am a student”;<br>sizeof(c) = 11;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">系统在后面自动添加&amp;#039;\0&amp;#039;表示字符串终结  (10+1)</div></pre></td></tr></table></figure>
-<p>char C[5] = “CHINA”;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    也是**合法**的表达</div><div class="line"></div><div class="line">    ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间</div><div class="line"></div><div class="line"></div><div class="line"># 这儿有个关于字符数组的大坑</div><div class="line"></div><div class="line">1.  C语言的**字符**数组可以在初始化的时候直接赋值</div><div class="line">2.  但不可以用</div></pre></td></tr></table></figure>
-<p>str=”china”;    //尝试之间赋值给已声明的字符数组str<br>str1 = str2;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 在后面要改变字符数组的内容需要使用</div></pre></td></tr></table></figure>
-<p>gets(str);<br>strcat(str,str1);<br>strcpy(str,str1);<br>strncpy(str,str1,2);//将str1中的前两个字符赋值到str中<br>```</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/10/esp8266-12f-wifi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/10/esp8266-12f-wifi/" itemprop="url">使用ESP8266-12F Wifi模块进行通信流程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T01:56:40+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/智能小车/" itemprop="url" rel="index">
-                    <span itemprop="name">智能小车</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/10/esp8266-12f-wifi/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/10/esp8266-12f-wifi/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="使用ESP8266-12F-Wifi模块进行通信的套路体会"><a href="#使用ESP8266-12F-Wifi模块进行通信的套路体会" class="headerlink" title="使用ESP8266-12F Wifi模块进行通信的套路体会"></a>使用ESP8266-12F Wifi模块进行通信的套路体会</h1><h2 id="一、接线流程"><a href="#一、接线流程" class="headerlink" title="一、接线流程"></a>一、接线流程</h2><h3 id="在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3-3V电源，GPIO15-GND端接地，模块TX-RX端分别接串口工具的RX-TX端，其余管脚悬空既可。"><a href="#在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3-3V电源，GPIO15-GND端接地，模块TX-RX端分别接串口工具的RX-TX端，其余管脚悬空既可。" class="headerlink" title="在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。"></a>在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。</h3><h3 id="如下图所示。"><a href="#如下图所示。" class="headerlink" title="如下图所示。"></a>如下图所示。</h3><h3 id="在接线过程中注意点如下。"><a href="#在接线过程中注意点如下。" class="headerlink" title="在接线过程中注意点如下。"></a>在接线过程中注意点如下。</h3><h4 id="1-用3-3V-800mA独立电源供电，需要共地。"><a href="#1-用3-3V-800mA独立电源供电，需要共地。" class="headerlink" title="1. 用3.3V/800mA独立电源供电，需要共地。"></a>1. 用3.3V/800mA独立电源供电，需要共地。</h4><h4 id="2-保证CH-PD（EN）-也就是芯片选通脚为高电平，GPIO15-也就是MTDO-为低电平。并且CH-PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。"><a href="#2-保证CH-PD（EN）-也就是芯片选通脚为高电平，GPIO15-也就是MTDO-为低电平。并且CH-PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。" class="headerlink" title="2. 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。"></a>2. 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。</h4><h4 id="3-注：RST-引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。"><a href="#3-注：RST-引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。" class="headerlink" title="3. 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。"></a>3. 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。</h4><h2 id="二、调试流程"><a href="#二、调试流程" class="headerlink" title="二、调试流程"></a>二、调试流程</h2><pre><code>命令在后面必须要有回车发送
-`&lt;/pre&gt;
-
-### 调试使用AT指令。以下简单介绍四种模式的调试流程。
-
-#### 1\. 模块ap模式下做 tcp server
-
-&lt;pre&gt;`①AT+CWMODE=2或AT+CWMODE=3       //开启 AP 模式
- ②AT+RST                                                     //复位
- ③AT+CWSAP=&quot;TEST&quot;,&quot;123456789A&quot;,3,0 //设置模块的 wifi 和密码
- ④AT+CIPMUX=1                                         //打开多连接
- ⑤AT+CIPSERVER=1,8080                            //1表示开启server模式，8080为端口号
- ⑥AT+CIPSTO=7200                                     //设置服务器超时时间为7200s
- ⑦AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据
-`&lt;/pre&gt;
-
-#### 2.模块sta模式下做 tcp client
-
-&lt;pre&gt;`①AT+CWMODE=1   //开启STA模式 
- ②AT+RST //复位
- ③AT+CWLAP //查看附近的 wifi
- ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码
- ⑤AT+CIFSR //查看模块的分配的 ip
- ⑥AT+CIPMUX=1 //打开多连接
- ⑦AT+CIPSTART=0，&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080 设置ip和端口号，发送 AT 指令去连接。
- ⑧AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据
-`&lt;/pre&gt;
-
-#### 3.模块做tcp透传
-
-&lt;pre&gt;`①AT+CWMODE=1   //开启STA模式 
- ②AT+RST //复位
- ③AT+CWLAP //查看附近的 wifi
- ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码
- ⑤AT+CIFSR //查看模块的分配的 ip
- ⑥AT+CIPMUX=0//设置单连接
- ⑦AT+CIPMODE=1//设置透传模式
- ⑧AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080// 连接server端的ip和端口
- ⑨AT+CIPSEND //开始发送数据
- ⑩+++ //退出透传，此处应取消发送新行
-`&lt;/pre&gt;
-
-#### 4.模块做udp透传
-
-&lt;pre&gt;`①AT+CWMODE=1   //开启STA模式 
- ②AT+RST //复位
- ③AT+CWLAP //查看附近的 wifi
- ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码
- ⑤AT+CIFSR //查看模块的分配的 ip
- ⑥AT+CIPSTART=“UDP”,&quot;255.255.255.255&quot;,8080,8080,0//建立udp连接，前8080为对方端口，后8080为模块端口
- ⑦AT+CIPMODE=1//设置透传模式
- ⑧AT+CIPSEND //开始发送数据
- ⑨+++ //退出透传，此处应取消发送新行
-`&lt;/pre&gt;
-
-### 使用串口助手对单个wifi模块进行测试，注意事项如下。
-
-1.配置模式为波特率：115200、数据位：8  校验位/停止位/流控：none
- 2.使用AT指令进行调试时，记住发送指令时要勾选“**发送新行选项**”。即指令需要换行（0x0d+0x0a）
-
-### 使用两个wifi模块进行通讯形式如下。
-
-#### 服务器与客户端进行tcp通信
-
-1.按之前的步骤，将两模块分别设置成tcp server与tcp client即可实现**双向**通信。
- 2.该模式下，两模块间传输数据需要限定长度。
- 3\. 若客户端连不进服务器的热点，服务器应该执行_复位_指令，等待一段时间即可。
- 4\. 掉电后会自动退出server模式，需要重新**初始化**，初始化AT指令流程截图如下。
- 5\. 若客户端掉电，服务器未掉。上电后只初始化客户端，依然不能实现数据双向传输。服务器**需要关闭server收发模式再重新开启**，即可解决问题。
- 6\. 恢复出厂设置指令：AT+RESTORE
-
-#### 进行tcp透传
-</code></pre><ol>
-<li>将一个模块设置成tcp server，另一个按照tcp透传进行调试即可。</li>
-<li>透传只能在单连接模式下进行，所以在建立连接之前一定要用（AT+CIPMUX=0 设置单连接），但是模块处于服务器模式下时，必须要多链接，由于冲突，所以模块开启服务器模式不能做tcp透传。因此，该模式下，客户端像服务器发送数据可不限长度，服务器发送数据则需要限定长度。</li>
-<li><p>其他调试方法同上。</p>
-<h4 id="进行udp透传"><a href="#进行udp透传" class="headerlink" title="进行udp透传"></a>进行udp透传</h4><p>1.需要外界提供wifi热点<br>2.将两个wifi模块连接至统一wifi热点，按照udp透传进行调试。<br>3.对于建立udp连接的指令，如需要实现多端通信，则ip地址应输入广播域“255.255.255.255”，并需要设为同一端口。</p>
-<h3 id="使用单片机发送指令至wifi模块，使用uart通信协议。"><a href="#使用单片机发送指令至wifi模块，使用uart通信协议。" class="headerlink" title="使用单片机发送指令至wifi模块，使用uart通信协议。"></a>使用单片机发送指令至wifi模块，使用uart通信协议。</h3><h4 id="1-非透传模式"><a href="#1-非透传模式" class="headerlink" title="1.非透传模式"></a>1.非透传模式</h4><h5 id="服务器初始化代码如下。"><a href="#服务器初始化代码如下。" class="headerlink" title="服务器初始化代码如下。"></a>服务器初始化代码如下。</h5><pre>`void Wifi_ServerInit() //服务器初始化
-{
-  printf("AT+CIPMUX=1");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a); 
-  DELAY_MS(10);
-  printf("AT+CIPSERVER=1,8080");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-  printf("AT+CIPSTO=7200");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-}
-`</pre>
-
-<h5 id="客户端初始化代码如下。"><a href="#客户端初始化代码如下。" class="headerlink" title="客户端初始化代码如下。"></a>客户端初始化代码如下。</h5><pre>`void Wifi_tcp_ClientInit() //客户端初始化
-{
-  printf("AT+CIPMUX=1");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);  
-  printf("AT+CIPSTART=0,\"TCP\",\"192.168.4.1\",8080");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);  
-}
-`</pre>
-
-<h5 id="发送数据代码如下。"><a href="#发送数据代码如下。" class="headerlink" title="发送数据代码如下。"></a>发送数据代码如下。</h5><pre>`void Wifi_Send_Data(uint8 Id,uint8 Len,uint8 *str) //写指定长度的数据
-{
-  printf("AT+CIPSEND=%d,%d",Id,Len);
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(1);
-  uart_putstr(UART4,str);   //数据长度满才可发送
-}
-`</pre>
-
-<h4 id="2-UDP透传模式"><a href="#2-UDP透传模式" class="headerlink" title="2.UDP透传模式"></a>2.UDP透传模式</h4><h5 id="客户端udp初始化"><a href="#客户端udp初始化" class="headerlink" title="客户端udp初始化"></a>客户端udp初始化</h5><pre>`void Wifi_Udp_ClientInit(void)//客户端udp初始化
-{
-  printf("AT+CIPMUX=0");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-  printf("AT+CIPSTART=\"UDP\",\"255.255.255.255\",8080,8080,0");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-  printf("AT+CIPMODE=1");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-}
-`</pre>
-
-<h5 id="进入透传模式"><a href="#进入透传模式" class="headerlink" title="进入透传模式"></a>进入透传模式</h5><pre>`void Wifi_Udp_SendData(void)//发送数据指令，进入透传
-{
-  printf("AT+CIPSEND");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10); 
-}
-`</pre>
-
-<h5 id="退出透传模式"><a href="#退出透传模式" class="headerlink" title="退出透传模式"></a>退出透传模式</h5><p><pre>`void Wifi_Udp_Send_End(void)//退出透传<br>{<br>  printf(“+++”);<br>}</pre></p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1363,7 +1273,7 @@ scanf("%d\n",a);
             
               <a href="/archives">
             
-                <span class="site-state-item-count">66</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1385,7 +1295,7 @@ scanf("%d\n",a);
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
