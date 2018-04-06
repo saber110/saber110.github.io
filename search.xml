@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[读书记录]]></title>
+    <url>%2F2018%2F04%2F06%2FTheCollectOfReading%2F</url>
+    <content type="text"><![CDATA[计算机类 计算机算法(C++语言描述) 第二版]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[进程间通信]]></title>
     <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
     <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
@@ -151,28 +159,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[ci library]]></title>
     <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
     <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
       <categories>
         <category>PHP</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[集成库的学习]]></title>
-    <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
-    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>AD</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[c_multipthread]]></title>
@@ -188,6 +185,17 @@
       </categories>
       <tags>
         <tag>肺腑之言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[集成库的学习]]></title>
+    <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
+    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>AD</tag>
       </tags>
   </entry>
   <entry>
@@ -269,14 +277,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[AutoStartInUbuntuMate]]></title>
     <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
     <content type="text"><![CDATA[只有登录之后ubuntumate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
@@ -285,15 +285,20 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[hexo个人博客的搭建]]></title>
-    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试 在source目录下面新建CNAME文件,内容为自己独立的域名, 在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
       <categories>
-        <category>hexo</category>
+        <category>树莓派</category>
       </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
@@ -307,12 +312,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[树莓派连接隐藏wifi]]></title>
-    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
-    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
+    <title><![CDATA[hexo个人博客的搭建]]></title>
+    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试 在source目录下面新建CNAME文件,内容为自己独立的域名, 在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
       <categories>
-        <category>树莓派</category>
+        <category>hexo</category>
       </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -352,7 +360,7 @@
   <entry>
     <title><![CDATA[计算机算法 C++描述 第二章]]></title>
     <url>%2F2017%2F04%2F17%2FCA2%2F</url>
-    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize]]></content>
+    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
       <categories>
         <category>算法</category>
       </categories>
