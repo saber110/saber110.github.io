@@ -256,6 +256,268 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/CA2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/CA2/" itemprop="url">计算机算法 C++描述 第二章</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T22:11:07+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/17/CA2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/17/CA2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="template-模板"><a href="#template-模板" class="headerlink" title="template 模板"></a>template 模板</h2><ol>
+<li><p>类模板<br>假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">template &lt;class Type&gt;</div><div class="line">class foo</div><div class="line">&#123;</div><div class="line">  private:</div><div class="line">    Type a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>类模板的使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名&lt;实际的类型&gt;</div></pre></td></tr></table></figure>
+<p>类模板的使用实际上是将类模板实例化成一个详细的类</p>
+</li>
+<li><p>在类外面定义函数模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">template&lt;typename（或class) T&gt;</div><div class="line">&lt;返回类型&gt;&lt;函数名&gt;(參数表)</div><div class="line">&#123;</div><div class="line">    函数体</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">template&lt;typename（或class) T&gt;</div><div class="line">T fuc(T x, T y)</div><div class="line">&#123;</div><div class="line">    T x;</div><div class="line">    //……</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>模板函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">double d;</div><div class="line">    int a;</div><div class="line">    fuc(d,a);</div><div class="line">则系统将用实參d的数据类型double去取代函数模板中的T生成函数：</div><div class="line"></div><div class="line">double fuc(double x,int y)</div><div class="line">&#123;</div><div class="line">   double x;</div><div class="line">   //……</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>模板函数的生成就是将函数模板的类型形參实例化的过程。</p>
+</li>
+</ol>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>  队列的一种有效表示方法是用数组，把他看成环形结构</p>
+<ul>
+<li>判断队列为空  rear == front</li>
+<li>队尾插入操作  rear = (++rear)%MaxSize</li>
+</ul>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ol>
+<li><p>引理</p>
+<ul>
+<li><p>一棵二叉树第i层上最多结点个数为2<sup>i-1</sup>, 一个深度为k的二叉树最多节点数为2<sup>k</sup>-1</p>
+<p>n个节点的完全二叉树可以存放在一维数组tree[n+1]中</p>
+</li>
+<li>任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有：<ol>
+<li>当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent</li>
+<li>当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子</li>
+<li>当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>二叉搜索树</strong></p>
+<p>特征</p>
+<ol>
+<li>每个元素都有一个键值，并且没有两个元素键值相同</li>
+<li>左子树的键值(如果有的话)都小于树根的键值</li>
+<li>右子树的键值(如果有的话)都大于树根的键值</li>
+<li>左右子树也都是二叉搜索树</li>
+</ol>
+</li>
+<li><p>堆(Heap)</p>
+<ol>
+<li>堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt;  依次递增（减）</li>
+<li>堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序</li>
+</ol>
+</li>
+<li><p>集合与 <strong>不相交</strong> 集合的并集</p>
+<ol>
+<li>用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上</li>
+<li>为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( <strong>不相交</strong>)</li>
+<li>忽略集合的名字并且用表示集合的树的树根来标志该集合</li>
+<li><em>权重规则</em> ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点</li>
+<li><em>收缩规则</em> ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]<br>—–&gt; p[j]及路径上所有节点的父节点置为root[i]</li>
+</ol>
+</li>
+<li><p>图</p>
+<ol>
+<li>图的定义和特点<ol>
+<li>欧拉定义定点的度等于与他相接的边的条数</li>
+</ol>
+<ul>
+<li>对于有向图来说：V的入/出度是以v为头/尾的所有边的条数</li>
+</ul>
+<ol>
+<li>当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 <strong>欧拉路径</strong></li>
+<li>我们通常用G=(V, E)来表示一个图</li>
+</ol>
+<ul>
+<li>V 是有穷非空的定点的集合</li>
+<li>E 是顶点对称的集合，又被称为边</li>
+<li>无向图中任意边的顶点对都是无序的 (u, v)</li>
+<li>有向图中任意边的顶点对都是有序的 <u, v="">， u是头，v是尾</u,></li>
+</ul>
+<ol>
+<li>图不能包含定点v到自己的边。这样的边被称为自边或者自环</li>
+<li>图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图</li>
+</ol>
+<ul>
+<li>任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的</li>
+<li>任意包含n个顶点的有向图的最大边数为 n(n-1)</li>
+</ul>
+<ol>
+<li>路径的长度就是其中的边数</li>
+<li>简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同）</li>
+<li>环： 第一个和最后一个相同的路径</li>
+</ol>
+</li>
+<li>图的表示<ol>
+<li>邻接矩阵</li>
+</ol>
+<ul>
+<li>邻接矩阵是一个n*n的矩阵</li>
+<li>若存在边(i, j)，则a[i, j] = 1,其他的等于0</li>
+<li>无向图的邻接矩阵是对称的</li>
+<li>无向图上的顶点i其度数等于它对应的行之和</li>
+<li>有向图上行之和是出度，列之和是入度</li>
+</ul>
+<ol>
+<li>邻接表<br><img src="/image/linjiebiao.jpg" alt="邻接表"></li>
+<li>邻接多重表</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/06/TheCollectOfReading/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,182 +624,6 @@
           
             <h2 id="计算机类"><a href="#计算机类" class="headerlink" title="计算机类"></a>计算机类</h2><ol>
 <li>计算机算法(C++语言描述) 第二版</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/processCom/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/01/processCom/" itemprop="url">进程间通信</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T22:11:07+08:00">
-                2018-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/01/processCom/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/01/processCom/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>信号</p>
-<ul>
-<li>由于某些错误而产生的事件</li>
-<li>可以设定信号触发之后的处理方式，但信号是系统已经确定的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">void (*signals(int signum, void(*hangdler)(int)))(int);</div><div class="line">int sigaction(int signum, const struct sigaction * act, struct sigaction * addr)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>管道和命名管道<br><strong>实质是先进先出，半双工的数据结构，双方通信需要两个管道</strong></p>
-<ul>
-<li>管道：只能用于相互关联的进程间通信，如：父子进程</li>
-<li>命名管道： = 特殊文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkfifo(const char * pathname, mode_t mode); //建立管道文件</div><div class="line">read() write() close() 均可操作</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>信号量<br>主要用于控制多个线程对临界区资源的访问</p>
-</li>
-<li><p>消息队列<br>将消息按队列方式组成的链表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int msgget(key_t key, int msgflg);</div><div class="line">int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);</div><div class="line">int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);</div><div class="line">int msgctl(int msgid, int cmd, struct msgid_ds *buf);</div></pre></td></tr></table></figure>
-</li>
-<li><p>共享内存<br>直接操作内存，不用复制文件 <strong>系统创建的特殊地址空间，允许多个不相关的进程使用</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int shmget(key_t key, int shmflg);</div><div class="line">int shmat(int shmid, const void * shmaddr, int shmflg);</div><div class="line">int shmdt(const void * shmaddr);</div><div class="line">int shmctl(int shmid, int cmd, struct shmid_ds *buf);</div></pre></td></tr></table></figure>
-</li>
 </ol>
 
           
@@ -766,6 +852,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/processCom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/01/processCom/" itemprop="url">进程间通信</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T22:11:07+08:00">
+                2018-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/01/processCom/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/01/processCom/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>信号</p>
+<ul>
+<li>由于某些错误而产生的事件</li>
+<li>可以设定信号触发之后的处理方式，但信号是系统已经确定的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">void (*signals(int signum, void(*hangdler)(int)))(int);</div><div class="line">int sigaction(int signum, const struct sigaction * act, struct sigaction * addr)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>管道和命名管道<br><strong>实质是先进先出，半双工的数据结构，双方通信需要两个管道</strong></p>
+<ul>
+<li>管道：只能用于相互关联的进程间通信，如：父子进程</li>
+<li>命名管道： = 特殊文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkfifo(const char * pathname, mode_t mode); //建立管道文件</div><div class="line">read() write() close() 均可操作</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>信号量<br>主要用于控制多个线程对临界区资源的访问</p>
+</li>
+<li><p>消息队列<br>将消息按队列方式组成的链表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int msgget(key_t key, int msgflg);</div><div class="line">int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);</div><div class="line">int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);</div><div class="line">int msgctl(int msgid, int cmd, struct msgid_ds *buf);</div></pre></td></tr></table></figure>
+</li>
+<li><p>共享内存<br>直接操作内存，不用复制文件 <strong>系统创建的特殊地址空间，允许多个不相关的进程使用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int shmget(key_t key, int shmflg);</div><div class="line">int shmat(int shmid, const void * shmaddr, int shmflg);</div><div class="line">int shmdt(const void * shmaddr);</div><div class="line">int shmctl(int shmid, int cmd, struct shmid_ds *buf);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/DOBeforeShutdownInLinux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -881,215 +1143,6 @@
 </li>
 <li><p>创建关机和重启软连接</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc0.d/K99shutdownbefore</div><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc6.d/K99shutdownbefore</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/a_bigHole_ofC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/24/a_bigHole_ofC/" itemprop="url">C语言大坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-24T12:10:48+08:00">
-                2018-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/24/a_bigHole_ofC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/24/a_bigHole_ofC/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h2><ol>
-<li><p>单引号表示表示整数值</p>
-<ul>
-<li>双引号表示字符串首的地址</li>
-<li>以0开头的整数默认为八进制</li>
-<li>注意使用移位运算加快程序执行速度</li>
-<li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li>
-<li>a[i] = i[a]</li>
-<li>C语言的不对称边界</li>
-<li>errno 外部出错变量，可以检测出错信息</li>
-<li>break 跳出离他最近的那层循环或switch</li>
-<li>C 语言不能省略形参，即使不使用</li>
-</ul>
-</li>
-<li><p>C语言的数据存储空间</p>
-<ul>
-<li>程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆）</li>
-<li>局部变量在return之后出栈销毁，不要尝试返回局部指针地址</li>
-<li>堆  申请、释放原则 <strong>哪儿申请哪儿释放</strong><br> 记得判断 堆 申请成功与否</li>
-</ul>
-</li>
-<li><p>一个程序将操作系统分配给其运行的内存块分为4个区域：<br>　　(1)代码区，存放程序的代码，即程序中的各个函数代码块。<br>　　(2)全局数据区，存放程序的全局数据和静态数据。<br>　　(3)堆区，存放程序的动态数据。<br>　　(4)栈区，存放程序的局部数据，即各个函数中的数据。</p>
-</li>
-<li><p>强制类型转换</p>
-</li>
-</ol>
-<ul>
-<li>占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同</li>
-<li>占用空间小的转化为占用空间大的： 考虑内存越界访问</li>
-<li>结构体强制转换             ： 考虑字节对齐</li>
-</ul>
-<ol>
-<li>字符串</li>
-</ol>
-<ul>
-<li>通过索引读取字符串时，一定要判断索引的正确性</li>
-</ul>
-<ol>
-<li>多线程编程</li>
-</ol>
-<ul>
-<li>互斥量用来对临界区的互斥进入</li>
-<li>条件变量用于线程的阻塞等待</li>
-</ul>
-<ol>
-<li><p>指针</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int * p = NULL;</div><div class="line"></div><div class="line">&amp;p 表示p的地址</div><div class="line">p 表示变量p的内容</div><div class="line">*p 表示p指向的存储单元的内容</div></pre></td></tr></table></figure>
-<ul>
-<li><strong>数字0是唯一能输给指针的数值</strong>(相当于NULL)  </li>
-<li>void * :指向任何类型的指针</li>
-<li><strong>注意深复制和浅复制的区别</strong><h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int *p, *q;</div><div class="line">*p = 58;</div><div class="line">q = p;        // q 和 P 指向同一内存单元</div><div class="line">free(q);</div><div class="line">printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>动态变量</p>
-<p>在程序运行过程中产生的变量称为动态变量</p>
-<ul>
-<li><p>创建</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int * p; char *q;</div><div class="line">p = new int;  // 在内存中创建一个变量，存储所分配的内存地址到p中</div><div class="line">q = new char[19];   // 在内存中创建一个数组，并将数组地址存储到q中</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*p = 28;</div><div class="line">*q = &quot;hello&quot;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>销毁</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete p;</div><div class="line">delete [] q;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>动态数组</p>
-<ul>
-<li><p>创建</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int *p;</div><div class="line">p = new int[10];</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* p = 25;   //25存到第一个存储空间里  = p[0] = 25；</div><div class="line">p ++;</div><div class="line">* p = 35;   //35存到第二个存储空间里  = p[1] = 35；</div></pre></td></tr></table></figure>
-</li>
-</ul>
 </li>
 </ol>
 

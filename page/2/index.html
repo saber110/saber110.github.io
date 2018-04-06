@@ -256,6 +256,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/a_bigHole_ofC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/24/a_bigHole_ofC/" itemprop="url">C语言大坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-24T12:10:48+08:00">
+                2018-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/24/a_bigHole_ofC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/24/a_bigHole_ofC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h2><ol>
+<li><p>单引号表示表示整数值</p>
+<ul>
+<li>双引号表示字符串首的地址</li>
+<li>以0开头的整数默认为八进制</li>
+<li>注意使用移位运算加快程序执行速度</li>
+<li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li>
+<li>a[i] = i[a]</li>
+<li>C语言的不对称边界</li>
+<li>errno 外部出错变量，可以检测出错信息</li>
+<li>break 跳出离他最近的那层循环或switch</li>
+<li>C 语言不能省略形参，即使不使用</li>
+</ul>
+</li>
+<li><p>C语言的数据存储空间</p>
+<ul>
+<li>程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆）</li>
+<li>局部变量在return之后出栈销毁，不要尝试返回局部指针地址</li>
+<li>堆  申请、释放原则 <strong>哪儿申请哪儿释放</strong><br> 记得判断 堆 申请成功与否</li>
+</ul>
+</li>
+<li><p>一个程序将操作系统分配给其运行的内存块分为4个区域：<br>　　(1)代码区，存放程序的代码，即程序中的各个函数代码块。<br>　　(2)全局数据区，存放程序的全局数据和静态数据。<br>　　(3)堆区，存放程序的动态数据。<br>　　(4)栈区，存放程序的局部数据，即各个函数中的数据。</p>
+</li>
+<li><p>强制类型转换</p>
+</li>
+</ol>
+<ul>
+<li>占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同</li>
+<li>占用空间小的转化为占用空间大的： 考虑内存越界访问</li>
+<li>结构体强制转换             ： 考虑字节对齐</li>
+</ul>
+<ol>
+<li>字符串</li>
+</ol>
+<ul>
+<li>通过索引读取字符串时，一定要判断索引的正确性</li>
+</ul>
+<ol>
+<li>多线程编程</li>
+</ol>
+<ul>
+<li>互斥量用来对临界区的互斥进入</li>
+<li>条件变量用于线程的阻塞等待</li>
+</ul>
+<ol>
+<li><p>指针</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int * p = NULL;</div><div class="line"></div><div class="line">&amp;p 表示p的地址</div><div class="line">p 表示变量p的内容</div><div class="line">*p 表示p指向的存储单元的内容</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>数字0是唯一能输给指针的数值</strong>(相当于NULL)  </li>
+<li>void * :指向任何类型的指针</li>
+<li><strong>注意深复制和浅复制的区别</strong><h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int *p, *q;</div><div class="line">*p = 58;</div><div class="line">q = p;        // q 和 P 指向同一内存单元</div><div class="line">free(q);</div><div class="line">printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>动态变量</p>
+<p>在程序运行过程中产生的变量称为动态变量</p>
+<ul>
+<li><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int * p; char *q;</div><div class="line">p = new int;  // 在内存中创建一个变量，存储所分配的内存地址到p中</div><div class="line">q = new char[19];   // 在内存中创建一个数组，并将数组地址存储到q中</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*p = 28;</div><div class="line">*q = &quot;hello&quot;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>销毁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete p;</div><div class="line">delete [] q;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>动态数组</p>
+<ul>
+<li><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int *p;</div><div class="line">p = new int[10];</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* p = 25;   //25存到第一个存储空间里  = p[0] = 25；</div><div class="line">p ++;</div><div class="line">* p = 35;   //35存到第二个存储空间里  = p[1] = 35；</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/sizeofstrlen/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -801,169 +1010,6 @@
             <h2 id="加载服务器组件"><a href="#加载服务器组件" class="headerlink" title="加载服务器组件"></a>加载服务器组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a2enmod headers</div></pre></td></tr></table></figure>
 <h2 id="修改服务器配置"><a href="#修改服务器配置" class="headerlink" title="修改服务器配置"></a>修改服务器配置</h2><p>  在想要可以跨域访问的目录下<br>  <directory ****=""><br>    Header set Access-Control-Allow-Origin *<br>  </directory></p>
 <h2 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service apache2 restart</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/qtPainting/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/13/qtPainting/" itemprop="url">qt画图</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T11:06:57+08:00">
-                2017-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt/" itemprop="url" rel="index">
-                    <span itemprop="name">Qt</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/13/qtPainting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/13/qtPainting/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="QcustomPlot"><a href="#QcustomPlot" class="headerlink" title="QcustomPlot"></a>QcustomPlot</h2><ol>
-<li><p>下载</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.qcustomplot.com</div></pre></td></tr></table></figure>
-</li>
-<li><p>把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可</p>
-</li>
-<li>pro文件中QT += widgets printsupport</li>
-<li><p>使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">QVector x(101), y(101); // initialize with entries 0..100</div><div class="line">for (int i=0; i&lt;101; ++i)</div><div class="line">&#123;</div><div class="line">x[i] = i/50.0 – 1; // x goes from -1 to 1</div><div class="line">y[i] = x[i]*x[i]; // let’s plot a quadratic function</div><div class="line">&#125;</div><div class="line">qDebug()&lt;&lt;“data has been created”;</div><div class="line">ui-&gt;black_line-&gt;addGraph();</div><div class="line">qDebug()&lt;&lt;“begin painting”;</div><div class="line">ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);</div><div class="line">ui-&gt;black_line-&gt;replot();</div><div class="line">qDebug()&lt;&lt;“finish”;</div></pre></td></tr></table></figure>
-</li>
-</ol>
 
           
         
