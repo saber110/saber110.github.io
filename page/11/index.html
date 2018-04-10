@@ -256,6 +256,450 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/17/file/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/17/file/" itemprop="url">文件操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-17T00:59:20+08:00">
+                2016-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/17/file/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/17/file/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>代码：https://github.com/saber110/C_review
+</code></pre><h1 id="操作函数"><a href="#操作函数" class="headerlink" title="操作函数"></a>操作函数</h1><ol>
+<li><p>fopen(filename,method)</p>
+<p>method:r,w,a,rb,wb,ab,r+,w+,a+,rb+,wb+,ab+</p>
+<p>eg: if((fp = fopen(filename,”w”))==NULL)//判断是否打开成功</p><p></p>
+</li>
+<li><p>fclose(filepointer)</p>
+<p><strong>return:</strong> <em>success</em> : 0,<em>fail</em> : EOF(即-1)</p>
+</li>
+<li><p>ch = fgetc(fp)</p>
+<p><strong>return</strong> :  <em>fail</em> : EOF</p>
+</li>
+<li><p>fputc(ch,fp)</p>
+<p><strong>return</strong> :  <em>fail</em> : EOF</p>
+</li>
+<li><p>fof(fp)</p>
+<p><strong>return</strong> : 文件结尾时返回0</p>
+</li>
+<li><p>fgets(str,n,fp)</p>
+<p>remark :  从fp读入一个长度为n-1的字符串并存放到str</p>
+<p><strong>return :</strong> <em>success :</em> str地址   <em>fail :</em> NULL</p>
+</li>
+<li><p>fputs(str,fp)</p>
+<p>remark : 把str的内容读到fp指向的文件</p>
+<p><strong>return :</strong> <em>success</em> : 0,<em>fail</em> : !0</p>
+</li>
+<li><p>fread(buffer, size, count, fp)</p>
+<p>fwrite(buffer, size, count, fp)</p>
+<p><strong>remark :</strong></p>
+<pre><code>buffer : 要读入或输出的数据的地址
+ size : 要读写的字节书
+ count : 要读写的数据项个数(每个数据项的长度为size)
+</code></pre><p><strong>return :</strong> <em>success :</em> 1</p>
+</li>
+<li><p>rewind(fp)</p>
+<p><strong>remark  :</strong> 将指针位置返回到开头，无返回值</p>
+</li>
+<li><p>fseek(fp,offset,type)</p>
+<p>para : type : 0—文件开始位置，1—当前位置，2—文件结束位置</p>
+</li>
+</ol>
+<h2 id="出错检测"><a href="#出错检测" class="headerlink" title="出错检测"></a>出错检测</h2><ol>
+<li><p>ferror(fp)</p>
+<p><strong>return :</strong> 未出错为0，出错不为0</p>
+<p></p><p><em>一定要调用clearerr(fp)清掉报错</em></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/pointer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu haobin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saber110">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/14/pointer/" itemprop="url">指针</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T20:58:00+08:00">
+                2016-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/14/pointer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/14/pointer/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>代码：https://github.com/saber110/C_review
+`&lt;/pre&gt;
+
+# 初始化
+
+’*‘ 表示对应地址的内容
+
+&lt;pre&gt;` 指针变量名表示地址
+`&lt;/pre&gt;
+
+### 指针变量中只能存放地址
+
+指针在初始化值的时候，一定要用变量的地址，在初始化完成之后可以不用地址改变指针的值
+
+&lt;pre&gt;`int a = 200,* pointer;
+pointer = a;
+`&lt;/pre&gt;
+
+**这是不合法的**
+
+&lt;pre&gt;`int a = 200,* pointer;
+*pointer = a;//未进行初始化，存储单元无法预测
+`&lt;/pre&gt;
+
+**这也是不合法的**
+
+&lt;pre&gt;`int a = 200,* pointer;
+pointer = &amp;amp;a;
+`&lt;/pre&gt;
+
+**这也是合法的**
+
+&lt;pre&gt;`int a = 200,* pointer;
+pointer = &amp;amp;a;
+*pointer = a;//等价于pointer = &amp;amp;a;
+`&lt;/pre&gt;
+
+**迷之合法**
+
+综上，数组初始化只能有
+
+&lt;pre&gt;`int *pointer = &amp;amp;a;
+或者
+int * pointer;
+pointer = &amp;amp;a;
+`&lt;/pre&gt;
+
+**两种方法**
+
+# 参数传递
+</code></pre><ol>
+<li>不能通过改变指针形参的值而企图使指针实参的值发生改变（C语言在函数调用时只能<strong>单向值传递</strong>）</li>
+<li>数组/指针作为形参时，传递的是对应的地址，改变形参的值<strong>可以改变</strong>实参</li>
+<li>调用函数时形参指向实参，实际上指向同一个内存单元</li>
+<li><p>如果用指针变量作为实参，指针变量必须要有具体的值，即必须<strong>指向对应已定义的对象</strong></p>
+<p><strong>REMARK：</strong> 最重要的是可以改变指针的指向地址啊！！！！</p>
+<h1 id="通过指针引用数组"><a href="#通过指针引用数组" class="headerlink" title="通过指针引用数组"></a>通过指针引用数组</h1><pre>`若p-&gt;a[0],则++p-&gt;a[1]
+若p-&gt;&amp;a[0]，则++p-&gt;&amp;a[1]
+p1,p2指向同一个数组时，p2-p1表示相差元素的个数
+
+a[i] = *(a+i)
+&amp;a[i] = &amp;(a+i)
+`</pre>
+
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><pre>`int a[10];
+1\. *a代表a[0]的内容即a[0]
+2\.   a代表a[0]的地址即&amp;a[0]
+3\.   *(a + 1) 代表a[i]的内容
+`</pre>
+
+<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><pre>`int a[10][10];
+1\. *a代表a[0][0]的内容即a[0][0]
+2\.   a代表a[0][0]的地址即&amp;a[0][0]
+3\.   *(a + 1) 代表a[i]         行            的地址
+4\.   *(a + 1) +1代表a[1][1]的地址，即&amp;a[1][1]
+5\.   *(*(a + 1) +1)代表a[1][1]的内容,即a[1][1]
+`</pre>
+
+<h1 id="字符指针"><a href="#字符指针" class="headerlink" title="字符指针"></a>字符指针</h1><pre>`char *a;
+scanf("%d\n",a);
+
+坚决不能使用上面这种，a的指向地址无法预测，可能会修改系统中敏感位置的值
+
+char *a,arr[10];
+a=arr;
+scanf("%d\n",a);
+
+正确用法
+`</pre>
+
+<h1 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h1><p><pre>`int (<em>p)(int x,int y);//指向返回值位int的函数指针<br>int </em> p(int x,int y) = int * (p(int x,int y))//返回值为指针的函数</pre></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/various/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -866,423 +1310,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/10/font-spider/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/10/font-spider/" itemprop="url">使用 字蛛 压缩字体文件实现网站加速</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T01:19:32+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网站/" itemprop="url" rel="index">
-                    <span itemprop="name">网站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/10/font-spider/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/10/font-spider/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="这是一个神奇的东西"><a href="#这是一个神奇的东西" class="headerlink" title="这是一个神奇的东西"></a>这是一个神奇的<a href="http://font-spider.org/" target="_blank" rel="external">东西</a></h1><p>个人开发的时候使用了<strong>艺术字体</strong>，由于谷歌和微软等巨头没有收录,为了缩短服务加载时间，本人找到两种方法<br>1. <strong> cdn加速</strong>，腾讯云目前进行免费cdn加速服务，但是由于使用的域名没有进行备案，所以 <del>pass</del><br>2.  <strong>使用字蛛</strong> 压缩所使用的字体文件</p>
-<h2 id="下面是坑"><a href="#下面是坑" class="headerlink" title="下面是坑"></a>下面是坑</h2><pre><code>@font-face {
-    font-family: &apos;xixinkaijian&apos;;
-    src:url(&apos;../fonts/xixinkaijian.eot&apos;);
-    src:
-        url(&apos;../fonts/xixinkaijian.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;),
-        url(&apos;../fonts/xixinkaijian.woff&apos;) format(&apos;woff&apos;),
-        url(&apos;../fonts/xixinkaijian.ttf&apos;) format(&apos;truetype&apos;),
-        url(&apos;../fonts/xixinkaijian.svg&apos;) format(&apos;svg&apos;);
-    font-weight: normal;
-    font-style: normal;
-}
-`&lt;/pre&gt;
-
-&lt;pre&gt;`@font-face {
-    font-family: &apos;hycgj&apos;;
-    src:url(&apos;../fonts/hycgj.eot&apos;);
-    src:
-        url(&apos;../fonts/hycgj.ttf&apos;) format(&apos;truetype&apos;),
-        url(&apos;../fonts/hycgj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;),
-        url(&apos;../fonts/hycgj.woff&apos;) format(&apos;woff&apos;),
-        url(&apos;../fonts/hycgj.svg&apos;) format(&apos;svg&apos;);
-    font-weight: normal;
-    font-style: normal;
-}
-`&lt;/pre&gt;
-
-&lt;pre&gt;`@font-face {
-    font-family: &apos;hyngj&apos;;
-    src:url(&apos;../fonts/hyngj.eot&apos;);
-    src:
-        url(&apos;../fonts/hyngj.ttf&apos;) format(&apos;truetype&apos;),
-        url(&apos;../fonts/hyngj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;),
-        url(&apos;../fonts/hyngj.woff&apos;) format(&apos;woff&apos;),
-        url(&apos;../fonts/hyngj.svg&apos;) format(&apos;svg&apos;);
-    font-weight: normal;
-    font-style: normal;
-}
-`&lt;/pre&gt;
-
-#此处需注意font_1前面没有像平常引用地址的**小数点**
-
-&lt;pre&gt;`font_1 p {
-    font-family: &apos;xixinkaijian&apos;;
-}
-`&lt;/pre&gt;
-
-&lt;pre&gt;`font_2 p {
-    font-family: &apos;hycgj&apos;;
-}
-`&lt;/pre&gt;
-
-&lt;pre&gt;`font_3 p {
-    font-family: &apos;hyngj&apos;;
-}
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/09/remote-lock/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hu haobin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img02.fs.yiban.cn/7041045/avatar/user/200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saber110">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/09/remote-lock/" itemprop="url">智能指纹门锁开发</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-09T01:38:32+08:00">
-                2016-11-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/09/remote-lock/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/09/remote-lock/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><span style="color: #0000ff;">专业开挂二十年</span></p>
-<ul>
-<li><h2 id="需求起源"><a href="#需求起源" class="headerlink" title="需求起源"></a>需求起源</h2></li>
-<li><p>由于本人所在学校组织成员较多，然后钥匙管理就成了一个很大的问题，基本上会很频繁的发生钥匙找不到啊、钥匙被锁在办公室里面了啊等多种事情，所以萌发了这个念头。</p>
-</li>
-<li><h2 id="动力"><a href="#动力" class="headerlink" title="动力"></a><strong>动力</strong></h2></li>
-<li><p>正好借着<a href="https://segmentfault.com/e/1160000007129021" target="_blank" rel="external">武汉黑客马拉松</a>的借口，然后跟着我们<a href="http://www.yunlugu.org" target="_blank" rel="external">云麓谷</a>大佬的脚步一起去混了次比赛，当时大佬就说咱们做这个智能门锁吧。本着为组织服务，提升自身逼格的理念我们就开搞了。</p>
-</li>
-<li><h2 id="艰辛的通信之路"><a href="#艰辛的通信之路" class="headerlink" title="艰辛的通信之路"></a>艰辛的通信之路</h2></li>
-<li><p>本人在团队中充当一个硬件开发（划水）的角色，为了开发方便就直接选用了某宝的自动指纹对比模块—–PS1802指纹识别模块，树莓派开发板—–Raspberry Pi B+，usb转TTL—–CH340以及杜邦线若干。</p>
-<hr>
-</li>
-<li><p>跟据千古不变的硬件开发理念，拿到东西首先测试是否完好、功能是否异常、外观是否破损、有没有送女朋友之类的。所以诞生了如下步骤：</p>
-<hr>
-</li>
-</ul>
-<ol>
-<li>检查硬件连接以及货物清单。</li>
-<li>用usb转TTL工具连接指纹模块和电脑，用老板发我的<a href="../../../../../attach/shangweiji.rar">上位机</a>进行测试，目测一切正常。（硬件测试方法和上位机试用方法都在链接里）。</li>
-<li>既然确保硬件没问题了就可以开始开发了，选用C语言进行硬件底层开发，php调用C的接口实现高级开发和管理 。硬件使用<a href="http://baike.baidu.com/link?url=GkOWtTkykzGz5rK1i4ywo3RWE2hYVkAjVs35XM8j6nikRxQsDUZXoGXoqIpUn1MMYNyK6XM2BZpIrT9birzF_a" target="_blank" rel="external">UART[通用异步收发传输器]</a>进行树莓派和指纹模块之间的通信</li>
-<li><p>首先设置模块的通信速率为115200，加快系统响应。其次给树莓派安装<a href="http://wiringpi.com/" target="_blank" rel="external">wiringpi</a>，然后开发的代码都在<a href="https://github.com/saber110/remote_lock" target="_blank" rel="external">此处</a>。</p>
-<hr>
-</li>
-</ol>
-<ul>
-<li><h3 id="接下来真正来通信（接下来说到的陌生的东西都在SendUART-c里）"><a href="#接下来真正来通信（接下来说到的陌生的东西都在SendUART-c里）" class="headerlink" title="接下来真正来通信（接下来说到的陌生的东西都在SendUART.c里）"></a>接下来真正来通信（接下来说到的陌生的东西都在SendUART.c里）</h3></li>
-<li><p>树莓派的官方库是不支持直接发十六进制的东西的，但是指纹模块的命令必须是十六进制才能响应。</p>
-</li>
-<li><strong>讲默认发送的ascii转为十六进制ASCI_16()</strong></li>
-<li>很快就出现了新的问题，用这种方法发送的数据总是单个单个发出去 然后前面以0补足缺的位，所以还是不能成功的控制树莓派。</li>
-<li><strong>所以就催生了implode()</strong></li>
-<li>经过这样的折腾总算是能单向操作树莓派了，但是要接受树莓派回过来的消息并且确定其工作状态是一件很不容易的事情呐，由于不太熟悉wiringpi库的试用，我就分为几种接收长度的情况进行命令和数据接收（指纹模块回的指令分为命令应答、数据应答和普通应答，他们的长度不一），跟据不同的数据长度进行读取数据并且存入数组一并返回</li>
-<li><p>C语言涉及到的差不多就是这些了，试用之前一定记得在树莓派上编译哦</p>
-<p>sudo gcc SendUART.c -o SendUART -lwiringPi<br>sudo gcc close.c -o close -lwiringPi</p>
-</li>
-<li><p>close文件是在长期加载失败之后手工关掉树莓派的uart设备的。</p>
-<hr>
-</li>
-<li><h2 id="PHP篇"><a href="#PHP篇" class="headerlink" title="PHP篇"></a>PHP篇</h2></li>
-<li><p>C语言写完接口之后为了更方便的给大家使用继而写了php的接口，顺便加进去了状态码用于判断指纹模块响应的正误——–本人做的工作到此结束</p>
-</li>
-<li>如果大家调用了什么不该调用的接口或者自己开发接口的时候碰到死活执行不完的情况那么请大家重启Apache</li>
-<li><p><code>sudo service apache2 restart</code></p>
-<hr>
-</li>
-<li><h2 id="接下来是胡扯"><a href="#接下来是胡扯" class="headerlink" title="接下来是胡扯"></a>接下来是胡扯</h2></li>
-<li><p>搭完硬件和部署完我们的代码之后就可以在浏览器上访问<strong>树莓派的ip</strong>加我们的访问链接进行控制。</p>
-</li>
-<li>这只是一个小小的开头，现在只是局域网控制，到后面可以抽时间做一下<strong>内网穿透</strong>，然后和已有的员工信息库绑定进行更强大更智能的开发工作。</li>
-<li>要不就先更到这儿吧</li>
-<li><h1 id="此处是代码"><a href="#此处是代码" class="headerlink" title="此处是代码"></a><a href="https://github.com/saber110/remote_lock" target="_blank" rel="external">此处是代码</a></h1></li>
-</ul>
-<p>*</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1331,7 +1363,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">71</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1353,7 +1385,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
