@@ -5,9 +5,9 @@
   <subtitle>越努力,越幸运</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://blog.huhaobin.cn/"/>
   <updated>2018-04-11T11:01:12.745Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://blog.huhaobin.cn/</id>
   
   <author>
     <name>Hu haobin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>hexo个人博客的美化</title>
-    <link href="http://yoursite.com/2018/04/11/ButifyBlog/"/>
-    <id>http://yoursite.com/2018/04/11/ButifyBlog/</id>
+    <link href="http://blog.huhaobin.cn/2018/04/11/ButifyBlog/"/>
+    <id>http://blog.huhaobin.cn/2018/04/11/ButifyBlog/</id>
     <published>2018-04-10T16:00:00.000Z</published>
     <updated>2018-04-11T11:01:12.745Z</updated>
     
@@ -37,17 +37,17 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://blog.huhaobin.cn/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://blog.huhaobin.cn/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>ssh反向代理进行内网穿透</title>
-    <link href="http://yoursite.com/2018/04/10/SSHReverseproxy/"/>
-    <id>http://yoursite.com/2018/04/10/SSHReverseproxy/</id>
+    <link href="http://blog.huhaobin.cn/2018/04/10/SSHReverseproxy/"/>
+    <id>http://blog.huhaobin.cn/2018/04/10/SSHReverseproxy/</id>
     <published>2018-04-09T18:00:55.000Z</published>
     <updated>2018-04-10T03:26:28.897Z</updated>
     
@@ -64,17 +64,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
     
     
-      <category term="反向代理" scheme="http://yoursite.com/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+      <category term="反向代理" scheme="http://blog.huhaobin.cn/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>计算机算法 C++描述 第二章</title>
-    <link href="http://yoursite.com/2018/04/07/CA2/"/>
-    <id>http://yoursite.com/2018/04/07/CA2/</id>
+    <link href="http://blog.huhaobin.cn/2018/04/07/CA2/"/>
+    <id>http://blog.huhaobin.cn/2018/04/07/CA2/</id>
     <published>2018-04-07T14:11:07.000Z</published>
     <updated>2018-04-07T12:15:13.732Z</updated>
     
@@ -90,17 +90,17 @@
     
     </summary>
     
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="计算机算法" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>分治策略</title>
-    <link href="http://yoursite.com/2018/04/07/CA3/"/>
-    <id>http://yoursite.com/2018/04/07/CA3/</id>
+    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
+    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
     <published>2018-04-07T14:11:07.000Z</published>
     <updated>2018-04-09T08:46:58.957Z</updated>
     
@@ -115,17 +115,17 @@
     
     </summary>
     
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="计算机算法" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>读书记录</title>
-    <link href="http://yoursite.com/2018/04/06/TheCollectOfReading/"/>
-    <id>http://yoursite.com/2018/04/06/TheCollectOfReading/</id>
+    <link href="http://blog.huhaobin.cn/2018/04/06/TheCollectOfReading/"/>
+    <id>http://blog.huhaobin.cn/2018/04/06/TheCollectOfReading/</id>
     <published>2018-04-06T12:45:12.000Z</published>
     <updated>2018-04-06T07:04:44.214Z</updated>
     
@@ -143,15 +143,15 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://blog.huhaobin.cn/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>进程间通信</title>
-    <link href="http://yoursite.com/2018/04/01/processCom/"/>
-    <id>http://yoursite.com/2018/04/01/processCom/</id>
+    <link href="http://blog.huhaobin.cn/2018/04/01/processCom/"/>
+    <id>http://blog.huhaobin.cn/2018/04/01/processCom/</id>
     <published>2018-04-01T14:11:07.000Z</published>
     <updated>2018-03-31T07:45:41.704Z</updated>
     
@@ -170,17 +170,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>编程珠玑</title>
-    <link href="http://yoursite.com/2018/04/01/ProgrammingPearlsKnown/"/>
-    <id>http://yoursite.com/2018/04/01/ProgrammingPearlsKnown/</id>
+    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
+    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
     <published>2018-04-01T14:11:07.000Z</published>
     <updated>2018-03-31T05:00:48.544Z</updated>
     
@@ -195,17 +195,17 @@
     
     </summary>
     
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>linux关机前执行脚本</title>
-    <link href="http://yoursite.com/2018/03/31/DOBeforeShutdownInLinux/"/>
-    <id>http://yoursite.com/2018/03/31/DOBeforeShutdownInLinux/</id>
+    <link href="http://blog.huhaobin.cn/2018/03/31/DOBeforeShutdownInLinux/"/>
+    <id>http://blog.huhaobin.cn/2018/03/31/DOBeforeShutdownInLinux/</id>
     <published>2018-03-31T14:11:07.000Z</published>
     <updated>2018-03-30T09:04:54.068Z</updated>
     
@@ -221,17 +221,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>C语言大坑</title>
-    <link href="http://yoursite.com/2018/03/24/a_bigHole_ofC/"/>
-    <id>http://yoursite.com/2018/03/24/a_bigHole_ofC/</id>
+    <link href="http://blog.huhaobin.cn/2018/03/24/a_bigHole_ofC/"/>
+    <id>http://blog.huhaobin.cn/2018/03/24/a_bigHole_ofC/</id>
     <published>2018-03-24T04:10:48.019Z</published>
     <updated>2018-03-24T04:10:48.019Z</updated>
     
@@ -254,8 +254,8 @@
   
   <entry>
     <title>sizeof与strlen的区别</title>
-    <link href="http://yoursite.com/2018/03/11/sizeofstrlen/"/>
-    <id>http://yoursite.com/2018/03/11/sizeofstrlen/</id>
+    <link href="http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/"/>
+    <id>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</id>
     <published>2018-03-11T07:47:26.000Z</published>
     <updated>2018-03-11T11:18:30.207Z</updated>
     
@@ -270,17 +270,17 @@
     
     </summary>
     
-      <category term="C" scheme="http://yoursite.com/categories/C/"/>
+      <category term="C" scheme="http://blog.huhaobin.cn/categories/C/"/>
     
     
-      <category term="C" scheme="http://yoursite.com/tags/C/"/>
+      <category term="C" scheme="http://blog.huhaobin.cn/tags/C/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2018/03/04/csu/"/>
-    <id>http://yoursite.com/2018/03/04/csu/</id>
+    <link href="http://blog.huhaobin.cn/2018/03/04/csu/"/>
+    <id>http://blog.huhaobin.cn/2018/03/04/csu/</id>
     <published>2018-03-04T05:31:56.863Z</published>
     <updated>2018-03-04T05:31:56.863Z</updated>
     
@@ -301,8 +301,8 @@
   
   <entry>
     <title>Qt mysql 数据库找不到</title>
-    <link href="http://yoursite.com/2018/03/04/Qt_mysqlDriver/"/>
-    <id>http://yoursite.com/2018/03/04/Qt_mysqlDriver/</id>
+    <link href="http://blog.huhaobin.cn/2018/03/04/Qt_mysqlDriver/"/>
+    <id>http://blog.huhaobin.cn/2018/03/04/Qt_mysqlDriver/</id>
     <published>2018-03-03T16:00:00.000Z</published>
     <updated>2018-03-04T05:30:32.226Z</updated>
     
@@ -317,17 +317,17 @@
     
     </summary>
     
-      <category term="qt" scheme="http://yoursite.com/categories/qt/"/>
+      <category term="qt" scheme="http://blog.huhaobin.cn/categories/qt/"/>
     
     
-      <category term="qt" scheme="http://yoursite.com/tags/qt/"/>
+      <category term="qt" scheme="http://blog.huhaobin.cn/tags/qt/"/>
     
   </entry>
   
   <entry>
     <title>apache2跨域</title>
-    <link href="http://yoursite.com/2017/12/15/apache2cors/"/>
-    <id>http://yoursite.com/2017/12/15/apache2cors/</id>
+    <link href="http://blog.huhaobin.cn/2017/12/15/apache2cors/"/>
+    <id>http://blog.huhaobin.cn/2017/12/15/apache2cors/</id>
     <published>2017-12-15T07:47:26.000Z</published>
     <updated>2017-12-27T03:00:55.537Z</updated>
     
@@ -342,17 +342,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>qt画图</title>
-    <link href="http://yoursite.com/2017/12/13/qtPainting/"/>
-    <id>http://yoursite.com/2017/12/13/qtPainting/</id>
+    <link href="http://blog.huhaobin.cn/2017/12/13/qtPainting/"/>
+    <id>http://blog.huhaobin.cn/2017/12/13/qtPainting/</id>
     <published>2017-12-13T03:06:57.278Z</published>
     <updated>2017-12-13T03:06:57.278Z</updated>
     
@@ -369,17 +369,17 @@
     
     </summary>
     
-      <category term="Qt" scheme="http://yoursite.com/categories/Qt/"/>
+      <category term="Qt" scheme="http://blog.huhaobin.cn/categories/Qt/"/>
     
     
-      <category term="上位机 Qt" scheme="http://yoursite.com/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA-Qt/"/>
+      <category term="上位机 Qt" scheme="http://blog.huhaobin.cn/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA-Qt/"/>
     
   </entry>
   
   <entry>
     <title>qt使用mysql</title>
-    <link href="http://yoursite.com/2017/12/13/qtmysql/"/>
-    <id>http://yoursite.com/2017/12/13/qtmysql/</id>
+    <link href="http://blog.huhaobin.cn/2017/12/13/qtmysql/"/>
+    <id>http://blog.huhaobin.cn/2017/12/13/qtmysql/</id>
     <published>2017-12-12T16:00:00.000Z</published>
     <updated>2017-12-13T03:22:01.514Z</updated>
     
@@ -394,17 +394,17 @@
     
     </summary>
     
-      <category term="Qt" scheme="http://yoursite.com/categories/Qt/"/>
+      <category term="Qt" scheme="http://blog.huhaobin.cn/categories/Qt/"/>
     
     
-      <category term="Qt" scheme="http://yoursite.com/tags/Qt/"/>
+      <category term="Qt" scheme="http://blog.huhaobin.cn/tags/Qt/"/>
     
   </entry>
   
   <entry>
     <title>卸载python安装的模块</title>
-    <link href="http://yoursite.com/2017/12/02/uinstallpythonmodules/"/>
-    <id>http://yoursite.com/2017/12/02/uinstallpythonmodules/</id>
+    <link href="http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/"/>
+    <id>http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/</id>
     <published>2017-12-01T16:00:00.000Z</published>
     <updated>2017-12-03T15:39:51.966Z</updated>
     
@@ -421,17 +421,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="http://blog.huhaobin.cn/categories/python/"/>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>zsh美化终端</title>
-    <link href="http://yoursite.com/2017/11/21/zsh/"/>
-    <id>http://yoursite.com/2017/11/21/zsh/</id>
+    <link href="http://blog.huhaobin.cn/2017/11/21/zsh/"/>
+    <id>http://blog.huhaobin.cn/2017/11/21/zsh/</id>
     <published>2017-11-21T07:00:00.000Z</published>
     <updated>2017-12-04T02:53:55.604Z</updated>
     
@@ -447,15 +447,15 @@
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
     
     
   </entry>
   
   <entry>
     <title>ubuntu16.04不能访除系统以外的硬盘</title>
-    <link href="http://yoursite.com/2017/11/16/ubuntu_can_not_use_harddrive/"/>
-    <id>http://yoursite.com/2017/11/16/ubuntu_can_not_use_harddrive/</id>
+    <link href="http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/"/>
+    <id>http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/</id>
     <published>2017-11-16T03:19:32.000Z</published>
     <updated>2017-11-17T05:14:33.442Z</updated>
     
@@ -470,17 +470,17 @@
     
     </summary>
     
-      <category term="ubuntu" scheme="http://yoursite.com/categories/ubuntu/"/>
+      <category term="ubuntu" scheme="http://blog.huhaobin.cn/categories/ubuntu/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>ubuntu16.04 安装websploit</title>
-    <link href="http://yoursite.com/2017/11/16/how_to_install_websploit_on_ubuntu/"/>
-    <id>http://yoursite.com/2017/11/16/how_to_install_websploit_on_ubuntu/</id>
+    <link href="http://blog.huhaobin.cn/2017/11/16/how_to_install_websploit_on_ubuntu/"/>
+    <id>http://blog.huhaobin.cn/2017/11/16/how_to_install_websploit_on_ubuntu/</id>
     <published>2017-11-15T17:19:32.000Z</published>
     <updated>2017-11-17T05:13:38.921Z</updated>
     
@@ -497,17 +497,17 @@
     
     </summary>
     
-      <category term="websploit" scheme="http://yoursite.com/categories/websploit/"/>
+      <category term="websploit" scheme="http://blog.huhaobin.cn/categories/websploit/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>ubuntu搭建交叉编译环境</title>
-    <link href="http://yoursite.com/2017/11/15/ubuntu-arm/"/>
-    <id>http://yoursite.com/2017/11/15/ubuntu-arm/</id>
+    <link href="http://blog.huhaobin.cn/2017/11/15/ubuntu-arm/"/>
+    <id>http://blog.huhaobin.cn/2017/11/15/ubuntu-arm/</id>
     <published>2017-11-15T00:52:24.162Z</published>
     <updated>2017-09-30T08:43:22.000Z</updated>
     
@@ -522,10 +522,10 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://yoursite.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="http://blog.huhaobin.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="交叉编译" scheme="http://yoursite.com/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
+      <category term="交叉编译" scheme="http://blog.huhaobin.cn/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
     
   </entry>
   
