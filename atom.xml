@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Saber110</title>
+  
+  <subtitle>越努力,越幸运</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-04-11T11:01:12.745Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Hu haobin</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo个人博客的美化</title>
+    <link href="http://yoursite.com/2018/04/11/ButifyBlog/"/>
+    <id>http://yoursite.com/2018/04/11/ButifyBlog/</id>
+    <published>2018-04-10T16:00:00.000Z</published>
+    <updated>2018-04-11T11:01:12.745Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>SEO<br>npm install hexo-generator-sitemap –save<br>npm install hexo-generator-baidu-sitemap –save</li></ol><p>在【站点配置文件】hexo_blog_config.yml 中添加如下代码。</p><h1 id="hexo-sitemap"><a href="#hexo-sitemap" class="headerlink" title="hexo sitemap"></a>hexo sitemap</h1><p>sitemap:<br>  path: sitemap.xml<br>baidusitemap:<br>  path: baidusitemap.xml</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;SEO&lt;br&gt;npm install hexo-generator-sitemap –save&lt;br&gt;npm install hexo-generator-baidu-sitemap –save&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在【站点配置文件】hexo_blog_
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh反向代理进行内网穿透</title>
+    <link href="http://yoursite.com/2018/04/10/SSHReverseproxy/"/>
+    <id>http://yoursite.com/2018/04/10/SSHReverseproxy/</id>
+    <published>2018-04-09T18:00:55.000Z</published>
+    <updated>2018-04-10T03:26:28.897Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="公网主机配置"><a href="#公网主机配置" class="headerlink" title="公网主机配置"></a>公网主机配置</h3><ol><li><p>修改sshd的配置文件，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/ssh/sshd_config</div></pre></td></tr></table></figure><p>在最后面添加GatewayPorts yes,重启sshd</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure><p><strong>作用：设置反向代理的ip是0.0.0.0，而不是127.0.0.1</strong></p><h3 id="内网主机配置"><a href="#内网主机配置" class="headerlink" title="内网主机配置"></a>内网主机配置</h3><p>命令格式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -NfR &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-N：ssh不执行命令</div><div class="line">-f：后台执行</div><div class="line">-R：反向代理</div></pre></td></tr></table></figure><p>查看是否启动，在公网主机上执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">netstat -tnl|grep &lt;公网端口&gt;</div><div class="line"></div><div class="line">tcp        0      0 0.0.0.0:&lt;公网端口&gt;            0.0.0.0:*               LISTEN</div><div class="line">tcp6       0      0 :::&lt;公网端口&gt;                 :::*                    LISTEN</div></pre></td></tr></table></figure><p>说明执行成功</p><h3 id="免密，稳定通道"><a href="#免密，稳定通道" class="headerlink" title="免密，稳定通道"></a>免密，稳定通道</h3></li><li><p>免密<br>在内网主机上执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-copy-id &lt;用户名&gt;@公网主机ip</div></pre></td></tr></table></figure></li><li><p>稳定通道(两种方法)</p><ol><li>autossh<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install autossh</div><div class="line">autossh -M 2333 &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</div></pre></td></tr></table></figure></li></ol><p><em>-M : 回显测试</em></p><ol><li><p>ssh心跳包</p><ul><li>单独客户设置（方法1）<br>修改/etc/ssh/ssh_config，添加</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ServerAliveInterval 60</div><div class="line">ServerAliveCountMax 9999999999</div></pre></td></tr></table></figure><ul><li>服务器设置（方法二）{新客户端可以不用设置，服务器负责维护}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/ssh/sshd_config</div><div class="line"># 添加</div><div class="line">ClientAliveInterval 30</div><div class="line">ClientAliveCountMax 6</div></pre></td></tr></table></figure></li></ul></li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;公网主机配置&quot;&gt;&lt;a href=&quot;#公网主机配置&quot; class=&quot;headerlink&quot; title=&quot;公网主机配置&quot;&gt;&lt;/a&gt;公网主机配置&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;修改sshd的配置文件，&lt;/p&gt;
+&lt;figure class=&quot;highlight pla
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="反向代理" scheme="http://yoursite.com/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机算法 C++描述 第二章</title>
+    <link href="http://yoursite.com/2018/04/07/CA2/"/>
+    <id>http://yoursite.com/2018/04/07/CA2/</id>
+    <published>2018-04-07T14:11:07.000Z</published>
+    <updated>2018-04-07T12:15:13.732Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="template-模板"><a href="#template-模板" class="headerlink" title="template 模板"></a>template 模板</h2><ol><li><p>类模板<br>假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">template &lt;class Type&gt;</div><div class="line">class foo</div><div class="line">&#123;</div><div class="line">  private:</div><div class="line">    Type a;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li><li><p>类模板的使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名&lt;实际的类型&gt;</div></pre></td></tr></table></figure><p>类模板的使用实际上是将类模板实例化成一个详细的类</p></li><li><p>在类外面定义函数模板</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">template&lt;typename（或class) T&gt;</div><div class="line">&lt;返回类型&gt;&lt;函数名&gt;(參数表)</div><div class="line">&#123;</div><div class="line">    函数体</div><div class="line">&#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">template&lt;typename（或class) T&gt;</div><div class="line">T fuc(T x, T y)</div><div class="line">&#123;</div><div class="line">    T x;</div><div class="line">    //……</div><div class="line">&#125;</div></pre></td></tr></table></figure></li><li><p>模板函数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">double d;</div><div class="line">    int a;</div><div class="line">    fuc(d,a);</div><div class="line">则系统将用实參d的数据类型double去取代函数模板中的T生成函数：</div><div class="line"></div><div class="line">double fuc(double x,int y)</div><div class="line">&#123;</div><div class="line">   double x;</div><div class="line">   //……</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>模板函数的生成就是将函数模板的类型形參实例化的过程。</p></li></ol><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>  队列的一种有效表示方法是用数组，把他看成环形结构</p><ul><li>判断队列为空  rear == front</li><li>队尾插入操作  rear = (++rear)%MaxSize</li></ul><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ol><li><p>引理</p><ul><li><p>一棵二叉树第i层上最多结点个数为2<sup>i-1</sup>, 一个深度为k的二叉树最多节点数为2<sup>k</sup>-1</p><p>n个节点的完全二叉树可以存放在一维数组tree[n+1]中</p></li><li>任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有：<ol><li>当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent</li><li>当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子</li><li>当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子</li></ol></li></ul></li><li><p><strong>二叉搜索树</strong></p><p>特征</p><ol><li>每个元素都有一个键值，并且没有两个元素键值相同</li><li>左子树的键值(如果有的话)都小于树根的键值</li><li>右子树的键值(如果有的话)都大于树根的键值</li><li>左右子树也都是二叉搜索树</li></ol></li><li><p>堆(Heap)</p><ol><li>堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt;  依次递增（减）</li><li>堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序</li></ol></li><li><p>集合与 <strong>不相交</strong> 集合的并集</p><ol><li>用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上</li><li>为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( <strong>不相交</strong>)</li><li>忽略集合的名字并且用表示集合的树的树根来标志该集合</li><li><em>权重规则</em> ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点</li><li><em>收缩规则</em> ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]<br>—–&gt; p[j]及路径上所有节点的父节点置为root[i]</li></ol></li><li><p>图</p><ol><li>图的定义和特点<ol><li>欧拉定义定点的度等于与他相接的边的条数</li></ol><ul><li>对于有向图来说：V的入/出度是以v为头/尾的所有边的条数</li></ul><ol><li>当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 <strong>欧拉路径</strong></li><li>我们通常用G=(V, E)来表示一个图</li></ol><ul><li>V 是有穷非空的定点的集合</li><li>E 是顶点对称的集合，又被称为边</li><li>无向图中任意边的顶点对都是无序的 (u, v)</li><li>有向图中任意边的顶点对都是有序的 <u, v="">， u是头，v是尾</u,></li></ul><ol><li>图不能包含定点v到自己的边。这样的边被称为自边或者自环</li><li>图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图</li></ol><ul><li>任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的</li><li>任意包含n个顶点的有向图的最大边数为 n(n-1)</li></ul><ol><li>路径的长度就是其中的边数</li><li>简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同）</li><li>环： 第一个和最后一个相同的路径</li></ol></li><li>图的表示<ol><li>邻接矩阵</li></ol><ul><li>邻接矩阵是一个n*n的矩阵</li><li>若存在边(i, j)，则a[i, j] = 1,其他的等于0</li><li>无向图的邻接矩阵是对称的</li><li>无向图上的顶点i其度数等于它对应的行之和</li><li>有向图上行之和是出度，列之和是入度</li></ul><ol><li>邻接表<br><img src="/image/linjiebiao.jpg" alt="邻接表"></li><li>邻接多重表</li></ol></li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;template-模板&quot;&gt;&lt;a href=&quot;#template-模板&quot; class=&quot;headerlink&quot; title=&quot;template 模板&quot;&gt;&lt;/a&gt;template 模板&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;类模板&lt;br&gt;假设一个类中数据成员的数据类型不能确
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="计算机算法" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分治策略</title>
+    <link href="http://yoursite.com/2018/04/07/CA3/"/>
+    <id>http://yoursite.com/2018/04/07/CA3/</id>
+    <published>2018-04-07T14:11:07.000Z</published>
+    <updated>2018-04-09T08:46:58.957Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="计算机算法" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书记录</title>
+    <link href="http://yoursite.com/2018/04/06/TheCollectOfReading/"/>
+    <id>http://yoursite.com/2018/04/06/TheCollectOfReading/</id>
+    <published>2018-04-06T12:45:12.000Z</published>
+    <updated>2018-04-06T07:04:44.214Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="计算机类"><a href="#计算机类" class="headerlink" title="计算机类"></a>计算机类</h2><ol><li>计算机算法(C++语言描述) 第二版</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;计算机类&quot;&gt;&lt;a href=&quot;#计算机类&quot; class=&quot;headerlink&quot; title=&quot;计算机类&quot;&gt;&lt;/a&gt;计算机类&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;计算机算法(C++语言描述) 第二版&lt;/li&gt;
+&lt;/ol&gt;
+
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>进程间通信</title>
+    <link href="http://yoursite.com/2018/04/01/processCom/"/>
+    <id>http://yoursite.com/2018/04/01/processCom/</id>
+    <published>2018-04-01T14:11:07.000Z</published>
+    <updated>2018-03-31T07:45:41.704Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>信号</p><ul><li>由于某些错误而产生的事件</li><li>可以设定信号触发之后的处理方式，但信号是系统已经确定的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">void (*signals(int signum, void(*hangdler)(int)))(int);</div><div class="line">int sigaction(int signum, const struct sigaction * act, struct sigaction * addr)</div></pre></td></tr></table></figure></li></ul></li><li><p>管道和命名管道<br><strong>实质是先进先出，半双工的数据结构，双方通信需要两个管道</strong></p><ul><li>管道：只能用于相互关联的进程间通信，如：父子进程</li><li>命名管道： = 特殊文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkfifo(const char * pathname, mode_t mode); //建立管道文件</div><div class="line">read() write() close() 均可操作</div></pre></td></tr></table></figure></li></ul></li><li><p>信号量<br>主要用于控制多个线程对临界区资源的访问</p></li><li><p>消息队列<br>将消息按队列方式组成的链表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int msgget(key_t key, int msgflg);</div><div class="line">int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);</div><div class="line">int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);</div><div class="line">int msgctl(int msgid, int cmd, struct msgid_ds *buf);</div></pre></td></tr></table></figure></li><li><p>共享内存<br>直接操作内存，不用复制文件 <strong>系统创建的特殊地址空间，允许多个不相关的进程使用</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int shmget(key_t key, int shmflg);</div><div class="line">int shmat(int shmid, const void * shmaddr, int shmflg);</div><div class="line">int shmdt(const void * shmaddr);</div><div class="line">int shmctl(int shmid, int cmd, struct shmid_ds *buf);</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;信号&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;由于某些错误而产生的事件&lt;/li&gt;
+&lt;li&gt;可以设定信号触发之后的处理方式，但信号是系统已经确定的&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编程珠玑</title>
+    <link href="http://yoursite.com/2018/04/01/ProgrammingPearlsKnown/"/>
+    <id>http://yoursite.com/2018/04/01/ProgrammingPearlsKnown/</id>
+    <published>2018-04-01T14:11:07.000Z</published>
+    <updated>2018-03-31T05:00:48.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux关机前执行脚本</title>
+    <link href="http://yoursite.com/2018/03/31/DOBeforeShutdownInLinux/"/>
+    <id>http://yoursite.com/2018/03/31/DOBeforeShutdownInLinux/</id>
+    <published>2018-03-31T14:11:07.000Z</published>
+    <updated>2018-03-30T09:04:54.068Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>建立关机需要执行的脚本文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure></li></ol><p>K99文件名用来保证运行优先级</p><ol><li><p>赋予执行权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod +x /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure></li><li><p>创建关机和重启软连接</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc0.d/K99shutdownbefore</div><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc6.d/K99shutdownbefore</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;建立关机需要执行的脚本文件&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言大坑</title>
+    <link href="http://yoursite.com/2018/03/24/a_bigHole_ofC/"/>
+    <id>http://yoursite.com/2018/03/24/a_bigHole_ofC/</id>
+    <published>2018-03-24T04:10:48.019Z</published>
+    <updated>2018-03-24T04:10:48.019Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h2><ol><li><p>单引号表示表示整数值</p><ul><li>双引号表示字符串首的地址</li><li>以0开头的整数默认为八进制</li><li>注意使用移位运算加快程序执行速度</li><li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li><li>a[i] = i[a]</li><li>C语言的不对称边界</li><li>errno 外部出错变量，可以检测出错信息</li><li>break 跳出离他最近的那层循环或switch</li><li>C 语言不能省略形参，即使不使用</li></ul></li><li><p>C语言的数据存储空间</p><ul><li>程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆）</li><li>局部变量在return之后出栈销毁，不要尝试返回局部指针地址</li><li>堆  申请、释放原则 <strong>哪儿申请哪儿释放</strong><br> 记得判断 堆 申请成功与否</li></ul></li><li><p>一个程序将操作系统分配给其运行的内存块分为4个区域：<br>　　(1)代码区，存放程序的代码，即程序中的各个函数代码块。<br>　　(2)全局数据区，存放程序的全局数据和静态数据。<br>　　(3)堆区，存放程序的动态数据。<br>　　(4)栈区，存放程序的局部数据，即各个函数中的数据。</p></li><li><p>强制类型转换</p></li></ol><ul><li>占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同</li><li>占用空间小的转化为占用空间大的： 考虑内存越界访问</li><li>结构体强制转换             ： 考虑字节对齐</li></ul><ol><li>字符串</li></ol><ul><li>通过索引读取字符串时，一定要判断索引的正确性</li></ul><ol><li>多线程编程</li></ol><ul><li>互斥量用来对临界区的互斥进入</li><li>条件变量用于线程的阻塞等待</li></ul><ol><li><p>指针</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int * p = NULL;</div><div class="line"></div><div class="line">&amp;p 表示p的地址</div><div class="line">p 表示变量p的内容</div><div class="line">*p 表示p指向的存储单元的内容</div></pre></td></tr></table></figure><ul><li><strong>数字0是唯一能输给指针的数值</strong>(相当于NULL)  </li><li>void * :指向任何类型的指针</li><li><strong>注意深复制和浅复制的区别</strong><h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int *p, *q;</div><div class="line">*p = 58;</div><div class="line">q = p;        // q 和 P 指向同一内存单元</div><div class="line">free(q);</div><div class="line">printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放</div></pre></td></tr></table></figure></li></ul></li><li><p>动态变量</p><p>在程序运行过程中产生的变量称为动态变量</p><ul><li><p>创建</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int * p; char *q;</div><div class="line">p = new int;  // 在内存中创建一个变量，存储所分配的内存地址到p中</div><div class="line">q = new char[19];   // 在内存中创建一个数组，并将数组地址存储到q中</div></pre></td></tr></table></figure></li><li><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*p = 28;</div><div class="line">*q = &quot;hello&quot;;</div></pre></td></tr></table></figure></li><li><p>销毁</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete p;</div><div class="line">delete [] q;</div></pre></td></tr></table></figure></li></ul></li><li><p>动态数组</p><ul><li><p>创建</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int *p;</div><div class="line">p = new int[10];</div></pre></td></tr></table></figure></li><li><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* p = 25;   //25存到第一个存储空间里  = p[0] = 25；</div><div class="line">p ++;</div><div class="line">* p = 35;   //35存到第二个存储空间里  = p[1] = 35；</div></pre></td></tr></table></figure></li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;接下来就开始看看坑&quot;&gt;&lt;a href=&quot;#接下来就开始看看坑&quot; class=&quot;headerlink&quot; title=&quot;接下来就开始看看坑&quot;&gt;&lt;/a&gt;接下来就开始看看坑&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;单引号表示表示整数值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;双引号表示字符串首
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sizeof与strlen的区别</title>
+    <link href="http://yoursite.com/2018/03/11/sizeofstrlen/"/>
+    <id>http://yoursite.com/2018/03/11/sizeofstrlen/</id>
+    <published>2018-03-11T07:47:26.000Z</published>
+    <updated>2018-03-11T11:18:30.207Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含<string.h>头文件.<br>2、sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数.<br>3、sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数<br>4、编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来.<br>5、sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’;<br>6、数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.</string.h></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含&lt;string.h&gt;头文件.&lt;br&gt;2、sizeof的参数可以是数据类型或
+      
+    
+    </summary>
+    
+      <category term="C" scheme="http://yoursite.com/categories/C/"/>
+    
+    
+      <category term="C" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/03/04/csu/"/>
+    <id>http://yoursite.com/2018/03/04/csu/</id>
+    <published>2018-03-04T05:31:56.863Z</published>
+    <updated>2018-03-04T05:31:56.863Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://123.206.64.174" target="_blank" rel="external">http://123.206.64.174</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://123.206.64.174&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://123.206.64.174&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Qt mysql 数据库找不到</title>
+    <link href="http://yoursite.com/2018/03/04/Qt_mysqlDriver/"/>
+    <id>http://yoursite.com/2018/03/04/Qt_mysqlDriver/</id>
+    <published>2018-03-03T16:00:00.000Z</published>
+    <updated>2018-03-04T05:30:32.226Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">QSqlDatabase: QMYSQL driver not loaded</div><div class="line">QSqlDatabase: available drivers: QSQLITE QMYSQL QMYSQL3 QODBC QODBC3 QPSQL QPSQL 7</div></pre></td></tr></table></figure><p>原因： 应用程序找不到libmysql.dll<br>解决方法： 把libmysql.dll 放在.exe应用程序运次的同目录下<br>    比如在debug时，放在debug的目录下面； release时，放在release的目录下面</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
+      
+    
+    </summary>
+    
+      <category term="qt" scheme="http://yoursite.com/categories/qt/"/>
+    
+    
+      <category term="qt" scheme="http://yoursite.com/tags/qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>apache2跨域</title>
+    <link href="http://yoursite.com/2017/12/15/apache2cors/"/>
+    <id>http://yoursite.com/2017/12/15/apache2cors/</id>
+    <published>2017-12-15T07:47:26.000Z</published>
+    <updated>2017-12-27T03:00:55.537Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="加载服务器组件"><a href="#加载服务器组件" class="headerlink" title="加载服务器组件"></a>加载服务器组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a2enmod headers</div></pre></td></tr></table></figure><h2 id="修改服务器配置"><a href="#修改服务器配置" class="headerlink" title="修改服务器配置"></a>修改服务器配置</h2><p>  在想要可以跨域访问的目录下<br>  <directory ****=""><br>    Header set Access-Control-Allow-Origin *<br>  </directory></p><h2 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service apache2 restart</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;加载服务器组件&quot;&gt;&lt;a href=&quot;#加载服务器组件&quot; class=&quot;headerlink&quot; title=&quot;加载服务器组件&quot;&gt;&lt;/a&gt;加载服务器组件&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>qt画图</title>
+    <link href="http://yoursite.com/2017/12/13/qtPainting/"/>
+    <id>http://yoursite.com/2017/12/13/qtPainting/</id>
+    <published>2017-12-13T03:06:57.278Z</published>
+    <updated>2017-12-13T03:06:57.278Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="QcustomPlot"><a href="#QcustomPlot" class="headerlink" title="QcustomPlot"></a>QcustomPlot</h2><ol><li><p>下载</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.qcustomplot.com</div></pre></td></tr></table></figure></li><li><p>把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可</p></li><li>pro文件中QT += widgets printsupport</li><li><p>使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">QVector x(101), y(101); // initialize with entries 0..100</div><div class="line">for (int i=0; i&lt;101; ++i)</div><div class="line">&#123;</div><div class="line">x[i] = i/50.0 – 1; // x goes from -1 to 1</div><div class="line">y[i] = x[i]*x[i]; // let’s plot a quadratic function</div><div class="line">&#125;</div><div class="line">qDebug()&lt;&lt;“data has been created”;</div><div class="line">ui-&gt;black_line-&gt;addGraph();</div><div class="line">qDebug()&lt;&lt;“begin painting”;</div><div class="line">ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);</div><div class="line">ui-&gt;black_line-&gt;replot();</div><div class="line">qDebug()&lt;&lt;“finish”;</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;QcustomPlot&quot;&gt;&lt;a href=&quot;#QcustomPlot&quot; class=&quot;headerlink&quot; title=&quot;QcustomPlot&quot;&gt;&lt;/a&gt;QcustomPlot&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下载&lt;/p&gt;
+ &lt;figure class=&quot;hi
+      
+    
+    </summary>
+    
+      <category term="Qt" scheme="http://yoursite.com/categories/Qt/"/>
+    
+    
+      <category term="上位机 Qt" scheme="http://yoursite.com/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA-Qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>qt使用mysql</title>
+    <link href="http://yoursite.com/2017/12/13/qtmysql/"/>
+    <id>http://yoursite.com/2017/12/13/qtmysql/</id>
+    <published>2017-12-12T16:00:00.000Z</published>
+    <updated>2017-12-13T03:22:01.514Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Qt使用mysql"><a href="#Qt使用mysql" class="headerlink" title="Qt使用mysql"></a>Qt使用mysql</h2><p>虽然qt自己编译生成了libmysqlclient.so,但是这个文件还依赖于系统的libmysqlclient.so.18，但是很多主机都没有安装这个</p><p>查看缺少的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /the/path/to/libmysqlclient.so</div><div class="line">ldd libmysqlclient.so</div></pre></td></tr></table></figure></p><ol><li><p>下载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://dev.mysql.com/downloads/connector/c/</div></pre></td></tr></table></figure></li><li><p>复制</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp libmysqlclient.so.18 /usr/lib</div></pre></td></tr></table></figure></li><li><p>使用<br>重新编译工程并使用</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Qt使用mysql&quot;&gt;&lt;a href=&quot;#Qt使用mysql&quot; class=&quot;headerlink&quot; title=&quot;Qt使用mysql&quot;&gt;&lt;/a&gt;Qt使用mysql&lt;/h2&gt;&lt;p&gt;虽然qt自己编译生成了libmysqlclient.so,但是这个文件还依赖于系统的
+      
+    
+    </summary>
+    
+      <category term="Qt" scheme="http://yoursite.com/categories/Qt/"/>
+    
+    
+      <category term="Qt" scheme="http://yoursite.com/tags/Qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>卸载python安装的模块</title>
+    <link href="http://yoursite.com/2017/12/02/uinstallpythonmodules/"/>
+    <id>http://yoursite.com/2017/12/02/uinstallpythonmodules/</id>
+    <published>2017-12-01T16:00:00.000Z</published>
+    <updated>2017-12-03T15:39:51.966Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>pip<br>使用pip安装的可以用pip卸载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip uinstall ***</div></pre></td></tr></table></figure></li><li><p>easy_install<br>使用easy_install安装的可以用easy_install卸载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">easy_install -m PackageName</div></pre></td></tr></table></figure></li><li><p>setup.py</p><p> 通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命令行手动卸载：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. python setup.py  install --record files.txt</div><div class="line">2. 创建del.sh脚本内容</div><div class="line">    #!/bin/bash  </div><div class="line">    for i in $(less files.txt)  </div><div class="line">    do  rm -rf $i  </div><div class="line">    done</div><div class="line">3. 执行脚本</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;pip&lt;br&gt;使用pip安装的可以用pip卸载&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zsh美化终端</title>
+    <link href="http://yoursite.com/2017/11/21/zsh/"/>
+    <id>http://yoursite.com/2017/11/21/zsh/</id>
+    <published>2017-11-21T07:00:00.000Z</published>
+    <updated>2017-12-04T02:53:55.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="本文仅仅为了提升装逼技能"><a href="#本文仅仅为了提升装逼技能" class="headerlink" title="本文仅仅为了提升装逼技能"></a>本文仅仅为了提升装逼技能</h2><p><code>不想装的可以关掉了</code></p><ol><li><p>安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install zsh</div></pre></td></tr></table></figure></li><li><p>安装on-my-zsh配置zsh</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure></li><li><p>切换终端</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /usr/bin/zsh</div></pre></td></tr></table></figure></li><li><p>重启机器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboot</div></pre></td></tr></table></figure></li></ol><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol><li>zsh没有导入npm的环境<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">nano ~/.zshrc</div><div class="line">export PATH=&quot;$PATH:/path/to/your/npm/bin&quot;</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure></li></ol><h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><ol><li><p>换回bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec bash</div></pre></td></tr></table></figure></li><li><p>切换到zsh</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec zsh</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;本文仅仅为了提升装逼技能&quot;&gt;&lt;a href=&quot;#本文仅仅为了提升装逼技能&quot; class=&quot;headerlink&quot; title=&quot;本文仅仅为了提升装逼技能&quot;&gt;&lt;/a&gt;本文仅仅为了提升装逼技能&lt;/h2&gt;&lt;p&gt;&lt;code&gt;不想装的可以关掉了&lt;/code&gt;&lt;/p&gt;
+&lt;ol
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu16.04不能访除系统以外的硬盘</title>
+    <link href="http://yoursite.com/2017/11/16/ubuntu_can_not_use_harddrive/"/>
+    <id>http://yoursite.com/2017/11/16/ubuntu_can_not_use_harddrive/</id>
+    <published>2017-11-16T03:19:32.000Z</published>
+    <updated>2017-11-17T05:14:33.442Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install ntfsfix</div><div class="line">sudo ntfsfix /dev/sdb1</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
+      
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="http://yoursite.com/categories/ubuntu/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu16.04 安装websploit</title>
+    <link href="http://yoursite.com/2017/11/16/how_to_install_websploit_on_ubuntu/"/>
+    <id>http://yoursite.com/2017/11/16/how_to_install_websploit_on_ubuntu/</id>
+    <published>2017-11-15T17:19:32.000Z</published>
+    <updated>2017-11-17T05:13:38.921Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="高效中间人攻击框架"><a href="#高效中间人攻击框架" class="headerlink" title="高效中间人攻击框架"></a>高效中间人攻击框架</h2><ol><li><p>安装依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install scapy</div><div class="line">sudo apt install apache2  //for exploit/browser_autopwn</div></pre></td></tr></table></figure></li><li><p>安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://launchpad.net/ubuntu/+archive/primary/+files/websploit_3.0.0-1_all.deb</div><div class="line"></div><div class="line">在桌面环境下双击即可安装</div></pre></td></tr></table></figure></li><li><p>验证</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">websploit</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;高效中间人攻击框架&quot;&gt;&lt;a href=&quot;#高效中间人攻击框架&quot; class=&quot;headerlink&quot; title=&quot;高效中间人攻击框架&quot;&gt;&lt;/a&gt;高效中间人攻击框架&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装依赖&lt;/p&gt;
+&lt;figure class=&quot;highlight
+      
+    
+    </summary>
+    
+      <category term="websploit" scheme="http://yoursite.com/categories/websploit/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu搭建交叉编译环境</title>
+    <link href="http://yoursite.com/2017/11/15/ubuntu-arm/"/>
+    <id>http://yoursite.com/2017/11/15/ubuntu-arm/</id>
+    <published>2017-11-15T00:52:24.162Z</published>
+    <updated>2017-09-30T08:43:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.<em>*</em> mixed implicit and normal rules: deprecated syntax<br>  修改Makefile 452 修改后：<br>  %config: scripts_basic outputmakefile FORCE</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.&lt;em&gt;*&lt;/em&gt; mixed implicit and normal rules: deprecated syntax&lt;br&gt;  修改Makefile 452 修改后：&lt;br&gt;  %config: scripts_basic outputmakefile FORCE
+      
+    
+    </summary>
+    
+      <category term="未分类" scheme="http://yoursite.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="交叉编译" scheme="http://yoursite.com/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
+    
+  </entry>
+  
+</feed>

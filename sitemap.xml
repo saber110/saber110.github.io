@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/guestbook/index.html</loc>
+    
+    <lastmod>2018-04-11T11:12:50.537Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/11/ButifyBlog/</loc>
+    
+    <lastmod>2018-04-11T11:01:12.745Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/10/SSHReverseproxy/</loc>
+    
+    <lastmod>2018-04-10T03:26:28.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/07/CA3/</loc>
+    
+    <lastmod>2018-04-09T08:46:58.957Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/07/CA2/</loc>
+    
+    <lastmod>2018-04-07T12:15:13.732Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/06/TheCollectOfReading/</loc>
+    
+    <lastmod>2018-04-06T07:04:44.214Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/02/15/ajax-access/</loc>
+    
+    <lastmod>2018-04-01T05:59:04.930Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/04/17/ComputerAlgorithms/</loc>
+    
+    <lastmod>2018-04-01T01:51:11.686Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/01/processCom/</loc>
+    
+    <lastmod>2018-03-31T07:45:41.704Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/01/ProgrammingPearlsKnown/</loc>
+    
+    <lastmod>2018-03-31T05:00:48.544Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/31/DOBeforeShutdownInLinux/</loc>
+    
+    <lastmod>2018-03-30T09:04:54.068Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/24/a_bigHole_ofC/</loc>
+    
+    <lastmod>2018-03-24T04:10:48.019Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/11/sizeofstrlen/</loc>
+    
+    <lastmod>2018-03-11T11:18:30.207Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/04/csu/</loc>
+    
+    <lastmod>2018-03-04T05:31:56.863Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/04/Qt_mysqlDriver/</loc>
+    
+    <lastmod>2018-03-04T05:30:32.226Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/12/15/apache2cors/</loc>
+    
+    <lastmod>2017-12-27T03:00:55.537Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/12/13/qtmysql/</loc>
+    
+    <lastmod>2017-12-13T03:22:01.514Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/12/13/qtPainting/</loc>
+    
+    <lastmod>2017-12-13T03:06:57.278Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/04/24/qt-painting/</loc>
+    
+    <lastmod>2017-12-13T03:06:49.182Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/21/zsh/</loc>
+    
+    <lastmod>2017-12-04T02:53:55.604Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/12/02/uinstallpythonmodules/</loc>
+    
+    <lastmod>2017-12-03T15:39:51.966Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/14/pointer/</loc>
+    
+    <lastmod>2017-11-23T11:47:49.754Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/</loc>
+    
+    <lastmod>2017-11-23T11:39:35.859Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/16/ubuntu_can_not_use_harddrive/</loc>
+    
+    <lastmod>2017-11-17T05:14:33.442Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/16/how_to_install_websploit_on_ubuntu/</loc>
+    
+    <lastmod>2017-11-17T05:13:38.921Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/05/arm-none-linux-gnueabi/</loc>
+    
+    <lastmod>2017-11-06T08:16:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/26/unix3/</loc>
+    
+    <lastmod>2017-10-29T07:09:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/21/unix2/</loc>
+    
+    <lastmod>2017-10-29T07:09:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/19/unix1/</loc>
+    
+    <lastmod>2017-10-29T07:07:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/faceRecognize/</loc>
+    
+    <lastmod>2017-10-11T07:39:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/uart_raspberry3B/</loc>
+    
+    <lastmod>2017-10-11T07:35:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/AutoStartInUbuntuMate/</loc>
+    
+    <lastmod>2017-10-11T07:30:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/mysqlInstallation/</loc>
+    
+    <lastmod>2017-10-11T07:24:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/cameraOnRaspberry/</loc>
+    
+    <lastmod>2017-10-11T07:08:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/startwithboot/</loc>
+    
+    <lastmod>2017-10-11T07:06:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/ftp_raspberrry/</loc>
+    
+    <lastmod>2017-10-11T07:01:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2017-09-30T09:05:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/30/blogofhexo/</loc>
+    
+    <lastmod>2017-09-30T08:51:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/25/ci-changecode/</loc>
+    
+    <lastmod>2017-09-30T08:51:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/15/ci-library/</loc>
+    
+    <lastmod>2017-09-30T08:50:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/04/17/cordova-android/</loc>
+    
+    <lastmod>2017-09-30T08:50:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/10/font-spider/</loc>
+    
+    <lastmod>2017-09-30T08:49:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/15/lib_int/</loc>
+    
+    <lastmod>2017-09-30T08:49:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/15/new_blog/</loc>
+    
+    <lastmod>2017-09-30T08:48:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/30/raspberryWifi/</loc>
+    
+    <lastmod>2017-09-30T08:46:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/12/15/serverOption/</loc>
+    
+    <lastmod>2017-09-30T08:44:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/12/15/shell/</loc>
+    
+    <lastmod>2017-09-30T08:44:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/07/20/ssh/</loc>
+    
+    <lastmod>2017-09-30T08:44:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/15/the-first-travel-of-qt/</loc>
+    
+    <lastmod>2017-09-30T08:43:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/24/ubuntu-14-04/</loc>
+    
+    <lastmod>2017-09-30T08:43:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/15/ubuntu-arm/</loc>
+    
+    <lastmod>2017-09-30T08:43:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/24/unzip-in-ubuntu/</loc>
+    
+    <lastmod>2017-09-30T08:43:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/07/06/yuanyang/</loc>
+    
+    <lastmod>2017-09-30T08:42:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/05/windows-linux/</loc>
+    
+    <lastmod>2017-09-30T08:42:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/24/windows-in-raspberry/</loc>
+    
+    <lastmod>2017-09-30T08:42:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/voice/</loc>
+    
+    <lastmod>2017-09-30T08:42:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/30/raspberry_ubuntumate/</loc>
+    
+    <lastmod>2017-09-30T08:32:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/14/study-c-again/</loc>
+    
+    <lastmod>2017-09-30T06:01:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2017-09-30T05:48:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/04/17/c-multipthread/</loc>
+    
+    <lastmod>2017-09-30T05:14:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/03/26/random-1/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/06/12/record-of-long-time-learning/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/04/04/git-1/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/10/esp8266-12f-wifi/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/24/raspberry-without-routet/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/14/various/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/18/raspberry-fingerprint/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/09/remote-lock/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/07/fatal-error-class-ziparchive-not-found/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/17/file/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/22/zhiwen/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/21/c-exam/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/06/13/initlib/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/15/git/</loc>
+    
+    <lastmod>2017-09-28T15:04:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/15/c_multipthread/</loc>
+    
+    <lastmod>2017-09-28T15:03:30.000Z</lastmod>
+    
+  </url>
+  
+</urlset>
