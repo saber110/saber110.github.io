@@ -1819,7 +1819,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #36ff39;
+  background: #ff5c55;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2612,7 +2612,7 @@ pre .javascript .function {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: #fff;
+  background: rgba(153,204,255,0.2) none repeat scroll !important;
   box-shadow: initial;
   border-radius: initial;
 }
@@ -2669,24 +2669,19 @@ pre .javascript .function {
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  padding: 40px;
   width: 700px;
-  background: #fff;
-  min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
     width: 100%;
-    padding: 20px;
     border-radius: initial;
   }
 }
 @media (max-width: 767px) {
   .content-wrap {
     width: 100%;
-    padding: 20px;
     min-height: auto;
     border-radius: initial;
   }
@@ -2848,12 +2843,12 @@ pre .javascript .function {
   right: auto;
   bottom: auto;
   -webkit-transform: none;
+  background: rgba(153,204,255,0.2) none repeat scroll !important;
 }
 .sidebar-inner {
   box-sizing: border-box;
   width: 240px;
   color: #555;
-  background: #fff;
   box-shadow: initial;
   border-radius: initial;
 }
@@ -2981,13 +2976,15 @@ pre .javascript .function {
   }
 }
 .post {
+  border-radius: 10px;
   margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  padding: 20px;
+  -webkit-box-shadow: 0 0 10px rgba(202,203,203,0.75);
+  -moz-box-shadow: 0 0 15px rgba(202,203,204,0.85);
 }
-.site-title {
-  font-size: 40px !important;
-  font-family: 'simi' !important;
+.content {
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 0px;
+  background: rgba(153,204,255,0.2) none repeat scroll !important;
 }
