@@ -149,6 +149,31 @@
   </entry>
   
   <entry>
+    <title>编程珠玑</title>
+    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
+    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
+    <published>2018-04-01T14:11:07.000Z</published>
+    <updated>2018-03-31T05:00:48.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>进程间通信</title>
     <link href="http://blog.huhaobin.cn/2018/04/01/processCom/"/>
     <id>http://blog.huhaobin.cn/2018/04/01/processCom/</id>
@@ -174,31 +199,6 @@
     
     
       <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编程珠玑</title>
-    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
-    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
-    <published>2018-04-01T14:11:07.000Z</published>
-    <updated>2018-03-31T05:00:48.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
