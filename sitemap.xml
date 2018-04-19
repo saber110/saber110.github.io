@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.huhaobin.cn/about/index.html</loc>
+    
+    <lastmod>2018-04-19T07:53:30.677Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/2018/04/19/shadowsocksr/</loc>
     
     <lastmod>2018-04-19T02:58:49.394Z</lastmod>
@@ -324,7 +331,7 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/11/15/new_blog/</loc>
+    <loc>http://blog.huhaobin.cn/2018/04/19/about/</loc>
     
     <lastmod>2017-09-30T08:48:26.000Z</lastmod>
     
@@ -443,20 +450,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/09/22/zhiwen/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2016/11/14/various/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
@@ -478,20 +471,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2016/10/07/fatal-error-class-ziparchive-not-found/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
@@ -499,7 +478,14 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/04/04/git-1/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -513,7 +499,7 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/10/esp8266-12f-wifi/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -527,7 +513,28 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/10/esp8266-12f-wifi/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/04/04/git-1/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/09/22/zhiwen/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     

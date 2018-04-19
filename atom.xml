@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-04-19T02:58:49.394Z</updated>
+  <updated>2017-09-30T08:48:26.000Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新博客站的第一篇文章</title>
+    <link href="http://blog.huhaobin.cn/2018/04/19/about/"/>
+    <id>http://blog.huhaobin.cn/2018/04/19/about/</id>
+    <published>2018-04-19T07:49:39.519Z</published>
+    <updated>2017-09-30T08:48:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="百废待兴"><a href="#百废待兴" class="headerlink" title="百废待兴"></a>百废待兴</h2><p>自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本</p><h2 id="移花接木"><a href="#移花接木" class="headerlink" title="移花接木"></a>移花接木</h2><p>虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺.</p><h2 id="后悔莫及"><a href="#后悔莫及" class="headerlink" title="后悔莫及"></a>后悔莫及</h2><p>前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞</p><h3 id="有时间继续更新"><a href="#有时间继续更新" class="headerlink" title="有时间继续更新"></a>有时间继续更新</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;百废待兴&quot;&gt;&lt;a href=&quot;#百废待兴&quot; class=&quot;headerlink&quot; title=&quot;百废待兴&quot;&gt;&lt;/a&gt;百废待兴&lt;/h2&gt;&lt;p&gt;自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名
+      
+    
+    </summary>
+    
+      <category term="肺腑之言" scheme="http://blog.huhaobin.cn/categories/%E8%82%BA%E8%85%91%E4%B9%8B%E8%A8%80/"/>
+    
+    
+      <category term="肺腑之言" scheme="http://blog.huhaobin.cn/tags/%E8%82%BA%E8%85%91%E4%B9%8B%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建ssr</title>
@@ -43,31 +68,6 @@
   </entry>
   
   <entry>
-    <title>linux定时执行任务</title>
-    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
-    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
-    <published>2018-04-18T14:11:07.000Z</published>
-    <updated>2018-04-18T08:12:50.641Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux网络连接后执行脚本</title>
     <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
     <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
@@ -81,6 +81,31 @@
       
       
         &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux定时执行任务</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T08:12:50.641Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
       
     
     </summary>
@@ -225,6 +250,31 @@
   </entry>
   
   <entry>
+    <title>编程珠玑</title>
+    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
+    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
+    <published>2018-04-01T14:11:07.000Z</published>
+    <updated>2018-03-31T05:00:48.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>进程间通信</title>
     <link href="http://blog.huhaobin.cn/2018/04/01/processCom/"/>
     <id>http://blog.huhaobin.cn/2018/04/01/processCom/</id>
@@ -250,31 +300,6 @@
     
     
       <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编程珠玑</title>
-    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
-    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
-    <published>2018-04-01T14:11:07.000Z</published>
-    <updated>2018-03-31T05:00:48.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -501,30 +526,6 @@
     
     
       <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zsh美化终端</title>
-    <link href="http://blog.huhaobin.cn/2017/11/21/zsh/"/>
-    <id>http://blog.huhaobin.cn/2017/11/21/zsh/</id>
-    <published>2017-11-21T07:00:00.000Z</published>
-    <updated>2017-12-04T02:53:55.604Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="本文仅仅为了提升装逼技能"><a href="#本文仅仅为了提升装逼技能" class="headerlink" title="本文仅仅为了提升装逼技能"></a>本文仅仅为了提升装逼技能</h2><p><code>不想装的可以关掉了</code></p><ol><li><p>安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install zsh</div></pre></td></tr></table></figure></li><li><p>安装on-my-zsh配置zsh</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure></li><li><p>切换终端</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /usr/bin/zsh</div></pre></td></tr></table></figure></li><li><p>重启机器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboot</div></pre></td></tr></table></figure></li></ol><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol><li>zsh没有导入npm的环境<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">nano ~/.zshrc</div><div class="line">export PATH=&quot;$PATH:/path/to/your/npm/bin&quot;</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure></li></ol><h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><ol><li><p>换回bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec bash</div></pre></td></tr></table></figure></li><li><p>切换到zsh</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec zsh</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;本文仅仅为了提升装逼技能&quot;&gt;&lt;a href=&quot;#本文仅仅为了提升装逼技能&quot; class=&quot;headerlink&quot; title=&quot;本文仅仅为了提升装逼技能&quot;&gt;&lt;/a&gt;本文仅仅为了提升装逼技能&lt;/h2&gt;&lt;p&gt;&lt;code&gt;不想装的可以关掉了&lt;/code&gt;&lt;/p&gt;
-&lt;ol
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
     
   </entry>
   
