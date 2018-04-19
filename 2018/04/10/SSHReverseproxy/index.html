@@ -81,7 +81,7 @@
 <meta property="og:site_name" content="Saber110">
 <meta property="og:description" content="公网主机配置 修改sshd的配置文件， 1nano /etc/ssh/sshd_config 在最后面添加GatewayPorts yes,重启sshd 1service sshd restart 作用：设置反向代理的ip是0.0.0.0，而不是127.0.0.1 内网主机配置命令格式 1ssh -NfR &amp;lt;公网端口&amp;gt;:&amp;lt;要代理的ip&amp;gt;:&amp;lt;要代理的端口&amp;gt; &amp;lt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-10T03:26:28.897Z">
+<meta property="og:updated_time" content="2018-04-15T12:42:59.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh反向代理进行内网穿透">
 <meta name="twitter:description" content="公网主机配置 修改sshd的配置文件， 1nano /etc/ssh/sshd_config 在最后面添加GatewayPorts yes,重启sshd 1service sshd restart 作用：设置反向代理的ip是0.0.0.0，而不是127.0.0.1 内网主机配置命令格式 1ssh -NfR &amp;lt;公网端口&amp;gt;:&amp;lt;要代理的ip&amp;gt;:&amp;lt;要代理的端口&amp;gt; &amp;lt">
@@ -376,7 +376,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  304
+                  312
                 </span>
               
 
@@ -420,9 +420,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure>
 <p><strong>作用：设置反向代理的ip是0.0.0.0，而不是127.0.0.1</strong></p>
 <h3 id="内网主机配置"><a href="#内网主机配置" class="headerlink" title="内网主机配置"></a>内网主机配置</h3><p>命令格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -NfR &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -NfR &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/privatekey)</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-N：ssh不执行命令</div><div class="line">-f：后台执行</div><div class="line">-R：反向代理</div></pre></td></tr></table></figure>
-<p>查看是否启动，在公网主机上执行</p>
+<p><strong>private key 应该时600权限</strong><br>查看是否启动，在公网主机上执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">netstat -tnl|grep &lt;公网端口&gt;</div><div class="line"></div><div class="line">tcp        0      0 0.0.0.0:&lt;公网端口&gt;            0.0.0.0:*               LISTEN</div><div class="line">tcp6       0      0 :::&lt;公网端口&gt;                 :::*                    LISTEN</div></pre></td></tr></table></figure>
 <p>说明执行成功</p>
 <h3 id="免密，稳定通道"><a href="#免密，稳定通道" class="headerlink" title="免密，稳定通道"></a>免密，稳定通道</h3></li>
@@ -479,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/CA2/" rel="next" title="计算机算法 C++描述 第二章">
-                <i class="fa fa-chevron-left"></i> 计算机算法 C++描述 第二章
+              <a href="/2018/04/07/CA3/" rel="next" title="分治策略">
+                <i class="fa fa-chevron-left"></i> 分治策略
               </a>
             
           </div>
@@ -597,7 +597,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-count">75</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -719,7 +719,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.1k
+      21.5k
     </span>
   
 </div>
@@ -750,7 +750,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.1k字</span>
+  <span class="post-count">博客全站共21.5k字</span>
 </div>
 
         

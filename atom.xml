@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-04-11T11:01:12.745Z</updated>
+  <updated>2018-04-19T02:58:49.394Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建ssr</title>
+    <link href="http://blog.huhaobin.cn/2018/04/19/shadowsocksr/"/>
+    <id>http://blog.huhaobin.cn/2018/04/19/shadowsocksr/</id>
+    <published>2018-04-18T16:36:51.000Z</published>
+    <updated>2018-04-19T02:58:49.394Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>服务部署<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yum -y install wget</div><div class="line"></div><div class="line">wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</div></pre></td></tr></table></figure></li></ol><p>备用脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yum -y install wget</div><div class="line"></div><div class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</div></pre></td></tr></table></figure></p><ol><li><p>脚本安装<br>需要注意的有</p><ol><li>protocol 最好选择auth_chain_a</li><li>obfs(混淆) 千万不要选择tls <strong>有被墙的风险</strong></li></ol></li><li><p>添加开机启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vim /etc/rc.local</div><div class="line"></div><div class="line">python /usr/local/shadowsocksr/shadowsocks/server.py -c /etc/shadowsocksr/user-config.json a &amp;</div></pre></td></tr></table></figure></li><li><p>加速服务(BBR)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh</div><div class="line"></div><div class="line">chmod +x bbr.sh</div><div class="line"></div><div class="line">./bbr.sh</div></pre></td></tr></table></figure></li><li><p>客户端地址<br>windows</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/shadowsocksr-backup/shadowsocksr-csharp/releases/download/4.7.0/ShadowsocksR-4.7.0-win.7z</div></pre></td></tr></table></figure></li></ol><p>linux<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install python-pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure></p><p>android<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/shadowsocks/shadowsocks-android/releases/download/v4.5.6/shadowsocks--universal-4.5.6.apk</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;服务部署&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux定时执行任务</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T08:12:50.641Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux网络连接后执行脚本</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T02:31:08.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if-down.d -- 网络关闭前</div><div class="line">if-post-down.d -- 网络关闭后</div><div class="line">if-pre-up.d -- 网络建立前</div><div class="line">if-up.d -- 网络建立后</div></pre></td></tr></table></figure></p><p>所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo个人博客的美化</title>
@@ -49,9 +125,9 @@
     <link href="http://blog.huhaobin.cn/2018/04/10/SSHReverseproxy/"/>
     <id>http://blog.huhaobin.cn/2018/04/10/SSHReverseproxy/</id>
     <published>2018-04-09T18:00:55.000Z</published>
-    <updated>2018-04-10T03:26:28.897Z</updated>
+    <updated>2018-04-15T12:42:59.952Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="公网主机配置"><a href="#公网主机配置" class="headerlink" title="公网主机配置"></a>公网主机配置</h3><ol><li><p>修改sshd的配置文件，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/ssh/sshd_config</div></pre></td></tr></table></figure><p>在最后面添加GatewayPorts yes,重启sshd</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure><p><strong>作用：设置反向代理的ip是0.0.0.0，而不是127.0.0.1</strong></p><h3 id="内网主机配置"><a href="#内网主机配置" class="headerlink" title="内网主机配置"></a>内网主机配置</h3><p>命令格式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -NfR &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-N：ssh不执行命令</div><div class="line">-f：后台执行</div><div class="line">-R：反向代理</div></pre></td></tr></table></figure><p>查看是否启动，在公网主机上执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">netstat -tnl|grep &lt;公网端口&gt;</div><div class="line"></div><div class="line">tcp        0      0 0.0.0.0:&lt;公网端口&gt;            0.0.0.0:*               LISTEN</div><div class="line">tcp6       0      0 :::&lt;公网端口&gt;                 :::*                    LISTEN</div></pre></td></tr></table></figure><p>说明执行成功</p><h3 id="免密，稳定通道"><a href="#免密，稳定通道" class="headerlink" title="免密，稳定通道"></a>免密，稳定通道</h3></li><li><p>免密<br>在内网主机上执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-copy-id &lt;用户名&gt;@公网主机ip</div></pre></td></tr></table></figure></li><li><p>稳定通道(两种方法)</p><ol><li>autossh<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install autossh</div><div class="line">autossh -M 2333 &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</div></pre></td></tr></table></figure></li></ol><p><em>-M : 回显测试</em></p><ol><li><p>ssh心跳包</p><ul><li>单独客户设置（方法1）<br>修改/etc/ssh/ssh_config，添加</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ServerAliveInterval 60</div><div class="line">ServerAliveCountMax 9999999999</div></pre></td></tr></table></figure><ul><li>服务器设置（方法二）{新客户端可以不用设置，服务器负责维护}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/ssh/sshd_config</div><div class="line"># 添加</div><div class="line">ClientAliveInterval 30</div><div class="line">ClientAliveCountMax 6</div></pre></td></tr></table></figure></li></ul></li></ol></li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="公网主机配置"><a href="#公网主机配置" class="headerlink" title="公网主机配置"></a>公网主机配置</h3><ol><li><p>修改sshd的配置文件，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/ssh/sshd_config</div></pre></td></tr></table></figure><p>在最后面添加GatewayPorts yes,重启sshd</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure><p><strong>作用：设置反向代理的ip是0.0.0.0，而不是127.0.0.1</strong></p><h3 id="内网主机配置"><a href="#内网主机配置" class="headerlink" title="内网主机配置"></a>内网主机配置</h3><p>命令格式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -NfR &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/privatekey)</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-N：ssh不执行命令</div><div class="line">-f：后台执行</div><div class="line">-R：反向代理</div></pre></td></tr></table></figure><p><strong>private key 应该时600权限</strong><br>查看是否启动，在公网主机上执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">netstat -tnl|grep &lt;公网端口&gt;</div><div class="line"></div><div class="line">tcp        0      0 0.0.0.0:&lt;公网端口&gt;            0.0.0.0:*               LISTEN</div><div class="line">tcp6       0      0 :::&lt;公网端口&gt;                 :::*                    LISTEN</div></pre></td></tr></table></figure><p>说明执行成功</p><h3 id="免密，稳定通道"><a href="#免密，稳定通道" class="headerlink" title="免密，稳定通道"></a>免密，稳定通道</h3></li><li><p>免密<br>在内网主机上执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-copy-id &lt;用户名&gt;@公网主机ip</div></pre></td></tr></table></figure></li><li><p>稳定通道(两种方法)</p><ol><li>autossh<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install autossh</div><div class="line">autossh -M 2333 &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</div></pre></td></tr></table></figure></li></ol><p><em>-M : 回显测试</em></p><ol><li><p>ssh心跳包</p><ul><li>单独客户设置（方法1）<br>修改/etc/ssh/ssh_config，添加</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ServerAliveInterval 60</div><div class="line">ServerAliveCountMax 9999999999</div></pre></td></tr></table></figure><ul><li>服务器设置（方法二）{新客户端可以不用设置，服务器负责维护}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/ssh/sshd_config</div><div class="line"># 添加</div><div class="line">ClientAliveInterval 30</div><div class="line">ClientAliveCountMax 6</div></pre></td></tr></table></figure></li></ul></li></ol></li></ol>]]></content>
     
     <summary type="html">
     
@@ -72,6 +148,31 @@
   </entry>
   
   <entry>
+    <title>分治策略</title>
+    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
+    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
+    <published>2018-04-07T14:11:07.000Z</published>
+    <updated>2018-04-09T08:46:58.957Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机算法 C++描述 第二章</title>
     <link href="http://blog.huhaobin.cn/2018/04/07/CA2/"/>
     <id>http://blog.huhaobin.cn/2018/04/07/CA2/</id>
@@ -86,31 +187,6 @@
       
         &lt;h2 id=&quot;template-模板&quot;&gt;&lt;a href=&quot;#template-模板&quot; class=&quot;headerlink&quot; title=&quot;template 模板&quot;&gt;&lt;/a&gt;template 模板&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;类模板&lt;br&gt;假设一个类中数据成员的数据类型不能确
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分治策略</title>
-    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
-    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
-    <published>2018-04-07T14:11:07.000Z</published>
-    <updated>2018-04-09T08:46:58.957Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
       
     
     </summary>
@@ -449,83 +525,6 @@
     
       <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu16.04不能访除系统以外的硬盘</title>
-    <link href="http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/"/>
-    <id>http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/</id>
-    <published>2017-11-16T03:19:32.000Z</published>
-    <updated>2017-11-17T05:14:33.442Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install ntfsfix</div><div class="line">sudo ntfsfix /dev/sdb1</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
-      
-    
-    </summary>
-    
-      <category term="ubuntu" scheme="http://blog.huhaobin.cn/categories/ubuntu/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu16.04 安装websploit</title>
-    <link href="http://blog.huhaobin.cn/2017/11/16/how_to_install_websploit_on_ubuntu/"/>
-    <id>http://blog.huhaobin.cn/2017/11/16/how_to_install_websploit_on_ubuntu/</id>
-    <published>2017-11-15T17:19:32.000Z</published>
-    <updated>2017-11-17T05:13:38.921Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="高效中间人攻击框架"><a href="#高效中间人攻击框架" class="headerlink" title="高效中间人攻击框架"></a>高效中间人攻击框架</h2><ol><li><p>安装依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install scapy</div><div class="line">sudo apt install apache2  //for exploit/browser_autopwn</div></pre></td></tr></table></figure></li><li><p>安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://launchpad.net/ubuntu/+archive/primary/+files/websploit_3.0.0-1_all.deb</div><div class="line"></div><div class="line">在桌面环境下双击即可安装</div></pre></td></tr></table></figure></li><li><p>验证</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">websploit</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;高效中间人攻击框架&quot;&gt;&lt;a href=&quot;#高效中间人攻击框架&quot; class=&quot;headerlink&quot; title=&quot;高效中间人攻击框架&quot;&gt;&lt;/a&gt;高效中间人攻击框架&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;安装依赖&lt;/p&gt;
-&lt;figure class=&quot;highlight
-      
-    
-    </summary>
-    
-      <category term="websploit" scheme="http://blog.huhaobin.cn/categories/websploit/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu搭建交叉编译环境</title>
-    <link href="http://blog.huhaobin.cn/2017/11/15/ubuntu-arm/"/>
-    <id>http://blog.huhaobin.cn/2017/11/15/ubuntu-arm/</id>
-    <published>2017-11-15T00:52:24.162Z</published>
-    <updated>2017-09-30T08:43:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.<em>*</em> mixed implicit and normal rules: deprecated syntax<br>  修改Makefile 452 修改后：<br>  %config: scripts_basic outputmakefile FORCE</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1.&lt;em&gt;*&lt;/em&gt; mixed implicit and normal rules: deprecated syntax&lt;br&gt;  修改Makefile 452 修改后：&lt;br&gt;  %config: scripts_basic outputmakefile FORCE
-      
-    
-    </summary>
-    
-      <category term="未分类" scheme="http://blog.huhaobin.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
-    
-    
-      <category term="交叉编译" scheme="http://blog.huhaobin.cn/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
     
   </entry>
   
