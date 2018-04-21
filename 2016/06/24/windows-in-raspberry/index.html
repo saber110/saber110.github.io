@@ -73,20 +73,18 @@
 
 
 
-<meta name="description" content="一. 必要程序安装 1.   先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver2.  开启tightvncserver服务 tightvncserver要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n 3. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-get inst">
+<meta name="description" content="一. 必要程序安装 1.   先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver  2\.  开启tightvncserver服务 tightvncserver  要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n  3\. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-g">
 <meta name="keywords" content="树莓派图形化界面">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进入树莓派图形化界面">
 <meta property="og:url" content="http://blog.huhaobin.cn/2016/06/24/windows-in-raspberry/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="一. 必要程序安装 1.   先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver2.  开启tightvncserver服务 tightvncserver要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n 3. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-get inst">
+<meta property="og:description" content="一. 必要程序安装 1.   先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver  2\.  开启tightvncserver服务 tightvncserver  要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n  3\. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/06/发多少-300x187.png">
-<meta property="og:updated_time" content="2017-09-30T08:42:16.000Z">
+<meta property="og:updated_time" content="2018-04-21T05:41:36.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进入树莓派图形化界面">
-<meta name="twitter:description" content="一. 必要程序安装 1.   先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver2.  开启tightvncserver服务 tightvncserver要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n 3. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-get inst">
-<meta name="twitter:image" content="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/06/发多少-300x187.png">
+<meta name="twitter:description" content="一. 必要程序安装 1.   先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver  2\.  开启tightvncserver服务 tightvncserver  要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n  3\. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-g">
 
 
 
@@ -368,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  181
+                  177
                 </span>
               
 
@@ -407,15 +405,29 @@
       
         <p>一. 必要程序安装</p>
 <p>1.   先在树莓派的机器上安装tightvncserver</p>
-<p><pre lang="html">sudo apt-get install tightvncserver<br></pre><br>2.  开启tightvncserver服务</p>
-<p><pre lang="html">tightvncserver<br></pre><br>要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n</p>
-<p>3. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer</p>
-<p><pre lang="html">sudo apt-get install xtightvncviewer<br></pre><br>4. 在另一台机器上连接(在步骤2完成后,在~/.vnc目录下有个aborn:1.pid,所以下面的号对应为1)</p>
-<p><pre lang="html">xtightvncviewer 192.168.1.153（树莓派的ip）:1<br></pre><br>成功连接到树莓派图形化界面。</p>
-<p>二. 再次启动树莓派</p>
-<p>1.  树莓派控制端Xshell启动tightvncserver</p>
-<p><pre lang="html">tightvncserver<br></pre><br>2. 访问机启动xtightvncviewer</p>
-<p><pre lang="html">xtightvncviewer 192.168.1.153（树莓派IP）:1<br></pre><br><img src="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/06/发多少-300x187.png" alt="发多少"></p>
+<pre lang="html">sudo apt-get install tightvncserver
+</pre>
+2\.  开启tightvncserver服务
+<pre lang="html">tightvncserver
+</pre>
+要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n
+
+3\. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer
+<pre lang="html">sudo apt-get install xtightvncviewer
+</pre>
+4\. 在另一台机器上连接(在步骤2完成后,在~/.vnc目录下有个aborn:1.pid,所以下面的号对应为1)
+<pre lang="html">xtightvncviewer 192.168.1.153（树莓派的ip）:1
+</pre>
+成功连接到树莓派图形化界面。
+
+二. 再次启动树莓派
+
+1\.  树莓派控制端Xshell启动tightvncserver
+<pre lang="html">tightvncserver
+</pre>
+2\. 访问机启动xtightvncviewer
+<pre lang="html">xtightvncviewer 192.168.1.153（树莓派IP）:1
+</pre>
 
       
     </div>
@@ -555,7 +567,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -566,7 +578,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -577,7 +589,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -661,7 +673,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -692,7 +704,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

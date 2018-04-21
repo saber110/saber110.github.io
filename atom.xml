@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2017-09-30T08:48:26.000Z</updated>
+  <updated>2018-04-21T06:15:31.118Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>qt画图</title>
+    <link href="http://blog.huhaobin.cn/2018/04/21/qtPainting/"/>
+    <id>http://blog.huhaobin.cn/2018/04/21/qtPainting/</id>
+    <published>2018-04-21T06:15:31.118Z</published>
+    <updated>2018-04-21T06:15:31.118Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="QcustomPlot"><a href="#QcustomPlot" class="headerlink" title="QcustomPlot"></a>QcustomPlot</h2><ol><li><p>下载</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.qcustomplot.com</div></pre></td></tr></table></figure></li><li><p>把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可</p></li><li>pro文件中QT += widgets printsupport</li><li><p>使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">QVector x(101), y(101); // initialize with entries 0..100</div><div class="line">for (int i=0; i&lt;101; ++i)</div><div class="line">&#123;</div><div class="line">x[i] = i/50.0 – 1; // x goes from -1 to 1</div><div class="line">y[i] = x[i]*x[i]; // let’s plot a quadratic function</div><div class="line">&#125;</div><div class="line">qDebug()&lt;&lt;“data has been created”;</div><div class="line">ui-&gt;black_line-&gt;addGraph();</div><div class="line">qDebug()&lt;&lt;“begin painting”;</div><div class="line">ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);</div><div class="line">ui-&gt;black_line-&gt;replot();</div><div class="line">qDebug()&lt;&lt;“finish”;</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;QcustomPlot&quot;&gt;&lt;a href=&quot;#QcustomPlot&quot; class=&quot;headerlink&quot; title=&quot;QcustomPlot&quot;&gt;&lt;/a&gt;QcustomPlot&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下载&lt;/p&gt;
+ &lt;figure class=&quot;hi
+      
+    
+    </summary>
+    
+      <category term="Qt" scheme="http://blog.huhaobin.cn/categories/Qt/"/>
+    
+    
+      <category term="上位机 Qt" scheme="http://blog.huhaobin.cn/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA-Qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysqldb安装</title>
+    <link href="http://blog.huhaobin.cn/2018/04/19/MySQLdb/"/>
+    <id>http://blog.huhaobin.cn/2018/04/19/MySQLdb/</id>
+    <published>2018-04-19T13:56:20.000Z</published>
+    <updated>2018-04-19T08:35:09.917Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install python3-mysqldb</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>新博客站的第一篇文章</title>
@@ -122,18 +174,15 @@
     <link href="http://blog.huhaobin.cn/2018/04/11/ButifyBlog/"/>
     <id>http://blog.huhaobin.cn/2018/04/11/ButifyBlog/</id>
     <published>2018-04-10T16:00:00.000Z</published>
-    <updated>2018-04-11T11:01:12.745Z</updated>
+    <updated>2018-04-21T06:41:26.118Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>SEO<br>npm install hexo-generator-sitemap –save<br>npm install hexo-generator-baidu-sitemap –save</li></ol><p>在【站点配置文件】hexo_blog_config.yml 中添加如下代码。</p><h1 id="hexo-sitemap"><a href="#hexo-sitemap" class="headerlink" title="hexo sitemap"></a>hexo sitemap</h1><p>sitemap:<br>  path: sitemap.xml<br>baidusitemap:<br>  path: baidusitemap.xml</p>]]></content>
+    <content type="html"><![CDATA[<p>SEO<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap --save</div><div class="line">npm install hexo-generator-baidu-sitemap --save</div></pre></td></tr></table></figure></p><p>在【站点配置文件】hexo_blog_config.yml 中添加如下代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># hexo sitemap</div><div class="line">sitemap:</div><div class="line">  path: sitemap.xml</div><div class="line">baidusitemap:</div><div class="line">  path: baidusitemap.xml</div></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;ol&gt;
-&lt;li&gt;SEO&lt;br&gt;npm install hexo-generator-sitemap –save&lt;br&gt;npm install hexo-generator-baidu-sitemap –save&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在【站点配置文件】hexo_blog_
+        &lt;p&gt;SEO&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t
       
     
     </summary>
@@ -173,31 +222,6 @@
   </entry>
   
   <entry>
-    <title>分治策略</title>
-    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
-    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
-    <published>2018-04-07T14:11:07.000Z</published>
-    <updated>2018-04-09T08:46:58.957Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>计算机算法 C++描述 第二章</title>
     <link href="http://blog.huhaobin.cn/2018/04/07/CA2/"/>
     <id>http://blog.huhaobin.cn/2018/04/07/CA2/</id>
@@ -212,6 +236,31 @@
       
         &lt;h2 id=&quot;template-模板&quot;&gt;&lt;a href=&quot;#template-模板&quot; class=&quot;headerlink&quot; title=&quot;template 模板&quot;&gt;&lt;/a&gt;template 模板&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;类模板&lt;br&gt;假设一个类中数据成员的数据类型不能确
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分治策略</title>
+    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
+    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
+    <published>2018-04-07T14:11:07.000Z</published>
+    <updated>2018-04-09T08:46:58.957Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
       
     
     </summary>
@@ -358,15 +407,17 @@
     <link href="http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/"/>
     <id>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</id>
     <published>2018-03-11T07:47:26.000Z</published>
-    <updated>2018-03-11T11:18:30.207Z</updated>
+    <updated>2018-04-21T05:19:57.341Z</updated>
     
-    <content type="html"><![CDATA[<p>1、sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含<string.h>头文件.<br>2、sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数.<br>3、sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数<br>4、编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来.<br>5、sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’;<br>6、数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.</string.h></p>]]></content>
+    <content type="html"><![CDATA[<ol><li>sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含<string.h>头文件.</string.h></li><li>sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数.</li><li>sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数</li><li>编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来.</li><li>sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’;</li><li>数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1、sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含&lt;string.h&gt;头文件.&lt;br&gt;2、sizeof的参数可以是数据类型或
+        &lt;ol&gt;
+&lt;li&gt;sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含&lt;string.h&gt;头文件.&lt;/string.h&gt;&lt;/li&gt;
+&lt;l
       
     
     </summary>
@@ -451,33 +502,6 @@
   </entry>
   
   <entry>
-    <title>qt画图</title>
-    <link href="http://blog.huhaobin.cn/2017/12/13/qtPainting/"/>
-    <id>http://blog.huhaobin.cn/2017/12/13/qtPainting/</id>
-    <published>2017-12-13T03:06:57.278Z</published>
-    <updated>2017-12-13T03:06:57.278Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="QcustomPlot"><a href="#QcustomPlot" class="headerlink" title="QcustomPlot"></a>QcustomPlot</h2><ol><li><p>下载</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.qcustomplot.com</div></pre></td></tr></table></figure></li><li><p>把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可</p></li><li>pro文件中QT += widgets printsupport</li><li><p>使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">QVector x(101), y(101); // initialize with entries 0..100</div><div class="line">for (int i=0; i&lt;101; ++i)</div><div class="line">&#123;</div><div class="line">x[i] = i/50.0 – 1; // x goes from -1 to 1</div><div class="line">y[i] = x[i]*x[i]; // let’s plot a quadratic function</div><div class="line">&#125;</div><div class="line">qDebug()&lt;&lt;“data has been created”;</div><div class="line">ui-&gt;black_line-&gt;addGraph();</div><div class="line">qDebug()&lt;&lt;“begin painting”;</div><div class="line">ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);</div><div class="line">ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);</div><div class="line">ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);</div><div class="line">ui-&gt;black_line-&gt;replot();</div><div class="line">qDebug()&lt;&lt;“finish”;</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;QcustomPlot&quot;&gt;&lt;a href=&quot;#QcustomPlot&quot; class=&quot;headerlink&quot; title=&quot;QcustomPlot&quot;&gt;&lt;/a&gt;QcustomPlot&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载&lt;/p&gt;
- &lt;figure class=&quot;hi
-      
-    
-    </summary>
-    
-      <category term="Qt" scheme="http://blog.huhaobin.cn/categories/Qt/"/>
-    
-    
-      <category term="上位机 Qt" scheme="http://blog.huhaobin.cn/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA-Qt/"/>
-    
-  </entry>
-  
-  <entry>
     <title>qt使用mysql</title>
     <link href="http://blog.huhaobin.cn/2017/12/13/qtmysql/"/>
     <id>http://blog.huhaobin.cn/2017/12/13/qtmysql/</id>
@@ -499,33 +523,6 @@
     
     
       <category term="Qt" scheme="http://blog.huhaobin.cn/tags/Qt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>卸载python安装的模块</title>
-    <link href="http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/"/>
-    <id>http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/</id>
-    <published>2017-12-01T16:00:00.000Z</published>
-    <updated>2017-12-03T15:39:51.966Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>pip<br>使用pip安装的可以用pip卸载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip uinstall ***</div></pre></td></tr></table></figure></li><li><p>easy_install<br>使用easy_install安装的可以用easy_install卸载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">easy_install -m PackageName</div></pre></td></tr></table></figure></li><li><p>setup.py</p><p> 通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命令行手动卸载：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. python setup.py  install --record files.txt</div><div class="line">2. 创建del.sh脚本内容</div><div class="line">    #!/bin/bash  </div><div class="line">    for i in $(less files.txt)  </div><div class="line">    do  rm -rf $i  </div><div class="line">    done</div><div class="line">3. 执行脚本</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;pip&lt;br&gt;使用pip安装的可以用pip卸载&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/
-      
-    
-    </summary>
-    
-      <category term="python" scheme="http://blog.huhaobin.cn/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
     
   </entry>
   

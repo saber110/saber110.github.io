@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="ZIP zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录： zip -r archive_name.zip directory_to_compress下面是如果解压">
+<meta name="description" content="zipzip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录：1zip -r archive_name.zip directory_to_compress 下面是如果解压">
 <meta name="keywords" content="解压">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu解压缩zip,tar,tar.gz,tar.bz2">
 <meta property="og:url" content="http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="ZIP zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录： zip -r archive_name.zip directory_to_compress下面是如果解压">
+<meta property="og:description" content="zipzip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录：1zip -r archive_name.zip directory_to_compress 下面是如果解压">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T08:43:12.000Z">
+<meta property="og:updated_time" content="2018-04-21T05:22:51.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu解压缩zip,tar,tar.gz,tar.bz2">
-<meta name="twitter:description" content="ZIP zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录： zip -r archive_name.zip directory_to_compress下面是如果解压">
+<meta name="twitter:description" content="zipzip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录：1zip -r archive_name.zip directory_to_compress 下面是如果解压">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  525
+                  535
                 </span>
               
 
@@ -403,25 +403,18 @@
       
 
       
-        <p><strong>ZIP</strong></p>
-<p>zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：</p>
-<p>我们可以使用下列的命令压缩一个目录：</p>
-<h1 id="zip-r-archive-name-zip-directory-to-compress"><a href="#zip-r-archive-name-zip-directory-to-compress" class="headerlink" title="zip -r archive_name.zip directory_to_compress"></a>zip -r archive_name.zip directory_to_compress</h1><p>下面是如果解压一个zip文档：</p>
-<h1 id="unzip-archive-name-zip"><a href="#unzip-archive-name-zip" class="headerlink" title="unzip archive_name.zip"></a>unzip archive_name.zip</h1><p><strong>TAR</strong></p>
-<p>Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：</p>
-<h1 id="tar-cvf-archive-name-tar-directory-to-compress"><a href="#tar-cvf-archive-name-tar-directory-to-compress" class="headerlink" title="tar -cvf archive_name.tar directory_to_compress"></a>tar -cvf archive_name.tar directory_to_compress</h1><p>如何解包：</p>
-<h1 id="tar-xvf-archive-name-tar-gz"><a href="#tar-xvf-archive-name-tar-gz" class="headerlink" title="tar -xvf archive_name.tar.gz"></a>tar -xvf archive_name.tar.gz</h1><p>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</p>
-<h1 id="tar-xvf-archive-name-tar-C-tmp-extract-here"><a href="#tar-xvf-archive-name-tar-C-tmp-extract-here" class="headerlink" title="tar -xvf archive_name.tar -C /tmp/extract_here/"></a>tar -xvf archive_name.tar -C /tmp/extract_here/</h1><p><strong>TAR.GZ</strong></p>
-<p>这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：</p>
-<h1 id="tar-zcvf-archive-name-tar-gz-directory-to-compress"><a href="#tar-zcvf-archive-name-tar-gz-directory-to-compress" class="headerlink" title="tar -zcvf archive_name.tar.gz directory_to_compress"></a>tar -zcvf archive_name.tar.gz directory_to_compress</h1><p>解压缩：</p>
-<h1 id="tar-zxvf-archive-name-tar-gz"><a href="#tar-zxvf-archive-name-tar-gz" class="headerlink" title="tar -zxvf archive_name.tar.gz"></a>tar -zxvf archive_name.tar.gz</h1><p>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</p>
-<h1 id="tar-zxvf-archive-name-tar-gz-C-tmp-extract-here"><a href="#tar-zxvf-archive-name-tar-gz-C-tmp-extract-here" class="headerlink" title="tar -zxvf archive_name.tar.gz -C /tmp/extract_here/"></a>tar -zxvf archive_name.tar.gz -C /tmp/extract_here/</h1><p><strong>TAR.BZ2</strong></p>
-<p>这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。</p>
-<h1 id="tar-jcvf-archive-name-tar-bz2-directory-to-compress"><a href="#tar-jcvf-archive-name-tar-bz2-directory-to-compress" class="headerlink" title="tar -jcvf archive_name.tar.bz2 directory_to_compress"></a>tar -jcvf archive_name.tar.bz2 directory_to_compress</h1><p>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</p>
-<h1 id="tar-jxvf-archive-name-tar-bz2-C-tmp-extract-here"><a href="#tar-jxvf-archive-name-tar-bz2-C-tmp-extract-here" class="headerlink" title="tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/"></a>tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/</h1><h1 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h1><pre><code>sudo apt-get install unrar
-sudo unrar x name.rar
-</code></pre><p>&nbsp;</p>
-<p>&nbsp;</p>
+        <h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><p>zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：</p>
+<p>我们可以使用下列的命令压缩一个目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">zip -r archive_name.zip directory_to_compress</div></pre></td></tr></table></figure></p>
+<p>下面是如果解压一个zip文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unzip archive_name.zip</div></pre></td></tr></table></figure></p>
+<h3 id="TAR"><a href="#TAR" class="headerlink" title="TAR"></a>TAR</h3><p>Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -cvf archive_name.tar directory_to_compress</div></pre></td></tr></table></figure></p>
+<p>如何解包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -xvf archive_name.tar.gz</div></pre></td></tr></table></figure></p>
+<p>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -xvf archive_name.tar -C /tmp/extract_here/</div></pre></td></tr></table></figure></p>
+<h3 id="TAR-GZ"><a href="#TAR-GZ" class="headerlink" title="TAR.GZ"></a>TAR.GZ</h3><p>这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zcvf archive_name.tar.gz directory_to_compress</div></pre></td></tr></table></figure></p>
+<p>解压缩：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf archive_name.tar.gz</div></pre></td></tr></table></figure></p>
+<p>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf archive_name.tar.gz -C /tmp/extract_here/</div></pre></td></tr></table></figure></p>
+<h3 id="TAR-BZ2"><a href="#TAR-BZ2" class="headerlink" title="TAR.BZ2"></a>TAR.BZ2</h3><p>这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -jcvf archive_name.tar.bz2 directory_to_compress</div></pre></td></tr></table></figure></p>
+<p>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/</div></pre></td></tr></table></figure></p>
+<h3 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install unrar</div><div class="line">sudo unrar x name.rar</div></pre></td></tr></table></figure>
 <p>来源：<a href="http://www.linuxidc.com/Linux/2012-08/68122.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2012-08/68122.htm</a></p>
 
       
@@ -567,7 +560,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -578,7 +571,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -589,7 +582,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -651,7 +644,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zip-r-archive-name-zip-directory-to-compress"><span class="nav-number">1.</span> <span class="nav-text">zip -r archive_name.zip directory_to_compress</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unzip-archive-name-zip"><span class="nav-number">2.</span> <span class="nav-text">unzip archive_name.zip</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-cvf-archive-name-tar-directory-to-compress"><span class="nav-number">3.</span> <span class="nav-text">tar -cvf archive_name.tar directory_to_compress</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-xvf-archive-name-tar-gz"><span class="nav-number">4.</span> <span class="nav-text">tar -xvf archive_name.tar.gz</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-xvf-archive-name-tar-C-tmp-extract-here"><span class="nav-number">5.</span> <span class="nav-text">tar -xvf archive_name.tar -C /tmp/extract_here/</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-zcvf-archive-name-tar-gz-directory-to-compress"><span class="nav-number">6.</span> <span class="nav-text">tar -zcvf archive_name.tar.gz directory_to_compress</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-zxvf-archive-name-tar-gz"><span class="nav-number">7.</span> <span class="nav-text">tar -zxvf archive_name.tar.gz</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-zxvf-archive-name-tar-gz-C-tmp-extract-here"><span class="nav-number">8.</span> <span class="nav-text">tar -zxvf archive_name.tar.gz -C /tmp/extract_here/</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-jcvf-archive-name-tar-bz2-directory-to-compress"><span class="nav-number">9.</span> <span class="nav-text">tar -jcvf archive_name.tar.bz2 directory_to_compress</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-jxvf-archive-name-tar-bz2-C-tmp-extract-here"><span class="nav-number">10.</span> <span class="nav-text">tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rar"><span class="nav-number">11.</span> <span class="nav-text">rar</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#zip"><span class="nav-number">1.</span> <span class="nav-text">zip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TAR"><span class="nav-number">2.</span> <span class="nav-text">TAR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TAR-GZ"><span class="nav-number">3.</span> <span class="nav-text">TAR.GZ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TAR-BZ2"><span class="nav-number">4.</span> <span class="nav-text">TAR.BZ2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rar"><span class="nav-number">5.</span> <span class="nav-text">rar</span></a></li></ol></div>
             
 
           </div>
@@ -689,7 +682,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -720,7 +713,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

@@ -73,17 +73,17 @@
 
 
 
-<meta name="description" content="使用ESP8266-12F Wifi模块进行通信的套路体会一、接线流程在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。如下图所示。在接线过程中注意点如下。1. 用3.3V/800mA独立电源供电，需要共地。2. 保证CH_PD（EN） 也就是芯片选通脚为">
+<meta name="description" content="使用ESP8266-12F Wifi模块进行通信的套路体会###一、接线流程 在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。 在接线过程中注意点如下。  用3.3V/800mA独立电源供电，需要共地。  保证CH_PD（EN） 也就是芯片选通脚为高电平">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用ESP8266-12F Wifi模块进行通信流程">
 <meta property="og:url" content="http://blog.huhaobin.cn/2016/11/10/esp8266-12f-wifi/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="使用ESP8266-12F Wifi模块进行通信的套路体会一、接线流程在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。如下图所示。在接线过程中注意点如下。1. 用3.3V/800mA独立电源供电，需要共地。2. 保证CH_PD（EN） 也就是芯片选通脚为">
+<meta property="og:description" content="使用ESP8266-12F Wifi模块进行通信的套路体会###一、接线流程 在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。 在接线过程中注意点如下。  用3.3V/800mA独立电源供电，需要共地。  保证CH_PD（EN） 也就是芯片选通脚为高电平">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T05:06:40.000Z">
+<meta property="og:updated_time" content="2018-04-21T06:35:02.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ESP8266-12F Wifi模块进行通信流程">
-<meta name="twitter:description" content="使用ESP8266-12F Wifi模块进行通信的套路体会一、接线流程在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。如下图所示。在接线过程中注意点如下。1. 用3.3V/800mA独立电源供电，需要共地。2. 保证CH_PD（EN） 也就是芯片选通脚为">
+<meta name="twitter:description" content="使用ESP8266-12F Wifi模块进行通信的套路体会###一、接线流程 在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。 在接线过程中注意点如下。  用3.3V/800mA独立电源供电，需要共地。  保证CH_PD（EN） 也就是芯片选通脚为高电平">
 
 
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,484
+                  1,466
                 </span>
               
 
@@ -402,152 +402,63 @@
       
 
       
-        <h1 id="使用ESP8266-12F-Wifi模块进行通信的套路体会"><a href="#使用ESP8266-12F-Wifi模块进行通信的套路体会" class="headerlink" title="使用ESP8266-12F Wifi模块进行通信的套路体会"></a>使用ESP8266-12F Wifi模块进行通信的套路体会</h1><h2 id="一、接线流程"><a href="#一、接线流程" class="headerlink" title="一、接线流程"></a>一、接线流程</h2><h3 id="在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3-3V电源，GPIO15-GND端接地，模块TX-RX端分别接串口工具的RX-TX端，其余管脚悬空既可。"><a href="#在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3-3V电源，GPIO15-GND端接地，模块TX-RX端分别接串口工具的RX-TX端，其余管脚悬空既可。" class="headerlink" title="在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。"></a>在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。</h3><h3 id="如下图所示。"><a href="#如下图所示。" class="headerlink" title="如下图所示。"></a>如下图所示。</h3><h3 id="在接线过程中注意点如下。"><a href="#在接线过程中注意点如下。" class="headerlink" title="在接线过程中注意点如下。"></a>在接线过程中注意点如下。</h3><h4 id="1-用3-3V-800mA独立电源供电，需要共地。"><a href="#1-用3-3V-800mA独立电源供电，需要共地。" class="headerlink" title="1. 用3.3V/800mA独立电源供电，需要共地。"></a>1. 用3.3V/800mA独立电源供电，需要共地。</h4><h4 id="2-保证CH-PD（EN）-也就是芯片选通脚为高电平，GPIO15-也就是MTDO-为低电平。并且CH-PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。"><a href="#2-保证CH-PD（EN）-也就是芯片选通脚为高电平，GPIO15-也就是MTDO-为低电平。并且CH-PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。" class="headerlink" title="2. 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。"></a>2. 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。</h4><h4 id="3-注：RST-引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。"><a href="#3-注：RST-引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。" class="headerlink" title="3. 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。"></a>3. 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。</h4><h2 id="二、调试流程"><a href="#二、调试流程" class="headerlink" title="二、调试流程"></a>二、调试流程</h2><pre><code>命令在后面必须要有回车发送
-`&lt;/pre&gt;
-
-### 调试使用AT指令。以下简单介绍四种模式的调试流程。
-
-#### 1\. 模块ap模式下做 tcp server
-
-&lt;pre&gt;`①AT+CWMODE=2或AT+CWMODE=3       //开启 AP 模式
- ②AT+RST                                                     //复位
- ③AT+CWSAP=&quot;TEST&quot;,&quot;123456789A&quot;,3,0 //设置模块的 wifi 和密码
- ④AT+CIPMUX=1                                         //打开多连接
- ⑤AT+CIPSERVER=1,8080                            //1表示开启server模式，8080为端口号
- ⑥AT+CIPSTO=7200                                     //设置服务器超时时间为7200s
- ⑦AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据
-`&lt;/pre&gt;
-
-#### 2.模块sta模式下做 tcp client
-
-&lt;pre&gt;`①AT+CWMODE=1   //开启STA模式 
- ②AT+RST //复位
- ③AT+CWLAP //查看附近的 wifi
- ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码
- ⑤AT+CIFSR //查看模块的分配的 ip
- ⑥AT+CIPMUX=1 //打开多连接
- ⑦AT+CIPSTART=0，&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080 设置ip和端口号，发送 AT 指令去连接。
- ⑧AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据
-`&lt;/pre&gt;
-
-#### 3.模块做tcp透传
-
-&lt;pre&gt;`①AT+CWMODE=1   //开启STA模式 
- ②AT+RST //复位
- ③AT+CWLAP //查看附近的 wifi
- ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码
- ⑤AT+CIFSR //查看模块的分配的 ip
- ⑥AT+CIPMUX=0//设置单连接
- ⑦AT+CIPMODE=1//设置透传模式
- ⑧AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080// 连接server端的ip和端口
- ⑨AT+CIPSEND //开始发送数据
- ⑩+++ //退出透传，此处应取消发送新行
-`&lt;/pre&gt;
-
-#### 4.模块做udp透传
-
-&lt;pre&gt;`①AT+CWMODE=1   //开启STA模式 
- ②AT+RST //复位
- ③AT+CWLAP //查看附近的 wifi
- ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码
- ⑤AT+CIFSR //查看模块的分配的 ip
- ⑥AT+CIPSTART=“UDP”,&quot;255.255.255.255&quot;,8080,8080,0//建立udp连接，前8080为对方端口，后8080为模块端口
- ⑦AT+CIPMODE=1//设置透传模式
- ⑧AT+CIPSEND //开始发送数据
- ⑨+++ //退出透传，此处应取消发送新行
-`&lt;/pre&gt;
-
-### 使用串口助手对单个wifi模块进行测试，注意事项如下。
-
-1.配置模式为波特率：115200、数据位：8  校验位/停止位/流控：none
- 2.使用AT指令进行调试时，记住发送指令时要勾选“**发送新行选项**”。即指令需要换行（0x0d+0x0a）
-
-### 使用两个wifi模块进行通讯形式如下。
-
-#### 服务器与客户端进行tcp通信
-
-1.按之前的步骤，将两模块分别设置成tcp server与tcp client即可实现**双向**通信。
- 2.该模式下，两模块间传输数据需要限定长度。
- 3\. 若客户端连不进服务器的热点，服务器应该执行_复位_指令，等待一段时间即可。
- 4\. 掉电后会自动退出server模式，需要重新**初始化**，初始化AT指令流程截图如下。
- 5\. 若客户端掉电，服务器未掉。上电后只初始化客户端，依然不能实现数据双向传输。服务器**需要关闭server收发模式再重新开启**，即可解决问题。
- 6\. 恢复出厂设置指令：AT+RESTORE
-
-#### 进行tcp透传
-</code></pre><ol>
-<li>将一个模块设置成tcp server，另一个按照tcp透传进行调试即可。</li>
-<li>透传只能在单连接模式下进行，所以在建立连接之前一定要用（AT+CIPMUX=0 设置单连接），但是模块处于服务器模式下时，必须要多链接，由于冲突，所以模块开启服务器模式不能做tcp透传。因此，该模式下，客户端像服务器发送数据可不限长度，服务器发送数据则需要限定长度。</li>
-<li><p>其他调试方法同上。</p>
-<h4 id="进行udp透传"><a href="#进行udp透传" class="headerlink" title="进行udp透传"></a>进行udp透传</h4><p>1.需要外界提供wifi热点<br>2.将两个wifi模块连接至统一wifi热点，按照udp透传进行调试。<br>3.对于建立udp连接的指令，如需要实现多端通信，则ip地址应输入广播域“255.255.255.255”，并需要设为同一端口。</p>
-<h3 id="使用单片机发送指令至wifi模块，使用uart通信协议。"><a href="#使用单片机发送指令至wifi模块，使用uart通信协议。" class="headerlink" title="使用单片机发送指令至wifi模块，使用uart通信协议。"></a>使用单片机发送指令至wifi模块，使用uart通信协议。</h3><h4 id="1-非透传模式"><a href="#1-非透传模式" class="headerlink" title="1.非透传模式"></a>1.非透传模式</h4><h5 id="服务器初始化代码如下。"><a href="#服务器初始化代码如下。" class="headerlink" title="服务器初始化代码如下。"></a>服务器初始化代码如下。</h5><pre>`void Wifi_ServerInit() //服务器初始化
-{
-  printf("AT+CIPMUX=1");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a); 
-  DELAY_MS(10);
-  printf("AT+CIPSERVER=1,8080");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-  printf("AT+CIPSTO=7200");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-}
-`</pre>
-
-<h5 id="客户端初始化代码如下。"><a href="#客户端初始化代码如下。" class="headerlink" title="客户端初始化代码如下。"></a>客户端初始化代码如下。</h5><pre>`void Wifi_tcp_ClientInit() //客户端初始化
-{
-  printf("AT+CIPMUX=1");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);  
-  printf("AT+CIPSTART=0,\"TCP\",\"192.168.4.1\",8080");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);  
-}
-`</pre>
-
-<h5 id="发送数据代码如下。"><a href="#发送数据代码如下。" class="headerlink" title="发送数据代码如下。"></a>发送数据代码如下。</h5><pre>`void Wifi_Send_Data(uint8 Id,uint8 Len,uint8 *str) //写指定长度的数据
-{
-  printf("AT+CIPSEND=%d,%d",Id,Len);
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(1);
-  uart_putstr(UART4,str);   //数据长度满才可发送
-}
-`</pre>
-
-<h4 id="2-UDP透传模式"><a href="#2-UDP透传模式" class="headerlink" title="2.UDP透传模式"></a>2.UDP透传模式</h4><h5 id="客户端udp初始化"><a href="#客户端udp初始化" class="headerlink" title="客户端udp初始化"></a>客户端udp初始化</h5><pre>`void Wifi_Udp_ClientInit(void)//客户端udp初始化
-{
-  printf("AT+CIPMUX=0");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-  printf("AT+CIPSTART=\"UDP\",\"255.255.255.255\",8080,8080,0");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-  printf("AT+CIPMODE=1");
-  uart_putchar(UART4,0x0d);
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10);
-}
-`</pre>
-
-<h5 id="进入透传模式"><a href="#进入透传模式" class="headerlink" title="进入透传模式"></a>进入透传模式</h5><pre>`void Wifi_Udp_SendData(void)//发送数据指令，进入透传
-{
-  printf("AT+CIPSEND");
-  uart_putchar(UART4,0x0d); 
-  uart_putchar(UART4,0x0a);
-  DELAY_MS(10); 
-}
-`</pre>
-
-<h5 id="退出透传模式"><a href="#退出透传模式" class="headerlink" title="退出透传模式"></a>退出透传模式</h5><p><pre>`void Wifi_Udp_Send_End(void)//退出透传<br>{<br>  printf(“+++”);<br>}</pre></p>
+        <h1 id="使用ESP8266-12F-Wifi模块进行通信的套路体会"><a href="#使用ESP8266-12F-Wifi模块进行通信的套路体会" class="headerlink" title="使用ESP8266-12F Wifi模块进行通信的套路体会"></a>使用ESP8266-12F Wifi模块进行通信的套路体会</h1><p>###一、接线流程</p>
+<p>在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。</p>
+<p><strong>在接线过程中注意点如下。</strong></p>
+<ol>
+<li><p>用3.3V/800mA独立电源供电，需要共地。</p>
+</li>
+<li><p>保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。</p>
+</li>
+<li><p>注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。</p>
 </li>
 </ol>
+<p>###二、调试流程</p>
+<p><strong>命令在后面必须要有回车发送</strong><br>调试使用AT指令。以下简单介绍四种模式的调试流程。</p>
+<ol>
+<li><p>模块ap模式下做 tcp server</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">AT+CWMODE=2或AT+CWMODE=3       //开启 AP 模式</div><div class="line">AT+RST                         //复位</div><div class="line">AT+CWSAP=&quot;TEST&quot;,&quot;123456789A&quot;,3,0 //设置模块的 wifi 和密码</div><div class="line">AT+CIPMUX=1                     //打开多连接</div><div class="line">AT+CIPSERVER=1,8080           //1表示开启server模式，8080为端口号</div><div class="line">AT+CIPSTO=7200                 //设置服务器超时时间为7200s</div><div class="line">AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据</div></pre></td></tr></table></figure>
+</li>
+<li><p>模块sta模式下做 tcp client</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">AT+CWMODE=1   //开启STA模式</div><div class="line">AT+RST //复位</div><div class="line">AT+CWLAP //查看附近的 wifi</div><div class="line">AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码</div><div class="line">AT+CIFSR //查看模块的分配的 ip</div><div class="line">AT+CIPMUX=1 //打开多连接</div><div class="line">AT+CIPSTART=0，&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080 设置ip和端口号，发送 AT 指令去连接。</div><div class="line">AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据</div></pre></td></tr></table></figure>
+</li>
+<li><p>模块做tcp透传</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">AT+CWMODE=1   //开启STA模式</div><div class="line">AT+RST //复位</div><div class="line">AT+CWLAP //查看附近的 wifi</div><div class="line">AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码</div><div class="line">AT+CIFSR //查看模块的分配的 ip</div><div class="line">AT+CIPMUX=0//设置单连接</div><div class="line">AT+CIPMODE=1//设置透传模式</div><div class="line">AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080// 连接server端的ip和端口</div><div class="line">AT+CIPSEND //开始发送数据</div><div class="line">+++ //退出透传，此处应取消发送新行</div></pre></td></tr></table></figure>
+</li>
+<li><p>模块做udp透传</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">AT+CWMODE=1   //开启STA模式</div><div class="line">AT+RST //复位</div><div class="line">AT+CWLAP //查看附近的 wifi</div><div class="line">AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码</div><div class="line">AT+CIFSR //查看模块的分配的 ip</div><div class="line">AT+CIPSTART=“UDP”,&quot;255.255.255.255&quot;,8080,8080,0//建立udp连接，前8080为对方端口，后8080为模块端口</div><div class="line">AT+CIPMODE=1//设置透传模式</div><div class="line">AT+CIPSEND //开始发送数据</div><div class="line">+++ //退出透传，此处应取消发送新行</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="使用串口助手对单个wifi模块进行测试，注意事项如下。"><a href="#使用串口助手对单个wifi模块进行测试，注意事项如下。" class="headerlink" title="使用串口助手对单个wifi模块进行测试，注意事项如下。"></a>使用串口助手对单个wifi模块进行测试，注意事项如下。</h4><ol>
+<li>配置模式为波特率：115200、数据位：8  校验位/停止位/流控：none</li>
+<li>使用AT指令进行调试时，记住发送指令时要勾选“<strong>发送新行选项</strong>”。即指令需要换行（0x0d+0x0a）</li>
+</ol>
+<h3 id="使用两个wifi模块进行通讯形式如下。"><a href="#使用两个wifi模块进行通讯形式如下。" class="headerlink" title="使用两个wifi模块进行通讯形式如下。"></a>使用两个wifi模块进行通讯形式如下。</h3><h4 id="服务器与客户端进行tcp通信"><a href="#服务器与客户端进行tcp通信" class="headerlink" title="服务器与客户端进行tcp通信"></a>服务器与客户端进行tcp通信</h4><ol>
+<li>按之前的步骤，将两模块分别设置成tcp server与tcp client即可实现<strong>双向</strong>通信。</li>
+<li>该模式下，两模块间传输数据需要限定长度。</li>
+<li>若客户端连不进服务器的热点，服务器应该执行<em>复位</em>指令，等待一段时间即可。</li>
+<li>掉电后会自动退出server模式，需要重新<strong>初始化</strong>，初始化AT指令流程截图如下。</li>
+<li>若客户端掉电，服务器未掉。上电后只初始化客户端，依然不能实现数据双向传输。服务器<strong>需要关闭server收发模式再重新开启</strong>，即可解决问题。</li>
+<li>恢复出厂设置指令：AT+RESTORE</li>
+</ol>
+<h4 id="进行tcp透传"><a href="#进行tcp透传" class="headerlink" title="进行tcp透传"></a>进行tcp透传</h4><ol>
+<li>将一个模块设置成tcp server，另一个按照tcp透传进行调试即可。</li>
+<li>透传只能在单连接模式下进行，所以在建立连接之前一定要用（AT+CIPMUX=0 设置单连接），但是模块处于服务器模式下时，必须要多链接，由于冲突，所以模块开启服务器模式不能做tcp透传。因此，该模式下，客户端像服务器发送数据可不限长度，服务器发送数据则需要限定长度。</li>
+<li>其他调试方法同上。</li>
+</ol>
+<h4 id="进行udp透传"><a href="#进行udp透传" class="headerlink" title="进行udp透传"></a>进行udp透传</h4><ol>
+<li>需要外界提供wifi热点</li>
+<li>将两个wifi模块连接至统一wifi热点，按照udp透传进行调试。</li>
+<li>对于建立udp连接的指令，如需要实现多端通信，则ip地址应输入广播域“255.255.255.255”，并需要设为同一端口。</li>
+</ol>
+<h3 id="使用单片机发送指令至wifi模块，使用uart通信协议。"><a href="#使用单片机发送指令至wifi模块，使用uart通信协议。" class="headerlink" title="使用单片机发送指令至wifi模块，使用uart通信协议。"></a>使用单片机发送指令至wifi模块，使用uart通信协议。</h3><p>1.非透传模式</p>
+<h5 id="服务器初始化代码如下。"><a href="#服务器初始化代码如下。" class="headerlink" title="服务器初始化代码如下。"></a>服务器初始化代码如下。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">void Wifi_ServerInit() //服务器初始化</div><div class="line">&#123;</div><div class="line">  printf(&quot;AT+CIPMUX=1&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);</div><div class="line">  printf(&quot;AT+CIPSERVER=1,8080&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);</div><div class="line">  printf(&quot;AT+CIPSTO=7200&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="客户端初始化代码如下。"><a href="#客户端初始化代码如下。" class="headerlink" title="客户端初始化代码如下。"></a>客户端初始化代码如下。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void Wifi_tcp_ClientInit() //客户端初始化</div><div class="line">&#123;</div><div class="line">  printf(&quot;AT+CIPMUX=1&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);  </div><div class="line">  printf(&quot;AT+CIPSTART=0,&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="发送数据代码如下。"><a href="#发送数据代码如下。" class="headerlink" title="发送数据代码如下。"></a>发送数据代码如下。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">void Wifi_Send_Data(uint8 Id,uint8 Len,uint8 *str) //写指定长度的数据</div><div class="line">&#123;</div><div class="line">  printf(&quot;AT+CIPSEND=%d,%d&quot;,Id,Len);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(1);</div><div class="line">  uart_putstr(UART4,str);   //数据长度满才可发送</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2.UDP透传模式</p>
+<h5 id="客户端udp初始化"><a href="#客户端udp初始化" class="headerlink" title="客户端udp初始化"></a>客户端udp初始化</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">void Wifi_Udp_ClientInit(void)//客户端udp初始化</div><div class="line">&#123;</div><div class="line">  printf(&quot;AT+CIPMUX=0&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);</div><div class="line">  printf(&quot;AT+CIPSTART=&quot;UDP&quot;,&quot;255.255.255.255&quot;,8080,8080,0&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);</div><div class="line">  printf(&quot;AT+CIPMODE=1&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="进入透传模式"><a href="#进入透传模式" class="headerlink" title="进入透传模式"></a>进入透传模式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void Wifi_Udp_SendData(void)//发送数据指令，进入透传</div><div class="line">&#123;</div><div class="line">  printf(&quot;AT+CIPSEND&quot;);</div><div class="line">  uart_putchar(UART4,0x0d);</div><div class="line">  uart_putchar(UART4,0x0a);</div><div class="line">  DELAY_MS(10);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="退出透传模式"><a href="#退出透传模式" class="headerlink" title="退出透传模式"></a>退出透传模式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">void Wifi_Udp_Send_End(void)//退出透传</div><div class="line">&#123;</div><div class="line">  printf(&quot;+++&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -690,7 +601,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -701,7 +612,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -712,7 +623,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -774,7 +685,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用ESP8266-12F-Wifi模块进行通信的套路体会"><span class="nav-number">1.</span> <span class="nav-text">使用ESP8266-12F Wifi模块进行通信的套路体会</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、接线流程"><span class="nav-number">1.1.</span> <span class="nav-text">一、接线流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3-3V电源，GPIO15-GND端接地，模块TX-RX端分别接串口工具的RX-TX端，其余管脚悬空既可。"><span class="nav-number">1.1.1.</span> <span class="nav-text">在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如下图所示。"><span class="nav-number">1.1.2.</span> <span class="nav-text">如下图所示。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在接线过程中注意点如下。"><span class="nav-number">1.1.3.</span> <span class="nav-text">在接线过程中注意点如下。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-用3-3V-800mA独立电源供电，需要共地。"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">1. 用3.3V/800mA独立电源供电，需要共地。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-保证CH-PD（EN）-也就是芯片选通脚为高电平，GPIO15-也就是MTDO-为低电平。并且CH-PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">2. 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-注：RST-引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">3. 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、调试流程"><span class="nav-number">1.2.</span> <span class="nav-text">二、调试流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进行udp透传"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">进行udp透传</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用单片机发送指令至wifi模块，使用uart通信协议。"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用单片机发送指令至wifi模块，使用uart通信协议。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-非透传模式"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.非透传模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器初始化代码如下。"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">服务器初始化代码如下。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端初始化代码如下。"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">客户端初始化代码如下。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#发送数据代码如下。"><span class="nav-number">1.2.1.1.3.</span> <span class="nav-text">发送数据代码如下。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-UDP透传模式"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2.UDP透传模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端udp初始化"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">客户端udp初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入透传模式"><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">进入透传模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#退出透传模式"><span class="nav-number">1.2.1.2.3.</span> <span class="nav-text">退出透传模式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用ESP8266-12F-Wifi模块进行通信的套路体会"><span class="nav-number">1.</span> <span class="nav-text">使用ESP8266-12F Wifi模块进行通信的套路体会</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用串口助手对单个wifi模块进行测试，注意事项如下。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">使用串口助手对单个wifi模块进行测试，注意事项如下。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用两个wifi模块进行通讯形式如下。"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用两个wifi模块进行通讯形式如下。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器与客户端进行tcp通信"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">服务器与客户端进行tcp通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进行tcp透传"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">进行tcp透传</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进行udp透传"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">进行udp透传</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用单片机发送指令至wifi模块，使用uart通信协议。"><span class="nav-number">1.0.2.</span> <span class="nav-text">使用单片机发送指令至wifi模块，使用uart通信协议。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器初始化代码如下。"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">服务器初始化代码如下。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端初始化代码如下。"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">客户端初始化代码如下。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#发送数据代码如下。"><span class="nav-number">1.0.2.0.3.</span> <span class="nav-text">发送数据代码如下。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端udp初始化"><span class="nav-number">1.0.2.0.4.</span> <span class="nav-text">客户端udp初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入透传模式"><span class="nav-number">1.0.2.0.5.</span> <span class="nav-text">进入透传模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#退出透传模式"><span class="nav-number">1.0.2.0.6.</span> <span class="nav-text">退出透传模式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -812,7 +723,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -843,7 +754,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

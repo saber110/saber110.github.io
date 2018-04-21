@@ -82,7 +82,7 @@
 <meta property="og:description" content="这两天使用超声波测距（鸳鸯测距）来实现双车通信，但是使用时碰到了特别多的坑，理论上来说测到的距离是一条非常平滑的线，但是在使用的时候就出现了各种波动。V4传说是180度测距，V5是360度测距，但是V4实际使用的时候只有90度左右，V5确实是360度，但是在前车的左右两旁会出现距离跳变。 实际测量的曲线如图： 上面那些波动特别有规律，一般的滤波方法根本无能为力，在探索了三天之后，得到这写滤波方法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/07/QQ图片20160706110239-300x118.png">
-<meta property="og:updated_time" content="2017-09-30T08:42:44.000Z">
+<meta property="og:updated_time" content="2018-04-21T05:40:59.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="鸳鸯测距使用防坑">
 <meta name="twitter:description" content="这两天使用超声波测距（鸳鸯测距）来实现双车通信，但是使用时碰到了特别多的坑，理论上来说测到的距离是一条非常平滑的线，但是在使用的时候就出现了各种波动。V4传说是180度测距，V5是360度测距，但是V4实际使用的时候只有90度左右，V5确实是360度，但是在前车的左右两旁会出现距离跳变。 实际测量的曲线如图： 上面那些波动特别有规律，一般的滤波方法根本无能为力，在探索了三天之后，得到这写滤波方法">
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,182
+                  2,150
                 </span>
               
 
@@ -408,64 +408,117 @@
         <p>这两天使用超声波测距（鸳鸯测距）来实现双车通信，但是使用时碰到了特别多的坑，理论上来说测到的距离是一条非常平滑的线，但是在使用的时候就出现了各种波动。<br>V4传说是180度测距，V5是360度测距，但是V4实际使用的时候只有90度左右，V5确实是360度，但是在前车的左右两旁会出现距离跳变。</p>
 <p>实际测量的曲线如图：<br><img src="http://www.huhaobin.cn/record/wordpress/wp-content/uploads/2016/07/QQ图片20160706110239-300x118.png" alt="鸳鸯测距"></p>
 <p>上面那些波动特别有规律，一般的滤波方法根本无能为力，在探索了三天之后，得到这写滤波方法</p>
-<p>1、限幅滤波法(又称程序判断滤波法)<br>A、方法:<br>根据经验判断,确定两次采样允许的最大偏差值(设为A)<br>每次检测到新值时判断:<br>如果本次值与上次值之差&lt;=A,则本次值有效 如果本次值与上次值之差&gt;A,则本次值无效,放弃本次值,用上次值代替本次值<br>B、优点:<br>能有效克服因偶然因素引起的脉冲干扰<br>C、缺点<br>无法抑制那种周期性的干扰<br>平滑度差</p>
-<p>2、中位值滤波法<br>A、方法:<br>连续采样N次(N取奇数)<br>把N次采样值按大小排列<br>取中间值为本次有效值<br>B、优点:<br>能有效克服因偶然因素引起的波动干扰<br>对温度、液位的变化缓慢的被测参数有良好的滤波效果<br>C、缺点:<br>对流量、速度等快速变化的参数不宜</p>
-<p>3、算术平均滤波法<br>A、方法:<br>连续取N个采样值进行算术平均运算<br>N值较大时:信号平滑度较高,但灵敏度较低<br>N值较小时:信号平滑度较低,但灵敏度较高<br>N值的选取:一般流量,N=12;压力:N=4<br>B、优点:<br>适用于对一般具有随机干扰的信号进行滤波<br>这样信号的特点是有一个平均值,信号在某一数值范围附近上下波动<br>C、缺点:<br>对于测量速度较慢或要求数据计算速度较快的实时控制不适用<br>比较浪费RAM</p>
-<p>4、递推平均滤波法(又称滑动平均滤波法)<br>A、方法:<br>把连续取N个采样值看成一个队列<br>队列的长度固定为N<br>每次采样到一个新数据放入队尾,并扔掉原来队首的一次数据.(先进先出原则)<br>把队列中的N个数据进行算术平均运算,就可获得新的滤波结果<br>N值的选取:流量,N=12;压力:N=4;液面,N=4~12;温度,N=1~4<br>B、优点:<br>对周期性干扰有良好的抑制作用,平滑度高<br>适用于高频振荡的系统<br>C、缺点:<br>灵敏度低<br>对偶然出现的脉冲性干扰的抑制作用较差<br>不易消除由于脉冲干扰所引起的采样值偏差<br>不适用于脉冲干扰比较严重的场合<br>比较浪费RAM</p>
-<p>5、中位值平均滤波法(又称防脉冲干扰平均滤波法)<br>A、方法:<br>相当于“中位值滤波法”+“算术平均滤波法”<br>连续采样N个数据,去掉一个最大值和一个最小值<br>然后计算N-2个数据的算术平均值<br>N值的选取:3~14<br>B、优点:<br>融合了两种滤波法的优点<br>对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差<br>C、缺点:<br>测量速度较慢,和算术平均滤波法一样<br>比较浪费RAM</p>
-<p>6、限幅平均滤波法<br>A、方法:<br>相当于“限幅滤波法”+“递推平均滤波法”<br>每次采样到的新数据先进行限幅处理,<br>再送入队列进行递推平均滤波处理<br>B、优点:<br>融合了两种滤波法的优点<br>对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差<br>C、缺点:<br>比较浪费RAM</p>
-<p>7、一阶滞后滤波法<br>A、方法:<br>取a=0~1<br>本次滤波结果=(1-a)<em>本次采样值+a</em>上次滤波结果<br>B、优点:<br>对周期性干扰具有良好的抑制作用<br>适用于波动频率较高的场合<br>C、缺点:<br>相位滞后,灵敏度低<br>滞后程度取决于a值大小<br>不能消除滤波频率高于采样频率的1/2的干扰信号</p>
-<p>8、加权递推平均滤波法<br>A、方法:<br>是对递推平均滤波法的改进,即不同时刻的数据加以不同的权<br>通常是,越接近现时刻的数据,权取得越大.<br>给予新采样值的权系数越大,则灵敏度越高,但信号平滑度越低<br>B、优点:<br>适用于有较大纯滞后时间常数的对象<br>和采样周期较短的系统<br>C、缺点:<br>对于纯滞后时间常数较小,采样周期较长,变化缓慢的信号<br>不能迅速反应系统当前所受干扰的严重程度,滤波效果差</p>
-<p>9、消抖滤波法<br>A、方法:<br>设置一个滤波计数器<br>将每次采样值与当前有效值比较:<br>如果采样值＝当前有效值,则计数器清零<br>如果采样值&lt;&gt;当前有效值,则计数器+1,并判断计数器是否&gt;=上限N(溢出)<br>如果计数器溢出,则将本次值替换当前有效值,并清计数器<br>B、优点:<br>对于变化缓慢的被测参数有较好的滤波效果,<br>可避免在临界值附近控制器的反复开/关跳动或显示器上数值抖动<br>C、缺点:<br>对于快速变化的参数不宜<br>如果在计数器溢出的那一次采样到的值恰好是干扰值,则会将干扰值当作有效值导入系统</p>
-<p>10、限幅消抖滤波法<br>A、方法:<br>相当于“限幅滤波法”+“消抖滤波法”<br>先限幅,后消抖<br>B、优点:<br>继承了“限幅”和“消抖”的优点<br>改进了“消抖滤波法”中的某些缺陷,避免将干扰值导入系统<br>C、缺点:<br>对于快速变化的参数不宜</p>
-<p>以下是我编的示例程序,如有不足之处还望各位同行指教</p>
-<p>假定从8位AD中读取数据(如果是更高位的AD可定义数据类型为int),子程序为get_ad();</p>
-<p>1、限副滤波<br>/<em> A值可根据实际情况调整<br>value为有效值,new_value为当前采样值<br>滤波程序返回有效的实际值 </em>/</p>
-<ul>
-<li><pre lang="html"><br>#define A 10</pre></li>
+<ol>
+<li>限幅滤波法(又称程序判断滤波法)<ul>
+<li>方法:<br>根据经验判断,确定两次采样允许的最大偏差值(设为A)<br>每次检测到新值时判断:<br>如果本次值与上次值之差&lt;=A,则本次值有效 如果本次值与上次值之差&gt;A,则本次值无效,放弃本次值,用上次值代替本次值</li>
+<li>优点:<br>能有效克服因偶然因素引起的脉冲干扰</li>
+<li>缺点<br>无法抑制那种周期性的干扰<br>平滑度差</li>
 </ul>
-<p>char value;</p>
-<p>char filter()<br>{<br>char new_value;<br>new_value = get_ad();<br>if ( ( new_value - value &gt; A ) || ( value - new_value &gt; A )<br>return value;<br>return new_value;</p>
-<p>}<br><br>2、中位值滤波法<br>/<em> N值可根据实际情况调整<br>排序采用冒泡法</em>/</p>
+</li>
+</ol>
+<ol>
+<li><p>中位值滤波法</p>
 <ul>
-<li><pre lang="html">#define N 11</pre></li>
+<li>方法:<br>连续采样N次(N取奇数)<br>把N次采样值按大小排列<br>取中间值为本次有效值</li>
+<li>优点:<br>能有效克服因偶然因素引起的波动干扰<br>对温度、液位的变化缓慢的被测参数有良好的滤波效果</li>
+<li>缺点:<br>对流量、速度等快速变化的参数不宜</li>
 </ul>
-<p>char filter()<br>{<br>char value_buf[N];<br>char count,i,j,temp;<br>for ( count=0;count<br>{<br>value_buf[count] = get_ad();<br>delay();<br>}<br>for (j=0;j<br>{<br>for (i=0;i<br>{<br>if ( value_buf[i]&gt;value_buf[i+1] )<br>{<br>temp = value_buf[i];<br>value_buf[i] = value_buf[i+1];<br>value_buf[i+1] = temp;<br>}<br>}<br>}<br>return value_buf[(N-1)/2];<br>}<br><br>3、算术平均滤波法<br>/<em>
-</em>/</p>
+</li>
+<li><p>算术平均滤波法</p>
 <ul>
-<li><pre lang="html">#define N 12</pre></li>
+<li>方法:<br>连续取N个采样值进行算术平均运算<br>N值较大时:信号平滑度较高,但灵敏度较低<br>N值较小时:信号平滑度较低,但灵敏度较高<br>N值的选取:一般流量,N=12;压力:N=4</li>
+<li>优点:<br>适用于对一般具有随机干扰的信号进行滤波<br>这样信号的特点是有一个平均值,信号在某一数值范围附近上下波动</li>
+<li>缺点:<br>对于测量速度较慢或要求数据计算速度较快的实时控制不适用<br>比较浪费RAM</li>
 </ul>
-<p>char filter()<br>{<br>int sum = 0;<br>for ( count=0;count<br>{<br>sum + = get_ad();<br>delay();<br>}<br>return (char)(sum/N);<br>}<br><br>4、递推平均滤波法(又称滑动平均滤波法)<br>/<em>
-</em>/</p>
+</li>
+<li><p>递推平均滤波法(又称滑动平均滤波法)</p>
 <ul>
-<li><pre lang="html">#define N 12</pre></li>
+<li>方法:<br>把连续取N个采样值看成一个队列<br>队列的长度固定为N<br>每次采样到一个新数据放入队尾,并扔掉原来队首的一次数据.(先进先出原则)<br>把队列中的N个数据进行算术平均运算,就可获得新的滤波结果<br>N值的选取:流量,N=12;压力:N=4;液面,N=4~12;温度,N=1~4</li>
+<li>优点:<br>对周期性干扰有良好的抑制作用,平滑度高<br>适用于高频振荡的系统</li>
+<li>缺点:<br>灵敏度低<br>对偶然出现的脉冲性干扰的抑制作用较差<br>不易消除由于脉冲干扰所引起的采样值偏差<br>不适用于脉冲干扰比较严重的场合<br>比较浪费RAM</li>
 </ul>
-<p>char value_buf[N];<br>char i=0;</p>
-<p>char filter()<br>{<br>char count;<br>int sum=0;<br>value_buf[i++] = get_ad();<br>if ( i == N ) i = 0;<br>for ( count=0;count<br>sum = value_buf[count];<br>return (char)(sum/N);<br>}<br><br>5、中位值平均滤波法(又称防脉冲干扰平均滤波法)<br>/<em>
-</em>/</p>
+</li>
+<li><p>中位值平均滤波法(又称防脉冲干扰平均滤波法)</p>
 <ul>
-<li><pre lang="html">#define N 12</pre></li>
+<li>方法:<br>相当于“中位值滤波法”+“算术平均滤波法”<br>连续采样N个数据,去掉一个最大值和一个最小值<br>然后计算N-2个数据的算术平均值<br>N值的选取:3~14</li>
+<li>优点:<br>融合了两种滤波法的优点<br>对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差</li>
+<li>缺点:<br>测量速度较慢,和算术平均滤波法一样<br>比较浪费RAM</li>
 </ul>
-<p>char filter()<br>{<br>char count,i,j;<br>char value_buf[N];<br>int sum=0;<br>for (count=0;count<br>{<br>value_buf[count] = get_ad();<br>delay();<br>}<br>for (j=0;j<br>{<br>for (i=0;i<br>{<br>if ( value_buf[i]&gt;value_buf[i+1] )<br>{<br>temp = value_buf[i];<br>value_buf[i] = value_buf[i+1];<br>value_buf[i+1] = temp;<br>}<br>}<br>}<br>for(count=1;count<br>sum += value[count];<br>return (char)(sum/(N-2));<br>}<br><br>6、限幅平均滤波法<br>/<em>
-</em>/<br>略 参考子程序1、3</p>
-<p>7、一阶滞后滤波法<br>/<em> 为加快程序处理速度假定基数为100,a=0~100 </em>/</p>
+</li>
+<li><p>限幅平均滤波法</p>
 <ul>
-<li><pre lang="html">#define a 50</pre></li>
+<li>方法:<br>相当于“限幅滤波法”+“递推平均滤波法”<br>每次采样到的新数据先进行限幅处理,<br>再送入队列进行递推平均滤波处理</li>
+<li>优点:<br>融合了两种滤波法的优点<br>对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差</li>
+<li>缺点:<br>比较浪费RAM</li>
 </ul>
-<p>char value;</p>
-<p>char filter()<br>{<br>char new_value;<br>new_value = get_ad();<br>return (100-a)<em>value + a</em>new_value;<br>}<br><br>8、加权递推平均滤波法<br>/<em> coe数组为加权系数表,存在程序存储区.</em>/</p>
+</li>
+<li><p>一阶滞后滤波法</p>
 <ul>
-<li><pre lang="html">#define N 12</pre></li>
+<li>方法:<br>取a=0~1<br>本次滤波结果=(1-a) <em> 本次采样值+a </em> 上次滤波结果</li>
+<li>优点:<br>对周期性干扰具有良好的抑制作用<br>适用于波动频率较高的场合</li>
+<li>缺点:<br>相位滞后,灵敏度低<br>滞后程度取决于a值大小<br>不能消除滤波频率高于采样频率的1/2的干扰信号</li>
 </ul>
-<p>char code coe[N] = {1,2,3,4,5,6,7,8,9,10,11,12};<br>char code sum_coe = 1+2+3+4+5+6+7+8+9+10+11+12;</p>
-<p>char filter()<br>{<br>char count;<br>char value_buf[N];<br>int sum=0;<br>for (count=0,count<br>{<br>value_buf[count] = get_ad();<br>delay();<br>}<br>for (count=0,count<br>sum += value_buf[count]*coe[count];<br>return (char)(sum/sum_coe);<br>}<br><br>9、消抖滤波法</p>
+</li>
+<li><p>加权递推平均滤波法</p>
 <ul>
-<li><pre lang="html">#define N 12</pre></li>
+<li>方法:<br>是对递推平均滤波法的改进,即不同时刻的数据加以不同的权<br>通常是,越接近现时刻的数据,权取得越大.<br>给予新采样值的权系数越大,则灵敏度越高,但信号平滑度越低</li>
+<li>优点:<br>适用于有较大纯滞后时间常数的对象<br>和采样周期较短的系统</li>
+<li>缺点:<br>对于纯滞后时间常数较小,采样周期较长,变化缓慢的信号<br>不能迅速反应系统当前所受干扰的严重程度,滤波效果差</li>
 </ul>
-<p>char filter()<br>{<br>char count=0;<br>char new_value;<br>new_value = get_ad();<br>while (value !=new_value);<br>{<br>count++;<br>if (count&gt;=N) return new_value;<br>delay();<br>new_value = get_ad();<br>}<br>return value;<br>}<br><br>10、限幅消抖滤波法<br>/<em>
-</em>/<br>略 参考子程序1、9</p>
-<p>我是用了第五种滤波方法得到了比较稳定的距离。</p>
-
+</li>
+<li><p>消抖滤波法</p>
+<ul>
+<li>方法:<br>设置一个滤波计数器<br>将每次采样值与当前有效值比较:<br>如果采样值＝当前有效值,则计数器清零<br>如果采样值&lt;&gt;当前有效值,则计数器+1,并判断计数器是否&gt;=上限N(溢出)<br>如果计数器溢出,则将本次值替换当前有效值,并清计数器</li>
+<li>优点:<br>对于变化缓慢的被测参数有较好的滤波效果,<br>可避免在临界值附近控制器的反复开/关跳动或显示器上数值抖动</li>
+<li>缺点:<br>对于快速变化的参数不宜<br>如果在计数器溢出的那一次采样到的值恰好是干扰值,则会将干扰值当作有效值导入系统</li>
+</ul>
+</li>
+<li><p>限幅消抖滤波法</p>
+<ul>
+<li>方法:<br>相当于“限幅滤波法”+“消抖滤波法”<br>先限幅,后消抖</li>
+<li>优点:<br>继承了“限幅”和“消抖”的优点<br>改进了“消抖滤波法”中的某些缺陷,避免将干扰值导入系统</li>
+<li>缺点:<br>对于快速变化的参数不宜</li>
+</ul>
+</li>
+</ol>
+<h3 id="示例程序-如有不足之处还望各位同行指教"><a href="#示例程序-如有不足之处还望各位同行指教" class="headerlink" title="示例程序,如有不足之处还望各位同行指教"></a>示例程序,如有不足之处还望各位同行指教</h3><p>假定从8位AD中读取数据(如果是更高位的AD可定义数据类型为int),子程序为get_ad();</p>
+<ol>
+<li><p>限副滤波</p>
+<p> A值可根据实际情况调整<br> value为有效值,new_value为当前采样值<br> 滤波程序返回有效的实际值</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#define A 10</div><div class="line"></div><div class="line">char value;</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">char new_value;</div><div class="line">new_value = get_ad();</div><div class="line">if ( ( new_value - value &amp;gt; A ) || ( value - new_value &amp;gt; A )</div><div class="line">return value;</div><div class="line">return new_value;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>中位值滤波法</p>
+<p> N值可根据实际情况调整<br> 排序采用冒泡法</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">#define N 11</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">  char value_buf[N];</div><div class="line">  char count,i,j,temp;</div><div class="line">  for ( count=0;count</div><div class="line">  &#123;</div><div class="line">    value_buf[count] = get_ad();</div><div class="line">    delay();</div><div class="line">  &#125;</div><div class="line">  for (j=0;j</div><div class="line">    &#123;</div><div class="line">    for (i=0;i</div><div class="line">      &#123;</div><div class="line">        if ( value_buf[i]&amp;gt;value_buf[i+1] )</div><div class="line">      &#123;</div><div class="line">      temp = value_buf[i];</div><div class="line">      value_buf[i] = value_buf[i+1];</div><div class="line">      value_buf[i+1] = temp;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return value_buf[(N-1)/2];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>算术平均滤波法</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#define N 12</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">  int sum = 0;</div><div class="line">  for ( count=0;count</div><div class="line">  &#123;</div><div class="line">    sum + = get_ad();</div><div class="line">    delay();</div><div class="line">  &#125;</div><div class="line">  return (char)(sum/N);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>递推平均滤波法(又称滑动平均滤波法)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#define N 12</div><div class="line"></div><div class="line">char value_buf[N];</div><div class="line">char i=0;</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">  char count;</div><div class="line">  int sum=0;</div><div class="line">  value_buf[i++] = get_ad();</div><div class="line">  if ( i == N ) i = 0;</div><div class="line">  for ( count=0;count</div><div class="line">  sum = value_buf[count];</div><div class="line">  return (char)(sum/N);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>中位值平均滤波法(又称防脉冲干扰平均滤波法)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#define N 12</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">char count,i,j;</div><div class="line">char value_buf[N];</div><div class="line">int sum=0;</div><div class="line">for (count=0;count</div><div class="line">&#123;</div><div class="line">value_buf[count] = get_ad();</div><div class="line">delay();</div><div class="line">&#125;</div><div class="line">for (j=0;j</div><div class="line">&#123;</div><div class="line">for (i=0;i</div><div class="line">&#123;</div><div class="line">if ( value_buf[i]&amp;gt;value_buf[i+1] )</div><div class="line">&#123;</div><div class="line">temp = value_buf[i];</div><div class="line">value_buf[i] = value_buf[i+1];</div><div class="line">value_buf[i+1] = temp;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">for(count=1;count</div><div class="line">sum += value[count];</div><div class="line">return (char)(sum/(N-2));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>限幅平均滤波法</p>
+<p> 略 参考子程序1、3</p>
+</li>
+<li><p>一阶滞后滤波法</p>
+<p> 为加快程序处理速度假定基数为100,a=0~100</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#define a 50</div><div class="line"></div><div class="line">char value;</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">char new_value;</div><div class="line">new_value = get_ad();</div><div class="line">return (100-a)*value + a*new_value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>加权递推平均滤波法</p>
+<p> code数组为加权系数表,存在程序存储区.</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#define N 12</div><div class="line"></div><div class="line">char code coe[N] = &#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;</div><div class="line">char code sum_coe = 1+2+3+4+5+6+7+8+9+10+11+12;</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">char count;</div><div class="line">char value_buf[N];</div><div class="line">int sum=0;</div><div class="line">for (count=0,count</div><div class="line">&#123;</div><div class="line">value_buf[count] = get_ad();</div><div class="line">delay();</div><div class="line">&#125;</div><div class="line">for (count=0,count</div><div class="line">sum += value_buf[count]*coe[count];</div><div class="line">return (char)(sum/sum_coe);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>消抖滤波法</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#define N 12</div><div class="line"></div><div class="line">char filter()</div><div class="line">&#123;</div><div class="line">char count=0;</div><div class="line">char new_value;</div><div class="line">new_value = get_ad();</div><div class="line">while (value !=new_value);</div><div class="line">&#123;</div><div class="line">count++;</div><div class="line">if (count&amp;gt;=N) return new_value;</div><div class="line">delay();</div><div class="line">new_value = get_ad();</div><div class="line">&#125;</div><div class="line">return value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>限幅消抖滤波法</p>
+<p>略 参考子程序1、9</p>
+</li>
+</ol>
+<h2 id="我是用了第五种滤波方法得到了比较稳定的距离。"><a href="#我是用了第五种滤波方法得到了比较稳定的距离。" class="headerlink" title="我是用了第五种滤波方法得到了比较稳定的距离。"></a>我是用了第五种滤波方法得到了比较稳定的距离。</h2>
       
     </div>
     
@@ -585,8 +638,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -604,7 +666,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -615,7 +677,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -626,7 +688,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -679,6 +741,22 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例程序-如有不足之处还望各位同行指教"><span class="nav-number">1.</span> <span class="nav-text">示例程序,如有不足之处还望各位同行指教</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我是用了第五种滤波方法得到了比较稳定的距离。"><span class="nav-number"></span> <span class="nav-text">我是用了第五种滤波方法得到了比较稳定的距离。</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -710,7 +788,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -741,7 +819,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

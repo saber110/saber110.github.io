@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。环境：ubuntu 12.04 LTS详细步骤：1.首先以管理员的身份登录。命令：sudo su2.安装mysql5（既是数据v库）命令：apt-get install mysql-server">
+<meta name="description" content="##ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。 ###环境：ubuntu 12.04 LTS ###详细步骤：  首先以管理员的身份登录。  1sudo su  安装mysql5（既是数据库）  1apt-get install mysq">
 <meta name="keywords" content="LNMP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin">
 <meta property="og:url" content="http://blog.huhaobin.cn/2016/06/24/ubuntu-14-04/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。环境：ubuntu 12.04 LTS详细步骤：1.首先以管理员的身份登录。命令：sudo su2.安装mysql5（既是数据v库）命令：apt-get install mysql-server">
+<meta property="og:description" content="##ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。 ###环境：ubuntu 12.04 LTS ###详细步骤：  首先以管理员的身份登录。  1sudo su  安装mysql5（既是数据库）  1apt-get install mysq">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T08:43:38.000Z">
+<meta property="og:updated_time" content="2018-04-21T05:54:45.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin">
-<meta name="twitter:description" content="ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。环境：ubuntu 12.04 LTS详细步骤：1.首先以管理员的身份登录。命令：sudo su2.安装mysql5（既是数据v库）命令：apt-get install mysql-server">
+<meta name="twitter:description" content="##ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。 ###环境：ubuntu 12.04 LTS ###详细步骤：  首先以管理员的身份登录。  1sudo su  安装mysql5（既是数据库）  1apt-get install mysq">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  810
+                  683
                 </span>
               
 
@@ -403,10 +403,53 @@
       
 
       
-        <p>ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin</p>
-<p>转自某博，很好用：</p>
-<p>最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。<br>环境：ubuntu 12.04 LTS<br>详细步骤：<br>1.首先以管理员的身份登录。命令：sudo su<br>2.安装mysql5（既是数据v库）命令：apt-get install mysql-server mysql-client<br>  注：安装过程中会提示输入密码，记得设置密码再确定。当然，不想设置的话直接过就行了</p>
-<p>  2.安装phpMyAdmin    命令：apt-get install phpmyadmin （话说这种方法安装会自动把下面我介绍到的apache2,php5附带安装）<br>   注：phpmyadmin会自动安装在/usr/share/phpMyAdmin下，需要将 phpMyAdmin文件夹拷贝到/var/www/html目录下面 (14.04是放在/var/www/html/下，非常重要，不然后面测试不成功)<br>故使用命令：sudo cp /usr/share/phpmyadmin/ /var/www/ -a，把文件夹phpmyadmin搬到/var/www/html目录下即可<br> 或者推荐下面这种用法<br>(链接目录，用如下命令<br>sudo ln -s /usr/share/phpmyadmin/ /var/www/html/<br>注意上面那个不是IN 而是小写的L。就不用移动文件了)<br>3.安装apache服务器  命令：apt-get install apache2<br>  注：Apache的默认文档根目录是在Ubuntu上的/var/www目录，配置文件是/ etc/apache2/apache2.conf。配置存储在的         子目录在/etc/apache2目录。<br>         一般的网页文件可以直接丢进/var/www目录下，在浏览器就可以访问了。默认的是index.html，所以在浏览器地址     栏输入127.0.0.1或localhost就可以访问了<br>4.安装PHP5和Apache的PHP5的模块    命令：apt-get install php5 libapache2-mod-php5<br>   安装完后重启服务器，命令：/etc/init.d/apache2 restart<br>    注：此时可以测试php环境，命令：gedit /var/www/info.php，在弹出的文本编辑器里面写入：&lt;?php    phpinfo();     ?&gt;<br>          然后直接在浏览器输入127.0.0.1/info.php,就可以看到php的信息了，说明安装成功了<br>5.让php5获得数据库mysql的支持   命令：apt-get install php5-mysql php5-curl php5-gd php5-idn php-pear php5-imagick      php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-        tidy php5-xmlrpc php5-xsl<br>   然后重启服务器，命令：/etc/init.d/apache2 restart<br>6.安装phpMyAdmin    命令：apt-get install phpmyadmin<br>   注：phpmyadmin会自动安装在/usr/share/phpMyAdmin下，需要将 phpMyAdmin文件夹拷贝到/var/www目录下面<br>    故使用命令：sudo cp /usr/share/phpmyadmin/ /var/www/ -a，把文件夹phpmyadmin搬到/var/www目录下即可<br>   此时可以测试了，浏览器输入127.0.0.1/phpmyadmin就可以看到管理数据库的界面了。<br>  注意：想要让别人访问到你的网站的话需要更改/var/www文件夹的访问权限，命令：chmod 777 /var/www<br>到此完满结束，剩下的就是密码啊什么的了<br>    补充：今天发现不知是不是我乱改了密码还是怎样发现登录不了phpmyadmin，后来找到配置文件/var/www/phpmyadmin/config.default.php,打开这个配置文件把里面的密码和是否允许空密码登录（改为true）就行了，具体的情况稍微看下这个配置文件就行了，很简单的。</p>
+        <p>##ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin</p>
+<p><em>转自某博，很好用：</em></p>
+<p>最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。</p>
+<p>###环境：ubuntu 12.04 LTS</p>
+<p>###详细步骤：</p>
+<ol>
+<li><p>首先以管理员的身份登录。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo su</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装mysql5（既是数据库）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install mysql-server mysql-client</div></pre></td></tr></table></figure>
+<p> <strong>注：安装过程中会提示输入密码，记得设置密码再确定。当然，不想设置的话直接过就行了</strong></p>
+</li>
+<li><p>安装phpMyAdmin    </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install phpmyadmin （</div></pre></td></tr></table></figure>
+<p> 话说这种方法安装会自动把下面我介绍到的apache2,php5附带安装）</p>
+<p> 注：phpmyadmin会自动安装在/usr/share/phpMyAdmin下，需要将 phpMyAdmin文件夹拷贝到/var/www/html目录下面 (14.04是放在/var/www/html/下，非常重要，不然后面测试不成功) 故使用</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp /usr/share/phpmyadmin/ /var/www/ -a</div></pre></td></tr></table></figure>
+<p> 把文件夹phpmyadmin搬到/var/www/html目录下即可<br>  或者推荐下面这种用法<br> (链接目录，用如下命令</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /usr/share/phpmyadmin/ /var/www/html/</div></pre></td></tr></table></figure>
+<p> 注意上面那个不是IN 而是小写的L。就不用移动文件了)</p>
+</li>
+<li><p>安装apache服务器  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install apache2</div></pre></td></tr></table></figure>
+<p> <strong>注：Apache的默认文档根目录是在Ubuntu上的/var/www目录，配置文件是/ etc/apache2/apache2.conf。配置存储在的子目录在/etc/apache2目录。一般的网页文件可以直接丢进/var/www目录下，在浏览器就可以访问了。默认的是index.html，所以在浏览器地址栏输入127.0.0.1或localhost就可以访问了</strong></p>
+</li>
+<li><p>安装PHP5和Apache的PHP5的模块    </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install php5 libapache2-mod-php5</div></pre></td></tr></table></figure>
+<p>  安装完后重启服务器，</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div></pre></td></tr></table></figure>
+<p> 此时可以测试php环境，</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /var/www/info.php，</div></pre></td></tr></table></figure>
+<p> 在弹出的文本编辑器里面写入：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;?php    phpinfo();     ?&gt;</div></pre></td></tr></table></figure>
+<p> 然后直接在浏览器输入127.0.0.1/info.php,就可以看到php的信息了，说明安装成功了</p>
+</li>
+<li><p>让php5获得数据库mysql的支持   </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install php5-mysql php5-curl php5-gd php5-idn php-pear php5-imagick      php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl</div></pre></td></tr></table></figure>
+<p>  然后重启服务器，</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装phpMyAdmin    </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install phpmyadmin</div></pre></td></tr></table></figure>
+<p> 浏览器输入127.0.0.1/phpmyadmin就可以看到管理数据库的界面了。</p>
+</li>
+</ol>
+<p>补充：今天发现不知是不是我乱改了密码还是怎样发现登录不了phpmyadmin，后来找到配置文件/var/www/phpmyadmin/config.default.php,打开这个配置文件把里面的密码和是否允许空密码登录（改为true）就行了，具体的情况稍微看下这个配置文件就行了，很简单的。</p>
 
       
     </div>
@@ -546,7 +589,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -557,7 +600,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -568,7 +611,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -652,7 +695,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -683,7 +726,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

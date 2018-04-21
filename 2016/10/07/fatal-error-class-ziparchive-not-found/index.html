@@ -55,7 +55,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -73,17 +73,18 @@
 
 
 
-<meta name="description" content="史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼1、在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： &amp;nbsp; cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xph">
+<meta name="description" content="史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼 在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： 12345678cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xph">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fatal error Class &#39;ZipArchive&#39; not found ......(linux是可以用phpexcel的)">
 <meta property="og:url" content="http://blog.huhaobin.cn/2016/10/07/fatal-error-class-ziparchive-not-found/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼1、在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： &amp;nbsp; cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xph">
+<meta property="og:description" content="史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼 在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： 12345678cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xph">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T05:06:40.000Z">
+<meta property="og:updated_time" content="2018-04-21T06:24:17.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fatal error Class &#39;ZipArchive&#39; not found ......(linux是可以用phpexcel的)">
-<meta name="twitter:description" content="史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼1、在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： &amp;nbsp; cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xph">
+<meta name="twitter:description" content="史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼 在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： 12345678cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xph">
 
 
 
@@ -365,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  203
+                  201
                 </span>
               
 
@@ -403,17 +404,21 @@
 
       
         <h1 id="史上最强悍的解决方案"><a href="#史上最强悍的解决方案" class="headerlink" title="史上最强悍的解决方案"></a>史上最强悍的解决方案</h1><pre><code>ubuntu : sudo apt-get install php7.0-zip
-</code></pre><h1 id="下面是装逼"><a href="#下面是装逼" class="headerlink" title="下面是装逼"></a>下面是装逼</h1><p>1、在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下：</p>
-<p>&nbsp;</p>
-<p>cd /usr/src<br>wget <a href="http://pecl.php.net/get/zip" target="_blank" rel="external">http://pecl.php.net/get/zip</a><br>tar -zxvf zip<br>cd zip-1.x.x<br>phpize<br>./configure<br>make<br>sudo make instal</p>
-<p>&nbsp;</p>
-<p>安装完之后，屏幕上会提示zip.so的位置。然后将其记录下来，如：</p>
-<p>&nbsp;</p>
-<p>/usr/lib/php/20151012/zip.so</p>
-<p>&nbsp;</p>
-<p>2、使用root权限修改php.ini（通常可能会在/usr/local/lib/文件夹下，不过视当初安装php而定，可以通过phpinfo()来查看）：</p>
-<p>增加extension = /usr/local/lib/php/extensions/zip.so，然后同样在php.ini文件中，将 zlib.output_compression = Off 改为 zlib.output_compression = On ；</p>
-<p>3、最后别忘了重启一下Apache：sudo service apache2 restart</p>
+</code></pre><h1 id="下面是装逼"><a href="#下面是装逼" class="headerlink" title="下面是装逼"></a>下面是装逼</h1><ol>
+<li><p>在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd /usr/src</div><div class="line">wget http://pecl.php.net/get/zip</div><div class="line">tar -zxvf zip</div><div class="line">cd zip-1.x.x</div><div class="line">phpize</div><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make instal</div></pre></td></tr></table></figure>
+<p>安装完之后，屏幕上会提示zip.so的位置。然后将其记录下来，如：<em>/usr/lib/php/20151012/zip.so</em></p>
+</li>
+</ol>
+<ol>
+<li>使用root权限修改php.ini（通常可能会在/usr/local/lib/文件夹下，不过视当初安装php而定，可以通过phpinfo()来查看）：</li>
+</ol>
+<p>增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">extension = /usr/local/lib/php/extensions/zip.so</div></pre></td></tr></table></figure></p>
+<p>然后同样在php.ini文件中，将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">zlib.output_compression = Off</div><div class="line"># 改为</div><div class="line">zlib.output_compression = On</div></pre></td></tr></table></figure></p>
+<ol>
+<li>最后别忘了重启一下Apache：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -428,6 +433,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
       
 
       
@@ -556,7 +567,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -567,7 +578,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -578,7 +589,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -678,7 +689,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -709,7 +720,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

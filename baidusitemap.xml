@@ -3,6 +3,666 @@
 
 
     
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/19/unix1/</loc>
+    <lastmod>2018-04-21T06:44:29.169Z</lastmod>
+    <data>
+        <display>
+        <title>unix环境高级编程</title>
+        <pubTime>2017-10-19T07:00:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="unix" url="http://blog.huhaobin.cn/categories/unix/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/10/AutoStartInUbuntuMate/</loc>
+    <lastmod>2018-04-21T06:42:42.641Z</lastmod>
+    <data>
+        <display>
+        <title>AutoStartInUbuntuMate</title>
+        <pubTime>2017-10-10T01:03:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/09/30/blogofhexo/</loc>
+    <lastmod>2018-04-21T06:42:07.367Z</lastmod>
+    <data>
+        <display>
+        <title>hexo个人博客的搭建</title>
+        <pubTime>2017-09-29T16:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://blog.huhaobin.cn/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/04/11/ButifyBlog/</loc>
+    <lastmod>2018-04-21T06:41:26.118Z</lastmod>
+    <data>
+        <display>
+        <title>hexo个人博客的美化</title>
+        <pubTime>2018-04-10T16:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://blog.huhaobin.cn/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/21/c-exam/</loc>
+    <lastmod>2018-04-21T06:40:49.276Z</lastmod>
+    <data>
+        <display>
+        <title>C语言大坑</title>
+        <pubTime>2016-11-21T12:45:12.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/25/ci-changecode/</loc>
+    <lastmod>2018-04-21T06:39:53.281Z</lastmod>
+    <data>
+        <display>
+        <title>CI上传文件文件名乱码</title>
+        <pubTime>2016-10-25T02:35:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="PHP" url="http://blog.huhaobin.cn/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/04/17/cordova-android/</loc>
+    <lastmod>2018-04-21T06:35:39.269Z</lastmod>
+    <data>
+        <display>
+        <title>cordova开发安卓</title>
+        <pubTime>2017-04-17T14:11:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="安卓" url="http://blog.huhaobin.cn/categories/%E5%AE%89%E5%8D%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/10/esp8266-12f-wifi/</loc>
+    <lastmod>2018-04-21T06:35:02.667Z</lastmod>
+    <data>
+        <display>
+        <title>使用ESP8266-12F Wifi模块进行通信流程</title>
+        <pubTime>2016-11-09T17:56:40.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="智能小车" url="http://blog.huhaobin.cn/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/07/fatal-error-class-ziparchive-not-found/</loc>
+    <lastmod>2018-04-21T06:24:17.743Z</lastmod>
+    <data>
+        <display>
+        <title>Fatal error Class 'ZipArchive' not found ......(linux是可以用phpexcel的)</title>
+        <pubTime>2016-10-07T11:59:59.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/10/font-spider/</loc>
+    <lastmod>2018-04-21T06:22:00.786Z</lastmod>
+    <data>
+        <display>
+        <title>使用 字蛛 压缩字体文件实现网站加速</title>
+        <pubTime>2016-11-09T17:19:32.000Z</pubTime>
+        
+        <tag>网站加速</tag>
+         
+         
+           
+             
+              <breadCrumb title="网站" url="http://blog.huhaobin.cn/categories/%E7%BD%91%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/10/ftp_raspberrry/</loc>
+    <lastmod>2018-04-21T06:21:34.450Z</lastmod>
+    <data>
+        <display>
+        <title>ftp_raspberry</title>
+        <pubTime>2017-10-10T02:03:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/</loc>
+    <lastmod>2018-04-21T06:20:27.822Z</lastmod>
+    <data>
+        <display>
+        <title>linux配置Call to undefined function mcrypt_decrypt()+大杂烩</title>
+        <pubTime>2016-10-05T13:56:20.000Z</pubTime>
+        
+        <tag>大杂烩</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/04/21/qtPainting/</loc>
+    <lastmod>2018-04-21T06:15:31.118Z</lastmod>
+    <data>
+        <display>
+        <title>qt画图</title>
+        <pubTime>2018-04-21T06:15:31.118Z</pubTime>
+        
+        <tag>上位机 Qt</tag>
+         
+         
+           
+             
+              <breadCrumb title="Qt" url="http://blog.huhaobin.cn/categories/Qt/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/09/30/raspberry_ubuntumate/</loc>
+    <lastmod>2018-04-21T06:15:16.558Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu mate 在树莓派上的应用</title>
+        <pubTime>2017-09-29T16:00:00.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/raspberry-without-routet/</loc>
+    <lastmod>2018-04-21T06:14:18.835Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派无路由器连接</title>
+        <pubTime>2016-06-24T13:02:11.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/12/15/shell/</loc>
+    <lastmod>2018-04-21T06:10:29.285Z</lastmod>
+    <data>
+        <display>
+        <title>shell</title>
+        <pubTime>2016-12-14T16:36:51.000Z</pubTime>
+        
+        <tag>shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/07/20/ssh/</loc>
+    <lastmod>2018-04-21T06:03:22.208Z</lastmod>
+    <data>
+        <display>
+        <title>ssh登录腾讯云服务器</title>
+        <pubTime>2016-07-19T18:00:55.000Z</pubTime>
+        
+        <tag>腾讯云服务器</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/10/startwithboot/</loc>
+    <lastmod>2018-04-21T06:02:26.119Z</lastmod>
+    <data>
+        <display>
+        <title>StartWithBoot</title>
+        <pubTime>2017-10-10T01:03:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/14/study-c-again/</loc>
+    <lastmod>2018-04-21T06:01:37.357Z</lastmod>
+    <data>
+        <display>
+        <title>回头C语言</title>
+        <pubTime>2016-11-14T05:34:07.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/08/15/the-first-travel-of-qt/</loc>
+    <lastmod>2018-04-21T06:00:01.459Z</lastmod>
+    <data>
+        <display>
+        <title>初次涉猎Qt</title>
+        <pubTime>2016-08-15T09:55:38.000Z</pubTime>
+        
+        <tag>Qt</tag>
+         
+         
+           
+             
+              <breadCrumb title="智能小车" url="http://blog.huhaobin.cn/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/</loc>
+    <lastmod>2018-04-21T05:55:12.015Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu16.04不能访除系统以外的硬盘</title>
+        <pubTime>2017-11-16T03:19:32.000Z</pubTime>
+        
+        <tag>linux, ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/ubuntu-14-04/</loc>
+    <lastmod>2018-04-21T05:54:45.626Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin</title>
+        <pubTime>2016-06-24T13:06:25.000Z</pubTime>
+        
+        <tag>LNMP</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/</loc>
+    <lastmod>2018-04-21T05:46:07.176Z</lastmod>
+    <data>
+        <display>
+        <title>卸载python安装的模块</title>
+        <pubTime>2017-12-01T16:00:00.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://blog.huhaobin.cn/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/21/unix2/</loc>
+    <lastmod>2018-04-21T05:45:34.679Z</lastmod>
+    <data>
+        <display>
+        <title>unix环境高级编程</title>
+        <pubTime>2017-10-21T07:00:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="unix" url="http://blog.huhaobin.cn/categories/unix/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/26/unix3/</loc>
+    <lastmod>2018-04-21T05:45:31.379Z</lastmod>
+    <data>
+        <display>
+        <title>unix环境高级编程</title>
+        <pubTime>2017-10-26T07:00:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="unix" url="http://blog.huhaobin.cn/categories/unix/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/14/various/</loc>
+    <lastmod>2018-04-21T05:45:06.374Z</lastmod>
+    <data>
+        <display>
+        <title>变量</title>
+        <pubTime>2016-11-14T06:46:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/09/07/voice/</loc>
+    <lastmod>2018-04-21T05:44:24.537Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派语音对话</title>
+        <pubTime>2016-09-06T16:41:14.000Z</pubTime>
+        
+        <tag>语音对话,树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/windows-in-raspberry/</loc>
+    <lastmod>2018-04-21T05:41:36.176Z</lastmod>
+    <data>
+        <display>
+        <title>进入树莓派图形化界面</title>
+        <pubTime>2016-06-24T12:52:54.000Z</pubTime>
+        
+        <tag>树莓派图形化界面</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/07/06/yuanyang/</loc>
+    <lastmod>2018-04-21T05:40:59.167Z</lastmod>
+    <data>
+        <display>
+        <title>鸳鸯测距使用防坑</title>
+        <pubTime>2016-07-06T03:11:54.000Z</pubTime>
+        
+        <tag>滤波</tag>
+         
+         
+           
+             
+              <breadCrumb title="智能小车" url="http://blog.huhaobin.cn/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/09/22/zhiwen/</loc>
+    <lastmod>2018-04-21T05:28:22.170Z</lastmod>
+    <data>
+        <display>
+        <title>zhiwen</title>
+        <pubTime>2016-09-22T12:24:47.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/11/21/zsh/</loc>
+    <lastmod>2018-04-21T05:27:27.384Z</lastmod>
+    <data>
+        <display>
+        <title>zsh美化终端</title>
+        <pubTime>2017-11-21T07:00:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
+    <lastmod>2018-04-21T05:22:51.792Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu解压缩zip,tar,tar.gz,tar.bz2</title>
+        <pubTime>2016-06-24T12:38:22.000Z</pubTime>
+        
+        <tag>解压</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</loc>
+    <lastmod>2018-04-21T05:19:57.341Z</lastmod>
+    <data>
+        <display>
+        <title>sizeof与strlen的区别</title>
+        <pubTime>2018-03-11T07:47:26.000Z</pubTime>
+        
+        <tag>C</tag>
+         
+         
+           
+             
+              <breadCrumb title="C" url="http://blog.huhaobin.cn/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/04/19/MySQLdb/</loc>
+    <lastmod>2018-04-19T08:35:09.917Z</lastmod>
+    <data>
+        <display>
+        <title>mysqldb安装</title>
+        <pubTime>2018-04-19T13:56:20.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://blog.huhaobin.cn/2018/04/19/shadowsocksr/</loc>
@@ -84,26 +744,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2018/04/11/ButifyBlog/</loc>
-    <lastmod>2018-04-11T11:01:12.745Z</lastmod>
-    <data>
-        <display>
-        <title>hexo个人博客的美化</title>
-        <pubTime>2018-04-10T16:00:00.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://blog.huhaobin.cn/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://blog.huhaobin.cn/2018/04/07/CA3/</loc>
@@ -279,26 +919,6 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</loc>
-    <lastmod>2018-03-11T11:18:30.207Z</lastmod>
-    <data>
-        <display>
-        <title>sizeof与strlen的区别</title>
-        <pubTime>2018-03-11T07:47:26.000Z</pubTime>
-        
-        <tag>C</tag>
-         
-         
-           
-             
-              <breadCrumb title="C" url="http://blog.huhaobin.cn/categories/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.huhaobin.cn/2018/03/04/csu/</loc>
     <lastmod>2018-03-04T05:31:56.863Z</lastmod>
     <data>
@@ -374,84 +994,6 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2017/12/13/qtPainting/</loc>
-    <lastmod>2017-12-13T03:06:57.278Z</lastmod>
-    <data>
-        <display>
-        <title>qt画图</title>
-        <pubTime>2017-12-13T03:06:57.278Z</pubTime>
-        
-        <tag>上位机 Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://blog.huhaobin.cn/categories/Qt/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/04/24/qt-painting/</loc>
-    <lastmod>2017-12-13T03:06:49.182Z</lastmod>
-    <data>
-        <display>
-        <title>qt画图</title>
-        <pubTime>2017-04-24T01:25:46.000Z</pubTime>
-        
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="智能小车" url="http://blog.huhaobin.cn/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/11/21/zsh/</loc>
-    <lastmod>2017-12-04T02:53:55.604Z</lastmod>
-    <data>
-        <display>
-        <title>zsh美化终端</title>
-        <pubTime>2017-11-21T07:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/</loc>
-    <lastmod>2017-12-03T15:39:51.966Z</lastmod>
-    <data>
-        <display>
-        <title>卸载python安装的模块</title>
-        <pubTime>2017-12-01T16:00:00.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://blog.huhaobin.cn/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.huhaobin.cn/2016/11/14/pointer/</loc>
     <lastmod>2017-11-23T11:47:49.754Z</lastmod>
     <data>
@@ -465,46 +1007,6 @@
            
              
               <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/</loc>
-    <lastmod>2017-11-23T11:39:35.859Z</lastmod>
-    <data>
-        <display>
-        <title>linux配置Call to undefined function mcrypt_decrypt()+大杂烩</title>
-        <pubTime>2016-10-05T13:56:20.000Z</pubTime>
-        
-        <tag>大杂烩</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/</loc>
-    <lastmod>2017-11-17T05:14:33.442Z</lastmod>
-    <data>
-        <display>
-        <title>ubuntu16.04不能访除系统以外的硬盘</title>
-        <pubTime>2017-11-16T03:19:32.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="ubuntu" url="http://blog.huhaobin.cn/categories/ubuntu/"/>
           
         </display>
     </data>
@@ -552,60 +1054,6 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2017/10/26/unix3/</loc>
-    <lastmod>2017-10-29T07:09:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>unix环境高级编程</title>
-        <pubTime>2017-10-26T07:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="unix" url="http://blog.huhaobin.cn/categories/unix/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/21/unix2/</loc>
-    <lastmod>2017-10-29T07:09:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>unix环境高级编程</title>
-        <pubTime>2017-10-21T07:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="unix" url="http://blog.huhaobin.cn/categories/unix/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/19/unix1/</loc>
-    <lastmod>2017-10-29T07:07:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>unix环境高级编程</title>
-        <pubTime>2017-10-19T07:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="unix" url="http://blog.huhaobin.cn/categories/unix/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.huhaobin.cn/2017/10/10/faceRecognize/</loc>
     <lastmod>2017-10-11T07:39:40.000Z</lastmod>
     <data>
@@ -629,24 +1077,6 @@
     <data>
         <display>
         <title>uart_raspberry</title>
-        <pubTime>2017-10-10T01:03:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/10/AutoStartInUbuntuMate/</loc>
-    <lastmod>2017-10-11T07:30:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>AutoStartInUbuntuMate</title>
         <pubTime>2017-10-10T01:03:59.000Z</pubTime>
         
          
@@ -697,80 +1127,6 @@
     </url>
 
     
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/10/startwithboot/</loc>
-    <lastmod>2017-10-11T07:06:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>StartWithBoot</title>
-        <pubTime>2017-10-10T01:03:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/10/ftp_raspberrry/</loc>
-    <lastmod>2017-10-11T07:01:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>ftp_raspberry</title>
-        <pubTime>2017-10-10T02:03:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/09/30/blogofhexo/</loc>
-    <lastmod>2017-09-30T08:51:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo个人博客的搭建</title>
-        <pubTime>2017-09-29T16:00:00.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://blog.huhaobin.cn/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/25/ci-changecode/</loc>
-    <lastmod>2017-09-30T08:51:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>CI上传文件文件名乱码</title>
-        <pubTime>2016-10-25T02:35:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="PHP" url="http://blog.huhaobin.cn/categories/PHP/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://blog.huhaobin.cn/2017/11/15/ci-library/</loc>
@@ -784,44 +1140,6 @@
            
              
               <breadCrumb title="PHP" url="http://blog.huhaobin.cn/categories/PHP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/04/17/cordova-android/</loc>
-    <lastmod>2017-09-30T08:50:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>cordova开发安卓</title>
-        <pubTime>2017-04-17T14:11:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="安卓" url="http://blog.huhaobin.cn/categories/%E5%AE%89%E5%8D%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/10/font-spider/</loc>
-    <lastmod>2017-09-30T08:49:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用 字蛛 压缩字体文件实现网站加速</title>
-        <pubTime>2016-11-09T17:19:32.000Z</pubTime>
-        
-        <tag>网站加速</tag>
-         
-         
-           
-             
-              <breadCrumb title="网站" url="http://blog.huhaobin.cn/categories/%E7%BD%91%E7%AB%99/"/>
           
         </display>
     </data>
@@ -907,86 +1225,6 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2016/12/15/shell/</loc>
-    <lastmod>2017-09-30T08:44:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>shell</title>
-        <pubTime>2016-12-14T16:36:51.000Z</pubTime>
-        
-        <tag>shell</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/07/20/ssh/</loc>
-    <lastmod>2017-09-30T08:44:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>ssh登录腾讯云服务器</title>
-        <pubTime>2016-07-19T18:00:55.000Z</pubTime>
-        
-        <tag>腾讯云服务器</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/08/15/the-first-travel-of-qt/</loc>
-    <lastmod>2017-09-30T08:43:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>初次涉猎Qt</title>
-        <pubTime>2016-08-15T09:55:38.000Z</pubTime>
-        
-        <tag>Qt</tag>
-         
-         
-           
-             
-              <breadCrumb title="智能小车" url="http://blog.huhaobin.cn/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/ubuntu-14-04/</loc>
-    <lastmod>2017-09-30T08:43:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin</title>
-        <pubTime>2016-06-24T13:06:25.000Z</pubTime>
-        
-        <tag>LNMP</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.huhaobin.cn/2017/11/15/ubuntu-arm/</loc>
     <lastmod>2017-09-30T08:43:22.000Z</lastmod>
     <data>
@@ -1000,46 +1238,6 @@
            
              
               <breadCrumb title="未分类" url="http://blog.huhaobin.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
-    <lastmod>2017-09-30T08:43:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu解压缩zip,tar,tar.gz,tar.bz2</title>
-        <pubTime>2016-06-24T12:38:22.000Z</pubTime>
-        
-        <tag>解压</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/07/06/yuanyang/</loc>
-    <lastmod>2017-09-30T08:42:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>鸳鸯测距使用防坑</title>
-        <pubTime>2016-07-06T03:11:54.000Z</pubTime>
-        
-        <tag>滤波</tag>
-         
-         
-           
-             
-              <breadCrumb title="智能小车" url="http://blog.huhaobin.cn/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/"/>
           
         </display>
     </data>
@@ -1066,84 +1264,6 @@
     </url>
 
     
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/windows-in-raspberry/</loc>
-    <lastmod>2017-09-30T08:42:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>进入树莓派图形化界面</title>
-        <pubTime>2016-06-24T12:52:54.000Z</pubTime>
-        
-        <tag>树莓派图形化界面</tag>
-         
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/09/07/voice/</loc>
-    <lastmod>2017-09-30T08:42:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>树莓派语音对话</title>
-        <pubTime>2016-09-06T16:41:14.000Z</pubTime>
-        
-        <tag>语音对话</tag>
-         
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/09/30/raspberry_ubuntumate/</loc>
-    <lastmod>2017-09-30T08:32:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>ubuntu mate 在树莓派上的应用</title>
-        <pubTime>2017-09-29T16:00:00.000Z</pubTime>
-        
-        <tag>树莓派</tag>
-         
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/14/study-c-again/</loc>
-    <lastmod>2017-09-30T06:01:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>回头C语言</title>
-        <pubTime>2016-11-14T05:34:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>http://blog.huhaobin.cn/2017/04/17/c-multipthread/</loc>
@@ -1157,114 +1277,6 @@
            
              
               <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/14/various/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>变量</title>
-        <pubTime>2016-11-14T06:46:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>这是一个长期学习的记录</title>
-        <pubTime>2017-06-12T11:05:54.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="未分类" url="http://blog.huhaobin.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/raspberry-without-routet/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>树莓派无路由器连接</title>
-        <pubTime>2016-06-24T13:02:11.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/07/fatal-error-class-ziparchive-not-found/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>Fatal error Class 'ZipArchive' not found ......(linux是可以用phpexcel的)</title>
-        <pubTime>2016-10-07T11:59:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>智能指纹门锁开发</title>
-        <pubTime>2016-11-08T17:38:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>raspberry_fingerprint</title>
-        <pubTime>2016-10-18T01:03:59.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
           
         </display>
     </data>
@@ -1308,60 +1320,6 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/21/c-exam/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>C语言大坑</title>
-        <pubTime>2016-11-21T12:45:12.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/10/esp8266-12f-wifi/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用ESP8266-12F Wifi模块进行通信流程</title>
-        <pubTime>2016-11-09T17:56:40.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="智能小车" url="http://blog.huhaobin.cn/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/04/04/git-1/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>git</title>
-        <pubTime>2017-04-03T19:27:26.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="git" url="http://blog.huhaobin.cn/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     <data>
@@ -1380,12 +1338,48 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2016/09/22/zhiwen/</loc>
+    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     <data>
         <display>
-        <title>zhiwen</title>
-        <pubTime>2016-09-22T12:24:47.000Z</pubTime>
+        <title>raspberry_fingerprint</title>
+        <pubTime>2016-10-18T01:03:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>智能指纹门锁开发</title>
+        <pubTime>2016-11-08T17:38:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>这是一个长期学习的记录</title>
+        <pubTime>2017-06-12T11:05:54.000Z</pubTime>
         
          
            
@@ -1403,21 +1397,6 @@
     <data>
         <display>
         <title>git</title>
-        <pubTime>2017-11-15T00:52:24.158Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/11/15/c_multipthread/</loc>
-    <lastmod>2017-09-28T15:03:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>c_multipthread</title>
         <pubTime>2017-11-15T00:52:24.158Z</pubTime>
         
          

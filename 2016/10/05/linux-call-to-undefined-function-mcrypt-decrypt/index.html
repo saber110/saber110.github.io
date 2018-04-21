@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="1\. php5.4 ubuntu14.04 $ sudo php5enmod mcrypt $ sudo service apache2 restart  2\. php7.0 ubuntu16.04 sudo apt php-mcrypt sudo phpenmod mcrypt sudo service [apache](http://www.111cn.net/list-121/)2 re">
+<meta name="description" content="php5.4 ubuntu14.04 12$ sudo php5enmod mcrypt$ sudo service apache2 restart  php7.0 ubuntu16.04 123sudo apt php-mcryptsudo phpenmod mcryptsudo service apache2 restart  ubuntu安装curl 1sudo apt-get insta">
 <meta name="keywords" content="大杂烩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux配置Call to undefined function mcrypt_decrypt()+大杂烩">
 <meta property="og:url" content="http://blog.huhaobin.cn/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="1\. php5.4 ubuntu14.04 $ sudo php5enmod mcrypt $ sudo service apache2 restart  2\. php7.0 ubuntu16.04 sudo apt php-mcrypt sudo phpenmod mcrypt sudo service [apache](http://www.111cn.net/list-121/)2 re">
+<meta property="og:description" content="php5.4 ubuntu14.04 12$ sudo php5enmod mcrypt$ sudo service apache2 restart  php7.0 ubuntu16.04 123sudo apt php-mcryptsudo phpenmod mcryptsudo service apache2 restart  ubuntu安装curl 1sudo apt-get insta">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-23T11:39:35.859Z">
+<meta property="og:updated_time" content="2018-04-21T06:20:27.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置Call to undefined function mcrypt_decrypt()+大杂烩">
-<meta name="twitter:description" content="1\. php5.4 ubuntu14.04 $ sudo php5enmod mcrypt $ sudo service apache2 restart  2\. php7.0 ubuntu16.04 sudo apt php-mcrypt sudo phpenmod mcrypt sudo service [apache](http://www.111cn.net/list-121/)2 re">
+<meta name="twitter:description" content="php5.4 ubuntu14.04 12$ sudo php5enmod mcrypt$ sudo service apache2 restart  php7.0 ubuntu16.04 123sudo apt php-mcryptsudo phpenmod mcryptsudo service apache2 restart  ubuntu安装curl 1sudo apt-get insta">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  236
+                  174
                 </span>
               
 
@@ -403,48 +403,34 @@
       
 
       
-        <pre><code>1\. php5.4 ubuntu14.04
-$ sudo php5enmod mcrypt
-$ sudo service apache2 restart
+        <ol>
+<li><p>php5.4 ubuntu14.04</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo php5enmod mcrypt</div><div class="line">$ sudo service apache2 restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>php7.0 ubuntu16.04</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt php-mcrypt</div><div class="line">sudo phpenmod mcrypt</div><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>ubuntu安装curl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install php-curl</div></pre></td></tr></table></figure>
+<p>更改php.ini 开启curl(/etc/php/7.0/apache2/php.ini)<br>重启apache2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>php gd库的安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install php gd</div></pre></td></tr></table></figure>
+<p> 更改php.ini 开启curl(/etc/php/7.0/apache2/php.ini)重启apache2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>ubuntu 开启对.htaccess的支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo a2enmod rewrite</div></pre></td></tr></table></figure>
+<p> 配置/etc/apache2/apache2.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">AccessFileName .htaccess</div><div class="line">&lt;Directory /var/www/html&gt;</div><div class="line">                Options Indexes FollowSymLinks MultiViews</div><div class="line">                AllowOverride All</div><div class="line">                Order allow,deny</div><div class="line">                allow from all</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+<p>6.mysql自增起始值设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter table users（表名） AUTO_INCREMENT=10000（起始值）;</div></pre></td></tr></table></figure></p>
+<p>7.ssl  https配置</p>
+<p><a href="http://www.linuxidc.com/Linux/2015-02/113588.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-02/113588.htm</a></p>
 
-2\. php7.0 ubuntu16.04
-sudo apt php-mcrypt
-sudo phpenmod mcrypt
-sudo service [apache](http://www.111cn.net/list-121/)2 restart
-
-3\. ubuntu安装curl
-sudo apt-get install php-curl
-更改php.ini 开启curl(`/etc/php/7.0/apache2/php.ini)
-重启apache2 sudo service apache2 restart
-
-4.php gd库的安装&lt;/pre&gt;
-&lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt;sudo apt&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; install php&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;gd
-&lt;/span&gt;`&lt;/pre&gt;
-&lt;pre&gt;`更改php.ini 开启curl(`/etc/php/7.0/apache2/php.ini)&lt;/pre&gt;
-&lt;pre&gt;重启apache2 sudo service apache2 restart
-
-5\. ubuntu 开启对.htaccess的支持
-sudo a2enmod
-输入rewrite
-配置/etc/apache2/apache2.conf
-    AccessFileName .htaccess
-    &lt;Directory /var/www/html&gt;
-                    Options Indexes FollowSymLinks MultiViews
-                    AllowOverride All
-                    Order allow,deny
-                    allow from all
-    &lt;/Directory&gt;
-重启apache2   sudo service apache2 restart&lt;/pre&gt;
-&lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt; 
-6.mysql自增起始值设置&lt;/span&gt;`&lt;/pre&gt;
-&lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt;
-alter table users（表名） AUTO_INCREMENT=10000（起始值）;
-
-7.ssl  https配置
-
-http://www.linuxidc.com/Linux/2015-02/113588.htm
-&lt;/span&gt;
-</code></pre>
       
     </div>
     
@@ -583,7 +569,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -594,7 +580,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -605,7 +591,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -689,7 +675,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -720,7 +706,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

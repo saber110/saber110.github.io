@@ -73,17 +73,17 @@
 
 
 
-<meta name="description" content="修改system—-libraries —–upload—–do_upload中的相对应内容为  if ( ! @copy($this-&amp;gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&amp;gt;upload_path.$this-&amp;gt;file_name))) { if ( ! @move_uploaded_file($this-&amp;gt;file_te">
+<meta name="description" content="修改system—-libraries —–upload—–do_upload中的相对应内容为 12345678if ( ! @copy($this-&amp;gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&amp;gt;upload_path.$this-&amp;gt;file_name)))&amp;#123;  if ( ! @move_uploaded_file($this">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CI上传文件文件名乱码">
 <meta property="og:url" content="http://blog.huhaobin.cn/2016/10/25/ci-changecode/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="修改system—-libraries —–upload—–do_upload中的相对应内容为  if ( ! @copy($this-&amp;gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&amp;gt;upload_path.$this-&amp;gt;file_name))) { if ( ! @move_uploaded_file($this-&amp;gt;file_te">
+<meta property="og:description" content="修改system—-libraries —–upload—–do_upload中的相对应内容为 12345678if ( ! @copy($this-&amp;gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&amp;gt;upload_path.$this-&amp;gt;file_name)))&amp;#123;  if ( ! @move_uploaded_file($this">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T08:51:00.000Z">
+<meta property="og:updated_time" content="2018-04-21T06:39:53.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CI上传文件文件名乱码">
-<meta name="twitter:description" content="修改system—-libraries —–upload—–do_upload中的相对应内容为  if ( ! @copy($this-&amp;gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&amp;gt;upload_path.$this-&amp;gt;file_name))) { if ( ! @move_uploaded_file($this-&amp;gt;file_te">
+<meta name="twitter:description" content="修改system—-libraries —–upload—–do_upload中的相对应内容为 12345678if ( ! @copy($this-&amp;gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&amp;gt;upload_path.$this-&amp;gt;file_name)))&amp;#123;  if ( ! @move_uploaded_file($this">
 
 
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  201
+                  156
                 </span>
               
 
@@ -403,53 +403,11 @@
 
       
         <ol>
-<li>修改system—-libraries —–upload—–do_upload中的相对应内容为</li>
-<li><ol>
-<li><span class="keyword">if</span> ( ! @<span class="func">copy</span>(<span class="vars">$this</span>-&gt;file_temp, iconv(<span class="string">“UTF-8”</span>, <span class="string">“gb2312”</span>, <span class="vars">$this</span>-&gt;upload_path.<span class="vars">$this</span>-&gt;file_name)))</li>
-<li>{</li>
-<li><span class="keyword">if</span> ( ! @move_uploaded_file(<span class="vars">$this</span>-&gt;file_temp,  iconv(<span class="string">“UTF-8”</span>, <span class="string">“gb2312”</span>, <span class="vars">$this</span>-&gt;upload_path.<span class="vars">$this</span>-&gt;file_name)))</li>
-<li>{</li>
-<li><span class="vars">$this</span>-&gt;set_error(<span class="string">‘upload_destination_error’</span>);</li>
-<li><span class="keyword">return</span> FALSE;</li>
-<li>}</li>
-<li>}</li>
-</ol>
+<li><p>修改system—-libraries —–upload—–do_upload中的相对应内容为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if ( ! @copy($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name)))</div><div class="line">&#123;</div><div class="line">  if ( ! @move_uploaded_file($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name)))</div><div class="line">  &#123;</div><div class="line">    $this-&gt;set_error(‘upload_destination_error’);</div><div class="line">    return FALSE;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>修改同文件中的set_filename</p>
-</li>
-<li><ol>
-<li><span class="keyword">public</span> <span class="keyword">function</span> set_filename(<span class="vars">$path</span>, <span class="vars">$filename</span>)</li>
-<li>{</li>
-<li><span class="keyword">if</span> (<span class="vars">$this</span>-&gt;encrypt_name == TRUE)</li>
-<li>{</li>
-<li>mt_srand();</li>
-<li><span class="vars">$filename</span> = md5(uniqid(mt_rand())).<span class="vars">$this</span>-&gt;file_ext;</li>
-<li>}<br>8.9.  <span class="vars">$filename</span> = iconv(<span class="string">‘UTF-8’</span>, <span class="string">‘GB2312’</span>, <span class="vars">$filename</span>);<span class="comment">//将$filename中的文件名转换为GB2312编码</span></li>
-<li><span class="keyword">if</span> ( ! <span class="func">file_exists</span>(<span class="vars">$path</span>.<span class="vars">$filename</span>))</li>
-<li>{</li>
-<li><span class="vars">$filename</span> = iconv(<span class="string">‘GB2312’</span>, <span class="string">‘UTF-8’</span>, <span class="vars">$filename</span>);<span class="comment">//将编码转回UTF-8</span></li>
-<li><span class="keyword">return</span> <span class="vars">$filename</span>;</li>
-<li>}<br>15.16.  <span class="vars">$filename</span> = <span class="func">str_replace</span>(<span class="vars">$this</span>-&gt;file_ext, <span class="string">‘’</span>, <span class="vars">$filename</span>);</li>
-<li><span class="vars">$new_filename</span> = <span class="string">‘’</span>;</li>
-<li><span class="keyword">for</span> (<span class="vars">$i</span> = 1; <span class="vars">$i</span> &lt; 100; <span class="vars">$i</span>++)</li>
-<li>{</li>
-<li><span class="keyword">if</span> ( ! <span class="func">file_exists</span>(<span class="vars">$path</span>.<span class="vars">$filename</span>.<span class="vars">$i</span>.<span class="vars">$this</span>-&gt;file_ext))</li>
-<li>{</li>
-<li><span class="vars">$new_filename</span> = <span class="vars">$filename</span>.<span class="vars">$i</span>.<span class="vars">$this</span>-&gt;file_ext;</li>
-<li><span class="keyword">break</span>;</li>
-<li>}</li>
-<li>}<br>26.27.  <span class="keyword">if</span> (<span class="vars">$new_filename</span> == <span class="string">‘’</span>)</li>
-<li>{</li>
-<li><span class="vars">$this</span>-&gt;set_error(<span class="string">‘upload_bad_filename’</span>);</li>
-<li><span class="keyword">return</span> FALSE;</li>
-<li>}</li>
-<li><span class="keyword">else</span></li>
-<li>{</li>
-<li><span class="vars">$new_filename</span> = iconv(<span class="string">‘GB2312’</span>, <span class="string">‘UTF-8’</span>, <span class="vars">$new_filename</span>);<span class="comment">//将编码转回UTF-8</span></li>
-<li><span class="keyword">return</span> <span class="vars">$new_filename</span>;</li>
-<li>}</li>
-<li>}</li>
-</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">public function set_filename($path, $filename)</div><div class="line">&#123;</div><div class="line">  if ($this-&gt;encrypt_name == TRUE)</div><div class="line">  &#123;</div><div class="line">    mt_srand();</div><div class="line">    $filename = md5(uniqid(mt_rand())).$this-&gt;file_ext;</div><div class="line">  &#125;</div><div class="line">  $filename = iconv(‘UTF-8’, ‘GB2312’, $filename);//将$filename中的文件名转换为GB2312编码</div><div class="line">  if ( ! file_exists($path.$filename))</div><div class="line">  &#123;</div><div class="line">    $filename = iconv(‘GB2312’, ‘UTF-8’, $filename);//将编码转回UTF-8</div><div class="line">    return $filename;</div><div class="line">  &#125;</div><div class="line">  $filename = str_replace($this-&gt;file_ext, ‘’, $filename);</div><div class="line">  $new_filename = ‘’;</div><div class="line">  for ($i = 1; $i &lt; 100; $i++)</div><div class="line">  &#123;</div><div class="line">    if ( ! file_exists($path.$filename.$i.$this-&gt;file_ext))</div><div class="line">    &#123;</div><div class="line">      $new_filename = $filename.$i.$this-&gt;file_ext;</div><div class="line">      break;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  if ($new_filename == ‘’)</div><div class="line">  &#123;</div><div class="line">    $this-&gt;set_error(‘upload_bad_filename’);</div><div class="line">    return FALSE;</div><div class="line">  &#125;</div><div class="line">  else</div><div class="line">  &#123;</div><div class="line">    $new_filename = iconv(‘GB2312’, ‘UTF-8’, $new_filename);//将编码转回UTF-8</div><div class="line">    return $new_filename;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -585,7 +543,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -596,7 +554,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -607,7 +565,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -691,7 +649,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -722,7 +680,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

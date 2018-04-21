@@ -2,6 +2,244 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.huhaobin.cn/2017/10/19/unix1/</loc>
+    
+    <lastmod>2018-04-21T06:44:29.169Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/10/AutoStartInUbuntuMate/</loc>
+    
+    <lastmod>2018-04-21T06:42:42.641Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/09/30/blogofhexo/</loc>
+    
+    <lastmod>2018-04-21T06:42:07.367Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/04/11/ButifyBlog/</loc>
+    
+    <lastmod>2018-04-21T06:41:26.118Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/21/c-exam/</loc>
+    
+    <lastmod>2018-04-21T06:40:49.276Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/25/ci-changecode/</loc>
+    
+    <lastmod>2018-04-21T06:39:53.281Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/04/17/cordova-android/</loc>
+    
+    <lastmod>2018-04-21T06:35:39.269Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/10/esp8266-12f-wifi/</loc>
+    
+    <lastmod>2018-04-21T06:35:02.667Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/07/fatal-error-class-ziparchive-not-found/</loc>
+    
+    <lastmod>2018-04-21T06:24:17.743Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/10/font-spider/</loc>
+    
+    <lastmod>2018-04-21T06:22:00.786Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/10/ftp_raspberrry/</loc>
+    
+    <lastmod>2018-04-21T06:21:34.450Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/</loc>
+    
+    <lastmod>2018-04-21T06:20:27.822Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/04/21/qtPainting/</loc>
+    
+    <lastmod>2018-04-21T06:15:31.118Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/09/30/raspberry_ubuntumate/</loc>
+    
+    <lastmod>2018-04-21T06:15:16.558Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/raspberry-without-routet/</loc>
+    
+    <lastmod>2018-04-21T06:14:18.835Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/12/15/shell/</loc>
+    
+    <lastmod>2018-04-21T06:10:29.285Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/07/20/ssh/</loc>
+    
+    <lastmod>2018-04-21T06:03:22.208Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/10/startwithboot/</loc>
+    
+    <lastmod>2018-04-21T06:02:26.119Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/14/study-c-again/</loc>
+    
+    <lastmod>2018-04-21T06:01:37.357Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/08/15/the-first-travel-of-qt/</loc>
+    
+    <lastmod>2018-04-21T06:00:01.459Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/</loc>
+    
+    <lastmod>2018-04-21T05:55:12.015Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/ubuntu-14-04/</loc>
+    
+    <lastmod>2018-04-21T05:54:45.626Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/</loc>
+    
+    <lastmod>2018-04-21T05:46:07.176Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/21/unix2/</loc>
+    
+    <lastmod>2018-04-21T05:45:34.679Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/10/26/unix3/</loc>
+    
+    <lastmod>2018-04-21T05:45:31.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/14/various/</loc>
+    
+    <lastmod>2018-04-21T05:45:06.374Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/09/07/voice/</loc>
+    
+    <lastmod>2018-04-21T05:44:24.537Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/windows-in-raspberry/</loc>
+    
+    <lastmod>2018-04-21T05:41:36.176Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/07/06/yuanyang/</loc>
+    
+    <lastmod>2018-04-21T05:40:59.167Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/09/22/zhiwen/</loc>
+    
+    <lastmod>2018-04-21T05:28:22.170Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/11/21/zsh/</loc>
+    
+    <lastmod>2018-04-21T05:27:27.384Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
+    
+    <lastmod>2018-04-21T05:22:51.792Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</loc>
+    
+    <lastmod>2018-04-21T05:19:57.341Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/04/19/MySQLdb/</loc>
+    
+    <lastmod>2018-04-19T08:35:09.917Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/about/index.html</loc>
     
     <lastmod>2018-04-19T07:53:30.677Z</lastmod>
@@ -40,13 +278,6 @@
     <loc>http://blog.huhaobin.cn/guestbook/index.html</loc>
     
     <lastmod>2018-04-11T11:12:50.537Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2018/04/11/ButifyBlog/</loc>
-    
-    <lastmod>2018-04-11T11:01:12.745Z</lastmod>
     
   </url>
   
@@ -114,13 +345,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</loc>
-    
-    <lastmod>2018-03-11T11:18:30.207Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2018/03/04/csu/</loc>
     
     <lastmod>2018-03-04T05:31:56.863Z</lastmod>
@@ -149,51 +373,9 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/12/13/qtPainting/</loc>
-    
-    <lastmod>2017-12-13T03:06:57.278Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/04/24/qt-painting/</loc>
-    
-    <lastmod>2017-12-13T03:06:49.182Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/11/21/zsh/</loc>
-    
-    <lastmod>2017-12-04T02:53:55.604Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/</loc>
-    
-    <lastmod>2017-12-03T15:39:51.966Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2016/11/14/pointer/</loc>
     
     <lastmod>2017-11-23T11:47:49.754Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/05/linux-call-to-undefined-function-mcrypt-decrypt/</loc>
-    
-    <lastmod>2017-11-23T11:39:35.859Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/11/16/ubuntu_can_not_use_harddrive/</loc>
-    
-    <lastmod>2017-11-17T05:14:33.442Z</lastmod>
     
   </url>
   
@@ -212,27 +394,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/10/26/unix3/</loc>
-    
-    <lastmod>2017-10-29T07:09:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/21/unix2/</loc>
-    
-    <lastmod>2017-10-29T07:09:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/19/unix1/</loc>
-    
-    <lastmod>2017-10-29T07:07:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2017/10/10/faceRecognize/</loc>
     
     <lastmod>2017-10-11T07:39:40.000Z</lastmod>
@@ -243,13 +404,6 @@
     <loc>http://blog.huhaobin.cn/2017/10/10/uart_raspberry3B/</loc>
     
     <lastmod>2017-10-11T07:35:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/10/AutoStartInUbuntuMate/</loc>
-    
-    <lastmod>2017-10-11T07:30:00.000Z</lastmod>
     
   </url>
   
@@ -268,20 +422,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/10/10/startwithboot/</loc>
-    
-    <lastmod>2017-10-11T07:06:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/10/10/ftp_raspberrry/</loc>
-    
-    <lastmod>2017-10-11T07:01:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/categories/index.html</loc>
     
     <lastmod>2017-09-30T09:05:30.000Z</lastmod>
@@ -289,37 +429,9 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/09/30/blogofhexo/</loc>
-    
-    <lastmod>2017-09-30T08:51:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/25/ci-changecode/</loc>
-    
-    <lastmod>2017-09-30T08:51:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2017/11/15/ci-library/</loc>
     
     <lastmod>2017-09-30T08:50:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/04/17/cordova-android/</loc>
-    
-    <lastmod>2017-09-30T08:50:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/10/font-spider/</loc>
-    
-    <lastmod>2017-09-30T08:49:58.000Z</lastmod>
     
   </url>
   
@@ -352,34 +464,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/12/15/shell/</loc>
-    
-    <lastmod>2017-09-30T08:44:18.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/07/20/ssh/</loc>
-    
-    <lastmod>2017-09-30T08:44:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/08/15/the-first-travel-of-qt/</loc>
-    
-    <lastmod>2017-09-30T08:43:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/ubuntu-14-04/</loc>
-    
-    <lastmod>2017-09-30T08:43:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2017/11/15/ubuntu-arm/</loc>
     
     <lastmod>2017-09-30T08:43:22.000Z</lastmod>
@@ -387,51 +471,9 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
-    
-    <lastmod>2017-09-30T08:43:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/07/06/yuanyang/</loc>
-    
-    <lastmod>2017-09-30T08:42:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2016/10/05/windows-linux/</loc>
     
     <lastmod>2017-09-30T08:42:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/windows-in-raspberry/</loc>
-    
-    <lastmod>2017-09-30T08:42:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/09/07/voice/</loc>
-    
-    <lastmod>2017-09-30T08:42:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/09/30/raspberry_ubuntumate/</loc>
-    
-    <lastmod>2017-09-30T08:32:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/14/study-c-again/</loc>
-    
-    <lastmod>2017-09-30T06:01:08.000Z</lastmod>
     
   </url>
   
@@ -450,48 +492,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/14/various/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/raspberry-without-routet/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/07/fatal-error-class-ziparchive-not-found/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
@@ -506,27 +506,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/21/c-exam/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/10/esp8266-12f-wifi/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/04/04/git-1/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
@@ -534,7 +513,21 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/09/22/zhiwen/</loc>
+    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -544,13 +537,6 @@
     <loc>http://blog.huhaobin.cn/2017/11/15/git/</loc>
     
     <lastmod>2017-09-28T15:04:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/11/15/c_multipthread/</loc>
-    
-    <lastmod>2017-09-28T15:03:30.000Z</lastmod>
     
   </url>
   

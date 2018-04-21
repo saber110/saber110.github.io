@@ -73,18 +73,18 @@
 
 
 
-<meta name="description" content="pip使用pip安装的可以用pip卸载 1pip uinstall ***  easy_install使用easy_install安装的可以用easy_install卸载 1easy_install -m PackageName  setup.py  通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命">
+<meta name="description" content="pip  使用pip安装的可以用pip卸载  1pip uinstall ***  easy_install  使用easy_install安装的可以用easy_install卸载    1easy_install -m PackageName  setup.py  通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卸载python安装的模块">
 <meta property="og:url" content="http://blog.huhaobin.cn/2017/12/02/uinstallpythonmodules/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="pip使用pip安装的可以用pip卸载 1pip uinstall ***  easy_install使用easy_install安装的可以用easy_install卸载 1easy_install -m PackageName  setup.py  通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命">
+<meta property="og:description" content="pip  使用pip安装的可以用pip卸载  1pip uinstall ***  easy_install  使用easy_install安装的可以用easy_install卸载    1easy_install -m PackageName  setup.py  通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-03T15:39:51.966Z">
+<meta property="og:updated_time" content="2018-04-21T05:46:07.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卸载python安装的模块">
-<meta name="twitter:description" content="pip使用pip安装的可以用pip卸载 1pip uinstall ***  easy_install使用easy_install安装的可以用easy_install卸载 1easy_install -m PackageName  setup.py  通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命">
+<meta name="twitter:description" content="pip  使用pip安装的可以用pip卸载  1pip uinstall ***  easy_install  使用easy_install安装的可以用easy_install卸载    1easy_install -m PackageName  setup.py  通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选">
 
 
 
@@ -404,15 +404,17 @@
 
       
         <ol>
-<li><p>pip<br>使用pip安装的可以用pip卸载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip uinstall ***</div></pre></td></tr></table></figure>
+<li><p>pip</p>
+<p> 使用pip安装的可以用pip卸载</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip uinstall ***</div></pre></td></tr></table></figure>
 </li>
-<li><p>easy_install<br>使用easy_install安装的可以用easy_install卸载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">easy_install -m PackageName</div></pre></td></tr></table></figure>
+<li><p>easy_install</p>
+<p> 使用easy_install安装的可以用easy_install卸载</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">easy_install -m PackageName</div></pre></td></tr></table></figure>
 </li>
 <li><p>setup.py</p>
 <p> 通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命令行手动卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. python setup.py  install --record files.txt</div><div class="line">2. 创建del.sh脚本内容</div><div class="line">    #!/bin/bash  </div><div class="line">    for i in $(less files.txt)  </div><div class="line">    do  rm -rf $i  </div><div class="line">    done</div><div class="line">3. 执行脚本</div></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. python setup.py  install --record files.txt</div><div class="line">2. 创建del.sh脚本内容</div><div class="line">    #!/bin/bash  </div><div class="line">    for i in $(less files.txt)  </div><div class="line">    do  rm -rf $i  </div><div class="line">    done</div><div class="line">3. 执行脚本</div></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -554,7 +556,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -565,7 +567,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -576,7 +578,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -660,7 +662,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      21.5k
+      20.4k
     </span>
   
 </div>
@@ -691,7 +693,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.5k字</span>
+  <span class="post-count">博客全站共20.4k字</span>
 </div>
 
         

@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[qt画图]]></title>
+    <url>%2F2018%2F04%2F21%2FqtPainting%2F</url>
+    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>上位机 Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mysqldb安装]]></title>
+    <url>%2F2018%2F04%2F19%2FMySQLdb%2F</url>
+    <content type="text"><![CDATA[1apt install python3-mysqldb]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[新博客站的第一篇文章]]></title>
     <url>%2F2018%2F04%2F19%2Fabout%2F</url>
     <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
@@ -47,7 +69,7 @@
   <entry>
     <title><![CDATA[hexo个人博客的美化]]></title>
     <url>%2F2018%2F04%2F11%2FButifyBlog%2F</url>
-    <content type="text"><![CDATA[SEOnpm install hexo-generator-sitemap –savenpm install hexo-generator-baidu-sitemap –save 在【站点配置文件】hexo_blog_config.yml 中添加如下代码。 hexo sitemapsitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml]]></content>
+    <content type="text"><![CDATA[SEO12npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save 在【站点配置文件】hexo_blog_config.yml 中添加如下代码。12345# hexo sitemapsitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml]]></content>
       <categories>
         <category>hexo</category>
       </categories>
@@ -67,9 +89,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[分治策略]]></title>
-    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
-    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
+    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
+    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
+    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -78,9 +100,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
-    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
-    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
+    <title><![CDATA[分治策略]]></title>
+    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
+    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -137,7 +159,7 @@
   <entry>
     <title><![CDATA[sizeof与strlen的区别]]></title>
     <url>%2F2018%2F03%2F11%2Fsizeofstrlen%2F</url>
-    <content type="text"><![CDATA[1、sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含头文件.2、sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数.3、sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数4、编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来.5、sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’;6、数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.]]></content>
+    <content type="text"><![CDATA[sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含头文件. sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数. sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数 编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来. sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’; 数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.]]></content>
       <categories>
         <category>C</category>
       </categories>
@@ -173,17 +195,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[qt画图]]></title>
-    <url>%2F2017%2F12%2F13%2FqtPainting%2F</url>
-    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
-      <categories>
-        <category>Qt</category>
-      </categories>
-      <tags>
-        <tag>上位机 Qt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[qt使用mysql]]></title>
     <url>%2F2017%2F12%2F13%2Fqtmysql%2F</url>
     <content type="text"><![CDATA[Qt使用mysql虽然qt自己编译生成了libmysqlclient.so,但是这个文件还依赖于系统的libmysqlclient.so.18，但是很多主机都没有安装这个 查看缺少的文件12cd /the/path/to/libmysqlclient.soldd libmysqlclient.so 下载 1https://dev.mysql.com/downloads/connector/c/ 复制 1cp libmysqlclient.so.18 /usr/lib 使用重新编译工程并使用]]></content>
@@ -197,7 +208,7 @@
   <entry>
     <title><![CDATA[卸载python安装的模块]]></title>
     <url>%2F2017%2F12%2F02%2Fuinstallpythonmodules%2F</url>
-    <content type="text"><![CDATA[pip使用pip安装的可以用pip卸载 1pip uinstall *** easy_install使用easy_install安装的可以用easy_install卸载 1easy_install -m PackageName setup.py 通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命令行手动卸载： 12345671. python setup.py install --record files.txt2. 创建del.sh脚本内容 #!/bin/bash for i in $(less files.txt) do rm -rf $i done3. 执行脚本]]></content>
+    <content type="text"><![CDATA[pip 使用pip安装的可以用pip卸载 1pip uinstall *** easy_install 使用easy_install安装的可以用easy_install卸载 1easy_install -m PackageName setup.py 通过发行包附带的setup.py安装的模块，首选setup.py提供的uninstall选项。如果作者没有提供uninstall选项，则通过如下命令行手动卸载： 12345671. python setup.py install --record files.txt2. 创建del.sh脚本内容 #!/bin/bash for i in $(less files.txt) do rm -rf $i done3. 执行脚本]]></content>
       <categories>
         <category>python</category>
       </categories>
@@ -212,16 +223,19 @@
       <categories>
         <category>linux</category>
       </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[ubuntu16.04不能访除系统以外的硬盘]]></title>
     <url>%2F2017%2F11%2F16%2Fubuntu_can_not_use_harddrive%2F</url>
     <content type="text"><![CDATA[12sudo apt install ntfsfixsudo ntfsfix /dev/sdb1]]></content>
       <categories>
-        <category>ubuntu</category>
+        <category>linux</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>linux, ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -247,9 +261,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+    <title><![CDATA[集成库的学习]]></title>
+    <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
+    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>AD</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[ci library]]></title>
@@ -260,20 +280,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[c_multipthread]]></title>
-    <url>%2F2017%2F11%2F15%2Fc_multipthread%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include#include #include#include#include#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123;printf ("thread1 : I'm thread 1\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread1 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2);&#125;printf("thread1 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void *thread2()&#123; printf("thread2 : I'm thread 2\n");for (i = 0; i &lt; MAX; i++)&#123; printf("thread2 : number = %d\n",number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3);&#125;printf("thread2 :主函数在等我完成任务吗？\n");pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf("线程1创建失败!\n"); else printf("线程1被创建\n"); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0)//comment3 printf("线程2创建失败"); else printf("线程2被创建\n");&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf("线程1已经结束\n"); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf("线程2已经结束\n"); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf("我是主函数哦，我正在创建线程，呵呵\n"); thread_create(); printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n"); thread_wait(); return 0; &#125;编译指令gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[集成库的学习]]></title>
-    <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
-    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>AD</tag>
-      </tags>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[linux下arm-none-linux-gnueabi交叉编译环境的建立]]></title>
@@ -293,6 +302,9 @@
       <categories>
         <category>unix</category>
       </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[unix环境高级编程]]></title>
@@ -301,6 +313,9 @@
       <categories>
         <category>unix</category>
       </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[unix环境高级编程]]></title>
@@ -309,6 +324,9 @@
       <categories>
         <category>unix</category>
       </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[树莓派上搭建python脸部识别环境]]></title>
@@ -329,15 +347,7 @@
   <entry>
     <title><![CDATA[ftp_raspberry]]></title>
     <url>%2F2017%2F10%2F10%2Fftp_raspberrry%2F</url>
-    <content type="text"><![CDATA[ftp配置sudo apt-get install vsftpdsudo nano /etc/vsftpd.conf推荐以下配置 不允许匿名访问anonymous_enable=NO 设定可以进行写操作write_enable=YES 设定本地用户可以访问local_enable=YESascii_upload_enable=YESascii_download_enable=YES sudo service vsftpd restart重启服务]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntumate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+    <content type="text"><![CDATA[ftp配置1234567891011sudo apt-get install vsftpdsudo nano /etc/vsftpd.conf#推荐以下配置# 不允许匿名访问anonymous_enable=NO# 设定可以进行写操作write_enable=YES# 设定本地用户可以访问local_enable=YESascii_upload_enable=YESascii_download_enable=YES 1sudo service vsftpd restart 重启服务]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -345,7 +355,7 @@
   <entry>
     <title><![CDATA[StartWithBoot]]></title>
     <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程，]]></content>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -370,9 +380,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[hexo个人博客的搭建]]></title>
     <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试 在source目录下面新建CNAME文件,内容为自己独立的域名, 在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
       <categories>
         <category>hexo</category>
       </categories>
@@ -391,7 +409,7 @@
   <entry>
     <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
     <url>%2F2017%2F09%2F30%2Fraspberry_ubuntumate%2F</url>
-    <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启ssh windows用户可以打开powershell 进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
+    <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启sshwindows用户可以打开powershell进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -416,17 +434,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[qt画图]]></title>
-    <url>%2F2017%2F04%2F24%2Fqt-painting%2F</url>
-    <content type="text"><![CDATA[QcustomPlot download http://www.qcustomplot.com2. 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可3. pro文件中QT += widgets printsupport4. 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector&lt;double&gt; x(101), y(101); // initialize with entries 0..100for (int i=0; i&amp;lt;101; ++i)&#123; x[i] = i/50.0 - 1; // x goes from -1 to 1 y[i] = x[i]*x[i]; // let&apos;s plot a quadratic function&#125;qDebug()&amp;lt;&amp;lt;&quot;data has been created&quot;;ui-&gt;black_line-&gt;addGraph();qDebug()&amp;lt;&amp;lt;&quot;begin painting&quot;;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(&quot;x&quot;);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(&quot;y&quot;);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&amp;lt;&amp;lt;&quot;finish&quot;;]]></content>
-      <categories>
-        <category>智能小车</category>
-      </categories>
-      <tags>
-        <tag>Qt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[计算机算法 C++描述]]></title>
     <url>%2F2017%2F04%2F17%2FComputerAlgorithms%2F</url>
     <content type="text"></content>
@@ -440,7 +447,7 @@
   <entry>
     <title><![CDATA[cordova开发安卓]]></title>
     <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
-    <content type="text"><![CDATA[cordova 命令1234561\. cordova create hello com.example.hello HelloWorld2\. cordova platform add android/ios/browser --save3\. cordova build &amp;lt;ios/android&gt;4\. cordova run &amp;lt;ios/android&gt;5\. cordova plugin add cordova-plugin-camera6\. cordova plugin add cordova-plugin-camera]]></content>
+    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
       <categories>
         <category>安卓</category>
       </categories>
@@ -451,14 +458,6 @@
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include &lt;unistd.h&gt;#include &lt;pthread.h&gt;#include &lt;stdio.h&gt;#include &lt;sys/time.h&gt;#include &lt;string.h&gt;#define MAX 10pthread_t thread[2];pthread_mutex_t mut;int number=0, i;void *thread1()&#123; printf (&quot;thread1 : I&apos;m thread 1\n&quot;); for (i = 0; i &lt; MAX; i++) &#123; printf(&quot;thread1 : number = %d\n&quot;,number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(2); &#125; printf(&quot;thread1 :主函数在等我完成任务吗？\n&quot;); pthread_exit(NULL);&#125;void *thread2()&#123; printf(&quot;thread2 : I&apos;m thread 2\n&quot;); for (i = 0; i &lt; MAX; i++) &#123; printf(&quot;thread2 : number = %d\n&quot;,number); pthread_mutex_lock(&amp;mut); number++; pthread_mutex_unlock(&amp;mut); sleep(3); &#125; printf(&quot;thread2 :主函数在等我完成任务吗？\n&quot;); pthread_exit(NULL);&#125;void thread_create(void)&#123; int temp; memset(&amp;thread, 0, sizeof(thread)); //comment1 /*创建线程*/ if((temp = pthread_create(&amp;thread[0], NULL, thread1, NULL)) != 0) //comment2 printf(&quot;线程1创建失败!\n&quot;); else printf(&quot;线程1被创建\n&quot;); if((temp = pthread_create(&amp;thread[1], NULL, thread2, NULL)) != 0) //comment3 printf(&quot;线程2创建失败&quot;); else printf(&quot;线程2被创建\n&quot;);&#125;void thread_wait(void)&#123; /*等待线程结束*/ if(thread[0] !=0) &#123; //comment4 pthread_join(thread[0],NULL); printf(&quot;线程1已经结束\n&quot;); &#125; if(thread[1] !=0) &#123; //comment5 pthread_join(thread[1],NULL); printf(&quot;线程2已经结束\n&quot;); &#125;&#125;int main()&#123; /*用默认属性初始化互斥锁*/ pthread_mutex_init(&amp;mut,NULL); printf(&quot;我是主函数哦，我正在创建线程，呵呵\n&quot;); thread_create(); printf(&quot;我是主函数哦，我正在等待线程完成任务阿，呵呵\n&quot;); thread_wait(); return 0;&#125; 编译指令1gcc -o thread_example thread_example.c -lpthread ubuntu下面-plthread 选项要放在最后面]]></content>
       <categories>
         <category>linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F04%2F04%2Fgit-1%2F</url>
-    <content type="text"><![CDATA[`git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt; git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支 git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE git checkout COMMIT_ID 版本回退 git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash${id} 弹出工作栈git stash clear 清除栈`]]></content>
-      <categories>
-        <category>git</category>
       </categories>
   </entry>
   <entry>
@@ -483,7 +482,7 @@
   <entry>
     <title><![CDATA[shell]]></title>
     <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 1. 开头要用 #!/bin/bash 指明解释器 2. 每句话不用封号结尾 3. 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 4. 删除变量的时候不用$符 5. $0 当前脚本的文件名 $n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。 $# 传递给脚本或函数的参数个数。 $ 传递给脚本或函数的所有参数。 $@ 传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $ 稍有不同 $? 上个命令的退出状态，或函数的返回值。 $$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 替换 转义替换12345678910111213141516171819用-e 来禁止zhuanyi转义下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠\a 警报，响铃\b 退格（删除键）\f 换页(FF)，将当前位置移到下页开头\n 换行\r 回车\t 水平制表符（tab键）\v 垂直制表符&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;7\. 命令替换&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;用反引号将命令括起来&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;8\. 变量替换 ${var} 变量本来的值${var:-word} 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。${var:=word} 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。${var:?message} 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。${var:+word} 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -505,7 +504,7 @@
   <entry>
     <title><![CDATA[C语言大坑]]></title>
     <url>%2F2016%2F11%2F21%2Fc-exam%2F</url>
-    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息10.break 跳出离他最近的那层循环或switch]]></content>
+    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 按位与、按位或、或运算、与运算 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch]]></content>
       <categories>
         <category>C语言</category>
       </categories>
@@ -532,7 +531,7 @@
   <entry>
     <title><![CDATA[变量]]></title>
     <url>%2F2016%2F11%2F14%2Fvarious%2F</url>
-    <content type="text"><![CDATA[存储类别自动变量：函数中未做特殊声明的局部变量（存储在动态存储区） 静态局部变量： 定义在函数内部，在函数运行完成后不释放空间，在下次运行时保留上次的值（存储在静态存储区） 寄存器变量： 运行次数超高的变量，用register声明，放在cpu中执行（其他的变量都在内存中） remark：在全局变量前加 static则将变量的使用范围限制在此文件中，其他文件不能通过extern进行作用域的扩展，同时，使用相同的静态外部变量名无关紧要]]></content>
+    <content type="text"><![CDATA[#存储类别 自动变量： 函数中未做特殊声明的局部变量（存储在动态存储区） 静态局部变量： 定义在函数内部，在函数运行完成后不释放空间，在下次运行时保留上次的值（存储在静态存储区） 寄存器变量： 运行次数超高的变量，用register声明，放在cpu中执行（其他的变量都在内存中） remark：在全局变量前加 static则将变量的使用范围限制在此文件中，其他文件不能通过extern进行作用域的扩展，同时，使用相同的静态外部变量名无关紧要]]></content>
       <categories>
         <category>C语言</category>
       </categories>
@@ -540,7 +539,7 @@
   <entry>
     <title><![CDATA[回头C语言]]></title>
     <url>%2F2016%2F11%2F14%2Fstudy-c-again%2F</url>
-    <content type="text"><![CDATA[1代码：https://github.com/saber110/C_review 循环12break: 跳出本层循环continue : 跳出本次循环接而执行下次循环 数组初始化 数字型数组 默认初始化为0, 字符型数组 默认初始化为’\0’（空格符）** 1234567int a[3][4] = &#123; &#123;1,2,3,4&#125;, &#123;5,6,7,8&#125;, &#123;9,10,11,12,&#125; &#125;;int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;; 前两种初始化的方法效果完全一致，但是前面的清晰可读推荐使用 第三种方法相当于 12345678910 a[0][0]= 1; a[1][0] = 5; a[2][0] = 9; 其余元素全为0``` ### Remark初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度**数组长度** char c[] = “i am a student”;sizeof(c) = 11; 12系统在后面自动添加&amp;#039;\0&amp;#039;表示字符串终结 (10+1) char C[5] = “CHINA”; 123456789 也是**合法**的表达 ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间# 这儿有个关于字符数组的大坑1. C语言的**字符**数组可以在初始化的时候直接赋值2. 但不可以用 str=”china”; //尝试之间赋值给已声明的字符数组strstr1 = str2; 1* 在后面要改变字符数组的内容需要使用 gets(str);strcat(str,str1);strcpy(str,str1);strncpy(str,str1,2);//将str1中的前两个字符赋值到str中```]]></content>
+    <content type="text"><![CDATA[1代码：https://github.com/saber110/C_review 循环12break: 跳出本层循环continue : 跳出本次循环接而执行下次循环 数组初始化 数字型数组 默认初始化为0, 字符型数组 默认初始化为’\0’（空格符）** 1234567int a[3][4] = &#123; &#123;1,2,3,4&#125;, &#123;5,6,7,8&#125;, &#123;9,10,11,12,&#125; &#125;;int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;; 前两种初始化的方法效果完全一致，但是前面的清晰可读推荐使用 第三种方法相当于 1234567891011a[0][0]= 1;a[1][0] = 5;a[2][0] = 9;其余元素全为0``` ### Remark初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度**数组长度** char c[] = “i am a student”;sizeof(c) = 11; 12系统在后面自动添加&quot;\0&quot;表示字符串终结 (10+1) char C[5] = “CHINA”; 123456789 也是**合法**的表达 ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间# 这儿有个关于字符数组的大坑1. C语言的**字符**数组可以在初始化的时候直接赋值2. 但不可以用 str=”china”; //尝试之间赋值给已声明的字符数组strstr1 = str2; 1* 在后面要改变字符数组的内容需要使用 gets(str);strcat(str,str1);strcpy(str,str1);strncpy(str,str1,2);//将str1中的前两个字符赋值到str中```]]></content>
       <categories>
         <category>C语言</category>
       </categories>
@@ -548,7 +547,7 @@
   <entry>
     <title><![CDATA[使用ESP8266-12F Wifi模块进行通信流程]]></title>
     <url>%2F2016%2F11%2F10%2Fesp8266-12f-wifi%2F</url>
-    <content type="text"><![CDATA[使用ESP8266-12F Wifi模块进行通信的套路体会一、接线流程在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。如下图所示。在接线过程中注意点如下。1. 用3.3V/800mA独立电源供电，需要共地。2. 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。3. 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。二、调试流程命令在后面必须要有回车发送 `&lt;/pre&gt; ### 调试使用AT指令。以下简单介绍四种模式的调试流程。 #### 1\. 模块ap模式下做 tcp server &lt;pre&gt;`①AT+CWMODE=2或AT+CWMODE=3 //开启 AP 模式 ②AT+RST //复位 ③AT+CWSAP=&quot;TEST&quot;,&quot;123456789A&quot;,3,0 //设置模块的 wifi 和密码 ④AT+CIPMUX=1 //打开多连接 ⑤AT+CIPSERVER=1,8080 //1表示开启server模式，8080为端口号 ⑥AT+CIPSTO=7200 //设置服务器超时时间为7200s ⑦AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 `&lt;/pre&gt; #### 2.模块sta模式下做 tcp client &lt;pre&gt;`①AT+CWMODE=1 //开启STA模式 ②AT+RST //复位 ③AT+CWLAP //查看附近的 wifi ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码 ⑤AT+CIFSR //查看模块的分配的 ip ⑥AT+CIPMUX=1 //打开多连接 ⑦AT+CIPSTART=0，&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080 设置ip和端口号，发送 AT 指令去连接。 ⑧AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 `&lt;/pre&gt; #### 3.模块做tcp透传 &lt;pre&gt;`①AT+CWMODE=1 //开启STA模式 ②AT+RST //复位 ③AT+CWLAP //查看附近的 wifi ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码 ⑤AT+CIFSR //查看模块的分配的 ip ⑥AT+CIPMUX=0//设置单连接 ⑦AT+CIPMODE=1//设置透传模式 ⑧AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080// 连接server端的ip和端口 ⑨AT+CIPSEND //开始发送数据 ⑩+++ //退出透传，此处应取消发送新行 `&lt;/pre&gt; #### 4.模块做udp透传 &lt;pre&gt;`①AT+CWMODE=1 //开启STA模式 ②AT+RST //复位 ③AT+CWLAP //查看附近的 wifi ④AT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码 ⑤AT+CIFSR //查看模块的分配的 ip ⑥AT+CIPSTART=“UDP”,&quot;255.255.255.255&quot;,8080,8080,0//建立udp连接，前8080为对方端口，后8080为模块端口 ⑦AT+CIPMODE=1//设置透传模式 ⑧AT+CIPSEND //开始发送数据 ⑨+++ //退出透传，此处应取消发送新行 `&lt;/pre&gt; ### 使用串口助手对单个wifi模块进行测试，注意事项如下。 1.配置模式为波特率：115200、数据位：8 校验位/停止位/流控：none 2.使用AT指令进行调试时，记住发送指令时要勾选“**发送新行选项**”。即指令需要换行（0x0d+0x0a） ### 使用两个wifi模块进行通讯形式如下。 #### 服务器与客户端进行tcp通信 1.按之前的步骤，将两模块分别设置成tcp server与tcp client即可实现**双向**通信。 2.该模式下，两模块间传输数据需要限定长度。 3\. 若客户端连不进服务器的热点，服务器应该执行_复位_指令，等待一段时间即可。 4\. 掉电后会自动退出server模式，需要重新**初始化**，初始化AT指令流程截图如下。 5\. 若客户端掉电，服务器未掉。上电后只初始化客户端，依然不能实现数据双向传输。服务器**需要关闭server收发模式再重新开启**，即可解决问题。 6\. 恢复出厂设置指令：AT+RESTORE #### 进行tcp透传 将一个模块设置成tcp server，另一个按照tcp透传进行调试即可。 透传只能在单连接模式下进行，所以在建立连接之前一定要用（AT+CIPMUX=0 设置单连接），但是模块处于服务器模式下时，必须要多链接，由于冲突，所以模块开启服务器模式不能做tcp透传。因此，该模式下，客户端像服务器发送数据可不限长度，服务器发送数据则需要限定长度。 其他调试方法同上。 进行udp透传1.需要外界提供wifi热点2.将两个wifi模块连接至统一wifi热点，按照udp透传进行调试。3.对于建立udp连接的指令，如需要实现多端通信，则ip地址应输入广播域“255.255.255.255”，并需要设为同一端口。 使用单片机发送指令至wifi模块，使用uart通信协议。1.非透传模式服务器初始化代码如下。`void Wifi_ServerInit() //服务器初始化 { printf("AT+CIPMUX=1"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf("AT+CIPSERVER=1,8080"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf("AT+CIPSTO=7200"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); } ` 客户端初始化代码如下。`void Wifi_tcp_ClientInit() //客户端初始化 { printf("AT+CIPMUX=1"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf("AT+CIPSTART=0,\"TCP\",\"192.168.4.1\",8080"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); } ` 发送数据代码如下。`void Wifi_Send_Data(uint8 Id,uint8 Len,uint8 *str) //写指定长度的数据 { printf("AT+CIPSEND=%d,%d",Id,Len); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(1); uart_putstr(UART4,str); //数据长度满才可发送 } ` 2.UDP透传模式客户端udp初始化`void Wifi_Udp_ClientInit(void)//客户端udp初始化 { printf("AT+CIPMUX=0"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf("AT+CIPSTART=\"UDP\",\"255.255.255.255\",8080,8080,0"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf("AT+CIPMODE=1"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); } ` 进入透传模式`void Wifi_Udp_SendData(void)//发送数据指令，进入透传 { printf("AT+CIPSEND"); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); } ` 退出透传模式`void Wifi_Udp_Send_End(void)//退出透传{ printf(“+++”);}]]></content>
+    <content type="text"><![CDATA[使用ESP8266-12F Wifi模块进行通信的套路体会###一、接线流程 在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。 在接线过程中注意点如下。 用3.3V/800mA独立电源供电，需要共地。 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。 ###二、调试流程 命令在后面必须要有回车发送调试使用AT指令。以下简单介绍四种模式的调试流程。 模块ap模式下做 tcp server 1234567AT+CWMODE=2或AT+CWMODE=3 //开启 AP 模式AT+RST //复位AT+CWSAP=&quot;TEST&quot;,&quot;123456789A&quot;,3,0 //设置模块的 wifi 和密码AT+CIPMUX=1 //打开多连接AT+CIPSERVER=1,8080 //1表示开启server模式，8080为端口号AT+CIPSTO=7200 //设置服务器超时时间为7200sAT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 模块sta模式下做 tcp client 12345678AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPMUX=1 //打开多连接AT+CIPSTART=0，&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080 设置ip和端口号，发送 AT 指令去连接。AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 模块做tcp透传 12345678910AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPMUX=0//设置单连接AT+CIPMODE=1//设置透传模式AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080// 连接server端的ip和端口AT+CIPSEND //开始发送数据+++ //退出透传，此处应取消发送新行 模块做udp透传 123456789AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPSTART=“UDP”,&quot;255.255.255.255&quot;,8080,8080,0//建立udp连接，前8080为对方端口，后8080为模块端口AT+CIPMODE=1//设置透传模式AT+CIPSEND //开始发送数据+++ //退出透传，此处应取消发送新行 使用串口助手对单个wifi模块进行测试，注意事项如下。 配置模式为波特率：115200、数据位：8 校验位/停止位/流控：none 使用AT指令进行调试时，记住发送指令时要勾选“发送新行选项”。即指令需要换行（0x0d+0x0a） 使用两个wifi模块进行通讯形式如下。服务器与客户端进行tcp通信 按之前的步骤，将两模块分别设置成tcp server与tcp client即可实现双向通信。 该模式下，两模块间传输数据需要限定长度。 若客户端连不进服务器的热点，服务器应该执行复位指令，等待一段时间即可。 掉电后会自动退出server模式，需要重新初始化，初始化AT指令流程截图如下。 若客户端掉电，服务器未掉。上电后只初始化客户端，依然不能实现数据双向传输。服务器需要关闭server收发模式再重新开启，即可解决问题。 恢复出厂设置指令：AT+RESTORE 进行tcp透传 将一个模块设置成tcp server，另一个按照tcp透传进行调试即可。 透传只能在单连接模式下进行，所以在建立连接之前一定要用（AT+CIPMUX=0 设置单连接），但是模块处于服务器模式下时，必须要多链接，由于冲突，所以模块开启服务器模式不能做tcp透传。因此，该模式下，客户端像服务器发送数据可不限长度，服务器发送数据则需要限定长度。 其他调试方法同上。 进行udp透传 需要外界提供wifi热点 将两个wifi模块连接至统一wifi热点，按照udp透传进行调试。 对于建立udp连接的指令，如需要实现多端通信，则ip地址应输入广播域“255.255.255.255”，并需要设为同一端口。 使用单片机发送指令至wifi模块，使用uart通信协议。1.非透传模式 服务器初始化代码如下。123456789101112131415void Wifi_ServerInit() //服务器初始化&#123; printf(&quot;AT+CIPMUX=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSERVER=1,8080&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTO=7200&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 客户端初始化代码如下。1234567891011void Wifi_tcp_ClientInit() //客户端初始化&#123; printf(&quot;AT+CIPMUX=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTART=0,&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); &#125; 发送数据代码如下。12345678void Wifi_Send_Data(uint8 Id,uint8 Len,uint8 *str) //写指定长度的数据&#123; printf(&quot;AT+CIPSEND=%d,%d&quot;,Id,Len); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(1); uart_putstr(UART4,str); //数据长度满才可发送&#125; 2.UDP透传模式 客户端udp初始化123456789101112131415void Wifi_Udp_ClientInit(void)//客户端udp初始化&#123; printf(&quot;AT+CIPMUX=0&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTART=&quot;UDP&quot;,&quot;255.255.255.255&quot;,8080,8080,0&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPMODE=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 进入透传模式1234567void Wifi_Udp_SendData(void)//发送数据指令，进入透传&#123; printf(&quot;AT+CIPSEND&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 退出透传模式1234void Wifi_Udp_Send_End(void)//退出透传&#123; printf(&quot;+++&quot;);&#125;]]></content>
       <categories>
         <category>智能小车</category>
       </categories>
@@ -556,7 +555,7 @@
   <entry>
     <title><![CDATA[使用 字蛛 压缩字体文件实现网站加速]]></title>
     <url>%2F2016%2F11%2F10%2Ffont-spider%2F</url>
-    <content type="text"><![CDATA[这是一个神奇的东西个人开发的时候使用了艺术字体，由于谷歌和微软等巨头没有收录,为了缩短服务加载时间，本人找到两种方法1. cdn加速，腾讯云目前进行免费cdn加速服务，但是由于使用的域名没有进行备案，所以 pass2. 使用字蛛 压缩所使用的字体文件 下面是坑@font-face { font-family: &apos;xixinkaijian&apos;; src:url(&apos;../fonts/xixinkaijian.eot&apos;); src: url(&apos;../fonts/xixinkaijian.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;), url(&apos;../fonts/xixinkaijian.woff&apos;) format(&apos;woff&apos;), url(&apos;../fonts/xixinkaijian.ttf&apos;) format(&apos;truetype&apos;), url(&apos;../fonts/xixinkaijian.svg&apos;) format(&apos;svg&apos;); font-weight: normal; font-style: normal; } `&lt;/pre&gt; &lt;pre&gt;`@font-face { font-family: &apos;hycgj&apos;; src:url(&apos;../fonts/hycgj.eot&apos;); src: url(&apos;../fonts/hycgj.ttf&apos;) format(&apos;truetype&apos;), url(&apos;../fonts/hycgj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;), url(&apos;../fonts/hycgj.woff&apos;) format(&apos;woff&apos;), url(&apos;../fonts/hycgj.svg&apos;) format(&apos;svg&apos;); font-weight: normal; font-style: normal; } `&lt;/pre&gt; &lt;pre&gt;`@font-face { font-family: &apos;hyngj&apos;; src:url(&apos;../fonts/hyngj.eot&apos;); src: url(&apos;../fonts/hyngj.ttf&apos;) format(&apos;truetype&apos;), url(&apos;../fonts/hyngj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;), url(&apos;../fonts/hyngj.woff&apos;) format(&apos;woff&apos;), url(&apos;../fonts/hyngj.svg&apos;) format(&apos;svg&apos;); font-weight: normal; font-style: normal; } `&lt;/pre&gt; #此处需注意font_1前面没有像平常引用地址的**小数点** &lt;pre&gt;`font_1 p { font-family: &apos;xixinkaijian&apos;; } `&lt;/pre&gt; &lt;pre&gt;`font_2 p { font-family: &apos;hycgj&apos;; } `&lt;/pre&gt; &lt;pre&gt;`font_3 p { font-family: &apos;hyngj&apos;; }]]></content>
+    <content type="text"><![CDATA[这是一个神奇的东西个人开发的时候使用了艺术字体，由于谷歌和微软等巨头没有收录,为了缩短服务加载时间，本人找到两种方法 cdn加速，腾讯云目前进行免费cdn加速服务，但是由于使用的域名没有进行备案，所以 pass 使用字蛛 压缩所使用的字体文件 下面是坑@font-face { font-family: &apos;xixinkaijian&apos;; src:url(&apos;../fonts/xixinkaijian.eot&apos;); src: url(&apos;../fonts/xixinkaijian.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;), url(&apos;../fonts/xixinkaijian.woff&apos;) format(&apos;woff&apos;), url(&apos;../fonts/xixinkaijian.ttf&apos;) format(&apos;truetype&apos;), url(&apos;../fonts/xixinkaijian.svg&apos;) format(&apos;svg&apos;); font-weight: normal; font-style: normal; } `&lt;/pre&gt; &lt;pre&gt;`@font-face { font-family: &apos;hycgj&apos;; src:url(&apos;../fonts/hycgj.eot&apos;); src: url(&apos;../fonts/hycgj.ttf&apos;) format(&apos;truetype&apos;), url(&apos;../fonts/hycgj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;), url(&apos;../fonts/hycgj.woff&apos;) format(&apos;woff&apos;), url(&apos;../fonts/hycgj.svg&apos;) format(&apos;svg&apos;); font-weight: normal; font-style: normal; } `&lt;/pre&gt; &lt;pre&gt;`@font-face { font-family: &apos;hyngj&apos;; src:url(&apos;../fonts/hyngj.eot&apos;); src: url(&apos;../fonts/hyngj.ttf&apos;) format(&apos;truetype&apos;), url(&apos;../fonts/hyngj.eot?#font-spider&apos;) format(&apos;embedded-opentype&apos;), url(&apos;../fonts/hyngj.woff&apos;) format(&apos;woff&apos;), url(&apos;../fonts/hyngj.svg&apos;) format(&apos;svg&apos;); font-weight: normal; font-style: normal; } `&lt;/pre&gt; #此处需注意font_1前面没有像平常引用地址的**小数点** &lt;pre&gt;`font_1 p { font-family: &apos;xixinkaijian&apos;; } `&lt;/pre&gt; &lt;pre&gt;`font_2 p { font-family: &apos;hycgj&apos;; } `&lt;/pre&gt; &lt;pre&gt;`font_3 p { font-family: &apos;hyngj&apos;; }]]></content>
       <categories>
         <category>网站</category>
       </categories>
@@ -575,7 +574,7 @@
   <entry>
     <title><![CDATA[CI上传文件文件名乱码]]></title>
     <url>%2F2016%2F10%2F25%2Fci-changecode%2F</url>
-    <content type="text"><![CDATA[修改system—-libraries —–upload—–do_upload中的相对应内容为 if ( ! @copy($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name))) { if ( ! @move_uploaded_file($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name))) { $this-&gt;set_error(‘upload_destination_error’); return FALSE; } } 修改同文件中的set_filename public function set_filename($path, $filename) { if ($this-&gt;encrypt_name == TRUE) { mt_srand(); $filename = md5(uniqid(mt_rand())).$this-&gt;file_ext; }8.9. $filename = iconv(‘UTF-8’, ‘GB2312’, $filename);//将$filename中的文件名转换为GB2312编码 if ( ! file_exists($path.$filename)) { $filename = iconv(‘GB2312’, ‘UTF-8’, $filename);//将编码转回UTF-8 return $filename; }15.16. $filename = str_replace($this-&gt;file_ext, ‘’, $filename); $new_filename = ‘’; for ($i = 1; $i &lt; 100; $i++) { if ( ! file_exists($path.$filename.$i.$this-&gt;file_ext)) { $new_filename = $filename.$i.$this-&gt;file_ext; break; } }26.27. if ($new_filename == ‘’) { $this-&gt;set_error(‘upload_bad_filename’); return FALSE; } else { $new_filename = iconv(‘GB2312’, ‘UTF-8’, $new_filename);//将编码转回UTF-8 return $new_filename; } }]]></content>
+    <content type="text"><![CDATA[修改system—-libraries —–upload—–do_upload中的相对应内容为 12345678if ( ! @copy($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name)))&#123; if ( ! @move_uploaded_file($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name))) &#123; $this-&gt;set_error(‘upload_destination_error’); return FALSE; &#125;&#125; 修改同文件中的set_filename 12345678910111213141516171819202122232425262728293031323334public function set_filename($path, $filename)&#123; if ($this-&gt;encrypt_name == TRUE) &#123; mt_srand(); $filename = md5(uniqid(mt_rand())).$this-&gt;file_ext; &#125; $filename = iconv(‘UTF-8’, ‘GB2312’, $filename);//将$filename中的文件名转换为GB2312编码 if ( ! file_exists($path.$filename)) &#123; $filename = iconv(‘GB2312’, ‘UTF-8’, $filename);//将编码转回UTF-8 return $filename; &#125; $filename = str_replace($this-&gt;file_ext, ‘’, $filename); $new_filename = ‘’; for ($i = 1; $i &lt; 100; $i++) &#123; if ( ! file_exists($path.$filename.$i.$this-&gt;file_ext)) &#123; $new_filename = $filename.$i.$this-&gt;file_ext; break; &#125; &#125; if ($new_filename == ‘’) &#123; $this-&gt;set_error(‘upload_bad_filename’); return FALSE; &#125; else &#123; $new_filename = iconv(‘GB2312’, ‘UTF-8’, $new_filename);//将编码转回UTF-8 return $new_filename; &#125;&#125;]]></content>
       <categories>
         <category>PHP</category>
       </categories>
@@ -591,15 +590,18 @@
   <entry>
     <title><![CDATA[Fatal error Class 'ZipArchive' not found ......(linux是可以用phpexcel的)]]></title>
     <url>%2F2016%2F10%2F07%2Ffatal-error-class-ziparchive-not-found%2F</url>
-    <content type="text"><![CDATA[史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼1、在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： &nbsp; cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xphpize./configuremakesudo make instal &nbsp; 安装完之后，屏幕上会提示zip.so的位置。然后将其记录下来，如： &nbsp; /usr/lib/php/20151012/zip.so &nbsp; 2、使用root权限修改php.ini（通常可能会在/usr/local/lib/文件夹下，不过视当初安装php而定，可以通过phpinfo()来查看）： 增加extension = /usr/local/lib/php/extensions/zip.so，然后同样在php.ini文件中，将 zlib.output_compression = Off 改为 zlib.output_compression = On ； 3、最后别忘了重启一下Apache：sudo service apache2 restart]]></content>
+    <content type="text"><![CDATA[史上最强悍的解决方案ubuntu : sudo apt-get install php7.0-zip 下面是装逼 在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下： 12345678cd /usr/srcwget http://pecl.php.net/get/ziptar -zxvf zipcd zip-1.x.xphpize./configuremakesudo make instal 安装完之后，屏幕上会提示zip.so的位置。然后将其记录下来，如：/usr/lib/php/20151012/zip.so 使用root权限修改php.ini（通常可能会在/usr/local/lib/文件夹下，不过视当初安装php而定，可以通过phpinfo()来查看）： 增加1extension = /usr/local/lib/php/extensions/zip.so 然后同样在php.ini文件中，将123zlib.output_compression = Off# 改为zlib.output_compression = On 最后别忘了重启一下Apache：1sudo service apache2 restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[linux配置Call to undefined function mcrypt_decrypt()+大杂烩]]></title>
     <url>%2F2016%2F10%2F05%2Flinux-call-to-undefined-function-mcrypt-decrypt%2F</url>
-    <content type="text"><![CDATA[1\. php5.4 ubuntu14.04 $ sudo php5enmod mcrypt $ sudo service apache2 restart 2\. php7.0 ubuntu16.04 sudo apt php-mcrypt sudo phpenmod mcrypt sudo service [apache](http://www.111cn.net/list-121/)2 restart 3\. ubuntu安装curl sudo apt-get install php-curl 更改php.ini 开启curl(`/etc/php/7.0/apache2/php.ini) 重启apache2 sudo service apache2 restart 4.php gd库的安装&lt;/pre&gt; &lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt;sudo apt&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; install php&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;gd &lt;/span&gt;`&lt;/pre&gt; &lt;pre&gt;`更改php.ini 开启curl(`/etc/php/7.0/apache2/php.ini)&lt;/pre&gt; &lt;pre&gt;重启apache2 sudo service apache2 restart 5\. ubuntu 开启对.htaccess的支持 sudo a2enmod 输入rewrite 配置/etc/apache2/apache2.conf AccessFileName .htaccess &lt;Directory /var/www/html&gt; Options Indexes FollowSymLinks MultiViews AllowOverride All Order allow,deny allow from all &lt;/Directory&gt; 重启apache2 sudo service apache2 restart&lt;/pre&gt; &lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt; 6.mysql自增起始值设置&lt;/span&gt;`&lt;/pre&gt; &lt;pre class=&quot;lang-php prettyprint prettyprinted&quot;&gt;`&lt;span class=&quot;pln&quot;&gt; alter table users（表名） AUTO_INCREMENT=10000（起始值）; 7.ssl https配置 http://www.linuxidc.com/Linux/2015-02/113588.htm &lt;/span&gt;]]></content>
+    <content type="text"><![CDATA[php5.4 ubuntu14.04 12$ sudo php5enmod mcrypt$ sudo service apache2 restart php7.0 ubuntu16.04 123sudo apt php-mcryptsudo phpenmod mcryptsudo service apache2 restart ubuntu安装curl 1sudo apt-get install php-curl 更改php.ini 开启curl(/etc/php/7.0/apache2/php.ini)重启apache2 1sudo service apache2 restart php gd库的安装 1sudo apt install php gd 更改php.ini 开启curl(/etc/php/7.0/apache2/php.ini)重启apache2 1sudo service apache2 restart ubuntu 开启对.htaccess的支持 1sudo a2enmod rewrite 配置/etc/apache2/apache2.conf 1234567AccessFileName .htaccess&lt;Directory /var/www/html&gt; Options Indexes FollowSymLinks MultiViews AllowOverride All Order allow,deny allow from all&lt;/Directory&gt; 1sudo service apache2 restart 6.mysql自增起始值设置1alter table users（表名） AUTO_INCREMENT=10000（起始值）; 7.ssl https配置 http://www.linuxidc.com/Linux/2015-02/113588.htm]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -621,26 +623,29 @@
   <entry>
     <title><![CDATA[zhiwen]]></title>
     <url>%2F2016%2F09%2F22%2Fzhiwen%2F</url>
-    <content type="text"><![CDATA[&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=utf-8&gt;&lt;title&gt;css指纹效果&lt;/title&gt;&lt;meta name=”viewport” content=”width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no”&gt;&lt;style&gt;.start{animation-play-state:paused;position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(http://denghao.me/demo/2015/fingerScan/line.png) center no-repeat; background-size: 100%; -webkit-animation:act-scan 2s linear infinite alternate;}.finish{position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(http://denghao.me/demo/2015/fingerScan/line.png) center no-repeat; background-size: 100%;animation-play-state: paused;}.beijing{background: #009;color: #9FF;}.print{width: 100px; height:132px; background:url(http://denghao.me/demo/2015/fingerScan/finger.png) center no-repeat; background-size: 100%; position: relative;}.print .scan{position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(http://denghao.me/demo/2015/fingerScan/line.png) center no-repeat; background-size: 100%;-webkit-animation:act-scan 2s linear infinite alternate;animation-play-state: paused;}@-webkit-keyframes act-scan{0%{ top:0; }50%{ top:120px; }100%{ top:0;}}@keyframes act-scan{0%{ top:0; }50%{ top:120px; }100%{ top:0;}}&lt;/style&gt; &lt;/head&gt;&lt;body &gt;&lt;table&gt;&lt;td class=”beijing”&gt;&lt;div class=”print” &gt;&lt;div class=”scan” align = “center” id = “scannow” &gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/table&gt; &lt;script src=”http://denghao.me/js/jquery.min.js&quot;&gt;&lt;/script&amp;gt;&lt;script&gt;$(function(){var it = document.getElementById(‘scannow’);$(“.print”).on(“touchstart”, function(event) {event.preventDefault();call();it.className=”start”;}); $(“.print”).on(“touchend”,function(event){event.preventDefault();clearInterval(timer1);}); function call() {timer1 = window.setTimeout(function() {alert(“你好啊”);}, 1000);document.getElementById(‘scannow’).className=”finish”; } })&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
-      <categories>
-        <category>未分类</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[树莓派语音对话]]></title>
-    <url>%2F2016%2F09%2F07%2Fvoice%2F</url>
-    <content type="text"><![CDATA[代码 https://github.com/luyishisi/python_yuyinduihua 安装环境、 1\. sudo apt-get install python-pyaudio 2\. pip install numpy 3\. pycurl 安裝 先安裝 curl http://curl.haxx.se/download/curl-7.21.3.tar.gz tar xzf curl-7.21.3.tar.gz ./configure make make install 然後anzhaung pycurl pycurl：http://pycurl.sourceforge.net/download/pycurl-7.19.0.tar.gz tar xzf pycurl-7.19.0.tar.gz python setup.py install --curl-config=/usr/local/bin/curl-config]]></content>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=utf-8&gt;&lt;title&gt;css指纹效果&lt;/title&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;&lt;style&gt;.start&#123;animation-play-state:paused;position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(http://denghao.me/demo/2015/fingerScan/line.png) center no-repeat; background-size: 100%; -webkit-animation:act-scan 2s linear infinite alternate;&#125;.finish&#123;position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(http://denghao.me/demo/2015/fingerScan/line.png) center no-repeat; background-size: 100%;animation-play-state: paused;&#125;.beijing&#123;background: #009;color: #9FF;&#125;.print&#123;width: 100px; height:132px; background:url(http://denghao.me/demo/2015/fingerScan/finger.png) center no-repeat; background-size: 100%; position: relative;&#125;.print .scan&#123;position: absolute; top: 0 ;left: 0; width:100px; height: 10px; background:url(http://denghao.me/demo/2015/fingerScan/line.png) center no-repeat; background-size: 100%;-webkit-animation:act-scan 2s linear infinite alternate;animation-play-state: paused;&#125;@-webkit-keyframes act-scan&#123;0%&#123; top:0; &#125;50%&#123; top:120px; &#125;100%&#123; top:0;&#125;&#125;@keyframes act-scan&#123;0%&#123; top:0; &#125;50%&#123; top:120px; &#125;100%&#123; top:0;&#125;&#125;&lt;/style&gt;&lt;/head&gt;&lt;body &gt;&lt;table&gt;&lt;td class=&quot;beijing&quot;&gt;&lt;div class=&quot;print&quot; &gt;&lt;div class=&quot;scan&quot; align = &quot;center&quot; id = &quot;scannow&quot; &gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/table&gt;&lt;script src=&quot;http://denghao.me/js/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script&gt;$(function()&#123;var it = document.getElementById(&apos;scannow&apos;);$(&quot;.print&quot;).on(&quot;touchstart&quot;, function(event) &#123;event.preventDefault();call();it.className=&quot;start&quot;;&#125;);$(&quot;.print&quot;).on(&quot;touchend&quot;,function(event)&#123;event.preventDefault();clearInterval(timer1);&#125;);function call() &#123;timer1 = window.setTimeout(function() &#123;alert(&quot;你好啊&quot;);&#125;, 1000);document.getElementById(&apos;scannow&apos;).className=&quot;finish&quot;;&#125;&#125;)&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
       <tags>
-        <tag>语音对话</tag>
+        <tag>树莓派</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[树莓派语音对话]]></title>
+    <url>%2F2016%2F09%2F07%2Fvoice%2F</url>
+    <content type="text"><![CDATA[###代码1https://github.com/luyishisi/python_yuyinduihua ###安装环境12345678910111213sudo apt-get install python-pyaudiopip install numpy# 先安裝 curlwget http://curl.haxx.se/download/curl-7.21.3.tar.gztar xzf curl-7.21.3.tar.gz./configuremakemake install# 然後安装 pycurlwget http://pycurl.sourceforge.net/download/pycurl-7.19.0.tar.gztar xzf pycurl-7.19.0.tar.gzpython setup.py install --curl-config=/usr/local/bin/curl-config]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+      <tags>
+        <tag>语音对话,树莓派</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[初次涉猎Qt]]></title>
     <url>%2F2016%2F08%2F15%2Fthe-first-travel-of-qt%2F</url>
-    <content type="text"><![CDATA[最近一直沉迷于智能小车无法自拔（虽然跪在了华南赛，但是热情还是有的），想当初做的是双车追逐组，当时确实是玩的挺浪。起初用ccd做双车，各种效果都不错，但是呢，老师总是说ccd识别容易出问题，迫于压力换成了摄像头（人生的三叉路口迷失了方向），十天的时间跑到了两米三，想当初也是拼哈。但是也引发了一系列的问题，最头疼的就是距离的稳定测量，由于配置了摄像头用了两个中断，其中包括一个频率很高的像素中断（大概20Us一次，必须配置成最高优先级，以防止图像抖动或发生实质性变动），这就有可能打断了距离测量的中断，这样就可能延长了距离的测量时间因此得到的数值也会变得比较大，这对距离的闭环有很大的影响，可以说都可以完全破坏距离机制。 &nbsp; 至于这个原因为什么扯到了Qt，我就说一句，Qt是个很好的上位机开发工具。 &nbsp; 刚刚学习Qt，顺便记录一点过程中比较关键的东西。 &nbsp; Qt完全跟C++相似，这也就容易上手。（完全无厘头） 一、 QApplication —–&gt;Qlabel ——&gt;QPushButton —-&gt; QObject::connect ——-&gt;QSpinBox——&gt;addWidget()———————————上下三角选值 ——-&gt;QSlider——-&gt;addWidget()———————————–水平滑条 二、 Qt一共有三种主要的layout，分别是：QHBoxLayout- 按照水平方向从左到右布局；QVBoxLayout- 按照竖直方向从上到下布局；QGridLayout- 在一个网格中进行布局，类似于HTML的table。layout使用addWidget添加组件，使用addLayout可以添加子布局，因此，这就有了无穷无尽的组合方式。]]></content>
+    <content type="text"><![CDATA[最近一直沉迷于智能小车无法自拔（虽然跪在了华南赛，但是热情还是有的），想当初做的是双车追逐组，当时确实是玩的挺浪。起初用ccd做双车，各种效果都不错，但是呢，老师总是说ccd识别容易出问题，迫于压力换成了摄像头（人生的三叉路口迷失了方向），十天的时间跑到了两米三，想当初也是拼哈。但是也引发了一系列的问题，最头疼的就是距离的稳定测量，由于配置了摄像头用了两个中断，其中包括一个频率很高的像素中断（大概20Us一次，必须配置成最高优先级，以防止图像抖动或发生实质性变动），这就有可能打断了距离测量的中断，这样就可能延长了距离的测量时间因此得到的数值也会变得比较大，这对距离的闭环有很大的影响，可以说都可以完全破坏距离机制。 &nbsp; 至于这个原因为什么扯到了Qt，我就说一句，Qt是个很好的上位机开发工具。 &nbsp; 刚刚学习Qt，顺便记录一点过程中比较关键的东西。 &nbsp; Qt完全跟C++相似，这也就容易上手。（完全无厘头） 一、123456789QApplicationQlabelQPushButton QObject::connectQSpinBoxaddWidget() 上下三角选值QSlideaddWidget()水平滑条 二、 Qt一共有三种主要的layout，分别是：QHBoxLayout- 按照水平方向从左到右布局；QVBoxLayout- 按照竖直方向从上到下布局；QGridLayout- 在一个网格中进行布局，类似于HTML的table。layout使用addWidget添加组件，使用addLayout可以添加子布局，因此，这就有了无穷无尽的组合方式。]]></content>
       <categories>
         <category>智能小车</category>
       </categories>
@@ -651,7 +656,7 @@
   <entry>
     <title><![CDATA[ssh登录腾讯云服务器]]></title>
     <url>%2F2016%2F07%2F20%2Fssh%2F</url>
-    <content type="text"><![CDATA[获取云服务器密钥登录Linux云服务器：（注：无论您电脑的操作系统是windows还是linux，都可以采用SSH密钥登录的方式远程登录linux云服务器）。1、首页登录腾讯云官网的“管理中心”，接着在左侧导航栏“SSH密钥”进入SSH密钥管理界面；点击“创建密钥”按钮，输入密钥名，创建一个新密钥，创建完密钥后，点击“下载”按钮，下载私钥。2、然后右键点击刚创建的密钥，绑定需要登录的服务器；绑定完服务器后，左键点击密钥，界面右侧滑出密钥详细页。如下图所示：3、在密钥详细页中，将“公钥内容”复制到一个空白文本文档中，保存用户名为密钥名（即刚刚新建的密钥的名称），并修改文档后缀名为“.pub”（注：公钥名与私钥名必须相同，并且须放置在同一文件夹下）。如下图所示： 4、下载xshell，文件 – 新建——在主机处填写要连接的服务器的ip地址，然后点击确定 5、根据提示选择密钥文件（私钥），点击确定 &nbsp;]]></content>
+    <content type="text"><![CDATA[###获取云服务器密钥登录Linux云服务器：（注：无论您电脑的操作系统是windows还是linux，都可以采用SSH密钥登录的方式远程登录linux云服务器）。 首页登录腾讯云官网的“管理中心”，接着在左侧导航栏“SSH密钥”进入SSH密钥管理界面；点击“创建密钥”按钮，输入密钥名，创建一个新密钥，创建完密钥后，点击“下载”按钮，下载私钥。 然后右键点击刚创建的密钥，绑定需要登录的服务器；绑定完服务器后，左键点击密钥，界面右侧滑出密钥详细页。如下图所示： 在密钥详细页中，将“公钥内容”复制到一个空白文本文档中，保存用户名为密钥名（即刚刚新建的密钥的名称），并修改文档后缀名为“.pub”（注：公钥名与私钥名必须相同，并且须放置在同一文件夹下）。如下图所示： 下载xshell，文件 – 新建——在主机处填写要连接的服务器的ip地址，然后点击确定 根据提示选择密钥文件（私钥），点击确定]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -662,7 +667,7 @@
   <entry>
     <title><![CDATA[鸳鸯测距使用防坑]]></title>
     <url>%2F2016%2F07%2F06%2Fyuanyang%2F</url>
-    <content type="text"><![CDATA[这两天使用超声波测距（鸳鸯测距）来实现双车通信，但是使用时碰到了特别多的坑，理论上来说测到的距离是一条非常平滑的线，但是在使用的时候就出现了各种波动。V4传说是180度测距，V5是360度测距，但是V4实际使用的时候只有90度左右，V5确实是360度，但是在前车的左右两旁会出现距离跳变。 实际测量的曲线如图： 上面那些波动特别有规律，一般的滤波方法根本无能为力，在探索了三天之后，得到这写滤波方法 1、限幅滤波法(又称程序判断滤波法)A、方法:根据经验判断,确定两次采样允许的最大偏差值(设为A)每次检测到新值时判断:如果本次值与上次值之差&lt;=A,则本次值有效 如果本次值与上次值之差&gt;A,则本次值无效,放弃本次值,用上次值代替本次值B、优点:能有效克服因偶然因素引起的脉冲干扰C、缺点无法抑制那种周期性的干扰平滑度差 2、中位值滤波法A、方法:连续采样N次(N取奇数)把N次采样值按大小排列取中间值为本次有效值B、优点:能有效克服因偶然因素引起的波动干扰对温度、液位的变化缓慢的被测参数有良好的滤波效果C、缺点:对流量、速度等快速变化的参数不宜 3、算术平均滤波法A、方法:连续取N个采样值进行算术平均运算N值较大时:信号平滑度较高,但灵敏度较低N值较小时:信号平滑度较低,但灵敏度较高N值的选取:一般流量,N=12;压力:N=4B、优点:适用于对一般具有随机干扰的信号进行滤波这样信号的特点是有一个平均值,信号在某一数值范围附近上下波动C、缺点:对于测量速度较慢或要求数据计算速度较快的实时控制不适用比较浪费RAM 4、递推平均滤波法(又称滑动平均滤波法)A、方法:把连续取N个采样值看成一个队列队列的长度固定为N每次采样到一个新数据放入队尾,并扔掉原来队首的一次数据.(先进先出原则)把队列中的N个数据进行算术平均运算,就可获得新的滤波结果N值的选取:流量,N=12;压力:N=4;液面,N=4~12;温度,N=1~4B、优点:对周期性干扰有良好的抑制作用,平滑度高适用于高频振荡的系统C、缺点:灵敏度低对偶然出现的脉冲性干扰的抑制作用较差不易消除由于脉冲干扰所引起的采样值偏差不适用于脉冲干扰比较严重的场合比较浪费RAM 5、中位值平均滤波法(又称防脉冲干扰平均滤波法)A、方法:相当于“中位值滤波法”+“算术平均滤波法”连续采样N个数据,去掉一个最大值和一个最小值然后计算N-2个数据的算术平均值N值的选取:3~14B、优点:融合了两种滤波法的优点对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差C、缺点:测量速度较慢,和算术平均滤波法一样比较浪费RAM 6、限幅平均滤波法A、方法:相当于“限幅滤波法”+“递推平均滤波法”每次采样到的新数据先进行限幅处理,再送入队列进行递推平均滤波处理B、优点:融合了两种滤波法的优点对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差C、缺点:比较浪费RAM 7、一阶滞后滤波法A、方法:取a=0~1本次滤波结果=(1-a)本次采样值+a上次滤波结果B、优点:对周期性干扰具有良好的抑制作用适用于波动频率较高的场合C、缺点:相位滞后,灵敏度低滞后程度取决于a值大小不能消除滤波频率高于采样频率的1/2的干扰信号 8、加权递推平均滤波法A、方法:是对递推平均滤波法的改进,即不同时刻的数据加以不同的权通常是,越接近现时刻的数据,权取得越大.给予新采样值的权系数越大,则灵敏度越高,但信号平滑度越低B、优点:适用于有较大纯滞后时间常数的对象和采样周期较短的系统C、缺点:对于纯滞后时间常数较小,采样周期较长,变化缓慢的信号不能迅速反应系统当前所受干扰的严重程度,滤波效果差 9、消抖滤波法A、方法:设置一个滤波计数器将每次采样值与当前有效值比较:如果采样值＝当前有效值,则计数器清零如果采样值&lt;&gt;当前有效值,则计数器+1,并判断计数器是否&gt;=上限N(溢出)如果计数器溢出,则将本次值替换当前有效值,并清计数器B、优点:对于变化缓慢的被测参数有较好的滤波效果,可避免在临界值附近控制器的反复开/关跳动或显示器上数值抖动C、缺点:对于快速变化的参数不宜如果在计数器溢出的那一次采样到的值恰好是干扰值,则会将干扰值当作有效值导入系统 10、限幅消抖滤波法A、方法:相当于“限幅滤波法”+“消抖滤波法”先限幅,后消抖B、优点:继承了“限幅”和“消抖”的优点改进了“消抖滤波法”中的某些缺陷,避免将干扰值导入系统C、缺点:对于快速变化的参数不宜 以下是我编的示例程序,如有不足之处还望各位同行指教 假定从8位AD中读取数据(如果是更高位的AD可定义数据类型为int),子程序为get_ad(); 1、限副滤波/ A值可根据实际情况调整value为有效值,new_value为当前采样值滤波程序返回有效的实际值 / #define A 10 char value; char filter(){char new_value;new_value = get_ad();if ( ( new_value - value &gt; A ) || ( value - new_value &gt; A )return value;return new_value; }2、中位值滤波法/ N值可根据实际情况调整排序采用冒泡法/ #define N 11 char filter(){char value_buf[N];char count,i,j,temp;for ( count=0;count{value_buf[count] = get_ad();delay();}for (j=0;j{for (i=0;i{if ( value_buf[i]&gt;value_buf[i+1] ){temp = value_buf[i];value_buf[i] = value_buf[i+1];value_buf[i+1] = temp;}}}return value_buf[(N-1)/2];}3、算术平均滤波法/ / #define N 12 char filter(){int sum = 0;for ( count=0;count{sum + = get_ad();delay();}return (char)(sum/N);}4、递推平均滤波法(又称滑动平均滤波法)/ / #define N 12 char value_buf[N];char i=0; char filter(){char count;int sum=0;value_buf[i++] = get_ad();if ( i == N ) i = 0;for ( count=0;countsum = value_buf[count];return (char)(sum/N);}5、中位值平均滤波法(又称防脉冲干扰平均滤波法)/ / #define N 12 char filter(){char count,i,j;char value_buf[N];int sum=0;for (count=0;count{value_buf[count] = get_ad();delay();}for (j=0;j{for (i=0;i{if ( value_buf[i]&gt;value_buf[i+1] ){temp = value_buf[i];value_buf[i] = value_buf[i+1];value_buf[i+1] = temp;}}}for(count=1;countsum += value[count];return (char)(sum/(N-2));}6、限幅平均滤波法/ /略 参考子程序1、3 7、一阶滞后滤波法/ 为加快程序处理速度假定基数为100,a=0~100 / #define a 50 char value; char filter(){char new_value;new_value = get_ad();return (100-a)value + anew_value;}8、加权递推平均滤波法/ coe数组为加权系数表,存在程序存储区./ #define N 12 char code coe[N] = {1,2,3,4,5,6,7,8,9,10,11,12};char code sum_coe = 1+2+3+4+5+6+7+8+9+10+11+12; char filter(){char count;char value_buf[N];int sum=0;for (count=0,count{value_buf[count] = get_ad();delay();}for (count=0,countsum += value_buf[count]*coe[count];return (char)(sum/sum_coe);}9、消抖滤波法 #define N 12 char filter(){char count=0;char new_value;new_value = get_ad();while (value !=new_value);{count++;if (count&gt;=N) return new_value;delay();new_value = get_ad();}return value;}10、限幅消抖滤波法/ /略 参考子程序1、9 我是用了第五种滤波方法得到了比较稳定的距离。]]></content>
+    <content type="text"><![CDATA[这两天使用超声波测距（鸳鸯测距）来实现双车通信，但是使用时碰到了特别多的坑，理论上来说测到的距离是一条非常平滑的线，但是在使用的时候就出现了各种波动。V4传说是180度测距，V5是360度测距，但是V4实际使用的时候只有90度左右，V5确实是360度，但是在前车的左右两旁会出现距离跳变。 实际测量的曲线如图： 上面那些波动特别有规律，一般的滤波方法根本无能为力，在探索了三天之后，得到这写滤波方法 限幅滤波法(又称程序判断滤波法) 方法:根据经验判断,确定两次采样允许的最大偏差值(设为A)每次检测到新值时判断:如果本次值与上次值之差&lt;=A,则本次值有效 如果本次值与上次值之差&gt;A,则本次值无效,放弃本次值,用上次值代替本次值 优点:能有效克服因偶然因素引起的脉冲干扰 缺点无法抑制那种周期性的干扰平滑度差 中位值滤波法 方法:连续采样N次(N取奇数)把N次采样值按大小排列取中间值为本次有效值 优点:能有效克服因偶然因素引起的波动干扰对温度、液位的变化缓慢的被测参数有良好的滤波效果 缺点:对流量、速度等快速变化的参数不宜 算术平均滤波法 方法:连续取N个采样值进行算术平均运算N值较大时:信号平滑度较高,但灵敏度较低N值较小时:信号平滑度较低,但灵敏度较高N值的选取:一般流量,N=12;压力:N=4 优点:适用于对一般具有随机干扰的信号进行滤波这样信号的特点是有一个平均值,信号在某一数值范围附近上下波动 缺点:对于测量速度较慢或要求数据计算速度较快的实时控制不适用比较浪费RAM 递推平均滤波法(又称滑动平均滤波法) 方法:把连续取N个采样值看成一个队列队列的长度固定为N每次采样到一个新数据放入队尾,并扔掉原来队首的一次数据.(先进先出原则)把队列中的N个数据进行算术平均运算,就可获得新的滤波结果N值的选取:流量,N=12;压力:N=4;液面,N=4~12;温度,N=1~4 优点:对周期性干扰有良好的抑制作用,平滑度高适用于高频振荡的系统 缺点:灵敏度低对偶然出现的脉冲性干扰的抑制作用较差不易消除由于脉冲干扰所引起的采样值偏差不适用于脉冲干扰比较严重的场合比较浪费RAM 中位值平均滤波法(又称防脉冲干扰平均滤波法) 方法:相当于“中位值滤波法”+“算术平均滤波法”连续采样N个数据,去掉一个最大值和一个最小值然后计算N-2个数据的算术平均值N值的选取:3~14 优点:融合了两种滤波法的优点对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差 缺点:测量速度较慢,和算术平均滤波法一样比较浪费RAM 限幅平均滤波法 方法:相当于“限幅滤波法”+“递推平均滤波法”每次采样到的新数据先进行限幅处理,再送入队列进行递推平均滤波处理 优点:融合了两种滤波法的优点对于偶然出现的脉冲性干扰,可消除由于脉冲干扰所引起的采样值偏差 缺点:比较浪费RAM 一阶滞后滤波法 方法:取a=0~1本次滤波结果=(1-a) 本次采样值+a 上次滤波结果 优点:对周期性干扰具有良好的抑制作用适用于波动频率较高的场合 缺点:相位滞后,灵敏度低滞后程度取决于a值大小不能消除滤波频率高于采样频率的1/2的干扰信号 加权递推平均滤波法 方法:是对递推平均滤波法的改进,即不同时刻的数据加以不同的权通常是,越接近现时刻的数据,权取得越大.给予新采样值的权系数越大,则灵敏度越高,但信号平滑度越低 优点:适用于有较大纯滞后时间常数的对象和采样周期较短的系统 缺点:对于纯滞后时间常数较小,采样周期较长,变化缓慢的信号不能迅速反应系统当前所受干扰的严重程度,滤波效果差 消抖滤波法 方法:设置一个滤波计数器将每次采样值与当前有效值比较:如果采样值＝当前有效值,则计数器清零如果采样值&lt;&gt;当前有效值,则计数器+1,并判断计数器是否&gt;=上限N(溢出)如果计数器溢出,则将本次值替换当前有效值,并清计数器 优点:对于变化缓慢的被测参数有较好的滤波效果,可避免在临界值附近控制器的反复开/关跳动或显示器上数值抖动 缺点:对于快速变化的参数不宜如果在计数器溢出的那一次采样到的值恰好是干扰值,则会将干扰值当作有效值导入系统 限幅消抖滤波法 方法:相当于“限幅滤波法”+“消抖滤波法”先限幅,后消抖 优点:继承了“限幅”和“消抖”的优点改进了“消抖滤波法”中的某些缺陷,避免将干扰值导入系统 缺点:对于快速变化的参数不宜 示例程序,如有不足之处还望各位同行指教假定从8位AD中读取数据(如果是更高位的AD可定义数据类型为int),子程序为get_ad(); 限副滤波 A值可根据实际情况调整 value为有效值,new_value为当前采样值 滤波程序返回有效的实际值 12345678910111213#define A 10char value;char filter()&#123;char new_value;new_value = get_ad();if ( ( new_value - value &amp;gt; A ) || ( value - new_value &amp;gt; A )return value;return new_value;&#125; 中位值滤波法 N值可根据实际情况调整 排序采用冒泡法 12345678910111213141516171819202122232425#define N 11char filter()&#123; char value_buf[N]; char count,i,j,temp; for ( count=0;count &#123; value_buf[count] = get_ad(); delay(); &#125; for (j=0;j &#123; for (i=0;i &#123; if ( value_buf[i]&amp;gt;value_buf[i+1] ) &#123; temp = value_buf[i]; value_buf[i] = value_buf[i+1]; value_buf[i+1] = temp; &#125; &#125; &#125; return value_buf[(N-1)/2];&#125; 算术平均滤波法 123456789101112#define N 12char filter()&#123; int sum = 0; for ( count=0;count &#123; sum + = get_ad(); delay(); &#125; return (char)(sum/N);&#125; 递推平均滤波法(又称滑动平均滤波法) 123456789101112131415#define N 12char value_buf[N];char i=0;char filter()&#123; char count; int sum=0; value_buf[i++] = get_ad(); if ( i == N ) i = 0; for ( count=0;count sum = value_buf[count]; return (char)(sum/N);&#125; 中位值平均滤波法(又称防脉冲干扰平均滤波法) 12345678910111213141516171819202122232425262728#define N 12char filter()&#123;char count,i,j;char value_buf[N];int sum=0;for (count=0;count&#123;value_buf[count] = get_ad();delay();&#125;for (j=0;j&#123;for (i=0;i&#123;if ( value_buf[i]&amp;gt;value_buf[i+1] )&#123;temp = value_buf[i];value_buf[i] = value_buf[i+1];value_buf[i+1] = temp;&#125;&#125;&#125;for(count=1;countsum += value[count];return (char)(sum/(N-2));&#125; 限幅平均滤波法 略 参考子程序1、3 一阶滞后滤波法 为加快程序处理速度假定基数为100,a=0~100 12345678910#define a 50char value;char filter()&#123;char new_value;new_value = get_ad();return (100-a)*value + a*new_value;&#125; 加权递推平均滤波法 code数组为加权系数表,存在程序存储区. 12345678910111213141516171819#define N 12char code coe[N] = &#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;char code sum_coe = 1+2+3+4+5+6+7+8+9+10+11+12;char filter()&#123;char count;char value_buf[N];int sum=0;for (count=0,count&#123;value_buf[count] = get_ad();delay();&#125;for (count=0,countsum += value_buf[count]*coe[count];return (char)(sum/sum_coe);&#125; 消抖滤波法 12345678910111213141516#define N 12char filter()&#123;char count=0;char new_value;new_value = get_ad();while (value !=new_value);&#123;count++;if (count&amp;gt;=N) return new_value;delay();new_value = get_ad();&#125;return value;&#125; 限幅消抖滤波法 略 参考子程序1、9 我是用了第五种滤波方法得到了比较稳定的距离。]]></content>
       <categories>
         <category>智能小车</category>
       </categories>
@@ -673,7 +678,7 @@
   <entry>
     <title><![CDATA[ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin]]></title>
     <url>%2F2016%2F06%2F24%2Fubuntu-14-04%2F</url>
-    <content type="text"><![CDATA[ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。环境：ubuntu 12.04 LTS详细步骤：1.首先以管理员的身份登录。命令：sudo su2.安装mysql5（既是数据v库）命令：apt-get install mysql-server mysql-client 注：安装过程中会提示输入密码，记得设置密码再确定。当然，不想设置的话直接过就行了 2.安装phpMyAdmin 命令：apt-get install phpmyadmin （话说这种方法安装会自动把下面我介绍到的apache2,php5附带安装） 注：phpmyadmin会自动安装在/usr/share/phpMyAdmin下，需要将 phpMyAdmin文件夹拷贝到/var/www/html目录下面 (14.04是放在/var/www/html/下，非常重要，不然后面测试不成功)故使用命令：sudo cp /usr/share/phpmyadmin/ /var/www/ -a，把文件夹phpmyadmin搬到/var/www/html目录下即可 或者推荐下面这种用法(链接目录，用如下命令sudo ln -s /usr/share/phpmyadmin/ /var/www/html/注意上面那个不是IN 而是小写的L。就不用移动文件了)3.安装apache服务器 命令：apt-get install apache2 注：Apache的默认文档根目录是在Ubuntu上的/var/www目录，配置文件是/ etc/apache2/apache2.conf。配置存储在的 子目录在/etc/apache2目录。 一般的网页文件可以直接丢进/var/www目录下，在浏览器就可以访问了。默认的是index.html，所以在浏览器地址 栏输入127.0.0.1或localhost就可以访问了4.安装PHP5和Apache的PHP5的模块 命令：apt-get install php5 libapache2-mod-php5 安装完后重启服务器，命令：/etc/init.d/apache2 restart 注：此时可以测试php环境，命令：gedit /var/www/info.php，在弹出的文本编辑器里面写入：&lt;?php phpinfo(); ?&gt; 然后直接在浏览器输入127.0.0.1/info.php,就可以看到php的信息了，说明安装成功了5.让php5获得数据库mysql的支持 命令：apt-get install php5-mysql php5-curl php5-gd php5-idn php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5- tidy php5-xmlrpc php5-xsl 然后重启服务器，命令：/etc/init.d/apache2 restart6.安装phpMyAdmin 命令：apt-get install phpmyadmin 注：phpmyadmin会自动安装在/usr/share/phpMyAdmin下，需要将 phpMyAdmin文件夹拷贝到/var/www目录下面 故使用命令：sudo cp /usr/share/phpmyadmin/ /var/www/ -a，把文件夹phpmyadmin搬到/var/www目录下即可 此时可以测试了，浏览器输入127.0.0.1/phpmyadmin就可以看到管理数据库的界面了。 注意：想要让别人访问到你的网站的话需要更改/var/www文件夹的访问权限，命令：chmod 777 /var/www到此完满结束，剩下的就是密码啊什么的了 补充：今天发现不知是不是我乱改了密码还是怎样发现登录不了phpmyadmin，后来找到配置文件/var/www/phpmyadmin/config.default.php,打开这个配置文件把里面的密码和是否允许空密码登录（改为true）就行了，具体的情况稍微看下这个配置文件就行了，很简单的。]]></content>
+    <content type="text"><![CDATA[##ubuntu 14.04 LTS下安装apache+php+mysql+phpmyadmin 转自某博，很好用： 最近重装了ubuntu12.04 LTS，今天也重装了web服务器，顺带记录一下安装过程。 ###环境：ubuntu 12.04 LTS ###详细步骤： 首先以管理员的身份登录。 1sudo su 安装mysql5（既是数据库） 1apt-get install mysql-server mysql-client 注：安装过程中会提示输入密码，记得设置密码再确定。当然，不想设置的话直接过就行了 安装phpMyAdmin 1apt-get install phpmyadmin （ 话说这种方法安装会自动把下面我介绍到的apache2,php5附带安装） 注：phpmyadmin会自动安装在/usr/share/phpMyAdmin下，需要将 phpMyAdmin文件夹拷贝到/var/www/html目录下面 (14.04是放在/var/www/html/下，非常重要，不然后面测试不成功) 故使用 1sudo cp /usr/share/phpmyadmin/ /var/www/ -a 把文件夹phpmyadmin搬到/var/www/html目录下即可 或者推荐下面这种用法 (链接目录，用如下命令 1sudo ln -s /usr/share/phpmyadmin/ /var/www/html/ 注意上面那个不是IN 而是小写的L。就不用移动文件了) 安装apache服务器 1apt-get install apache2 注：Apache的默认文档根目录是在Ubuntu上的/var/www目录，配置文件是/ etc/apache2/apache2.conf。配置存储在的子目录在/etc/apache2目录。一般的网页文件可以直接丢进/var/www目录下，在浏览器就可以访问了。默认的是index.html，所以在浏览器地址栏输入127.0.0.1或localhost就可以访问了 安装PHP5和Apache的PHP5的模块 1apt-get install php5 libapache2-mod-php5 安装完后重启服务器， 1/etc/init.d/apache2 restart 此时可以测试php环境， 1gedit /var/www/info.php， 在弹出的文本编辑器里面写入： 1&lt;?php phpinfo(); ?&gt; 然后直接在浏览器输入127.0.0.1/info.php,就可以看到php的信息了，说明安装成功了 让php5获得数据库mysql的支持 1apt-get install php5-mysql php5-curl php5-gd php5-idn php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl 然后重启服务器， 1/etc/init.d/apache2 restart 安装phpMyAdmin 1apt-get install phpmyadmin 浏览器输入127.0.0.1/phpmyadmin就可以看到管理数据库的界面了。 补充：今天发现不知是不是我乱改了密码还是怎样发现登录不了phpmyadmin，后来找到配置文件/var/www/phpmyadmin/config.default.php,打开这个配置文件把里面的密码和是否允许空密码登录（改为true）就行了，具体的情况稍微看下这个配置文件就行了，很简单的。]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -684,7 +689,7 @@
   <entry>
     <title><![CDATA[树莓派无路由器连接]]></title>
     <url>%2F2016%2F06%2F24%2Fraspberry-without-routet%2F</url>
-    <content type="text"><![CDATA[树莓派+一根网线直连笔记本电脑 树莓派**+**一根网线直连笔记本电脑 用网线直连电脑，不经过路由器。这个方法最大的特点用最少的工具玩树莓派。 一、材料：树莓派一部、网线一根，笔记本电脑一台。1、树莓派：带供电系统和烧好Raspbian系统的SD卡；2、网线：交叉或直连；3、笔记本电脑：双网卡，现在应该都是这个配置的。 二、操作步骤。1、连线。树莓派接好供电线；将网线一端接到树莓派，另一端接到笔记本。 注意：先连接WiFi，再进行其他配置 2、共享互联网。如果现在笔记本已经通过WIFI连接到互联网，可以将无线网卡的互联网资源共享给本地连接。以win7系统为例，开始——控制面板——网络和Internet——网络和共享中心——查看网络状态和任务——更改适配器设置，找到无线网络连接右键“属性”，在共享选项卡上选中“允许其他网络用户通过此计算机的Internet连接来连接（N）”选项，点确定。 3、查找树莓派的IP地址。运行DOS窗口，输入arp -a，在接口192.168.137.1下的为动态类型的IP地址就是树莓派的地址 为什么是接口192.168.137.1的呢？因为上部共享互联网的时候已把“本地连接”的IP地址自动设置成静态IP192.168.137.1了，当然这个IP地址也可以自己设置成其他自己常用的静态IP地址。因为此时树莓派的IP地址是动态的，只能用此方法查找。也可以通过修改SD卡中的cmdline.txt文件（在里面加入语句ip=...），将树莓派设置成静态IP地址，但此时只有将电脑的“本地连接”的静态IP地址设置成与树莓派静态IP地址同一号段才能成功连接。 via 本文来自：树莓派实验室链接地址：http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html &nbsp;]]></content>
+    <content type="text"><![CDATA[##树莓派+一根网线直连笔记本电脑 用网线直连电脑，不经过路由器。这个方法最大的特点用最少的工具玩树莓派。 一、 材料：树莓派一部、网线一根，笔记本电脑一台。 树莓派：带供电系统和烧好Raspbian系统的SD卡； 网线：交叉或直连； 笔记本电脑：双网卡，现在应该都是这个配置的。 二、操作步骤。 连线。 树莓派接好供电线； 将网线一端接到树莓派，另一端接到笔记本。 注意：先连接WiFi，再进行其他配置 共享互联网。 如果现在笔记本已经通过WIFI连接到互联网，可以将无线网卡的互联网资源共享给本地连接。以win7系统为例，开始——控制面板——网络和Internet——网络和共享中心——查看网络状态和任务——更改适配器设置，找到无线网络连接右键“属性”，在共享选项卡上选中“允许其他网络用户通过此计算机的Internet连接来连接（N）”选项，点确定。 查找树莓派的IP地址。 运行DOS窗口，输入arp -a，在接口192.168.137.1下的为动态类型的IP地址就是树莓派的地址 三、问题一大堆 为什么是接口192.168.137.1的呢？因为上部共享互联网的时候已把“本地连接”的IP地址自动设置成静态IP192.168.137.1了，当然这个IP地址也可以自己设置成其他自己常用的静态IP地址。因为此时树莓派的IP地址是动态的，只能用此方法查找。也可以通过修改SD卡中的cmdline.txt文件（在里面加入语句ip=...），将树莓派设置成静态IP地址，但此时只有将电脑的“本地连接”的静态IP地址设置成与树莓派静态IP地址同一号段才能成功连接。 本文来自：树莓派实验室链接地址：http://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -692,7 +697,7 @@
   <entry>
     <title><![CDATA[进入树莓派图形化界面]]></title>
     <url>%2F2016%2F06%2F24%2Fwindows-in-raspberry%2F</url>
-    <content type="text"><![CDATA[一. 必要程序安装 1. 先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver2. 开启tightvncserver服务 tightvncserver要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n 3. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-get install xtightvncviewer4. 在另一台机器上连接(在步骤2完成后,在~/.vnc目录下有个aborn:1.pid,所以下面的号对应为1) xtightvncviewer 192.168.1.153（树莓派的ip）:1成功连接到树莓派图形化界面。 二. 再次启动树莓派 1. 树莓派控制端Xshell启动tightvncserver tightvncserver2. 访问机启动xtightvncviewer xtightvncviewer 192.168.1.153（树莓派IP）:1]]></content>
+    <content type="text"><![CDATA[一. 必要程序安装 1. 先在树莓派的机器上安装tightvncserver sudo apt-get install tightvncserver 2\. 开启tightvncserver服务 tightvncserver 要输入树莓派的密码,然后问你要不要设置一个独立密码,我选择n 3\. 在另一台机器(要访问树莓派的机器)上安装xtightvncviewer sudo apt-get install xtightvncviewer 4\. 在另一台机器上连接(在步骤2完成后,在~/.vnc目录下有个aborn:1.pid,所以下面的号对应为1) xtightvncviewer 192.168.1.153（树莓派的ip）:1 成功连接到树莓派图形化界面。 二. 再次启动树莓派 1\. 树莓派控制端Xshell启动tightvncserver tightvncserver 2\. 访问机启动xtightvncviewer xtightvncviewer 192.168.1.153（树莓派IP）:1]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -703,7 +708,7 @@
   <entry>
     <title><![CDATA[Ubuntu解压缩zip,tar,tar.gz,tar.bz2]]></title>
     <url>%2F2016%2F06%2F24%2Funzip-in-ubuntu%2F</url>
-    <content type="text"><![CDATA[ZIP zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录： zip -r archive_name.zip directory_to_compress下面是如果解压一个zip文档： unzip archive_name.zipTAR Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录： tar -cvf archive_name.tar directory_to_compress如何解包： tar -xvf archive_name.tar.gz上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径： tar -xvf archive_name.tar -C /tmp/extract_here/TAR.GZ 这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录： tar -zcvf archive_name.tar.gz directory_to_compress解压缩： tar -zxvf archive_name.tar.gz上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径： tar -zxvf archive_name.tar.gz -C /tmp/extract_here/TAR.BZ2 这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。 tar -jcvf archive_name.tar.bz2 directory_to_compress上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径： tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/rarsudo apt-get install unrar sudo unrar x name.rar &nbsp; &nbsp; 来源：http://www.linuxidc.com/Linux/2012-08/68122.htm]]></content>
+    <content type="text"><![CDATA[zipzip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧： 我们可以使用下列的命令压缩一个目录：1zip -r archive_name.zip directory_to_compress 下面是如果解压一个zip文档：1unzip archive_name.zip TARTar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：1tar -cvf archive_name.tar directory_to_compress 如何解包：1tar -xvf archive_name.tar.gz 上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：1tar -xvf archive_name.tar -C /tmp/extract_here/ TAR.GZ这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：1tar -zcvf archive_name.tar.gz directory_to_compress 解压缩：1tar -zxvf archive_name.tar.gz 上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：1tar -zxvf archive_name.tar.gz -C /tmp/extract_here/ TAR.BZ2这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。1tar -jcvf archive_name.tar.bz2 directory_to_compress 上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：1tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/ rar12sudo apt-get install unrarsudo unrar x name.rar 来源：http://www.linuxidc.com/Linux/2012-08/68122.htm]]></content>
       <categories>
         <category>linux</category>
       </categories>
