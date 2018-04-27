@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-04-27T04:00:04.362Z</updated>
+  <updated>2018-04-27T11:49:46.708Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -18,19 +18,43 @@
   
   <entry>
     <title>机器学习</title>
-    <link href="http://blog.huhaobin.cn/2018/04/23/machine-learning1/"/>
-    <id>http://blog.huhaobin.cn/2018/04/23/machine-learning1/</id>
-    <published>2018-04-23T13:56:20.000Z</published>
-    <updated>2018-04-27T04:00:04.362Z</updated>
+    <link href="http://blog.huhaobin.cn/2018/04/27/machine-learning2/"/>
+    <id>http://blog.huhaobin.cn/2018/04/27/machine-learning2/</id>
+    <published>2018-04-27T13:56:20.000Z</published>
+    <updated>2018-04-27T11:49:46.708Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><ol><li>假设系统函数<br><img src="/image/Hypothesis.png" alt="系统函数"></li><li><p>代价函数<br><img src="/image/costFunction.png" alt="代价函数"></p><p> alpha: 学习效率</p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2></li><li>普适算法<br><img src="/image/GradientDescentAlgo.png" alt="普适算法"></li><li><p>线性回归中<br><img src="/image/GradientDescentForLinearRegression.png" alt="线性回归"><br><img src="/image/GDALRS.png" alt="去微分"></p><p> <strong>记得同步更新theta</strong></p><h2 id="多变量的线性回归问题"><a href="#多变量的线性回归问题" class="headerlink" title="多变量的线性回归问题"></a>多变量的线性回归问题</h2><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3></li><li><p>数据缩放()</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = X/MAX(X);</div></pre></td></tr></table></figure><p> 使得X <strong>接近</strong>[-1,1]区间</p></li><li><p>平均值正常化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = (X-U)/(max(X)-MIN(x)) // U是X的平均值</div></pre></td></tr></table></figure></li><li><p>数据归一化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theta = pinv(X&apos;*X)*X&apos;*y;</div></pre></td></tr></table></figure></li></ol><p>可以用正态方程求解代价函数最小值</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="逻辑回归问题"><a href="#逻辑回归问题" class="headerlink" title="逻辑回归问题"></a>逻辑回归问题</h1><h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><ol><li>逻辑回归<br><img src="/image/HypothesisRepresentation.png" alt="逻辑回归"></li><li><p>线性回归</p><p>线性回归中 <strong>g(z)=1</strong></p><h2 id="决策边界-Decision-boundary"><a href="#决策边界-Decision-boundary" class="headerlink" title="决策边界(Decision boundary)"></a>决策边界(Decision boundary)</h2><p>一条分割y=0和y=1的线</p><h2 id="代价函数-cost-function"><a href="#代价函数-cost-function" class="headerlink" title="代价函数(cost function)"></a>代价函数(cost function)</h2><p><img src="/image/CostFunctionInLogisticRegression.png" alt="代价函数"><br>整合之后<br><img src="/image/CostFunctionForLRM.png" alt="整合代价函数"></p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p><img src="/image/GradientDescentForLRM.png" alt="梯度下降法"></p><h2 id="过度拟合"><a href="#过度拟合" class="headerlink" title="过度拟合"></a>过度拟合</h2><p>过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值</p><ul><li>解决方法(regularization)</li></ul></li></ol><h2 id="regularization"><a href="#regularization" class="headerlink" title="regularization"></a>regularization</h2><ol><li>重新设置代价函数(cost function)J<br><img src="/image/RegularizedLinerRegression.png" alt="J"><br>给每个theta做惩罚，用足够大的lambda去削弱theta的作用，从而平滑h。但是lambda太大的话将导致欠拟合，太大的时候得到的仅仅是一条扁平的直线</li><li>梯度下降法<br><img src="/image/RegularizationGradientDescent.png" alt=""><br>将theta分开更新是因为在重新设计代价函数的时候没有给theta惩罚，简化之后为<img src="/image/RegularizationGradientDescentJ.png" alt=""></li><li>归一化求代价函数的最小值<br><img src="/image/RegularizationNormalEquation.png" alt=""></li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;代价函数&quot;&gt;&lt;a href=&quot;#代价函数&quot; class=&quot;headerlink&quot; title=&quot;代价函数&quot;&gt;&lt;/a&gt;代价函数&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;假设系统函数&lt;br&gt;&lt;img src=&quot;/image/Hypothesis.png&quot; alt=&quot;系统函数&quot;&gt;&lt;/
+        &lt;h1 id=&quot;逻辑回归问题&quot;&gt;&lt;a href=&quot;#逻辑回归问题&quot; class=&quot;headerlink&quot; title=&quot;逻辑回归问题&quot;&gt;&lt;/a&gt;逻辑回归问题&lt;/h1&gt;&lt;h2 id=&quot;系统函数&quot;&gt;&lt;a href=&quot;#系统函数&quot; class=&quot;headerlink&quot; title=&quot;系
+      
+    
+    </summary>
+    
+      <category term="machine-learning" scheme="http://blog.huhaobin.cn/categories/machine-learning/"/>
+    
+    
+      <category term="machine-learning" scheme="http://blog.huhaobin.cn/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习</title>
+    <link href="http://blog.huhaobin.cn/2018/04/23/machine-learning1/"/>
+    <id>http://blog.huhaobin.cn/2018/04/23/machine-learning1/</id>
+    <published>2018-04-23T13:56:20.000Z</published>
+    <updated>2018-04-27T08:03:22.025Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="线性回归问题"><a href="#线性回归问题" class="headerlink" title="线性回归问题"></a>线性回归问题</h1><h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><ol><li>假设系统函数<br><img src="/image/Hypothesis.png" alt="系统函数"></li><li><p>代价函数<br><img src="/image/costFunction.png" alt="代价函数"></p><p> alpha: 学习效率</p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2></li><li>普适算法<br><img src="/image/GradientDescentAlgo.png" alt="普适算法"></li><li><p>线性回归中<br><img src="/image/GradientDescentForLinearRegression.png" alt="线性回归"><br><img src="/image/GDALRS.png" alt="去微分"></p><p> <strong>记得同步更新theta</strong></p><h2 id="多变量的线性回归问题"><a href="#多变量的线性回归问题" class="headerlink" title="多变量的线性回归问题"></a>多变量的线性回归问题</h2><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3></li><li><p>数据缩放()</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = X/MAX(X);</div></pre></td></tr></table></figure><p> 使得X <strong>接近</strong>[-1,1]区间</p></li><li><p>平均值正常化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = (X-U)/(max(X)-MIN(x)) // U是X的平均值</div></pre></td></tr></table></figure></li><li><p>数据归一化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theta = pinv(X&apos;*X)*X&apos;*y;</div></pre></td></tr></table></figure></li></ol><p>可以用正态方程求解代价函数最小值</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;线性回归问题&quot;&gt;&lt;a href=&quot;#线性回归问题&quot; class=&quot;headerlink&quot; title=&quot;线性回归问题&quot;&gt;&lt;/a&gt;线性回归问题&lt;/h1&gt;&lt;h2 id=&quot;代价函数&quot;&gt;&lt;a href=&quot;#代价函数&quot; class=&quot;headerlink&quot; title=&quot;代
       
     
     </summary>
@@ -146,31 +170,6 @@
   </entry>
   
   <entry>
-    <title>linux定时执行任务</title>
-    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
-    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
-    <published>2018-04-18T14:11:07.000Z</published>
-    <updated>2018-04-18T08:12:50.641Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux网络连接后执行脚本</title>
     <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
     <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
@@ -184,6 +183,31 @@
       
       
         &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux定时执行任务</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T08:12:50.641Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
       
     
     </summary>
@@ -499,31 +523,6 @@
     
     
       <category term="qt" scheme="http://blog.huhaobin.cn/tags/qt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>apache2跨域</title>
-    <link href="http://blog.huhaobin.cn/2017/12/15/apache2cors/"/>
-    <id>http://blog.huhaobin.cn/2017/12/15/apache2cors/</id>
-    <published>2017-12-15T07:47:26.000Z</published>
-    <updated>2017-12-27T03:00:55.537Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="加载服务器组件"><a href="#加载服务器组件" class="headerlink" title="加载服务器组件"></a>加载服务器组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a2enmod headers</div></pre></td></tr></table></figure><h2 id="修改服务器配置"><a href="#修改服务器配置" class="headerlink" title="修改服务器配置"></a>修改服务器配置</h2><p>  在想要可以跨域访问的目录下<br>  <directory ****=""><br>    Header set Access-Control-Allow-Origin *<br>  </directory></p><h2 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service apache2 restart</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;加载服务器组件&quot;&gt;&lt;a href=&quot;#加载服务器组件&quot; class=&quot;headerlink&quot; title=&quot;加载服务器组件&quot;&gt;&lt;/a&gt;加载服务器组件&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   

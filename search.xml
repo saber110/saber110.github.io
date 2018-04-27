@@ -2,8 +2,19 @@
 <search>
   <entry>
     <title><![CDATA[机器学习]]></title>
+    <url>%2F2018%2F04%2F27%2Fmachine-learning2%2F</url>
+    <content type="text"><![CDATA[逻辑回归问题系统函数 逻辑回归 线性回归 线性回归中 g(z)=1 决策边界(Decision boundary)一条分割y=0和y=1的线 代价函数(cost function)整合之后 梯度下降法 过度拟合过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值 解决方法(regularization) regularization 重新设置代价函数(cost function)J给每个theta做惩罚，用足够大的lambda去削弱theta的作用，从而平滑h。但是lambda太大的话将导致欠拟合，太大的时候得到的仅仅是一条扁平的直线 梯度下降法将theta分开更新是因为在重新设计代价函数的时候没有给theta惩罚，简化之后为 归一化求代价函数的最小值]]></content>
+      <categories>
+        <category>machine-learning</category>
+      </categories>
+      <tags>
+        <tag>machine-learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[机器学习]]></title>
     <url>%2F2018%2F04%2F23%2Fmachine-learning1%2F</url>
-    <content type="text"><![CDATA[代价函数 假设系统函数 代价函数 alpha: 学习效率 梯度下降法 普适算法 线性回归中 记得同步更新theta 多变量的线性回归问题数据处理 数据缩放() 1X = X/MAX(X); 使得X 接近[-1,1]区间 平均值正常化 1X = (X-U)/(max(X)-MIN(x)) // U是X的平均值 数据归一化 1theta = pinv(X&apos;*X)*X&apos;*y; 可以用正态方程求解代价函数最小值]]></content>
+    <content type="text"><![CDATA[线性回归问题代价函数 假设系统函数 代价函数 alpha: 学习效率 梯度下降法 普适算法 线性回归中 记得同步更新theta 多变量的线性回归问题数据处理 数据缩放() 1X = X/MAX(X); 使得X 接近[-1,1]区间 平均值正常化 1X = (X-U)/(max(X)-MIN(x)) // U是X的平均值 数据归一化 1theta = pinv(X&apos;*X)*X&apos;*y; 可以用正态方程求解代价函数最小值]]></content>
       <categories>
         <category>machine-learning</category>
       </categories>
@@ -56,9 +67,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux定时执行任务]]></title>
-    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
-    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
+    <title><![CDATA[linux网络连接后执行脚本]]></title>
+    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
+    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -67,9 +78,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux网络连接后执行脚本]]></title>
-    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
-    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
+    <title><![CDATA[linux定时执行任务]]></title>
+    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
+    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -272,6 +283,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -281,11 +297,6 @@
       <tags>
         <tag>AD</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[ci library]]></title>
@@ -364,25 +375,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[uart_raspberry]]></title>
     <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
     <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -399,6 +394,22 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[hexo个人博客的搭建]]></title>
     <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
     <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
@@ -410,14 +421,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[树莓派连接隐藏wifi]]></title>
-    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
-    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
     <url>%2F2017%2F09%2F30%2Fraspberry_ubuntumate%2F</url>
     <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启sshwindows用户可以打开powershell进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
@@ -427,6 +430,14 @@
       <tags>
         <tag>树莓派</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -445,14 +456,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[cordova开发安卓]]></title>
-    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
-    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
-      <categories>
-        <category>安卓</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[计算机算法 C++描述]]></title>
     <url>%2F2017%2F04%2F17%2FComputerAlgorithms%2F</url>
     <content type="text"></content>
@@ -462,6 +465,14 @@
       <tags>
         <tag>计算机算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cordova开发安卓]]></title>
+    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
+    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
+      <categories>
+        <category>安卓</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[c_multipthread]]></title>
@@ -491,17 +502,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[shell]]></title>
-    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[服务器操作规范]]></title>
     <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
     <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
@@ -510,6 +510,17 @@
       </categories>
       <tags>
         <tag>服务器操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell]]></title>
+    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
