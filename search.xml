@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[机器学习]]></title>
+    <url>%2F2018%2F04%2F23%2Fmachine-learning1%2F</url>
+    <content type="text"><![CDATA[代价函数 假设系统函数 代价函数 alpha: 学习效率 梯度下降法 普适算法 线性回归中 记得同步更新theta 多变量的线性回归问题数据处理 数据缩放() 1X = X/MAX(X); 使得X 接近[-1,1]区间 平均值正常化 1X = (X-U)/(max(X)-MIN(x)) // U是X的平均值 数据归一化 1theta = pinv(X&apos;*X)*X&apos;*y; 可以用正态方程求解代价函数最小值]]></content>
+      <categories>
+        <category>machine-learning</category>
+      </categories>
+      <tags>
+        <tag>machine-learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[qt画图]]></title>
     <url>%2F2018%2F04%2F21%2FqtPainting%2F</url>
     <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
@@ -45,9 +56,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux网络连接后执行脚本]]></title>
-    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
-    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
+    <title><![CDATA[linux定时执行任务]]></title>
+    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
+    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -56,9 +67,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux定时执行任务]]></title>
-    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
-    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
+    <title><![CDATA[linux网络连接后执行脚本]]></title>
+    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
+    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -272,17 +283,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[ci library]]></title>
     <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
     <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
       <categories>
         <category>PHP</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[linux下arm-none-linux-gnueabi交叉编译环境的建立]]></title>
@@ -353,9 +364,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -364,6 +375,14 @@
     <title><![CDATA[uart_raspberry]]></title>
     <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
     <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -378,14 +397,6 @@
       <tags>
         <tag>mysql</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[hexo个人博客的搭建]]></title>
@@ -434,6 +445,14 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[cordova开发安卓]]></title>
+    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
+    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
+      <categories>
+        <category>安卓</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[计算机算法 C++描述]]></title>
     <url>%2F2017%2F04%2F17%2FComputerAlgorithms%2F</url>
     <content type="text"></content>
@@ -443,14 +462,6 @@
       <tags>
         <tag>计算机算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[cordova开发安卓]]></title>
-    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
-    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
-      <categories>
-        <category>安卓</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[c_multipthread]]></title>
@@ -639,7 +650,7 @@
         <category>树莓派</category>
       </categories>
       <tags>
-        <tag>语音对话,树莓派</tag>
+        <tag>树莓派</tag>
       </tags>
   </entry>
   <entry>
