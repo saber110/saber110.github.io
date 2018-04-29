@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-04-28T11:07:23.708Z</updated>
+  <updated>2018-04-29T09:13:42.143Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -18,10 +18,37 @@
   
   <entry>
     <title>机器学习之神经网络</title>
+    <link href="http://blog.huhaobin.cn/2018/04/29/machine-learning4/"/>
+    <id>http://blog.huhaobin.cn/2018/04/29/machine-learning4/</id>
+    <published>2018-04-29T13:56:20.000Z</published>
+    <updated>2018-04-29T09:13:42.143Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>a在这里表示神经网络中的神经元</strong></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ol><li>二元分类(Binary classification)</li><li>多分类(Multi-class classification)</li></ol><h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p><img src="/image/costfunctionBetweenLRandNeuralNetwork.png" alt=""></p><ul><li>L: 网络中的总层数</li><li>K: 输出层神经元的数量</li><li>S<sub>l</sub>: l 层的总神经元数量(不算偏置单元)额<!-- 注意： 这是单个 -->为了计算代价函数的最小值，我们使用反向传播算法</li></ul><h2 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h2><p>(计算出代价函数下降最快的方向)<br>给出训练集{(x<sup>(1)</sup>,y<sup>(1)</sup>)⋯(x<sup>(m)</sup>,y<sup>(m)</sup>)}</p><p>令 Δ<sub>i,j</sub><sup>(l)</sup> := 0 for all (l,i,j), (hence you end up having a matrix full of zeros)</p><p>For training example t =1 to m:</p><ol><li>Set a<sup>(1)</sup>:=x<sup>(t)</sup></li><li>Perform forward propagation to compute a<sup>(l)</sup> for l=2,3,…,L<br><img src="/image/GradientForNeuralNetwork.png" alt=""></li><li>Using y(t), compute δ<sup>(L)</sup>=a<sup>(L)</sup>−y<sup>(t)</sup></li><li>Compute δ<sup>(L−1)</sup>,δ<sup>(L−2)</sup>,…,δ<sup>(2)</sup> using δ<sup>(l)</sup>=((Θ<sup>(l)</sup>)<sup>T</sup>δ<sup>(l+1)</sup>) .∗ a<sup>(l)</sup> .∗ (1−a<sup>(l)</sup>)</li><li>Δ<sub>i,j</sub><sup>(l)</sup>:=Δ<sub>i,j</sub><sup>(l)</sup>+a<sub>j</sub><sup>(l)</sup>δ<sub>i</sub><sup>(l+1)</sup> or with vectorization, Δ<sup>(l)</sup>:=Δ<sup>(l)</sup>+δ<sup>(l+1)</sup>(a<sup>(l)</sup>)<sup>T</sup></li></ol><p>Hence we update our new Δ matrix.</p><ul><li>D<sub>i,j</sub>(l):=1/m(Δ<sub>i,j</sub><sup>(l)</sup>+λΘ<sub>i,j</sub><sup>(l)</sup>), if j≠0.</li><li>D<sub>i,j</sub><sup>(l)</sup>:=1/mΔ<sub>i,j</sub><sup>(l)</sup> If j=0</li></ul><p>所以得出J的微分为<img src="/image/partialDerivativeOfJInNN.png" alt=""></p><h2 id="向量展开"><a href="#向量展开" class="headerlink" title="向量展开"></a>向量展开</h2><p>在之前的学习过程中我们总是使用fminunc来优化参数，但是他要求所有的输入和输出均是向量，我们在神经网络中使用的时候只能把Theta矩阵和Gradient矩阵进行向量化</p><ul><li>size(Theta1) = 10 * 11</li><li>size(Theta2) = 10 * 11</li><li>size(Theta3) = 1 * 11<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]</div><div class="line">deltaVector = [ D1(:); D2(:); D3(:) ]</div></pre></td></tr></table></figure></li></ul><p>恢复为矩阵<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Theta1 = reshape(thetaVector(1:110),10,11)</div><div class="line">Theta2 = reshape(thetaVector(111:220),10,11)</div><div class="line">Theta3 = reshape(thetaVector(221:231),1,11)</div></pre></td></tr></table></figure></p><h2 id="梯度计算结果校验"><a href="#梯度计算结果校验" class="headerlink" title="梯度计算结果校验"></a>梯度计算结果校验</h2><p>反向传播算法复杂多变，我们使用导数的定义来校验反向传播得到的结果是否正确(相差很小)，当确定正确之后关掉梯度校验。因为他很 <strong>慢</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">epsilon = 1e-4;</div><div class="line">for i = 1:n,</div><div class="line">  thetaPlus = theta;</div><div class="line">  thetaPlus(i) += epsilon;</div><div class="line">  thetaMinus = theta;</div><div class="line">  thetaMinus(i) -= epsilon;</div><div class="line">  gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)</div><div class="line">end;</div></pre></td></tr></table></figure><h2 id="随机初始化"><a href="#随机初始化" class="headerlink" title="随机初始化"></a>随机初始化</h2><p>为了避免神经网络因为相同的Theta而陷入冗余的计算，范围是[-INIT_EPSILON,INIT_EPSILON]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.</div><div class="line"></div><div class="line">Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div><div class="line">Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div><div class="line">Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div></pre></td></tr></table></figure></p><h2 id="网络选择-的步骤"><a href="#网络选择-的步骤" class="headerlink" title="网络选择 的步骤"></a>网络选择 的步骤</h2><ul><li>Number of input units = dimension of features x(i)</li><li>Number of output units = number of classes</li><li>Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)</li><li>Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.<h2 id="网络训练的步骤"><a href="#网络训练的步骤" class="headerlink" title="网络训练的步骤"></a>网络训练的步骤</h2></li><li>Randomly initialize the weights</li><li>Implement forward propagation to get hΘ(x<sup>(i)</sup>) for any x<sup>(i)</sup></li><li>Implement the cost function</li><li>Implement backpropagation to compute partial derivatives</li><li>Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.</li><li>Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.</li></ul><p>When we perform forward and back propagation, we loop on every training example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for i = 1:m,</div><div class="line">   Perform forward propagation and backpropagation using example (x(i),y(i))</div><div class="line">   (Get activations a(l) and delta terms d(l) for l = 2,...,L</div></pre></td></tr></table></figure></p><p>(There are m training sets)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;a在这里表示神经网络中的神经元&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;分类&quot;&gt;&lt;a href=&quot;#分类&quot; class=&quot;headerlink&quot; title=&quot;分类&quot;&gt;&lt;/a&gt;分类&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;二元分类(Binary classificati
+      
+    
+    </summary>
+    
+      <category term="machine-learning" scheme="http://blog.huhaobin.cn/categories/machine-learning/"/>
+    
+    
+      <category term="machine-learning" scheme="http://blog.huhaobin.cn/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习之神经网络介绍</title>
     <link href="http://blog.huhaobin.cn/2018/04/28/machine-learning3/"/>
     <id>http://blog.huhaobin.cn/2018/04/28/machine-learning3/</id>
     <published>2018-04-28T13:56:20.000Z</published>
-    <updated>2018-04-28T11:07:23.708Z</updated>
+    <updated>2018-04-29T05:57:51.219Z</updated>
     
     <content type="html"><![CDATA[<p>神经网络可以用来解决特征特别多的机器学习问题，普通的解决方法在这儿显得无能为力，主要是特征向量太多的时候就会出现无数种特征向量的组合产生假设函数的无数项，这对于计算来说不现实。</p><h2 id="表示"><a href="#表示" class="headerlink" title="表示"></a>表示</h2><ol><li>层： 输入层、隐藏层、输出层</li><li><p>仍然使用sigmoid函数<br>3.<br><img src="/image/AppearanceOfNeuronNetwork.png" alt="基本形式"></p><ul><li>a<sub>i</sub><sup>j</sup>: 第j层的第i个元素</li><li><p>Θ<sup>(j)</sup>: j层到j+1层的权重映射矩阵</p><p><strong>如果网络在j层有s<sub>j</sub>个单元，j+1层有s<sub>j+1</sub>个单元，那么Θ<sup>(j)</sup>的维度为s<sub>j+1</sub>×(s<sub>j</sub>+1)</strong></p></li></ul></li><li>向量化<br>对于中间层的计算，我们可以定义Z使得<br><img src="/image/neuralNetworkHiddenCompute.png" alt=""> 变形为<img src="/image/neuralNetworkHiddenCompute-z.png" alt=""><br>进行向量化之后<br><img src="/image/NeuralNetworkVectlize.png" alt=""><br>也就是说<br><img src="/image/ZNeuralNetwork.png" alt=""> <img src="/image/HNeuralNetwork.png" alt=""></li></ol>]]></content>
     
@@ -196,31 +223,6 @@
   </entry>
   
   <entry>
-    <title>linux定时执行任务</title>
-    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
-    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
-    <published>2018-04-18T14:11:07.000Z</published>
-    <updated>2018-04-18T08:12:50.641Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux网络连接后执行脚本</title>
     <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
     <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
@@ -234,6 +236,31 @@
       
       
         &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux定时执行任务</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T08:12:50.641Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
       
     
     </summary>
@@ -298,6 +325,31 @@
   </entry>
   
   <entry>
+    <title>分治策略</title>
+    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
+    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
+    <published>2018-04-07T14:11:07.000Z</published>
+    <updated>2018-04-09T08:46:58.957Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机算法 C++描述 第二章</title>
     <link href="http://blog.huhaobin.cn/2018/04/07/CA2/"/>
     <id>http://blog.huhaobin.cn/2018/04/07/CA2/</id>
@@ -312,31 +364,6 @@
       
         &lt;h2 id=&quot;template-模板&quot;&gt;&lt;a href=&quot;#template-模板&quot; class=&quot;headerlink&quot; title=&quot;template 模板&quot;&gt;&lt;/a&gt;template 模板&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;类模板&lt;br&gt;假设一个类中数据成员的数据类型不能确
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分治策略</title>
-    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
-    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
-    <published>2018-04-07T14:11:07.000Z</published>
-    <updated>2018-04-09T08:46:58.957Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
       
     
     </summary>
@@ -375,6 +402,31 @@
   </entry>
   
   <entry>
+    <title>编程珠玑</title>
+    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
+    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
+    <published>2018-04-01T14:11:07.000Z</published>
+    <updated>2018-03-31T05:00:48.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>进程间通信</title>
     <link href="http://blog.huhaobin.cn/2018/04/01/processCom/"/>
     <id>http://blog.huhaobin.cn/2018/04/01/processCom/</id>
@@ -400,31 +452,6 @@
     
     
       <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编程珠玑</title>
-    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
-    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
-    <published>2018-04-01T14:11:07.000Z</published>
-    <updated>2018-03-31T05:00:48.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -502,28 +529,6 @@
     
     
       <category term="C" scheme="http://blog.huhaobin.cn/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2018/03/04/csu/"/>
-    <id>http://blog.huhaobin.cn/2018/03/04/csu/</id>
-    <published>2018-03-04T05:31:56.863Z</published>
-    <updated>2018-03-04T05:31:56.863Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://123.206.64.174" target="_blank" rel="external">http://123.206.64.174</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;http://123.206.64.174&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://123.206.64.174&lt;/a&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
     
   </entry>
   

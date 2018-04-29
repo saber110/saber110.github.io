@@ -2,6 +2,17 @@
 <search>
   <entry>
     <title><![CDATA[机器学习之神经网络]]></title>
+    <url>%2F2018%2F04%2F29%2Fmachine-learning4%2F</url>
+    <content type="text"><![CDATA[a在这里表示神经网络中的神经元 分类 二元分类(Binary classification) 多分类(Multi-class classification) 代价函数 L: 网络中的总层数 K: 输出层神经元的数量 Sl: l 层的总神经元数量(不算偏置单元)额 为了计算代价函数的最小值，我们使用反向传播算法 反向传播算法(计算出代价函数下降最快的方向)给出训练集{(x(1),y(1))⋯(x(m),y(m))} 令 Δi,j(l) := 0 for all (l,i,j), (hence you end up having a matrix full of zeros) For training example t =1 to m: Set a(1):=x(t) Perform forward propagation to compute a(l) for l=2,3,…,L Using y(t), compute δ(L)=a(L)−y(t) Compute δ(L−1),δ(L−2),…,δ(2) using δ(l)=((Θ(l))Tδ(l+1)) .∗ a(l) .∗ (1−a(l)) Δi,j(l):=Δi,j(l)+aj(l)δi(l+1) or with vectorization, Δ(l):=Δ(l)+δ(l+1)(a(l))T Hence we update our new Δ matrix. Di,j(l):=1/m(Δi,j(l)+λΘi,j(l)), if j≠0. Di,j(l):=1/mΔi,j(l) If j=0 所以得出J的微分为 向量展开在之前的学习过程中我们总是使用fminunc来优化参数，但是他要求所有的输入和输出均是向量，我们在神经网络中使用的时候只能把Theta矩阵和Gradient矩阵进行向量化 size(Theta1) = 10 * 11 size(Theta2) = 10 * 11 size(Theta3) = 1 * 1112thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]deltaVector = [ D1(:); D2(:); D3(:) ] 恢复为矩阵123Theta1 = reshape(thetaVector(1:110),10,11)Theta2 = reshape(thetaVector(111:220),10,11)Theta3 = reshape(thetaVector(221:231),1,11) 梯度计算结果校验反向传播算法复杂多变，我们使用导数的定义来校验反向传播得到的结果是否正确(相差很小)，当确定正确之后关掉梯度校验。因为他很 慢 12345678epsilon = 1e-4;for i = 1:n, thetaPlus = theta; thetaPlus(i) += epsilon; thetaMinus = theta; thetaMinus(i) -= epsilon; gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)end; 随机初始化为了避免神经网络因为相同的Theta而陷入冗余的计算，范围是[-INIT_EPSILON,INIT_EPSILON]12345If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON; 网络选择 的步骤 Number of input units = dimension of features x(i) Number of output units = number of classes Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units) Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.网络训练的步骤 Randomly initialize the weights Implement forward propagation to get hΘ(x(i)) for any x(i) Implement the cost function Implement backpropagation to compute partial derivatives Use gradient checking to confirm that your backpropagation works. Then disable gradient checking. Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta. When we perform forward and back propagation, we loop on every training example:123for i = 1:m, Perform forward propagation and backpropagation using example (x(i),y(i)) (Get activations a(l) and delta terms d(l) for l = 2,...,L (There are m training sets)]]></content>
+      <categories>
+        <category>machine-learning</category>
+      </categories>
+      <tags>
+        <tag>machine-learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[机器学习之神经网络介绍]]></title>
     <url>%2F2018%2F04%2F28%2Fmachine-learning3%2F</url>
     <content type="text"><![CDATA[神经网络可以用来解决特征特别多的机器学习问题，普通的解决方法在这儿显得无能为力，主要是特征向量太多的时候就会出现无数种特征向量的组合产生假设函数的无数项，这对于计算来说不现实。 表示 层： 输入层、隐藏层、输出层 仍然使用sigmoid函数3. aij: 第j层的第i个元素 Θ(j): j层到j+1层的权重映射矩阵 如果网络在j层有sj个单元，j+1层有sj+1个单元，那么Θ(j)的维度为sj+1×(sj+1) 向量化对于中间层的计算，我们可以定义Z使得 变形为进行向量化之后也就是说]]></content>
       <categories>
@@ -78,9 +89,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux定时执行任务]]></title>
-    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
-    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
+    <title><![CDATA[linux网络连接后执行脚本]]></title>
+    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
+    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -89,9 +100,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux网络连接后执行脚本]]></title>
-    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
-    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
+    <title><![CDATA[linux定时执行任务]]></title>
+    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
+    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -122,9 +133,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
-    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
-    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
+    <title><![CDATA[分治策略]]></title>
+    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
+    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -133,9 +144,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[分治策略]]></title>
-    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
-    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
+    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
+    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
+    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -152,17 +163,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[进程间通信]]></title>
-    <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
-    <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[编程珠玑]]></title>
     <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
     <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
@@ -171,6 +171,17 @@
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[进程间通信]]></title>
+    <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
+    <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -386,9 +397,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -405,9 +416,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -416,6 +427,14 @@
     <title><![CDATA[AutoStartInUbuntuMate]]></title>
     <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
     <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -441,14 +460,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[树莓派连接隐藏wifi]]></title>
-    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
-    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -513,17 +524,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[服务器操作规范]]></title>
-    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
-    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>服务器操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[shell]]></title>
     <url>%2F2016%2F12%2F15%2Fshell%2F</url>
     <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
@@ -532,6 +532,17 @@
       </categories>
       <tags>
         <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器操作规范]]></title>
+    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
+    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>服务器操作</tag>
       </tags>
   </entry>
   <entry>

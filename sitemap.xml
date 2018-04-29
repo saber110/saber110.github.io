@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.huhaobin.cn/2018/04/29/machine-learning4/</loc>
+    
+    <lastmod>2018-04-29T09:13:42.143Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/2018/04/28/machine-learning3/</loc>
     
-    <lastmod>2018-04-28T11:07:23.708Z</lastmod>
+    <lastmod>2018-04-29T05:57:51.219Z</lastmod>
     
   </url>
   
@@ -513,13 +520,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
@@ -534,7 +534,14 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
+    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -548,7 +555,7 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
+    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
