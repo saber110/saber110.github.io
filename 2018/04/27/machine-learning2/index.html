@@ -73,26 +73,27 @@
 
 
 
-<meta name="description" content="逻辑回归问题系统函数 逻辑回归 线性回归 线性回归中 g(z)=1 决策边界(Decision boundary)一条分割y=0和y=1的线 代价函数(cost function)整合之后 梯度下降法 过度拟合过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值  解决方法(regularization)    regularization 重新设置代价函数(cost function)">
+<meta name="description" content="逻辑回归问题系统函数 逻辑回归 线性回归 线性回归中 g(z)=1   决策边界(Decision boundary)  一条分割y=0和y=1的线 代价函数(cost function)    整合之后    gradient计算   梯度下降法   过度拟合  过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值  解决方法(regularization)  regularizati">
 <meta name="keywords" content="machine-learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习">
+<meta property="og:title" content="机器学习之逻辑分类问题">
 <meta property="og:url" content="http://blog.huhaobin.cn/2018/04/27/machine-learning2/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="逻辑回归问题系统函数 逻辑回归 线性回归 线性回归中 g(z)=1 决策边界(Decision boundary)一条分割y=0和y=1的线 代价函数(cost function)整合之后 梯度下降法 过度拟合过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值  解决方法(regularization)    regularization 重新设置代价函数(cost function)">
+<meta property="og:description" content="逻辑回归问题系统函数 逻辑回归 线性回归 线性回归中 g(z)=1   决策边界(Decision boundary)  一条分割y=0和y=1的线 代价函数(cost function)    整合之后    gradient计算   梯度下降法   过度拟合  过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值  解决方法(regularization)  regularizati">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/HypothesisRepresentation.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/CostFunctionInLogisticRegression.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/CostFunctionForLRM.png">
+<meta property="og:image" content="http://blog.huhaobin.cn/image/GradientForLogstic.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/GradientDescentForLRM.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/RegularizedLinerRegression.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/RegularizationGradientDescent.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/RegularizationGradientDescentJ.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/RegularizationNormalEquation.png">
-<meta property="og:updated_time" content="2018-04-27T11:49:46.708Z">
+<meta property="og:updated_time" content="2018-04-28T08:20:46.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习">
-<meta name="twitter:description" content="逻辑回归问题系统函数 逻辑回归 线性回归 线性回归中 g(z)=1 决策边界(Decision boundary)一条分割y=0和y=1的线 代价函数(cost function)整合之后 梯度下降法 过度拟合过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值  解决方法(regularization)    regularization 重新设置代价函数(cost function)">
+<meta name="twitter:title" content="机器学习之逻辑分类问题">
+<meta name="twitter:description" content="逻辑回归问题系统函数 逻辑回归 线性回归 线性回归中 g(z)=1   决策边界(Decision boundary)  一条分割y=0和y=1的线 代价函数(cost function)    整合之后    gradient计算   梯度下降法   过度拟合  过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值  解决方法(regularization)  regularizati">
 <meta name="twitter:image" content="http://blog.huhaobin.cn/image/HypothesisRepresentation.png">
 
 
@@ -129,7 +130,7 @@
 
 
 
-  <title>机器学习 | Saber110</title>
+  <title>机器学习之逻辑分类问题 | Saber110</title>
   
 
 
@@ -307,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习之逻辑分类问题</h1>
         
 
         <div class="post-meta">
@@ -375,7 +376,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  216
+                  219
                 </span>
               
 
@@ -416,15 +417,15 @@
 <li>逻辑回归<br><img src="/image/HypothesisRepresentation.png" alt="逻辑回归"></li>
 <li><p>线性回归</p>
 <p>线性回归中 <strong>g(z)=1</strong></p>
-<h2 id="决策边界-Decision-boundary"><a href="#决策边界-Decision-boundary" class="headerlink" title="决策边界(Decision boundary)"></a>决策边界(Decision boundary)</h2><p>一条分割y=0和y=1的线</p>
-<h2 id="代价函数-cost-function"><a href="#代价函数-cost-function" class="headerlink" title="代价函数(cost function)"></a>代价函数(cost function)</h2><p><img src="/image/CostFunctionInLogisticRegression.png" alt="代价函数"><br>整合之后<br><img src="/image/CostFunctionForLRM.png" alt="整合代价函数"></p>
-<h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p><img src="/image/GradientDescentForLRM.png" alt="梯度下降法"></p>
-<h2 id="过度拟合"><a href="#过度拟合" class="headerlink" title="过度拟合"></a>过度拟合</h2><p>过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值</p>
+</li>
+</ol>
+<h2 id="决策边界-Decision-boundary"><a href="#决策边界-Decision-boundary" class="headerlink" title="决策边界(Decision boundary)"></a>决策边界(Decision boundary)</h2><p>  一条分割y=0和y=1的线</p>
+<h2 id="代价函数-cost-function"><a href="#代价函数-cost-function" class="headerlink" title="代价函数(cost function)"></a>代价函数(cost function)</h2><p>  <img src="/image/CostFunctionInLogisticRegression.png" alt="代价函数"><br>  整合之后<br>  <img src="/image/CostFunctionForLRM.png" alt="整合代价函数"><br>  gradient计算<br>  <img src="/image/GradientForLogstic.png" alt="gradient"></p>
+<h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>  <img src="/image/GradientDescentForLRM.png" alt="梯度下降法"></p>
+<h2 id="过度拟合"><a href="#过度拟合" class="headerlink" title="过度拟合"></a>过度拟合</h2><p>  过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值</p>
 <ul>
 <li>解决方法(regularization)</li>
 </ul>
-</li>
-</ol>
 <h2 id="regularization"><a href="#regularization" class="headerlink" title="regularization"></a>regularization</h2><ol>
 <li>重新设置代价函数(cost function)J<br><img src="/image/RegularizedLinerRegression.png" alt="J"><br>给每个theta做惩罚，用足够大的lambda去削弱theta的作用，从而平滑h。但是lambda太大的话将导致欠拟合，太大的时候得到的仅仅是一条扁平的直线</li>
 <li>梯度下降法<br><img src="/image/RegularizationGradientDescent.png" alt=""><br>将theta分开更新是因为在重新设计代价函数的时候没有给theta惩罚，简化之后为<img src="/image/RegularizationGradientDescentJ.png" alt=""></li>
@@ -460,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/23/machine-learning1/" rel="next" title="机器学习">
-                <i class="fa fa-chevron-left"></i> 机器学习
+              <a href="/2018/04/23/machine-learning1/" rel="next" title="机器学习之线性回归问题">
+                <i class="fa fa-chevron-left"></i> 机器学习之线性回归问题
               </a>
             
           </div>
@@ -469,6 +470,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/28/machine-learning3/" rel="prev" title="机器学习之神经网络">
+                机器学习之神经网络 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -574,7 +579,7 @@ var jiathis_config={
             
               <a href="/archives">
             
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -696,7 +701,7 @@ var jiathis_config={
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      20.7k
+      20.9k
     </span>
   
 </div>
@@ -727,7 +732,7 @@ var jiathis_config={
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.7k字</span>
+  <span class="post-count">博客全站共20.9k字</span>
 </div>
 
         

@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.huhaobin.cn/2018/04/28/machine-learning3/</loc>
+    
+    <lastmod>2018-04-28T11:07:23.708Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/2018/04/27/machine-learning2/</loc>
     
-    <lastmod>2018-04-27T11:49:46.708Z</lastmod>
+    <lastmod>2018-04-28T08:20:46.343Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.huhaobin.cn/2018/04/23/machine-learning1/</loc>
     
-    <lastmod>2018-04-27T08:03:22.025Z</lastmod>
+    <lastmod>2018-04-28T08:20:01.472Z</lastmod>
     
   </url>
   
@@ -506,14 +513,21 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -528,13 +542,6 @@
   
   <url>
     <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     

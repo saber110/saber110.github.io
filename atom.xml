@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-04-27T11:49:46.708Z</updated>
+  <updated>2018-04-28T11:07:23.708Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>机器学习</title>
+    <title>机器学习之神经网络</title>
+    <link href="http://blog.huhaobin.cn/2018/04/28/machine-learning3/"/>
+    <id>http://blog.huhaobin.cn/2018/04/28/machine-learning3/</id>
+    <published>2018-04-28T13:56:20.000Z</published>
+    <updated>2018-04-28T11:07:23.708Z</updated>
+    
+    <content type="html"><![CDATA[<p>神经网络可以用来解决特征特别多的机器学习问题，普通的解决方法在这儿显得无能为力，主要是特征向量太多的时候就会出现无数种特征向量的组合产生假设函数的无数项，这对于计算来说不现实。</p><h2 id="表示"><a href="#表示" class="headerlink" title="表示"></a>表示</h2><ol><li>层： 输入层、隐藏层、输出层</li><li><p>仍然使用sigmoid函数<br>3.<br><img src="/image/AppearanceOfNeuronNetwork.png" alt="基本形式"></p><ul><li>a<sub>i</sub><sup>j</sup>: 第j层的第i个元素</li><li><p>Θ<sup>(j)</sup>: j层到j+1层的权重映射矩阵</p><p><strong>如果网络在j层有s<sub>j</sub>个单元，j+1层有s<sub>j+1</sub>个单元，那么Θ<sup>(j)</sup>的维度为s<sub>j+1</sub>×(s<sub>j</sub>+1)</strong></p></li></ul></li><li>向量化<br>对于中间层的计算，我们可以定义Z使得<br><img src="/image/neuralNetworkHiddenCompute.png" alt=""> 变形为<img src="/image/neuralNetworkHiddenCompute-z.png" alt=""><br>进行向量化之后<br><img src="/image/NeuralNetworkVectlize.png" alt=""><br>也就是说<br><img src="/image/ZNeuralNetwork.png" alt=""> <img src="/image/HNeuralNetwork.png" alt=""></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;神经网络可以用来解决特征特别多的机器学习问题，普通的解决方法在这儿显得无能为力，主要是特征向量太多的时候就会出现无数种特征向量的组合产生假设函数的无数项，这对于计算来说不现实。&lt;/p&gt;
+&lt;h2 id=&quot;表示&quot;&gt;&lt;a href=&quot;#表示&quot; class=&quot;headerlink&quot;
+      
+    
+    </summary>
+    
+      <category term="machine-learning" scheme="http://blog.huhaobin.cn/categories/machine-learning/"/>
+    
+    
+      <category term="machine-learning" scheme="http://blog.huhaobin.cn/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习之逻辑分类问题</title>
     <link href="http://blog.huhaobin.cn/2018/04/27/machine-learning2/"/>
     <id>http://blog.huhaobin.cn/2018/04/27/machine-learning2/</id>
     <published>2018-04-27T13:56:20.000Z</published>
-    <updated>2018-04-27T11:49:46.708Z</updated>
+    <updated>2018-04-28T08:20:46.343Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="逻辑回归问题"><a href="#逻辑回归问题" class="headerlink" title="逻辑回归问题"></a>逻辑回归问题</h1><h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><ol><li>逻辑回归<br><img src="/image/HypothesisRepresentation.png" alt="逻辑回归"></li><li><p>线性回归</p><p>线性回归中 <strong>g(z)=1</strong></p><h2 id="决策边界-Decision-boundary"><a href="#决策边界-Decision-boundary" class="headerlink" title="决策边界(Decision boundary)"></a>决策边界(Decision boundary)</h2><p>一条分割y=0和y=1的线</p><h2 id="代价函数-cost-function"><a href="#代价函数-cost-function" class="headerlink" title="代价函数(cost function)"></a>代价函数(cost function)</h2><p><img src="/image/CostFunctionInLogisticRegression.png" alt="代价函数"><br>整合之后<br><img src="/image/CostFunctionForLRM.png" alt="整合代价函数"></p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p><img src="/image/GradientDescentForLRM.png" alt="梯度下降法"></p><h2 id="过度拟合"><a href="#过度拟合" class="headerlink" title="过度拟合"></a>过度拟合</h2><p>过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值</p><ul><li>解决方法(regularization)</li></ul></li></ol><h2 id="regularization"><a href="#regularization" class="headerlink" title="regularization"></a>regularization</h2><ol><li>重新设置代价函数(cost function)J<br><img src="/image/RegularizedLinerRegression.png" alt="J"><br>给每个theta做惩罚，用足够大的lambda去削弱theta的作用，从而平滑h。但是lambda太大的话将导致欠拟合，太大的时候得到的仅仅是一条扁平的直线</li><li>梯度下降法<br><img src="/image/RegularizationGradientDescent.png" alt=""><br>将theta分开更新是因为在重新设计代价函数的时候没有给theta惩罚，简化之后为<img src="/image/RegularizationGradientDescentJ.png" alt=""></li><li>归一化求代价函数的最小值<br><img src="/image/RegularizationNormalEquation.png" alt=""></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="逻辑回归问题"><a href="#逻辑回归问题" class="headerlink" title="逻辑回归问题"></a>逻辑回归问题</h1><h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><ol><li>逻辑回归<br><img src="/image/HypothesisRepresentation.png" alt="逻辑回归"></li><li><p>线性回归</p><p>线性回归中 <strong>g(z)=1</strong></p></li></ol><h2 id="决策边界-Decision-boundary"><a href="#决策边界-Decision-boundary" class="headerlink" title="决策边界(Decision boundary)"></a>决策边界(Decision boundary)</h2><p>  一条分割y=0和y=1的线</p><h2 id="代价函数-cost-function"><a href="#代价函数-cost-function" class="headerlink" title="代价函数(cost function)"></a>代价函数(cost function)</h2><p>  <img src="/image/CostFunctionInLogisticRegression.png" alt="代价函数"><br>  整合之后<br>  <img src="/image/CostFunctionForLRM.png" alt="整合代价函数"><br>  gradient计算<br>  <img src="/image/GradientForLogstic.png" alt="gradient"></p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>  <img src="/image/GradientDescentForLRM.png" alt="梯度下降法"></p><h2 id="过度拟合"><a href="#过度拟合" class="headerlink" title="过度拟合"></a>过度拟合</h2><p>  过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值</p><ul><li>解决方法(regularization)</li></ul><h2 id="regularization"><a href="#regularization" class="headerlink" title="regularization"></a>regularization</h2><ol><li>重新设置代价函数(cost function)J<br><img src="/image/RegularizedLinerRegression.png" alt="J"><br>给每个theta做惩罚，用足够大的lambda去削弱theta的作用，从而平滑h。但是lambda太大的话将导致欠拟合，太大的时候得到的仅仅是一条扁平的直线</li><li>梯度下降法<br><img src="/image/RegularizationGradientDescent.png" alt=""><br>将theta分开更新是因为在重新设计代价函数的时候没有给theta惩罚，简化之后为<img src="/image/RegularizationGradientDescentJ.png" alt=""></li><li>归一化求代价函数的最小值<br><img src="/image/RegularizationNormalEquation.png" alt=""></li></ol>]]></content>
     
     <summary type="html">
     
@@ -42,11 +68,11 @@
   </entry>
   
   <entry>
-    <title>机器学习</title>
+    <title>机器学习之线性回归问题</title>
     <link href="http://blog.huhaobin.cn/2018/04/23/machine-learning1/"/>
     <id>http://blog.huhaobin.cn/2018/04/23/machine-learning1/</id>
     <published>2018-04-23T13:56:20.000Z</published>
-    <updated>2018-04-27T08:03:22.025Z</updated>
+    <updated>2018-04-28T08:20:01.472Z</updated>
     
     <content type="html"><![CDATA[<h1 id="线性回归问题"><a href="#线性回归问题" class="headerlink" title="线性回归问题"></a>线性回归问题</h1><h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><ol><li>假设系统函数<br><img src="/image/Hypothesis.png" alt="系统函数"></li><li><p>代价函数<br><img src="/image/costFunction.png" alt="代价函数"></p><p> alpha: 学习效率</p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2></li><li>普适算法<br><img src="/image/GradientDescentAlgo.png" alt="普适算法"></li><li><p>线性回归中<br><img src="/image/GradientDescentForLinearRegression.png" alt="线性回归"><br><img src="/image/GDALRS.png" alt="去微分"></p><p> <strong>记得同步更新theta</strong></p><h2 id="多变量的线性回归问题"><a href="#多变量的线性回归问题" class="headerlink" title="多变量的线性回归问题"></a>多变量的线性回归问题</h2><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3></li><li><p>数据缩放()</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = X/MAX(X);</div></pre></td></tr></table></figure><p> 使得X <strong>接近</strong>[-1,1]区间</p></li><li><p>平均值正常化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = (X-U)/(max(X)-MIN(x)) // U是X的平均值</div></pre></td></tr></table></figure></li><li><p>数据归一化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theta = pinv(X&apos;*X)*X&apos;*y;</div></pre></td></tr></table></figure></li></ol><p>可以用正态方程求解代价函数最小值</p>]]></content>
     
@@ -170,31 +196,6 @@
   </entry>
   
   <entry>
-    <title>linux网络连接后执行脚本</title>
-    <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
-    <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
-    <published>2018-04-18T14:11:07.000Z</published>
-    <updated>2018-04-18T02:31:08.111Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if-down.d -- 网络关闭前</div><div class="line">if-post-down.d -- 网络关闭后</div><div class="line">if-pre-up.d -- 网络建立前</div><div class="line">if-up.d -- 网络建立后</div></pre></td></tr></table></figure></p><p>所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux定时执行任务</title>
     <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
     <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
@@ -208,6 +209,31 @@
       
       
         &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux网络连接后执行脚本</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T02:31:08.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if-down.d -- 网络关闭前</div><div class="line">if-post-down.d -- 网络关闭后</div><div class="line">if-pre-up.d -- 网络建立前</div><div class="line">if-up.d -- 网络建立后</div></pre></td></tr></table></figure></p><p>所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
       
     
     </summary>
@@ -349,31 +375,6 @@
   </entry>
   
   <entry>
-    <title>编程珠玑</title>
-    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
-    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
-    <published>2018-04-01T14:11:07.000Z</published>
-    <updated>2018-03-31T05:00:48.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>进程间通信</title>
     <link href="http://blog.huhaobin.cn/2018/04/01/processCom/"/>
     <id>http://blog.huhaobin.cn/2018/04/01/processCom/</id>
@@ -399,6 +400,31 @@
     
     
       <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编程珠玑</title>
+    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
+    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
+    <published>2018-04-01T14:11:07.000Z</published>
+    <updated>2018-03-31T05:00:48.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -498,31 +524,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Qt mysql 数据库找不到</title>
-    <link href="http://blog.huhaobin.cn/2018/03/04/Qt_mysqlDriver/"/>
-    <id>http://blog.huhaobin.cn/2018/03/04/Qt_mysqlDriver/</id>
-    <published>2018-03-03T16:00:00.000Z</published>
-    <updated>2018-03-04T05:30:32.226Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">QSqlDatabase: QMYSQL driver not loaded</div><div class="line">QSqlDatabase: available drivers: QSQLITE QMYSQL QMYSQL3 QODBC QODBC3 QPSQL QPSQL 7</div></pre></td></tr></table></figure><p>原因： 应用程序找不到libmysql.dll<br>解决方法： 把libmysql.dll 放在.exe应用程序运次的同目录下<br>    比如在debug时，放在debug的目录下面； release时，放在release的目录下面</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
-      
-    
-    </summary>
-    
-      <category term="qt" scheme="http://blog.huhaobin.cn/categories/qt/"/>
-    
-    
-      <category term="qt" scheme="http://blog.huhaobin.cn/tags/qt/"/>
     
   </entry>
   
