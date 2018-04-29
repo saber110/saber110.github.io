@@ -223,31 +223,6 @@
   </entry>
   
   <entry>
-    <title>linux网络连接后执行脚本</title>
-    <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
-    <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
-    <published>2018-04-18T14:11:07.000Z</published>
-    <updated>2018-04-18T02:31:08.111Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if-down.d -- 网络关闭前</div><div class="line">if-post-down.d -- 网络关闭后</div><div class="line">if-pre-up.d -- 网络建立前</div><div class="line">if-up.d -- 网络建立后</div></pre></td></tr></table></figure></p><p>所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux定时执行任务</title>
     <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
     <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
@@ -261,6 +236,31 @@
       
       
         &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux网络连接后执行脚本</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T02:31:08.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if-down.d -- 网络关闭前</div><div class="line">if-post-down.d -- 网络关闭后</div><div class="line">if-pre-up.d -- 网络建立前</div><div class="line">if-up.d -- 网络建立后</div></pre></td></tr></table></figure></p><p>所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
       
     
     </summary>
