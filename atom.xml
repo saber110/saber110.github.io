@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-04-29T09:13:42.143Z</updated>
+  <updated>2018-05-11T04:08:38.838Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>信息的表示和处理</title>
+    <link href="http://blog.huhaobin.cn/2018/05/11/OS2/"/>
+    <id>http://blog.huhaobin.cn/2018/05/11/OS2/</id>
+    <published>2018-05-10T16:00:00.000Z</published>
+    <updated>2018-05-11T04:08:38.838Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><ol><li><p>数据大小</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">C类型      字节（32位）  字节（64位）</div><div class="line">char            1        1</div><div class="line">short int       2        2</div><div class="line">int             4        4</div><div class="line">long int        4        8</div><div class="line">long long int   8        8</div><div class="line">float           4        4</div><div class="line">double          8        8</div><div class="line">char *          4        8</div></pre></td></tr></table></figure></li><li><p>移位</p><p> 假如进行x&gt;&gt;k,这里的k很大,实际偏移量是通过k mod v得到的</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int lval = 0xede875 &gt;&gt; 32;</div><div class="line">int aval = 0xede875 &gt;&gt; 36;</div><div class="line">unsigned int uval = 0xede875 &gt;&gt; 40;</div></pre></td></tr></table></figure><p> 在32位机器上</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lval = 0xede875;            // 32 mod 32 = 0</div><div class="line">aval = 0xfede87;            // 36 mod 32 = 4</div><div class="line">uval = 0x00ede8;</div></pre></td></tr></table></figure><p> <strong>几乎所有的编译器/机器都对有符号数据使用算术右移，无符号数据必须是逻辑右移</strong></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;信息存储&quot;&gt;&lt;a href=&quot;#信息存储&quot; class=&quot;headerlink&quot; title=&quot;信息存储&quot;&gt;&lt;/a&gt;信息存储&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;数据大小&lt;/p&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;
+      
+    
+    </summary>
+    
+      <category term="操作系统原理" scheme="http://blog.huhaobin.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="操作系统原理" scheme="http://blog.huhaobin.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程</title>
+    <link href="http://blog.huhaobin.cn/2018/05/09/OS1/"/>
+    <id>http://blog.huhaobin.cn/2018/05/09/OS1/</id>
+    <published>2018-05-08T16:00:00.000Z</published>
+    <updated>2018-05-09T13:24:04.376Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="进程介绍"><a href="#进程介绍" class="headerlink" title="进程介绍"></a>进程介绍</h2><ol><li><p>进程的创建</p><p>原因：</p><ul><li>系统初始化</li><li>正在运行的进程执行了创建进程的系统调用</li><li>用户请求创建一个新进程</li><li>批处理作业的初始化</li></ul></li><li><p>进程的终止</p><p>原因：</p><ul><li>正常退出（自愿）</li><li>出错退出（自愿）</li><li>严重错误（非自愿）</li><li>被其他进程杀死（非自愿）</li></ul></li><li><p>进程的状态</p><ul><li>运行态</li><li>就绪态</li><li>阻塞态</li></ul></li><li><p>线程可以在内核和用户空间中进行管理，但不论是在哪儿都会引来很多问题</p><h2 id="进程间通信（IPC）"><a href="#进程间通信（IPC）" class="headerlink" title="进程间通信（IPC）"></a>进程间通信（IPC）</h2></li><li><p>临界区</p><p>一个好的临界区解决方案需要具备以下四个条件：</p><ul><li>任何两个进程不能同时处于临界区</li><li>不应对CPU的速度和数目做任何假设</li><li>临界区外的进程不能阻塞其他进程</li><li>不能让进程在临界区外面无休止的等待</li></ul></li><li><p>忙等待形式的互斥</p><ol><li><p>关闭中断</p><p> 在进入临界区之前先关中断，退出之后开中断。这样把开关中断的权限交给用户是不明智的</p></li><li><p>锁变量</p><p> 设置一个共享锁变量，0表示临界区内没有进程，1表示有。每次进入之前先测试，如果此时为0则设置为1，退出临界区设置为0。遗憾的是这个方法也<strong>不是线程安全</strong>的</p></li><li><p>严格交替法</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">WHILE(TRUE)</div><div class="line">&#123;</div><div class="line">  WHILE(turn != 0);</div><div class="line">  critical_region();</div><div class="line">  turn = 1;</div><div class="line">  noncritical_region();</div><div class="line">&#125;</div></pre></td></tr></table></figure> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">WHILE(TRUE)</div><div class="line">&#123;</div><div class="line">  WHILE(turn != 1);</div><div class="line">  critical_region();</div><div class="line">  turn = 0;</div><div class="line">  noncritical_region();</div><div class="line">&#125;</div></pre></td></tr></table></figure><p> 整型变量turn的初值为零，用于跟踪轮到哪个进程进入临界区。一开始进程0检查turn，发现是0，所以进入临界区。同时进程1也在检查turn，不停的检查是否变为1。这样就产生了<a href="https://baike.baidu.com/item/%E5%BF%99%E7%A2%8C%E7%AD%89%E5%BE%85/16256157?fr=aladdin" target="_blank" rel="external">忙等待</a>。还有一种情况就是进程0退出临界区并将turn设置为1，此时进程0和1都在忙非临界区的任务，但是进程0先忙完需要进入临界区，由于turn为1所以进程0不能进入临界区</p></li><li>Peterson解决方案</li><li>TSL语句</li></ol></li><li><p>信号量</p><p> 用一个整型变量来累计唤醒次数，供以后使用。<br> 在这个解决方案中用了三个信号量。</p><ul><li>full 用来记录满的缓冲槽的数目，初值为0</li><li>empty 用来记录空的缓冲槽的数目，初值为缓冲区内槽的数目</li><li><p>mutex 用来确保生产者和消费者不会同时访问缓冲区，初值为1</p><p>多个进程使用初值为1的信号量可以保证同时只有一个进程可以进入临界区，如果每个进程在进入临界区之前执行一个down，退出之后执行一个up就可以保证互斥</p></li></ul></li><li><p>互斥</p><p> 若不需要信号量的计数能力，有时可以使用信号量的另一个版本—-互斥<br> 互斥是一个可以处于两态之一的变量：解锁(mutex_unlock)和加锁(mutex_lock)</p></li><li>管程<h2 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h2><h3 id="批处理系统中的调度"><a href="#批处理系统中的调度" class="headerlink" title="批处理系统中的调度"></a>批处理系统中的调度</h3></li><li>先到先服务</li><li>最短作业优先</li><li>最短剩余时间优先</li><li>三级调度<ul><li>准入调度器</li><li>内存调度器</li><li>CPU调度器<h3 id="交互系统中的调度"><a href="#交互系统中的调度" class="headerlink" title="交互系统中的调度"></a>交互系统中的调度</h3></li></ul></li><li>时间片轮转调度</li><li><p>优先级调度</p><p> 注意时常对优先级进行调整，防止低优先级的进程饿死</p></li><li>多重队列</li><li>最短进程优先（老化算法预估进程运行所需时间）</li><li>保证调度算法</li><li>彩票调度算法</li><li>公平分享调度<h3 id="实时系统调度"><a href="#实时系统调度" class="headerlink" title="实时系统调度"></a>实时系统调度</h3></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;进程介绍&quot;&gt;&lt;a href=&quot;#进程介绍&quot; class=&quot;headerlink&quot; title=&quot;进程介绍&quot;&gt;&lt;/a&gt;进程介绍&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;进程的创建&lt;/p&gt;
+&lt;p&gt;原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;系统初始化&lt;/li&gt;
+&lt;li&gt;正在运行的进程执
+      
+    
+    </summary>
+    
+      <category term="操作系统原理" scheme="http://blog.huhaobin.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="操作系统原理" scheme="http://blog.huhaobin.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Octave安装forge</title>
+    <link href="http://blog.huhaobin.cn/2018/04/30/OctaveInstallforge/"/>
+    <id>http://blog.huhaobin.cn/2018/04/30/OctaveInstallforge/</id>
+    <published>2018-04-30T13:56:20.000Z</published>
+    <updated>2018-04-30T02:26:40.678Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>安装缺少的库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install liboctave-dev</div></pre></td></tr></table></figure></li><li><p>安装control</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">octave-cli</div><div class="line">pkg install -forge fuzzy-logic-toolkit</div><div class="line">pkg install -forge control</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装缺少的库&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;cod
+      
+    
+    </summary>
+    
+      <category term="Octave" scheme="http://blog.huhaobin.cn/categories/Octave/"/>
+    
+    
+      <category term="Octave" scheme="http://blog.huhaobin.cn/tags/Octave/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习之神经网络</title>
@@ -223,31 +307,6 @@
   </entry>
   
   <entry>
-    <title>linux定时执行任务</title>
-    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
-    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
-    <published>2018-04-18T14:11:07.000Z</published>
-    <updated>2018-04-18T08:12:50.641Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux网络连接后执行脚本</title>
     <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
     <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
@@ -261,6 +320,31 @@
       
       
         &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux定时执行任务</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T08:12:50.641Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用户级任务"><a href="#用户级任务" class="headerlink" title="用户级任务"></a>用户级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek  command</div></pre></td></tr></table></figure></p><ol><li>会进行语法检查<h2 id="系统级任务"><a href="#系统级任务" class="headerlink" title="系统级任务"></a>系统级任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/crontab</div></pre></td></tr></table></figure></li></ol><p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min hour dayofmonth monthofyear dayofweek user command</div></pre></td></tr></table></figure></p><ol><li>不会进行语法检查</li></ol><h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><ol><li>配置之后需要重启crond服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service cron restart</div></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
       
     
     </summary>
@@ -402,31 +486,6 @@
   </entry>
   
   <entry>
-    <title>编程珠玑</title>
-    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
-    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
-    <published>2018-04-01T14:11:07.000Z</published>
-    <updated>2018-03-31T05:00:48.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>进程间通信</title>
     <link href="http://blog.huhaobin.cn/2018/04/01/processCom/"/>
     <id>http://blog.huhaobin.cn/2018/04/01/processCom/</id>
@@ -456,79 +515,27 @@
   </entry>
   
   <entry>
-    <title>linux关机前执行脚本</title>
-    <link href="http://blog.huhaobin.cn/2018/03/31/DOBeforeShutdownInLinux/"/>
-    <id>http://blog.huhaobin.cn/2018/03/31/DOBeforeShutdownInLinux/</id>
-    <published>2018-03-31T14:11:07.000Z</published>
-    <updated>2018-03-30T09:04:54.068Z</updated>
+    <title>编程珠玑</title>
+    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
+    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
+    <published>2018-04-01T14:11:07.000Z</published>
+    <updated>2018-03-31T05:00:48.544Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>建立关机需要执行的脚本文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure></li></ol><p>K99文件名用来保证运行优先级</p><ol><li><p>赋予执行权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod +x /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure></li><li><p>创建关机和重启软连接</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc0.d/K99shutdownbefore</div><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc6.d/K99shutdownbefore</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;建立关机需要执行的脚本文件&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言大坑</title>
-    <link href="http://blog.huhaobin.cn/2018/03/24/a_bigHole_ofC/"/>
-    <id>http://blog.huhaobin.cn/2018/03/24/a_bigHole_ofC/</id>
-    <published>2018-03-24T04:10:48.019Z</published>
-    <updated>2018-03-24T04:10:48.019Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="接下来就开始看看坑"><a href="#接下来就开始看看坑" class="headerlink" title="接下来就开始看看坑"></a>接下来就开始看看坑</h2><ol><li><p>单引号表示表示整数值</p><ul><li>双引号表示字符串首的地址</li><li>以0开头的整数默认为八进制</li><li>注意使用移位运算加快程序执行速度</li><li>if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致</li><li>a[i] = i[a]</li><li>C语言的不对称边界</li><li>errno 外部出错变量，可以检测出错信息</li><li>break 跳出离他最近的那层循环或switch</li><li>C 语言不能省略形参，即使不使用</li></ul></li><li><p>C语言的数据存储空间</p><ul><li>程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆）</li><li>局部变量在return之后出栈销毁，不要尝试返回局部指针地址</li><li>堆  申请、释放原则 <strong>哪儿申请哪儿释放</strong><br> 记得判断 堆 申请成功与否</li></ul></li><li><p>一个程序将操作系统分配给其运行的内存块分为4个区域：<br>　　(1)代码区，存放程序的代码，即程序中的各个函数代码块。<br>　　(2)全局数据区，存放程序的全局数据和静态数据。<br>　　(3)堆区，存放程序的动态数据。<br>　　(4)栈区，存放程序的局部数据，即各个函数中的数据。</p></li><li><p>强制类型转换</p></li></ol><ul><li>占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同</li><li>占用空间小的转化为占用空间大的： 考虑内存越界访问</li><li>结构体强制转换             ： 考虑字节对齐</li></ul><ol><li>字符串</li></ol><ul><li>通过索引读取字符串时，一定要判断索引的正确性</li></ul><ol><li>多线程编程</li></ol><ul><li>互斥量用来对临界区的互斥进入</li><li>条件变量用于线程的阻塞等待</li></ul><ol><li><p>指针</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int * p = NULL;</div><div class="line"></div><div class="line">&amp;p 表示p的地址</div><div class="line">p 表示变量p的内容</div><div class="line">*p 表示p指向的存储单元的内容</div></pre></td></tr></table></figure><ul><li><strong>数字0是唯一能输给指针的数值</strong>(相当于NULL)  </li><li>void * :指向任何类型的指针</li><li><strong>注意深复制和浅复制的区别</strong><h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int *p, *q;</div><div class="line">*p = 58;</div><div class="line">q = p;        // q 和 P 指向同一内存单元</div><div class="line">free(q);</div><div class="line">printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放</div></pre></td></tr></table></figure></li></ul></li><li><p>动态变量</p><p>在程序运行过程中产生的变量称为动态变量</p><ul><li><p>创建</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int * p; char *q;</div><div class="line">p = new int;  // 在内存中创建一个变量，存储所分配的内存地址到p中</div><div class="line">q = new char[19];   // 在内存中创建一个数组，并将数组地址存储到q中</div></pre></td></tr></table></figure></li><li><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*p = 28;</div><div class="line">*q = &quot;hello&quot;;</div></pre></td></tr></table></figure></li><li><p>销毁</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete p;</div><div class="line">delete [] q;</div></pre></td></tr></table></figure></li></ul></li><li><p>动态数组</p><ul><li><p>创建</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int *p;</div><div class="line">p = new int[10];</div></pre></td></tr></table></figure></li><li><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* p = 25;   //25存到第一个存储空间里  = p[0] = 25；</div><div class="line">p ++;</div><div class="line">* p = 35;   //35存到第二个存储空间里  = p[1] = 35；</div></pre></td></tr></table></figure></li></ul></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;接下来就开始看看坑&quot;&gt;&lt;a href=&quot;#接下来就开始看看坑&quot; class=&quot;headerlink&quot; title=&quot;接下来就开始看看坑&quot;&gt;&lt;/a&gt;接下来就开始看看坑&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;单引号表示表示整数值&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;双引号表示字符串首
+        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
       
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>sizeof与strlen的区别</title>
-    <link href="http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/"/>
-    <id>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</id>
-    <published>2018-03-11T07:47:26.000Z</published>
-    <updated>2018-04-21T05:19:57.341Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含<string.h>头文件.</string.h></li><li>sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数.</li><li>sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数</li><li>编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来.</li><li>sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’;</li><li>数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含&lt;string.h&gt;头文件.&lt;/string.h&gt;&lt;/li&gt;
-&lt;l
-      
-    
-    </summary>
-    
-      <category term="C" scheme="http://blog.huhaobin.cn/categories/C/"/>
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="C" scheme="http://blog.huhaobin.cn/tags/C/"/>
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

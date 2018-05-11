@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[信息的表示和处理]]></title>
+    <url>%2F2018%2F05%2F11%2FOS2%2F</url>
+    <content type="text"><![CDATA[信息存储 数据大小 123456789C类型 字节（32位） 字节（64位）char 1 1short int 2 2int 4 4long int 4 8long long int 8 8float 4 4double 8 8char * 4 8 移位 假如进行x&gt;&gt;k,这里的k很大,实际偏移量是通过k mod v得到的 123int lval = 0xede875 &gt;&gt; 32;int aval = 0xede875 &gt;&gt; 36;unsigned int uval = 0xede875 &gt;&gt; 40; 在32位机器上 123lval = 0xede875; // 32 mod 32 = 0aval = 0xfede87; // 36 mod 32 = 4uval = 0x00ede8; 几乎所有的编译器/机器都对有符号数据使用算术右移，无符号数据必须是逻辑右移]]></content>
+      <categories>
+        <category>操作系统原理</category>
+      </categories>
+      <tags>
+        <tag>操作系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[进程]]></title>
+    <url>%2F2018%2F05%2F09%2FOS1%2F</url>
+    <content type="text"><![CDATA[进程介绍 进程的创建 原因： 系统初始化 正在运行的进程执行了创建进程的系统调用 用户请求创建一个新进程 批处理作业的初始化 进程的终止 原因： 正常退出（自愿） 出错退出（自愿） 严重错误（非自愿） 被其他进程杀死（非自愿） 进程的状态 运行态 就绪态 阻塞态 线程可以在内核和用户空间中进行管理，但不论是在哪儿都会引来很多问题 进程间通信（IPC） 临界区 一个好的临界区解决方案需要具备以下四个条件： 任何两个进程不能同时处于临界区 不应对CPU的速度和数目做任何假设 临界区外的进程不能阻塞其他进程 不能让进程在临界区外面无休止的等待 忙等待形式的互斥 关闭中断 在进入临界区之前先关中断，退出之后开中断。这样把开关中断的权限交给用户是不明智的 锁变量 设置一个共享锁变量，0表示临界区内没有进程，1表示有。每次进入之前先测试，如果此时为0则设置为1，退出临界区设置为0。遗憾的是这个方法也不是线程安全的 严格交替法 1234567WHILE(TRUE)&#123; WHILE(turn != 0); critical_region(); turn = 1; noncritical_region();&#125; 1234567WHILE(TRUE)&#123; WHILE(turn != 1); critical_region(); turn = 0; noncritical_region();&#125; 整型变量turn的初值为零，用于跟踪轮到哪个进程进入临界区。一开始进程0检查turn，发现是0，所以进入临界区。同时进程1也在检查turn，不停的检查是否变为1。这样就产生了忙等待。还有一种情况就是进程0退出临界区并将turn设置为1，此时进程0和1都在忙非临界区的任务，但是进程0先忙完需要进入临界区，由于turn为1所以进程0不能进入临界区 Peterson解决方案 TSL语句 信号量 用一个整型变量来累计唤醒次数，供以后使用。 在这个解决方案中用了三个信号量。 full 用来记录满的缓冲槽的数目，初值为0 empty 用来记录空的缓冲槽的数目，初值为缓冲区内槽的数目 mutex 用来确保生产者和消费者不会同时访问缓冲区，初值为1 多个进程使用初值为1的信号量可以保证同时只有一个进程可以进入临界区，如果每个进程在进入临界区之前执行一个down，退出之后执行一个up就可以保证互斥 互斥 若不需要信号量的计数能力，有时可以使用信号量的另一个版本—-互斥 互斥是一个可以处于两态之一的变量：解锁(mutex_unlock)和加锁(mutex_lock) 管程进程调度批处理系统中的调度 先到先服务 最短作业优先 最短剩余时间优先 三级调度 准入调度器 内存调度器 CPU调度器交互系统中的调度 时间片轮转调度 优先级调度 注意时常对优先级进行调整，防止低优先级的进程饿死 多重队列 最短进程优先（老化算法预估进程运行所需时间） 保证调度算法 彩票调度算法 公平分享调度实时系统调度]]></content>
+      <categories>
+        <category>操作系统原理</category>
+      </categories>
+      <tags>
+        <tag>操作系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Octave安装forge]]></title>
+    <url>%2F2018%2F04%2F30%2FOctaveInstallforge%2F</url>
+    <content type="text"><![CDATA[安装缺少的库 1apt install liboctave-dev 安装control 123octave-clipkg install -forge fuzzy-logic-toolkitpkg install -forge control]]></content>
+      <categories>
+        <category>Octave</category>
+      </categories>
+      <tags>
+        <tag>Octave</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[机器学习之神经网络]]></title>
     <url>%2F2018%2F04%2F29%2Fmachine-learning4%2F</url>
     <content type="text"><![CDATA[a在这里表示神经网络中的神经元 分类 二元分类(Binary classification) 多分类(Multi-class classification) 代价函数 L: 网络中的总层数 K: 输出层神经元的数量 Sl: l 层的总神经元数量(不算偏置单元)额 为了计算代价函数的最小值，我们使用反向传播算法 反向传播算法(计算出代价函数下降最快的方向)给出训练集{(x(1),y(1))⋯(x(m),y(m))} 令 Δi,j(l) := 0 for all (l,i,j), (hence you end up having a matrix full of zeros) For training example t =1 to m: Set a(1):=x(t) Perform forward propagation to compute a(l) for l=2,3,…,L Using y(t), compute δ(L)=a(L)−y(t) Compute δ(L−1),δ(L−2),…,δ(2) using δ(l)=((Θ(l))Tδ(l+1)) .∗ a(l) .∗ (1−a(l)) Δi,j(l):=Δi,j(l)+aj(l)δi(l+1) or with vectorization, Δ(l):=Δ(l)+δ(l+1)(a(l))T Hence we update our new Δ matrix. Di,j(l):=1/m(Δi,j(l)+λΘi,j(l)), if j≠0. Di,j(l):=1/mΔi,j(l) If j=0 所以得出J的微分为 向量展开在之前的学习过程中我们总是使用fminunc来优化参数，但是他要求所有的输入和输出均是向量，我们在神经网络中使用的时候只能把Theta矩阵和Gradient矩阵进行向量化 size(Theta1) = 10 * 11 size(Theta2) = 10 * 11 size(Theta3) = 1 * 1112thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]deltaVector = [ D1(:); D2(:); D3(:) ] 恢复为矩阵123Theta1 = reshape(thetaVector(1:110),10,11)Theta2 = reshape(thetaVector(111:220),10,11)Theta3 = reshape(thetaVector(221:231),1,11) 梯度计算结果校验反向传播算法复杂多变，我们使用导数的定义来校验反向传播得到的结果是否正确(相差很小)，当确定正确之后关掉梯度校验。因为他很 慢 12345678epsilon = 1e-4;for i = 1:n, thetaPlus = theta; thetaPlus(i) += epsilon; thetaMinus = theta; thetaMinus(i) -= epsilon; gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)end; 随机初始化为了避免神经网络因为相同的Theta而陷入冗余的计算，范围是[-INIT_EPSILON,INIT_EPSILON]12345If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON; 网络选择 的步骤 Number of input units = dimension of features x(i) Number of output units = number of classes Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units) Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.网络训练的步骤 Randomly initialize the weights Implement forward propagation to get hΘ(x(i)) for any x(i) Implement the cost function Implement backpropagation to compute partial derivatives Use gradient checking to confirm that your backpropagation works. Then disable gradient checking. Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta. When we perform forward and back propagation, we loop on every training example:123for i = 1:m, Perform forward propagation and backpropagation using example (x(i),y(i)) (Get activations a(l) and delta terms d(l) for l = 2,...,L (There are m training sets)]]></content>
@@ -89,9 +122,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux定时执行任务]]></title>
-    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
-    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
+    <title><![CDATA[linux网络连接后执行脚本]]></title>
+    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
+    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -100,9 +133,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux网络连接后执行脚本]]></title>
-    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
-    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
+    <title><![CDATA[linux定时执行任务]]></title>
+    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
+    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -163,17 +196,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[编程珠玑]]></title>
-    <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
-    <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[进程间通信]]></title>
     <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
     <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
@@ -182,6 +204,17 @@
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[编程珠玑]]></title>
+    <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
+    <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -305,14 +338,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ci library]]></title>
-    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
-    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[git]]></title>
     <url>%2F2017%2F11%2F15%2Fgit%2F</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
@@ -327,6 +352,14 @@
       <tags>
         <tag>AD</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ci library]]></title>
+    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
+    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[linux下arm-none-linux-gnueabi交叉编译环境的建立]]></title>
@@ -397,9 +430,25 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[uart_raspberry]]></title>
     <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
     <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -416,28 +465,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
+    <title><![CDATA[hexo个人博客的搭建]]></title>
+    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
       <categories>
-        <category>树莓派</category>
+        <category>hexo</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[树莓派连接隐藏wifi]]></title>
-    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
-    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
@@ -451,15 +487,12 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hexo个人博客的搭建]]></title>
-    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
       <categories>
-        <category>hexo</category>
+        <category>树莓派</category>
       </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -524,17 +557,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[服务器操作规范]]></title>
-    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
-    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>服务器操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[shell]]></title>
     <url>%2F2016%2F12%2F15%2Fshell%2F</url>
     <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
@@ -543,6 +565,17 @@
       </categories>
       <tags>
         <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器操作规范]]></title>
+    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
+    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>服务器操作</tag>
       </tags>
   </entry>
   <entry>
