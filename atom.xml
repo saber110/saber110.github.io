@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-05-11T04:08:38.838Z</updated>
+  <updated>2018-05-13T06:31:30.694Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>程序员的自我修养</title>
+    <link href="http://blog.huhaobin.cn/2018/05/13/Programmer&#39;sSelfCultivation2/"/>
+    <id>http://blog.huhaobin.cn/2018/05/13/Programmer&#39;sSelfCultivation2/</id>
+    <published>2018-05-12T16:00:00.000Z</published>
+    <updated>2018-05-13T06:31:30.694Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="线程调度"><a href="#线程调度" class="headerlink" title="线程调度"></a>线程调度</h2><p>在优先级调度的环境下，线程优先级改变的方式有</p><ul><li>用户制定优先级</li><li>根据进入等待状态的频繁程度提升或降低优先级</li><li>长时间得不到执行而提升优先级<h2 id="目标文件"><a href="#目标文件" class="headerlink" title="目标文件"></a>目标文件</h2></li></ul><p>基本结构如图所示<img src="/image/objSample.png" alt=""></p><ul><li>初始化的全局变量和局部静态变量保存在.data</li><li>未初始化的全局变量和局部静态变量保存在.bss</li><li>File Header 里面包含一个段表<br>除此之外还可以自定义段<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">__attribute__((section(&quot;FOO&quot;))) int global = 42;</div><div class="line">__attribute__((section(&quot;BAR&quot;))) void foo()</div><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">// 这样就可以把相应的变量或者函数放在以“FOO”/&quot;BAR&quot;作为段名的段中</div><div class="line">// 名字可以自定义</div></pre></td></tr></table></figure></li></ul><h2 id="C-和C的兼容"><a href="#C-和C的兼容" class="headerlink" title="C++和C的兼容"></a>C++和C的兼容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">extern &quot;C&quot;&#123;</div><div class="line">  int func(int);</div><div class="line">  int var;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>C++ 编译器会将在extern “C”大括号内部的代码当作C语言来处理</p><p>为了处理C++调用了C函数，但认为是C++函数，经过名称修饰之后无法正确引用的问题，C++编译器会在便宜C++的程序时默认定义宏”__cplusplus”.我们可以使用条件宏来判断当前便宜单元是不是C++代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#ifdef __cplusplus</div><div class="line">extern &quot;C&quot;&#123;</div><div class="line">#endif</div><div class="line"></div><div class="line">void *memset(void *, int, size_t);    // C语言内容</div><div class="line">#ifdef __cplusplus</div><div class="line">&#125;</div><div class="line">#endif</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;线程调度&quot;&gt;&lt;a href=&quot;#线程调度&quot; class=&quot;headerlink&quot; title=&quot;线程调度&quot;&gt;&lt;/a&gt;线程调度&lt;/h2&gt;&lt;p&gt;在优先级调度的环境下，线程优先级改变的方式有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户制定优先级&lt;/li&gt;
+&lt;li&gt;根据进入等待状态的
+      
+    
+    </summary>
+    
+      <category term="程序员的自我修养" scheme="http://blog.huhaobin.cn/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/"/>
+    
+    
+      <category term="程序员的自我修养" scheme="http://blog.huhaobin.cn/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>信息的表示和处理</title>
     <link href="http://blog.huhaobin.cn/2018/05/11/OS2/"/>
     <id>http://blog.huhaobin.cn/2018/05/11/OS2/</id>
     <published>2018-05-10T16:00:00.000Z</published>
-    <updated>2018-05-11T04:08:38.838Z</updated>
+    <updated>2018-05-13T01:59:51.060Z</updated>
     
     <content type="html"><![CDATA[<h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><ol><li><p>数据大小</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">C类型      字节（32位）  字节（64位）</div><div class="line">char            1        1</div><div class="line">short int       2        2</div><div class="line">int             4        4</div><div class="line">long int        4        8</div><div class="line">long long int   8        8</div><div class="line">float           4        4</div><div class="line">double          8        8</div><div class="line">char *          4        8</div></pre></td></tr></table></figure></li><li><p>移位</p><p> 假如进行x&gt;&gt;k,这里的k很大,实际偏移量是通过k mod v得到的</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int lval = 0xede875 &gt;&gt; 32;</div><div class="line">int aval = 0xede875 &gt;&gt; 36;</div><div class="line">unsigned int uval = 0xede875 &gt;&gt; 40;</div></pre></td></tr></table></figure><p> 在32位机器上</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lval = 0xede875;            // 32 mod 32 = 0</div><div class="line">aval = 0xfede87;            // 36 mod 32 = 4</div><div class="line">uval = 0x00ede8;</div></pre></td></tr></table></figure><p> <strong>几乎所有的编译器/机器都对有符号数据使用算术右移，无符号数据必须是逻辑右移</strong></p></li></ol>]]></content>
     
@@ -307,31 +335,6 @@
   </entry>
   
   <entry>
-    <title>linux网络连接后执行脚本</title>
-    <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
-    <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
-    <published>2018-04-18T14:11:07.000Z</published>
-    <updated>2018-04-18T02:31:08.111Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if-down.d -- 网络关闭前</div><div class="line">if-post-down.d -- 网络关闭后</div><div class="line">if-pre-up.d -- 网络建立前</div><div class="line">if-up.d -- 网络建立后</div></pre></td></tr></table></figure></p><p>所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux定时执行任务</title>
     <link href="http://blog.huhaobin.cn/2018/04/18/SystemTimer/"/>
     <id>http://blog.huhaobin.cn/2018/04/18/SystemTimer/</id>
@@ -345,6 +348,31 @@
       
       
         &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux网络连接后执行脚本</title>
+    <link href="http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/"/>
+    <id>http://blog.huhaobin.cn/2018/04/18/DoThingsAfterInternetConnetc/</id>
+    <published>2018-04-18T14:11:07.000Z</published>
+    <updated>2018-04-18T02:31:08.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if-down.d -- 网络关闭前</div><div class="line">if-post-down.d -- 网络关闭后</div><div class="line">if-pre-up.d -- 网络建立前</div><div class="line">if-up.d -- 网络建立后</div></pre></td></tr></table></figure></p><p>所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
       
     
     </summary>
@@ -409,31 +437,6 @@
   </entry>
   
   <entry>
-    <title>分治策略</title>
-    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
-    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
-    <published>2018-04-07T14:11:07.000Z</published>
-    <updated>2018-04-09T08:46:58.957Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>计算机算法 C++描述 第二章</title>
     <link href="http://blog.huhaobin.cn/2018/04/07/CA2/"/>
     <id>http://blog.huhaobin.cn/2018/04/07/CA2/</id>
@@ -448,6 +451,31 @@
       
         &lt;h2 id=&quot;template-模板&quot;&gt;&lt;a href=&quot;#template-模板&quot; class=&quot;headerlink&quot; title=&quot;template 模板&quot;&gt;&lt;/a&gt;template 模板&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;类模板&lt;br&gt;假设一个类中数据成员的数据类型不能确
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="计算机算法" scheme="http://blog.huhaobin.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分治策略</title>
+    <link href="http://blog.huhaobin.cn/2018/04/07/CA3/"/>
+    <id>http://blog.huhaobin.cn/2018/04/07/CA3/</id>
+    <published>2018-04-07T14:11:07.000Z</published>
+    <updated>2018-04-09T08:46:58.957Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><p>给定函数来计算n个输入， <strong>分治策略</strong> 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题</p><h4 id="解递归关系"><a href="#解递归关系" class="headerlink" title="解递归关系"></a>解递归关系</h4><p>很多分治算法的复杂度是这样的</p><p>$$T(n)= a_{1}^n $$</p><h3 id="残缺棋盘"><a href="#残缺棋盘" class="headerlink" title="残缺棋盘"></a>残缺棋盘</h3><p>描述: 有2<sup>k</sup>* 2<sup>k</sup>个方格的棋盘中恰好有一个方格是坏的</p><p>要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格</p><p>—–&gt; 需要用(2<sup>2k</sup>-1)/3个三方块</p><p>解决思路(分治法)：</p><ol><li>划分成小棋盘比如4个2<sup>k-1</sup>* 2<sup>k-1</sup>，这样只有一个小棋盘有坏的</li><li>我们用一个三方块盖住没有坏方格的三个棋盘</li><li>递归</li><li>棋盘的大小缩为1*1时，递归终止</li></ol><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x</p><p>要求： 已经按 <strong>升序/降序</strong> 排列好</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;分治策略&quot;&gt;&lt;a href=&quot;#分治策略&quot; class=&quot;headerlink&quot; title=&quot;分治策略&quot;&gt;&lt;/a&gt;分治策略&lt;/h2&gt;&lt;h3 id=&quot;一般方法&quot;&gt;&lt;a href=&quot;#一般方法&quot; class=&quot;headerlink&quot; title=&quot;一般方法&quot;&gt;&lt;/a
       
     
     </summary>
@@ -511,31 +539,6 @@
     
     
       <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编程珠玑</title>
-    <link href="http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/"/>
-    <id>http://blog.huhaobin.cn/2018/04/01/ProgrammingPearlsKnown/</id>
-    <published>2018-04-01T14:11:07.000Z</published>
-    <updated>2018-03-31T05:00:48.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编程珠玑新知识点记录"><a href="#编程珠玑新知识点记录" class="headerlink" title="编程珠玑新知识点记录"></a><a href="./ProgrammingPearls/chapter.md">编程珠玑</a>新知识点记录</h2><h3 id="第一章-开篇"><a href="#第一章-开篇" class="headerlink" title="第一章 开篇"></a>第一章 开篇</h3><ol><li>位图，位向量<ul><li>位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010</li><li>算法分析<ol><li>初始化集合，每个位都置为0；</li><li>读入文件的每个整数，将对应的位置为1；</li><li>遍历二进制数据，如果该位为1，则输出相应的整数。</li></ol></li></ul></li><li><p>bitset<br>C++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bitset&lt;N&gt;varm (M)</div><div class="line">其中varm为变量名。</div><div class="line">N表示该类型在内存中占的位数，是二进制。</div><div class="line">M表示变量varm的初始值。</div></pre></td></tr></table></figure><ul><li>相关函数</li></ul><ol><li>any(); //当bitset对象的一位或多个位被设置为1 时any()返回true</li><li>none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true</li><li>count(); // count()操作返回被设置为1的位的个数.</li><li>set(); //我们可以用set()操作或者下标操作符来设置某个单独的位</li><li>test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false</li><li>reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符</li></ol></li><li>wc -l/c/w filename 统计文件行/字节/字数</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;./ProgrammingPearls/chapter.md&quot;&gt;编程珠玑&lt;/a&gt;新知识点记录&lt;
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
