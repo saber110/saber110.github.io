@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.huhaobin.cn/2018/07/06/sockstohttp/</loc>
+    
+    <lastmod>2018-07-06T11:52:07.801Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2018/06/19/UnistallPip/</loc>
+    
+    <lastmod>2018-06-19T03:53:09.789Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/2018/05/13/Programmer'sSelfCultivation2/</loc>
     
     <lastmod>2018-05-13T06:31:30.694Z</lastmod>
@@ -548,21 +562,14 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
+    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -576,14 +583,21 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
+    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
