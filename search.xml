@@ -1,8 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo重新搭建]]></title>
+    <url>%2F2019%2F01%2F06%2FhexoBuild%2F</url>
+    <content type="text"><![CDATA[安装nodejs 12sudo apt install nodejssudo apt install npm node升级 使用n来下载版本 1234sudo n lts 长期支持sudo n stable 稳定版sudo n latest 最新版sudo n 8.4.0 直接指定版本下载 用上下键选择版本 1sudo n 在新开的终端来面验证版本更改是否成功 1node -v 升级npm 1sudo npm i -g npm 全局安装hexo 123cd hexosudo npm install -g hexo-clihexo init]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ssr]]></title>
+    <url>%2F2018%2F11%2F02%2Fssr%2F</url>
+    <content type="text"><![CDATA[1wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh bbr安装之后无法开机安装完不要立即重启1234echo &apos;add_drivers+=&quot;virtio_blk&quot;&apos; &gt;/etc/dracut.conf.d/force-vitio_blk-to-ensure-boot.confcd /bootdracut -f /boot/initramfs-4.13.5-1.el6.elrepo.i686.img 4.13.5-1.el6.elrepo.i686reboot img 的名字是/boot下面较大的一个，前缀initramfs]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu搭建交叉编译环境]]></title>
+    <url>%2F2018%2F09%2F24%2Fubuntu-arm%2F</url>
+    <content type="text"><![CDATA[1.* mixed implicit and normal rules: deprecated syntax 修改Makefile 452 修改后： %config: scripts_basic outputmakefile FORCE]]></content>
+      <categories>
+        <category>未分类</category>
+      </categories>
+      <tags>
+        <tag>交叉编译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[qt画图]]></title>
+    <url>%2F2018%2F09%2F24%2FqtPainting%2F</url>
+    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>上位机 Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[新博客站的第一篇文章]]></title>
+    <url>%2F2018%2F09%2F24%2Fabout%2F</url>
+    <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
+      <categories>
+        <category>肺腑之言</category>
+      </categories>
+      <tags>
+        <tag>肺腑之言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[集成库的学习]]></title>
+    <url>%2F2018%2F09%2F24%2Flib_int%2F</url>
+    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>AD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2018%2F09%2F24%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ci library]]></title>
+    <url>%2F2018%2F09%2F24%2Fci-library%2F</url>
+    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[C语言大坑]]></title>
+    <url>%2F2018%2F09%2F24%2Fa_bigHole_ofC%2F</url>
+    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C 语言不能省略形参，即使不使用 C语言的数据存储空间 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆） 局部变量在return之后出栈销毁，不要尝试返回局部指针地址 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同 占用空间小的转化为占用空间大的： 考虑内存越界访问 结构体强制转换 ： 考虑字节对齐 字符串 通过索引读取字符串时，一定要判断索引的正确性 多线程编程 互斥量用来对临界区的互斥进入 条件变量用于线程的阻塞等待 指针 12345int * p = NULL;&amp;p 表示p的地址p 表示变量p的内容*p 表示p指向的存储单元的内容 数字0是唯一能输给指针的数值(相当于NULL) void * :指向任何类型的指针 注意深复制和浅复制的区别浅复制12345int *p, *q;*p = 58;q = p; // q 和 P 指向同一内存单元free(q);printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放 动态变量 在程序运行过程中产生的变量称为动态变量 创建 123int * p; char *q;p = new int; // 在内存中创建一个变量，存储所分配的内存地址到p中q = new char[19]; // 在内存中创建一个数组，并将数组地址存储到q中 使用 12*p = 28;*q = &quot;hello&quot;; 销毁 12delete p;delete [] q; 动态数组 创建 12int *p;p = new int[10]; 使用 123* p = 25; //25存到第一个存储空间里 = p[0] = 25；p ++;* p = 35; //35存到第二个存储空间里 = p[1] = 35；]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[socksV5转化为http代理]]></title>
-    <url>%2F2018%2F07%2F06%2Fsockstohttp%2F</url>
+    <url>%2F2018%2F09%2F24%2Fsockstohttp%2F</url>
     <content type="text"><![CDATA[使用工具 privoxy 安装1apt-get install privoxy 更改配置1vim /etc/privoxy/config 并在里面添加1forward-socks5 / 127.0.0.1:1080 . 重启服务1service privoxy restart 给系统设置http代理1vim ~/.bashrc 添加1export http_proxy=http://127.0.0.1:8118/ 使更改生效1source ~/.bashrc]]></content>
       <categories>
         <category>代理</category>
@@ -10,8 +88,13 @@
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F06%2F19%2FUnistallPip%2F</url>
+    <url>%2F2018%2F09%2F24%2FUnistallPip%2F</url>
     <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F09%2F24%2Fcsu%2F</url>
+    <content type="text"><![CDATA[http://123.206.64.174]]></content>
   </entry>
   <entry>
     <title><![CDATA[程序员的自我修养]]></title>
@@ -102,17 +185,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[qt画图]]></title>
-    <url>%2F2018%2F04%2F21%2FqtPainting%2F</url>
-    <content type="text"><![CDATA[QcustomPlot 下载 1http://www.qcustomplot.com 把qcustomplot.cpp和qcustomplot.h拷贝到工程目录下，然后把这两个文件引入工程项目即可 pro文件中QT += widgets printsupport 使用一个Widget窗体在ui设计器上，对这个窗体点击右键，选择提升为，把提升的类名填写为QCustomPlot即可，这样就可以使用了，使用就和我们用普通控件一样，ui-&gt;xxx-&gt;……。xxx为widget的名字 12345678910111213141516QVector x(101), y(101); // initialize with entries 0..100for (int i=0; i&lt;101; ++i)&#123;x[i] = i/50.0 – 1; // x goes from -1 to 1y[i] = x[i]*x[i]; // let’s plot a quadratic function&#125;qDebug()&lt;&lt;“data has been created”;ui-&gt;black_line-&gt;addGraph();qDebug()&lt;&lt;“begin painting”;ui-&gt;black_line-&gt;graph(0)-&gt;setData(x,y);ui-&gt;black_line-&gt;xAxis-&gt;setLabel(“x”);ui-&gt;black_line-&gt;yAxis-&gt;setLabel(“y”);ui-&gt;black_line-&gt;xAxis-&gt;setRange(-1, 1);ui-&gt;black_line-&gt;yAxis-&gt;setRange(0, 1);ui-&gt;black_line-&gt;replot();qDebug()&lt;&lt;“finish”;]]></content>
-      <categories>
-        <category>Qt</category>
-      </categories>
-      <tags>
-        <tag>上位机 Qt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[mysqldb安装]]></title>
     <url>%2F2018%2F04%2F19%2FMySQLdb%2F</url>
     <content type="text"><![CDATA[1apt install python3-mysqldb]]></content>
@@ -121,17 +193,6 @@
       </categories>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[新博客站的第一篇文章]]></title>
-    <url>%2F2018%2F04%2F19%2Fabout%2F</url>
-    <content type="text"><![CDATA[百废待兴自从前一段时间开始搞电设,就已经没有精力去打理博客了,由于个人原因之前用的Wp,虽然还能跑起来但是已经不喜欢用了.国内对域名备案要求太高了,我的域名在撑过了两个春秋之后终于被封杀了,所以我现在WP 里面好多东西都是缺兵少将的.故过来搭一个git pages的博客,免去维护的时间成本 移花接木虽然搭建(ง •̀_•́)ง 了新的博客也不能放弃前面的学习资料,虽然已经有很多都已经没有记录了,但是之前已经记录的东西是万万不能放弃的,所以打算在这几天的颓废期里面把之前的博文再写一遍,以备后续查漏补缺. 后悔莫及前一段时间有很多次想写博客,但是由于域名被封,之前自用WP不能正常工作了,当时又比较忙没有抽出来事件维护博客真是有生以来最痛心的事情了.现在想想我的错误真的是不可思议,前一段时间接触的都是自己没有碰到过的全新的领域,然而毫无疑问的没有留下任何学习资料,我现在想起来自己真的是傻的发楞 有时间继续更新]]></content>
-      <categories>
-        <category>肺腑之言</category>
-      </categories>
-      <tags>
-        <tag>肺腑之言</tag>
       </tags>
   </entry>
   <entry>
@@ -146,9 +207,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux定时执行任务]]></title>
-    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
-    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
+    <title><![CDATA[linux网络连接后执行脚本]]></title>
+    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
+    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -157,9 +218,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux网络连接后执行脚本]]></title>
-    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
-    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
+    <title><![CDATA[linux定时执行任务]]></title>
+    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
+    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -190,9 +251,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[分治策略]]></title>
-    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
-    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
+    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
+    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
+    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -201,9 +262,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
-    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
-    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
+    <title><![CDATA[分治策略]]></title>
+    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
+    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -253,11 +314,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C语言大坑]]></title>
-    <url>%2F2018%2F03%2F24%2Fa_bigHole_ofC%2F</url>
-    <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C 语言不能省略形参，即使不使用 C语言的数据存储空间 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆） 局部变量在return之后出栈销毁，不要尝试返回局部指针地址 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同 占用空间小的转化为占用空间大的： 考虑内存越界访问 结构体强制转换 ： 考虑字节对齐 字符串 通过索引读取字符串时，一定要判断索引的正确性 多线程编程 互斥量用来对临界区的互斥进入 条件变量用于线程的阻塞等待 指针 12345int * p = NULL;&amp;p 表示p的地址p 表示变量p的内容*p 表示p指向的存储单元的内容 数字0是唯一能输给指针的数值(相当于NULL) void * :指向任何类型的指针 注意深复制和浅复制的区别浅复制12345int *p, *q;*p = 58;q = p; // q 和 P 指向同一内存单元free(q);printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放 动态变量 在程序运行过程中产生的变量称为动态变量 创建 123int * p; char *q;p = new int; // 在内存中创建一个变量，存储所分配的内存地址到p中q = new char[19]; // 在内存中创建一个数组，并将数组地址存储到q中 使用 12*p = 28;*q = &quot;hello&quot;; 销毁 12delete p;delete [] q; 动态数组 创建 12int *p;p = new int[10]; 使用 123* p = 25; //25存到第一个存储空间里 = p[0] = 25；p ++;* p = 35; //35存到第二个存储空间里 = p[1] = 35；]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[sizeof与strlen的区别]]></title>
     <url>%2F2018%2F03%2F11%2Fsizeofstrlen%2F</url>
     <content type="text"><![CDATA[sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含头文件. sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数. sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数 编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来. sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’; 数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.]]></content>
@@ -267,11 +323,6 @@
       <tags>
         <tag>C</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2018%2F03%2F04%2Fcsu%2F</url>
-    <content type="text"><![CDATA[http://123.206.64.174]]></content>
   </entry>
   <entry>
     <title><![CDATA[Qt mysql 数据库找不到]]></title>
@@ -348,41 +399,6 @@
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ubuntu搭建交叉编译环境]]></title>
-    <url>%2F2017%2F11%2F15%2Fubuntu-arm%2F</url>
-    <content type="text"><![CDATA[1.* mixed implicit and normal rules: deprecated syntax 修改Makefile 452 修改后： %config: scripts_basic outputmakefile FORCE]]></content>
-      <categories>
-        <category>未分类</category>
-      </categories>
-      <tags>
-        <tag>交叉编译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ci library]]></title>
-    <url>%2F2017%2F11%2F15%2Fci-library%2F</url>
-    <content type="text"><![CDATA[调用时库名必须全部小写]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F11%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[集成库的学习]]></title>
-    <url>%2F2017%2F11%2F15%2Flib_int%2F</url>
-    <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>AD</tag>
       </tags>
   </entry>
   <entry>
@@ -465,17 +481,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -487,6 +503,17 @@
       <categories>
         <category>树莓派</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo个人博客的搭建]]></title>
+    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[树莓派连接隐藏wifi]]></title>
@@ -508,17 +535,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hexo个人博客的搭建]]></title>
-    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2017%2F06%2F13%2Finitlib%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -535,6 +551,14 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[cordova开发安卓]]></title>
+    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
+    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
+      <categories>
+        <category>安卓</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[计算机算法 C++描述]]></title>
     <url>%2F2017%2F04%2F17%2FComputerAlgorithms%2F</url>
     <content type="text"></content>
@@ -544,14 +568,6 @@
       <tags>
         <tag>计算机算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[cordova开发安卓]]></title>
-    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
-    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
-      <categories>
-        <category>安卓</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[c_multipthread]]></title>
@@ -581,17 +597,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[shell]]></title>
-    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[服务器操作规范]]></title>
     <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
     <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
@@ -600,6 +605,17 @@
       </categories>
       <tags>
         <tag>服务器操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell]]></title>
+    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
