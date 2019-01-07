@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.huhaobin.cn/2019/01/07/ssr+frp/</loc>
+    
+    <lastmod>2019-01-07T06:26:37.405Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/2019/01/06/hexoBuild/</loc>
     
     <lastmod>2019-01-06T08:19:55.023Z</lastmod>
@@ -583,7 +590,14 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
+    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -597,21 +611,14 @@
   </url>
   
   <url>
+    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     

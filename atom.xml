@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2019-01-06T08:19:55.023Z</updated>
+  <updated>2019-01-07T06:26:37.405Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssr</title>
+    <link href="http://blog.huhaobin.cn/2019/01/07/ssr+frp/"/>
+    <id>http://blog.huhaobin.cn/2019/01/07/ssr+frp/</id>
+    <published>2019-01-06T16:00:00.000Z</published>
+    <updated>2019-01-07T06:26:37.405Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="访问校内网资源"><a href="#访问校内网资源" class="headerlink" title="访问校内网资源"></a>访问校内网资源</h2><p>需求现状： 回家之后需要访问学校内网资源学习，手头闲置一枚树莓派，用树莓派作转发服务器.</p><p>问题简述：</p><ol><li>树莓派无公网ip，故需要先对树莓派进行内网穿透. 使用frp</li><li>通过树莓派进行http转发</li></ol><p>设备要求： 公网ip的服务器一台，树莓派一个</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol><li><p>内网穿透 <a href="https://zhuanlan.zhihu.com/p/36156129" target="_blank" rel="external">参考知乎</a></p><ul><li><p>公网服务器配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gz</div><div class="line">tar -zxvf frp_0.22.0_linux_amd64.tar.gz</div><div class="line">cd frp_0.22.0_linux_amd64</div><div class="line">nano frps.ini</div></pre></td></tr></table></figure><p>配置内容如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[common]</div><div class="line">bind_port = 7000</div><div class="line">vhost_http_port = 80</div><div class="line">dashboard_port = dashboard_port_number</div><div class="line">dashboard_user = dashboard_user_name</div><div class="line">dashboard_pwd = dashboard_pwd_value</div><div class="line">privilege_token = privilege_token_value</div></pre></td></tr></table></figure><p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p><p>参数说明</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">bind_port：绑定的端口，需要与客户端中 server_port 参数保持一致</div><div class="line">vhost_http_port：虚拟主机运行在本机的端口，如果 vps 有服务占用了端口，应当更换</div><div class="line">dashboard_port：frp 后台服务页面的端口，如果设置 8000，便可通过 http://yourip:8000 来访问 frps 的后台页面</div><div class="line">dashboard_user：frp 后台服务页面的管理员用户名</div><div class="line">dashboard_pwd：frp 后台服务页面的管理员密码</div><div class="line">privilege_token：自定义值，必须与客户端中的 privilege_token 保持一致</div></pre></td></tr></table></figure><p>配置完成之后，便可以通过如下命令启动 frps：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./frps -c ./frps.ini</div></pre></td></tr></table></figure><p>为了让服务器一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/rc.local</div></pre></td></tr></table></figure><p>在 exit 0 前一行，写上命令，其中 <your_frp_path> 为你 frp 存放的目录位置，即：</your_frp_path></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini</div></pre></td></tr></table></figure><p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p></li><li><p>客户端配置 - frpc</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_arm.tar.gz</div><div class="line">tar -zxvf frp_0.22.0_linux_arm.tar.gz</div><div class="line">cd frp_0.22.0_linux_arm</div><div class="line">nano frpc.ini</div></pre></td></tr></table></figure><p>配置文件内容如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[common]</div><div class="line">server_addr = your_server_ip</div><div class="line">server_port = 7000</div><div class="line">privilege_token = privilege_token_value</div><div class="line">login_fail_exit = false</div><div class="line">​</div><div class="line">[ssh]</div><div class="line">type = tcp</div><div class="line">local_ip = 127.0.0.1</div><div class="line">local_port = 22</div><div class="line">​</div><div class="line">remote_port = remote_port_number</div></pre></td></tr></table></figure><p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p><p>参数说明</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">server_addr：服务器端的 ip</div><div class="line">server_port：服务器端的端口，即 bind_port</div><div class="line">privilege_token：同服务器端的 privilege_token 保持一致</div><div class="line">login_fail_exit：失败时自动重连</div><div class="line">remote_port：远程端口，即 ssh 连接树莓派时的端口</div></pre></td></tr></table></figure><p>配置完成之后，便可以通过如下命令启动 frps：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./frpc -c ./frpc.ini</div></pre></td></tr></table></figure><p>为了让树莓派一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/rc.local</div></pre></td></tr></table></figure><p>在 exit 0 前一行，写上命令，其中 <your_frp_path> 为你 frp 存放的目录位置，即：</your_frp_path></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini</div></pre></td></tr></table></figure><p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p></li><li><p>ssh 连接</p><p>以上配置完成之后，就可以远程 ssh 连接到树莓派了。命令行如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -oPort=&lt;remote_port_number&gt; pi@&lt;your_server_ip&gt;</div></pre></td></tr></table></figure><p>其中，<remote_port_number> 为树莓派配置中的 remote_port 参数值，<your_server_ip> 为服务器 ip。</your_server_ip></remote_port_number></p><p><strong>注意：重启之后树莓派可能需要一到两分钟才能正常使用</strong></p></li></ul></li><li><p>http 转发</p><p>在树莓派上搭建ss服务端，自己电脑上搭建ss客户端即可，具体请<a href="https://segmentfault.com/a/1190000015243145" target="_blank" rel="external">参考</a></p><p>按照上述教程搭建完成之后，假设服务器端口为<your_ss_port>（默认为9702），<br>将下面内容添加到树莓派的 frpc.ini 中</your_ss_port></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[ssr]</div><div class="line">type = tcp</div><div class="line">local_ip = 127.0.0.1</div><div class="line">local_port = your_ss_port</div><div class="line">remote_port = access_port</div></pre></td></tr></table></figure><p>参数说明</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">local_port: &lt;your_ss_port&gt;（默认为9702）</div><div class="line">remote_port: 自己电脑上的ss客户端连接树莓派时的端口哦</div></pre></td></tr></table></figure><ul><li>重启树莓派，等待2-3分钟，电脑使用刚刚搭建的ss通路访问学校内网资源</li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;访问校内网资源&quot;&gt;&lt;a href=&quot;#访问校内网资源&quot; class=&quot;headerlink&quot; title=&quot;访问校内网资源&quot;&gt;&lt;/a&gt;访问校内网资源&lt;/h2&gt;&lt;p&gt;需求现状： 回家之后需要访问学校内网资源学习，手头闲置一枚树莓派，用树莓派作转发服务器.&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>hexo重新搭建</title>
@@ -237,6 +261,28 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
+    <published>2018-09-24T05:53:47.556Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/sockstohttp/</id>
@@ -258,28 +304,6 @@
     </summary>
     
       <category term="代理" scheme="http://blog.huhaobin.cn/categories/%E4%BB%A3%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
-    <published>2018-09-24T05:53:47.556Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
     
     
   </entry>
@@ -485,31 +509,6 @@
       
       
         &lt;h1 id=&quot;逻辑回归问题&quot;&gt;&lt;a href=&quot;#逻辑回归问题&quot; class=&quot;headerlink&quot; title=&quot;逻辑回归问题&quot;&gt;&lt;/a&gt;逻辑回归问题&lt;/h1&gt;&lt;h2 id=&quot;系统函数&quot;&gt;&lt;a href=&quot;#系统函数&quot; class=&quot;headerlink&quot; title=&quot;系
-      
-    
-    </summary>
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/categories/machine-learning/"/>
-    
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/tags/machine-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习之线性回归问题</title>
-    <link href="http://blog.huhaobin.cn/2018/04/23/machine-learning1/"/>
-    <id>http://blog.huhaobin.cn/2018/04/23/machine-learning1/</id>
-    <published>2018-04-23T13:56:20.000Z</published>
-    <updated>2018-04-28T08:20:01.472Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="线性回归问题"><a href="#线性回归问题" class="headerlink" title="线性回归问题"></a>线性回归问题</h1><h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><ol><li>假设系统函数<br><img src="/image/Hypothesis.png" alt="系统函数"></li><li><p>代价函数<br><img src="/image/costFunction.png" alt="代价函数"></p><p> alpha: 学习效率</p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2></li><li>普适算法<br><img src="/image/GradientDescentAlgo.png" alt="普适算法"></li><li><p>线性回归中<br><img src="/image/GradientDescentForLinearRegression.png" alt="线性回归"><br><img src="/image/GDALRS.png" alt="去微分"></p><p> <strong>记得同步更新theta</strong></p><h2 id="多变量的线性回归问题"><a href="#多变量的线性回归问题" class="headerlink" title="多变量的线性回归问题"></a>多变量的线性回归问题</h2><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3></li><li><p>数据缩放()</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = X/MAX(X);</div></pre></td></tr></table></figure><p> 使得X <strong>接近</strong>[-1,1]区间</p></li><li><p>平均值正常化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = (X-U)/(max(X)-MIN(x)) // U是X的平均值</div></pre></td></tr></table></figure></li><li><p>数据归一化</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theta = pinv(X&apos;*X)*X&apos;*y;</div></pre></td></tr></table></figure></li></ol><p>可以用正态方程求解代价函数最小值</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;线性回归问题&quot;&gt;&lt;a href=&quot;#线性回归问题&quot; class=&quot;headerlink&quot; title=&quot;线性回归问题&quot;&gt;&lt;/a&gt;线性回归问题&lt;/h1&gt;&lt;h2 id=&quot;代价函数&quot;&gt;&lt;a href=&quot;#代价函数&quot; class=&quot;headerlink&quot; title=&quot;代
       
     
     </summary>
