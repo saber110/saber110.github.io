@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://blog.huhaobin.cn/2019/01/24/HMnote1s/</loc>
+    <lastmod>2019-01-24T14:43:26.103Z</lastmod>
+    <data>
+        <display>
+        <title>红米note增强版刷入android7.1</title>
+        <pubTime>2019-01-23T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.huhaobin.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.huhaobin.cn/2019/01/07/ssr+frp/</loc>
     <lastmod>2019-01-07T06:26:37.405Z</lastmod>
     <data>
@@ -1531,17 +1549,17 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     <data>
         <display>
-        <title>文件操作</title>
-        <pubTime>2016-11-16T16:59:20.000Z</pubTime>
+        <title>智能指纹门锁开发</title>
+        <pubTime>2016-11-08T17:38:32.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
           
         </display>
     </data>
@@ -1560,24 +1578,6 @@
            
              
               <breadCrumb title="未分类" url="http://blog.huhaobin.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>智能指纹门锁开发</title>
-        <pubTime>2016-11-08T17:38:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
           
         </display>
     </data>
@@ -1614,6 +1614,24 @@
            
              
               <breadCrumb title="altium designer" url="http://blog.huhaobin.cn/categories/altium-designer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>文件操作</title>
+        <pubTime>2016-11-16T16:59:20.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="C语言" url="http://blog.huhaobin.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>

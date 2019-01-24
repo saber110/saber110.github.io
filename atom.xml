@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2019-01-07T06:26:37.405Z</updated>
+  <updated>2019-01-24T14:43:26.103Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>红米note增强版刷入android7.1</title>
+    <link href="http://blog.huhaobin.cn/2019/01/24/HMnote1s/"/>
+    <id>http://blog.huhaobin.cn/2019/01/24/HMnote1s/</id>
+    <published>2019-01-23T16:00:00.000Z</published>
+    <updated>2019-01-24T14:43:26.103Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>root</p><p>参考链接<a href="http://en.miui.com/thread-208274-1-1.html" target="_blank" rel="external">http://en.miui.com/thread-208274-1-1.html</a></p><p>基本上就是先下载HMnote1S.zip这个压缩包，然后打开系统更新点击右上角的三个点选择从安装包更新，选择之前下载的压缩包更新即可。重启之后即可获得root</p></li><li><p>刷入twrp</p><p>需要下载的东西</p><ul><li><a href="https://drive.google.com/file/d/0B2sSKg3aizyzVXFQZVJ0UU5tTDg/view?pref=2&amp;pli=1" target="_blank" rel="external">https://drive.google.com/file/d/0B2sSKg3aizyzVXFQZVJ0UU5tTDg/view?pref=2&amp;pli=1</a></li><li>flashify app</li><li><a href="https://download.mokeedev.com/?device=gucci" target="_blank" rel="external">https://download.mokeedev.com/?device=gucci</a></li></ul></li><li><p>刷入</p><p> 下载完之后，打开flashify，刷入TWRP, 从文件安装，选择刚刚下载的recovery.img。刷入成功之后关机长按电源键和音量上键直至出现recovery界面<br> 选择wipe，清除无用数据，至少做到双清。<br> 返回到主界面选择install ，然后定位到 下载的Gucci即可</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;root&lt;/p&gt;
+&lt;p&gt;参考链接&lt;a href=&quot;http://en.miui.com/thread-208274-1-1.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://en.miui.com/thread-208
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://blog.huhaobin.cn/categories/android/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ssr</title>
@@ -261,28 +286,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
-    <published>2018-09-24T05:53:47.556Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/sockstohttp/</id>
@@ -304,6 +307,28 @@
     </summary>
     
       <category term="代理" scheme="http://blog.huhaobin.cn/categories/%E4%BB%A3%E7%90%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
+    <published>2018-09-24T05:53:47.556Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
+
+      
+    
+    </summary>
     
     
   </entry>
@@ -484,31 +509,6 @@
       
         &lt;p&gt;神经网络可以用来解决特征特别多的机器学习问题，普通的解决方法在这儿显得无能为力，主要是特征向量太多的时候就会出现无数种特征向量的组合产生假设函数的无数项，这对于计算来说不现实。&lt;/p&gt;
 &lt;h2 id=&quot;表示&quot;&gt;&lt;a href=&quot;#表示&quot; class=&quot;headerlink&quot;
-      
-    
-    </summary>
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/categories/machine-learning/"/>
-    
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/tags/machine-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习之逻辑分类问题</title>
-    <link href="http://blog.huhaobin.cn/2018/04/27/machine-learning2/"/>
-    <id>http://blog.huhaobin.cn/2018/04/27/machine-learning2/</id>
-    <published>2018-04-27T13:56:20.000Z</published>
-    <updated>2018-04-28T08:20:46.343Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="逻辑回归问题"><a href="#逻辑回归问题" class="headerlink" title="逻辑回归问题"></a>逻辑回归问题</h1><h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><ol><li>逻辑回归<br><img src="/image/HypothesisRepresentation.png" alt="逻辑回归"></li><li><p>线性回归</p><p>线性回归中 <strong>g(z)=1</strong></p></li></ol><h2 id="决策边界-Decision-boundary"><a href="#决策边界-Decision-boundary" class="headerlink" title="决策边界(Decision boundary)"></a>决策边界(Decision boundary)</h2><p>  一条分割y=0和y=1的线</p><h2 id="代价函数-cost-function"><a href="#代价函数-cost-function" class="headerlink" title="代价函数(cost function)"></a>代价函数(cost function)</h2><p>  <img src="/image/CostFunctionInLogisticRegression.png" alt="代价函数"><br>  整合之后<br>  <img src="/image/CostFunctionForLRM.png" alt="整合代价函数"><br>  gradient计算<br>  <img src="/image/GradientForLogstic.png" alt="gradient"></p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>  <img src="/image/GradientDescentForLRM.png" alt="梯度下降法"></p><h2 id="过度拟合"><a href="#过度拟合" class="headerlink" title="过度拟合"></a>过度拟合</h2><p>  过度拟合只会充分的拟合训练数据集，对数据预测并不会得到想要的值</p><ul><li>解决方法(regularization)</li></ul><h2 id="regularization"><a href="#regularization" class="headerlink" title="regularization"></a>regularization</h2><ol><li>重新设置代价函数(cost function)J<br><img src="/image/RegularizedLinerRegression.png" alt="J"><br>给每个theta做惩罚，用足够大的lambda去削弱theta的作用，从而平滑h。但是lambda太大的话将导致欠拟合，太大的时候得到的仅仅是一条扁平的直线</li><li>梯度下降法<br><img src="/image/RegularizationGradientDescent.png" alt=""><br>将theta分开更新是因为在重新设计代价函数的时候没有给theta惩罚，简化之后为<img src="/image/RegularizationGradientDescentJ.png" alt=""></li><li>归一化求代价函数的最小值<br><img src="/image/RegularizationNormalEquation.png" alt=""></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;逻辑回归问题&quot;&gt;&lt;a href=&quot;#逻辑回归问题&quot; class=&quot;headerlink&quot; title=&quot;逻辑回归问题&quot;&gt;&lt;/a&gt;逻辑回归问题&lt;/h1&gt;&lt;h2 id=&quot;系统函数&quot;&gt;&lt;a href=&quot;#系统函数&quot; class=&quot;headerlink&quot; title=&quot;系
       
     
     </summary>
