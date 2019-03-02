@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2019-01-24T14:43:26.103Z</updated>
+  <updated>2019-03-02T13:50:27.092Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>复试</title>
+    <link href="http://blog.huhaobin.cn/2019/03/01/oj/"/>
+    <id>http://blog.huhaobin.cn/2019/03/01/oj/</id>
+    <published>2019-02-28T16:00:00.000Z</published>
+    <updated>2019-03-02T13:50:27.092Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>sort<br><algorithm><br>bool ZuSort(testee t1, testee t2) {<br>if(t1.score == t2.score) return t1.id &lt; t2.id;<br>return t1.score &gt; t2.score;<br>}<br>sort(result, result + resultPos, ZuSort); // result[MAX]</algorithm></p></li><li><p>时间、日期等周期性数据应该从最小位自加，逐步控制更高一层的周期</p></li><li><p>空间换取时间：(散列)</p><ul><li><p>查找集合N 中的元素在集合M{2,6,7}中是否出现以及出现的次数</p><p> 可以用bool M[MAX], M[2] = true; M[6] = true; M[7] = true;</p><p> 求出现的次数时，可以用int M[MAX], M[2] ++; M[6] ++; M[7] ++;</p></li></ul></li><li><p>老哥，一定要记得多组数组共享变量的清零</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;sort&lt;br&gt;&lt;algorithm&gt;&lt;br&gt;bool ZuSort(testee t1, testee t2) {&lt;br&gt;if(t1.score == t2.score) return t1.id &amp;lt; t2.id;&lt;br&gt;return t1.sco
+      
+    
+    </summary>
+    
+      <category term="考研" scheme="http://blog.huhaobin.cn/categories/%E8%80%83%E7%A0%94/"/>
+    
+    
+      <category term="oj" scheme="http://blog.huhaobin.cn/tags/oj/"/>
+    
+  </entry>
   
   <entry>
     <title>红米note增强版刷入android7.1</title>
@@ -286,6 +312,28 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
+    <published>2018-09-24T05:53:47.556Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/sockstohttp/</id>
@@ -307,28 +355,6 @@
     </summary>
     
       <category term="代理" scheme="http://blog.huhaobin.cn/categories/%E4%BB%A3%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
-    <published>2018-09-24T05:53:47.556Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
     
     
   </entry>
@@ -483,32 +509,6 @@
         &lt;p&gt;&lt;strong&gt;a在这里表示神经网络中的神经元&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;分类&quot;&gt;&lt;a href=&quot;#分类&quot; class=&quot;headerlink&quot; title=&quot;分类&quot;&gt;&lt;/a&gt;分类&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;二元分类(Binary classificati
-      
-    
-    </summary>
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/categories/machine-learning/"/>
-    
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/tags/machine-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习之神经网络介绍</title>
-    <link href="http://blog.huhaobin.cn/2018/04/28/machine-learning3/"/>
-    <id>http://blog.huhaobin.cn/2018/04/28/machine-learning3/</id>
-    <published>2018-04-28T13:56:20.000Z</published>
-    <updated>2018-04-29T05:57:51.219Z</updated>
-    
-    <content type="html"><![CDATA[<p>神经网络可以用来解决特征特别多的机器学习问题，普通的解决方法在这儿显得无能为力，主要是特征向量太多的时候就会出现无数种特征向量的组合产生假设函数的无数项，这对于计算来说不现实。</p><h2 id="表示"><a href="#表示" class="headerlink" title="表示"></a>表示</h2><ol><li>层： 输入层、隐藏层、输出层</li><li><p>仍然使用sigmoid函数<br>3.<br><img src="/image/AppearanceOfNeuronNetwork.png" alt="基本形式"></p><ul><li>a<sub>i</sub><sup>j</sup>: 第j层的第i个元素</li><li><p>Θ<sup>(j)</sup>: j层到j+1层的权重映射矩阵</p><p><strong>如果网络在j层有s<sub>j</sub>个单元，j+1层有s<sub>j+1</sub>个单元，那么Θ<sup>(j)</sup>的维度为s<sub>j+1</sub>×(s<sub>j</sub>+1)</strong></p></li></ul></li><li>向量化<br>对于中间层的计算，我们可以定义Z使得<br><img src="/image/neuralNetworkHiddenCompute.png" alt=""> 变形为<img src="/image/neuralNetworkHiddenCompute-z.png" alt=""><br>进行向量化之后<br><img src="/image/NeuralNetworkVectlize.png" alt=""><br>也就是说<br><img src="/image/ZNeuralNetwork.png" alt=""> <img src="/image/HNeuralNetwork.png" alt=""></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;神经网络可以用来解决特征特别多的机器学习问题，普通的解决方法在这儿显得无能为力，主要是特征向量太多的时候就会出现无数种特征向量的组合产生假设函数的无数项，这对于计算来说不现实。&lt;/p&gt;
-&lt;h2 id=&quot;表示&quot;&gt;&lt;a href=&quot;#表示&quot; class=&quot;headerlink&quot;
       
     
     </summary>

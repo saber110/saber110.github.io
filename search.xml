@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[复试]]></title>
+    <url>%2F2019%2F03%2F01%2Foj%2F</url>
+    <content type="text"><![CDATA[sortbool ZuSort(testee t1, testee t2) {if(t1.score == t2.score) return t1.id &lt; t2.id;return t1.score &gt; t2.score;}sort(result, result + resultPos, ZuSort); // result[MAX] 时间、日期等周期性数据应该从最小位自加，逐步控制更高一层的周期 空间换取时间：(散列) 查找集合N 中的元素在集合M{2,6,7}中是否出现以及出现的次数 可以用bool M[MAX], M[2] = true; M[6] = true; M[7] = true; 求出现的次数时，可以用int M[MAX], M[2] ++; M[6] ++; M[7] ++; 老哥，一定要记得多组数组共享变量的清零]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>oj</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[红米note增强版刷入android7.1]]></title>
     <url>%2F2019%2F01%2F24%2FHMnote1s%2F</url>
     <content type="text"><![CDATA[root 参考链接http://en.miui.com/thread-208274-1-1.html 基本上就是先下载HMnote1S.zip这个压缩包，然后打开系统更新点击右上角的三个点选择从安装包更新，选择之前下载的压缩包更新即可。重启之后即可获得root 刷入twrp 需要下载的东西 https://drive.google.com/file/d/0B2sSKg3aizyzVXFQZVJ0UU5tTDg/view?pref=2&amp;pli=1 flashify app https://download.mokeedev.com/?device=gucci 刷入 下载完之后，打开flashify，刷入TWRP, 从文件安装，选择刚刚下载的recovery.img。刷入成功之后关机长按电源键和音量上键直至出现recovery界面 选择wipe，清除无用数据，至少做到双清。 返回到主界面选择install ，然后定位到 下载的Gucci即可]]></content>
@@ -95,17 +106,17 @@
     <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C 语言不能省略形参，即使不使用 C语言的数据存储空间 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆） 局部变量在return之后出栈销毁，不要尝试返回局部指针地址 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同 占用空间小的转化为占用空间大的： 考虑内存越界访问 结构体强制转换 ： 考虑字节对齐 字符串 通过索引读取字符串时，一定要判断索引的正确性 多线程编程 互斥量用来对临界区的互斥进入 条件变量用于线程的阻塞等待 指针 12345int * p = NULL;&amp;p 表示p的地址p 表示变量p的内容*p 表示p指向的存储单元的内容 数字0是唯一能输给指针的数值(相当于NULL) void * :指向任何类型的指针 注意深复制和浅复制的区别浅复制12345int *p, *q;*p = 58;q = p; // q 和 P 指向同一内存单元free(q);printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放 动态变量 在程序运行过程中产生的变量称为动态变量 创建 123int * p; char *q;p = new int; // 在内存中创建一个变量，存储所分配的内存地址到p中q = new char[19]; // 在内存中创建一个数组，并将数组地址存储到q中 使用 12*p = 28;*q = &quot;hello&quot;; 销毁 12delete p;delete [] q; 动态数组 创建 12int *p;p = new int[10]; 使用 123* p = 25; //25存到第一个存储空间里 = p[0] = 25；p ++;* p = 35; //35存到第二个存储空间里 = p[1] = 35；]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>%2F2018%2F09%2F24%2FUnistallPip%2F</url>
+    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[socksV5转化为http代理]]></title>
     <url>%2F2018%2F09%2F24%2Fsockstohttp%2F</url>
     <content type="text"><![CDATA[使用工具 privoxy 安装1apt-get install privoxy 更改配置1vim /etc/privoxy/config 并在里面添加1forward-socks5 / 127.0.0.1:1080 . 重启服务1service privoxy restart 给系统设置http代理1vim ~/.bashrc 添加1export http_proxy=http://127.0.0.1:8118/ 使更改生效1source ~/.bashrc]]></content>
       <categories>
         <category>代理</category>
       </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2018%2F09%2F24%2FUnistallPip%2F</url>
-    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
   </entry>
   <entry>
     <title></title>
@@ -297,17 +308,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[进程间通信]]></title>
-    <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
-    <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[编程珠玑]]></title>
     <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
     <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
@@ -316,6 +316,17 @@
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[进程间通信]]></title>
+    <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
+    <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -486,6 +497,14 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[uart_raspberry]]></title>
     <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
     <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
@@ -513,25 +532,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[hexo个人博客的搭建]]></title>
-    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[树莓派连接隐藏wifi]]></title>
     <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
     <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
@@ -548,6 +548,17 @@
       </categories>
       <tags>
         <tag>树莓派</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo个人博客的搭建]]></title>
+    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
