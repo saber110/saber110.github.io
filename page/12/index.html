@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2017/09/30/raspberry_ubuntumate/">
+    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2017/09/30/raspberryWifi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -301,7 +301,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/raspberry_ubuntumate/" itemprop="url">ubuntu mate 在树莓派上的应用</a></h1>
+                <a class="post-title-link" href="/2017/09/30/raspberryWifi/" itemprop="url">树莓派连接隐藏wifi</a></h1>
         
 
         <div class="post-meta">
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  177
+                  37
                 </span>
               
 
@@ -407,17 +407,17 @@
         
           
           
-下载安装系统,并启动
-系统默认没有开启ssh,所以要新建文件以开启sshwindows用户可以打开powershell进入SD卡根目录,执行
-1new-item ssh -type file
+编辑wifi文件
+1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
-开机
- 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的.
- 
+在该文件最后添加下面的话
+12345network=&#123;  ssid="WIFINAME"    scan_ssid=1  psk="password"&#125;
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/30/raspberry_ubuntumate/#more" rel="contents">
+            <a class="btn" href="/2017/09/30/raspberryWifi/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1017,7 +1017,7 @@ C++——STL
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2017/04/17/cordova-android/">
+    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2017/04/17/ComputerAlgorithms/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -1036,7 +1036,7 @@ C++——STL
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/17/cordova-android/" itemprop="url">cordova开发安卓</a></h1>
+                <a class="post-title-link" href="/2017/04/17/ComputerAlgorithms/" itemprop="url">计算机算法 C++描述</a></h1>
         
 
         <div class="post-meta">
@@ -1071,8 +1071,8 @@ C++——STL
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安卓/" itemprop="url" rel="index">
-                    <span itemprop="name">安卓</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -1102,7 +1102,7 @@ C++——STL
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  35
+                  0
                 </span>
               
 
@@ -1141,12 +1141,11 @@ C++——STL
       
         
           
-          cordova
-命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordo
-          ...
+          
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/17/cordova-android/#more" rel="contents">
+            <a class="btn" href="/2017/04/17/ComputerAlgorithms/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1343,7 +1342,7 @@ C++——STL
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      24.6k
+      25.6k
     </span>
   
 </div>
@@ -1374,7 +1373,7 @@ C++——STL
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.6k字</span>
+  <span class="post-count">博客全站共25.6k字</span>
 </div>
 
         
