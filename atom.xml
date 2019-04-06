@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2019-04-04T07:59:19.241Z</updated>
+  <updated>2019-04-06T14:00:39.539Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="http://blog.huhaobin.cn/2019/04/04/computernetworking1/"/>
+    <id>http://blog.huhaobin.cn/2019/04/04/computernetworking1/</id>
+    <published>2019-04-03T16:00:00.000Z</published>
+    <updated>2019-04-06T14:00:39.539Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol><li>计算机网络就是互连的、自治的计算机集合<ul><li>通过交换网络进行互连</li></ul></li><li>交换<ul><li>动态转接</li><li>动态资源分配和传输</li></ul></li><li><p>电路交换（电路建立—数据传输—电路拆除）</p><ul><li><p>多路复用</p><ul><li>频分复用（FDM）— 同轴电缆</li><li>时分复用（TDM) — 时间分帧、分片</li><li><p>码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列</p><p>每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1;</p></li><li>波分复用（光的频分复用）</li></ul></li></ul></li><li>报文交换<ul><li>一次将一个报文全部传输</li><li>存储转发整个报文</li></ul></li><li><p>分组交换</p><ol><li>报文的拆分和重组</li><li>产生额外开销</li><li>存储转发小分组</li><li>便于实现统计复用</li><li>由于流水线技术，速度比报文交换要快，硬件要求要低</li><li>适用于突发数据传输<ul><li>充分利用资源</li><li>无需建立电路</li></ul></li><li><p>分组延迟</p><ul><li><p>结点处理延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">差错控制</div><div class="line">确定输出链路</div><div class="line">通常小于msec</div></pre></td></tr></table></figure></li><li><p>排队延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">等待输出链路可用</div><div class="line">取决与路由器的当前拥塞状态</div></pre></td></tr></table></figure></li><li><p>传输延迟（发送一个分组所需要的时间）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">分组长度</div><div class="line">链路宽度</div></pre></td></tr></table></figure></li><li><p>传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟）</p></li></ul></li></ol></li><li>协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务</li><li>计算机网络结构是分层的（软件和硬件）</li></ol><h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><ol><li>七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层<ul><li>一般主机需要实现所有层，路由器只需要实现最基本的三层<br><img src="/image/osi.jpg" alt="数据传输过程"></li><li>数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，<strong>并且数据链路层加帧头和帧尾</strong></li><li>数据封装的目的<ul><li>差错检测</li><li>地址信息</li><li>协议控制</li></ul></li></ul></li><li>物理层（解决单一比特的传输问题）<ul><li>接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信）</li></ul></li><li>数据链路层（结点到结点的数据传输）<ul><li>组帧（便于接受信息）</li><li>物理寻址（物理层不能寻址）</li><li>流量控制（匹配发送和接受速度）</li><li>差错控制</li><li>接入控制（访问控制）</li></ul></li><li>网络层<ul><li>逻辑寻址（ip）—全局的唯一逻辑地址</li><li>路由</li><li>分组转发</li></ul></li><li>传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输）<ul><li>报文的分段和重组</li><li>SAP寻址（保证交给正确的进程）</li><li>可以实现端到端的链接控制，流量控制，差错控制</li></ul></li><li>会话层（主要负责对话管理，同步等）<ul><li>不单独存在</li></ul></li><li>表示层（处理两个系统之间交换信息的语法和语义问题）<ul><li>数据表示转化（大小端）</li><li>加解密，压缩，解压缩</li><li>不单独存在</li></ul></li><li>应用层</li></ol><h2 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h2><ol><li>网络接口层、网际层、运输层、应用层</li><li><p>Everything over IP</p></li><li><p>5层参考模型</p><ul><li>物理层</li><li>数据链路层</li><li>网络层（源到目的的数据分组路由和转发）</li><li>传输层（TCP、UDP）{进程之间的通信}</li><li>应用层（支持各种网络应用）</li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;计算机网络就是互连的、自治的计算机集合&lt;ul&gt;
+&lt;li&gt;通过交换网络进行互连&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;交换&lt;u
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="自顶向下方法" scheme="http://blog.huhaobin.cn/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>复试</title>
@@ -217,6 +247,27 @@
   </entry>
   
   <entry>
+    <title>git</title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
+    <published>2018-09-24T05:53:47.732Z</published>
+    <updated>2017-09-28T15:04:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>集成库的学习</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/lib_int/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/lib_int/</id>
@@ -239,27 +290,6 @@
     
     
       <category term="AD" scheme="http://blog.huhaobin.cn/tags/AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git</title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
-    <published>2018-09-24T05:53:47.732Z</published>
-    <updated>2017-09-28T15:04:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -490,33 +520,6 @@
     
     
       <category term="Octave" scheme="http://blog.huhaobin.cn/tags/Octave/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习之神经网络</title>
-    <link href="http://blog.huhaobin.cn/2018/04/29/machine-learning4/"/>
-    <id>http://blog.huhaobin.cn/2018/04/29/machine-learning4/</id>
-    <published>2018-04-29T13:56:20.000Z</published>
-    <updated>2018-04-29T09:13:42.143Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>a在这里表示神经网络中的神经元</strong></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ol><li>二元分类(Binary classification)</li><li>多分类(Multi-class classification)</li></ol><h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p><img src="/image/costfunctionBetweenLRandNeuralNetwork.png" alt=""></p><ul><li>L: 网络中的总层数</li><li>K: 输出层神经元的数量</li><li>S<sub>l</sub>: l 层的总神经元数量(不算偏置单元)额<!-- 注意： 这是单个 -->为了计算代价函数的最小值，我们使用反向传播算法</li></ul><h2 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h2><p>(计算出代价函数下降最快的方向)<br>给出训练集{(x<sup>(1)</sup>,y<sup>(1)</sup>)⋯(x<sup>(m)</sup>,y<sup>(m)</sup>)}</p><p>令 Δ<sub>i,j</sub><sup>(l)</sup> := 0 for all (l,i,j), (hence you end up having a matrix full of zeros)</p><p>For training example t =1 to m:</p><ol><li>Set a<sup>(1)</sup>:=x<sup>(t)</sup></li><li>Perform forward propagation to compute a<sup>(l)</sup> for l=2,3,…,L<br><img src="/image/GradientForNeuralNetwork.png" alt=""></li><li>Using y(t), compute δ<sup>(L)</sup>=a<sup>(L)</sup>−y<sup>(t)</sup></li><li>Compute δ<sup>(L−1)</sup>,δ<sup>(L−2)</sup>,…,δ<sup>(2)</sup> using δ<sup>(l)</sup>=((Θ<sup>(l)</sup>)<sup>T</sup>δ<sup>(l+1)</sup>) .∗ a<sup>(l)</sup> .∗ (1−a<sup>(l)</sup>)</li><li>Δ<sub>i,j</sub><sup>(l)</sup>:=Δ<sub>i,j</sub><sup>(l)</sup>+a<sub>j</sub><sup>(l)</sup>δ<sub>i</sub><sup>(l+1)</sup> or with vectorization, Δ<sup>(l)</sup>:=Δ<sup>(l)</sup>+δ<sup>(l+1)</sup>(a<sup>(l)</sup>)<sup>T</sup></li></ol><p>Hence we update our new Δ matrix.</p><ul><li>D<sub>i,j</sub>(l):=1/m(Δ<sub>i,j</sub><sup>(l)</sup>+λΘ<sub>i,j</sub><sup>(l)</sup>), if j≠0.</li><li>D<sub>i,j</sub><sup>(l)</sup>:=1/mΔ<sub>i,j</sub><sup>(l)</sup> If j=0</li></ul><p>所以得出J的微分为<img src="/image/partialDerivativeOfJInNN.png" alt=""></p><h2 id="向量展开"><a href="#向量展开" class="headerlink" title="向量展开"></a>向量展开</h2><p>在之前的学习过程中我们总是使用fminunc来优化参数，但是他要求所有的输入和输出均是向量，我们在神经网络中使用的时候只能把Theta矩阵和Gradient矩阵进行向量化</p><ul><li>size(Theta1) = 10 * 11</li><li>size(Theta2) = 10 * 11</li><li>size(Theta3) = 1 * 11<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]</div><div class="line">deltaVector = [ D1(:); D2(:); D3(:) ]</div></pre></td></tr></table></figure></li></ul><p>恢复为矩阵<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Theta1 = reshape(thetaVector(1:110),10,11)</div><div class="line">Theta2 = reshape(thetaVector(111:220),10,11)</div><div class="line">Theta3 = reshape(thetaVector(221:231),1,11)</div></pre></td></tr></table></figure></p><h2 id="梯度计算结果校验"><a href="#梯度计算结果校验" class="headerlink" title="梯度计算结果校验"></a>梯度计算结果校验</h2><p>反向传播算法复杂多变，我们使用导数的定义来校验反向传播得到的结果是否正确(相差很小)，当确定正确之后关掉梯度校验。因为他很 <strong>慢</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">epsilon = 1e-4;</div><div class="line">for i = 1:n,</div><div class="line">  thetaPlus = theta;</div><div class="line">  thetaPlus(i) += epsilon;</div><div class="line">  thetaMinus = theta;</div><div class="line">  thetaMinus(i) -= epsilon;</div><div class="line">  gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)</div><div class="line">end;</div></pre></td></tr></table></figure><h2 id="随机初始化"><a href="#随机初始化" class="headerlink" title="随机初始化"></a>随机初始化</h2><p>为了避免神经网络因为相同的Theta而陷入冗余的计算，范围是[-INIT_EPSILON,INIT_EPSILON]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.</div><div class="line"></div><div class="line">Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div><div class="line">Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div><div class="line">Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div></pre></td></tr></table></figure></p><h2 id="网络选择-的步骤"><a href="#网络选择-的步骤" class="headerlink" title="网络选择 的步骤"></a>网络选择 的步骤</h2><ul><li>Number of input units = dimension of features x(i)</li><li>Number of output units = number of classes</li><li>Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)</li><li>Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.<h2 id="网络训练的步骤"><a href="#网络训练的步骤" class="headerlink" title="网络训练的步骤"></a>网络训练的步骤</h2></li><li>Randomly initialize the weights</li><li>Implement forward propagation to get hΘ(x<sup>(i)</sup>) for any x<sup>(i)</sup></li><li>Implement the cost function</li><li>Implement backpropagation to compute partial derivatives</li><li>Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.</li><li>Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.</li></ul><p>When we perform forward and back propagation, we loop on every training example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for i = 1:m,</div><div class="line">   Perform forward propagation and backpropagation using example (x(i),y(i))</div><div class="line">   (Get activations a(l) and delta terms d(l) for l = 2,...,L</div></pre></td></tr></table></figure></p><p>(There are m training sets)</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;a在这里表示神经网络中的神经元&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;分类&quot;&gt;&lt;a href=&quot;#分类&quot; class=&quot;headerlink&quot; title=&quot;分类&quot;&gt;&lt;/a&gt;分类&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;二元分类(Binary classificati
-      
-    
-    </summary>
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/categories/machine-learning/"/>
-    
-    
-      <category term="machine-learning" scheme="http://blog.huhaobin.cn/tags/machine-learning/"/>
     
   </entry>
   

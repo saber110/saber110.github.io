@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[计算机网络]]></title>
+    <url>%2F2019%2F04%2F04%2Fcomputernetworking1%2F</url>
+    <content type="text"><![CDATA[概述 计算机网络就是互连的、自治的计算机集合 通过交换网络进行互连 交换 动态转接 动态资源分配和传输 电路交换（电路建立—数据传输—电路拆除） 多路复用 频分复用（FDM）— 同轴电缆 时分复用（TDM) — 时间分帧、分片 码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列 每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1; 波分复用（光的频分复用） 报文交换 一次将一个报文全部传输 存储转发整个报文 分组交换 报文的拆分和重组 产生额外开销 存储转发小分组 便于实现统计复用 由于流水线技术，速度比报文交换要快，硬件要求要低 适用于突发数据传输 充分利用资源 无需建立电路 分组延迟 结点处理延迟 123差错控制确定输出链路通常小于msec 排队延迟 12等待输出链路可用取决与路由器的当前拥塞状态 传输延迟（发送一个分组所需要的时间） 12分组长度链路宽度 传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟） 协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务 计算机网络结构是分层的（软件和硬件） OSI参考模型 七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层 一般主机需要实现所有层，路由器只需要实现最基本的三层 数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，并且数据链路层加帧头和帧尾 数据封装的目的 差错检测 地址信息 协议控制 物理层（解决单一比特的传输问题） 接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信） 数据链路层（结点到结点的数据传输） 组帧（便于接受信息） 物理寻址（物理层不能寻址） 流量控制（匹配发送和接受速度） 差错控制 接入控制（访问控制） 网络层 逻辑寻址（ip）—全局的唯一逻辑地址 路由 分组转发 传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输） 报文的分段和重组 SAP寻址（保证交给正确的进程） 可以实现端到端的链接控制，流量控制，差错控制 会话层（主要负责对话管理，同步等） 不单独存在 表示层（处理两个系统之间交换信息的语法和语义问题） 数据表示转化（大小端） 加解密，压缩，解压缩 不单独存在 应用层 TCP/IP参考模型 网络接口层、网际层、运输层、应用层 Everything over IP 5层参考模型 物理层 数据链路层 网络层（源到目的的数据分组路由和转发） 传输层（TCP、UDP）{进程之间的通信} 应用层（支持各种网络应用）]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>自顶向下方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[复试]]></title>
     <url>%2F2019%2F03%2F01%2Foj%2F</url>
     <content type="text"><![CDATA[sortbool ZuSort(testee t1, testee t2) {if(t1.score == t2.score) return t1.id &lt; t2.id;return t1.score &gt; t2.score;}sort(result, result + resultPos, ZuSort); // result[MAX] 时间、日期等周期性数据应该从最小位自加，逐步控制更高一层的周期 空间换取时间：(散列) 查找集合N 中的元素在集合M{2,6,7}中是否出现以及出现的次数 可以用bool M[MAX], M[2] = true; M[6] = true; M[7] = true; 求出现的次数时，可以用int M[MAX], M[2] ++; M[6] ++; M[7] ++; 老哥，一定要记得多组数组共享变量的清零 利用printf(“%.2f\n” ,ans);格式化输出保留小数点两位 所有单调性函数求解问题都可以用二分法 最大公约数用辗转相除法 12gcd(a, b) = gcd(b, a%b);gcd(a, 0) = a 最小公倍数的计算 1lcm(a, b) = (a/ gcd(a, b)) * b; 分数表示 123struct franction &#123;long long up, down;&#125; 我们约定，若分母(down)小于0,则令分子，分母为本身的相反数约分即是分子分母同除以他们的最大公约数若分子为0，则令分母为1带分数：整数部分是up/down, 分子是abs(up)%down, 分母是down 求素数的方法: 方法一： 如果n对i, (i 属于[2,sqrt(n)]) 有约数（余数为0），则n不是素数 如果n对i, (i 属于[2,sqrt(n)]) 没有约数（余数不为0），则n是素数 方法二： 最小的素数的倍数肯定不是素数 2是素数 循环筛选 求质因子的方法质因子要么全部在[2,sqrt(n)]， 要么只有一个在[sqrt(n), n]。将前面的小于sqrt(n)的质因子全部除掉，剩下的如果！=1，那就是大于sqrt（n）的唯一的质因子 vector是一个边长数组set是一个内部自动有序（递增）且不含重复元素的容器set只能通过迭代器来访问， set::iterator it // 通过* it访问内容 multiset可以处理元素不唯一的情况unordered_set 处理只去重但不排序的需求，速度比set快得多 除了vector和string之外的STL都不支持*(it + i)这种形式，只能通过图iteratorBianli.png形式来访问，其他STL的各种操作都要通过迭代器来实现 map可以通过it-&gt;first来访问键，it-&gt;second 来访问值。并且map内部会自动按键从小到大排列， unordered_map 用来处理只映射而不排序的需求（用散列代替map中的红黑树） queue在top/pop前要先判断是否为空， pair可以将两个元素绑在一起合成一个新的元素 需要include 或者 可以使用p.first p.second来访问 可以用作二维排序，一维相等时比较第二维 pair可以用作map的插入键值对 algorithm头文件下的有用函数 max(x,y) min(x,y) abs(x) // 对整数求绝对值 fabs(x) // 对浮点数求绝对值 swap(x,y) //交换xy的值 find(x,y,c) // [x,y)查找元素c reverse(it,it2) //将数组指针或者迭代器在[it,it2)之间的数组元素或者容器元素进行反转(逆序) next_permutation(&amp;begin, &amp;end) // 给出序列[begin,end)在全排列中的下一个序列 fill() // 可以把容器或数组某一段区间赋为某个相同的值 对容器进行sort时，参数类型用容器的类型就好(对容器里面的元素进行排序)，实参一般要用迭代器 lower_bound(first, last, value) // 寻找数组或容器的[first, last)范围内第一个值大于或等于 value的元素的位置，返回指针或迭代器 upper_bound(first, last, value) // 寻找数组或容器的[first, last)范围内第一个值大于 value的元素的位置，返回指针或迭代器 求联通分量的个数或者树的个数用并查集 错排公式1F(n) = (n-1)*F(n-1) + (n-1)*F(n-2) 主要数据结构的实现 哈夫曼树1priority_queue&lt;int , vector&lt;int&gt; , greater&lt;int&gt; &gt; Q; 哈夫曼代价 1ans += a + b; 最小生成树可以用并查集实现 BFS 一般用来求解最优解问题 将n元问题建模为n+1（自变量加结果）元问题的状态变化，通常需要一个n+1元结构体来做状态寄存；和一个原数据存储变量一般每个样本点只用处理一次，注意处理次数和样品条件的剪枝 DFS 一般用来求解是否有解 是按层进行搜索和便历，故参数应该传层，递归的时候应该是层数加一，数据应该是本层数据取值i]]></content>
@@ -77,6 +88,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2018%2F09%2F24%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2018%2F09%2F24%2Flib_int%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -86,11 +102,6 @@
       <tags>
         <tag>AD</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2018%2F09%2F24%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[ci library]]></title>
@@ -516,14 +527,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[AutoStartInUbuntuMate]]></title>
     <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
     <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
@@ -532,9 +535,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[树莓派连接隐藏wifi]]></title>
-    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
-    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -562,6 +565,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2017%2F06%2F13%2Finitlib%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -578,6 +589,14 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[cordova开发安卓]]></title>
+    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
+    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
+      <categories>
+        <category>安卓</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[计算机算法 C++描述]]></title>
     <url>%2F2017%2F04%2F17%2FComputerAlgorithms%2F</url>
     <content type="text"></content>
@@ -587,14 +606,6 @@
       <tags>
         <tag>计算机算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[cordova开发安卓]]></title>
-    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
-    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
-      <categories>
-        <category>安卓</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[c_multipthread]]></title>
