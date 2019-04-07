@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[计算机网络]]></title>
+    <title></title>
+    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
+    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[计算机网络2]]></title>
+    <url>%2F2019%2F04%2F07%2Fcomputernetworking2%2F</url>
+    <content type="text"><![CDATA[应用层 网络应用的体系结构 客户机/服务器（c/s） peer to peer (点对点结构) 混合结构 TCP/UDP区别 HTTP 采用无状态的机制（服务器不维护任何有关客户端过去所请求的消息） 采用请求/响应的模式 使用TCP传输 持久性连接 非持久性连接 每个tcp连接只允许传送一个对象 允许传送多个对象 HTTP1.0 HTTP1.1 代理服务器与远程服务器之间的更新 条件性GET（如果缓存有最新的版本则不需要发送请求对象） 在HTTP请求消息中声明所持有版本的日期 1If-modified-since &lt;date&gt; SMTP(邮件) 采用TCP（可靠）持久性连接 通过ASCII采用命令/响应的模式 端口25 用MIME进行消息内容扩展，使其可以传输非ASCII数据（二进制、多媒体） DNS 是一个多层命名服务器构成的分布式数据库（为什么不用集中式） 单点失败 流量问题 距离问题 维护性问题 应用层协议：完成名字的解析（在应用层实现Internet的核心服务） 域名解析过程 向本地域名服务器请求，若本地不知道则直接请求根域名服务器 根域名服务器一般不知道，则返回顶级域名服务器（.com/.cn/.org…..) 全球总共有13个根域名服务器 域名服务器 根域名服务器 顶级域名服务器（负责.com/.cn/.org…..） 权威域名服务器（组织的域名服务器，提供组织内部服务器的解析服务） 本地域名解析服务器 每个ISP都有默认的本地域名服务器 作为代理去查询分层式域名服务器 DNS查询 迭代查询（本地域名服务器负责根据指示依次查询域名服务器） 递归查询（本地域名服务器只向根域名服务器请求，根域名服务器再去请求顶级域名服务器，顶级再去查询权威，然后将结果依次返回） DNS缓存和更新 只要域名解析服务器获得一个新的域名-ip映射，即缓存这一映射 本地域名服务器一般会缓存顶级域名服务器（根域名服务器一般不会被访问） DNS记录（资源记录 Resource Record) format:(name, value, type, ttl) type = A name 主机域名 value ip地址 type = NS name：域（edu.cn) value:该域权威域名解析服务器的主机域名） type = cname name ：某一真实域名的别名 value：真实域名 type = MX value是于name相对应的邮件服务器 DNS协议（查询/回复） P2P 纯p2p架构 没有服务器 任意端系统之间直接通信 节点阶段性接入internet 节点可能更换ip地址 多用户同时下载时性能比C/S优（C/S随着用户数增加耗时线性增长，p2p则是有个阈值） p2p例子：BitTorrent 下载的同时进行发送（可以发送自己的，也可以发送刚刚下载的） 稀缺文件优先下载（防止端系统离开） 上传 向给自己发送的4个需要下载的端系统发送数据 每10s重新评估top4 每30s随机选择一个其他结点，向其发送 索引技术 集中式索引 单点失败 性能瓶颈 法律 完全分布式索引 完全分布式架构 每个节点对他共享的文件且只对他共享的文件进行索引 用覆盖网络实现全局性文件搜索 采用洪泛式查询，查询命中之后反向回传 层次式覆盖网络 介于集中式索引和洪泛式查询的方法 每个结点或者是一个超级结点，或者被分配一个超级节点 节点和超级节点之间维持TCP 某些超级节点对之间维持TCP 普通节点向超级节点请求查询 超级节点之间使用洪泛式查询 超级节点负责跟踪字节点的内容 危害 对硬盘的损坏（高温、重复读写、扇区损坏） 占用网络带宽资源 助长病毒传播 盗版 覆盖网络 节点X与节点Y之间若有TCP连接那么构成一条边 所有活动的节点和边构成覆盖网络 节点一般邻居数少于十个 结尾]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>自顶向下方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[计算机网络1]]></title>
     <url>%2F2019%2F04%2F04%2Fcomputernetworking1%2F</url>
     <content type="text"><![CDATA[概述 计算机网络就是互连的、自治的计算机集合 通过交换网络进行互连 交换 动态转接 动态资源分配和传输 电路交换（电路建立—数据传输—电路拆除） 多路复用 频分复用（FDM）— 同轴电缆 时分复用（TDM) — 时间分帧、分片 码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列 每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1; 波分复用（光的频分复用） 报文交换 一次将一个报文全部传输 存储转发整个报文 分组交换 报文的拆分和重组 产生额外开销 存储转发小分组 便于实现统计复用 由于流水线技术，速度比报文交换要快，硬件要求要低 适用于突发数据传输 充分利用资源 无需建立电路 分组延迟 结点处理延迟 123差错控制确定输出链路通常小于msec 排队延迟 12等待输出链路可用取决与路由器的当前拥塞状态 传输延迟（发送一个分组所需要的时间） 12分组长度链路宽度 传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟） 协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务 计算机网络结构是分层的（软件和硬件） OSI参考模型 七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层 一般主机需要实现所有层，路由器只需要实现最基本的三层 数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，并且数据链路层加帧头和帧尾 数据封装的目的 差错检测 地址信息 协议控制 物理层（解决单一比特的传输问题） 接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信） 数据链路层（结点到结点的数据传输） 组帧（便于接受信息） 物理寻址（物理层不能寻址） 流量控制（匹配发送和接受速度） 差错控制 接入控制（访问控制） 网络层 逻辑寻址（ip）—全局的唯一逻辑地址 路由 分组转发 传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输） 报文的分段和重组 SAP寻址（保证交给正确的进程） 可以实现端到端的链接控制，流量控制，差错控制 会话层（主要负责对话管理，同步等） 不单独存在 表示层（处理两个系统之间交换信息的语法和语义问题） 数据表示转化（大小端） 加解密，压缩，解压缩 不单独存在 应用层 TCP/IP参考模型 网络接口层、网际层、运输层、应用层 Everything over IP 5层参考模型 物理层 数据链路层 网络层（源到目的的数据分组路由和转发） 传输层（TCP、UDP）{进程之间的通信} 应用层（支持各种网络应用）]]></content>
       <categories>
@@ -117,17 +133,17 @@
     <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C 语言不能省略形参，即使不使用 C语言的数据存储空间 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆） 局部变量在return之后出栈销毁，不要尝试返回局部指针地址 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同 占用空间小的转化为占用空间大的： 考虑内存越界访问 结构体强制转换 ： 考虑字节对齐 字符串 通过索引读取字符串时，一定要判断索引的正确性 多线程编程 互斥量用来对临界区的互斥进入 条件变量用于线程的阻塞等待 指针 12345int * p = NULL;&amp;p 表示p的地址p 表示变量p的内容*p 表示p指向的存储单元的内容 数字0是唯一能输给指针的数值(相当于NULL) void * :指向任何类型的指针 注意深复制和浅复制的区别浅复制12345int *p, *q;*p = 58;q = p; // q 和 P 指向同一内存单元free(q);printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放 动态变量 在程序运行过程中产生的变量称为动态变量 创建 123int * p; char *q;p = new int; // 在内存中创建一个变量，存储所分配的内存地址到p中q = new char[19]; // 在内存中创建一个数组，并将数组地址存储到q中 使用 12*p = 28;*q = &quot;hello&quot;; 销毁 12delete p;delete [] q; 动态数组 创建 12int *p;p = new int[10]; 使用 123* p = 25; //25存到第一个存储空间里 = p[0] = 25；p ++;* p = 35; //35存到第二个存储空间里 = p[1] = 35；]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>%2F2018%2F09%2F24%2FUnistallPip%2F</url>
-    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[socksV5转化为http代理]]></title>
     <url>%2F2018%2F09%2F24%2Fsockstohttp%2F</url>
     <content type="text"><![CDATA[使用工具 privoxy 安装1apt-get install privoxy 更改配置1vim /etc/privoxy/config 并在里面添加1forward-socks5 / 127.0.0.1:1080 . 重启服务1service privoxy restart 给系统设置http代理1vim ~/.bashrc 添加1export http_proxy=http://127.0.0.1:8118/ 使更改生效1source ~/.bashrc]]></content>
       <categories>
         <category>代理</category>
       </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F09%2F24%2FUnistallPip%2F</url>
+    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
   </entry>
   <entry>
     <title></title>
@@ -245,9 +261,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux定时执行任务]]></title>
-    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
-    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
+    <title><![CDATA[linux网络连接后执行脚本]]></title>
+    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
+    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -256,9 +272,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux网络连接后执行脚本]]></title>
-    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
-    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
+    <title><![CDATA[linux定时执行任务]]></title>
+    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
+    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -319,17 +335,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[编程珠玑]]></title>
-    <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
-    <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[进程间通信]]></title>
     <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
     <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
@@ -338,6 +343,17 @@
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[编程珠玑]]></title>
+    <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
+    <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -508,25 +524,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[mysqlInstallation]]></title>
-    <url>%2F2017%2F10%2F10%2FmysqlInstallation%2F</url>
-    <content type="text"><![CDATA[问题阐述最近mysql进行了大面积的更新,内置的数据库存储器换成了mariaDB,但是大公司的更新怎么会没有大坑呢,他们更新完之后在安装过程中不会让你设置root用户的密码,但是密码在哪儿呢,据说是在某个文件里存着(当然这是PC机的特权). 方法步骤 删除数据库文件 1rm -r /etc/mysql 安装 1spt install mysql_server 初始化数据库(先别在里面设置root用户的密码) 1mysql_secure_installation 登录数据库 1sudo mysql -u root -p 大坑标注:必须使用sudo,不使用su权限根本进不去,默认是空密码(对于树莓派) 删除原有的root用户 1DROP USER &apos;root&apos;@&apos;localhost&apos;; 创建root账户(先别设置密码) 1CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;; 设置root用户权限(设置密码) 1GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;; 刷新权限表 1FLUSH PRIVILEGES; 多说一句5.6步如果省略就算更改密码之后也只能用su权限链接,删除重新添加之后就所有用户都可以链接了(迷)]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[AutoStartInUbuntuMate]]></title>
     <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
     <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
@@ -543,15 +540,23 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[hexo个人博客的搭建]]></title>
-    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
-    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+    <title><![CDATA[mysqlInstallation]]></title>
+    <url>%2F2017%2F10%2F10%2FmysqlInstallation%2F</url>
+    <content type="text"><![CDATA[问题阐述最近mysql进行了大面积的更新,内置的数据库存储器换成了mariaDB,但是大公司的更新怎么会没有大坑呢,他们更新完之后在安装过程中不会让你设置root用户的密码,但是密码在哪儿呢,据说是在某个文件里存着(当然这是PC机的特权). 方法步骤 删除数据库文件 1rm -r /etc/mysql 安装 1spt install mysql_server 初始化数据库(先别在里面设置root用户的密码) 1mysql_secure_installation 登录数据库 1sudo mysql -u root -p 大坑标注:必须使用sudo,不使用su权限根本进不去,默认是空密码(对于树莓派) 删除原有的root用户 1DROP USER &apos;root&apos;@&apos;localhost&apos;; 创建root账户(先别设置密码) 1CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;; 设置root用户权限(设置密码) 1GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;; 刷新权限表 1FLUSH PRIVILEGES; 多说一句5.6步如果省略就算更改密码之后也只能用su权限链接,删除重新添加之后就所有用户都可以链接了(迷)]]></content>
       <categories>
-        <category>hexo</category>
+        <category>树莓派</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>mysql</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
@@ -571,6 +576,17 @@
       <categories>
         <category>树莓派</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo个人博客的搭建]]></title>
+    <url>%2F2017%2F09%2F30%2Fblogofhexo%2F</url>
+    <content type="text"><![CDATA[搭建 最讨厌的就是原封不动的抄别人,所以我直接用别人的1http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/ 备注: window10/windows8/Linux 均可以搭建在本地进行测试在source目录下面新建CNAME文件,内容为自己独立的域名在弄完解析之后就可以通过自己的域名访问了 markdown 书写语法 1http://www.jianshu.com/p/q81RER sublime text markdown 插件 1http://www.jianshu.com/p/aa30cc25c91b 写作 在./source/_posts里面新建.md文件,用markdown语法写文件 更新到git pages 12341. hexo clean #清除hexo缓存2. hexo g #产生静态文件3. hexo s #开启本地服务器以供测试4. hexo d #将网站上传到git,进行远程使用 使用分类和标签功能 新建分类1hexo new page categories 执行完之后会在source/categories里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "categories"--- 新建标签1hexo new page tags 执行完之后会在source/tags里面生成index.md里面的内容应该完善为 12345---title: 未分类date: 2017-09-30 13:28:39type: "tags"---]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -635,17 +651,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[服务器操作规范]]></title>
-    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
-    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>服务器操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[shell]]></title>
     <url>%2F2016%2F12%2F15%2Fshell%2F</url>
     <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
@@ -654,6 +659,17 @@
       </categories>
       <tags>
         <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器操作规范]]></title>
+    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
+    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>服务器操作</tag>
       </tags>
   </entry>
   <entry>

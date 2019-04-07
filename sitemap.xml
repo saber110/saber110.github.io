@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking2/</loc>
+    
+    <lastmod>2019-04-07T08:59:09.283Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.huhaobin.cn/2019/04/04/computernetworking1/</loc>
     
-    <lastmod>2019-04-06T14:00:39.539Z</lastmod>
+    <lastmod>2019-04-07T00:25:23.232Z</lastmod>
     
   </url>
   
@@ -40,6 +47,13 @@
     <loc>http://blog.huhaobin.cn/2018/11/02/ssr/</loc>
     
     <lastmod>2018-11-01T15:30:08.205Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2019/04/07/boot%20partition%20is%20not%20enough/</loc>
+    
+    <lastmod>2018-09-23T07:53:33.069Z</lastmod>
     
   </url>
   
@@ -604,7 +618,21 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
+    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
@@ -625,21 +653,7 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2017/06/12/record-of-long-time-learning/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2016/10/18/raspberry-fingerprint/</loc>
+    <loc>http://blog.huhaobin.cn/2016/11/17/file/</loc>
     
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
