@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2018-09-23T07:53:33.069Z</updated>
+  <updated>2019-04-08T01:03:13.457Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -18,18 +18,18 @@
   
   <entry>
     <title></title>
-    <link href="http://blog.huhaobin.cn/2019/04/07/boot%20partition%20is%20not%20enough/"/>
-    <id>http://blog.huhaobin.cn/2019/04/07/boot partition is not enough/</id>
-    <published>2019-04-07T08:56:49.663Z</published>
-    <updated>2018-09-23T07:53:33.069Z</updated>
+    <link href="http://blog.huhaobin.cn/2019/04/08/ubuntu_Firefox_play_HTML5_vedio/"/>
+    <id>http://blog.huhaobin.cn/2019/04/08/ubuntu_Firefox_play_HTML5_vedio/</id>
+    <published>2019-04-08T01:03:13.457Z</published>
+    <updated>2019-04-08T01:03:13.457Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="how-to-expend-the-capicity-of-boot-partition-in-linux"><a href="#how-to-expend-the-capicity-of-boot-partition-in-linux" class="headerlink" title="how to expend the capicity of /boot partition in linux"></a>how to expend the capicity of /boot partition in linux</h3><ol><li>use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon</li><li>copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt</li><li>click the old /boot prtition in Disks, click buttons as following<br> “More actions” signed by a gear<br> “Edit Mount Options…”, meanwhile, wtrite the config down for later<br> uncheck “Mount at Startup”<br> modify “Mount Point” to something else, such as “/boot_old”<br> and click OK</li><li>click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following<br> “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change<br> “Edit Mount Options…” copy the config form old one<br> OK</li></ol><p>and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure:</p><p>installation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y boot-repair &amp;&amp; boot-repair</div></pre></td></tr></table></figure></p><p>Recommended repair<br>launch Boot-Repair from either :<br>the Dash (the Ubuntu logo at the top-left of the screen)<br>or by typing ‘boot-repair’ in a terminal<br>Then click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs.</p><p>If the repair did not succeed, indicate the URL to people who help you by email or forum.</p><p>if you have trouble in booting, if you computer is booted by grub2, here is you solutions:</p><ol><li>ls<br>find the boot file location </li><li>set root = (hd0, gpt0)<br>(hd0,gpt0) is your boot file location</li><li>linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0<br>/dev/sda0 is your root location</li><li>initrd /path/to/your/bootfile(initrd*)</li><li>boot</li></ol><p>now you can boot your computer.</p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: ubuntu下firefox播放HTML5视频</div><div class="line">categories:</div><div class="line">  - linux</div><div class="line">date: 2019-4-8 11:19:32</div><div class="line">tags: linux, ubuntu</div></pre></td></tr></table></figure><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>chrome内存吃的太狠，渣笔记本带的很吃力，但是用中国大学mooc不能正常观看教学视频，报错不能正常播放视频[code:6]。</p><h2 id="缺少组件"><a href="#缺少组件" class="headerlink" title="缺少组件"></a>缺少组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install ubuntu-restricted-extras</div></pre></td></tr></table></figure><h2 id="ubuntu-restricted-extras"><a href="#ubuntu-restricted-extras" class="headerlink" title="ubuntu-restricted-extras"></a>ubuntu-restricted-extras</h2><p>通俗来说就是ubuntu下的一些支持库，他可以帮助改善MP3、vedio、DVD等的体验，也可以获得windows下的字体体验和FLASH之类的功能</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
       
     
     </summary>
@@ -42,9 +42,9 @@
     <link href="http://blog.huhaobin.cn/2019/04/07/computernetworking2/"/>
     <id>http://blog.huhaobin.cn/2019/04/07/computernetworking2/</id>
     <published>2019-04-06T16:00:00.000Z</published>
-    <updated>2019-04-07T08:59:09.283Z</updated>
+    <updated>2019-04-08T02:44:56.704Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><ol><li>网络应用的体系结构<ul><li>客户机/服务器（c/s）</li><li>peer to peer (点对点结构)</li><li>混合结构</li></ul></li><li>TCP/UDP区别<br> <img src="/image/udp_tcp.jpg" alt="tcp/udp"></li><li>HTTP<ul><li>采用无状态的机制（服务器不维护任何有关客户端过去所请求的消息）</li><li>采用请求/响应的模式</li><li>使用TCP传输</li></ul></li></ol><table><thead><tr><th>持久性连接</th><th>非持久性连接</th></tr></thead><tbody><tr><td>    每个tcp连接只允许传送一个对象</td><td>允许传送多个对象</td></tr><tr><td>    HTTP1.0</td><td>HTTP1.1</td></tr></tbody></table><ol><li><p>代理服务器与远程服务器之间的更新</p><ul><li>条件性GET（如果缓存有最新的版本则不需要发送请求对象）<br> 在HTTP请求消息中声明所持有版本的日期 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">If-modified-since &lt;date&gt;</div></pre></td></tr></table></figure></li></ul></li><li><p>SMTP(邮件)</p><ul><li>采用TCP（可靠）持久性连接</li><li>通过ASCII采用命令/响应的模式</li><li>端口25</li><li>用MIME进行消息内容扩展，使其可以传输非ASCII数据（二进制、多媒体）</li></ul></li><li><p>DNS</p><ol><li><p>是一个<em>多层</em>命名服务器构成的<em>分布式</em>数据库（为什么不用集中式）</p><ul><li>单点失败</li><li>流量问题</li><li>距离问题</li><li>维护性问题</li></ul></li></ol><ul><li>应用层协议：完成名字的解析（在应用层实现Internet的核心服务）</li><li>域名解析过程<ul><li>向本地域名服务器请求，若本地不知道则直接请求根域名服务器</li><li>根域名服务器一般不知道，则返回顶级域名服务器（.com/.cn/.org…..)</li></ul></li><li>全球总共有13个根域名服务器</li><li>域名服务器<ul><li>根域名服务器</li><li>顶级域名服务器（负责.com/.cn/.org…..）</li><li>权威域名服务器（组织的域名服务器，提供组织内部服务器的解析服务）</li><li>本地域名解析服务器<ul><li>每个ISP都有默认的本地域名服务器</li><li>作为代理去查询分层式域名服务器</li></ul></li><li>DNS查询<ul><li>迭代查询（本地域名服务器负责根据指示依次查询域名服务器）</li><li>递归查询（本地域名服务器只向根域名服务器请求，根域名服务器再去请求顶级域名服务器，顶级再去查询权威，然后将结果依次返回）</li></ul></li><li>DNS缓存和更新<ul><li>只要域名解析服务器获得一个新的域名-ip映射，即缓存这一映射</li><li>本地域名服务器一般会缓存顶级域名服务器（根域名服务器一般不会被访问）</li></ul></li></ul></li><li>DNS记录（资源记录 Resource Record)<ul><li>format:(name, value, type, ttl)</li><li>type = A<ul><li>name 主机域名</li><li>value ip地址</li></ul></li><li>type = NS<ul><li>name：域（edu.cn)</li><li>value:该域权威域名解析服务器的主机域名）</li></ul></li><li>type = cname<ul><li>name ：某一真实域名的别名</li><li>value：真实域名</li></ul></li><li>type = MX<ul><li>value是于name相对应的邮件服务器</li></ul></li></ul></li><li>DNS协议（查询/回复）</li></ul></li></ol><h2 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h2><ol><li>纯p2p架构<ul><li>没有服务器</li><li>任意端系统之间直接通信</li><li>节点阶段性接入internet</li><li>节点可能更换ip地址</li><li>多用户同时下载时性能比C/S优（C/S随着用户数增加耗时线性增长，p2p则是有个阈值）</li></ul></li><li>p2p例子：BitTorrent<ul><li>下载的同时进行发送（可以发送自己的，也可以发送刚刚下载的）</li><li>稀缺文件优先下载（防止端系统离开）</li><li>上传<ul><li>向给自己发送的4个需要下载的端系统发送数据</li><li>每10s重新评估top4</li><li>每30s随机选择一个其他结点，向其发送</li></ul></li></ul></li><li><p>索引技术</p><ol><li><p>集中式索引</p><ul><li>单点失败</li><li>性能瓶颈</li><li>法律</li></ul></li><li><p>完全分布式索引</p><ul><li>完全分布式架构</li><li>每个节点对他共享的文件且只对他共享的文件进行索引</li><li>用<a href="#jump">覆盖网络</a>实现全局性文件搜索</li><li>采用洪泛式查询，查询命中之后反向回传</li></ul></li><li><p>层次式覆盖网络</p><ul><li>介于集中式索引和洪泛式查询的方法</li><li>每个结点或者是一个超级结点，或者被分配一个超级节点</li><li>节点和超级节点之间维持TCP</li><li>某些超级节点对之间维持TCP<ul><li>普通节点向超级节点请求查询</li><li>超级节点之间使用洪泛式查询</li></ul></li><li>超级节点负责跟踪字节点的内容</li></ul></li></ol></li><li><p>危害</p><ul><li>对硬盘的损坏（高温、重复读写、扇区损坏）</li><li>占用网络带宽资源</li><li>助长病毒传播</li><li>盗版</li></ul></li><li><p><span id="jump">覆盖网络<span></span></span></p><ul><li>节点X与节点Y之间若有TCP连接那么构成一条边</li><li>所有活动的节点和边构成覆盖网络</li><li>节点一般邻居数少于十个</li></ul></li></ol><p>结尾</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><ol><li>网络应用的体系结构<ul><li>客户机/服务器（c/s）</li><li>peer to peer (点对点结构)</li><li>混合结构</li></ul></li><li>TCP/UDP区别<br> <img src="/image/udp_tcp.jpg" alt="tcp/udp"></li><li>HTTP<ul><li>采用无状态的机制（服务器不维护任何有关客户端过去所请求的消息）</li><li>采用请求/响应的模式</li><li>使用TCP传输</li></ul></li></ol><table><thead><tr><th>持久性连接</th><th>非持久性连接</th></tr></thead><tbody><tr><td>    每个tcp连接只允许传送一个对象</td><td>允许传送多个对象</td></tr><tr><td>    HTTP1.0</td><td>HTTP1.1</td></tr></tbody></table><ol><li><p>代理服务器与远程服务器之间的更新</p><ul><li>条件性GET（如果缓存有最新的版本则不需要发送请求对象）<br> 在HTTP请求消息中声明所持有版本的日期 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">If-modified-since &lt;date&gt;</div></pre></td></tr></table></figure></li></ul></li><li><p>SMTP(邮件)</p><ul><li>采用TCP（可靠）持久性连接</li><li>通过ASCII采用命令/响应的模式</li><li>端口25</li><li>用MIME进行消息内容扩展，使其可以传输非ASCII数据（二进制、多媒体）</li></ul></li><li><p>DNS</p><ol><li><p>是一个<em>多层</em>命名服务器构成的<em>分布式</em>数据库（为什么不用集中式）</p><ul><li>单点失败</li><li>流量问题</li><li>距离问题</li><li>维护性问题</li></ul></li></ol><ul><li>应用层协议：完成名字的解析（在应用层实现Internet的核心服务）</li><li>域名解析过程<ul><li>向本地域名服务器请求，若本地不知道则直接请求根域名服务器</li><li>根域名服务器一般不知道，则返回顶级域名服务器（.com/.cn/.org…..)</li></ul></li><li>全球总共有13个根域名服务器</li><li>域名服务器<ul><li>根域名服务器</li><li>顶级域名服务器（负责.com/.cn/.org…..）</li><li>权威域名服务器（组织的域名服务器，提供组织内部服务器的解析服务）</li><li>本地域名解析服务器<ul><li>每个ISP都有默认的本地域名服务器</li><li>作为代理去查询分层式域名服务器</li></ul></li><li>DNS查询<ul><li>迭代查询（本地域名服务器负责根据指示依次查询域名服务器）</li><li>递归查询（本地域名服务器只向根域名服务器请求，根域名服务器再去请求顶级域名服务器，顶级再去查询权威，然后将结果依次返回）</li></ul></li><li>DNS缓存和更新<ul><li>只要域名解析服务器获得一个新的域名-ip映射，即缓存这一映射</li><li>本地域名服务器一般会缓存顶级域名服务器（根域名服务器一般不会被访问）</li></ul></li></ul></li><li>DNS记录（资源记录 Resource Record)<ul><li>format:(name, value, type, ttl)</li><li>type = A<ul><li>name 主机域名</li><li>value ip地址</li></ul></li><li>type = NS<ul><li>name：域（edu.cn)</li><li>value:该域权威域名解析服务器的主机域名）</li></ul></li><li>type = cname<ul><li>name ：某一真实域名的别名</li><li>value：真实域名</li></ul></li><li>type = MX<ul><li>value是于name相对应的邮件服务器</li></ul></li></ul></li><li>DNS协议（查询/回复）</li></ul></li></ol><h2 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h2><ol><li>纯p2p架构<ul><li>没有服务器</li><li>任意端系统之间直接通信</li><li>节点阶段性接入internet</li><li>节点可能更换ip地址</li><li>多用户同时下载时性能比C/S优（C/S随着用户数增加耗时线性增长，p2p则是有个阈值）</li></ul></li><li>p2p例子：BitTorrent<ul><li>下载的同时进行发送（可以发送自己的，也可以发送刚刚下载的）</li><li>稀缺文件优先下载（防止端系统离开）</li><li>上传<ul><li>向给自己发送的4个需要下载的端系统发送数据</li><li>每10s重新评估top4</li><li>每30s随机选择一个其他结点，向其发送</li></ul></li></ul></li><li><p>索引技术</p><ol><li><p>集中式索引</p><ul><li>单点失败</li><li>性能瓶颈</li><li>法律</li></ul></li><li><p>完全分布式索引</p><ul><li>完全分布式架构</li><li>每个节点对他共享的文件且只对他共享的文件进行索引</li><li>用<a href="#jump">覆盖网络</a>实现全局性文件搜索</li><li>采用洪泛式查询，查询命中之后反向回传</li></ul></li><li><p>层次式覆盖网络</p><ul><li>介于集中式索引和洪泛式查询的方法</li><li>每个结点或者是一个超级结点，或者被分配一个超级节点</li><li>节点和超级节点之间维持TCP</li><li>某些超级节点对之间维持TCP<ul><li>普通节点向超级节点请求查询</li><li>超级节点之间使用洪泛式查询</li></ul></li><li>超级节点负责跟踪字节点的内容</li></ul></li></ol></li><li><p>危害</p><ul><li>对硬盘的损坏（高温、重复读写、扇区损坏）</li><li>占用网络带宽资源</li><li>助长病毒传播</li><li>盗版</li></ul></li><li><p><span id="jump">覆盖网络<span></span></span></p><ul><li>节点X与节点Y之间若有TCP连接那么构成一条边</li><li>所有活动的节点和边构成覆盖网络</li><li>节点一般邻居数少于十个</li></ul></li></ol><h2 id="socket编程"><a href="#socket编程" class="headerlink" title="socket编程"></a>socket编程</h2><ol><li>套接字使用时不用指定端口号，由操作系统负责分配和管理，用套接子描述符即可</li><li><p>windows对unix socket进行封装形成winsock，程序使用时以WSAStartup开头（初始化api），以WSACleanup（释放windows socket DLL）结尾</p></li><li><p>当多个进程同时是使用socket时，socket数据结构里有对其计数的变量，关闭一个则减1，到0才关闭此数据结构</p></li><li>同一个进程中的多个线程不能同时调用一个socket</li><li>当一个主机中有多个ip时，服务器端调用bind时用INADDR_ANY</li><li>listen、accept只用于服务器，监听端口，只是用于tcp</li><li>connect之用于客户端，tcp/udp</li><li>send, recv 适用于TCP或者调用connect的UDP</li><li>sendto, recvfrom用于未调用connect的UDP</li><li><img src="../image/socket_.jpg" alt="socket流程"></li></ol>]]></content>
     
     <summary type="html">
     
@@ -66,13 +66,64 @@
   </entry>
   
   <entry>
+    <title>计算机网络3</title>
+    <link href="http://blog.huhaobin.cn/2019/04/07/computernetworking3/"/>
+    <id>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</id>
+    <published>2019-04-06T16:00:00.000Z</published>
+    <updated>2019-04-11T10:55:25.352Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ol><li><p>为运行在不同的端系统上的<strong>进程</strong>提供了一种逻辑通信机制(网络层提供<strong>主机</strong>之间的逻辑通信机制)</p><ul><li>位于网络层之上</li><li>依赖于网络层</li><li>对网络层功能进行加强</li></ul></li><li><p>传输层提供的服务</p><ul><li>可靠的、按序的交付服务（TCP）<ul><li>流量控制</li><li>拥塞控制</li><li>连接建立</li></ul></li><li>不可靠的交付服务（UDP）<ul><li>复用/分用</li><li>简单的错误校验</li><li>尽力而为（best effort）</li><li>不需要建立链接，延迟很小</li><li>上层更好控制（不用顾及拥塞控制之类）</li><li>经常用于流媒体、DNS、SNMP等</li></ul></li><li>不提供延迟、带宽等方面的服务</li></ul></li><li><p>多路复用/分用</p></li></ol><h2 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h2><ol><li><p>不错、不丢、不乱</p></li><li><p>可靠数据传输协议</p></li><li><p>需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输</p></li><li><p>协议实现（数据错误，位错误）</p><ul><li>有限状态机来刻画传输协议</li><li>确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息<ul><li>为ACK和NAK增加校验和</li><li>添加额外的控制消息</li><li>NAK/ACK 坏掉重传（产生重复传送的问题）</li><li>增加序列号进行NAK/ACK重传</li></ul></li><li>差错检测（校验和等）</li><li>停-等协议（有限状态机）</li><li>NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组）</li></ul><p>5 . 协议实现（丢失分组）</p><ul><li>等待合理的一段时间之后重传（需要定时器）</li><li>停等引起效率低下</li><li>采用流水线机制（连发多个分组再等待ACK）</li><li>使用滑动窗口协议实现流水线</li></ul></li></ol><h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="GBN（Go-Back-N）协议：一组分组一组分组的滑动"><a href="#GBN（Go-Back-N）协议：一组分组一组分组的滑动" class="headerlink" title="GBN（Go-Back-N）协议：一组分组一组分组的滑动"></a>GBN（Go-Back-N）协议：一组分组一组分组的滑动</h3><ol><li><p>发送方</p><ul><li><p>窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号</p></li><li><p>采用累积确认的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ACK(n)表示确认到n(包含n)的分组均被正确接收</div></pre></td></tr></table></figure></li><li><p>整个窗口设置一个计时器</p></li><li><p>超时则重发序列号大于n还未收到ack的分组</p></li></ul></li><li><p>接收方（没有缓存，没有接收方窗口）</p><ul><li>发送拥有最高序列号的、已被正确接收的分组的ACK<ul><li>可能产生重复的ACK</li></ul></li><li>乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号</li></ul></li></ol><h3 id="SR（selective-repeat-协议：一个分组一个分组的滑动"><a href="#SR（selective-repeat-协议：一个分组一个分组的滑动" class="headerlink" title="SR（selective repeat)协议：一个分组一个分组的滑动"></a>SR（selective repeat)协议：一个分组一个分组的滑动</h3><ol><li>接收方（设置缓冲机制，缓冲乱需到达的分组）<ol><li>添加接收方窗口</li><li>对每个分组单独确认</li></ol></li><li>发送方<ol><li>为每个分组设置单独的计数器</li></ol></li><li>窗口可以跳跃前移</li></ol><h2 id="TCP概述"><a href="#TCP概述" class="headerlink" title="TCP概述"></a>TCP概述</h2><ol><li><p>点对点（一个发送方，一个接收方）</p></li><li><p>可靠的按序的字节流</p></li><li><p>流水线机制（拥塞控制，流量控制，窗口大小设置）</p></li><li><p>发送方/接收方缓存</p></li><li><p>全双工（同一连接中能传输双向数据流）</p></li><li><p>面向连接</p><ol><li>通信双方在发送数据前必须建立连接</li><li>连接状态只在连接的两端维护，沿途 结点并不维护</li><li>TCP连接包括：两台主机上的缓存，连接状态变量、socket等</li></ol></li><li><p>流量控制机制</p></li><li><p>序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号</p></li><li><p>ACKS</p><ol><li>累计确认机制：该序列号之前的所有字节已经被正确处理</li><li>返回是希望接收到的下一个字节的序列号</li></ol></li><li><p>可靠数据传输</p><ol><li>TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务</li><li>使用单一重传定时器</li><li>触发重传的事件（超时，收到重复ACK）</li></ol></li><li><p>快速重传</p><p>​    由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传</p></li><li><p>流量控制（速度匹配机制)</p><p>控制发送方发送速度不要过快以至于淹没接收方的buffer</p><p>receiver 在segment头部告诉sender还有多少buffer</p></li><li><p>多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率</p></li></ol><h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><ol><li>一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求</li><li>连接的三次握手<ol><li>客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号）</li><li>服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存）</li><li>客户机收到SYNACK，回复ACK（可以包含数据）</li><li>建立TCP连接<strong>两次握手不能确定具体是否成功，四次握手会有资源浪费</strong></li></ol></li><li>关闭的四次握手<ol><li>客户机向服务器发送FIN报文段</li><li>服务器收到FIN，回复ACK，关闭连接，发送FIN</li><li>客户机收到FIN，回复ACK<ol><li>进入等待状态，如果收到FIN，则重新发送ACK</li></ol></li><li>服务器收到ACK，关闭链接</li></ol></li></ol><h2 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h2><ol><li><p>表现</p><ol><li>分组丢失</li><li>分组延迟越来越大</li></ol><h3 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h3><ul><li>端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法）</li><li>网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM）</li></ul><h3 id="拥塞控制的基本原理"><a href="#拥塞控制的基本原理" class="headerlink" title="拥塞控制的基本原理"></a>拥塞控制的基本原理</h3><ul><li><p>限制sender的发送速率</p></li><li><p>ConfgWin：（发送窗口的大小）</p><ul><li>动态调整以改变发送速率</li><li>反映所感知到的网络拥塞</li></ul></li><li><p>网络拥塞的感知</p><ul><li>LOSS事件==timeout或者连续3个重复的ACK</li></ul></li><li><p>合理调整发送速率</p><ul><li><p>加性增—乘性减（AIMD)</p><p>谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）;  发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半）</p></li><li><p>慢启动（SS）</p><p>当链接刚刚建立时（CongWin = 1,  初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升</p></li><li><p>指数增长切换到加性增</p><p>用一个变量Threshold， 设置为LOSS事件前congWin值的1/2.</p><p><img src="../image/loss_event.jpg" alt="loss event"></p><ul><li><p>收到3个重复的ACK(网络还能传输一些segment)</p><p>将congWin切为一半，然后线性增长</p></li><li><p>Timeout事件（<strong>拥塞更严重</strong>)</p><p>CongWin直接设为1,然后指数增长，达到threshold之后再线性增长</p></li></ul></li></ul></li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;传输层&quot;&gt;&lt;a href=&quot;#传输层&quot; class=&quot;headerlink&quot; title=&quot;传输层&quot;&gt;&lt;/a&gt;传输层&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;为运行在不同的端系统上的&lt;strong&gt;进程&lt;/strong&gt;提供了一种逻辑通信机制(网络层提供&lt;strong&gt;主
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="自顶向下方法" scheme="http://blog.huhaobin.cn/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>扩展/boot分区</title>
+    <link href="http://blog.huhaobin.cn/2019/04/07/boot%20partition%20is%20not%20enough/"/>
+    <id>http://blog.huhaobin.cn/2019/04/07/boot partition is not enough/</id>
+    <published>2019-04-06T16:00:00.000Z</published>
+    <updated>2019-04-07T09:13:38.179Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="how-to-expend-the-capicity-of-boot-partition-in-linux"><a href="#how-to-expend-the-capicity-of-boot-partition-in-linux" class="headerlink" title="how to expend the capicity of /boot partition in linux"></a>how to expend the capicity of /boot partition in linux</h2><ol><li>use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon</li><li>copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt</li><li>click the old /boot prtition in Disks, click buttons as following<br> “More actions” signed by a gear<br> “Edit Mount Options…”, meanwhile, wtrite the config down for later<br> uncheck “Mount at Startup”<br> modify “Mount Point” to something else, such as “/boot_old”<br> and click OK</li><li>click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following<br> “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change<br> “Edit Mount Options…” copy the config form old one<br> OK</li></ol><p>and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure:</p><p>installation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y boot-repair &amp;&amp; boot-repair</div></pre></td></tr></table></figure></p><p>Recommended repair<br>launch Boot-Repair from either :<br>the Dash (the Ubuntu logo at the top-left of the screen)<br>or by typing ‘boot-repair’ in a terminal<br>Then click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs.</p><p>If the repair did not succeed, indicate the URL to people who help you by email or forum.</p><p>if you have trouble in booting, if you computer is booted by grub2, here is you solutions:</p><ol><li>ls<br>find the boot file location </li><li>set root = (hd0, gpt0)<br>(hd0,gpt0) is your boot file location</li><li>linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0<br>/dev/sda0 is your root location</li><li>initrd /path/to/your/bootfile(initrd*)</li><li>boot</li></ol><p>now you can boot your computer.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机网络1</title>
     <link href="http://blog.huhaobin.cn/2019/04/04/computernetworking1/"/>
     <id>http://blog.huhaobin.cn/2019/04/04/computernetworking1/</id>
     <published>2019-04-03T16:00:00.000Z</published>
-    <updated>2019-04-07T00:25:23.232Z</updated>
+    <updated>2019-04-08T03:10:10.826Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol><li>计算机网络就是互连的、自治的计算机集合<ul><li>通过交换网络进行互连</li></ul></li><li>交换<ul><li>动态转接</li><li>动态资源分配和传输</li></ul></li><li><p>电路交换（电路建立—数据传输—电路拆除）</p><ul><li><p>多路复用</p><ul><li>频分复用（FDM）— 同轴电缆</li><li>时分复用（TDM) — 时间分帧、分片</li><li><p>码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列</p><p>每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1;</p></li><li>波分复用（光的频分复用）</li></ul></li></ul></li><li>报文交换<ul><li>一次将一个报文全部传输</li><li>存储转发整个报文</li></ul></li><li><p>分组交换</p><ol><li>报文的拆分和重组</li><li>产生额外开销</li><li>存储转发小分组</li><li>便于实现统计复用</li><li>由于流水线技术，速度比报文交换要快，硬件要求要低</li><li>适用于突发数据传输<ul><li>充分利用资源</li><li>无需建立电路</li></ul></li><li><p>分组延迟</p><ul><li><p>结点处理延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">差错控制</div><div class="line">确定输出链路</div><div class="line">通常小于msec</div></pre></td></tr></table></figure></li><li><p>排队延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">等待输出链路可用</div><div class="line">取决与路由器的当前拥塞状态</div></pre></td></tr></table></figure></li><li><p>传输延迟（发送一个分组所需要的时间）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">分组长度</div><div class="line">链路宽度</div></pre></td></tr></table></figure></li><li><p>传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟）</p></li></ul></li></ol></li><li>协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务</li><li>计算机网络结构是分层的（软件和硬件）</li></ol><h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><ol><li>七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层<ul><li>一般主机需要实现所有层，路由器只需要实现最基本的三层<br><img src="/image/osi.jpg" alt="数据传输过程"></li><li>数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，<strong>并且数据链路层加帧头和帧尾</strong></li><li>数据封装的目的<ul><li>差错检测</li><li>地址信息</li><li>协议控制</li></ul></li></ul></li><li>物理层（解决单一比特的传输问题）<ul><li>接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信）</li></ul></li><li>数据链路层（结点到结点的数据传输）<ul><li>组帧（便于接受信息）</li><li>物理寻址（物理层不能寻址）</li><li>流量控制（匹配发送和接受速度）</li><li>差错控制</li><li>接入控制（访问控制）</li></ul></li><li>网络层<ul><li>逻辑寻址（ip）—全局的唯一逻辑地址</li><li>路由</li><li>分组转发</li></ul></li><li>传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输）<ul><li>报文的分段和重组</li><li>SAP寻址（保证交给正确的进程）</li><li>可以实现端到端的链接控制，流量控制，差错控制</li></ul></li><li>会话层（主要负责对话管理，同步等）<ul><li>不单独存在</li></ul></li><li>表示层（处理两个系统之间交换信息的语法和语义问题）<ul><li>数据表示转化（大小端）</li><li>加解密，压缩，解压缩</li><li>不单独存在</li></ul></li><li>应用层</li></ol><h2 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h2><ol><li>网络接口层、网际层、运输层、应用层</li><li><p>Everything over IP</p></li><li><p>5层参考模型</p><ul><li>物理层</li><li>数据链路层</li><li>网络层（源到目的的数据分组路由和转发）</li><li>传输层（TCP、UDP）{进程之间的通信}</li><li>应用层（支持各种网络应用）</li></ul></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol><li>计算机网络就是互连的、自治的计算机集合<ul><li>通过交换网络进行互连</li></ul></li><li>交换<ul><li>动态转接</li><li>动态资源分配和传输</li></ul></li><li><p>电路交换（电路建立—数据传输—电路拆除）</p><ul><li><p>多路复用</p><ul><li>频分复用（FDM）— 同轴电缆</li><li>时分复用（TDM) — 时间分帧、分片</li><li><p>码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列</p><p>每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1;</p></li><li>波分复用（光的频分复用）</li></ul></li></ul></li><li>报文交换<ul><li>一次将一个报文全部传输</li><li>存储转发整个报文</li></ul></li><li><p>分组交换</p><ol><li>报文的拆分和重组</li><li>产生额外开销</li><li>存储转发小分组</li><li>便于实现统计复用</li><li>由于流水线技术，速度比报文交换要快，硬件要求要低</li><li><p>适用于突发数据传输</p><ul><li>充分利用资源</li><li>无需建立电路</li></ul></li><li><p>分组延迟</p><ul><li><p>结点处理延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">差错控制</div><div class="line">确定输出链路</div><div class="line">通常小于msec</div></pre></td></tr></table></figure></li><li><p>排队延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">等待输出链路可用</div><div class="line">取决与路由器的当前拥塞状态</div></pre></td></tr></table></figure></li><li><p>传输延迟（发送一个分组所需要的时间）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">分组长度</div><div class="line">链路宽度</div></pre></td></tr></table></figure></li><li><p>传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟）</p></li></ul></li></ol></li><li>协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务</li><li>计算机网络结构是分层的（软件和硬件）</li></ol><h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><ol><li>七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层<ul><li>一般主机需要实现所有层，路由器只需要实现最基本的三层<br><img src="/image/osi.jpg" alt="数据传输过程"></li><li>数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，<strong>并且数据链路层加帧头和帧尾</strong></li><li>数据封装的目的<ul><li>差错检测</li><li>地址信息</li><li>协议控制</li></ul></li></ul></li><li>物理层（解决单一比特的传输问题）<ul><li>接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信）</li></ul></li><li>数据链路层（结点到结点的数据传输）<ul><li>组帧（便于接受信息）</li><li>物理寻址（物理层不能寻址）</li><li>流量控制（匹配发送和接受速度）</li><li>差错控制</li><li>接入控制（访问控制）</li></ul></li><li>网络层<ul><li>逻辑寻址（ip）—全局的唯一逻辑地址</li><li>路由选择</li><li>分组转发</li></ul></li><li>传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输）<ul><li>报文的分段和重组</li><li>SAP寻址（保证交给正确的进程）</li><li>可以实现端到端的链接控制，流量控制，差错控制</li></ul></li><li>会话层（主要负责对话管理，同步等）<ul><li>不单独存在</li></ul></li><li>表示层（处理两个系统之间交换信息的语法和语义问题）<ul><li>数据表示转化（大小端）</li><li>加解密，压缩，解压缩</li><li>不单独存在</li></ul></li><li>应用层</li></ol><h2 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h2><ol><li>网络接口层、网际层、运输层、应用层</li><li><p>Everything over IP</p></li><li><p>5层参考模型</p><ul><li>物理层</li><li>数据链路层</li><li>网络层（源到目的的数据分组路由和转发）</li><li>传输层（TCP、UDP）{进程之间的通信}</li><li>应用层（支持各种网络应用）</li></ul></li></ol>]]></content>
     
     <summary type="html">
     
@@ -296,27 +347,6 @@
   </entry>
   
   <entry>
-    <title>git</title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
-    <published>2018-09-24T05:53:47.732Z</published>
-    <updated>2017-09-28T15:04:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>集成库的学习</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/lib_int/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/lib_int/</id>
@@ -339,6 +369,27 @@
     
     
       <category term="AD" scheme="http://blog.huhaobin.cn/tags/AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
+    <published>2018-09-24T05:53:47.732Z</published>
+    <updated>2017-09-28T15:04:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+      
+    
+    </summary>
+    
     
   </entry>
   
@@ -457,61 +508,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>程序员的自我修养</title>
-    <link href="http://blog.huhaobin.cn/2018/05/13/Programmer&#39;sSelfCultivation2/"/>
-    <id>http://blog.huhaobin.cn/2018/05/13/Programmer&#39;sSelfCultivation2/</id>
-    <published>2018-05-12T16:00:00.000Z</published>
-    <updated>2018-05-13T06:31:30.694Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="线程调度"><a href="#线程调度" class="headerlink" title="线程调度"></a>线程调度</h2><p>在优先级调度的环境下，线程优先级改变的方式有</p><ul><li>用户制定优先级</li><li>根据进入等待状态的频繁程度提升或降低优先级</li><li>长时间得不到执行而提升优先级<h2 id="目标文件"><a href="#目标文件" class="headerlink" title="目标文件"></a>目标文件</h2></li></ul><p>基本结构如图所示<img src="/image/objSample.png" alt=""></p><ul><li>初始化的全局变量和局部静态变量保存在.data</li><li>未初始化的全局变量和局部静态变量保存在.bss</li><li>File Header 里面包含一个段表<br>除此之外还可以自定义段<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">__attribute__((section(&quot;FOO&quot;))) int global = 42;</div><div class="line">__attribute__((section(&quot;BAR&quot;))) void foo()</div><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">// 这样就可以把相应的变量或者函数放在以“FOO”/&quot;BAR&quot;作为段名的段中</div><div class="line">// 名字可以自定义</div></pre></td></tr></table></figure></li></ul><h2 id="C-和C的兼容"><a href="#C-和C的兼容" class="headerlink" title="C++和C的兼容"></a>C++和C的兼容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">extern &quot;C&quot;&#123;</div><div class="line">  int func(int);</div><div class="line">  int var;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>C++ 编译器会将在extern “C”大括号内部的代码当作C语言来处理</p><p>为了处理C++调用了C函数，但认为是C++函数，经过名称修饰之后无法正确引用的问题，C++编译器会在便宜C++的程序时默认定义宏”__cplusplus”.我们可以使用条件宏来判断当前便宜单元是不是C++代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#ifdef __cplusplus</div><div class="line">extern &quot;C&quot;&#123;</div><div class="line">#endif</div><div class="line"></div><div class="line">void *memset(void *, int, size_t);    // C语言内容</div><div class="line">#ifdef __cplusplus</div><div class="line">&#125;</div><div class="line">#endif</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;线程调度&quot;&gt;&lt;a href=&quot;#线程调度&quot; class=&quot;headerlink&quot; title=&quot;线程调度&quot;&gt;&lt;/a&gt;线程调度&lt;/h2&gt;&lt;p&gt;在优先级调度的环境下，线程优先级改变的方式有&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用户制定优先级&lt;/li&gt;
-&lt;li&gt;根据进入等待状态的
-      
-    
-    </summary>
-    
-      <category term="程序员的自我修养" scheme="http://blog.huhaobin.cn/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/"/>
-    
-    
-      <category term="程序员的自我修养" scheme="http://blog.huhaobin.cn/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>信息的表示和处理</title>
-    <link href="http://blog.huhaobin.cn/2018/05/11/OS2/"/>
-    <id>http://blog.huhaobin.cn/2018/05/11/OS2/</id>
-    <published>2018-05-10T16:00:00.000Z</published>
-    <updated>2018-05-13T01:59:51.060Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><ol><li><p>数据大小</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">C类型      字节（32位）  字节（64位）</div><div class="line">char            1        1</div><div class="line">short int       2        2</div><div class="line">int             4        4</div><div class="line">long int        4        8</div><div class="line">long long int   8        8</div><div class="line">float           4        4</div><div class="line">double          8        8</div><div class="line">char *          4        8</div></pre></td></tr></table></figure></li><li><p>移位</p><p> 假如进行x&gt;&gt;k,这里的k很大,实际偏移量是通过k mod v得到的</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int lval = 0xede875 &gt;&gt; 32;</div><div class="line">int aval = 0xede875 &gt;&gt; 36;</div><div class="line">unsigned int uval = 0xede875 &gt;&gt; 40;</div></pre></td></tr></table></figure><p> 在32位机器上</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lval = 0xede875;            // 32 mod 32 = 0</div><div class="line">aval = 0xfede87;            // 36 mod 32 = 4</div><div class="line">uval = 0x00ede8;</div></pre></td></tr></table></figure><p> <strong>几乎所有的编译器/机器都对有符号数据使用算术右移，无符号数据必须是逻辑右移</strong></p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;信息存储&quot;&gt;&lt;a href=&quot;#信息存储&quot; class=&quot;headerlink&quot; title=&quot;信息存储&quot;&gt;&lt;/a&gt;信息存储&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;数据大小&lt;/p&gt;
- &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;
-      
-    
-    </summary>
-    
-      <category term="操作系统原理" scheme="http://blog.huhaobin.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="操作系统原理" scheme="http://blog.huhaobin.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   

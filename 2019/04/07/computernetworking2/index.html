@@ -82,7 +82,8 @@
 <meta property="og:description" content="应用层 网络应用的体系结构 客户机/服务器（c/s） peer to peer (点对点结构) 混合结构   TCP/UDP区别  HTTP 采用无状态的机制（服务器不维护任何有关客户端过去所请求的消息） 采用请求/响应的模式 使用TCP传输       持久性连接 非持久性连接         每个tcp连接只允许传送一个对象 允许传送多个对象       HTTP1.0 HTTP1.1">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/udp_tcp.jpg">
-<meta property="og:updated_time" content="2019-04-07T08:59:09.283Z">
+<meta property="og:image" content="http://blog.huhaobin.cn/2019/04/07/image/socket_.jpg">
+<meta property="og:updated_time" content="2019-04-08T02:44:56.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络2">
 <meta name="twitter:description" content="应用层 网络应用的体系结构 客户机/服务器（c/s） peer to peer (点对点结构) 混合结构   TCP/UDP区别  HTTP 采用无状态的机制（服务器不维护任何有关客户端过去所请求的消息） 采用请求/响应的模式 使用TCP传输       持久性连接 非持久性连接         每个tcp连接只允许传送一个对象 允许传送多个对象       HTTP1.0 HTTP1.1">
@@ -368,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,160
+                  1,364
                 </span>
               
 
@@ -384,7 +385,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -588,7 +589,20 @@
 </ul>
 </li>
 </ol>
-<p>结尾</p>
+<h2 id="socket编程"><a href="#socket编程" class="headerlink" title="socket编程"></a>socket编程</h2><ol>
+<li>套接字使用时不用指定端口号，由操作系统负责分配和管理，用套接子描述符即可</li>
+<li><p>windows对unix socket进行封装形成winsock，程序使用时以WSAStartup开头（初始化api），以WSACleanup（释放windows socket DLL）结尾</p>
+</li>
+<li><p>当多个进程同时是使用socket时，socket数据结构里有对其计数的变量，关闭一个则减1，到0才关闭此数据结构</p>
+</li>
+<li>同一个进程中的多个线程不能同时调用一个socket</li>
+<li>当一个主机中有多个ip时，服务器端调用bind时用INADDR_ANY</li>
+<li>listen、accept只用于服务器，监听端口，只是用于tcp</li>
+<li>connect之用于客户端，tcp/udp</li>
+<li>send, recv 适用于TCP或者调用connect的UDP</li>
+<li>sendto, recvfrom用于未调用connect的UDP</li>
+<li><img src="../image/socket_.jpg" alt="socket流程"></li>
+</ol>
 
       
     </div>
@@ -619,8 +633,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/04/computernetworking1/" rel="next" title="计算机网络1">
-                <i class="fa fa-chevron-left"></i> 计算机网络1
+              <a href="/2019/04/07/computernetworking3/" rel="next" title="计算机网络3">
+                <i class="fa fa-chevron-left"></i> 计算机网络3
               </a>
             
           </div>
@@ -629,7 +643,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/07/boot partition is not enough/" rel="prev" title="">
+              <a href="/2019/04/08/ubuntu_Firefox_play_HTML5_vedio/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -711,7 +725,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-count">93</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -795,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用层"><span class="nav-number">1.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P"><span class="nav-number">2.</span> <span class="nav-text">P2P</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用层"><span class="nav-number">1.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P"><span class="nav-number">2.</span> <span class="nav-text">P2P</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#socket编程"><span class="nav-number">3.</span> <span class="nav-text">socket编程</span></a></li></ol></div>
             
 
           </div>
@@ -833,7 +847,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      28.0k
+      30.1k
     </span>
   
 </div>
@@ -864,7 +878,7 @@
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共28.0k字</span>
+  <span class="post-count">博客全站共30.1k字</span>
 </div>
 
         

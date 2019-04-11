@@ -2,13 +2,13 @@
 <search>
   <entry>
     <title></title>
-    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
-    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
+    <url>%2F2019%2F04%2F08%2Fubuntu_Firefox_play_HTML5_vedio%2F</url>
+    <content type="text"><![CDATA[12345title: ubuntu下firefox播放HTML5视频categories: - linuxdate: 2019-4-8 11:19:32tags: linux, ubuntu 缘起chrome内存吃的太狠，渣笔记本带的很吃力，但是用中国大学mooc不能正常观看教学视频，报错不能正常播放视频[code:6]。 缺少组件1apt install ubuntu-restricted-extras ubuntu-restricted-extras通俗来说就是ubuntu下的一些支持库，他可以帮助改善MP3、vedio、DVD等的体验，也可以获得windows下的字体体验和FLASH之类的功能]]></content>
   </entry>
   <entry>
     <title><![CDATA[计算机网络2]]></title>
     <url>%2F2019%2F04%2F07%2Fcomputernetworking2%2F</url>
-    <content type="text"><![CDATA[应用层 网络应用的体系结构 客户机/服务器（c/s） peer to peer (点对点结构) 混合结构 TCP/UDP区别 HTTP 采用无状态的机制（服务器不维护任何有关客户端过去所请求的消息） 采用请求/响应的模式 使用TCP传输 持久性连接 非持久性连接 每个tcp连接只允许传送一个对象 允许传送多个对象 HTTP1.0 HTTP1.1 代理服务器与远程服务器之间的更新 条件性GET（如果缓存有最新的版本则不需要发送请求对象） 在HTTP请求消息中声明所持有版本的日期 1If-modified-since &lt;date&gt; SMTP(邮件) 采用TCP（可靠）持久性连接 通过ASCII采用命令/响应的模式 端口25 用MIME进行消息内容扩展，使其可以传输非ASCII数据（二进制、多媒体） DNS 是一个多层命名服务器构成的分布式数据库（为什么不用集中式） 单点失败 流量问题 距离问题 维护性问题 应用层协议：完成名字的解析（在应用层实现Internet的核心服务） 域名解析过程 向本地域名服务器请求，若本地不知道则直接请求根域名服务器 根域名服务器一般不知道，则返回顶级域名服务器（.com/.cn/.org…..) 全球总共有13个根域名服务器 域名服务器 根域名服务器 顶级域名服务器（负责.com/.cn/.org…..） 权威域名服务器（组织的域名服务器，提供组织内部服务器的解析服务） 本地域名解析服务器 每个ISP都有默认的本地域名服务器 作为代理去查询分层式域名服务器 DNS查询 迭代查询（本地域名服务器负责根据指示依次查询域名服务器） 递归查询（本地域名服务器只向根域名服务器请求，根域名服务器再去请求顶级域名服务器，顶级再去查询权威，然后将结果依次返回） DNS缓存和更新 只要域名解析服务器获得一个新的域名-ip映射，即缓存这一映射 本地域名服务器一般会缓存顶级域名服务器（根域名服务器一般不会被访问） DNS记录（资源记录 Resource Record) format:(name, value, type, ttl) type = A name 主机域名 value ip地址 type = NS name：域（edu.cn) value:该域权威域名解析服务器的主机域名） type = cname name ：某一真实域名的别名 value：真实域名 type = MX value是于name相对应的邮件服务器 DNS协议（查询/回复） P2P 纯p2p架构 没有服务器 任意端系统之间直接通信 节点阶段性接入internet 节点可能更换ip地址 多用户同时下载时性能比C/S优（C/S随着用户数增加耗时线性增长，p2p则是有个阈值） p2p例子：BitTorrent 下载的同时进行发送（可以发送自己的，也可以发送刚刚下载的） 稀缺文件优先下载（防止端系统离开） 上传 向给自己发送的4个需要下载的端系统发送数据 每10s重新评估top4 每30s随机选择一个其他结点，向其发送 索引技术 集中式索引 单点失败 性能瓶颈 法律 完全分布式索引 完全分布式架构 每个节点对他共享的文件且只对他共享的文件进行索引 用覆盖网络实现全局性文件搜索 采用洪泛式查询，查询命中之后反向回传 层次式覆盖网络 介于集中式索引和洪泛式查询的方法 每个结点或者是一个超级结点，或者被分配一个超级节点 节点和超级节点之间维持TCP 某些超级节点对之间维持TCP 普通节点向超级节点请求查询 超级节点之间使用洪泛式查询 超级节点负责跟踪字节点的内容 危害 对硬盘的损坏（高温、重复读写、扇区损坏） 占用网络带宽资源 助长病毒传播 盗版 覆盖网络 节点X与节点Y之间若有TCP连接那么构成一条边 所有活动的节点和边构成覆盖网络 节点一般邻居数少于十个 结尾]]></content>
+    <content type="text"><![CDATA[应用层 网络应用的体系结构 客户机/服务器（c/s） peer to peer (点对点结构) 混合结构 TCP/UDP区别 HTTP 采用无状态的机制（服务器不维护任何有关客户端过去所请求的消息） 采用请求/响应的模式 使用TCP传输 持久性连接 非持久性连接 每个tcp连接只允许传送一个对象 允许传送多个对象 HTTP1.0 HTTP1.1 代理服务器与远程服务器之间的更新 条件性GET（如果缓存有最新的版本则不需要发送请求对象） 在HTTP请求消息中声明所持有版本的日期 1If-modified-since &lt;date&gt; SMTP(邮件) 采用TCP（可靠）持久性连接 通过ASCII采用命令/响应的模式 端口25 用MIME进行消息内容扩展，使其可以传输非ASCII数据（二进制、多媒体） DNS 是一个多层命名服务器构成的分布式数据库（为什么不用集中式） 单点失败 流量问题 距离问题 维护性问题 应用层协议：完成名字的解析（在应用层实现Internet的核心服务） 域名解析过程 向本地域名服务器请求，若本地不知道则直接请求根域名服务器 根域名服务器一般不知道，则返回顶级域名服务器（.com/.cn/.org…..) 全球总共有13个根域名服务器 域名服务器 根域名服务器 顶级域名服务器（负责.com/.cn/.org…..） 权威域名服务器（组织的域名服务器，提供组织内部服务器的解析服务） 本地域名解析服务器 每个ISP都有默认的本地域名服务器 作为代理去查询分层式域名服务器 DNS查询 迭代查询（本地域名服务器负责根据指示依次查询域名服务器） 递归查询（本地域名服务器只向根域名服务器请求，根域名服务器再去请求顶级域名服务器，顶级再去查询权威，然后将结果依次返回） DNS缓存和更新 只要域名解析服务器获得一个新的域名-ip映射，即缓存这一映射 本地域名服务器一般会缓存顶级域名服务器（根域名服务器一般不会被访问） DNS记录（资源记录 Resource Record) format:(name, value, type, ttl) type = A name 主机域名 value ip地址 type = NS name：域（edu.cn) value:该域权威域名解析服务器的主机域名） type = cname name ：某一真实域名的别名 value：真实域名 type = MX value是于name相对应的邮件服务器 DNS协议（查询/回复） P2P 纯p2p架构 没有服务器 任意端系统之间直接通信 节点阶段性接入internet 节点可能更换ip地址 多用户同时下载时性能比C/S优（C/S随着用户数增加耗时线性增长，p2p则是有个阈值） p2p例子：BitTorrent 下载的同时进行发送（可以发送自己的，也可以发送刚刚下载的） 稀缺文件优先下载（防止端系统离开） 上传 向给自己发送的4个需要下载的端系统发送数据 每10s重新评估top4 每30s随机选择一个其他结点，向其发送 索引技术 集中式索引 单点失败 性能瓶颈 法律 完全分布式索引 完全分布式架构 每个节点对他共享的文件且只对他共享的文件进行索引 用覆盖网络实现全局性文件搜索 采用洪泛式查询，查询命中之后反向回传 层次式覆盖网络 介于集中式索引和洪泛式查询的方法 每个结点或者是一个超级结点，或者被分配一个超级节点 节点和超级节点之间维持TCP 某些超级节点对之间维持TCP 普通节点向超级节点请求查询 超级节点之间使用洪泛式查询 超级节点负责跟踪字节点的内容 危害 对硬盘的损坏（高温、重复读写、扇区损坏） 占用网络带宽资源 助长病毒传播 盗版 覆盖网络 节点X与节点Y之间若有TCP连接那么构成一条边 所有活动的节点和边构成覆盖网络 节点一般邻居数少于十个 socket编程 套接字使用时不用指定端口号，由操作系统负责分配和管理，用套接子描述符即可 windows对unix socket进行封装形成winsock，程序使用时以WSAStartup开头（初始化api），以WSACleanup（释放windows socket DLL）结尾 当多个进程同时是使用socket时，socket数据结构里有对其计数的变量，关闭一个则减1，到0才关闭此数据结构 同一个进程中的多个线程不能同时调用一个socket 当一个主机中有多个ip时，服务器端调用bind时用INADDR_ANY listen、accept只用于服务器，监听端口，只是用于tcp connect之用于客户端，tcp/udp send, recv 适用于TCP或者调用connect的UDP sendto, recvfrom用于未调用connect的UDP]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -17,9 +17,31 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[计算机网络3]]></title>
+    <url>%2F2019%2F04%2F07%2Fcomputernetworking3%2F</url>
+    <content type="text"><![CDATA[传输层 为运行在不同的端系统上的进程提供了一种逻辑通信机制(网络层提供主机之间的逻辑通信机制) 位于网络层之上 依赖于网络层 对网络层功能进行加强 传输层提供的服务 可靠的、按序的交付服务（TCP） 流量控制 拥塞控制 连接建立 不可靠的交付服务（UDP） 复用/分用 简单的错误校验 尽力而为（best effort） 不需要建立链接，延迟很小 上层更好控制（不用顾及拥塞控制之类） 经常用于流媒体、DNS、SNMP等 不提供延迟、带宽等方面的服务 多路复用/分用 可靠数据传输 不错、不丢、不乱 可靠数据传输协议 需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输 协议实现（数据错误，位错误） 有限状态机来刻画传输协议 确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息 为ACK和NAK增加校验和 添加额外的控制消息 NAK/ACK 坏掉重传（产生重复传送的问题） 增加序列号进行NAK/ACK重传 差错检测（校验和等） 停-等协议（有限状态机） NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组） 5 . 协议实现（丢失分组） 等待合理的一段时间之后重传（需要定时器） 停等引起效率低下 采用流水线机制（连发多个分组再等待ACK） 使用滑动窗口协议实现流水线 滑动窗口协议GBN（Go-Back-N）协议：一组分组一组分组的滑动 发送方 窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号 采用累积确认的方式 1ACK(n)表示确认到n(包含n)的分组均被正确接收 整个窗口设置一个计时器 超时则重发序列号大于n还未收到ack的分组 接收方（没有缓存，没有接收方窗口） 发送拥有最高序列号的、已被正确接收的分组的ACK 可能产生重复的ACK 乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号 SR（selective repeat)协议：一个分组一个分组的滑动 接收方（设置缓冲机制，缓冲乱需到达的分组） 添加接收方窗口 对每个分组单独确认 发送方 为每个分组设置单独的计数器 窗口可以跳跃前移 TCP概述 点对点（一个发送方，一个接收方） 可靠的按序的字节流 流水线机制（拥塞控制，流量控制，窗口大小设置） 发送方/接收方缓存 全双工（同一连接中能传输双向数据流） 面向连接 通信双方在发送数据前必须建立连接 连接状态只在连接的两端维护，沿途 结点并不维护 TCP连接包括：两台主机上的缓存，连接状态变量、socket等 流量控制机制 序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号 ACKS 累计确认机制：该序列号之前的所有字节已经被正确处理 返回是希望接收到的下一个字节的序列号 可靠数据传输 TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务 使用单一重传定时器 触发重传的事件（超时，收到重复ACK） 快速重传 ​ 由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传 流量控制（速度匹配机制) 控制发送方发送速度不要过快以至于淹没接收方的buffer receiver 在segment头部告诉sender还有多少buffer 多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率 连接管理 一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求 连接的三次握手 客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号） 服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存） 客户机收到SYNACK，回复ACK（可以包含数据） 建立TCP连接两次握手不能确定具体是否成功，四次握手会有资源浪费 关闭的四次握手 客户机向服务器发送FIN报文段 服务器收到FIN，回复ACK，关闭连接，发送FIN 客户机收到FIN，回复ACK 进入等待状态，如果收到FIN，则重新发送ACK 服务器收到ACK，关闭链接 拥塞控制 表现 分组丢失 分组延迟越来越大 拥塞控制方法 端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法） 网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM） 拥塞控制的基本原理 限制sender的发送速率 ConfgWin：（发送窗口的大小） 动态调整以改变发送速率 反映所感知到的网络拥塞 网络拥塞的感知 LOSS事件==timeout或者连续3个重复的ACK 合理调整发送速率 加性增—乘性减（AIMD) 谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）; 发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半） 慢启动（SS） 当链接刚刚建立时（CongWin = 1, 初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升 指数增长切换到加性增 用一个变量Threshold， 设置为LOSS事件前congWin值的1/2. 收到3个重复的ACK(网络还能传输一些segment) 将congWin切为一半，然后线性增长 Timeout事件（拥塞更严重) CongWin直接设为1,然后指数增长，达到threshold之后再线性增长]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>自顶向下方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[扩展/boot分区]]></title>
+    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
+    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[计算机网络1]]></title>
     <url>%2F2019%2F04%2F04%2Fcomputernetworking1%2F</url>
-    <content type="text"><![CDATA[概述 计算机网络就是互连的、自治的计算机集合 通过交换网络进行互连 交换 动态转接 动态资源分配和传输 电路交换（电路建立—数据传输—电路拆除） 多路复用 频分复用（FDM）— 同轴电缆 时分复用（TDM) — 时间分帧、分片 码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列 每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1; 波分复用（光的频分复用） 报文交换 一次将一个报文全部传输 存储转发整个报文 分组交换 报文的拆分和重组 产生额外开销 存储转发小分组 便于实现统计复用 由于流水线技术，速度比报文交换要快，硬件要求要低 适用于突发数据传输 充分利用资源 无需建立电路 分组延迟 结点处理延迟 123差错控制确定输出链路通常小于msec 排队延迟 12等待输出链路可用取决与路由器的当前拥塞状态 传输延迟（发送一个分组所需要的时间） 12分组长度链路宽度 传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟） 协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务 计算机网络结构是分层的（软件和硬件） OSI参考模型 七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层 一般主机需要实现所有层，路由器只需要实现最基本的三层 数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，并且数据链路层加帧头和帧尾 数据封装的目的 差错检测 地址信息 协议控制 物理层（解决单一比特的传输问题） 接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信） 数据链路层（结点到结点的数据传输） 组帧（便于接受信息） 物理寻址（物理层不能寻址） 流量控制（匹配发送和接受速度） 差错控制 接入控制（访问控制） 网络层 逻辑寻址（ip）—全局的唯一逻辑地址 路由 分组转发 传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输） 报文的分段和重组 SAP寻址（保证交给正确的进程） 可以实现端到端的链接控制，流量控制，差错控制 会话层（主要负责对话管理，同步等） 不单独存在 表示层（处理两个系统之间交换信息的语法和语义问题） 数据表示转化（大小端） 加解密，压缩，解压缩 不单独存在 应用层 TCP/IP参考模型 网络接口层、网际层、运输层、应用层 Everything over IP 5层参考模型 物理层 数据链路层 网络层（源到目的的数据分组路由和转发） 传输层（TCP、UDP）{进程之间的通信} 应用层（支持各种网络应用）]]></content>
+    <content type="text"><![CDATA[概述 计算机网络就是互连的、自治的计算机集合 通过交换网络进行互连 交换 动态转接 动态资源分配和传输 电路交换（电路建立—数据传输—电路拆除） 多路复用 频分复用（FDM）— 同轴电缆 时分复用（TDM) — 时间分帧、分片 码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列 每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1; 波分复用（光的频分复用） 报文交换 一次将一个报文全部传输 存储转发整个报文 分组交换 报文的拆分和重组 产生额外开销 存储转发小分组 便于实现统计复用 由于流水线技术，速度比报文交换要快，硬件要求要低 适用于突发数据传输 充分利用资源 无需建立电路 分组延迟 结点处理延迟 123差错控制确定输出链路通常小于msec 排队延迟 12等待输出链路可用取决与路由器的当前拥塞状态 传输延迟（发送一个分组所需要的时间） 12分组长度链路宽度 传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟） 协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务 计算机网络结构是分层的（软件和硬件） OSI参考模型 七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层 一般主机需要实现所有层，路由器只需要实现最基本的三层 数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，并且数据链路层加帧头和帧尾 数据封装的目的 差错检测 地址信息 协议控制 物理层（解决单一比特的传输问题） 接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信） 数据链路层（结点到结点的数据传输） 组帧（便于接受信息） 物理寻址（物理层不能寻址） 流量控制（匹配发送和接受速度） 差错控制 接入控制（访问控制） 网络层 逻辑寻址（ip）—全局的唯一逻辑地址 路由选择 分组转发 传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输） 报文的分段和重组 SAP寻址（保证交给正确的进程） 可以实现端到端的链接控制，流量控制，差错控制 会话层（主要负责对话管理，同步等） 不单独存在 表示层（处理两个系统之间交换信息的语法和语义问题） 数据表示转化（大小端） 加解密，压缩，解压缩 不单独存在 应用层 TCP/IP参考模型 网络接口层、网际层、运输层、应用层 Everything over IP 5层参考模型 物理层 数据链路层 网络层（源到目的的数据分组路由和转发） 传输层（TCP、UDP）{进程之间的通信} 应用层（支持各种网络应用）]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -104,11 +126,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2018%2F09%2F24%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2018%2F09%2F24%2Flib_int%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -118,6 +135,11 @@
       <tags>
         <tag>AD</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2018%2F09%2F24%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[ci library]]></title>
@@ -524,14 +546,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[StartWithBoot]]></title>
     <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
     <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
@@ -549,6 +563,14 @@
       <tags>
         <tag>mysql</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[uart_raspberry]]></title>
