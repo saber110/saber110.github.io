@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://blog.huhaobin.cn/2019/04/08/ubuntu_Firefox_play_HTML5_vedio/</loc>
+    <lastmod>2019-04-11T11:41:21.176Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu下firefox播放HTML5视频</title>
+        <pubTime>2019-04-08T03:19:32.000Z</pubTime>
+        
+        <tag>linux, ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</loc>
     <lastmod>2019-04-11T10:55:25.352Z</lastmod>
     <data>
@@ -58,21 +78,6 @@
              
               <breadCrumb title="算法" url="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2019/04/08/ubuntu_Firefox_play_HTML5_vedio/</loc>
-    <lastmod>2019-04-08T01:03:13.457Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2019-04-08T01:03:13.457Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -1682,17 +1687,17 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
+    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     <data>
         <display>
-        <title>集成库的学习</title>
-        <pubTime>2017-06-13T01:57:48.000Z</pubTime>
+        <title>random</title>
+        <pubTime>2017-03-26T15:54:26.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="altium designer" url="http://blog.huhaobin.cn/categories/altium-designer/"/>
+              <breadCrumb title="未分类" url="http://blog.huhaobin.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
           
         </display>
     </data>
@@ -1754,17 +1759,17 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2017/03/26/random-1/</loc>
+    <loc>http://blog.huhaobin.cn/2017/06/13/initlib/</loc>
     <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     <data>
         <display>
-        <title>random</title>
-        <pubTime>2017-03-26T15:54:26.000Z</pubTime>
+        <title>集成库的学习</title>
+        <pubTime>2017-06-13T01:57:48.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="未分类" url="http://blog.huhaobin.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+              <breadCrumb title="altium designer" url="http://blog.huhaobin.cn/categories/altium-designer/"/>
           
         </display>
     </data>

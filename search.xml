@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[ubuntu下firefox播放HTML5视频]]></title>
     <url>%2F2019%2F04%2F08%2Fubuntu_Firefox_play_HTML5_vedio%2F</url>
-    <content type="text"><![CDATA[12345title: ubuntu下firefox播放HTML5视频categories: - linuxdate: 2019-4-8 11:19:32tags: linux, ubuntu 缘起chrome内存吃的太狠，渣笔记本带的很吃力，但是用中国大学mooc不能正常观看教学视频，报错不能正常播放视频[code:6]。 缺少组件1apt install ubuntu-restricted-extras ubuntu-restricted-extras通俗来说就是ubuntu下的一些支持库，他可以帮助改善MP3、vedio、DVD等的体验，也可以获得windows下的字体体验和FLASH之类的功能]]></content>
+    <content type="text"><![CDATA[缘起chrome内存吃的太狠，渣笔记本带的很吃力，但是用中国大学mooc不能正常观看教学视频，报错不能正常播放视频[code:6]。 缺少组件1apt install ubuntu-restricted-extras ubuntu-restricted-extras通俗来说就是ubuntu下的一些支持库，他可以帮助改善MP3、vedio、DVD等的体验，也可以获得windows下的字体体验和FLASH之类的功能]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux, ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[扩展/boot分区]]></title>
+    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
+    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[计算机网络2]]></title>
@@ -25,17 +42,6 @@
       </categories>
       <tags>
         <tag>自顶向下方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[扩展/boot分区]]></title>
-    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
-    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -126,6 +132,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2018%2F09%2F24%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2018%2F09%2F24%2Flib_int%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -135,11 +146,6 @@
       <tags>
         <tag>AD</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2018%2F09%2F24%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[ci library]]></title>
@@ -155,17 +161,17 @@
     <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C 语言不能省略形参，即使不使用 C语言的数据存储空间 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆） 局部变量在return之后出栈销毁，不要尝试返回局部指针地址 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同 占用空间小的转化为占用空间大的： 考虑内存越界访问 结构体强制转换 ： 考虑字节对齐 字符串 通过索引读取字符串时，一定要判断索引的正确性 多线程编程 互斥量用来对临界区的互斥进入 条件变量用于线程的阻塞等待 指针 12345int * p = NULL;&amp;p 表示p的地址p 表示变量p的内容*p 表示p指向的存储单元的内容 数字0是唯一能输给指针的数值(相当于NULL) void * :指向任何类型的指针 注意深复制和浅复制的区别浅复制12345int *p, *q;*p = 58;q = p; // q 和 P 指向同一内存单元free(q);printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放 动态变量 在程序运行过程中产生的变量称为动态变量 创建 123int * p; char *q;p = new int; // 在内存中创建一个变量，存储所分配的内存地址到p中q = new char[19]; // 在内存中创建一个数组，并将数组地址存储到q中 使用 12*p = 28;*q = &quot;hello&quot;; 销毁 12delete p;delete [] q; 动态数组 创建 12int *p;p = new int[10]; 使用 123* p = 25; //25存到第一个存储空间里 = p[0] = 25；p ++;* p = 35; //35存到第二个存储空间里 = p[1] = 35；]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>%2F2018%2F09%2F24%2FUnistallPip%2F</url>
+    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[socksV5转化为http代理]]></title>
     <url>%2F2018%2F09%2F24%2Fsockstohttp%2F</url>
     <content type="text"><![CDATA[使用工具 privoxy 安装1apt-get install privoxy 更改配置1vim /etc/privoxy/config 并在里面添加1forward-socks5 / 127.0.0.1:1080 . 重启服务1service privoxy restart 给系统设置http代理1vim ~/.bashrc 添加1export http_proxy=http://127.0.0.1:8118/ 使更改生效1source ~/.bashrc]]></content>
       <categories>
         <category>代理</category>
       </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2018%2F09%2F24%2FUnistallPip%2F</url>
-    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
   </entry>
   <entry>
     <title></title>
@@ -565,14 +571,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[uart_raspberry]]></title>
     <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
     <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
@@ -581,15 +579,12 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
-    <url>%2F2017%2F09%2F30%2Fraspberry_ubuntumate%2F</url>
-    <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启sshwindows用户可以打开powershell进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
-      <tags>
-        <tag>树莓派</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[树莓派连接隐藏wifi]]></title>
@@ -608,6 +603,17 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu mate 在树莓派上的应用]]></title>
+    <url>%2F2017%2F09%2F30%2Fraspberry_ubuntumate%2F</url>
+    <content type="text"><![CDATA[下载安装系统,并启动 系统默认没有开启ssh,所以要新建文件以开启sshwindows用户可以打开powershell进入SD卡根目录,执行 1new-item ssh -type file 开机 开机配置过程基本上跟ubuntu没有什么区别,选择wifi同步升级软件,检测键盘布局之类的. 接下来就是配置无线以及有线网络,方便没有HDMI显示器的环境下使用 重启 没有链接到网络,后来发现ubuntu mate在启动后会停留在输入密码登录的界面 自动登录 1https://ubuntu-mate.community/t/enable-automatic-login-in-ubuntu-mate-16-04-for-raspberry-pi-3/5679/4]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+      <tags>
+        <tag>树莓派</tag>
       </tags>
   </entry>
   <entry>
@@ -673,17 +679,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[shell]]></title>
-    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[服务器操作规范]]></title>
     <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
     <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
@@ -692,6 +687,17 @@
       </categories>
       <tags>
         <tag>服务器操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell]]></title>
+    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2019-04-08T01:03:13.457Z</updated>
+  <updated>2019-04-11T11:41:21.176Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -17,23 +17,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>ubuntu下firefox播放HTML5视频</title>
     <link href="http://blog.huhaobin.cn/2019/04/08/ubuntu_Firefox_play_HTML5_vedio/"/>
     <id>http://blog.huhaobin.cn/2019/04/08/ubuntu_Firefox_play_HTML5_vedio/</id>
-    <published>2019-04-08T01:03:13.457Z</published>
-    <updated>2019-04-08T01:03:13.457Z</updated>
+    <published>2019-04-08T03:19:32.000Z</published>
+    <updated>2019-04-11T11:41:21.176Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: ubuntu下firefox播放HTML5视频</div><div class="line">categories:</div><div class="line">  - linux</div><div class="line">date: 2019-4-8 11:19:32</div><div class="line">tags: linux, ubuntu</div></pre></td></tr></table></figure><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>chrome内存吃的太狠，渣笔记本带的很吃力，但是用中国大学mooc不能正常观看教学视频，报错不能正常播放视频[code:6]。</p><h2 id="缺少组件"><a href="#缺少组件" class="headerlink" title="缺少组件"></a>缺少组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install ubuntu-restricted-extras</div></pre></td></tr></table></figure><h2 id="ubuntu-restricted-extras"><a href="#ubuntu-restricted-extras" class="headerlink" title="ubuntu-restricted-extras"></a>ubuntu-restricted-extras</h2><p>通俗来说就是ubuntu下的一些支持库，他可以帮助改善MP3、vedio、DVD等的体验，也可以获得windows下的字体体验和FLASH之类的功能</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>chrome内存吃的太狠，渣笔记本带的很吃力，但是用中国大学mooc不能正常观看教学视频，报错不能正常播放视频[code:6]。</p><h2 id="缺少组件"><a href="#缺少组件" class="headerlink" title="缺少组件"></a>缺少组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install ubuntu-restricted-extras</div></pre></td></tr></table></figure><h2 id="ubuntu-restricted-extras"><a href="#ubuntu-restricted-extras" class="headerlink" title="ubuntu-restricted-extras"></a>ubuntu-restricted-extras</h2><p>通俗来说就是ubuntu下的一些支持库，他可以帮助改善MP3、vedio、DVD等的体验，也可以获得windows下的字体体验和FLASH之类的功能</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+        &lt;h2 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h2&gt;&lt;p&gt;chrome内存吃的太狠，渣笔记本带的很吃力，但是用中国大学mooc不能正常观看教学视频，报错不能正常播放视频[code:6]。&lt;/p&gt;
+&lt;
       
     
     </summary>
     
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux, ubuntu" scheme="http://blog.huhaobin.cn/tags/linux-ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>扩展/boot分区</title>
+    <link href="http://blog.huhaobin.cn/2019/04/07/boot%20partition%20is%20not%20enough/"/>
+    <id>http://blog.huhaobin.cn/2019/04/07/boot partition is not enough/</id>
+    <published>2019-04-06T16:00:00.000Z</published>
+    <updated>2019-04-07T09:13:38.179Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="how-to-expend-the-capicity-of-boot-partition-in-linux"><a href="#how-to-expend-the-capicity-of-boot-partition-in-linux" class="headerlink" title="how to expend the capicity of /boot partition in linux"></a>how to expend the capicity of /boot partition in linux</h2><ol><li>use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon</li><li>copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt</li><li>click the old /boot prtition in Disks, click buttons as following<br> “More actions” signed by a gear<br> “Edit Mount Options…”, meanwhile, wtrite the config down for later<br> uncheck “Mount at Startup”<br> modify “Mount Point” to something else, such as “/boot_old”<br> and click OK</li><li>click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following<br> “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change<br> “Edit Mount Options…” copy the config form old one<br> OK</li></ol><p>and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure:</p><p>installation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y boot-repair &amp;&amp; boot-repair</div></pre></td></tr></table></figure></p><p>Recommended repair<br>launch Boot-Repair from either :<br>the Dash (the Ubuntu logo at the top-left of the screen)<br>or by typing ‘boot-repair’ in a terminal<br>Then click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs.</p><p>If the repair did not succeed, indicate the URL to people who help you by email or forum.</p><p>if you have trouble in booting, if you computer is booted by grub2, here is you solutions:</p><ol><li>ls<br>find the boot file location </li><li>set root = (hd0, gpt0)<br>(hd0,gpt0) is your boot file location</li><li>linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0<br>/dev/sda0 is your root location</li><li>initrd /path/to/your/bootfile(initrd*)</li><li>boot</li></ol><p>now you can boot your computer.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
@@ -88,31 +118,6 @@
     
     
       <category term="自顶向下方法" scheme="http://blog.huhaobin.cn/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>扩展/boot分区</title>
-    <link href="http://blog.huhaobin.cn/2019/04/07/boot%20partition%20is%20not%20enough/"/>
-    <id>http://blog.huhaobin.cn/2019/04/07/boot partition is not enough/</id>
-    <published>2019-04-06T16:00:00.000Z</published>
-    <updated>2019-04-07T09:13:38.179Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="how-to-expend-the-capicity-of-boot-partition-in-linux"><a href="#how-to-expend-the-capicity-of-boot-partition-in-linux" class="headerlink" title="how to expend the capicity of /boot partition in linux"></a>how to expend the capicity of /boot partition in linux</h2><ol><li>use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon</li><li>copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt</li><li>click the old /boot prtition in Disks, click buttons as following<br> “More actions” signed by a gear<br> “Edit Mount Options…”, meanwhile, wtrite the config down for later<br> uncheck “Mount at Startup”<br> modify “Mount Point” to something else, such as “/boot_old”<br> and click OK</li><li>click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following<br> “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change<br> “Edit Mount Options…” copy the config form old one<br> OK</li></ol><p>and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure:</p><p>installation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y boot-repair &amp;&amp; boot-repair</div></pre></td></tr></table></figure></p><p>Recommended repair<br>launch Boot-Repair from either :<br>the Dash (the Ubuntu logo at the top-left of the screen)<br>or by typing ‘boot-repair’ in a terminal<br>Then click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs.</p><p>If the repair did not succeed, indicate the URL to people who help you by email or forum.</p><p>if you have trouble in booting, if you computer is booted by grub2, here is you solutions:</p><ol><li>ls<br>find the boot file location </li><li>set root = (hd0, gpt0)<br>(hd0,gpt0) is your boot file location</li><li>linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0<br>/dev/sda0 is your root location</li><li>initrd /path/to/your/bootfile(initrd*)</li><li>boot</li></ol><p>now you can boot your computer.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
@@ -347,6 +352,27 @@
   </entry>
   
   <entry>
+    <title>git</title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
+    <published>2018-09-24T05:53:47.732Z</published>
+    <updated>2017-09-28T15:04:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>集成库的学习</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/lib_int/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/lib_int/</id>
@@ -369,27 +395,6 @@
     
     
       <category term="AD" scheme="http://blog.huhaobin.cn/tags/AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git</title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
-    <published>2018-09-24T05:53:47.732Z</published>
-    <updated>2017-09-28T15:04:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -442,6 +447,28 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
+    <published>2018-09-24T05:53:47.556Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/sockstohttp/</id>
@@ -463,28 +490,6 @@
     </summary>
     
       <category term="代理" scheme="http://blog.huhaobin.cn/categories/%E4%BB%A3%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
-    <published>2018-09-24T05:53:47.556Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
     
     
   </entry>
