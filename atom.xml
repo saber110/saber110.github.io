@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2019-04-11T11:41:21.176Z</updated>
+  <updated>2019-04-12T02:04:31.438Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络4</title>
+    <link href="http://blog.huhaobin.cn/2019/04/12/computernetworking4/"/>
+    <id>http://blog.huhaobin.cn/2019/04/12/computernetworking4/</id>
+    <published>2019-04-11T16:00:00.000Z</published>
+    <updated>2019-04-12T02:04:31.438Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><pre><code>1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务2. 端系统和路由器都运行网络层3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）       1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**       2. 传输层的连接是只有通信双方参与的</code></pre><h2 id="网络层服务模型"><a href="#网络层服务模型" class="headerlink" title="网络层服务模型"></a>网络层服务模型</h2><ol><li>无连接服务<ol><li>不事先确定系列分组的传输路径</li><li>每个分组独立确定路径</li><li>不同的分组路径可能不同</li><li>eg：数据报网络</li></ol></li><li>连接服务<ol><li>首先为系列分组的传输确定从源到目的的路径</li><li>然后用该路径进行该系列分组的传输</li><li>传输结束后拆除连接</li><li>eg：虚电路网络</li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;网络层&quot;&gt;&lt;a href=&quot;#网络层&quot; class=&quot;headerlink&quot; title=&quot;网络层&quot;&gt;&lt;/a&gt;网络层&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="自顶向下方法" scheme="http://blog.huhaobin.cn/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu下firefox播放HTML5视频</title>
@@ -39,6 +64,32 @@
     
     
       <category term="linux, ubuntu" scheme="http://blog.huhaobin.cn/tags/linux-ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络3</title>
+    <link href="http://blog.huhaobin.cn/2019/04/07/computernetworking3/"/>
+    <id>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</id>
+    <published>2019-04-06T16:00:00.000Z</published>
+    <updated>2019-04-12T01:45:23.247Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ol><li><p>为运行在不同的端系统上的<strong>进程</strong>提供了一种逻辑通信机制(网络层提供<strong>主机</strong>之间的逻辑通信机制)</p><ul><li>位于网络层之上</li><li>依赖于网络层</li><li>对网络层功能进行加强</li></ul></li><li><p>传输层提供的服务</p><ul><li>可靠的、按序的交付服务（TCP）<ul><li>流量控制</li><li>拥塞控制</li><li>连接建立</li></ul></li><li>不可靠的交付服务（UDP）<ul><li>复用/分用</li><li>简单的错误校验</li><li>尽力而为（best effort）</li><li>不需要建立链接，延迟很小</li><li>上层更好控制（不用顾及拥塞控制之类）</li><li>经常用于流媒体、DNS、SNMP等</li></ul></li><li>不提供延迟、带宽等方面的服务</li></ul></li><li><p>多路复用/分用</p></li></ol><h2 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h2><ol><li><p>不错、不丢、不乱</p></li><li><p>可靠数据传输协议</p></li><li><p>需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输</p></li><li><p>协议实现（数据错误，位错误）</p><ul><li>有限状态机来刻画传输协议</li><li>确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息<ul><li>为ACK和NAK增加校验和</li><li>添加额外的控制消息</li><li>NAK/ACK 坏掉重传（产生重复传送的问题）</li><li>增加序列号进行NAK/ACK重传</li></ul></li><li>差错检测（校验和等）</li><li>停-等协议（有限状态机）</li><li>NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组）</li></ul><p>5 . 协议实现（丢失分组）</p><ul><li>等待合理的一段时间之后重传（需要定时器）</li><li>停等引起效率低下</li><li>采用流水线机制（连发多个分组再等待ACK）</li><li>使用滑动窗口协议实现流水线</li></ul></li></ol><h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="GBN（Go-Back-N）协议：一组分组一组分组的滑动"><a href="#GBN（Go-Back-N）协议：一组分组一组分组的滑动" class="headerlink" title="GBN（Go-Back-N）协议：一组分组一组分组的滑动"></a>GBN（Go-Back-N）协议：一组分组一组分组的滑动</h3><ol><li><p>发送方</p><ul><li><p>窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号</p></li><li><p>采用累积确认的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ACK(n)表示确认到n(包含n)的分组均被正确接收</div></pre></td></tr></table></figure></li><li><p>整个窗口设置一个计时器</p></li><li><p>超时则重发序列号大于n还未收到ack的分组</p></li></ul></li><li><p>接收方（没有缓存，没有接收方窗口）</p><ul><li>发送拥有最高序列号的、已被正确接收的分组的ACK<ul><li>可能产生重复的ACK</li></ul></li><li>乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号</li></ul></li></ol><h3 id="SR（selective-repeat-协议：一个分组一个分组的滑动"><a href="#SR（selective-repeat-协议：一个分组一个分组的滑动" class="headerlink" title="SR（selective repeat)协议：一个分组一个分组的滑动"></a>SR（selective repeat)协议：一个分组一个分组的滑动</h3><ol><li>接收方（设置缓冲机制，缓冲乱需到达的分组）<ol><li>添加接收方窗口</li><li>对每个分组单独确认</li></ol></li><li>发送方<ol><li>为每个分组设置单独的计数器</li></ol></li><li>窗口可以跳跃前移</li></ol><h2 id="TCP概述"><a href="#TCP概述" class="headerlink" title="TCP概述"></a>TCP概述</h2><ol><li><p>点对点（一个发送方，一个接收方）</p></li><li><p>可靠的按序的字节流</p></li><li><p>流水线机制（拥塞控制，流量控制，窗口大小设置）</p></li><li><p>发送方/接收方缓存</p></li><li><p>全双工（同一连接中能传输双向数据流）</p></li><li><p>面向连接</p><ol><li>通信双方在发送数据前必须建立连接</li><li>连接状态只在连接的两端维护，沿途 结点并不维护</li><li>TCP连接包括：两台主机上的缓存，连接状态变量、socket等</li></ol></li><li><p>流量控制机制</p></li><li><p>序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号</p></li><li><p>ACKS</p><ol><li>累计确认机制：该序列号之前的所有字节已经被正确处理</li><li>返回是希望接收到的下一个字节的序列号</li></ol></li><li><p>可靠数据传输</p><ol><li>TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务</li><li>使用单一重传定时器</li><li>触发重传的事件（超时，收到重复ACK）</li></ol></li><li><p>快速重传</p><p>​    由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传</p></li><li><p>流量控制（速度匹配机制)</p><p>控制发送方发送速度不要过快以至于淹没接收方的buffer</p><p>receiver 在segment头部告诉sender还有多少buffer</p></li><li><p>多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率</p></li></ol><h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><ol><li>一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求</li><li>连接的三次握手<ol><li>客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号）</li><li>服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存）</li><li>客户机收到SYNACK，回复ACK（可以包含数据）</li><li>建立TCP连接<strong>两次握手不能确定具体是否成功，四次握手会有资源浪费</strong></li></ol></li><li>关闭的四次握手<ol><li>客户机向服务器发送FIN报文段</li><li>服务器收到FIN，回复ACK，关闭连接，发送FIN</li><li>客户机收到FIN，回复ACK<ol><li>进入等待状态，如果收到FIN，则重新发送ACK</li></ol></li><li>服务器收到ACK，关闭链接</li></ol></li></ol><h2 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h2><ol><li><p>表现</p><ol><li>分组丢失</li><li>分组延迟越来越大</li></ol><h3 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h3><ul><li>端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法）</li><li>网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM）</li></ul><h3 id="拥塞控制的基本原理"><a href="#拥塞控制的基本原理" class="headerlink" title="拥塞控制的基本原理"></a>拥塞控制的基本原理</h3><ul><li><p>限制sender的发送速率</p></li><li><p>ConfgWin：（发送窗口的大小）</p><ul><li>动态调整以改变发送速率</li><li>反映所感知到的网络拥塞</li></ul></li><li><p>网络拥塞的感知</p><ul><li>LOSS事件==timeout或者连续3个重复的ACK</li></ul></li><li><p>合理调整发送速率</p><ul><li><p>加性增—乘性减（AIMD)</p><p>谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）;  发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半）</p></li><li><p>慢启动（SS）</p><p>当链接刚刚建立时（CongWin = 1,  初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升</p></li><li><p>指数增长切换到加性增</p><p>用一个变量Threshold， 设置为LOSS事件前congWin值的1/2.</p><p><img src="../image/loss_event.jpg" alt="loss event"></p><ul><li><p>收到3个重复的ACK(网络还能传输一些segment)</p><p>将congWin切为一半，然后线性增长</p></li><li><p>Timeout事件（<strong>拥塞更严重</strong>)</p><p>CongWin直接设为1,然后指数增长，达到threshold之后再线性增长</p></li></ul></li></ul></li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;传输层&quot;&gt;&lt;a href=&quot;#传输层&quot; class=&quot;headerlink&quot; title=&quot;传输层&quot;&gt;&lt;/a&gt;传输层&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;为运行在不同的端系统上的&lt;strong&gt;进程&lt;/strong&gt;提供了一种逻辑通信机制(网络层提供&lt;strong&gt;主
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="自顶向下方法" scheme="http://blog.huhaobin.cn/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -84,32 +135,6 @@
 &lt;li&gt;网络应用的体系结构&lt;ul&gt;
 &lt;li&gt;客户机/服务器（c/s）&lt;/li&gt;
 &lt;li&gt;peer to peer (点对点结构)
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="自顶向下方法" scheme="http://blog.huhaobin.cn/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络3</title>
-    <link href="http://blog.huhaobin.cn/2019/04/07/computernetworking3/"/>
-    <id>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</id>
-    <published>2019-04-06T16:00:00.000Z</published>
-    <updated>2019-04-11T10:55:25.352Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ol><li><p>为运行在不同的端系统上的<strong>进程</strong>提供了一种逻辑通信机制(网络层提供<strong>主机</strong>之间的逻辑通信机制)</p><ul><li>位于网络层之上</li><li>依赖于网络层</li><li>对网络层功能进行加强</li></ul></li><li><p>传输层提供的服务</p><ul><li>可靠的、按序的交付服务（TCP）<ul><li>流量控制</li><li>拥塞控制</li><li>连接建立</li></ul></li><li>不可靠的交付服务（UDP）<ul><li>复用/分用</li><li>简单的错误校验</li><li>尽力而为（best effort）</li><li>不需要建立链接，延迟很小</li><li>上层更好控制（不用顾及拥塞控制之类）</li><li>经常用于流媒体、DNS、SNMP等</li></ul></li><li>不提供延迟、带宽等方面的服务</li></ul></li><li><p>多路复用/分用</p></li></ol><h2 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h2><ol><li><p>不错、不丢、不乱</p></li><li><p>可靠数据传输协议</p></li><li><p>需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输</p></li><li><p>协议实现（数据错误，位错误）</p><ul><li>有限状态机来刻画传输协议</li><li>确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息<ul><li>为ACK和NAK增加校验和</li><li>添加额外的控制消息</li><li>NAK/ACK 坏掉重传（产生重复传送的问题）</li><li>增加序列号进行NAK/ACK重传</li></ul></li><li>差错检测（校验和等）</li><li>停-等协议（有限状态机）</li><li>NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组）</li></ul><p>5 . 协议实现（丢失分组）</p><ul><li>等待合理的一段时间之后重传（需要定时器）</li><li>停等引起效率低下</li><li>采用流水线机制（连发多个分组再等待ACK）</li><li>使用滑动窗口协议实现流水线</li></ul></li></ol><h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="GBN（Go-Back-N）协议：一组分组一组分组的滑动"><a href="#GBN（Go-Back-N）协议：一组分组一组分组的滑动" class="headerlink" title="GBN（Go-Back-N）协议：一组分组一组分组的滑动"></a>GBN（Go-Back-N）协议：一组分组一组分组的滑动</h3><ol><li><p>发送方</p><ul><li><p>窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号</p></li><li><p>采用累积确认的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ACK(n)表示确认到n(包含n)的分组均被正确接收</div></pre></td></tr></table></figure></li><li><p>整个窗口设置一个计时器</p></li><li><p>超时则重发序列号大于n还未收到ack的分组</p></li></ul></li><li><p>接收方（没有缓存，没有接收方窗口）</p><ul><li>发送拥有最高序列号的、已被正确接收的分组的ACK<ul><li>可能产生重复的ACK</li></ul></li><li>乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号</li></ul></li></ol><h3 id="SR（selective-repeat-协议：一个分组一个分组的滑动"><a href="#SR（selective-repeat-协议：一个分组一个分组的滑动" class="headerlink" title="SR（selective repeat)协议：一个分组一个分组的滑动"></a>SR（selective repeat)协议：一个分组一个分组的滑动</h3><ol><li>接收方（设置缓冲机制，缓冲乱需到达的分组）<ol><li>添加接收方窗口</li><li>对每个分组单独确认</li></ol></li><li>发送方<ol><li>为每个分组设置单独的计数器</li></ol></li><li>窗口可以跳跃前移</li></ol><h2 id="TCP概述"><a href="#TCP概述" class="headerlink" title="TCP概述"></a>TCP概述</h2><ol><li><p>点对点（一个发送方，一个接收方）</p></li><li><p>可靠的按序的字节流</p></li><li><p>流水线机制（拥塞控制，流量控制，窗口大小设置）</p></li><li><p>发送方/接收方缓存</p></li><li><p>全双工（同一连接中能传输双向数据流）</p></li><li><p>面向连接</p><ol><li>通信双方在发送数据前必须建立连接</li><li>连接状态只在连接的两端维护，沿途 结点并不维护</li><li>TCP连接包括：两台主机上的缓存，连接状态变量、socket等</li></ol></li><li><p>流量控制机制</p></li><li><p>序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号</p></li><li><p>ACKS</p><ol><li>累计确认机制：该序列号之前的所有字节已经被正确处理</li><li>返回是希望接收到的下一个字节的序列号</li></ol></li><li><p>可靠数据传输</p><ol><li>TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务</li><li>使用单一重传定时器</li><li>触发重传的事件（超时，收到重复ACK）</li></ol></li><li><p>快速重传</p><p>​    由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传</p></li><li><p>流量控制（速度匹配机制)</p><p>控制发送方发送速度不要过快以至于淹没接收方的buffer</p><p>receiver 在segment头部告诉sender还有多少buffer</p></li><li><p>多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率</p></li></ol><h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><ol><li>一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求</li><li>连接的三次握手<ol><li>客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号）</li><li>服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存）</li><li>客户机收到SYNACK，回复ACK（可以包含数据）</li><li>建立TCP连接<strong>两次握手不能确定具体是否成功，四次握手会有资源浪费</strong></li></ol></li><li>关闭的四次握手<ol><li>客户机向服务器发送FIN报文段</li><li>服务器收到FIN，回复ACK，关闭连接，发送FIN</li><li>客户机收到FIN，回复ACK<ol><li>进入等待状态，如果收到FIN，则重新发送ACK</li></ol></li><li>服务器收到ACK，关闭链接</li></ol></li></ol><h2 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h2><ol><li><p>表现</p><ol><li>分组丢失</li><li>分组延迟越来越大</li></ol><h3 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h3><ul><li>端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法）</li><li>网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM）</li></ul><h3 id="拥塞控制的基本原理"><a href="#拥塞控制的基本原理" class="headerlink" title="拥塞控制的基本原理"></a>拥塞控制的基本原理</h3><ul><li><p>限制sender的发送速率</p></li><li><p>ConfgWin：（发送窗口的大小）</p><ul><li>动态调整以改变发送速率</li><li>反映所感知到的网络拥塞</li></ul></li><li><p>网络拥塞的感知</p><ul><li>LOSS事件==timeout或者连续3个重复的ACK</li></ul></li><li><p>合理调整发送速率</p><ul><li><p>加性增—乘性减（AIMD)</p><p>谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）;  发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半）</p></li><li><p>慢启动（SS）</p><p>当链接刚刚建立时（CongWin = 1,  初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升</p></li><li><p>指数增长切换到加性增</p><p>用一个变量Threshold， 设置为LOSS事件前congWin值的1/2.</p><p><img src="../image/loss_event.jpg" alt="loss event"></p><ul><li><p>收到3个重复的ACK(网络还能传输一些segment)</p><p>将congWin切为一半，然后线性增长</p></li><li><p>Timeout事件（<strong>拥塞更严重</strong>)</p><p>CongWin直接设为1,然后指数增长，达到threshold之后再线性增长</p></li></ul></li></ul></li></ul></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;传输层&quot;&gt;&lt;a href=&quot;#传输层&quot; class=&quot;headerlink&quot; title=&quot;传输层&quot;&gt;&lt;/a&gt;传输层&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;为运行在不同的端系统上的&lt;strong&gt;进程&lt;/strong&gt;提供了一种逻辑通信机制(网络层提供&lt;strong&gt;主
       
     
     </summary>
@@ -352,27 +377,6 @@
   </entry>
   
   <entry>
-    <title>git</title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
-    <published>2018-09-24T05:53:47.732Z</published>
-    <updated>2017-09-28T15:04:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>集成库的学习</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/lib_int/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/lib_int/</id>
@@ -395,6 +399,27 @@
     
     
       <category term="AD" scheme="http://blog.huhaobin.cn/tags/AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <link href="http://blog.huhaobin.cn/2018/09/24/git/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/git/</id>
+    <published>2018-09-24T05:53:47.732Z</published>
+    <updated>2017-09-28T15:04:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+      
+    
+    </summary>
+    
     
   </entry>
   
@@ -447,28 +472,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
-    <published>2018-09-24T05:53:47.556Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2018/09/24/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2018/09/24/sockstohttp/</id>
@@ -496,18 +499,18 @@
   
   <entry>
     <title></title>
-    <link href="http://blog.huhaobin.cn/2018/09/24/csu/"/>
-    <id>http://blog.huhaobin.cn/2018/09/24/csu/</id>
-    <published>2018-09-24T05:53:47.492Z</published>
-    <updated>2018-03-04T05:31:56.863Z</updated>
+    <link href="http://blog.huhaobin.cn/2018/09/24/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</id>
+    <published>2018-09-24T05:53:47.556Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="http://123.206.64.174" target="_blank" rel="external">http://123.206.64.174</a></p>]]></content>
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;http://123.206.64.174&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://123.206.64.174&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
 
       
     
