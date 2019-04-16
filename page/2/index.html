@@ -970,7 +970,7 @@ errno 外部出错变量，可以检测出
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2019/04/15/UnistallPip/">
+    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2019/04/15/sockstohttp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -989,7 +989,7 @@ errno 外部出错变量，可以检测出
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/15/UnistallPip/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2019/04/15/sockstohttp/" itemprop="url">socksV5转化为http代理</a></h1>
         
 
         <div class="post-meta">
@@ -1012,6 +1012,28 @@ errno 外部出错变量，可以检测出
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/代理/" itemprop="url" rel="index">
+                    <span itemprop="name">代理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
           
           
             
@@ -1033,7 +1055,7 @@ errno 外部出错变量，可以检测出
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5
+                  74
                 </span>
               
 
@@ -1072,12 +1094,17 @@ errno 外部出错变量，可以检测出
       
         
           
-          python -m pip uninstall pip
-
           
+使用工具  privoxy
+
+安装1apt-get install privoxy
+更改配置1vim /etc/privoxy/config
+并在里面添加1forward-socks5   /               127.0.0.1:1080 .
+重启服务1service privoxy 
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/04/15/UnistallPip/#more" rel="contents">
+            <a class="btn" href="/2019/04/15/sockstohttp/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
