@@ -4,12 +4,32 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2019/04/12/computernetworking4/</loc>
-    <lastmod>2019-04-12T02:04:31.438Z</lastmod>
+    <loc>http://blog.huhaobin.cn/2019/04/16/MAX30102/</loc>
+    <lastmod>2019-04-16T03:18:33.105Z</lastmod>
     <data>
         <display>
-        <title>计算机网络4</title>
-        <pubTime>2019-04-11T16:00:00.000Z</pubTime>
+        <title>MAX30102文档</title>
+        <pubTime>2019-04-16T13:56:20.000Z</pubTime>
+        
+        <tag>毕业设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="硬件" url="http://blog.huhaobin.cn/categories/%E7%A1%AC%E4%BB%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking2/</loc>
+    <lastmod>2019-04-16T02:37:17.050Z</lastmod>
+    <data>
+        <display>
+        <title>计算机网络2</title>
+        <pubTime>2019-04-06T16:00:00.000Z</pubTime>
         
         <tag>自顶向下方法</tag>
          
@@ -24,12 +44,72 @@
 
     
   <url>
+    <loc>http://blog.huhaobin.cn/2019/04/16/zhuangji/</loc>
+    <lastmod>2019-04-16T02:35:24.441Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu装机</title>
+        <pubTime>2019-04-16T07:00:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</loc>
-    <lastmod>2019-04-12T01:45:23.247Z</lastmod>
+    <lastmod>2019-04-16T02:25:57.393Z</lastmod>
     <data>
         <display>
         <title>计算机网络3</title>
         <pubTime>2019-04-06T16:00:00.000Z</pubTime>
+        
+        <tag>自顶向下方法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法" url="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
+    <lastmod>2019-04-15T06:49:45.802Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu解压缩zip,tar,tar.gz,tar.bz2</title>
+        <pubTime>2016-06-24T12:38:22.000Z</pubTime>
+        
+        <tag>解压</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2019/04/12/computernetworking4/</loc>
+    <lastmod>2019-04-12T02:04:31.438Z</lastmod>
+    <data>
+        <display>
+        <title>计算机网络4</title>
+        <pubTime>2019-04-11T16:00:00.000Z</pubTime>
         
         <tag>自顶向下方法</tag>
          
@@ -70,26 +150,6 @@
         <display>
         <title>计算机网络1</title>
         <pubTime>2019-04-03T16:00:00.000Z</pubTime>
-        
-        <tag>自顶向下方法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法" url="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking2/</loc>
-    <lastmod>2019-04-08T02:44:56.704Z</lastmod>
-    <data>
-        <display>
-        <title>计算机网络2</title>
-        <pubTime>2019-04-06T16:00:00.000Z</pubTime>
         
         <tag>自顶向下方法</tag>
          
@@ -216,12 +276,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/sockstohttp/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/sockstohttp/</loc>
     <lastmod>2018-07-06T11:52:07.801Z</lastmod>
     <data>
         <display>
         <title>socksV5转化为http代理</title>
-        <pubTime>2018-09-24T05:53:47.556Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.553Z</pubTime>
         
          
            
@@ -234,12 +294,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</loc>
     <lastmod>2018-06-19T03:53:09.789Z</lastmod>
     <data>
         <display>
         <title></title>
-        <pubTime>2018-09-24T05:53:47.556Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.553Z</pubTime>
         
          
            
@@ -657,12 +717,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/qtPainting/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/qtPainting/</loc>
     <lastmod>2018-04-21T06:15:31.118Z</lastmod>
     <data>
         <display>
         <title>qt画图</title>
-        <pubTime>2018-09-24T05:53:47.784Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.737Z</pubTime>
         
         <tag>上位机 Qt</tag>
          
@@ -1009,26 +1069,6 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
-    <lastmod>2018-04-21T05:22:51.792Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu解压缩zip,tar,tar.gz,tar.bz2</title>
-        <pubTime>2016-06-24T12:38:22.000Z</pubTime>
-        
-        <tag>解压</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</loc>
     <lastmod>2018-04-21T05:19:57.341Z</lastmod>
     <data>
@@ -1309,12 +1349,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/a_bigHole_ofC/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/a_bigHole_ofC/</loc>
     <lastmod>2018-03-24T04:10:48.019Z</lastmod>
     <data>
         <display>
         <title>C语言大坑</title>
-        <pubTime>2018-09-24T05:53:47.636Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.601Z</pubTime>
         
          
            
@@ -1324,12 +1364,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/csu/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/csu/</loc>
     <lastmod>2018-03-04T05:31:56.863Z</lastmod>
     <data>
         <display>
         <title></title>
-        <pubTime>2018-09-24T05:53:47.492Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.465Z</pubTime>
         
          
            
@@ -1534,12 +1574,12 @@
     
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/ci-library/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/ci-library/</loc>
     <lastmod>2017-09-30T08:50:52.000Z</lastmod>
     <data>
         <display>
         <title>ci  library</title>
-        <pubTime>2018-09-24T05:53:47.676Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.621Z</pubTime>
         
          
            
@@ -1552,12 +1592,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/lib_int/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/lib_int/</loc>
     <lastmod>2017-09-30T08:49:08.000Z</lastmod>
     <data>
         <display>
         <title>集成库的学习</title>
-        <pubTime>2018-09-24T05:53:47.732Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.689Z</pubTime>
         
         <tag>AD</tag>
          
@@ -1572,12 +1612,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/about/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/about/</loc>
     <lastmod>2017-09-30T08:48:26.000Z</lastmod>
     <data>
         <display>
         <title>新博客站的第一篇文章</title>
-        <pubTime>2018-09-24T05:53:47.768Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.717Z</pubTime>
         
         <tag>肺腑之言</tag>
          
@@ -1630,12 +1670,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/ubuntu-arm/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/ubuntu-arm/</loc>
     <lastmod>2017-09-30T08:43:22.000Z</lastmod>
     <data>
         <display>
         <title>ubuntu搭建交叉编译环境</title>
-        <pubTime>2018-09-24T05:53:47.888Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.805Z</pubTime>
         
         <tag>交叉编译</tag>
          
@@ -1682,6 +1722,24 @@
            
              
               <breadCrumb title="linux" url="http://blog.huhaobin.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>智能指纹门锁开发</title>
+        <pubTime>2016-11-08T17:38:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
           
         </display>
     </data>
@@ -1779,30 +1837,12 @@
 
     
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>智能指纹门锁开发</title>
-        <pubTime>2016-11-08T17:38:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="树莓派" url="http://blog.huhaobin.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/git/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/git/</loc>
     <lastmod>2017-09-28T15:04:42.000Z</lastmod>
     <data>
         <display>
         <title>git</title>
-        <pubTime>2018-09-24T05:53:47.732Z</pubTime>
+        <pubTime>2019-04-15T06:27:43.689Z</pubTime>
         
          
            

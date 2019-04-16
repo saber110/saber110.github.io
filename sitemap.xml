@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.huhaobin.cn/2019/04/12/computernetworking4/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/16/MAX30102/</loc>
     
-    <lastmod>2019-04-12T02:04:31.438Z</lastmod>
+    <lastmod>2019-04-16T03:18:33.105Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking2/</loc>
+    
+    <lastmod>2019-04-16T02:37:17.050Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2019/04/16/zhuangji/</loc>
+    
+    <lastmod>2019-04-16T02:35:24.441Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</loc>
     
-    <lastmod>2019-04-12T01:45:23.247Z</lastmod>
+    <lastmod>2019-04-16T02:25:57.393Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
+    
+    <lastmod>2019-04-15T06:49:45.802Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2019/04/12/computernetworking4/</loc>
+    
+    <lastmod>2019-04-12T02:04:31.438Z</lastmod>
     
   </url>
   
@@ -26,13 +54,6 @@
     <loc>http://blog.huhaobin.cn/2019/04/04/computernetworking1/</loc>
     
     <lastmod>2019-04-08T03:10:10.826Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2019/04/07/computernetworking2/</loc>
-    
-    <lastmod>2019-04-08T02:44:56.704Z</lastmod>
     
   </url>
   
@@ -79,14 +100,14 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/sockstohttp/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/sockstohttp/</loc>
     
     <lastmod>2018-07-06T11:52:07.801Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/UnistallPip/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</loc>
     
     <lastmod>2018-06-19T03:53:09.789Z</lastmod>
     
@@ -240,7 +261,7 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/qtPainting/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/qtPainting/</loc>
     
     <lastmod>2018-04-21T06:15:31.118Z</lastmod>
     
@@ -366,13 +387,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/06/24/unzip-in-ubuntu/</loc>
-    
-    <lastmod>2018-04-21T05:22:51.792Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/2018/03/11/sizeofstrlen/</loc>
     
     <lastmod>2018-04-21T05:19:57.341Z</lastmod>
@@ -485,14 +499,14 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/a_bigHole_ofC/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/a_bigHole_ofC/</loc>
     
     <lastmod>2018-03-24T04:10:48.019Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/csu/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/csu/</loc>
     
     <lastmod>2018-03-04T05:31:56.863Z</lastmod>
     
@@ -576,21 +590,21 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/ci-library/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/ci-library/</loc>
     
     <lastmod>2017-09-30T08:50:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/lib_int/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/lib_int/</loc>
     
     <lastmod>2017-09-30T08:49:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/about/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/about/</loc>
     
     <lastmod>2017-09-30T08:48:26.000Z</lastmod>
     
@@ -611,7 +625,7 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/ubuntu-arm/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/ubuntu-arm/</loc>
     
     <lastmod>2017-09-30T08:43:22.000Z</lastmod>
     
@@ -635,6 +649,13 @@
     <loc>http://blog.huhaobin.cn/2017/04/17/c-multipthread/</loc>
     
     <lastmod>2017-09-30T05:14:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
+    
+    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
     
   </url>
   
@@ -674,14 +695,7 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/2016/11/09/remote-lock/</loc>
-    
-    <lastmod>2017-09-30T05:06:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.huhaobin.cn/2018/09/24/git/</loc>
+    <loc>http://blog.huhaobin.cn/2019/04/15/git/</loc>
     
     <lastmod>2017-09-28T15:04:42.000Z</lastmod>
     
