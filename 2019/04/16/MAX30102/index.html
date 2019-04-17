@@ -84,7 +84,7 @@
 <meta property="og:image" content="http://blog.huhaobin.cn/image/max30102-1.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/max30102-2.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/max30102-3.png">
-<meta property="og:updated_time" content="2019-04-16T03:25:30.751Z">
+<meta property="og:updated_time" content="2019-04-16T08:57:11.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAX30102文档">
 <meta name="twitter:description" content="中断状态寄存器 A_FULL: FIFO满标志 在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。 触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。 PPG_RDY：新的FIFO数据就绪 在SpO 2和HR模式下，当数据FIFO中有新样本时，此中断将触发。通过读取中断状态1寄存器（0x00）或读取FIFO_DA">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,794
+                  3,797
                 </span>
               
 
@@ -469,15 +469,15 @@
 <p>表13显示了红色LED波长与LED温度的相关性。 由于LED管芯以非常短的热时间常数（几十微秒）加热，因此应根据LED的电流水平和IC的温度计算LED波长。 使用表13估算温度。</p>
 <p>MAX30102具有2线I2C / SMBus兼容串行接口，包括串行数据线（SDA）和串行时钟线（SCL）。 SDA和SCL有助于MAX30102与主机之间的通信，时钟速率高达400kHz。 图1显示了2线接口时序图。 主机生成SCL并在总线上启动数据传输。 主器件通过发送正确的从地址和数据将数据写入MAX30102。 每个发送序列由START（S）或REPEATED START（Sr）条件和STOP（P）条件构成。 传输到MAX30102的每个字长为8位，后跟一个应答时钟脉冲。 来自MAX30102的主机读数据传输正确的从机地址，然后发送一系列9个SCL脉冲。</p>
 <p>MAX30102与主机产生的SCL脉冲同步在SDA上传输数据。 主设备确认收到每个数据字节。 每个读取序列由START（S）或REPEATED START（Sr）条件，非应答和STOP（P）条件构成。 SDA既可作为输入，也可作为漏极开路输出。 SDA需要一个上拉电阻，通常大于500Ω。 SCL仅作为输入操作。 如果总线上有多个主机，或者单个主机具有漏极开路SCL输出，则SCL上需要一个上拉电阻，通常大于500Ω。 符合SDA和SCL的串联电阻是可选的。 串联电阻可保护MAX30102的数字输入免受总线上的高压尖峰影响，并最大限度地降低总线信号的串扰和下冲。</p>
-<h2 id="位传输"><a href="#位传输" class="headerlink" title="位传输"></a>位传输</h2><p>在每个SCL周期期间传输一个数据位。 SDA上的数据必须在SCL脉冲的高电平期间保持稳定。 SCL高时SDA的变化是控制信号。 请参阅START和STOP条件部分。</p>
+<h2 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h2><p>在每个SCL周期期间传输一个数据位。 SDA上的数据必须在SCL脉冲的高电平期间保持稳定。 SCL高时SDA的变化是控制信号。 请参阅START和STOP条件部分。</p>
 <p><strong>启动和停止条件</strong></p>
-<p>当总线不使用时，SDA和SCL空闲。 主设备通过发出START条件来启动通信。 START条件是SDA从高到低的转换，SCL为高电平。 STOP条件是SDA从低到高的转换，而SCL为高电平（图7）。 来自主设备的START条件表示传输到设备的开始。 主设备终止传输，并通过发出STOP条件释放总线。 如果生成REPEATED START条件而不是STOP条件，则总线保持活动状态。</p>
+<p>当总线不使用时，SDA和SCL空闲。 主设备通过发出START条件来启动通信。 START条件是SCL为高电平时SDA从高到低的转换。 STOP条件是SCL为高电平时SDA从低到高的转换（图7）。 来自主设备的START条件表示传输到设备的开始。 主设备终止传输，并通过发出STOP条件释放总线。 如果生成REPEATED START条件而不是STOP条件，则总线保持活动状态。</p>
 <p><strong>早期停止条件</strong></p>
 <p>MAX30102在数据传输期间的任何时刻都能识别出STOP条件，除非STOP条件出现在与START条件相同的高脉冲中。 为了正常工作，请勿在与START条件相同的SCL高电平脉冲期间发送STOP条件。</p>
 <p><strong>从机地址</strong></p>
-<p>总线主控器通过发出START条件后跟7位从机ID启动与从机设备的通信。空闲时，MAX30102等待START条件后跟从机ID的控制序列。串行接口逐位比较每个从站ID，如果检测到错误的从站ID，则允许接口断电并立即断开与SCL的连接。识别出START条件后跟正确的从机ID后，MAX30102被编程为接受或发送数据。从ID字的LSB是读/写（R / W）位。 R / W表示主机是写入还是从MAX30102读取数据（R / W = 0选择写入条件，R / W = 1选择读取条件）。接收到正确的从机ID后，MAX30102发出ACK通过将SDA拉低一个时钟周期。 MAX30102从机ID由7个固定位B7-B1（设置为0b1010111）组成。首先发送最重要的从ID位（B7），然后发送剩余的位。表17显示了设备的可能的从ID。</p>
+<p>总线主控器通过发出START条件后跟7位从机ID启动与从机设备的通信。空闲时，MAX30102等待START条件后跟从机ID的控制序列。串行接口逐位比较每个从站ID，如果检测到错误的从站ID，则允许接口断电并立即断开与SCL的连接。识别出START条件后跟正确的从机ID序列后，MAX30102被根据ID字的LSB是读还是写（R / W）编程为接受或发送数据。 R / W表示主机是写入还是从MAX30102读取数据（R / W = 0选择写入条件，R / W = 1选择读取条件）。接收到正确的从机ID后，MAX30102通过将SDA拉低一个时钟周期发出<strong>ACK</strong>。 MAX30102从机ID由7个固定位B7-B1（设置为0b1010111）组成。首先发送最重要的从ID位（B7），然后发送剩余的位。表17显示了设备的可能的从ID。</p>
 <p><strong>应答位</strong></p>
-<p>应答位（ACK）是时钟的第9位，MAX30102在写入模式下用于握手接收每个数据字节（图8）。 如果成功接收到前一个字节，MAX30102会在整个主机产生的第9个时钟脉冲期间拉低SDA。 监测ACK可以检测失败的数据传输。 如果接收设备繁忙或发生系统故障，则会发生不成功的数据传输。 如果数据传输失败，总线主机将重试通信。 当MAX30102处于读模式时，主器件在第9个时钟周期内拉低SDA以确认接收数据。 在每个读取字节之后，主机发送应答以允许数据传输继续。 当主机从MAX30102读取数据的最后一个字节，然后是STOP条件时，发送一个未应答。</p>
+<p>应答位（ACK）是MAX30102在时钟的第9位在写入模式下用于握手接收每个数据字节（图8）。 如果成功接收到前一个字节，MAX30102会在整个主机产生的第9个时钟脉冲期间拉低<strong>SDA</strong>。 监测ACK可以检测失败的数据传输。 如果接收设备繁忙或发生系统故障，则会发生不成功的数据传输。 如果数据传输失败，总线主机将重试通信。 当MAX30102处于<strong>读模式</strong>时，主器件在第9个时钟周期内<strong>拉低SDA</strong>以确认接收数据。 在每个读取字节之后，主机发送应答以允许数据传输继续。 当主机从MAX30102读取数据的最后一个字节，然后是STOP条件时，发送一个未应答。</p>
 <p><strong>写操作</strong></p>
 <p>对于写操作，将从ID作为第一个字节，然后是寄存器地址字节，然后是一个或多个数据字节。 寄存器地址指针在接收到的每个数据字节后自动递增，因此例如可以一次写入整个寄存器库。 使用STOP条件终止数据传输。 写操作如图9所示。</p>
 <p>内部寄存器地址指针自动递增，因此写入附加数据字节按顺序填充数据寄存器。</p>
@@ -686,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#中断状态寄存器"><span class="nav-number">1.</span> <span class="nav-text">中断状态寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断允许寄存器"><span class="nav-number">2.</span> <span class="nav-text">中断允许寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIFO数据寄存器"><span class="nav-number">3.</span> <span class="nav-text">FIFO数据寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#采样率和性能"><span class="nav-number">4.</span> <span class="nav-text">采样率和性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpO-2温度补偿"><span class="nav-number">5.</span> <span class="nav-text">SpO 2温度补偿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位传输"><span class="nav-number">6.</span> <span class="nav-text">位传输</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#中断状态寄存器"><span class="nav-number">1.</span> <span class="nav-text">中断状态寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断允许寄存器"><span class="nav-number">2.</span> <span class="nav-text">中断允许寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIFO数据寄存器"><span class="nav-number">3.</span> <span class="nav-text">FIFO数据寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#采样率和性能"><span class="nav-number">4.</span> <span class="nav-text">采样率和性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpO-2温度补偿"><span class="nav-number">5.</span> <span class="nav-text">SpO 2温度补偿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据传输"><span class="nav-number">6.</span> <span class="nav-text">数据传输</span></a></li></ol></div>
             
 
           </div>
