@@ -146,27 +146,6 @@
   </entry>
   
   <entry>
-    <title>git</title>
-    <link href="http://blog.huhaobin.cn/2019/04/15/git/"/>
-    <id>http://blog.huhaobin.cn/2019/04/15/git/</id>
-    <published>2019-04-15T06:27:43.689Z</published>
-    <updated>2017-09-28T15:04:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>集成库的学习</title>
     <link href="http://blog.huhaobin.cn/2019/04/15/lib_int/"/>
     <id>http://blog.huhaobin.cn/2019/04/15/lib_int/</id>
@@ -189,6 +168,27 @@
     
     
       <category term="AD" scheme="http://blog.huhaobin.cn/tags/AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <link href="http://blog.huhaobin.cn/2019/04/15/git/"/>
+    <id>http://blog.huhaobin.cn/2019/04/15/git/</id>
+    <published>2019-04-15T06:27:43.689Z</published>
+    <updated>2017-09-28T15:04:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+      
+    
+    </summary>
+    
     
   </entry>
   
@@ -241,6 +241,28 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://blog.huhaobin.cn/2019/04/15/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</id>
+    <published>2019-04-15T06:27:43.553Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2019/04/15/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2019/04/15/sockstohttp/</id>
@@ -262,28 +284,6 @@
     </summary>
     
       <category term="代理" scheme="http://blog.huhaobin.cn/categories/%E4%BB%A3%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2019/04/15/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</id>
-    <published>2019-04-15T06:27:43.553Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
     
     
   </entry>
@@ -315,9 +315,9 @@
     <link href="http://blog.huhaobin.cn/2019/04/12/computernetworking4/"/>
     <id>http://blog.huhaobin.cn/2019/04/12/computernetworking4/</id>
     <published>2019-04-11T16:00:00.000Z</published>
-    <updated>2019-04-22T06:39:15.410Z</updated>
+    <updated>2019-04-22T08:07:03.490Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><pre><code>1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务2. 端系统和路由器都运行网络层3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）       1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**       2. 传输层的连接是只有通信双方参与的</code></pre><h2 id="网络层服务模型"><a href="#网络层服务模型" class="headerlink" title="网络层服务模型"></a>网络层服务模型</h2><ol><li>无连接服务<ol><li>不事先确定系列分组的传输路径</li><li>每个分组独立确定路径</li><li>不同的分组路径可能不同</li><li>eg：数据报网络</li></ol></li><li>连接服务<ol><li>首先为系列分组的传输确定从源到目的的路径</li><li>然后用该路径进行该系列分组的传输</li><li>传输结束后拆除连接</li><li>eg：虚电路网络（ATM网络）</li></ol></li></ol><h2 id="数据包网络"><a href="#数据包网络" class="headerlink" title="数据包网络"></a>数据包网络</h2><ol><li>特征<ul><li>网络层无连接</li><li>每个分组携带目的地址</li><li>路由器根据分组的目的地址（范围）进行转发分组（internet）<ul><li>基于路由协议/算法构建转发表</li><li>检索转发表</li><li>每个分组独立选路</li></ul></li></ul></li><li>转发原则<ul><li>最长前缀匹配优先（优先选择与分组目的地址匹配前缀最长的入口）</li></ul></li></ol><h4 id="简化网络，复杂“边缘”"><a href="#简化网络，复杂“边缘”" class="headerlink" title="简化网络，复杂“边缘”"></a>简化网络，复杂“边缘”</h4><h2 id="internet网络层"><a href="#internet网络层" class="headerlink" title="internet网络层"></a>internet网络层</h2><p><img src="./image/internetNetworking.png" alt="网络层示意"></p><ol><li><p>网络链路层存在最大传输单元（MTU）——链路层数据帧可封装数据的上限</p><ol><li>不同链路的MTU不同</li><li>大ip分组向较小的MTU链路转发时<strong>可以</strong>被“分片”， 若相关标志位(DF)不允许分片，则将起丢掉，并用ICMP回传控制信息</li><li>ip分片到达目的主机才进行组装（路由器只进行拆分，不组装）</li><li>若有分片后的数据收不到，则丢弃整个分组（MF标志位：最后一片或未分片）</li><li>ipv4 片偏移字段以8字节为单位</li></ol></li><li><p>ip编址（<strong>层次化编址</strong>）</p><ol><li><p>ip地址与每个<strong>接口</strong>相关联</p></li><li><p>主机域不能全0也不能全1(广播地址)</p></li><li><p>ip划分：某个组织的网络号（ip地址高位）相同，主机号不同</p></li><li><p>ip子网：ip地址具有相同网络号的设备<strong>接口</strong></p><p>不跨越路由器（第三及以上层网络设备）可以彼此物理联通的设备</p></li></ol></li><li><p>有类ip地址/有类编址</p><p><img src="./image/ipv4Sort.png" alt="ipv4分类"></p><ul><li>D类地址用作多播</li><li>E类保留做研究使用</li><li>A、B、C类也有部分地址不可以被分配</li></ul></li><li><p>ip子网的划分和子网掩码</p><ol><li>将ip地址划分为网络号（NetID），<em>子网号（SubID）</em>，和主机号（HostID）</li><li>子网掩码（用来确定是否分了子网和子网的大小）<ol><li>NetID，SubID全取1</li><li>HostID全取0</li></ol></li><li>子网划分中比不划分子网有更多的不能使用的地址</li></ol></li><li><p>无类域间路由(CIDR: classless InterDomain Routing)</p><ol><li><p>消除传统的A，B，C类地址界限</p><p>将网络号和子网号统称为网络前缀</p></li><li><p>融合子网地址和子网掩码</p><p>格式：a.b.c.d/x,  x为前缀的长度</p></li></ol></li><li><p>DHCP </p><ol><li><p>默认网关：若分组要送出/入该子网则应该先送给网关，再由网关进行转发</p></li><li><p>从服务器动态获取：</p><ol><li>ip地址</li><li>子网掩码</li><li>默认网管地址</li><li>DNS服务器名称和ip地址</li></ol></li><li><p>“即插即用”</p></li><li><p>允许地址重用，在用地址续租</p></li><li><p>允许移动用户加入网络</p></li><li><p>DHCP配置协议</p><ol><li>需要接入网络的主机广播”DHCP discover”（发现报文）</li><li>DHCP服务器（一个子网里面可能有多个也可能没有）利用“DHCP offer“（提供报文）进行响应</li><li>主机向回应offer的DHCP服务器请求ip地址：”DHCP request“（请求报文）</li><li>DHCP服务器分配ip地址:“DHCP ack”（确认报文）</li></ol></li><li><p>DHCP配置过程示例</p><p><img src="./image/DHCPExample.png" alt="DHCP"></p><ul><li>DHCP服务器端口67，客户机端口68</li><li>第一次，第二次数据传输进行广播是因为相互不清楚对方的ip</li><li>第三次数据传输进行广播是为了告诉其他DHCP服务器客户机已经分配了ip，免得占用其他资源</li></ul></li><li><p>DHCP在应用层实现，封装在UDP数据报中</p></li></ol></li><li><p>网络地址转换(NAT)</p><ol><li>实现步骤<ol><li>替换：利用（NAT IP地址，新端口号）替换每个外出IP数据报的（源IP地址，源端口号）</li><li>记录：将每对（NAT IP地址，新端口号）与（源IP地址，源端口号）的替换信息存储到NAT转换表中</li><li>替换：根据NAT转换表，利用（源IP地址，源端口号）替换每个进入内网IP数据报的（目的IP地址，目的端口号），即（NAT IP地址，新端口号）</li></ol></li><li>NAT穿透问题<ol><li>方法1：静态配置NAT，将特定端口的连接请求转发给服务器</li><li>方法2：利用UPnp（互联网网管设备协议）自动配置</li><li>方法3：中继（代理）<ol><li>NAT内部的客户与中继服务器建立连接</li><li>外部客户也与中继服务器建立连接</li><li>中继服务器桥接两个连接的分组</li></ol></li></ol></li></ol></li><li><p>互联网控制报文协议（ICMP）</p><ol><li>主要功能：支持主机或者路由器进行<strong>差错报告</strong>和<strong>网络探询</strong></li><li>两类ICMP报文：差错报告报文（5种）和网络探询报文（2组）</li><li>不发送ICMp差错报告报文的特殊情况<ul><li>对ICMp差错报告报文不再发送ICMP差错报告报文</li><li>除第一个ip数据报分片外，对所有后续分片均不发送ICMP差错报告报文</li><li>对所有多播ip数据报均不发送</li><li>对具有特殊IP的数据报不发送</li></ul></li><li>ICMP封装在IP数据报中传输</li></ol></li><li><p>IPv6</p><ol><li>IPv4相比的变化<ul><li>彻底移除首部的校验和字段，以减少每跳处理时间</li><li>选项（options）字段从基本首部移出，定义多个选项首部，通过“下一个首部”字段指示</li><li>ICMPv6<ul><li>附加报文类型</li><li>多播组管理功能</li></ul></li></ul></li><li></li></ol></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><pre><code>1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务2. 端系统和路由器都运行网络层3. 核心功能: 转发和路由, 连接建立（有些网络不需要建立）       1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**       2. 传输层的连接是只有通信双方参与的</code></pre><h2 id="网络层服务模型"><a href="#网络层服务模型" class="headerlink" title="网络层服务模型"></a>网络层服务模型</h2><ol><li>无连接服务<ol><li>不事先确定系列分组的传输路径</li><li>每个分组独立确定路径</li><li>不同的分组路径可能不同</li><li>eg：数据报网络</li></ol></li><li>连接服务<ol><li>首先为系列分组的传输确定从源到目的的路径</li><li>然后用该路径进行该系列分组的传输</li><li>传输结束后拆除连接</li><li>eg：虚电路网络（ATM网络）</li></ol></li></ol><h2 id="数据包网络"><a href="#数据包网络" class="headerlink" title="数据包网络"></a>数据包网络</h2><ol><li>特征<ul><li>网络层无连接</li><li>每个分组携带目的地址</li><li>路由器根据分组的目的地址（范围）进行转发分组（internet）<ul><li>基于路由协议/算法构建转发表</li><li>检索转发表</li><li>每个分组独立选路</li></ul></li></ul></li><li>转发原则<ul><li>最长前缀匹配优先（优先选择与分组目的地址匹配前缀最长的入口）</li></ul></li></ol><h4 id="简化网络，复杂“边缘”"><a href="#简化网络，复杂“边缘”" class="headerlink" title="简化网络，复杂“边缘”"></a>简化网络，复杂“边缘”</h4><h2 id="internet网络层"><a href="#internet网络层" class="headerlink" title="internet网络层"></a>internet网络层</h2><p><img src="/image/internetNetworking.png" alt="网络层示意"></p><ol><li><p>网络链路层存在最大传输单元（MTU）——链路层数据帧可封装数据的上限</p><ol><li>不同链路的MTU不同</li><li>大ip分组向较小的MTU链路转发时<strong>可以</strong>被“分片”， 若相关标志位(DF)不允许分片，则将起丢掉，并用ICMP回传控制信息</li><li>ip分片到达目的主机才进行组装（路由器只进行拆分，不组装）</li><li>若有分片后的数据收不到，则丢弃整个分组（MF标志位：最后一片或未分片）</li><li>ipv4 片偏移字段以8字节为单位</li></ol></li><li><p>ip编址（<strong>层次化编址</strong>）</p><ol><li><p>ip地址与每个<strong>接口</strong>相关联</p></li><li><p>主机域不能全0也不能全1(广播地址)</p></li><li><p>ip划分：某个组织的网络号（ip地址高位）相同，主机号不同</p></li><li><p>ip子网：ip地址具有相同网络号的设备<strong>接口</strong></p><p>不跨越路由器（第三及以上层网络设备）可以彼此物理联通的设备</p></li></ol></li><li><p>有类ip地址/有类编址</p><p><img src="/image/ipv4Sort.png" alt="ipv4分类"></p><ul><li>D类地址用作多播</li><li>E类保留做研究使用</li><li>A、B、C类也有部分地址不可以被分配</li></ul></li><li><p>ip子网的划分和子网掩码</p><ol><li>将ip地址划分为网络号（NetID），<em>子网号（SubID）</em>，和主机号（HostID）</li><li>子网掩码（用来确定是否分了子网和子网的大小）<ol><li>NetID，SubID全取1</li><li>HostID全取0</li></ol></li><li>子网划分中比不划分子网有更多的不能使用的地址</li></ol></li><li><p>无类域间路由(CIDR: classless InterDomain Routing)</p><ol><li><p>消除传统的A，B，C类地址界限</p><p>将网络号和子网号统称为网络前缀</p></li><li><p>融合子网地址和子网掩码</p><p>格式：a.b.c.d/x,  x为前缀的长度</p></li></ol></li><li><p>DHCP </p><ol><li><p>默认网关：若分组要送出/入该子网则应该先送给网关，再由网关进行转发</p></li><li><p>从服务器动态获取：</p><ol><li>ip地址</li><li>子网掩码</li><li>默认网管地址</li><li>DNS服务器名称和ip地址</li></ol></li><li><p>“即插即用”</p></li><li><p>允许地址重用，在用地址续租</p></li><li><p>允许移动用户加入网络</p></li><li><p>DHCP配置协议</p><ol><li>需要接入网络的主机广播”DHCP discover”（发现报文）</li><li>DHCP服务器（一个子网里面可能有多个也可能没有）利用“DHCP offer“（提供报文）进行响应</li><li>主机向回应offer的DHCP服务器请求ip地址：”DHCP request“（请求报文）</li><li>DHCP服务器分配ip地址:“DHCP ack”（确认报文）</li></ol></li><li><p>DHCP配置过程示例</p><p><img src="/image/DHCPExample.png" alt="DHCP"></p><ul><li>DHCP服务器端口67，客户机端口68</li><li>第一次，第二次数据传输进行广播是因为相互不清楚对方的ip</li><li>第三次数据传输进行广播是为了告诉其他DHCP服务器客户机已经分配了ip，免得占用其他资源</li></ul></li><li><p>DHCP在应用层实现，封装在UDP数据报中</p></li></ol></li><li><p>网络地址转换(NAT)</p><ol><li>实现步骤<ol><li>替换：利用（NAT IP地址，新端口号）替换每个外出IP数据报的（源IP地址，源端口号）</li><li>记录：将每对（NAT IP地址，新端口号）与（源IP地址，源端口号）的替换信息存储到NAT转换表中</li><li>替换：根据NAT转换表，利用（源IP地址，源端口号）替换每个进入内网IP数据报的（目的IP地址，目的端口号），即（NAT IP地址，新端口号）</li></ol></li><li>NAT穿透问题<ol><li>方法1：静态配置NAT，将特定端口的连接请求转发给服务器</li><li>方法2：利用UPnp（互联网网管设备协议）自动配置</li><li>方法3：中继（代理）<ol><li>NAT内部的客户与中继服务器建立连接</li><li>外部客户也与中继服务器建立连接</li><li>中继服务器桥接两个连接的分组</li></ol></li></ol></li></ol></li><li><p>互联网控制报文协议（ICMP）</p><ol><li>主要功能：支持主机或者路由器进行<strong>差错报告</strong>和<strong>网络探询</strong></li><li>两类ICMP报文：差错报告报文（5种）和网络探询报文（2组）</li><li>不发送ICMp差错报告报文的特殊情况<ul><li>对ICMp差错报告报文不再发送ICMP差错报告报文</li><li>除第一个ip数据报分片外，对所有后续分片均不发送ICMP差错报告报文</li><li>对所有多播ip数据报均不发送</li><li>对具有特殊IP的数据报不发送</li></ul></li><li>ICMP封装在IP数据报中传输</li></ol></li><li><p>IPv6</p><ol><li>IPv4相比的变化<ul><li>彻底移除首部的校验和字段，以减少每跳处理时间</li><li>选项（options）字段从基本首部移出，定义多个选项首部，通过“下一个首部”字段指示</li><li>ICMPv6<ul><li>附加报文类型</li><li>多播组管理功能</li></ul></li></ul></li><li></li></ol></li></ol>]]></content>
     
     <summary type="html">
     

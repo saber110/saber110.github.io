@@ -73,22 +73,22 @@
 
 
 
-<meta name="description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传">
+<meta name="description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. 核心功能: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传输路径">
 <meta name="keywords" content="自顶向下方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络4">
 <meta property="og:url" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传">
+<meta property="og:description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. 核心功能: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传输路径">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/internetNetworking.png">
-<meta property="og:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/ipv4Sort.png">
-<meta property="og:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/DHCPExample.png">
-<meta property="og:updated_time" content="2019-04-22T06:39:15.410Z">
+<meta property="og:image" content="http://blog.huhaobin.cn/image/internetNetworking.png">
+<meta property="og:image" content="http://blog.huhaobin.cn/image/ipv4Sort.png">
+<meta property="og:image" content="http://blog.huhaobin.cn/image/DHCPExample.png">
+<meta property="og:updated_time" content="2019-04-22T08:07:03.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络4">
-<meta name="twitter:description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传">
-<meta name="twitter:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/internetNetworking.png">
+<meta name="twitter:description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. 核心功能: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传输路径">
+<meta name="twitter:image" content="http://blog.huhaobin.cn/image/internetNetworking.png">
 
 
 
@@ -409,7 +409,7 @@
       
         <h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><pre><code>1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务
 2. 端系统和路由器都运行网络层
-3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）
+3. 核心功能: 转发和路由, 连接建立（有些网络不需要建立）
        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**
        2. 传输层的连接是只有通信双方参与的
 </code></pre><h2 id="网络层服务模型"><a href="#网络层服务模型" class="headerlink" title="网络层服务模型"></a>网络层服务模型</h2><ol>
@@ -445,7 +445,7 @@
 </ul>
 </li>
 </ol>
-<h4 id="简化网络，复杂“边缘”"><a href="#简化网络，复杂“边缘”" class="headerlink" title="简化网络，复杂“边缘”"></a>简化网络，复杂“边缘”</h4><h2 id="internet网络层"><a href="#internet网络层" class="headerlink" title="internet网络层"></a>internet网络层</h2><p><img src="./image/internetNetworking.png" alt="网络层示意"></p>
+<h4 id="简化网络，复杂“边缘”"><a href="#简化网络，复杂“边缘”" class="headerlink" title="简化网络，复杂“边缘”"></a>简化网络，复杂“边缘”</h4><h2 id="internet网络层"><a href="#internet网络层" class="headerlink" title="internet网络层"></a>internet网络层</h2><p><img src="/image/internetNetworking.png" alt="网络层示意"></p>
 <ol>
 <li><p>网络链路层存在最大传输单元（MTU）——链路层数据帧可封装数据的上限</p>
 <ol>
@@ -470,7 +470,7 @@
 </ol>
 </li>
 <li><p>有类ip地址/有类编址</p>
-<p><img src="./image/ipv4Sort.png" alt="ipv4分类"></p>
+<p><img src="/image/ipv4Sort.png" alt="ipv4分类"></p>
 <ul>
 <li>D类地址用作多播</li>
 <li>E类保留做研究使用</li>
@@ -525,7 +525,7 @@
 </ol>
 </li>
 <li><p>DHCP配置过程示例</p>
-<p><img src="./image/DHCPExample.png" alt="DHCP"></p>
+<p><img src="/image/DHCPExample.png" alt="DHCP"></p>
 <ul>
 <li>DHCP服务器端口67，客户机端口68</li>
 <li>第一次，第二次数据传输进行广播是因为相互不清楚对方的ip</li>
