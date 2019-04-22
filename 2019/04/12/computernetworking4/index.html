@@ -81,10 +81,14 @@
 <meta property="og:site_name" content="Saber110">
 <meta property="og:description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T02:04:31.438Z">
+<meta property="og:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/internetNetworking.png">
+<meta property="og:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/ipv4Sort.png">
+<meta property="og:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/DHCPExample.png">
+<meta property="og:updated_time" content="2019-04-22T06:39:15.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络4">
 <meta name="twitter:description" content="网络层概述1. 网络层（数据报--datagram）向传输层（数据段---segment）提供服务 2. 端系统和路由器都运行网络层 3. **核心功能**: 转发和路由, 连接建立（有些网络不需要建立）        1. 网络层的链接是中间所有设备都参与的, **需要确立一条明确的路径**        2. 传输层的连接是只有通信双方参与的 网络层服务模型 无连接服务 不事先确定系列分组的传">
+<meta name="twitter:image" content="http://blog.huhaobin.cn/2019/04/12/computernetworking4/image/internetNetworking.png">
 
 
 
@@ -366,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  226
+                  1,565
                 </span>
               
 
@@ -382,7 +386,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -420,7 +424,166 @@
 <li>首先为系列分组的传输确定从源到目的的路径</li>
 <li>然后用该路径进行该系列分组的传输</li>
 <li>传输结束后拆除连接</li>
-<li>eg：虚电路网络</li>
+<li>eg：虚电路网络（ATM网络）</li>
+</ol>
+</li>
+</ol>
+<h2 id="数据包网络"><a href="#数据包网络" class="headerlink" title="数据包网络"></a>数据包网络</h2><ol>
+<li>特征<ul>
+<li>网络层无连接</li>
+<li>每个分组携带目的地址</li>
+<li>路由器根据分组的目的地址（范围）进行转发分组（internet）<ul>
+<li>基于路由协议/算法构建转发表</li>
+<li>检索转发表</li>
+<li>每个分组独立选路</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>转发原则<ul>
+<li>最长前缀匹配优先（优先选择与分组目的地址匹配前缀最长的入口）</li>
+</ul>
+</li>
+</ol>
+<h4 id="简化网络，复杂“边缘”"><a href="#简化网络，复杂“边缘”" class="headerlink" title="简化网络，复杂“边缘”"></a>简化网络，复杂“边缘”</h4><h2 id="internet网络层"><a href="#internet网络层" class="headerlink" title="internet网络层"></a>internet网络层</h2><p><img src="./image/internetNetworking.png" alt="网络层示意"></p>
+<ol>
+<li><p>网络链路层存在最大传输单元（MTU）——链路层数据帧可封装数据的上限</p>
+<ol>
+<li>不同链路的MTU不同</li>
+<li>大ip分组向较小的MTU链路转发时<strong>可以</strong>被“分片”， 若相关标志位(DF)不允许分片，则将起丢掉，并用ICMP回传控制信息</li>
+<li>ip分片到达目的主机才进行组装（路由器只进行拆分，不组装）</li>
+<li>若有分片后的数据收不到，则丢弃整个分组（MF标志位：最后一片或未分片）</li>
+<li>ipv4 片偏移字段以8字节为单位</li>
+</ol>
+</li>
+<li><p>ip编址（<strong>层次化编址</strong>）</p>
+<ol>
+<li><p>ip地址与每个<strong>接口</strong>相关联</p>
+</li>
+<li><p>主机域不能全0也不能全1(广播地址)</p>
+</li>
+<li><p>ip划分：某个组织的网络号（ip地址高位）相同，主机号不同</p>
+</li>
+<li><p>ip子网：ip地址具有相同网络号的设备<strong>接口</strong></p>
+<p>不跨越路由器（第三及以上层网络设备）可以彼此物理联通的设备</p>
+</li>
+</ol>
+</li>
+<li><p>有类ip地址/有类编址</p>
+<p><img src="./image/ipv4Sort.png" alt="ipv4分类"></p>
+<ul>
+<li>D类地址用作多播</li>
+<li>E类保留做研究使用</li>
+<li>A、B、C类也有部分地址不可以被分配</li>
+</ul>
+</li>
+<li><p>ip子网的划分和子网掩码</p>
+<ol>
+<li>将ip地址划分为网络号（NetID），<em>子网号（SubID）</em>，和主机号（HostID）</li>
+<li>子网掩码（用来确定是否分了子网和子网的大小）<ol>
+<li>NetID，SubID全取1</li>
+<li>HostID全取0</li>
+</ol>
+</li>
+<li>子网划分中比不划分子网有更多的不能使用的地址</li>
+</ol>
+</li>
+<li><p>无类域间路由(CIDR: classless InterDomain Routing)</p>
+<ol>
+<li><p>消除传统的A，B，C类地址界限</p>
+<p>将网络号和子网号统称为网络前缀</p>
+</li>
+<li><p>融合子网地址和子网掩码</p>
+<p>格式：a.b.c.d/x,  x为前缀的长度</p>
+</li>
+</ol>
+</li>
+<li><p>DHCP </p>
+<ol>
+<li><p>默认网关：若分组要送出/入该子网则应该先送给网关，再由网关进行转发</p>
+</li>
+<li><p>从服务器动态获取：</p>
+<ol>
+<li>ip地址</li>
+<li>子网掩码</li>
+<li>默认网管地址</li>
+<li>DNS服务器名称和ip地址</li>
+</ol>
+</li>
+<li><p>“即插即用”</p>
+</li>
+<li><p>允许地址重用，在用地址续租</p>
+</li>
+<li><p>允许移动用户加入网络</p>
+</li>
+<li><p>DHCP配置协议</p>
+<ol>
+<li>需要接入网络的主机广播”DHCP discover”（发现报文）</li>
+<li>DHCP服务器（一个子网里面可能有多个也可能没有）利用“DHCP offer“（提供报文）进行响应</li>
+<li>主机向回应offer的DHCP服务器请求ip地址：”DHCP request“（请求报文）</li>
+<li>DHCP服务器分配ip地址:“DHCP ack”（确认报文）</li>
+</ol>
+</li>
+<li><p>DHCP配置过程示例</p>
+<p><img src="./image/DHCPExample.png" alt="DHCP"></p>
+<ul>
+<li>DHCP服务器端口67，客户机端口68</li>
+<li>第一次，第二次数据传输进行广播是因为相互不清楚对方的ip</li>
+<li>第三次数据传输进行广播是为了告诉其他DHCP服务器客户机已经分配了ip，免得占用其他资源</li>
+</ul>
+</li>
+<li><p>DHCP在应用层实现，封装在UDP数据报中</p>
+</li>
+</ol>
+</li>
+<li><p>网络地址转换(NAT)</p>
+<ol>
+<li>实现步骤<ol>
+<li>替换：利用（NAT IP地址，新端口号）替换每个外出IP数据报的（源IP地址，源端口号）</li>
+<li>记录：将每对（NAT IP地址，新端口号）与（源IP地址，源端口号）的替换信息存储到NAT转换表中</li>
+<li>替换：根据NAT转换表，利用（源IP地址，源端口号）替换每个进入内网IP数据报的（目的IP地址，目的端口号），即（NAT IP地址，新端口号）</li>
+</ol>
+</li>
+<li>NAT穿透问题<ol>
+<li>方法1：静态配置NAT，将特定端口的连接请求转发给服务器</li>
+<li>方法2：利用UPnp（互联网网管设备协议）自动配置</li>
+<li>方法3：中继（代理）<ol>
+<li>NAT内部的客户与中继服务器建立连接</li>
+<li>外部客户也与中继服务器建立连接</li>
+<li>中继服务器桥接两个连接的分组</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>互联网控制报文协议（ICMP）</p>
+<ol>
+<li>主要功能：支持主机或者路由器进行<strong>差错报告</strong>和<strong>网络探询</strong></li>
+<li>两类ICMP报文：差错报告报文（5种）和网络探询报文（2组）</li>
+<li>不发送ICMp差错报告报文的特殊情况<ul>
+<li>对ICMp差错报告报文不再发送ICMP差错报告报文</li>
+<li>除第一个ip数据报分片外，对所有后续分片均不发送ICMP差错报告报文</li>
+<li>对所有多播ip数据报均不发送</li>
+<li>对具有特殊IP的数据报不发送</li>
+</ul>
+</li>
+<li>ICMP封装在IP数据报中传输</li>
+</ol>
+</li>
+<li><p>IPv6</p>
+<ol>
+<li>IPv4相比的变化<ul>
+<li>彻底移除首部的校验和字段，以减少每跳处理时间</li>
+<li>选项（options）字段从基本首部移出，定义多个选项首部，通过“下一个首部”字段指示</li>
+<li>ICMPv6<ul>
+<li>附加报文类型</li>
+<li>多播组管理功能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
 </ol>
 </li>
 </ol>
@@ -630,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">1.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络层服务模型"><span class="nav-number">1.2.</span> <span class="nav-text">网络层服务模型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">1.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络层服务模型"><span class="nav-number">1.2.</span> <span class="nav-text">网络层服务模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据包网络"><span class="nav-number">1.3.</span> <span class="nav-text">数据包网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简化网络，复杂“边缘”"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">简化网络，复杂“边缘”</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#internet网络层"><span class="nav-number">1.4.</span> <span class="nav-text">internet网络层</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -668,7 +831,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      34.2k
+      35.6k
     </span>
   
 </div>
@@ -699,7 +862,7 @@
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共34.2k字</span>
+  <span class="post-count">博客全站共35.6k字</span>
 </div>
 
         

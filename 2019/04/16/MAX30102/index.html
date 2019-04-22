@@ -73,21 +73,21 @@
 
 
 
-<meta name="description" content="中断状态寄存器 A_FULL: FIFO满标志 在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。 触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。 PPG_RDY：新的FIFO数据就绪 在SpO 2和HR模式下，当数据FIFO中有新样本时，此中断将触发。通过读取中断状态1寄存器（0x00）或读取FIFO_DA">
+<meta name="description" content="中断状态寄存器 无论何时触发中断，MAX30102都会将低电平有效的中断引脚拉至低电平状态，直到中断被清除。 A_FULL: FIFO满标志 在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。 触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。 PPG_RDY：新的FIFO数据就绪 在SpO 2和HR模式下，当数">
 <meta name="keywords" content="毕业设计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAX30102文档">
 <meta property="og:url" content="http://blog.huhaobin.cn/2019/04/16/MAX30102/index.html">
 <meta property="og:site_name" content="Saber110">
-<meta property="og:description" content="中断状态寄存器 A_FULL: FIFO满标志 在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。 触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。 PPG_RDY：新的FIFO数据就绪 在SpO 2和HR模式下，当数据FIFO中有新样本时，此中断将触发。通过读取中断状态1寄存器（0x00）或读取FIFO_DA">
+<meta property="og:description" content="中断状态寄存器 无论何时触发中断，MAX30102都会将低电平有效的中断引脚拉至低电平状态，直到中断被清除。 A_FULL: FIFO满标志 在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。 触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。 PPG_RDY：新的FIFO数据就绪 在SpO 2和HR模式下，当数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/max30102-1.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/max30102-2.png">
 <meta property="og:image" content="http://blog.huhaobin.cn/image/max30102-3.png">
-<meta property="og:updated_time" content="2019-04-16T08:57:11.593Z">
+<meta property="og:updated_time" content="2019-04-17T01:45:37.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAX30102文档">
-<meta name="twitter:description" content="中断状态寄存器 A_FULL: FIFO满标志 在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。 触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。 PPG_RDY：新的FIFO数据就绪 在SpO 2和HR模式下，当数据FIFO中有新样本时，此中断将触发。通过读取中断状态1寄存器（0x00）或读取FIFO_DA">
+<meta name="twitter:description" content="中断状态寄存器 无论何时触发中断，MAX30102都会将低电平有效的中断引脚拉至低电平状态，直到中断被清除。 A_FULL: FIFO满标志 在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。 触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。 PPG_RDY：新的FIFO数据就绪 在SpO 2和HR模式下，当数">
 <meta name="twitter:image" content="http://blog.huhaobin.cn/image/max30102-1.png">
 
 
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,797
+                  3,833
                 </span>
               
 
@@ -408,6 +408,7 @@
 
       
         <h2 id="中断状态寄存器"><a href="#中断状态寄存器" class="headerlink" title="中断状态寄存器"></a>中断状态寄存器</h2><p><img src="/image/max30102-1.png" alt="img"></p>
+<p>无论何时触发中断，MAX30102都会将低电平有效的中断引脚拉至低电平状态，直到中断被清除。</p>
 <p><strong>A_FULL: FIFO满标志</strong></p>
 <p>在SpO 2和HR模式下，当FIFO写指针剩余一定数量的空闲空间时，该中断触发。</p>
 <p>触发号可以由FIFO_A_FULL [3：0]寄存器设置。 通过读取中断状态1寄存器（0x00）清除中断。</p>
@@ -724,7 +725,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      34.2k
+      35.6k
     </span>
   
 </div>
@@ -755,7 +756,7 @@
 </script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共34.2k字</span>
+  <span class="post-count">博客全站共35.6k字</span>
 </div>
 
         
