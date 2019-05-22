@@ -199,6 +199,27 @@
   </entry>
   
   <entry>
+    <title>git</title>
+    <link href="http://blog.huhaobin.cn/2019/04/15/git/"/>
+    <id>http://blog.huhaobin.cn/2019/04/15/git/</id>
+    <published>2019-04-15T06:27:43.689Z</published>
+    <updated>2017-09-28T15:04:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>集成库的学习</title>
     <link href="http://blog.huhaobin.cn/2019/04/15/lib_int/"/>
     <id>http://blog.huhaobin.cn/2019/04/15/lib_int/</id>
@@ -221,27 +242,6 @@
     
     
       <category term="AD" scheme="http://blog.huhaobin.cn/tags/AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git</title>
-    <link href="http://blog.huhaobin.cn/2019/04/15/git/"/>
-    <id>http://blog.huhaobin.cn/2019/04/15/git/</id>
-    <published>2019-04-15T06:27:43.689Z</published>
-    <updated>2017-09-28T15:04:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">git push origin 本地分支名:远程分支名</div><div class="line">git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记</div><div class="line">git checkout BRANCH_ID 切换分支</div><div class="line">git branch -r 列出远程分支</div><div class="line">git branch -a</div><div class="line">git branch name 新建分支</div><div class="line">git branch -d | -D branchname 删除branchname分支</div><div class="line">git branch -d -r branchname 删除远程branchname分支</div><div class="line"></div><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></div><div class="line">git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line">git diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git checkout COMMIT_ID 版本回退</div><div class="line"></div><div class="line">git stash list 查看堆栈情况</div><div class="line">git stash 将当前工作压栈</div><div class="line">git stash pop stash<span class="variable">$&#123;id&#125;</span> 弹出工作栈</div><div class="line">git stash clear 清除栈</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -294,6 +294,28 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://blog.huhaobin.cn/2019/04/15/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</id>
+    <published>2019-04-15T06:27:43.553Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2019/04/15/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2019/04/15/sockstohttp/</id>
@@ -315,28 +337,6 @@
     </summary>
     
       <category term="代理" scheme="http://blog.huhaobin.cn/categories/%E4%BB%A3%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2019/04/15/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</id>
-    <published>2019-04-15T06:27:43.553Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
     
     
   </entry>
