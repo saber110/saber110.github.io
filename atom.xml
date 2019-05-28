@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2019-05-07T08:06:00.132Z</updated>
+  <updated>2019-05-28T08:42:15.163Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django学习</title>
+    <link href="http://blog.huhaobin.cn/2019/05/28/django1/"/>
+    <id>http://blog.huhaobin.cn/2019/05/28/django1/</id>
+    <published>2019-05-27T16:00:00.000Z</published>
+    <updated>2019-05-28T08:42:15.163Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Django学习"><a href="#Django学习" class="headerlink" title="Django学习"></a>Django学习</h2><ol><li><p>创建项目</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">django-admin startproject myprojectname</div></pre></td></tr></table></figure><p>项目目录</p><ul><li>manage.py 项目管理器，可以通过<em>python manage.py</em>查看它所支持的功能</li><li>wsgi.py（Python Web Server Gateway Interface)：Python应用与web服务器之间的接口</li><li>urls.py 项目的路由配置</li><li>settings.py<ul><li>ALLOWED_HOSTS: 配置允许访问网站的主机</li><li>INSTALLED_APPS： 已经安装的应用，当开发自己的应用之后要添加进去</li><li>数据库，时区，语言等配置都在这儿</li></ul></li><li><code>__init.py__</code>声明该文件夹为模块</li></ul></li><li><p>创建应用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py startapp myapp</div></pre></td></tr></table></figure><p>执行完之后记得把应用名添加到settings.py中的INSTALLED_APPS中</p><p>应用目录</p><ul><li>migrations文件夹：是一个模块，负责数据迁移；自动生成内容</li><li>admin.py：django自带的后台管理模块</li><li>apps.py： 本应用的一些配置</li><li>models.py：数据模型，使用ORM框架</li><li>tests.py： 自动化测试模块</li><li>views.py：执行响应的代码所在的模块，大部分代码在这儿编写</li></ul></li><li><p>可以为每个应用产生urls.py，只需要在项目根urls.py中include即可</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Django学习&quot;&gt;&lt;a href=&quot;#Django学习&quot; class=&quot;headerlink&quot; title=&quot;Django学习&quot;&gt;&lt;/a&gt;Django学习&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建项目&lt;/p&gt;
+&lt;figure class=&quot;highlight pla
+      
+    
+    </summary>
+    
+      <category term="网站" scheme="http://blog.huhaobin.cn/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>组会记录</title>
@@ -294,28 +321,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://blog.huhaobin.cn/2019/04/15/UnistallPip/"/>
-    <id>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</id>
-    <published>2019-04-15T06:27:43.553Z</published>
-    <updated>2018-06-19T03:53:09.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>socksV5转化为http代理</title>
     <link href="http://blog.huhaobin.cn/2019/04/15/sockstohttp/"/>
     <id>http://blog.huhaobin.cn/2019/04/15/sockstohttp/</id>
@@ -337,6 +342,28 @@
     </summary>
     
       <category term="代理" scheme="http://blog.huhaobin.cn/categories/%E4%BB%A3%E7%90%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://blog.huhaobin.cn/2019/04/15/UnistallPip/"/>
+    <id>http://blog.huhaobin.cn/2019/04/15/UnistallPip/</id>
+    <published>2019-04-15T06:27:43.553Z</published>
+    <updated>2018-06-19T03:53:09.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>python -m pip uninstall pip</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python -m pip uninstall pip&lt;/p&gt;
+
+      
+    
+    </summary>
     
     
   </entry>
@@ -415,28 +442,27 @@
   </entry>
   
   <entry>
-    <title>计算机网络3</title>
-    <link href="http://blog.huhaobin.cn/2019/04/07/computernetworking3/"/>
-    <id>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</id>
+    <title>扩展/boot分区</title>
+    <link href="http://blog.huhaobin.cn/2019/04/07/boot%20partition%20is%20not%20enough/"/>
+    <id>http://blog.huhaobin.cn/2019/04/07/boot partition is not enough/</id>
     <published>2019-04-06T16:00:00.000Z</published>
-    <updated>2019-04-16T02:25:57.393Z</updated>
+    <updated>2019-04-07T09:13:38.179Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ol><li><p>为运行在不同的端系统上的<strong>进程</strong>提供了一种逻辑通信机制(网络层提供<strong>主机</strong>之间的逻辑通信机制)</p><ul><li>位于网络层之上</li><li>依赖于网络层</li><li>对网络层功能进行加强</li></ul></li><li><p>传输层提供的服务</p><ul><li>可靠的、按序的交付服务（TCP）<ul><li>流量控制</li><li>拥塞控制</li><li>连接建立</li></ul></li><li>不可靠的交付服务（UDP）<ul><li>复用/分用</li><li>简单的错误校验</li><li>尽力而为（best effort）</li><li>不需要建立链接，延迟很小</li><li>上层更好控制（不用顾及拥塞控制之类）</li><li>经常用于流媒体、DNS、SNMP等</li></ul></li><li>不提供延迟、带宽等方面的服务</li></ul></li><li><p>多路复用/分用</p></li></ol><h2 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h2><ol><li><p>不错、不丢、不乱</p></li><li><p>可靠数据传输协议</p></li><li><p>需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输</p></li><li><p>协议实现（数据错误，位错误）</p><ul><li>有限状态机来刻画传输协议</li><li>确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息<ul><li>为ACK和NAK增加校验和</li><li>添加额外的控制消息</li><li>NAK/ACK 坏掉重传（产生重复传送的问题）</li><li>增加序列号进行NAK/ACK重传</li></ul></li><li>差错检测（校验和等）</li><li>停-等协议（有限状态机）</li><li>NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组）</li></ul><p>5 . 协议实现（丢失分组）</p><ul><li>等待合理的一段时间之后重传（需要定时器）</li><li>停等引起效率低下</li><li>采用流水线机制（连发多个分组再等待ACK）</li><li>使用滑动窗口协议实现流水线</li></ul></li></ol><h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="GBN（Go-Back-N）协议：一组分组一组分组的滑动"><a href="#GBN（Go-Back-N）协议：一组分组一组分组的滑动" class="headerlink" title="GBN（Go-Back-N）协议：一组分组一组分组的滑动"></a>GBN（Go-Back-N）协议：一组分组一组分组的滑动</h3><ol><li><p>发送方</p><ul><li><p>窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号</p></li><li><p>采用累积确认的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ACK(n)表示确认到n(包含n)的分组均被正确接收</div></pre></td></tr></table></figure></li><li><p>整个窗口设置一个计时器</p></li><li><p>超时则重发序列号大于n还未收到ack的分组</p></li></ul></li><li><p>接收方（没有缓存，没有接收方窗口）</p><ul><li>发送拥有最高序列号的、已被正确接收的分组的ACK<ul><li>可能产生重复的ACK</li></ul></li><li>乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号</li></ul></li></ol><h3 id="SR（selective-repeat-协议：一个分组一个分组的滑动"><a href="#SR（selective-repeat-协议：一个分组一个分组的滑动" class="headerlink" title="SR（selective repeat)协议：一个分组一个分组的滑动"></a>SR（selective repeat)协议：一个分组一个分组的滑动</h3><ol><li>接收方（设置缓冲机制，缓冲乱需到达的分组）<ol><li>添加接收方窗口</li><li>对每个分组单独确认</li></ol></li><li>发送方<ol><li>为每个分组设置单独的计数器</li></ol></li><li>窗口可以跳跃前移</li></ol><h2 id="TCP概述"><a href="#TCP概述" class="headerlink" title="TCP概述"></a>TCP概述</h2><ol><li><p>点对点（一个发送方，一个接收方）</p></li><li><p>可靠的按序的字节流</p></li><li><p>流水线机制（拥塞控制，流量控制，窗口大小设置）</p></li><li><p>发送方/接收方缓存</p></li><li><p>全双工（同一连接中能传输双向数据流）</p></li><li><p>面向连接</p><ol><li>通信双方在发送数据前必须建立连接</li><li>连接状态只在连接的两端维护，沿途 结点并不维护</li><li>TCP连接包括：两台主机上的缓存，连接状态变量、socket等</li></ol></li><li><p>流量控制机制</p></li><li><p>序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号</p></li><li><p>ACKS</p><ol><li>累计确认机制：该序列号之前的所有字节已经被正确处理</li><li>返回是希望接收到的下一个字节的序列号</li></ol></li><li><p>可靠数据传输</p><ol><li>TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务</li><li>使用单一重传定时器</li><li>触发重传的事件（超时，收到重复ACK）</li></ol></li><li><p>快速重传</p><p>​    由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传</p></li><li><p>流量控制（速度匹配机制)</p><p>控制发送方发送速度不要过快以至于淹没接收方的buffer</p><p>receiver 在segment头部告诉sender还有多少buffer</p></li><li><p>多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率</p></li></ol><h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><ol><li>一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求</li><li>连接的三次握手<ol><li>客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号）</li><li>服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存）</li><li>客户机收到SYNACK，回复ACK（可以包含数据）</li><li>建立TCP连接<strong>两次握手不能确定具体是否成功，四次握手会有资源浪费</strong></li></ol></li><li>关闭的四次握手<ol><li>客户机向服务器发送FIN报文段</li><li>服务器收到FIN，回复ACK，关闭连接，发送FIN</li><li>客户机收到FIN，回复ACK<ol><li>进入等待状态，如果收到FIN，则重新发送ACK</li></ol></li><li>服务器收到ACK，关闭链接</li></ol></li></ol><h2 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h2><ol><li><p>表现</p><ol><li>分组丢失</li><li>分组延迟越来越大</li></ol><h3 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h3><ul><li>端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法）</li><li>网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM）</li></ul><h3 id="拥塞控制的基本原理"><a href="#拥塞控制的基本原理" class="headerlink" title="拥塞控制的基本原理"></a>拥塞控制的基本原理</h3><ul><li><p>限制sender的发送速率</p></li><li><p>ConfgWin：（发送窗口的大小）</p><ul><li>动态调整以改变发送速率</li><li>反映所感知到的网络拥塞</li></ul></li><li><p>网络拥塞的感知</p><ul><li>LOSS事件==timeout或者连续3个重复的ACK</li></ul></li><li><p>合理调整发送速率</p><ul><li><p>加性增—乘性减（AIMD)</p><p>谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）;  发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半）</p></li><li><p>慢启动（SS）</p><p>当链接刚刚建立时（CongWin = 1,  初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升</p></li><li><p>指数增长切换到加性增</p><p>用一个变量Threshold， 设置为LOSS事件前congWin值的1/2.</p><p><img src="/image/loss_event.jpg" alt="loss event"></p><ul><li><p>收到3个重复的ACK(网络还能传输一些segment)</p><p>将congWin切为一半，然后线性增长</p></li><li><p>Timeout事件（<strong>拥塞更严重</strong>)</p><p>CongWin直接设为1,然后指数增长，达到threshold之后再线性增长</p></li></ul></li></ul></li></ul></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="how-to-expend-the-capicity-of-boot-partition-in-linux"><a href="#how-to-expend-the-capicity-of-boot-partition-in-linux" class="headerlink" title="how to expend the capicity of /boot partition in linux"></a>how to expend the capicity of /boot partition in linux</h2><ol><li>use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon</li><li>copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt</li><li>click the old /boot prtition in Disks, click buttons as following<br> “More actions” signed by a gear<br> “Edit Mount Options…”, meanwhile, wtrite the config down for later<br> uncheck “Mount at Startup”<br> modify “Mount Point” to something else, such as “/boot_old”<br> and click OK</li><li>click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following<br> “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change<br> “Edit Mount Options…” copy the config form old one<br> OK</li></ol><p>and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure:</p><p>installation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y boot-repair &amp;&amp; boot-repair</div></pre></td></tr></table></figure></p><p>Recommended repair<br>launch Boot-Repair from either :<br>the Dash (the Ubuntu logo at the top-left of the screen)<br>or by typing ‘boot-repair’ in a terminal<br>Then click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs.</p><p>If the repair did not succeed, indicate the URL to people who help you by email or forum.</p><p>if you have trouble in booting, if you computer is booted by grub2, here is you solutions:</p><ol><li>ls<br>find the boot file location </li><li>set root = (hd0, gpt0)<br>(hd0,gpt0) is your boot file location</li><li>linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0<br>/dev/sda0 is your root location</li><li>initrd /path/to/your/bootfile(initrd*)</li><li>boot</li></ol><p>now you can boot your computer.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;传输层&quot;&gt;&lt;a href=&quot;#传输层&quot; class=&quot;headerlink&quot; title=&quot;传输层&quot;&gt;&lt;/a&gt;传输层&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;为运行在不同的端系统上的&lt;strong&gt;进程&lt;/strong&gt;提供了一种逻辑通信机制(网络层提供&lt;strong&gt;主
+        &lt;h2 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade
       
     
     </summary>
     
-      <category term="算法" scheme="http://blog.huhaobin.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
     
     
-      <category term="自顶向下方法" scheme="http://blog.huhaobin.cn/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95/"/>
+      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
     
   </entry>
   
@@ -469,49 +495,20 @@
   </entry>
   
   <entry>
-    <title>扩展/boot分区</title>
-    <link href="http://blog.huhaobin.cn/2019/04/07/boot%20partition%20is%20not%20enough/"/>
-    <id>http://blog.huhaobin.cn/2019/04/07/boot partition is not enough/</id>
+    <title>计算机网络3</title>
+    <link href="http://blog.huhaobin.cn/2019/04/07/computernetworking3/"/>
+    <id>http://blog.huhaobin.cn/2019/04/07/computernetworking3/</id>
     <published>2019-04-06T16:00:00.000Z</published>
-    <updated>2019-04-07T09:13:38.179Z</updated>
+    <updated>2019-04-16T02:25:57.393Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="how-to-expend-the-capicity-of-boot-partition-in-linux"><a href="#how-to-expend-the-capicity-of-boot-partition-in-linux" class="headerlink" title="how to expend the capicity of /boot partition in linux"></a>how to expend the capicity of /boot partition in linux</h2><ol><li>use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon</li><li>copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt</li><li>click the old /boot prtition in Disks, click buttons as following<br> “More actions” signed by a gear<br> “Edit Mount Options…”, meanwhile, wtrite the config down for later<br> uncheck “Mount at Startup”<br> modify “Mount Point” to something else, such as “/boot_old”<br> and click OK</li><li>click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following<br> “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change<br> “Edit Mount Options…” copy the config form old one<br> OK</li></ol><p>and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure:</p><p>installation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y boot-repair &amp;&amp; boot-repair</div></pre></td></tr></table></figure></p><p>Recommended repair<br>launch Boot-Repair from either :<br>the Dash (the Ubuntu logo at the top-left of the screen)<br>or by typing ‘boot-repair’ in a terminal<br>Then click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs.</p><p>If the repair did not succeed, indicate the URL to people who help you by email or forum.</p><p>if you have trouble in booting, if you computer is booted by grub2, here is you solutions:</p><ol><li>ls<br>find the boot file location </li><li>set root = (hd0, gpt0)<br>(hd0,gpt0) is your boot file location</li><li>linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0<br>/dev/sda0 is your root location</li><li>initrd /path/to/your/bootfile(initrd*)</li><li>boot</li></ol><p>now you can boot your computer.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://blog.huhaobin.cn/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络1</title>
-    <link href="http://blog.huhaobin.cn/2019/04/04/computernetworking1/"/>
-    <id>http://blog.huhaobin.cn/2019/04/04/computernetworking1/</id>
-    <published>2019-04-03T16:00:00.000Z</published>
-    <updated>2019-04-08T03:10:10.826Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol><li>计算机网络就是互连的、自治的计算机集合<ul><li>通过交换网络进行互连</li></ul></li><li>交换<ul><li>动态转接</li><li>动态资源分配和传输</li></ul></li><li><p>电路交换（电路建立—数据传输—电路拆除）</p><ul><li><p>多路复用</p><ul><li>频分复用（FDM）— 同轴电缆</li><li>时分复用（TDM) — 时间分帧、分片</li><li><p>码分复用（CDM）— 每个用户有个m bit的各个用户相互正交的码片序列</p><p>每个原始信号的bit位被用码片序列编码为m bit;1 -&gt; +1; 0 -&gt; -1;</p></li><li>波分复用（光的频分复用）</li></ul></li></ul></li><li>报文交换<ul><li>一次将一个报文全部传输</li><li>存储转发整个报文</li></ul></li><li><p>分组交换</p><ol><li>报文的拆分和重组</li><li>产生额外开销</li><li>存储转发小分组</li><li>便于实现统计复用</li><li>由于流水线技术，速度比报文交换要快，硬件要求要低</li><li><p>适用于突发数据传输</p><ul><li>充分利用资源</li><li>无需建立电路</li></ul></li><li><p>分组延迟</p><ul><li><p>结点处理延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">差错控制</div><div class="line">确定输出链路</div><div class="line">通常小于msec</div></pre></td></tr></table></figure></li><li><p>排队延迟</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">等待输出链路可用</div><div class="line">取决与路由器的当前拥塞状态</div></pre></td></tr></table></figure></li><li><p>传输延迟（发送一个分组所需要的时间）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">分组长度</div><div class="line">链路宽度</div></pre></td></tr></table></figure></li><li><p>传播延迟（信号在介质（一个路由器到另一个路由器或端系统）中的传播延迟）</p></li></ul></li></ol></li><li>协议是两个对等实体进行通信的规则的集合，是“水平的”; 同系统的相邻层之间通过接口进行交互，通过服务访问点（SAP—service access point）交换原语，请求特定的服务</li><li>计算机网络结构是分层的（软件和硬件）</li></ol><h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><ol><li>七层：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层<ul><li>一般主机需要实现所有层，路由器只需要实现最基本的三层<br><img src="/image/osi.jpg" alt="数据传输过程"></li><li>数据在上层向下层传递的过程中除了数据链路层向物理层不增加帧头之外，其他的层都需要增加，<strong>并且数据链路层加帧头和帧尾</strong></li><li>数据封装的目的<ul><li>差错检测</li><li>地址信息</li><li>协议控制</li></ul></li></ul></li><li>物理层（解决单一比特的传输问题）<ul><li>接口特性、比特编码、数据率、比特同步、传输模式（单工通信、半双工、双工通信）</li></ul></li><li>数据链路层（结点到结点的数据传输）<ul><li>组帧（便于接受信息）</li><li>物理寻址（物理层不能寻址）</li><li>流量控制（匹配发送和接受速度）</li><li>差错控制</li><li>接入控制（访问控制）</li></ul></li><li>网络层<ul><li>逻辑寻址（ip）—全局的唯一逻辑地址</li><li>路由选择</li><li>分组转发</li></ul></li><li>传输层的功能（负责源-&gt;目的（端到端）（进程间）的完整报文传输）<ul><li>报文的分段和重组</li><li>SAP寻址（保证交给正确的进程）</li><li>可以实现端到端的链接控制，流量控制，差错控制</li></ul></li><li>会话层（主要负责对话管理，同步等）<ul><li>不单独存在</li></ul></li><li>表示层（处理两个系统之间交换信息的语法和语义问题）<ul><li>数据表示转化（大小端）</li><li>加解密，压缩，解压缩</li><li>不单独存在</li></ul></li><li>应用层</li></ol><h2 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h2><ol><li>网络接口层、网际层、运输层、应用层</li><li><p>Everything over IP</p></li><li><p>5层参考模型</p><ul><li>物理层</li><li>数据链路层</li><li>网络层（源到目的的数据分组路由和转发）</li><li>传输层（TCP、UDP）{进程之间的通信}</li><li>应用层（支持各种网络应用）</li></ul></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ol><li><p>为运行在不同的端系统上的<strong>进程</strong>提供了一种逻辑通信机制(网络层提供<strong>主机</strong>之间的逻辑通信机制)</p><ul><li>位于网络层之上</li><li>依赖于网络层</li><li>对网络层功能进行加强</li></ul></li><li><p>传输层提供的服务</p><ul><li>可靠的、按序的交付服务（TCP）<ul><li>流量控制</li><li>拥塞控制</li><li>连接建立</li></ul></li><li>不可靠的交付服务（UDP）<ul><li>复用/分用</li><li>简单的错误校验</li><li>尽力而为（best effort）</li><li>不需要建立链接，延迟很小</li><li>上层更好控制（不用顾及拥塞控制之类）</li><li>经常用于流媒体、DNS、SNMP等</li></ul></li><li>不提供延迟、带宽等方面的服务</li></ul></li><li><p>多路复用/分用</p></li></ol><h2 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h2><ol><li><p>不错、不丢、不乱</p></li><li><p>可靠数据传输协议</p></li><li><p>需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输</p></li><li><p>协议实现（数据错误，位错误）</p><ul><li>有限状态机来刻画传输协议</li><li>确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息<ul><li>为ACK和NAK增加校验和</li><li>添加额外的控制消息</li><li>NAK/ACK 坏掉重传（产生重复传送的问题）</li><li>增加序列号进行NAK/ACK重传</li></ul></li><li>差错检测（校验和等）</li><li>停-等协议（有限状态机）</li><li>NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组）</li></ul><p>5 . 协议实现（丢失分组）</p><ul><li>等待合理的一段时间之后重传（需要定时器）</li><li>停等引起效率低下</li><li>采用流水线机制（连发多个分组再等待ACK）</li><li>使用滑动窗口协议实现流水线</li></ul></li></ol><h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="GBN（Go-Back-N）协议：一组分组一组分组的滑动"><a href="#GBN（Go-Back-N）协议：一组分组一组分组的滑动" class="headerlink" title="GBN（Go-Back-N）协议：一组分组一组分组的滑动"></a>GBN（Go-Back-N）协议：一组分组一组分组的滑动</h3><ol><li><p>发送方</p><ul><li><p>窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号</p></li><li><p>采用累积确认的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ACK(n)表示确认到n(包含n)的分组均被正确接收</div></pre></td></tr></table></figure></li><li><p>整个窗口设置一个计时器</p></li><li><p>超时则重发序列号大于n还未收到ack的分组</p></li></ul></li><li><p>接收方（没有缓存，没有接收方窗口）</p><ul><li>发送拥有最高序列号的、已被正确接收的分组的ACK<ul><li>可能产生重复的ACK</li></ul></li><li>乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号</li></ul></li></ol><h3 id="SR（selective-repeat-协议：一个分组一个分组的滑动"><a href="#SR（selective-repeat-协议：一个分组一个分组的滑动" class="headerlink" title="SR（selective repeat)协议：一个分组一个分组的滑动"></a>SR（selective repeat)协议：一个分组一个分组的滑动</h3><ol><li>接收方（设置缓冲机制，缓冲乱需到达的分组）<ol><li>添加接收方窗口</li><li>对每个分组单独确认</li></ol></li><li>发送方<ol><li>为每个分组设置单独的计数器</li></ol></li><li>窗口可以跳跃前移</li></ol><h2 id="TCP概述"><a href="#TCP概述" class="headerlink" title="TCP概述"></a>TCP概述</h2><ol><li><p>点对点（一个发送方，一个接收方）</p></li><li><p>可靠的按序的字节流</p></li><li><p>流水线机制（拥塞控制，流量控制，窗口大小设置）</p></li><li><p>发送方/接收方缓存</p></li><li><p>全双工（同一连接中能传输双向数据流）</p></li><li><p>面向连接</p><ol><li>通信双方在发送数据前必须建立连接</li><li>连接状态只在连接的两端维护，沿途 结点并不维护</li><li>TCP连接包括：两台主机上的缓存，连接状态变量、socket等</li></ol></li><li><p>流量控制机制</p></li><li><p>序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号</p></li><li><p>ACKS</p><ol><li>累计确认机制：该序列号之前的所有字节已经被正确处理</li><li>返回是希望接收到的下一个字节的序列号</li></ol></li><li><p>可靠数据传输</p><ol><li>TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务</li><li>使用单一重传定时器</li><li>触发重传的事件（超时，收到重复ACK）</li></ol></li><li><p>快速重传</p><p>​    由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传</p></li><li><p>流量控制（速度匹配机制)</p><p>控制发送方发送速度不要过快以至于淹没接收方的buffer</p><p>receiver 在segment头部告诉sender还有多少buffer</p></li><li><p>多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率</p></li></ol><h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><ol><li>一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求</li><li>连接的三次握手<ol><li>客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号）</li><li>服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存）</li><li>客户机收到SYNACK，回复ACK（可以包含数据）</li><li>建立TCP连接<strong>两次握手不能确定具体是否成功，四次握手会有资源浪费</strong></li></ol></li><li>关闭的四次握手<ol><li>客户机向服务器发送FIN报文段</li><li>服务器收到FIN，回复ACK，关闭连接，发送FIN</li><li>客户机收到FIN，回复ACK<ol><li>进入等待状态，如果收到FIN，则重新发送ACK</li></ol></li><li>服务器收到ACK，关闭链接</li></ol></li></ol><h2 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h2><ol><li><p>表现</p><ol><li>分组丢失</li><li>分组延迟越来越大</li></ol><h3 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h3><ul><li>端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法）</li><li>网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM）</li></ul><h3 id="拥塞控制的基本原理"><a href="#拥塞控制的基本原理" class="headerlink" title="拥塞控制的基本原理"></a>拥塞控制的基本原理</h3><ul><li><p>限制sender的发送速率</p></li><li><p>ConfgWin：（发送窗口的大小）</p><ul><li>动态调整以改变发送速率</li><li>反映所感知到的网络拥塞</li></ul></li><li><p>网络拥塞的感知</p><ul><li>LOSS事件==timeout或者连续3个重复的ACK</li></ul></li><li><p>合理调整发送速率</p><ul><li><p>加性增—乘性减（AIMD)</p><p>谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）;  发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半）</p></li><li><p>慢启动（SS）</p><p>当链接刚刚建立时（CongWin = 1,  初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升</p></li><li><p>指数增长切换到加性增</p><p>用一个变量Threshold， 设置为LOSS事件前congWin值的1/2.</p><p><img src="/image/loss_event.jpg" alt="loss event"></p><ul><li><p>收到3个重复的ACK(网络还能传输一些segment)</p><p>将congWin切为一半，然后线性增长</p></li><li><p>Timeout事件（<strong>拥塞更严重</strong>)</p><p>CongWin直接设为1,然后指数增长，达到threshold之后再线性增长</p></li></ul></li></ul></li></ul></li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;计算机网络就是互连的、自治的计算机集合&lt;ul&gt;
-&lt;li&gt;通过交换网络进行互连&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;交换&lt;u
+        &lt;h2 id=&quot;传输层&quot;&gt;&lt;a href=&quot;#传输层&quot; class=&quot;headerlink&quot; title=&quot;传输层&quot;&gt;&lt;/a&gt;传输层&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;为运行在不同的端系统上的&lt;strong&gt;进程&lt;/strong&gt;提供了一种逻辑通信机制(网络层提供&lt;strong&gt;主
       
     
     </summary>

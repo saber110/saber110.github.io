@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Django学习]]></title>
+    <url>%2F2019%2F05%2F28%2Fdjango1%2F</url>
+    <content type="text"><![CDATA[Django学习 创建项目 1django-admin startproject myprojectname 项目目录 manage.py 项目管理器，可以通过python manage.py查看它所支持的功能 wsgi.py（Python Web Server Gateway Interface)：Python应用与web服务器之间的接口 urls.py 项目的路由配置 settings.py ALLOWED_HOSTS: 配置允许访问网站的主机 INSTALLED_APPS： 已经安装的应用，当开发自己的应用之后要添加进去 数据库，时区，语言等配置都在这儿 __init.py__声明该文件夹为模块 创建应用 1python manage.py startapp myapp 执行完之后记得把应用名添加到settings.py中的INSTALLED_APPS中 应用目录 migrations文件夹：是一个模块，负责数据迁移；自动生成内容 admin.py：django自带的后台管理模块 apps.py： 本应用的一些配置 models.py：数据模型，使用ORM框架 tests.py： 自动化测试模块 views.py：执行响应的代码所在的模块，大部分代码在这儿编写 可以为每个应用产生urls.py，只需要在项目根urls.py中include即可]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[组会记录]]></title>
     <url>%2F2019%2F05%2F06%2FgroupMetting1%2F</url>
     <content type="text"><![CDATA[the difference between ‘Nature’ and ‘Science’nature: 懂事前就有的东西，即懂事前已经有了的东西 science：懂事后才有的东西，在自己懂事之后的出现的东西 BFS 输出root-tree，输出若干个根树（非连通图） 最先由于解决迷宫问题—&gt;判断终点问题而提出 应用 查找图中的所有连接组件（一个连接组件是图中的最大连接子图） 由起点开始运行BFS所经过的所有节点，即为包含七点的一个连接组件 查找连接组件中的所有节点 查找非加权图中的任意两点间的最短路径 测试某图是否是二分图(bipartite graph) 从任一节点出发，在搜索过程中给节点不同的标签，例如给开始点标0，开始点的所有邻居1，开始点的所有邻居的邻居再标0，以此类推。若在搜索过程中，任一节点有跟其相同标签的邻居，则此图不是二分图。若搜索结束时没有发生这种情况则说明此图是一二分图 应用于计算机游戏中的平面网格 BFS可用来解决计算机游戏（例如即时策略游戏）中找寻路径的问题。在这个应用中，使用平面网格来代替图形，而一个格子即是图中的一个节点。所有节点都与它的邻居（上、下、左、右、左上、右上、左下、右下）相接。 值得一提的是，当这样使用BFS算法时，首先要先检验上、下、左、右的邻居节点，再检验左上、右上、左下、右下的邻居节点。这是因为BFS趋向于先查找斜向邻居节点，而不是四方的邻居节点，因此找到的路径将不正确。BFS应该先查找四方邻居节点，接着才查找斜向邻居节点。 LBFS(Lexicographic breadth-first search) 词典序的广度优先搜索算法 基于Partition refinement（一种用数据结构分类将集合分类为若干组小的集合的算法） 应用 识别chordal graph Use lexicographic breadth-first search to find a lexicographic ordering of G // 对图G使用LBFS生成一个LBFS序列 For each vertex v :// 对于每个顶点V Let w be the neighbor of v occurring prior to v , as close to v in the sequence as possible// 设w是v之前出现的v的邻居，尽可能接近序列中的v (Continue to the next vertex v if there is no such w) ​ // 若没有符合要求的w则去下个定点v If the set of earlier neighbors of v (excluding w itself) is not a subset of the set of earlier neighbors of w, the graph is not chordal // 如果v的早期邻居集合（不包括w本身）不是w的早期邻居集合的子集，则不是chordal If the loop terminates without showing that the graph is not chordal, then it is chordal. 图染色问题 MCS（maximum cardinality search）以任一点为起点，优先访问已访问邻居数最多的点 可以用来识别chordal graph MCS按照最大生成树的顺序进行下去 clique 一个无向图中，满足两两之间有边连接的顶点的集合，被称为该无向图的团 顶点集C被称为无向图 G=(V,E) 的团，如果C是顶点集V的子集(C⊆V)，而且任意两个C中的顶点都有边连接。另一种等价的说法是，由C诱导的子图是完全图 （有时也用“团”来指这样的子图）。 极大团是指增加任一顶点都不再符合团定义的团，也就是说，极大团不能被任何一个更大的团所包含。 chordal graph 如果长度大于3的每个圈都具有弦，即具有连接圈中的两个非连续顶点的边，则无向图被称为弦图。 一个无向图称为弦图当图中任意长度大于3的环都至少有一个弦。 chordal的任何一部分都是chordal MCS在chordal上的终点是simplicial point MCS在chordal上一定按着极大团的顺序遍历 区间图在图论中，区间图是由实线上的一组区间形成的无向图，每个区间具有顶点，区间相交的顶点之间具有边。 它是间隔的交叉图。 使用LBFS三遍就能生成 第一遍任选起点，记录终点 第二遍从终点开始便历（会有某些错位的需要第三遍纠正） 第三遍从第二遍的终点开始便历，即可以得到区间序列 基本概念参考链接 实例：无向图G=(V, E)，V为图的所有顶点集合（非空），E为图的所有边的集合。 子图：G’=(V’, E’)，V’被包含于V，E’被包含于E，G’为G的子图。 生成子图：在子图中，E’&lt;=E且V’&lt;=V；在生成子图中，E’&lt;=E,且V’=V 诱导子图（induced graph） G’=(V’, E’)，V’被包含于V，E’={(u, v)|u, v属于V’，(u, v)属于E}，G’为G的诱导子图。 注意：对于V’，只要在G中有边，那么在G’中同样应该有边。 团（clique） G’为关于V’的完全图。 一个团为极大团（maximal clique）当且仅当它不是其它团的子图。 一个图为最大团（maximum clique）当且仅当它的点集模最大。 一个图的团数表示为ω(G)。 弦图(chordal graph) 一个无向图称为弦图当图中任意长度大于3的环都至少有一个弦。 单纯点（simplicial vertex） 设N(v)表示与点v相邻的点集。一个点称为单纯点当{v}+N(v)的诱导子图为一个团。 定理 任何一个弦图都至少有一个单纯点，不是完全图的弦图至少有两个不相邻的单纯点(simplicail point)。 完美消除序列（perfect elimination ordering） 一个点的序列（每个点出现且恰好出现一次）v[1], v[2], …, v[n]满足v[i]在{v[i], v[i+1], …, v[n]}的诱导子图中为一个单纯点]]></content>
@@ -107,17 +118,17 @@
     <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C 语言不能省略形参，即使不使用 C语言的数据存储空间 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆） 局部变量在return之后出栈销毁，不要尝试返回局部指针地址 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同 占用空间小的转化为占用空间大的： 考虑内存越界访问 结构体强制转换 ： 考虑字节对齐 字符串 通过索引读取字符串时，一定要判断索引的正确性 多线程编程 互斥量用来对临界区的互斥进入 条件变量用于线程的阻塞等待 指针 12345int * p = NULL;&amp;p 表示p的地址p 表示变量p的内容*p 表示p指向的存储单元的内容 数字0是唯一能输给指针的数值(相当于NULL) void * :指向任何类型的指针 注意深复制和浅复制的区别浅复制12345int *p, *q;*p = 58;q = p; // q 和 P 指向同一内存单元free(q);printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放 动态变量 在程序运行过程中产生的变量称为动态变量 创建 123int * p; char *q;p = new int; // 在内存中创建一个变量，存储所分配的内存地址到p中q = new char[19]; // 在内存中创建一个数组，并将数组地址存储到q中 使用 12*p = 28;*q = &quot;hello&quot;; 销毁 12delete p;delete [] q; 动态数组 创建 12int *p;p = new int[10]; 使用 123* p = 25; //25存到第一个存储空间里 = p[0] = 25；p ++;* p = 35; //35存到第二个存储空间里 = p[1] = 35；]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>%2F2019%2F04%2F15%2FUnistallPip%2F</url>
-    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[socksV5转化为http代理]]></title>
     <url>%2F2019%2F04%2F15%2Fsockstohttp%2F</url>
     <content type="text"><![CDATA[使用工具 privoxy 安装1apt-get install privoxy 更改配置1vim /etc/privoxy/config 并在里面添加1forward-socks5 / 127.0.0.1:1080 . 重启服务1service privoxy restart 给系统设置http代理1vim ~/.bashrc 添加1export http_proxy=http://127.0.0.1:8118/ 使更改生效1source ~/.bashrc]]></content>
       <categories>
         <category>代理</category>
       </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F04%2F15%2FUnistallPip%2F</url>
+    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
   </entry>
   <entry>
     <title></title>
@@ -147,14 +158,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机网络3]]></title>
-    <url>%2F2019%2F04%2F07%2Fcomputernetworking3%2F</url>
-    <content type="text"><![CDATA[传输层 为运行在不同的端系统上的进程提供了一种逻辑通信机制(网络层提供主机之间的逻辑通信机制) 位于网络层之上 依赖于网络层 对网络层功能进行加强 传输层提供的服务 可靠的、按序的交付服务（TCP） 流量控制 拥塞控制 连接建立 不可靠的交付服务（UDP） 复用/分用 简单的错误校验 尽力而为（best effort） 不需要建立链接，延迟很小 上层更好控制（不用顾及拥塞控制之类） 经常用于流媒体、DNS、SNMP等 不提供延迟、带宽等方面的服务 多路复用/分用 可靠数据传输 不错、不丢、不乱 可靠数据传输协议 需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输 协议实现（数据错误，位错误） 有限状态机来刻画传输协议 确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息 为ACK和NAK增加校验和 添加额外的控制消息 NAK/ACK 坏掉重传（产生重复传送的问题） 增加序列号进行NAK/ACK重传 差错检测（校验和等） 停-等协议（有限状态机） NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组） 5 . 协议实现（丢失分组） 等待合理的一段时间之后重传（需要定时器） 停等引起效率低下 采用流水线机制（连发多个分组再等待ACK） 使用滑动窗口协议实现流水线 滑动窗口协议GBN（Go-Back-N）协议：一组分组一组分组的滑动 发送方 窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号 采用累积确认的方式 1ACK(n)表示确认到n(包含n)的分组均被正确接收 整个窗口设置一个计时器 超时则重发序列号大于n还未收到ack的分组 接收方（没有缓存，没有接收方窗口） 发送拥有最高序列号的、已被正确接收的分组的ACK 可能产生重复的ACK 乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号 SR（selective repeat)协议：一个分组一个分组的滑动 接收方（设置缓冲机制，缓冲乱需到达的分组） 添加接收方窗口 对每个分组单独确认 发送方 为每个分组设置单独的计数器 窗口可以跳跃前移 TCP概述 点对点（一个发送方，一个接收方） 可靠的按序的字节流 流水线机制（拥塞控制，流量控制，窗口大小设置） 发送方/接收方缓存 全双工（同一连接中能传输双向数据流） 面向连接 通信双方在发送数据前必须建立连接 连接状态只在连接的两端维护，沿途 结点并不维护 TCP连接包括：两台主机上的缓存，连接状态变量、socket等 流量控制机制 序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号 ACKS 累计确认机制：该序列号之前的所有字节已经被正确处理 返回是希望接收到的下一个字节的序列号 可靠数据传输 TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务 使用单一重传定时器 触发重传的事件（超时，收到重复ACK） 快速重传 ​ 由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传 流量控制（速度匹配机制) 控制发送方发送速度不要过快以至于淹没接收方的buffer receiver 在segment头部告诉sender还有多少buffer 多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率 连接管理 一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求 连接的三次握手 客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号） 服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存） 客户机收到SYNACK，回复ACK（可以包含数据） 建立TCP连接两次握手不能确定具体是否成功，四次握手会有资源浪费 关闭的四次握手 客户机向服务器发送FIN报文段 服务器收到FIN，回复ACK，关闭连接，发送FIN 客户机收到FIN，回复ACK 进入等待状态，如果收到FIN，则重新发送ACK 服务器收到ACK，关闭链接 拥塞控制 表现 分组丢失 分组延迟越来越大 拥塞控制方法 端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法） 网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM） 拥塞控制的基本原理 限制sender的发送速率 ConfgWin：（发送窗口的大小） 动态调整以改变发送速率 反映所感知到的网络拥塞 网络拥塞的感知 LOSS事件==timeout或者连续3个重复的ACK 合理调整发送速率 加性增—乘性减（AIMD) 谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）; 发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半） 慢启动（SS） 当链接刚刚建立时（CongWin = 1, 初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升 指数增长切换到加性增 用一个变量Threshold， 设置为LOSS事件前congWin值的1/2. 收到3个重复的ACK(网络还能传输一些segment) 将congWin切为一半，然后线性增长 Timeout事件（拥塞更严重) CongWin直接设为1,然后指数增长，达到threshold之后再线性增长]]></content>
+    <title><![CDATA[扩展/boot分区]]></title>
+    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
+    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
       <categories>
-        <category>算法</category>
+        <category>linux</category>
       </categories>
       <tags>
-        <tag>自顶向下方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -169,14 +180,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[扩展/boot分区]]></title>
-    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
-    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
+    <title><![CDATA[计算机网络3]]></title>
+    <url>%2F2019%2F04%2F07%2Fcomputernetworking3%2F</url>
+    <content type="text"><![CDATA[传输层 为运行在不同的端系统上的进程提供了一种逻辑通信机制(网络层提供主机之间的逻辑通信机制) 位于网络层之上 依赖于网络层 对网络层功能进行加强 传输层提供的服务 可靠的、按序的交付服务（TCP） 流量控制 拥塞控制 连接建立 不可靠的交付服务（UDP） 复用/分用 简单的错误校验 尽力而为（best effort） 不需要建立链接，延迟很小 上层更好控制（不用顾及拥塞控制之类） 经常用于流媒体、DNS、SNMP等 不提供延迟、带宽等方面的服务 多路复用/分用 可靠数据传输 不错、不丢、不乱 可靠数据传输协议 需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输 协议实现（数据错误，位错误） 有限状态机来刻画传输协议 确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息 为ACK和NAK增加校验和 添加额外的控制消息 NAK/ACK 坏掉重传（产生重复传送的问题） 增加序列号进行NAK/ACK重传 差错检测（校验和等） 停-等协议（有限状态机） NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组） 5 . 协议实现（丢失分组） 等待合理的一段时间之后重传（需要定时器） 停等引起效率低下 采用流水线机制（连发多个分组再等待ACK） 使用滑动窗口协议实现流水线 滑动窗口协议GBN（Go-Back-N）协议：一组分组一组分组的滑动 发送方 窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号 采用累积确认的方式 1ACK(n)表示确认到n(包含n)的分组均被正确接收 整个窗口设置一个计时器 超时则重发序列号大于n还未收到ack的分组 接收方（没有缓存，没有接收方窗口） 发送拥有最高序列号的、已被正确接收的分组的ACK 可能产生重复的ACK 乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号 SR（selective repeat)协议：一个分组一个分组的滑动 接收方（设置缓冲机制，缓冲乱需到达的分组） 添加接收方窗口 对每个分组单独确认 发送方 为每个分组设置单独的计数器 窗口可以跳跃前移 TCP概述 点对点（一个发送方，一个接收方） 可靠的按序的字节流 流水线机制（拥塞控制，流量控制，窗口大小设置） 发送方/接收方缓存 全双工（同一连接中能传输双向数据流） 面向连接 通信双方在发送数据前必须建立连接 连接状态只在连接的两端维护，沿途 结点并不维护 TCP连接包括：两台主机上的缓存，连接状态变量、socket等 流量控制机制 序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号 ACKS 累计确认机制：该序列号之前的所有字节已经被正确处理 返回是希望接收到的下一个字节的序列号 可靠数据传输 TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务 使用单一重传定时器 触发重传的事件（超时，收到重复ACK） 快速重传 ​ 由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传 流量控制（速度匹配机制) 控制发送方发送速度不要过快以至于淹没接收方的buffer receiver 在segment头部告诉sender还有多少buffer 多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率 连接管理 一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求 连接的三次握手 客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号） 服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存） 客户机收到SYNACK，回复ACK（可以包含数据） 建立TCP连接两次握手不能确定具体是否成功，四次握手会有资源浪费 关闭的四次握手 客户机向服务器发送FIN报文段 服务器收到FIN，回复ACK，关闭连接，发送FIN 客户机收到FIN，回复ACK 进入等待状态，如果收到FIN，则重新发送ACK 服务器收到ACK，关闭链接 拥塞控制 表现 分组丢失 分组延迟越来越大 拥塞控制方法 端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法） 网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM） 拥塞控制的基本原理 限制sender的发送速率 ConfgWin：（发送窗口的大小） 动态调整以改变发送速率 反映所感知到的网络拥塞 网络拥塞的感知 LOSS事件==timeout或者连续3个重复的ACK 合理调整发送速率 加性增—乘性减（AIMD) 谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）; 发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半） 慢启动（SS） 当链接刚刚建立时（CongWin = 1, 初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升 指数增长切换到加性增 用一个变量Threshold， 设置为LOSS事件前congWin值的1/2. 收到3个重复的ACK(网络还能传输一些segment) 将congWin切为一半，然后线性增长 Timeout事件（拥塞更严重) CongWin直接设为1,然后指数增长，达到threshold之后再线性增长]]></content>
       <categories>
-        <category>linux</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>自顶向下方法</tag>
       </tags>
   </entry>
   <entry>
@@ -344,9 +355,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux定时执行任务]]></title>
-    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
-    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
+    <title><![CDATA[linux网络连接后执行脚本]]></title>
+    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
+    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -355,9 +366,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux网络连接后执行脚本]]></title>
-    <url>%2F2018%2F04%2F18%2FDoThingsAfterInternetConnetc%2F</url>
-    <content type="text"><![CDATA[在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本1234if-down.d -- 网络关闭前if-post-down.d -- 网络关闭后if-pre-up.d -- 网络建立前if-up.d -- 网络建立后 所以把自己的脚本放在/etc/network/if-up.d/目录下面就可以了]]></content>
+    <title><![CDATA[linux定时执行任务]]></title>
+    <url>%2F2018%2F04%2F18%2FSystemTimer%2F</url>
+    <content type="text"><![CDATA[用户级任务1crontab -e 格式1min hour dayofmonth monthofyear dayofweek command 会进行语法检查系统级任务1nano /etc/crontab 格式1min hour dayofmonth monthofyear dayofweek user command 不会进行语法检查 共同点 配置之后需要重启crond服务1service cron restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -388,9 +399,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[分治策略]]></title>
-    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
-    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
+    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
+    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
+    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -399,9 +410,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
-    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
-    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
+    <title><![CDATA[分治策略]]></title>
+    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
+    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -429,17 +440,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[进程间通信]]></title>
-    <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
-    <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[编程珠玑]]></title>
     <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
     <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
@@ -448,6 +448,17 @@
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[进程间通信]]></title>
+    <url>%2F2018%2F04%2F01%2FprocessCom%2F</url>
+    <content type="text"><![CDATA[信号 由于某些错误而产生的事件 可以设定信号触发之后的处理方式，但信号是系统已经确定的12void (*signals(int signum, void(*hangdler)(int)))(int);int sigaction(int signum, const struct sigaction * act, struct sigaction * addr) 管道和命名管道实质是先进先出，半双工的数据结构，双方通信需要两个管道 管道：只能用于相互关联的进程间通信，如：父子进程 命名管道： = 特殊文件12mkfifo(const char * pathname, mode_t mode); //建立管道文件read() write() close() 均可操作 信号量主要用于控制多个线程对临界区资源的访问 消息队列将消息按队列方式组成的链表 1234int msgget(key_t key, int msgflg);int msgsnd(int msgid, const void * msgptr, int msgsz, int msgflg);int msgrcv(int msgid, const void * msgptr, int msgsz, long msgtyp, int msgflg);int msgctl(int msgid, int cmd, struct msgid_ds *buf); 共享内存直接操作内存，不用复制文件 系统创建的特殊地址空间，允许多个不相关的进程使用 1234int shmget(key_t key, int shmflg);int shmat(int shmid, const void * shmaddr, int shmflg);int shmdt(const void * shmaddr);int shmctl(int shmid, int cmd, struct shmid_ds *buf);]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -481,6 +492,17 @@
       </categories>
       <tags>
         <tag>qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android Stdio配置]]></title>
+    <url>%2F2017%2F12%2F15%2FAndroidStudio%2F</url>
+    <content type="text"><![CDATA[Cause: dl.google.com:443 failed to respond vim ~/.gradle/gradle.properties 123456# org.gradle.parallel=true#Fri Jun 29 10:45:08 CST 2018#systemProp.https.proxyPort=1080systemProp.http.proxyHost=127.0.0.1#systemProp.https.proxyHost=127.0.0.1systemProp.http.proxyPort=1080 创建桌面图标 1vim /usr/share/applications/Studio.desktop 1234567[Desktop Entry]Name = ASComment= android studioExec=/home/huhaobin/android-studio/bin/studio.shIcon=/home/huhaobin/android-studio/bin/studio.pngTerminal=falseType=Application Grant current user access to /dev/kvm 1chown :$USER /dev/kvm]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -618,9 +640,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[StartWithBoot]]></title>
+    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
+    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -637,17 +667,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[StartWithBoot]]></title>
-    <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
-    <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
+    <title><![CDATA[树莓派连接隐藏wifi]]></title>
+    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
+    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -673,14 +703,6 @@
       <tags>
         <tag>树莓派</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[树莓派连接隐藏wifi]]></title>
-    <url>%2F2017%2F09%2F30%2FraspberryWifi%2F</url>
-    <content type="text"><![CDATA[编辑wifi文件 1sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 在该文件最后添加下面的话 12345network=&#123; ssid="WIFINAME" scan_ssid=1 psk="password"&#125; 重启]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[集成库的学习]]></title>
@@ -745,17 +767,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[服务器操作规范]]></title>
-    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
-    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>服务器操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[shell]]></title>
     <url>%2F2016%2F12%2F15%2Fshell%2F</url>
     <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
@@ -764,6 +775,17 @@
       </categories>
       <tags>
         <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器操作规范]]></title>
+    <url>%2F2016%2F12%2F15%2FserverOption%2F</url>
+    <content type="text"><![CDATA[要求入门Linux：鸟哥的Linux私房菜.基础学习篇（第三版）个人认为鸟哥的这本书是一本非常好的入门书 熟悉至少一个内置编辑器: vi, nano 至少熟悉一个发行版(或系列)，建议作为服务器常用的如Centos, Debian, Ubuntu，可以了解多个常用发行版 个人使用/开发尽量在Linux上 熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置 服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。 危险操作前一定要备份（操作均需要备份）1234rm -rf dir/filename– kill -9 pid– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件） 账号非必要情况下，以非root用户登录操作 密码建议自己备份，但不要外漏。 若有修改密码的需求则报告给组长，等组长回复 端口 限制端口访问机器 禁止修改登录端口 监控 开启监控 比如开启监控日志，nginx，apache默认自带开启日志 学会查看日志解决问题 数据库 学会最基本的sql语言（增删查改） 绑定内网ip 设置登录密码 删除默认数据库及用户 新建mysql用户和组，相关权限给到mysql用户 库，表级别操作慎重 代码更新git 服务器更新 可以访问外网的服务器：配置ssh key，使用git pull 不能访问外网的服务器 12345678910111213git loggit log –statgit diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREM : modifyA : ADDD : DELETE 在每个项目的根目录下面的update.txt文件里添加写入 1操作人姓名-电话-邮箱-修改日期-git版本号 更新完成之后一定要多访问几次确保没有出问题 所有的服务更新完需要重启 建议更新时间选在访问人数较少的深夜 实用技巧 导出最后一次提交修改过的文件 1git archive -o ../updated.zip HEAD git diff --name-only HEAD^ 导出两次提交之间修改过的文件 1git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE 退出 windows：注销（禁止使用关闭） linux：logout(禁止使用shut down)]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>服务器操作</tag>
       </tags>
   </entry>
   <entry>
