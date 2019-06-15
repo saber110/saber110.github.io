@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  174
+                  185
                 </span>
               
 
@@ -403,31 +403,31 @@
       
         <ol>
 <li><p>php5.4 ubuntu14.04</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo php5enmod mcrypt</div><div class="line">$ sudo service apache2 restart</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo php5enmod mcrypt</span><br><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>php7.0 ubuntu16.04</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt php-mcrypt</div><div class="line">sudo phpenmod mcrypt</div><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt php-mcrypt</span><br><span class="line">sudo phpenmod mcrypt</span><br><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ubuntu安装curl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install php-curl</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php-curl</span><br></pre></td></tr></table></figure>
 <p>更改php.ini 开启curl(/etc/php/7.0/apache2/php.ini)<br>重启apache2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>php gd库的安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install php gd</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install php gd</span><br></pre></td></tr></table></figure>
 <p> 更改php.ini 开启curl(/etc/php/7.0/apache2/php.ini)重启apache2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ubuntu 开启对.htaccess的支持</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo a2enmod rewrite</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod rewrite</span><br></pre></td></tr></table></figure>
 <p> 配置/etc/apache2/apache2.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">AccessFileName .htaccess</div><div class="line">&lt;Directory /var/www/html&gt;</div><div class="line">                Options Indexes FollowSymLinks MultiViews</div><div class="line">                AllowOverride All</div><div class="line">                Order allow,deny</div><div class="line">                allow from all</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">AccessFileName .htaccess</span><br><span class="line">&lt;Directory /var/www/html&gt;</span><br><span class="line">                Options Indexes FollowSymLinks MultiViews</span><br><span class="line">                AllowOverride All</span><br><span class="line">                Order allow,deny</span><br><span class="line">                allow from all</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
-<p>6.mysql自增起始值设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter table users（表名） AUTO_INCREMENT=10000（起始值）;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+<p>6.mysql自增起始值设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table users（表名） AUTO_INCREMENT=10000（起始值）;</span><br></pre></td></tr></table></figure></p>
 <p>7.ssl  https配置</p>
-<p><a href="http://www.linuxidc.com/Linux/2015-02/113588.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-02/113588.htm</a></p>
+<p><a href="http://www.linuxidc.com/Linux/2015-02/113588.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2015-02/113588.htm</a></p>
 
       
     </div>
@@ -645,7 +645,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -672,11 +672,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

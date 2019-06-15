@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  915
+                  927
                 </span>
               
 
@@ -447,9 +447,9 @@
 <p> 设置一个共享锁变量，0表示临界区内没有进程，1表示有。每次进入之前先测试，如果此时为0则设置为1，退出临界区设置为0。遗憾的是这个方法也<strong>不是线程安全</strong>的</p>
 </li>
 <li><p>严格交替法</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">WHILE(TRUE)</div><div class="line">&#123;</div><div class="line">  WHILE(turn != 0);</div><div class="line">  critical_region();</div><div class="line">  turn = 1;</div><div class="line">  noncritical_region();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">WHILE(TRUE)</div><div class="line">&#123;</div><div class="line">  WHILE(turn != 1);</div><div class="line">  critical_region();</div><div class="line">  turn = 0;</div><div class="line">  noncritical_region();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 整型变量turn的初值为零，用于跟踪轮到哪个进程进入临界区。一开始进程0检查turn，发现是0，所以进入临界区。同时进程1也在检查turn，不停的检查是否变为1。这样就产生了<a href="https://baike.baidu.com/item/%E5%BF%99%E7%A2%8C%E7%AD%89%E5%BE%85/16256157?fr=aladdin" target="_blank" rel="external">忙等待</a>。还有一种情况就是进程0退出临界区并将turn设置为1，此时进程0和1都在忙非临界区的任务，但是进程0先忙完需要进入临界区，由于turn为1所以进程0不能进入临界区</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">WHILE(TRUE)</span><br><span class="line">&#123;</span><br><span class="line">  WHILE(turn != 0);</span><br><span class="line">  critical_region();</span><br><span class="line">  turn = 1;</span><br><span class="line">  noncritical_region();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">WHILE(TRUE)</span><br><span class="line">&#123;</span><br><span class="line">  WHILE(turn != 1);</span><br><span class="line">  critical_region();</span><br><span class="line">  turn = 0;</span><br><span class="line">  noncritical_region();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 整型变量turn的初值为零，用于跟踪轮到哪个进程进入临界区。一开始进程0检查turn，发现是0，所以进入临界区。同时进程1也在检查turn，不停的检查是否变为1。这样就产生了<a href="https://baike.baidu.com/item/%E5%BF%99%E7%A2%8C%E7%AD%89%E5%BE%85/16256157?fr=aladdin" target="_blank" rel="noopener">忙等待</a>。还有一种情况就是进程0退出临界区并将turn设置为1，此时进程0和1都在忙非临界区的任务，但是进程0先忙完需要进入临界区，由于turn为1所以进程0不能进入临界区</p>
 </li>
 <li>Peterson解决方案</li>
 <li>TSL语句</li>
@@ -730,7 +730,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -757,11 +757,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  86
+                  88
                 </span>
               
 
@@ -402,16 +402,16 @@
 
       
         <ol>
-<li>建立关机需要执行的脚本文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure>
+<li>建立关机需要执行的脚本文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/init.d/K99shutdownbefore.sh</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>K99文件名用来保证运行优先级</p>
-<ol>
+<ol start="2">
 <li><p>赋予执行权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod +x /etc/init.d/K99shutdownbefore.sh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /etc/init.d/K99shutdownbefore.sh</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建关机和重启软连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc0.d/K99shutdownbefore</div><div class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc6.d/K99shutdownbefore</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc0.d/K99shutdownbefore</span><br><span class="line">sudo ln -s /etc/init.d/K99shutdownbefore.sh  /etc/rc6.d/K99shutdownbefore</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -631,7 +631,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -658,11 +658,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

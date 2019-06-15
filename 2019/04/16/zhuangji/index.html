@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  119
+                  173
                 </span>
               
 
@@ -402,13 +402,13 @@
 
       
         <ol>
-<li>Ubuntu安装之新建autoinstall.sh <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim autoinstall.sh</div></pre></td></tr></table></figure>
+<li>Ubuntu安装之新建autoinstall.sh <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim autoinstall.sh</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>2.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">将下列内容写入</div><div class="line">apt install vim</div><div class="line">## theme</div><div class="line">add-apt-repository ppa:noobslab/themes</div><div class="line">apt update</div><div class="line">apt install flatabulous-theme</div><div class="line">## icons</div><div class="line">add-apt-repository ppa:noobslab/icons</div><div class="line">apt update</div><div class="line">apt install ultra-flat-icons</div><div class="line">## pointer</div><div class="line">add-apt-repository ppa:noobslab/macbuntu</div><div class="line">apt update</div><div class="line">apt install macbuntu-os-icons-lts-v7</div><div class="line">apt install macbuntu-os-ithemes-lts-v7</div><div class="line">## fonts</div><div class="line">apt install fonts-wqy-microhei</div><div class="line">##</div><div class="line">apt install unity-tweak-tool</div><div class="line">## docky</div><div class="line">apt install cairo-dock</div><div class="line"></div><div class="line">##</div><div class="line">apt install git</div><div class="line">## python</div><div class="line">apt install python-pip</div><div class="line">pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U</div><div class="line"></div><div class="line">## hexo</div><div class="line">apt install npm</div><div class="line">npm install -g hexo-cli</div><div class="line"></div><div class="line">## network</div><div class="line">apt install --reinstall linux-firmware</div><div class="line">modprobe -r iwlwifi</div><div class="line">modprobe iwlwifi</div></pre></td></tr></table></figure></p>
-<ol>
+<p>2.<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">将下列内容写入</span><br><span class="line">apt install vim</span><br><span class="line">## theme</span><br><span class="line">add-apt-repository ppa:noobslab/themes</span><br><span class="line">apt update</span><br><span class="line">apt install flatabulous-theme</span><br><span class="line">## icons</span><br><span class="line">add-apt-repository ppa:noobslab/icons</span><br><span class="line">apt update</span><br><span class="line">apt install ultra-flat-icons</span><br><span class="line">## pointer</span><br><span class="line">add-apt-repository ppa:noobslab/macbuntu</span><br><span class="line">apt update</span><br><span class="line">apt install macbuntu-os-icons-lts-v7</span><br><span class="line">apt install macbuntu-os-ithemes-lts-v7</span><br><span class="line">## fonts</span><br><span class="line">apt install fonts-wqy-microhei</span><br><span class="line">##</span><br><span class="line">apt install unity-tweak-tool</span><br><span class="line">## docky</span><br><span class="line">apt install cairo-dock</span><br><span class="line"></span><br><span class="line">##</span><br><span class="line">apt install git</span><br><span class="line">## python</span><br><span class="line">apt install python-pip</span><br><span class="line">pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U</span><br><span class="line"></span><br><span class="line">## hexo</span><br><span class="line">apt install npm</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">## network</span><br><span class="line">apt install --reinstall linux-firmware</span><br><span class="line">modprobe -r iwlwifi</span><br><span class="line">modprobe iwlwifi</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
 <li><p>自动安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ./autoinstall.sh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./autoinstall.sh</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -628,7 +628,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -655,11 +655,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

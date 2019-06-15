@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2017/10/10/AutoStartInUbuntuMate/">
+    <link itemprop="mainEntityOfPage" href="http://blog.huhaobin.cn/2017/10/10/uart_raspberry3B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hu haobin">
@@ -299,7 +299,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/10/AutoStartInUbuntuMate/" itemprop="url">AutoStartInUbuntuMate</a></h1>
+                <a class="post-title-link" href="/2017/10/10/uart_raspberry3B/" itemprop="url">uart_raspberry</a></h1>
         
 
         <div class="post-meta">
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  44
+                  117
                 </span>
               
 
@@ -404,12 +404,15 @@
       
         
           
-          只有登录之后ubuntu mate才会联网1sudo nano  /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file
-在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk
+          串口配置1sudo raspi-config
+123interfacedisable shell and enable hardware
+禁用蓝牙
+1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt
+禁用串行控制台
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/10/AutoStartInUbuntuMate/#more" rel="contents">
+            <a class="btn" href="/2017/10/10/uart_raspberry3B/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -727,7 +730,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  326
+                  340
                 </span>
               
 
@@ -743,7 +746,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -907,7 +910,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  37
+                  41
                 </span>
               
 
@@ -1338,7 +1341,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -1365,11 +1368,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

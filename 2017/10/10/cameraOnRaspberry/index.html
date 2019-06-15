@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  398
+                  438
                 </span>
               
 
@@ -400,7 +400,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">raspistill -o image.jpg  </div><div class="line"></div><div class="line">常用命令：  </div><div class="line"># 两秒钟（时间单位为毫秒）延迟后拍摄一张照片，并保存为 image.jpg  </div><div class="line">raspistill -t 2000 -o image.jpg  </div><div class="line"></div><div class="line"># 拍摄一张自定义大小的照片。  </div><div class="line">raspistill -t 2000 -o image.jpg -w 640 -h 480  </div><div class="line"></div><div class="line"># 降低图像质量，减小文件尺寸  </div><div class="line">raspistill -t 2000 -o image.jpg -q 5  </div><div class="line"></div><div class="line"># 强制使预览窗口出现在坐标为 100,100 的位置，并且尺寸为宽 300 和高 200 像素。  </div><div class="line">raspistill -t 2000 -o image.jpg -p 100,100,300,200  </div><div class="line"></div><div class="line"># 禁用预览窗口  </div><div class="line">raspistill -t 2000 -o image.jpg -n  </div><div class="line"></div><div class="line"># 将图像保存为 PNG 文件（无损压缩格式，但是要比 JPEG 速度慢）。注意，当选择图像编码时，文件扩展名将被忽略。  </div><div class="line">raspistill -t 2000 -o image.png –e png  </div><div class="line"></div><div class="line"># 向 JPEG 文件中添加一些 EXIF 信息。该命令将会把作者名称标签设置为 Dreamcolor，GPS 海拔高度为 123.5米。  </div><div class="line">raspistill -t 2000 -o image.jpg -x IFD0.Artist=Dreamcolor -x GPS.GPSAltitude=1235/10  </div><div class="line"></div><div class="line"># 设置浮雕风格图像特效  </div><div class="line">raspistill -t 2000 -o image.jpg -ifx emboss  </div><div class="line"></div><div class="line"># 设置 YUV 图像的 U 和 V 通道为指定的值（128:128 为黑白图像）  </div><div class="line">raspistill -t 2000 -o image.jpg -cfx 128:128  </div><div class="line"></div><div class="line"># 仅显示两秒钟预览图像，而不对图像进行保存。  </div><div class="line">raspistill -t 2000  </div><div class="line"></div><div class="line"># 间隔获取图片，在 10 分钟（10 分钟 = 600000 毫秒）的时间里，每 10 秒获取一张，并且命名为 image_number_1_today.jpg，image_number_2_today.jpg... 的形式。  </div><div class="line">raspistill -t 600000 -tl 10000 -o image_num_%d_today.jpg  </div><div class="line"></div><div class="line"># 获取一张照片并发送至标准输出设备  </div><div class="line">raspistill -t 2000 -o -  </div><div class="line"></div><div class="line"># 获取一张照片并保存为一个文件  </div><div class="line">raspistill -t 2000 -o - &gt; my_file.jpg</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">raspistill -o image.jpg  </span><br><span class="line"></span><br><span class="line">常用命令：  </span><br><span class="line"># 两秒钟（时间单位为毫秒）延迟后拍摄一张照片，并保存为 image.jpg  </span><br><span class="line">raspistill -t 2000 -o image.jpg  </span><br><span class="line"></span><br><span class="line"># 拍摄一张自定义大小的照片。  </span><br><span class="line">raspistill -t 2000 -o image.jpg -w 640 -h 480  </span><br><span class="line"></span><br><span class="line"># 降低图像质量，减小文件尺寸  </span><br><span class="line">raspistill -t 2000 -o image.jpg -q 5  </span><br><span class="line"></span><br><span class="line"># 强制使预览窗口出现在坐标为 100,100 的位置，并且尺寸为宽 300 和高 200 像素。  </span><br><span class="line">raspistill -t 2000 -o image.jpg -p 100,100,300,200  </span><br><span class="line"></span><br><span class="line"># 禁用预览窗口  </span><br><span class="line">raspistill -t 2000 -o image.jpg -n  </span><br><span class="line"></span><br><span class="line"># 将图像保存为 PNG 文件（无损压缩格式，但是要比 JPEG 速度慢）。注意，当选择图像编码时，文件扩展名将被忽略。  </span><br><span class="line">raspistill -t 2000 -o image.png –e png  </span><br><span class="line"></span><br><span class="line"># 向 JPEG 文件中添加一些 EXIF 信息。该命令将会把作者名称标签设置为 Dreamcolor，GPS 海拔高度为 123.5米。  </span><br><span class="line">raspistill -t 2000 -o image.jpg -x IFD0.Artist=Dreamcolor -x GPS.GPSAltitude=1235/10  </span><br><span class="line"></span><br><span class="line"># 设置浮雕风格图像特效  </span><br><span class="line">raspistill -t 2000 -o image.jpg -ifx emboss  </span><br><span class="line"></span><br><span class="line"># 设置 YUV 图像的 U 和 V 通道为指定的值（128:128 为黑白图像）  </span><br><span class="line">raspistill -t 2000 -o image.jpg -cfx 128:128  </span><br><span class="line"></span><br><span class="line"># 仅显示两秒钟预览图像，而不对图像进行保存。  </span><br><span class="line">raspistill -t 2000  </span><br><span class="line"></span><br><span class="line"># 间隔获取图片，在 10 分钟（10 分钟 = 600000 毫秒）的时间里，每 10 秒获取一张，并且命名为 image_number_1_today.jpg，image_number_2_today.jpg... 的形式。  </span><br><span class="line">raspistill -t 600000 -tl 10000 -o image_num_%d_today.jpg  </span><br><span class="line"></span><br><span class="line"># 获取一张照片并发送至标准输出设备  </span><br><span class="line">raspistill -t 2000 -o -  </span><br><span class="line"></span><br><span class="line"># 获取一张照片并保存为一个文件  </span><br><span class="line">raspistill -t 2000 -o - &gt; my_file.jpg</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -612,7 +612,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -639,11 +639,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  156
+                  196
                 </span>
               
 
@@ -402,10 +402,10 @@
       
         <ol>
 <li><p>修改system—-libraries —–upload—–do_upload中的相对应内容为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if ( ! @copy($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name)))</div><div class="line">&#123;</div><div class="line">  if ( ! @move_uploaded_file($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name)))</div><div class="line">  &#123;</div><div class="line">    $this-&gt;set_error(‘upload_destination_error’);</div><div class="line">    return FALSE;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if ( ! @copy($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name)))</span><br><span class="line">&#123;</span><br><span class="line">  if ( ! @move_uploaded_file($this-&gt;file_temp, iconv(“UTF-8”, “gb2312”, $this-&gt;upload_path.$this-&gt;file_name)))</span><br><span class="line">  &#123;</span><br><span class="line">    $this-&gt;set_error(‘upload_destination_error’);</span><br><span class="line">    return FALSE;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改同文件中的set_filename</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">public function set_filename($path, $filename)</div><div class="line">&#123;</div><div class="line">  if ($this-&gt;encrypt_name == TRUE)</div><div class="line">  &#123;</div><div class="line">    mt_srand();</div><div class="line">    $filename = md5(uniqid(mt_rand())).$this-&gt;file_ext;</div><div class="line">  &#125;</div><div class="line">  $filename = iconv(‘UTF-8’, ‘GB2312’, $filename);//将$filename中的文件名转换为GB2312编码</div><div class="line">  if ( ! file_exists($path.$filename))</div><div class="line">  &#123;</div><div class="line">    $filename = iconv(‘GB2312’, ‘UTF-8’, $filename);//将编码转回UTF-8</div><div class="line">    return $filename;</div><div class="line">  &#125;</div><div class="line">  $filename = str_replace($this-&gt;file_ext, ‘’, $filename);</div><div class="line">  $new_filename = ‘’;</div><div class="line">  for ($i = 1; $i &lt; 100; $i++)</div><div class="line">  &#123;</div><div class="line">    if ( ! file_exists($path.$filename.$i.$this-&gt;file_ext))</div><div class="line">    &#123;</div><div class="line">      $new_filename = $filename.$i.$this-&gt;file_ext;</div><div class="line">      break;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  if ($new_filename == ‘’)</div><div class="line">  &#123;</div><div class="line">    $this-&gt;set_error(‘upload_bad_filename’);</div><div class="line">    return FALSE;</div><div class="line">  &#125;</div><div class="line">  else</div><div class="line">  &#123;</div><div class="line">    $new_filename = iconv(‘GB2312’, ‘UTF-8’, $new_filename);//将编码转回UTF-8</div><div class="line">    return $new_filename;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public function set_filename($path, $filename)</span><br><span class="line">&#123;</span><br><span class="line">  if ($this-&gt;encrypt_name == TRUE)</span><br><span class="line">  &#123;</span><br><span class="line">    mt_srand();</span><br><span class="line">    $filename = md5(uniqid(mt_rand())).$this-&gt;file_ext;</span><br><span class="line">  &#125;</span><br><span class="line">  $filename = iconv(‘UTF-8’, ‘GB2312’, $filename);//将$filename中的文件名转换为GB2312编码</span><br><span class="line">  if ( ! file_exists($path.$filename))</span><br><span class="line">  &#123;</span><br><span class="line">    $filename = iconv(‘GB2312’, ‘UTF-8’, $filename);//将编码转回UTF-8</span><br><span class="line">    return $filename;</span><br><span class="line">  &#125;</span><br><span class="line">  $filename = str_replace($this-&gt;file_ext, ‘’, $filename);</span><br><span class="line">  $new_filename = ‘’;</span><br><span class="line">  for ($i = 1; $i &lt; 100; $i++)</span><br><span class="line">  &#123;</span><br><span class="line">    if ( ! file_exists($path.$filename.$i.$this-&gt;file_ext))</span><br><span class="line">    &#123;</span><br><span class="line">      $new_filename = $filename.$i.$this-&gt;file_ext;</span><br><span class="line">      break;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  if ($new_filename == ‘’)</span><br><span class="line">  &#123;</span><br><span class="line">    $this-&gt;set_error(‘upload_bad_filename’);</span><br><span class="line">    return FALSE;</span><br><span class="line">  &#125;</span><br><span class="line">  else</span><br><span class="line">  &#123;</span><br><span class="line">    $new_filename = iconv(‘GB2312’, ‘UTF-8’, $new_filename);//将编码转回UTF-8</span><br><span class="line">    return $new_filename;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -619,7 +619,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -646,11 +646,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

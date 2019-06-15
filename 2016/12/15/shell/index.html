@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  455
+                  474
                 </span>
               
 
@@ -404,19 +404,19 @@
         <h1 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h1><p><strong>注意,尽量不要用空格做格式控制符</strong></p>
 <ol>
 <li><p>开头要用 指明解释器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>每句话不用封号结尾</p>
 </li>
 <li>变量的定义不用$符,但是<strong>引用</strong>要用$符,引用的时候要注意有无大括号</li>
-<li>删除变量的时候不用$符<br>5. <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$0  当前脚本的文件名</div><div class="line">$n  传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。</div><div class="line">$#  传递给脚本或函数的参数个数。</div><div class="line">$*  传递给脚本或函数的所有参数。</div><div class="line">$@  传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同</div><div class="line">$?  上个命令的退出状态，或函数的返回值。</div><div class="line">$$  当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。</div></pre></td></tr></table></figure>
+<li>删除变量的时候不用$符<br>5. <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$0  当前脚本的文件名</span><br><span class="line">$n  传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。</span><br><span class="line">$#  传递给脚本或函数的参数个数。</span><br><span class="line">$*  传递给脚本或函数的所有参数。</span><br><span class="line">$@  传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同</span><br><span class="line">$?  上个命令的退出状态，或函数的返回值。</span><br><span class="line">$$  当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>#替换</p>
 <ol>
 <li><p>转义替换（用-e 来禁止zhuanyi转义）</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">下面的转义字符都可以用在 echo 中：</div><div class="line">&amp;#092;  反斜杠</div><div class="line">a  警报，响铃</div><div class="line">b  退格（删除键）</div><div class="line">f  换页(FF)，将当前位置移到下页开头</div><div class="line">n  换行</div><div class="line">r  回车</div><div class="line">t  水平制表符（tab键）</div><div class="line">v  垂直制表符</div></pre></td></tr></table></figure>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$&#123;var&#125; 变量本来的值</div><div class="line">$&#123;var:-word&#125;    如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。</div><div class="line">$&#123;var:=word&#125;    如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。</div><div class="line">$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。</div><div class="line">若此替换出现在Shell脚本中，那么脚本将停止运行。</div><div class="line">$&#123;var:+word&#125;    如果变量 var 被定义，那么返回 word，但不改变 var 的值。</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">下面的转义字符都可以用在 echo 中：</span><br><span class="line">&amp;#092;  反斜杠</span><br><span class="line">a  警报，响铃</span><br><span class="line">b  退格（删除键）</span><br><span class="line">f  换页(FF)，将当前位置移到下页开头</span><br><span class="line">n  换行</span><br><span class="line">r  回车</span><br><span class="line">t  水平制表符（tab键）</span><br><span class="line">v  垂直制表符</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123;var&#125; 变量本来的值</span><br><span class="line">$&#123;var:-word&#125;    如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。</span><br><span class="line">$&#123;var:=word&#125;    如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。</span><br><span class="line">$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。</span><br><span class="line">若此替换出现在Shell脚本中，那么脚本将停止运行。</span><br><span class="line">$&#123;var:+word&#125;    如果变量 var 被定义，那么返回 word，但不改变 var 的值。</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -449,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/15/serverOption/" rel="next" title="服务器操作规范">
-                <i class="fa fa-chevron-left"></i> 服务器操作规范
+              <a href="/2016/11/21/c-exam/" rel="next" title="C语言大坑">
+                <i class="fa fa-chevron-left"></i> C语言大坑
               </a>
             
           </div>
@@ -459,8 +459,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/15/ajax-access/" rel="prev" title="ajax跨域">
-                ajax跨域 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/15/serverOption/" rel="prev" title="服务器操作规范">
+                服务器操作规范 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -661,7 +661,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -688,11 +688,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

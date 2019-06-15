@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,271
+                  1,296
                 </span>
               
 
@@ -405,18 +405,18 @@
       
         <h2 id="template-模板"><a href="#template-模板" class="headerlink" title="template 模板"></a>template 模板</h2><ol>
 <li><p>类模板<br>假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">template &lt;class Type&gt;</div><div class="line">class foo</div><div class="line">&#123;</div><div class="line">  private:</div><div class="line">    Type a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class Type&gt;</span><br><span class="line">class foo</span><br><span class="line">&#123;</span><br><span class="line">  private:</span><br><span class="line">    Type a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>类模板的使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名&lt;实际的类型&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名&lt;实际的类型&gt;</span><br></pre></td></tr></table></figure>
 <p>类模板的使用实际上是将类模板实例化成一个详细的类</p>
 </li>
 <li><p>在类外面定义函数模板</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">template&lt;typename（或class) T&gt;</div><div class="line">&lt;返回类型&gt;&lt;函数名&gt;(參数表)</div><div class="line">&#123;</div><div class="line">    函数体</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">template&lt;typename（或class) T&gt;</div><div class="line">T fuc(T x, T y)</div><div class="line">&#123;</div><div class="line">    T x;</div><div class="line">    //……</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename（或class) T&gt;</span><br><span class="line">&lt;返回类型&gt;&lt;函数名&gt;(參数表)</span><br><span class="line">&#123;</span><br><span class="line">    函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename（或class) T&gt;</span><br><span class="line">T fuc(T x, T y)</span><br><span class="line">&#123;</span><br><span class="line">    T x;</span><br><span class="line">    //……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>模板函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">double d;</div><div class="line">    int a;</div><div class="line">    fuc(d,a);</div><div class="line">则系统将用实參d的数据类型double去取代函数模板中的T生成函数：</div><div class="line"></div><div class="line">double fuc(double x,int y)</div><div class="line">&#123;</div><div class="line">   double x;</div><div class="line">   //……</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">double d;</span><br><span class="line">    int a;</span><br><span class="line">    fuc(d,a);</span><br><span class="line">则系统将用实參d的数据类型double去取代函数模板中的T生成函数：</span><br><span class="line"></span><br><span class="line">double fuc(double x,int y)</span><br><span class="line">&#123;</span><br><span class="line">   double x;</span><br><span class="line">   //……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>模板函数的生成就是将函数模板的类型形參实例化的过程。</p>
 </li>
 </ol>
@@ -471,7 +471,7 @@
 <ul>
 <li>对于有向图来说：V的入/出度是以v为头/尾的所有边的条数</li>
 </ul>
-<ol>
+<ol start="2">
 <li>当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 <strong>欧拉路径</strong></li>
 <li>我们通常用G=(V, E)来表示一个图</li>
 </ol>
@@ -479,9 +479,9 @@
 <li>V 是有穷非空的定点的集合</li>
 <li>E 是顶点对称的集合，又被称为边</li>
 <li>无向图中任意边的顶点对都是无序的 (u, v)</li>
-<li>有向图中任意边的顶点对都是有序的 <u, v>， u是头，v是尾</u,></li>
+<li>有向图中任意边的顶点对都是有序的 &lt;u, v&gt;， u是头，v是尾</li>
 </ul>
-<ol>
+<ol start="4">
 <li>图不能包含定点v到自己的边。这样的边被称为自边或者自环</li>
 <li>图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图</li>
 </ol>
@@ -489,7 +489,7 @@
 <li>任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的</li>
 <li>任意包含n个顶点的有向图的最大边数为 n(n-1)</li>
 </ul>
-<ol>
+<ol start="6">
 <li>路径的长度就是其中的边数</li>
 <li>简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同）</li>
 <li>环： 第一个和最后一个相同的路径</li>
@@ -505,7 +505,7 @@
 <li>无向图上的顶点i其度数等于它对应的行之和</li>
 <li>有向图上行之和是出度，列之和是入度</li>
 </ul>
-<ol>
+<ol start="2">
 <li>邻接表<br><img src="/image/linjiebiao.jpg" alt="邻接表"></li>
 <li>邻接多重表</li>
 </ol>
@@ -543,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/TheCollectOfReading/" rel="next" title="读书记录">
-                <i class="fa fa-chevron-left"></i> 读书记录
+              <a href="/2018/04/07/CA3/" rel="next" title="分治策略">
+                <i class="fa fa-chevron-left"></i> 分治策略
               </a>
             
           </div>
@@ -553,8 +553,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/07/CA3/" rel="prev" title="分治策略">
-                分治策略 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/10/SSHReverseproxy/" rel="prev" title="ssh反向代理进行内网穿透">
+                ssh反向代理进行内网穿透 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -755,7 +755,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -782,11 +782,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

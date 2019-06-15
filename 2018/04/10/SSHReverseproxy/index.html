@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  312
+                  326
                 </span>
               
 
@@ -403,34 +403,34 @@
       
         <h3 id="公网主机配置"><a href="#公网主机配置" class="headerlink" title="公网主机配置"></a>公网主机配置</h3><ol>
 <li><p>修改sshd的配置文件，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
 <p>在最后面添加GatewayPorts yes,重启sshd</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service sshd restart</span><br></pre></td></tr></table></figure>
 <p><strong>作用：设置反向代理的ip是0.0.0.0，而不是127.0.0.1</strong></p>
 <h3 id="内网主机配置"><a href="#内网主机配置" class="headerlink" title="内网主机配置"></a>内网主机配置</h3><p>命令格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -NfR &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/privatekey)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-N：ssh不执行命令</div><div class="line">-f：后台执行</div><div class="line">-R：反向代理</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -NfR &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/privatekey)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-N：ssh不执行命令</span><br><span class="line">-f：后台执行</span><br><span class="line">-R：反向代理</span><br></pre></td></tr></table></figure>
 <p><strong>private key 应该时600权限</strong><br>查看是否启动，在公网主机上执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">netstat -tnl|grep &lt;公网端口&gt;</div><div class="line"></div><div class="line">tcp        0      0 0.0.0.0:&lt;公网端口&gt;            0.0.0.0:*               LISTEN</div><div class="line">tcp6       0      0 :::&lt;公网端口&gt;                 :::*                    LISTEN</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">netstat -tnl|grep &lt;公网端口&gt;</span><br><span class="line"></span><br><span class="line">tcp        0      0 0.0.0.0:&lt;公网端口&gt;            0.0.0.0:*               LISTEN</span><br><span class="line">tcp6       0      0 :::&lt;公网端口&gt;                 :::*                    LISTEN</span><br></pre></td></tr></table></figure>
 <p>说明执行成功</p>
 <h3 id="免密，稳定通道"><a href="#免密，稳定通道" class="headerlink" title="免密，稳定通道"></a>免密，稳定通道</h3></li>
 <li><p>免密<br>在内网主机上执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-copy-id &lt;用户名&gt;@公网主机ip</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id &lt;用户名&gt;@公网主机ip</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>稳定通道(两种方法)</p>
 <ol>
-<li>autossh<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install autossh</div><div class="line">autossh -M 2333 &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</div></pre></td></tr></table></figure>
+<li>autossh<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install autossh</span><br><span class="line">autossh -M 2333 &lt;公网端口&gt;:&lt;要代理的ip&gt;:&lt;要代理的端口&gt; &lt;用户名&gt;@公网主机ip (-i /path/to/publickey)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><em>-M : 回显测试</em></p>
-<ol>
+<ol start="2">
 <li><p>ssh心跳包</p>
 <ul>
 <li>单独客户设置（方法1）<br>修改/etc/ssh/ssh_config，添加</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ServerAliveInterval 60</div><div class="line">ServerAliveCountMax 9999999999</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ServerAliveInterval 60</span><br><span class="line">ServerAliveCountMax 9999999999</span><br></pre></td></tr></table></figure>
 <ul>
-<li>服务器设置（方法二）{新客户端可以不用设置，服务器负责维护}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/ssh/sshd_config</div><div class="line"># 添加</div><div class="line">ClientAliveInterval 30</div><div class="line">ClientAliveCountMax 6</div></pre></td></tr></table></figure>
+<li>服务器设置（方法二）{新客户端可以不用设置，服务器负责维护}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line"># 添加</span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">ClientAliveCountMax 6</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -467,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/CA3/" rel="next" title="分治策略">
-                <i class="fa fa-chevron-left"></i> 分治策略
+              <a href="/2018/04/07/CA2/" rel="next" title="计算机算法 C++描述 第二章">
+                <i class="fa fa-chevron-left"></i> 计算机算法 C++描述 第二章
               </a>
             
           </div>
@@ -679,7 +679,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -706,11 +706,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

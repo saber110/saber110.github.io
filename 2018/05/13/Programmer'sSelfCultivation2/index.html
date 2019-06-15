@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  319
+                  337
                 </span>
               
 
@@ -413,13 +413,13 @@
 <ul>
 <li>初始化的全局变量和局部静态变量保存在.data</li>
 <li>未初始化的全局变量和局部静态变量保存在.bss</li>
-<li>File Header 里面包含一个段表<br>除此之外还可以自定义段<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">__attribute__((section(&quot;FOO&quot;))) int global = 42;</div><div class="line">__attribute__((section(&quot;BAR&quot;))) void foo()</div><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">// 这样就可以把相应的变量或者函数放在以“FOO”/&quot;BAR&quot;作为段名的段中</div><div class="line">// 名字可以自定义</div></pre></td></tr></table></figure>
+<li>File Header 里面包含一个段表<br>除此之外还可以自定义段<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">__attribute__((section(&quot;FOO&quot;))) int global = 42;</span><br><span class="line">__attribute__((section(&quot;BAR&quot;))) void foo()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">// 这样就可以把相应的变量或者函数放在以“FOO”/&quot;BAR&quot;作为段名的段中</span><br><span class="line">// 名字可以自定义</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="C-和C的兼容"><a href="#C-和C的兼容" class="headerlink" title="C++和C的兼容"></a>C++和C的兼容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">extern &quot;C&quot;&#123;</div><div class="line">  int func(int);</div><div class="line">  int var;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="C-和C的兼容"><a href="#C-和C的兼容" class="headerlink" title="C++和C的兼容"></a>C++和C的兼容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">extern &quot;C&quot;&#123;</span><br><span class="line">  int func(int);</span><br><span class="line">  int var;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>C++ 编译器会将在extern “C”大括号内部的代码当作C语言来处理</p>
 <p>为了处理C++调用了C函数，但认为是C++函数，经过名称修饰之后无法正确引用的问题，C++编译器会在便宜C++的程序时默认定义宏”__cplusplus”.我们可以使用条件宏来判断当前便宜单元是不是C++代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#ifdef __cplusplus</div><div class="line">extern &quot;C&quot;&#123;</div><div class="line">#endif</div><div class="line"></div><div class="line">void *memset(void *, int, size_t);    // C语言内容</div><div class="line">#ifdef __cplusplus</div><div class="line">&#125;</div><div class="line">#endif</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#ifdef __cplusplus</span><br><span class="line">extern &quot;C&quot;&#123;</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">void *memset(void *, int, size_t);    // C语言内容</span><br><span class="line">#ifdef __cplusplus</span><br><span class="line">&#125;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -662,7 +662,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -689,11 +689,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  458
+                  460
                 </span>
               
 
@@ -405,10 +405,10 @@
 <li>unix系统shell把文件描述符0与进程的标准输入关联，文件描述符1与进程的标准输出关联</li>
 <li>open和 openat函数返回的文件描述符一定是最小的未用的描述符数值</li>
 </ol>
-<p>3.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ISO C中void *表示通用指针</div></pre></td></tr></table></figure></p>
-<ol>
+<p>3.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ISO C中void *表示通用指针</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
 <li><p>文件偏移量可以大于当前文件的长度，在这种情况下，对该文件的下一次写将加长该文件，并在文件中构成一个空洞，位于文件中但没有写过的字节都被读为0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">STDIN_FILENO 标准输入</div><div class="line">STDOUT_FILENO 标准输出</div><div class="line">STDERR_FILENO 标准错误</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STDIN_FILENO 标准输入</span><br><span class="line">STDOUT_FILENO 标准输出</span><br><span class="line">STDERR_FILENO 标准错误</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>unix支持在不同进程之间共享打开文件</p>
 </li>
@@ -419,7 +419,7 @@
 <li>文件描述符标志</li>
 <li>指向一个文件表项的指针</li>
 </ul>
-<ol>
+<ol start="2">
 <li>内核为所有打开文件维持一张文件表，包含</li>
 </ol>
 <ul>
@@ -427,7 +427,7 @@
 <li>当前文件偏移量</li>
 <li>指向文件v节点表项的指针</li>
 </ul>
-<ol>
+<ol start="3">
 <li>每个打开文件或设备都有一个v节点结构</li>
 </ol>
 <ul>
@@ -436,7 +436,7 @@
 <li><strong>大多数文件都有i节点（索引节点）</strong></li>
 <li>包含了文件的所有者，文件长度，指向文件实际数据块在磁盘上所在位置的指针</li>
 </ul>
-<ol>
+<ol start="7">
 <li>在unix系统中，通常write只是将数据排入队列，而实际的写磁盘操作可能在以后的某个时刻进行。而数据库系统需要使用O_SYVN，这样一来，当它从write返回的时候数据就已经写到磁盘上了</li>
 <li>打开文件/dev/fd/n等效于复制描述符n（假设n是打开的）</li>
 </ol>
@@ -682,7 +682,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -709,11 +709,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

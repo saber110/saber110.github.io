@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,433
+                  1,463
                 </span>
               
 
@@ -413,10 +413,10 @@
 <li><p>用作形参类型，改变实参的值</p>
 </li>
 <li><p>用作函数返回值类型，可以将函数放在等式左边（相当于给return的那个变量进行赋值）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n = <span class="number">4</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> &amp; <span class="title">SetValue</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> n;&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	SetValue() = <span class="number">40</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; n;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// print 40</span></div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">4</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp; <span class="title">SetValue</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> n;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	SetValue() = <span class="number">40</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; n;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// print 40</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>常引用：不能<em>通过</em>常引用去修改其引用的内容</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n = <span class="number">100</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp; r = n;</div><div class="line">r = <span class="number">200</span>; <span class="comment">//编译错误</span></div><div class="line">n = <span class="number">200</span>； <span class="comment">// OK</span></div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp; r = n;</span><br><span class="line">r = <span class="number">200</span>; <span class="comment">//编译错误</span></span><br><span class="line">n = <span class="number">200</span>； <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -434,10 +434,10 @@
 <h2 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h2><p>用法</p>
 <ol>
 <li><p>分配一个变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">P = new T;</div><div class="line">// T 是任意类型名，P是类型为T * 的指针，指向sizeof（T）存储空间的起始地址</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">P = new T;</span><br><span class="line">// T 是任意类型名，P是类型为T * 的指针，指向sizeof（T）存储空间的起始地址</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>分配一个数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p = new T[N];</div><div class="line">// 分配一个类型为T的N个分组，返回T *</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p = new T[N];</span><br><span class="line">// 分配一个类型为T的N个分组，返回T *</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><ol>
@@ -450,10 +450,10 @@
 <li><p>无参构造函数不一定有</p>
 </li>
 <li><p>构造函数没有返回值类型，但是可以重载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ElemType T = new ElemType(1);			// 对象变量的初始化</div><div class="line">ElemType S = new ElemType[3] = &#123;1,2&#125;;	// 对象变量数组的初始化</div><div class="line">// S的分配过程中S[0], s[1]调用有参的构造函数，s[2]调用无参的构造函数</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ElemType T = new ElemType(1);			// 对象变量的初始化</span><br><span class="line">ElemType S = new ElemType[3] = &#123;1,2&#125;;	// 对象变量数组的初始化</span><br><span class="line">// S的分配过程中S[0], s[1]调用有参的构造函数，s[2]调用无参的构造函数</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<ol>
+<ol start="6">
 <li><p><strong>所有</strong>的构造函数都与类同名</p>
 </li>
 <li><p>构造函数<strong>不负责分配对象空间</strong>, 在分配空间之后才调用构造函数</p>
@@ -485,7 +485,7 @@
 <li><p>在对象消亡时自动被调用，可以用来做善后工作，若没有显示定义析构函数，则编译器生成一个什么都不做的析构函数</p>
 </li>
 <li><p>对象数组的生命期结束时，对象数组的每个元素的析构函数都会被调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">class CMyClass&#123;</div><div class="line">	public:</div><div class="line">	~CMyClass()&#123; cout &lt;&lt; &quot;destructor&quot; &lt;&lt; endl; &#125; </div><div class="line">&#125;;</div><div class="line">CMyClass obj;</div><div class="line">CMyClass fun(CMyClass sobj)&#123;	// 形参消亡时会导致析构函数被调用</div><div class="line">	return sobj;				// 函数返回时生成临时对象返回</div><div class="line">&#125;</div><div class="line">int main()&#123;</div><div class="line">	obj = fun(obj);				// 函数调用的返回值（临时对象）被用过之后，该临时对象的析构函数被调用</div><div class="line">	return 0;</div><div class="line">&#125;//	程序执行结束obj的析构函数被调用</div><div class="line"></div><div class="line">// OUTPUT：</div><div class="line">// destructor</div><div class="line">// destructor</div><div class="line">// destructor</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class CMyClass&#123;</span><br><span class="line">	public:</span><br><span class="line">	~CMyClass()&#123; cout &lt;&lt; &quot;destructor&quot; &lt;&lt; endl; &#125; </span><br><span class="line">&#125;;</span><br><span class="line">CMyClass obj;</span><br><span class="line">CMyClass fun(CMyClass sobj)&#123;	// 形参消亡时会导致析构函数被调用</span><br><span class="line">	return sobj;				// 函数返回时生成临时对象返回</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	obj = fun(obj);				// 函数调用的返回值（临时对象）被用过之后，该临时对象的析构函数被调用</span><br><span class="line">	return 0;</span><br><span class="line">&#125;//	程序执行结束obj的析构函数被调用</span><br><span class="line"></span><br><span class="line">// OUTPUT：</span><br><span class="line">// destructor</span><br><span class="line">// destructor</span><br><span class="line">// destructor</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>析构函数<strong>不负责回收对象空间</strong>, 在调用析构函数之后系统才会回收对象空间</p>
 </li>
@@ -741,7 +741,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -768,11 +768,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

@@ -404,31 +404,31 @@
         <h2 id="问题阐述"><a href="#问题阐述" class="headerlink" title="问题阐述"></a>问题阐述</h2><p>最近mysql进行了大面积的更新,内置的数据库存储器换成了mariaDB,但是大公司的更新怎么会没有大坑呢,他们更新完之后在安装过程中不会让你设置root用户的密码,但是密码在哪儿呢,据说是在某个文件里存着(当然这是PC机的特权).</p>
 <h2 id="方法步骤"><a href="#方法步骤" class="headerlink" title="方法步骤"></a>方法步骤</h2><ol>
 <li><p>删除数据库文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -r /etc/mysql</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -r /etc/mysql</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">spt install mysql_server</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spt install mysql_server</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>初始化数据库(<strong>先别在里面设置root用户的密码</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_secure_installation</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>登录数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mysql -u root -p</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><em>大坑标注:必须使用sudo,不使用su权限根本进不去,默认是空密码(对于树莓派)</em></p>
-<ol>
+<ol start="5">
 <li><p>删除原有的root用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DROP USER &apos;root&apos;@&apos;localhost&apos;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP USER &apos;root&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建root账户(<strong>先别设置密码</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>设置root用户权限(<strong>设置密码</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>刷新权限表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="多说一句"><a href="#多说一句" class="headerlink" title="多说一句"></a>多说一句</h2><p>5.6步如果省略就算更改密码之后也只能用su权限链接,删除重新添加之后就所有用户都可以链接了(迷)</p>
@@ -462,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/10/uart_raspberry3B/" rel="next" title="uart_raspberry">
-                <i class="fa fa-chevron-left"></i> uart_raspberry
+              <a href="/2017/10/10/AutoStartInUbuntuMate/" rel="next" title="AutoStartInUbuntuMate">
+                <i class="fa fa-chevron-left"></i> AutoStartInUbuntuMate
               </a>
             
           </div>
@@ -674,7 +674,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -701,11 +701,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

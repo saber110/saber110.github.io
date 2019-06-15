@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  110
+                  117
                 </span>
               
 
@@ -400,13 +400,13 @@
       
 
       
-        <h2 id="串口配置"><a href="#串口配置" class="headerlink" title="串口配置"></a>串口配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">interface</div><div class="line"></div><div class="line">disable shell and enable hardware</div></pre></td></tr></table></figure>
+        <h2 id="串口配置"><a href="#串口配置" class="headerlink" title="串口配置"></a>串口配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface</span><br><span class="line"></span><br><span class="line">disable shell and enable hardware</span><br></pre></td></tr></table></figure>
 <p>禁用蓝牙</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt</span><br></pre></td></tr></table></figure>
 <p>禁用串行控制台</p>
 <p>串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles</div><div class="line"></div><div class="line">dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles</span><br><span class="line"></span><br><span class="line">dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y</span><br></pre></td></tr></table></figure>
 <p><em>注意:打开第一句就是打开串口命令行</em></p>
 
       
@@ -432,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/10/AutoStartInUbuntuMate/" rel="next" title="AutoStartInUbuntuMate">
-                <i class="fa fa-chevron-left"></i> AutoStartInUbuntuMate
+              <a href="/2017/10/10/startwithboot/" rel="next" title="StartWithBoot">
+                <i class="fa fa-chevron-left"></i> StartWithBoot
               </a>
             
           </div>
@@ -442,8 +442,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/10/mysqlInstallation/" rel="prev" title="mysqlInstallation">
-                mysqlInstallation <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/10/AutoStartInUbuntuMate/" rel="prev" title="AutoStartInUbuntuMate">
+                AutoStartInUbuntuMate <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -644,7 +644,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -671,11 +671,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  201
+                  216
                 </span>
               
 
@@ -404,17 +404,17 @@
         <h1 id="史上最强悍的解决方案"><a href="#史上最强悍的解决方案" class="headerlink" title="史上最强悍的解决方案"></a>史上最强悍的解决方案</h1><pre><code>ubuntu : sudo apt-get install php7.0-zip
 </code></pre><h1 id="下面是装逼"><a href="#下面是装逼" class="headerlink" title="下面是装逼"></a>下面是装逼</h1><ol>
 <li><p>在Linux下没有php_zip.dll这个文件（有也不会起作用的），所以需要重新编译一下php的zip模块。具体安装方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd /usr/src</div><div class="line">wget http://pecl.php.net/get/zip</div><div class="line">tar -zxvf zip</div><div class="line">cd zip-1.x.x</div><div class="line">phpize</div><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make instal</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/src</span><br><span class="line">wget http://pecl.php.net/get/zip</span><br><span class="line">tar -zxvf zip</span><br><span class="line">cd zip-1.x.x</span><br><span class="line">phpize</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make instal</span><br></pre></td></tr></table></figure>
 <p>安装完之后，屏幕上会提示zip.so的位置。然后将其记录下来，如：<em>/usr/lib/php/20151012/zip.so</em></p>
 </li>
 </ol>
-<ol>
+<ol start="2">
 <li>使用root权限修改php.ini（通常可能会在/usr/local/lib/文件夹下，不过视当初安装php而定，可以通过phpinfo()来查看）：</li>
 </ol>
-<p>增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">extension = /usr/local/lib/php/extensions/zip.so</div></pre></td></tr></table></figure></p>
-<p>然后同样在php.ini文件中，将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">zlib.output_compression = Off</div><div class="line"># 改为</div><div class="line">zlib.output_compression = On</div></pre></td></tr></table></figure></p>
-<ol>
-<li>最后别忘了重启一下Apache：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+<p>增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension = /usr/local/lib/php/extensions/zip.so</span><br></pre></td></tr></table></figure></p>
+<p>然后同样在php.ini文件中，将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zlib.output_compression = Off</span><br><span class="line"># 改为</span><br><span class="line">zlib.output_compression = On</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>最后别忘了重启一下Apache：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -659,7 +659,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -686,11 +686,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

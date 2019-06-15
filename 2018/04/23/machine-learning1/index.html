@@ -417,14 +417,14 @@
 <p> <strong>记得同步更新theta</strong></p>
 <h2 id="多变量的线性回归问题"><a href="#多变量的线性回归问题" class="headerlink" title="多变量的线性回归问题"></a>多变量的线性回归问题</h2><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3></li>
 <li><p>数据缩放()</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = X/MAX(X);</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X = X/MAX(X);</span><br></pre></td></tr></table></figure>
 <p> 使得X <strong>接近</strong>[-1,1]区间</p>
 </li>
 <li><p>平均值正常化</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X = (X-U)/(max(X)-MIN(x)) // U是X的平均值</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X = (X-U)/(max(X)-MIN(x)) // U是X的平均值</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>数据归一化</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theta = pinv(X&apos;*X)*X&apos;*y;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theta = pinv(X&apos;*X)*X&apos;*y;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>可以用正态方程求解代价函数最小值</p>
@@ -670,7 +670,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -697,11 +697,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

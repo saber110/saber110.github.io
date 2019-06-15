@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  887
+                  950
                 </span>
               
 
@@ -408,52 +408,52 @@
 </ol>
 <p>设备要求： 公网ip的服务器一台，树莓派一个</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li><p>内网穿透 <a href="https://zhuanlan.zhihu.com/p/36156129" target="_blank" rel="external">参考知乎</a></p>
+<li><p>内网穿透 <a href="https://zhuanlan.zhihu.com/p/36156129" target="_blank" rel="noopener">参考知乎</a></p>
 <ul>
 <li><p>公网服务器配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gz</div><div class="line">tar -zxvf frp_0.22.0_linux_amd64.tar.gz</div><div class="line">cd frp_0.22.0_linux_amd64</div><div class="line">nano frps.ini</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gz</span><br><span class="line">tar -zxvf frp_0.22.0_linux_amd64.tar.gz</span><br><span class="line">cd frp_0.22.0_linux_amd64</span><br><span class="line">nano frps.ini</span><br></pre></td></tr></table></figure>
 <p>配置内容如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[common]</div><div class="line">bind_port = 7000</div><div class="line">vhost_http_port = 80</div><div class="line">dashboard_port = dashboard_port_number</div><div class="line">dashboard_user = dashboard_user_name</div><div class="line">dashboard_pwd = dashboard_pwd_value</div><div class="line">privilege_token = privilege_token_value</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">vhost_http_port = 80</span><br><span class="line">dashboard_port = dashboard_port_number</span><br><span class="line">dashboard_user = dashboard_user_name</span><br><span class="line">dashboard_pwd = dashboard_pwd_value</span><br><span class="line">privilege_token = privilege_token_value</span><br></pre></td></tr></table></figure>
 <p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p>
 <p>参数说明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">bind_port：绑定的端口，需要与客户端中 server_port 参数保持一致</div><div class="line">vhost_http_port：虚拟主机运行在本机的端口，如果 vps 有服务占用了端口，应当更换</div><div class="line">dashboard_port：frp 后台服务页面的端口，如果设置 8000，便可通过 http://yourip:8000 来访问 frps 的后台页面</div><div class="line">dashboard_user：frp 后台服务页面的管理员用户名</div><div class="line">dashboard_pwd：frp 后台服务页面的管理员密码</div><div class="line">privilege_token：自定义值，必须与客户端中的 privilege_token 保持一致</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bind_port：绑定的端口，需要与客户端中 server_port 参数保持一致</span><br><span class="line">vhost_http_port：虚拟主机运行在本机的端口，如果 vps 有服务占用了端口，应当更换</span><br><span class="line">dashboard_port：frp 后台服务页面的端口，如果设置 8000，便可通过 http://yourip:8000 来访问 frps 的后台页面</span><br><span class="line">dashboard_user：frp 后台服务页面的管理员用户名</span><br><span class="line">dashboard_pwd：frp 后台服务页面的管理员密码</span><br><span class="line">privilege_token：自定义值，必须与客户端中的 privilege_token 保持一致</span><br></pre></td></tr></table></figure>
 <p>配置完成之后，便可以通过如下命令启动 frps：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./frps -c ./frps.ini</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure>
 <p>为了让服务器一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/rc.local</div></pre></td></tr></table></figure>
-<p>在 exit 0 前一行，写上命令，其中 <your_frp_path> 为你 frp 存放的目录位置，即：</your_frp_path></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/rc.local</span><br></pre></td></tr></table></figure>
+<p>在 exit 0 前一行，写上命令，其中 &lt;your_frp_path&gt; 为你 frp 存放的目录位置，即：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini</span><br></pre></td></tr></table></figure>
 <p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p>
 </li>
 <li><p>客户端配置 - frpc</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_arm.tar.gz</div><div class="line">tar -zxvf frp_0.22.0_linux_arm.tar.gz</div><div class="line">cd frp_0.22.0_linux_arm</div><div class="line">nano frpc.ini</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_arm.tar.gz</span><br><span class="line">tar -zxvf frp_0.22.0_linux_arm.tar.gz</span><br><span class="line">cd frp_0.22.0_linux_arm</span><br><span class="line">nano frpc.ini</span><br></pre></td></tr></table></figure>
 <p>配置文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[common]</div><div class="line">server_addr = your_server_ip</div><div class="line">server_port = 7000</div><div class="line">privilege_token = privilege_token_value</div><div class="line">login_fail_exit = false</div><div class="line">​</div><div class="line">[ssh]</div><div class="line">type = tcp</div><div class="line">local_ip = 127.0.0.1</div><div class="line">local_port = 22</div><div class="line">​</div><div class="line">remote_port = remote_port_number</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = your_server_ip</span><br><span class="line">server_port = 7000</span><br><span class="line">privilege_token = privilege_token_value</span><br><span class="line">login_fail_exit = false</span><br><span class="line">​</span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">​</span><br><span class="line">remote_port = remote_port_number</span><br></pre></td></tr></table></figure>
 <p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p>
 <p>参数说明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">server_addr：服务器端的 ip</div><div class="line">server_port：服务器端的端口，即 bind_port</div><div class="line">privilege_token：同服务器端的 privilege_token 保持一致</div><div class="line">login_fail_exit：失败时自动重连</div><div class="line">remote_port：远程端口，即 ssh 连接树莓派时的端口</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server_addr：服务器端的 ip</span><br><span class="line">server_port：服务器端的端口，即 bind_port</span><br><span class="line">privilege_token：同服务器端的 privilege_token 保持一致</span><br><span class="line">login_fail_exit：失败时自动重连</span><br><span class="line">remote_port：远程端口，即 ssh 连接树莓派时的端口</span><br></pre></td></tr></table></figure>
 <p>配置完成之后，便可以通过如下命令启动 frps：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./frpc -c ./frpc.ini</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frpc -c ./frpc.ini</span><br></pre></td></tr></table></figure>
 <p>为了让树莓派一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/rc.local</div></pre></td></tr></table></figure>
-<p>在 exit 0 前一行，写上命令，其中 <your_frp_path> 为你 frp 存放的目录位置，即：</your_frp_path></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/rc.local</span><br></pre></td></tr></table></figure>
+<p>在 exit 0 前一行，写上命令，其中 &lt;your_frp_path&gt; 为你 frp 存放的目录位置，即：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini</span><br></pre></td></tr></table></figure>
 <p>ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。</p>
 </li>
 <li><p>ssh 连接</p>
 <p>以上配置完成之后，就可以远程 ssh 连接到树莓派了。命令行如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -oPort=&lt;remote_port_number&gt; pi@&lt;your_server_ip&gt;</div></pre></td></tr></table></figure>
-<p>其中，<remote_port_number> 为树莓派配置中的 remote_port 参数值，<your_server_ip> 为服务器 ip。</your_server_ip></remote_port_number></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -oPort=&lt;remote_port_number&gt; pi@&lt;your_server_ip&gt;</span><br></pre></td></tr></table></figure>
+<p>其中，&lt;remote_port_number&gt; 为树莓派配置中的 remote_port 参数值，&lt;your_server_ip&gt; 为服务器 ip。</p>
 <p><strong>注意：重启之后树莓派可能需要一到两分钟才能正常使用</strong></p>
 </li>
 </ul>
 </li>
 <li><p>http 转发</p>
-<p>在树莓派上搭建ss服务端，自己电脑上搭建ss客户端即可，具体请<a href="https://segmentfault.com/a/1190000015243145" target="_blank" rel="external">参考</a></p>
-<p>按照上述教程搭建完成之后，假设服务器端口为<your_ss_port>（默认为9702），<br>将下面内容添加到树莓派的 frpc.ini 中</your_ss_port></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[ssr]</div><div class="line">type = tcp</div><div class="line">local_ip = 127.0.0.1</div><div class="line">local_port = your_ss_port</div><div class="line">remote_port = access_port</div></pre></td></tr></table></figure>
+<p>在树莓派上搭建ss服务端，自己电脑上搭建ss客户端即可，具体请<a href="https://segmentfault.com/a/1190000015243145" target="_blank" rel="noopener">参考</a></p>
+<p>按照上述教程搭建完成之后，假设服务器端口为&lt;your_ss_port&gt;（默认为9702），<br>将下面内容添加到树莓派的 frpc.ini 中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[ssr]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = your_ss_port</span><br><span class="line">remote_port = access_port</span><br></pre></td></tr></table></figure>
 <p>参数说明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">local_port: &lt;your_ss_port&gt;（默认为9702）</div><div class="line">remote_port: 自己电脑上的ss客户端连接树莓派时的端口哦</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_port: &lt;your_ss_port&gt;（默认为9702）</span><br><span class="line">remote_port: 自己电脑上的ss客户端连接树莓派时的端口哦</span><br></pre></td></tr></table></figure>
 <ul>
 <li>重启树莓派，等待2-3分钟，电脑使用刚刚搭建的ss通路访问学校内网资源</li>
 </ul>
@@ -695,7 +695,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -722,11 +722,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

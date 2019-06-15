@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  139
+                  160
                 </span>
               
 
@@ -403,13 +403,13 @@
       
         <h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><ol>
 <li><p>数据大小</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">C类型      字节（32位）  字节（64位）</div><div class="line">char            1        1</div><div class="line">short int       2        2</div><div class="line">int             4        4</div><div class="line">long int        4        8</div><div class="line">long long int   8        8</div><div class="line">float           4        4</div><div class="line">double          8        8</div><div class="line">char *          4        8</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">C类型      字节（32位）  字节（64位）</span><br><span class="line">char            1        1</span><br><span class="line">short int       2        2</span><br><span class="line">int             4        4</span><br><span class="line">long int        4        8</span><br><span class="line">long long int   8        8</span><br><span class="line">float           4        4</span><br><span class="line">double          8        8</span><br><span class="line">char *          4        8</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>移位</p>
 <p> 假如进行x&gt;&gt;k,这里的k很大,实际偏移量是通过k mod v得到的</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int lval = 0xede875 &gt;&gt; 32;</div><div class="line">int aval = 0xede875 &gt;&gt; 36;</div><div class="line">unsigned int uval = 0xede875 &gt;&gt; 40;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int lval = 0xede875 &gt;&gt; 32;</span><br><span class="line">int aval = 0xede875 &gt;&gt; 36;</span><br><span class="line">unsigned int uval = 0xede875 &gt;&gt; 40;</span><br></pre></td></tr></table></figure>
 <p> 在32位机器上</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lval = 0xede875;            // 32 mod 32 = 0</div><div class="line">aval = 0xfede87;            // 36 mod 32 = 4</div><div class="line">uval = 0x00ede8;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lval = 0xede875;            // 32 mod 32 = 0</span><br><span class="line">aval = 0xfede87;            // 36 mod 32 = 4</span><br><span class="line">uval = 0x00ede8;</span><br></pre></td></tr></table></figure>
 <p> <strong>几乎所有的编译器/机器都对有符号数据使用算术右移，无符号数据必须是逻辑右移</strong></p>
 </li>
 </ol>
@@ -655,7 +655,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -682,11 +682,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

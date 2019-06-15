@@ -58,7 +58,7 @@
   <entry>
     <title><![CDATA[ubuntu搭建交叉编译环境]]></title>
     <url>%2F2019%2F04%2F15%2Fubuntu-arm%2F</url>
-    <content type="text"><![CDATA[1.* mixed implicit and normal rules: deprecated syntax 修改Makefile 452 修改后： %config: scripts_basic outputmakefile FORCE]]></content>
+    <content type="text"><![CDATA[1.*** mixed implicit and normal rules: deprecated syntax 修改Makefile 452 修改后： %config: scripts_basic outputmakefile FORCE]]></content>
       <categories>
         <category>未分类</category>
       </categories>
@@ -223,7 +223,7 @@
   <entry>
     <title><![CDATA[ssr]]></title>
     <url>%2F2019%2F01%2F07%2Fssr%2Bfrp%2F</url>
-    <content type="text"><![CDATA[访问校内网资源需求现状： 回家之后需要访问学校内网资源学习，手头闲置一枚树莓派，用树莓派作转发服务器. 问题简述： 树莓派无公网ip，故需要先对树莓派进行内网穿透. 使用frp 通过树莓派进行http转发 设备要求： 公网ip的服务器一台，树莓派一个 步骤 内网穿透 参考知乎 公网服务器配置 1234wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gztar -zxvf frp_0.22.0_linux_amd64.tar.gzcd frp_0.22.0_linux_amd64nano frps.ini 配置内容如下 1234567[common]bind_port = 7000vhost_http_port = 80dashboard_port = dashboard_port_numberdashboard_user = dashboard_user_namedashboard_pwd = dashboard_pwd_valueprivilege_token = privilege_token_value ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 参数说明 123456bind_port：绑定的端口，需要与客户端中 server_port 参数保持一致vhost_http_port：虚拟主机运行在本机的端口，如果 vps 有服务占用了端口，应当更换dashboard_port：frp 后台服务页面的端口，如果设置 8000，便可通过 http://yourip:8000 来访问 frps 的后台页面dashboard_user：frp 后台服务页面的管理员用户名dashboard_pwd：frp 后台服务页面的管理员密码privilege_token：自定义值，必须与客户端中的 privilege_token 保持一致 配置完成之后，便可以通过如下命令启动 frps： 1./frps -c ./frps.ini 为了让服务器一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下： 1sudo nano /etc/rc.local 在 exit 0 前一行，写上命令，其中 为你 frp 存放的目录位置，即： 1&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 客户端配置 - frpc 1234wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_arm.tar.gztar -zxvf frp_0.22.0_linux_arm.tar.gzcd frp_0.22.0_linux_armnano frpc.ini 配置文件内容如下： 123456789101112[common]server_addr = your_server_ipserver_port = 7000privilege_token = privilege_token_valuelogin_fail_exit = false​[ssh]type = tcplocal_ip = 127.0.0.1local_port = 22​remote_port = remote_port_number ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 参数说明 12345server_addr：服务器端的 ipserver_port：服务器端的端口，即 bind_portprivilege_token：同服务器端的 privilege_token 保持一致login_fail_exit：失败时自动重连remote_port：远程端口，即 ssh 连接树莓派时的端口 配置完成之后，便可以通过如下命令启动 frps： 1./frpc -c ./frpc.ini 为了让树莓派一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下： 1sudo nano /etc/rc.local 在 exit 0 前一行，写上命令，其中 为你 frp 存放的目录位置，即： 1&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 ssh 连接 以上配置完成之后，就可以远程 ssh 连接到树莓派了。命令行如下： 1ssh -oPort=&lt;remote_port_number&gt; pi@&lt;your_server_ip&gt; 其中， 为树莓派配置中的 remote_port 参数值， 为服务器 ip。 注意：重启之后树莓派可能需要一到两分钟才能正常使用 http 转发 在树莓派上搭建ss服务端，自己电脑上搭建ss客户端即可，具体请参考 按照上述教程搭建完成之后，假设服务器端口为（默认为9702），将下面内容添加到树莓派的 frpc.ini 中 12345[ssr]type = tcplocal_ip = 127.0.0.1local_port = your_ss_portremote_port = access_port 参数说明 12local_port: &lt;your_ss_port&gt;（默认为9702）remote_port: 自己电脑上的ss客户端连接树莓派时的端口哦 重启树莓派，等待2-3分钟，电脑使用刚刚搭建的ss通路访问学校内网资源]]></content>
+    <content type="text"><![CDATA[访问校内网资源需求现状： 回家之后需要访问学校内网资源学习，手头闲置一枚树莓派，用树莓派作转发服务器. 问题简述： 树莓派无公网ip，故需要先对树莓派进行内网穿透. 使用frp 通过树莓派进行http转发 设备要求： 公网ip的服务器一台，树莓派一个 步骤 内网穿透 参考知乎 公网服务器配置 1234wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gztar -zxvf frp_0.22.0_linux_amd64.tar.gzcd frp_0.22.0_linux_amd64nano frps.ini 配置内容如下 1234567[common]bind_port = 7000vhost_http_port = 80dashboard_port = dashboard_port_numberdashboard_user = dashboard_user_namedashboard_pwd = dashboard_pwd_valueprivilege_token = privilege_token_value ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 参数说明 123456bind_port：绑定的端口，需要与客户端中 server_port 参数保持一致vhost_http_port：虚拟主机运行在本机的端口，如果 vps 有服务占用了端口，应当更换dashboard_port：frp 后台服务页面的端口，如果设置 8000，便可通过 http://yourip:8000 来访问 frps 的后台页面dashboard_user：frp 后台服务页面的管理员用户名dashboard_pwd：frp 后台服务页面的管理员密码privilege_token：自定义值，必须与客户端中的 privilege_token 保持一致 配置完成之后，便可以通过如下命令启动 frps： 1./frps -c ./frps.ini 为了让服务器一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下： 1sudo nano /etc/rc.local 在 exit 0 前一行，写上命令，其中 &lt;your_frp_path&gt; 为你 frp 存放的目录位置，即： 1&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 客户端配置 - frpc 1234wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_arm.tar.gztar -zxvf frp_0.22.0_linux_arm.tar.gzcd frp_0.22.0_linux_armnano frpc.ini 配置文件内容如下： 123456789101112[common]server_addr = your_server_ipserver_port = 7000privilege_token = privilege_token_valuelogin_fail_exit = false​[ssh]type = tcplocal_ip = 127.0.0.1local_port = 22​remote_port = remote_port_number ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 参数说明 12345server_addr：服务器端的 ipserver_port：服务器端的端口，即 bind_portprivilege_token：同服务器端的 privilege_token 保持一致login_fail_exit：失败时自动重连remote_port：远程端口，即 ssh 连接树莓派时的端口 配置完成之后，便可以通过如下命令启动 frps： 1./frpc -c ./frpc.ini 为了让树莓派一直运行 frp 服务，这里还可以将它添加到开机自启脚本中，命令行如下： 1sudo nano /etc/rc.local 在 exit 0 前一行，写上命令，其中 &lt;your_frp_path&gt; 为你 frp 存放的目录位置，即： 1&lt;your_frp_path&gt;/frps -c &lt;your_frp_path&gt;/frps.ini ctrl+o 保存，之后 回车 确认，然后 ctrl+x 退出。 ssh 连接 以上配置完成之后，就可以远程 ssh 连接到树莓派了。命令行如下： 1ssh -oPort=&lt;remote_port_number&gt; pi@&lt;your_server_ip&gt; 其中，&lt;remote_port_number&gt; 为树莓派配置中的 remote_port 参数值，&lt;your_server_ip&gt; 为服务器 ip。 注意：重启之后树莓派可能需要一到两分钟才能正常使用 http 转发 在树莓派上搭建ss服务端，自己电脑上搭建ss客户端即可，具体请参考 按照上述教程搭建完成之后，假设服务器端口为&lt;your_ss_port&gt;（默认为9702），将下面内容添加到树莓派的 frpc.ini 中 12345[ssr]type = tcplocal_ip = 127.0.0.1local_port = your_ss_portremote_port = access_port 参数说明 12local_port: &lt;your_ss_port&gt;（默认为9702）remote_port: 自己电脑上的ss客户端连接树莓派时的端口哦 重启树莓派，等待2-3分钟，电脑使用刚刚搭建的ss通路访问学校内网资源]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -399,9 +399,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[分治策略]]></title>
-    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
-    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
+    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
+    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
+    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 &lt;u, v&gt;， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -410,9 +410,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
-    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
-    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 ， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
+    <title><![CDATA[分治策略]]></title>
+    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
+    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -475,7 +475,7 @@
   <entry>
     <title><![CDATA[sizeof与strlen的区别]]></title>
     <url>%2F2018%2F03%2F11%2Fsizeofstrlen%2F</url>
-    <content type="text"><![CDATA[sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含头文件. sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数. sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数 编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来. sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’; 数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.]]></content>
+    <content type="text"><![CDATA[sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含&lt;string.h&gt;头文件. sizeof的参数可以是数据类型或变量,而strlen函数只能以结尾为’\0’的字符串的作为参数. sizeof后如果是类型必须加括弧，如果是变量名可以不加括弧。这是因为sizeof是个操作符不是个函数 编译器在编译的时候就计算出了sizeof的结果.而strlen函数必须在运行的时候才能计算出来. sizeof计算的是数据类型占用的内存的大小,而strlen计算的字符串实际的长度,不包括’\0’; 数组作为sizeof的参数不会退化,而作为strlen的参数的时候会退化为一个字符指针.]]></content>
       <categories>
         <category>C</category>
       </categories>
@@ -651,17 +651,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[uart_raspberry]]></title>
-    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
-    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
+    <title><![CDATA[uart_raspberry]]></title>
+    <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
+    <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
@@ -721,14 +721,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[cordova开发安卓]]></title>
-    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
-    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
-      <categories>
-        <category>安卓</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[计算机算法 C++描述]]></title>
     <url>%2F2017%2F04%2F17%2FComputerAlgorithms%2F</url>
     <content type="text"></content>
@@ -738,6 +730,14 @@
       <tags>
         <tag>计算机算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cordova开发安卓]]></title>
+    <url>%2F2017%2F04%2F17%2Fcordova-android%2F</url>
+    <content type="text"><![CDATA[cordova 命令123456cordova create hello com.example.hello HelloWorldcordova platform add android/ios/browser --savecordova build &lt;ios/android&gt;cordova run &lt;ios/android&gt;cordova plugin add cordova-plugin-cameracordova plugin add cordova-plugin-camera]]></content>
+      <categories>
+        <category>安卓</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[c_multipthread]]></title>
@@ -758,23 +758,12 @@
   <entry>
     <title><![CDATA[ajax跨域]]></title>
     <url>%2F2017%2F02%2F15%2Fajax-access%2F</url>
-    <content type="text"><![CDATA[`var url = “http://www.huhaobin.cn/yiban/Email/send“; $.ajax({ type: “GET”, url: url, data: $(“#ContactForm”).serialize(), headers: { ‘Access-Control-Allow-Origin’: ‘*’ }, success: function confirm(data) { console.log(data); alert(‘你的老板已经看见了’); }, error: function del(){ alert(‘你的老板没收到’); } });` 跨域要加header,并且注意只能用get]]></content>
+    <content type="text"><![CDATA[`var url = “http://www.huhaobin.cn/yiban/Email/send&quot;; $.ajax({ type: “GET”, url: url, data: $(“#ContactForm”).serialize(), headers: { ‘Access-Control-Allow-Origin’: ‘*’ }, success: function confirm(data) { console.log(data); alert(‘你的老板已经看见了’); }, error: function del(){ alert(‘你的老板没收到’); } });` 跨域要加header,并且注意只能用get]]></content>
       <categories>
         <category>未分类</category>
       </categories>
       <tags>
         <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[shell]]></title>
-    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
-    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
@@ -786,6 +775,17 @@
       </categories>
       <tags>
         <tag>服务器操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell]]></title>
+    <url>%2F2016%2F12%2F15%2Fshell%2F</url>
+    <content type="text"><![CDATA[shell编程注意,尽量不要用空格做格式控制符 开头要用 指明解释器 1#!/bin/bash 每句话不用封号结尾 变量的定义不用$符,但是引用要用$符,引用的时候要注意有无大括号 删除变量的时候不用$符5. 1234567$0 当前脚本的文件名$n 传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。$# 传递给脚本或函数的参数个数。$* 传递给脚本或函数的所有参数。$@ 传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同$? 上个命令的退出状态，或函数的返回值。$$ 当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。 #替换 转义替换（用-e 来禁止zhuanyi转义） 123456789下面的转义字符都可以用在 echo 中：&amp;#092; 反斜杠a 警报，响铃b 退格（删除键）f 换页(FF)，将当前位置移到下页开头n 换行r 回车t 水平制表符（tab键）v 垂直制表符 123456$&#123;var&#125; 变量本来的值$&#123;var:-word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。$&#123;var:=word&#125; 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。$&#123;var:?message&#125; 如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。$&#123;var:+word&#125; 如果变量 var 被定义，那么返回 word，但不改变 var 的值。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
@@ -826,7 +826,7 @@
   <entry>
     <title><![CDATA[回头C语言]]></title>
     <url>%2F2016%2F11%2F14%2Fstudy-c-again%2F</url>
-    <content type="text"><![CDATA[1代码：https://github.com/saber110/C_review 循环12break: 跳出本层循环continue : 跳出本次循环接而执行下次循环 数组初始化 数字型数组 默认初始化为0, 字符型数组 默认初始化为’\0’（空格符）** 1234567int a[3][4] = &#123; &#123;1,2,3,4&#125;, &#123;5,6,7,8&#125;, &#123;9,10,11,12,&#125; &#125;;int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;; 前两种初始化的方法效果完全一致，但是前面的清晰可读推荐使用 第三种方法相当于 1234567891011a[0][0]= 1;a[1][0] = 5;a[2][0] = 9;其余元素全为0``` ### Remark初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度**数组长度** char c[] = “i am a student”;sizeof(c) = 11; 12系统在后面自动添加&quot;\0&quot;表示字符串终结 (10+1) char C[5] = “CHINA”; 123456789 也是**合法**的表达 ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间# 这儿有个关于字符数组的大坑1. C语言的**字符**数组可以在初始化的时候直接赋值2. 但不可以用 str=”china”; //尝试之间赋值给已声明的字符数组strstr1 = str2; 1* 在后面要改变字符数组的内容需要使用 gets(str);strcat(str,str1);strcpy(str,str1);strncpy(str,str1,2);//将str1中的前两个字符赋值到str中```]]></content>
+    <content type="text"><![CDATA[1代码：https://github.com/saber110/C_review 循环12break: 跳出本层循环continue : 跳出本次循环接而执行下次循环 数组初始化 数字型数组 默认初始化为0, 字符型数组 默认初始化为’\0’（空格符）** 1234567int a[3][4] = &#123; &#123;1,2,3,4&#125;, &#123;5,6,7,8&#125;, &#123;9,10,11,12,&#125; &#125;;int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;; 前两种初始化的方法效果完全一致，但是前面的清晰可读推荐使用 第三种方法相当于 1234567891011a[0][0]= 1;a[1][0] = 5;a[2][0] = 9;其余元素全为0``` ### Remark初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度**数组长度** char c[] = “i am a student”;sizeof(c) = 11; 12系统在后面自动添加&quot;\0&quot;表示字符串终结 (10+1) char C[5] = “CHINA”; 123456789 也是**合法**的表达 ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间# 这儿有个关于字符数组的大坑1. C语言的**字符**数组可以在初始化的时候直接赋值2. 但不可以用 str=”china”; //尝试之间赋值给已声明的字符数组strstr1 = str2; 1* 在后面要改变字符数组的内容需要使用 gets(str);strcat(str,str1);strcpy(str,str1);strncpy(str,str1,2);//将str1中的前两个字符赋值到str中`]]></content>
       <categories>
         <category>C语言</category>
       </categories>
@@ -834,7 +834,7 @@
   <entry>
     <title><![CDATA[使用ESP8266-12F Wifi模块进行通信流程]]></title>
     <url>%2F2016%2F11%2F10%2Fesp8266-12f-wifi%2F</url>
-    <content type="text"><![CDATA[使用ESP8266-12F Wifi模块进行通信的套路体会###一、接线流程 在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。 在接线过程中注意点如下。 用3.3V/800mA独立电源供电，需要共地。 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。 ###二、调试流程 命令在后面必须要有回车发送调试使用AT指令。以下简单介绍四种模式的调试流程。 模块ap模式下做 tcp server 1234567AT+CWMODE=2或AT+CWMODE=3 //开启 AP 模式AT+RST //复位AT+CWSAP=&quot;TEST&quot;,&quot;123456789A&quot;,3,0 //设置模块的 wifi 和密码AT+CIPMUX=1 //打开多连接AT+CIPSERVER=1,8080 //1表示开启server模式，8080为端口号AT+CIPSTO=7200 //设置服务器超时时间为7200sAT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 模块sta模式下做 tcp client 12345678AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPMUX=1 //打开多连接AT+CIPSTART=0，&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080 设置ip和端口号，发送 AT 指令去连接。AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 模块做tcp透传 12345678910AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPMUX=0//设置单连接AT+CIPMODE=1//设置透传模式AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080// 连接server端的ip和端口AT+CIPSEND //开始发送数据+++ //退出透传，此处应取消发送新行 模块做udp透传 123456789AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPSTART=“UDP”,&quot;255.255.255.255&quot;,8080,8080,0//建立udp连接，前8080为对方端口，后8080为模块端口AT+CIPMODE=1//设置透传模式AT+CIPSEND //开始发送数据+++ //退出透传，此处应取消发送新行 使用串口助手对单个wifi模块进行测试，注意事项如下。 配置模式为波特率：115200、数据位：8 校验位/停止位/流控：none 使用AT指令进行调试时，记住发送指令时要勾选“发送新行选项”。即指令需要换行（0x0d+0x0a） 使用两个wifi模块进行通讯形式如下。服务器与客户端进行tcp通信 按之前的步骤，将两模块分别设置成tcp server与tcp client即可实现双向通信。 该模式下，两模块间传输数据需要限定长度。 若客户端连不进服务器的热点，服务器应该执行复位指令，等待一段时间即可。 掉电后会自动退出server模式，需要重新初始化，初始化AT指令流程截图如下。 若客户端掉电，服务器未掉。上电后只初始化客户端，依然不能实现数据双向传输。服务器需要关闭server收发模式再重新开启，即可解决问题。 恢复出厂设置指令：AT+RESTORE 进行tcp透传 将一个模块设置成tcp server，另一个按照tcp透传进行调试即可。 透传只能在单连接模式下进行，所以在建立连接之前一定要用（AT+CIPMUX=0 设置单连接），但是模块处于服务器模式下时，必须要多链接，由于冲突，所以模块开启服务器模式不能做tcp透传。因此，该模式下，客户端像服务器发送数据可不限长度，服务器发送数据则需要限定长度。 其他调试方法同上。 进行udp透传 需要外界提供wifi热点 将两个wifi模块连接至统一wifi热点，按照udp透传进行调试。 对于建立udp连接的指令，如需要实现多端通信，则ip地址应输入广播域“255.255.255.255”，并需要设为同一端口。 使用单片机发送指令至wifi模块，使用uart通信协议。1.非透传模式 服务器初始化代码如下。123456789101112131415void Wifi_ServerInit() //服务器初始化&#123; printf(&quot;AT+CIPMUX=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSERVER=1,8080&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTO=7200&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 客户端初始化代码如下。1234567891011void Wifi_tcp_ClientInit() //客户端初始化&#123; printf(&quot;AT+CIPMUX=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTART=0,&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); &#125; 发送数据代码如下。12345678void Wifi_Send_Data(uint8 Id,uint8 Len,uint8 *str) //写指定长度的数据&#123; printf(&quot;AT+CIPSEND=%d,%d&quot;,Id,Len); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(1); uart_putstr(UART4,str); //数据长度满才可发送&#125; 2.UDP透传模式 客户端udp初始化123456789101112131415void Wifi_Udp_ClientInit(void)//客户端udp初始化&#123; printf(&quot;AT+CIPMUX=0&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTART=&quot;UDP&quot;,&quot;255.255.255.255&quot;,8080,8080,0&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPMODE=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 进入透传模式1234567void Wifi_Udp_SendData(void)//发送数据指令，进入透传&#123; printf(&quot;AT+CIPSEND&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 退出透传模式1234void Wifi_Udp_Send_End(void)//退出透传&#123; printf(&quot;+++&quot;);&#125;]]></content>
+    <content type="text"><![CDATA[使用ESP8266-12F Wifi模块进行通信的套路体会###一、接线流程 在最初测试时，可使用usb转ttl串口进行接线，接线流程比较简单。将模块VCC，EN端接3.3V电源，GPIO15,GND端接地，模块TX,RX端分别接串口工具的RX,TX端，其余管脚悬空既可。 在接线过程中注意点如下。 用3.3V/800mA独立电源供电，需要共地。 保证CH_PD（EN） 也就是芯片选通脚为高电平，GPIO15(也就是MTDO)为低电平。并且CH_PD端与独立电源之间，GPIO15与地之间，需要分别连接阻值为10k的电阻。（如原理图所示）。 注：RST 引脚低电平复位，不需要可以悬空。GPIO0在下载固件时需要拉低。 ###二、调试流程 命令在后面必须要有回车发送调试使用AT指令。以下简单介绍四种模式的调试流程。 模块ap模式下做 tcp server 1234567AT+CWMODE=2或AT+CWMODE=3 //开启 AP 模式AT+RST //复位AT+CWSAP=&quot;TEST&quot;,&quot;123456789A&quot;,3,0 //设置模块的 wifi 和密码AT+CIPMUX=1 //打开多连接AT+CIPSERVER=1,8080 //1表示开启server模式，8080为端口号AT+CIPSTO=7200 //设置服务器超时时间为7200sAT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 模块sta模式下做 tcp client 12345678AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPMUX=1 //打开多连接AT+CIPSTART=0，&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080 设置ip和端口号，发送 AT 指令去连接。AT+CIPSEND=0,10 //进入数据发送模式为十个字节,即可发送数据 模块做tcp透传 12345678910AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPMUX=0//设置单连接AT+CIPMODE=1//设置透传模式AT+CIPSTART=&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080// 连接server端的ip和端口AT+CIPSEND //开始发送数据+++ //退出透传，此处应取消发送新行 模块做udp透传 123456789AT+CWMODE=1 //开启STA模式AT+RST //复位AT+CWLAP //查看附近的 wifiAT+CWJAP=&quot;TEST&quot;,&quot;123456789A&quot; //连接 wifi, 后面为密码AT+CIFSR //查看模块的分配的 ipAT+CIPSTART=“UDP”,&quot;255.255.255.255&quot;,8080,8080,0//建立udp连接，前8080为对方端口，后8080为模块端口AT+CIPMODE=1//设置透传模式AT+CIPSEND //开始发送数据+++ //退出透传，此处应取消发送新行 使用串口助手对单个wifi模块进行测试，注意事项如下。 配置模式为波特率：115200、数据位：8 校验位/停止位/流控：none 使用AT指令进行调试时，记住发送指令时要勾选“发送新行选项”。即指令需要换行（0x0d+0x0a） 使用两个wifi模块进行通讯形式如下。服务器与客户端进行tcp通信 按之前的步骤，将两模块分别设置成tcp server与tcp client即可实现双向通信。 该模式下，两模块间传输数据需要限定长度。 若客户端连不进服务器的热点，服务器应该执行_复位_指令，等待一段时间即可。 掉电后会自动退出server模式，需要重新初始化，初始化AT指令流程截图如下。 若客户端掉电，服务器未掉。上电后只初始化客户端，依然不能实现数据双向传输。服务器需要关闭server收发模式再重新开启，即可解决问题。 恢复出厂设置指令：AT+RESTORE 进行tcp透传 将一个模块设置成tcp server，另一个按照tcp透传进行调试即可。 透传只能在单连接模式下进行，所以在建立连接之前一定要用（AT+CIPMUX=0 设置单连接），但是模块处于服务器模式下时，必须要多链接，由于冲突，所以模块开启服务器模式不能做tcp透传。因此，该模式下，客户端像服务器发送数据可不限长度，服务器发送数据则需要限定长度。 其他调试方法同上。 进行udp透传 需要外界提供wifi热点 将两个wifi模块连接至统一wifi热点，按照udp透传进行调试。 对于建立udp连接的指令，如需要实现多端通信，则ip地址应输入广播域“255.255.255.255”，并需要设为同一端口。 使用单片机发送指令至wifi模块，使用uart通信协议。1.非透传模式 服务器初始化代码如下。123456789101112131415void Wifi_ServerInit() //服务器初始化&#123; printf(&quot;AT+CIPMUX=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSERVER=1,8080&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTO=7200&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 客户端初始化代码如下。1234567891011void Wifi_tcp_ClientInit() //客户端初始化&#123; printf(&quot;AT+CIPMUX=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTART=0,&quot;TCP&quot;,&quot;192.168.4.1&quot;,8080&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); &#125; 发送数据代码如下。12345678void Wifi_Send_Data(uint8 Id,uint8 Len,uint8 *str) //写指定长度的数据&#123; printf(&quot;AT+CIPSEND=%d,%d&quot;,Id,Len); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(1); uart_putstr(UART4,str); //数据长度满才可发送&#125; 2.UDP透传模式 客户端udp初始化123456789101112131415void Wifi_Udp_ClientInit(void)//客户端udp初始化&#123; printf(&quot;AT+CIPMUX=0&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPSTART=&quot;UDP&quot;,&quot;255.255.255.255&quot;,8080,8080,0&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10); printf(&quot;AT+CIPMODE=1&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 进入透传模式1234567void Wifi_Udp_SendData(void)//发送数据指令，进入透传&#123; printf(&quot;AT+CIPSEND&quot;); uart_putchar(UART4,0x0d); uart_putchar(UART4,0x0a); DELAY_MS(10);&#125; 退出透传模式1234void Wifi_Udp_Send_End(void)//退出透传&#123; printf(&quot;+++&quot;);&#125;]]></content>
       <categories>
         <category>智能小车</category>
       </categories>

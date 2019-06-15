@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  392
+                  418
                 </span>
               
 
@@ -400,21 +400,21 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">代码：https://github.com/saber110/C_review</div></pre></td></tr></table></figure>
-<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">break: 跳出本层循环</div><div class="line">continue : 跳出本次循环接而执行下次循环</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码：https://github.com/saber110/C_review</span><br></pre></td></tr></table></figure>
+<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">break: 跳出本层循环</span><br><span class="line">continue : 跳出本次循环接而执行下次循环</span><br></pre></td></tr></table></figure>
 <h1 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h1><ol>
 <li><p><strong> 数字型数组 </strong> 默认初始化为0, <strong> 字符型数组 </strong>默认初始化为’\0’（空格符）**</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int a[3][4] = &#123;</div><div class="line">                &#123;1,2,3,4&#125;,</div><div class="line">                &#123;5,6,7,8&#125;,</div><div class="line">                &#123;9,10,11,12,&#125;</div><div class="line">                &#125;;</div><div class="line">int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;</div><div class="line">int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int a[3][4] = &#123;</span><br><span class="line">                &#123;1,2,3,4&#125;,</span><br><span class="line">                &#123;5,6,7,8&#125;,</span><br><span class="line">                &#123;9,10,11,12,&#125;</span><br><span class="line">                &#125;;</span><br><span class="line">int a[3][4]=&#123;1,2,3,4,5,6,7,8,9,10,11,12&#125;;</span><br><span class="line">int a[3][4] =&#123;&#123;1&#125;,&#123;5&#125;,&#123;9&#125;&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>前两种初始化的方法效果完全一致</strong>，但是前面的清晰可读<em>推荐使用</em></p>
 <p>第三种方法相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">a[0][0]= 1;</div><div class="line">a[1][0] = 5;</div><div class="line">a[2][0] = 9;</div><div class="line">其余元素全为0</div><div class="line">```    </div><div class="line"></div><div class="line">### Remark</div><div class="line"></div><div class="line">初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度</div><div class="line"></div><div class="line">**数组长度**</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a[0][0]= 1;</span><br><span class="line">a[1][0] = 5;</span><br><span class="line">a[2][0] = 9;</span><br><span class="line">其余元素全为0</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">### Remark</span><br><span class="line"></span><br><span class="line">初始化的时候如果确定全部元素的话可以省略一维数组的长度和二位数组的第一维长度</span><br><span class="line"></span><br><span class="line">**数组长度**</span><br></pre></td></tr></table></figure>
 <p>char c[] = “i am a student”;<br>sizeof(c) = 11;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">系统在后面自动添加&quot;\0&quot;表示字符串终结  (10+1)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">系统在后面自动添加&quot;\0&quot;表示字符串终结  (10+1)</span><br></pre></td></tr></table></figure>
 <p>char C[5] = “CHINA”;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    也是**合法**的表达</div><div class="line"></div><div class="line">    ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间</div><div class="line"></div><div class="line"></div><div class="line"># 这儿有个关于字符数组的大坑</div><div class="line"></div><div class="line">1.  C语言的**字符**数组可以在初始化的时候直接赋值</div><div class="line">2.  但不可以用</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    也是**合法**的表达</span><br><span class="line"></span><br><span class="line">    ### 数组名做形参时不会检查他的大小，当指定实参时形参指向实参的地址，实质上同在相同的内存空间</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 这儿有个关于字符数组的大坑</span><br><span class="line"></span><br><span class="line">1.  C语言的**字符**数组可以在初始化的时候直接赋值</span><br><span class="line">2.  但不可以用</span><br></pre></td></tr></table></figure>
 <p>str=”china”;    //尝试之间赋值给已声明的字符数组str<br>str1 = str2;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 在后面要改变字符数组的内容需要使用</div></pre></td></tr></table></figure>
-<p>gets(str);<br>strcat(str,str1);<br>strcpy(str,str1);<br>strncpy(str,str1,2);//将str1中的前两个字符赋值到str中<br>```</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 在后面要改变字符数组的内容需要使用</span><br></pre></td></tr></table></figure>
+<p>gets(str);<br>strcat(str,str1);<br>strcpy(str,str1);<br>strncpy(str,str1,2);//将str1中的前两个字符赋值到str中<br><code>`</code></p>
 </li>
 </ol>
 
@@ -653,7 +653,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -680,11 +680,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  624
+                  645
                 </span>
               
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -407,7 +407,7 @@
 <p>个人使用/开发尽量在Linux上</p>
 <p>熟悉windows与linux之间相连接的工具.vnc，winscp,xshell.熟悉ssh工具及配置</p>
 <p>服务器配置安装部分：熟悉最常用 的ftp,http,php,apache,dns,mail的一般配置方法。</p>
-<p><code>危险操作前一定要备份（操作均需要备份）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm -rf dir/filename</div><div class="line">– kill -9 pid</div><div class="line">– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）</div><div class="line">– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件）</div></pre></td></tr></table></figure></p>
+<p><code>危险操作前一定要备份（操作均需要备份）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -rf dir/filename</span><br><span class="line">– kill -9 pid</span><br><span class="line">– 数据库相关 （delete，drop，truncate） 操作前一定备份数据）</span><br><span class="line">– 系统或软件从官方渠道下载 禁用目录浏览，敏感文件数据禁止放在web目录下面 （包括svn，cvs版本控制的文件）</span><br></pre></td></tr></table></figure></p>
 <h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><p>非必要情况下，以非root用户登录操作</p>
 <ul>
 <li><p>密码建议自己备份，但不要外漏。</p>
@@ -440,10 +440,10 @@
 <li>可以访问外网的服务器：配置ssh key，使用git pull</li>
 <li>不能访问外网的服务器</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">git log</div><div class="line"></div><div class="line">git log –stat</div><div class="line"></div><div class="line">git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">git diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div><div class="line"></div><div class="line">M : modify</div><div class="line"></div><div class="line">A : ADD</div><div class="line"></div><div class="line">D : DELETE</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line"></span><br><span class="line">git log –stat</span><br><span class="line"></span><br><span class="line">git diff –name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</span><br><span class="line"></span><br><span class="line">git diff –name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</span><br><span class="line"></span><br><span class="line">M : modify</span><br><span class="line"></span><br><span class="line">A : ADD</span><br><span class="line"></span><br><span class="line">D : DELETE</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>在每个项目的根目录下面的update.txt文件里添加写入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">操作人姓名-电话-邮箱-修改日期-git版本号</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">操作人姓名-电话-邮箱-修改日期-git版本号</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新完成之后一定要多访问几次确保没有出问题</p>
 </li>
@@ -453,10 +453,10 @@
 <p><em>实用技巧</em></p>
 <ol>
 <li><p>导出最后一次提交修改过的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../updated.zip HEAD git diff --name-only HEAD^</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git archive -o ../updated.zip HEAD git diff --name-only HEAD^</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>导出两次提交之间修改过的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git archive -o ../latest.zip NEW_COMMIT_ID_HERE git diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HERE</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><ul>
@@ -493,8 +493,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/21/c-exam/" rel="next" title="C语言大坑">
-                <i class="fa fa-chevron-left"></i> C语言大坑
+              <a href="/2016/12/15/shell/" rel="next" title="shell">
+                <i class="fa fa-chevron-left"></i> shell
               </a>
             
           </div>
@@ -503,8 +503,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/15/shell/" rel="prev" title="shell">
-                shell <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/15/ajax-access/" rel="prev" title="ajax跨域">
+                ajax跨域 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -705,7 +705,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.6k
+      40.7k
     </span>
   
 </div>
@@ -732,11 +732,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.6k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         
