@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker学习]]></title>
+    <url>%2F2019%2F07%2F05%2FDocker%2F</url>
+    <content type="text"><![CDATA[Docker安装运行docker run -it --name container_name image_id [cmd] 启动容器 docker start -ai container_name 链接到容器 docker attach container_name 给运行着的容器执行.sh docker exec /path/to/shell.sh docker exec -it mysql bash 用命令行链接到mysql容器 生成镜像docker commit -a &quot;author&quot; -m &quot;comments&quot; container_name image_name:TAG 提交镜像 修改正式的TAG docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签） 提交 docker push REPOSITORY:TAG 协同使用 先以服务态启动子容器 docker run -d --name db training/mysql 启动父容器，并用link参数链接子容器。只能父容器访问子容器里面的数据 docker run -d -P --name web --link db:db training/webapp python app.py ‘db:db’： 子容器名字：别名]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Django学习]]></title>
     <url>%2F2019%2F05%2F28%2Fdjango1%2F</url>
     <content type="text"><![CDATA[Django学习 创建项目 1django-admin startproject myprojectname 项目目录 manage.py 项目管理器，可以通过python manage.py查看它所支持的功能 wsgi.py（Python Web Server Gateway Interface)：Python应用与web服务器之间的接口 urls.py 项目的路由配置 settings.py ALLOWED_HOSTS: 配置允许访问网站的主机 INSTALLED_APPS： 已经安装的应用，当开发自己的应用之后要添加进去 数据库，时区，语言等配置都在这儿 init.py 声明该文件夹为模块 创建应用 1python manage.py startapp appname 执行完之后记得把应用名添加到settings.py中的INSTALLED_APPS中 应用目录 migrations文件夹: 是一个模块，负责数据迁移；自动生成内容 admin.py: django自带的后台管理模块 apps.py: 本应用的一些配置 models.py: 数据模型，使用ORM框架 tests.py： 自动化测试模块 views.py: 执行响应的代码所在的模块，大部分代码在这儿编写 可以为每个应用产生urls.py，只需要在项目根urls.py中include即可 配置的时候应该注意正则表达式结束符号$和/ templates 使用Django默认的DTL引擎，也可以在settings中修改 在APP的根目录下创建templates目录，在templates下面新建应用文件夹名称相同的目录A(Django在查找模板的时候会按照INSTALLED_APPS的顺序查找，为了区分同名文件，建立目录A) 在A中创建HTML 在views.py中返回render 编写Model 一个model对应数据库的一张数据表，django中的model以 类 的形式表现，它包含了一些基本字段和数据的一些行为 使用ORM对象关系映射的模型，是的对象和关系建立映射，不再需要编写SQL语句 在APP根目录下创建models.py，并引入models模块 创建类，并继承models.Model(class yourclassname(models.Model)), 该类就是一张数据表 在类中创建字段 字段即类里面的属性 生成数据表 12python manage.py makemigrations [app_name]python manage.py migrate 查看数据表 在app/migrations下面的文件里面 可以用 1python manage.py sqlmigrate 应用名 文件id 来查看SQL语句 默认的sqlite3的数据库在项目根目录下db.sqlite3，可以通过sqlite expert personal 查看 页面呈现数据在views.py中操作 admin 创建超级管理员 1python manege.py createsuperuser 配置admin 在应用下的admin.py中引入自身的models模块，并且注册 1admin.site.register(models.xxx) 修改数据默认显示的名称 在models的方法下面添加str(sels)或者unicode(self)方法 注意 templates中使用的超链接形式 1&#123;% url &apos;app_name:url_name&apos; param %&#125; templates过滤器 1&#123;&#123; value | fliter1 | filter2 &#125;&#125; Django shell 可以直接与项目交互 1python manage.py shell]]></content>
@@ -89,11 +100,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2019%2F04%2F15%2Fgit%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[集成库的学习]]></title>
     <url>%2F2019%2F04%2F15%2Flib_int%2F</url>
     <content type="text"><![CDATA[区别个人感觉集成库与其他的区别就是集成库同时包含了原理图库和PCB库，在换了开发环境（比如换电脑）之后不会出现各种元器件找不到的错误 记录 在PCB library和SCH library里面可以更改器件的名字 在model manager里面进行原理图元器件和PCB元器件的映射 board insight提供了PCB图观察的各种视图 同时布多条线，放置—–交互式多跟布线]]></content>
@@ -103,6 +109,11 @@
       <tags>
         <tag>AD</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git]]></title>
+    <url>%2F2019%2F04%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122git push origin 本地分支名:远程分支名git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt;git branch 不带参数：列出本地已经存在的分支，并且在当前分支的前面加“*”号标记git checkout BRANCH_ID 切换分支git branch -r 列出远程分支git branch -agit branch name 新建分支git branch -d | -D branchname 删除branchname分支git branch -d -r branchname 删除远程branchname分支git loggit log --statgit diff --name-only OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit diff --name-status OLD_COMMIT_ID_HERE NEW_COMMIT_ID_HEREgit checkout COMMIT_ID 版本回退git stash list 查看堆栈情况git stash 将当前工作压栈git stash pop stash$&#123;id&#125; 弹出工作栈git stash clear 清除栈]]></content>
   </entry>
   <entry>
     <title><![CDATA[ci library]]></title>
@@ -118,17 +129,17 @@
     <content type="text"><![CDATA[接下来就开始看看坑 单引号表示表示整数值 双引号表示字符串首的地址 以0开头的整数默认为八进制 注意使用移位运算加快程序执行速度 if(a&lt;b == c&lt;d) //比较a、b、c、d的相对大小关系是否一致 a[i] = i[a] C语言的不对称边界 errno 外部出错变量，可以检测出错信息 break 跳出离他最近的那层循环或switch C 语言不能省略形参，即使不使用 C语言的数据存储空间 程序的局部变量存在于（堆栈）中，全局变量存在于（静态区 ）中，动态申请数据存在于（ 堆） 局部变量在return之后出栈销毁，不要尝试返回局部指针地址 堆 申请、释放原则 哪儿申请哪儿释放 记得判断 堆 申请成功与否 一个程序将操作系统分配给其运行的内存块分为4个区域： (1)代码区，存放程序的代码，即程序中的各个函数代码块。 (2)全局数据区，存放程序的全局数据和静态数据。 (3)堆区，存放程序的动态数据。 (4)栈区，存放程序的局部数据，即各个函数中的数据。 强制类型转换 占用空间大的转化为占用空间小的： 考虑字节序（大小端），所使用的部分可能在不同机器上截然不同 占用空间小的转化为占用空间大的： 考虑内存越界访问 结构体强制转换 ： 考虑字节对齐 字符串 通过索引读取字符串时，一定要判断索引的正确性 多线程编程 互斥量用来对临界区的互斥进入 条件变量用于线程的阻塞等待 指针 12345int * p = NULL;&amp;p 表示p的地址p 表示变量p的内容*p 表示p指向的存储单元的内容 数字0是唯一能输给指针的数值(相当于NULL) void * :指向任何类型的指针 注意深复制和浅复制的区别浅复制12345int *p, *q;*p = 58;q = p; // q 和 P 指向同一内存单元free(q);printf(&quot;%d\n&quot;,p); //异常。p的内存已经被q释放 动态变量 在程序运行过程中产生的变量称为动态变量 创建 123int * p; char *q;p = new int; // 在内存中创建一个变量，存储所分配的内存地址到p中q = new char[19]; // 在内存中创建一个数组，并将数组地址存储到q中 使用 12*p = 28;*q = &quot;hello&quot;; 销毁 12delete p;delete [] q; 动态数组 创建 12int *p;p = new int[10]; 使用 123* p = 25; //25存到第一个存储空间里 = p[0] = 25；p ++;* p = 35; //35存到第二个存储空间里 = p[1] = 35；]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>%2F2019%2F04%2F15%2FUnistallPip%2F</url>
-    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[socksV5转化为http代理]]></title>
     <url>%2F2019%2F04%2F15%2Fsockstohttp%2F</url>
     <content type="text"><![CDATA[使用工具 privoxy 安装1apt-get install privoxy 更改配置1vim /etc/privoxy/config 并在里面添加1forward-socks5 / 127.0.0.1:1080 . 重启服务1service privoxy restart 给系统设置http代理1vim ~/.bashrc 添加1export http_proxy=http://127.0.0.1:8118/ 使更改生效1source ~/.bashrc]]></content>
       <categories>
         <category>代理</category>
       </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F04%2F15%2FUnistallPip%2F</url>
+    <content type="text"><![CDATA[python -m pip uninstall pip]]></content>
   </entry>
   <entry>
     <title></title>
@@ -158,17 +169,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[扩展/boot分区]]></title>
-    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
-    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[计算机网络3]]></title>
     <url>%2F2019%2F04%2F07%2Fcomputernetworking3%2F</url>
     <content type="text"><![CDATA[传输层 为运行在不同的端系统上的进程提供了一种逻辑通信机制(网络层提供主机之间的逻辑通信机制) 位于网络层之上 依赖于网络层 对网络层功能进行加强 传输层提供的服务 可靠的、按序的交付服务（TCP） 流量控制 拥塞控制 连接建立 不可靠的交付服务（UDP） 复用/分用 简单的错误校验 尽力而为（best effort） 不需要建立链接，延迟很小 上层更好控制（不用顾及拥塞控制之类） 经常用于流媒体、DNS、SNMP等 不提供延迟、带宽等方面的服务 多路复用/分用 可靠数据传输 不错、不丢、不乱 可靠数据传输协议 需要双向的控制信息流实现，上层单向流动到可靠协议，由可靠协议负责和不可靠的UDP双向交互实现可靠传输 协议实现（数据错误，位错误） 有限状态机来刻画传输协议 确认机制（ACK: 确认; NAK：数据错误; 错误重传机制）— 接收方显式回传控制消息 为ACK和NAK增加校验和 添加额外的控制消息 NAK/ACK 坏掉重传（产生重复传送的问题） 增加序列号进行NAK/ACK重传 差错检测（校验和等） 停-等协议（有限状态机） NAK可以在ACK确认消息的时候加入序列号代替（确认最后一个分组） 5 . 协议实现（丢失分组） 等待合理的一段时间之后重传（需要定时器） 停等引起效率低下 采用流水线机制（连发多个分组再等待ACK） 使用滑动窗口协议实现流水线 滑动窗口协议GBN（Go-Back-N）协议：一组分组一组分组的滑动 发送方 窗口尺寸为N，最多允许有N个分组未确认，分组头部包含K-bit序列号 采用累积确认的方式 1ACK(n)表示确认到n(包含n)的分组均被正确接收 整个窗口设置一个计时器 超时则重发序列号大于n还未收到ack的分组 接收方（没有缓存，没有接收方窗口） 发送拥有最高序列号的、已被正确接收的分组的ACK 可能产生重复的ACK 乱序到达的分组直接丢弃，重新确认正确收到的最大的序列号 SR（selective repeat)协议：一个分组一个分组的滑动 接收方（设置缓冲机制，缓冲乱需到达的分组） 添加接收方窗口 对每个分组单独确认 发送方 为每个分组设置单独的计数器 窗口可以跳跃前移 TCP概述 点对点（一个发送方，一个接收方） 可靠的按序的字节流 流水线机制（拥塞控制，流量控制，窗口大小设置） 发送方/接收方缓存 全双工（同一连接中能传输双向数据流） 面向连接 通信双方在发送数据前必须建立连接 连接状态只在连接的两端维护，沿途 结点并不维护 TCP连接包括：两台主机上的缓存，连接状态变量、socket等 流量控制机制 序列号是segment中第一个字节的编号，而不是segment的编号，建立TCP连接时双方随机选择序列号 ACKS 累计确认机制：该序列号之前的所有字节已经被正确处理 返回是希望接收到的下一个字节的序列号 可靠数据传输 TCP在IP层提供不可靠的服务基础上实现可靠数据传输服务 使用单一重传定时器 触发重传的事件（超时，收到重复ACK） 快速重传 ​ 由于接受断发回的ACK是希望接收到的字节的序列号，当连续收到三个相同的ACK时就执行快速重传而不用等超时再传 流量控制（速度匹配机制) 控制发送方发送速度不要过快以至于淹没接收方的buffer receiver 在segment头部告诉sender还有多少buffer 多媒体应用通常不使用TCP，以免被拥塞控制机制限制速率 连接管理 一般由TCP的发送端（客户机）请求建立连接，接收端等待客户连接请求 连接的三次握手 客户机向服务器发送一个SYN段（没有数据，包含客户端初始选择的序列号） 服务器答复SYNACK（选择服务器的初始序列号，分配客户机缓存） 客户机收到SYNACK，回复ACK（可以包含数据） 建立TCP连接两次握手不能确定具体是否成功，四次握手会有资源浪费 关闭的四次握手 客户机向服务器发送FIN报文段 服务器收到FIN，回复ACK，关闭连接，发送FIN 客户机收到FIN，回复ACK 进入等待状态，如果收到FIN，则重新发送ACK 服务器收到ACK，关闭链接 拥塞控制 表现 分组丢失 分组延迟越来越大 拥塞控制方法 端到端的拥塞控制（端系统通过观察loss（分组丢失）delay（分组延迟时间等来判断网络是否发生拥塞—-TCP采用这种方法） 网络辅助的拥塞控制（路由器显式的向发送方反馈网络的用色信息，简单的拥塞指示（1 bit）：指示发送方该采取何种速率—-ATM） 拥塞控制的基本原理 限制sender的发送速率 ConfgWin：（发送窗口的大小） 动态调整以改变发送速率 反映所感知到的网络拥塞 网络拥塞的感知 LOSS事件==timeout或者连续3个重复的ACK 合理调整发送速率 加性增—乘性减（AIMD) 谨慎的探测可用带宽，逐渐增加发送速率，直到发生loss事件（每个RTT将CongWin增大一个MSS）; 发生loss之后已经拥塞，需要快速降低发送频率（将CongWin减半） 慢启动（SS） 当链接刚刚建立时（CongWin = 1, 初始速率20k），让CongWin指数增长; 每个RTT将CongWin翻倍–&gt;快速攀升 指数增长切换到加性增 用一个变量Threshold， 设置为LOSS事件前congWin值的1/2. 收到3个重复的ACK(网络还能传输一些segment) 将congWin切为一半，然后线性增长 Timeout事件（拥塞更严重) CongWin直接设为1,然后指数增长，达到threshold之后再线性增长]]></content>
@@ -188,6 +188,17 @@
       </categories>
       <tags>
         <tag>自顶向下方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[扩展/boot分区]]></title>
+    <url>%2F2019%2F04%2F07%2Fboot%20partition%20is%20not%20enough%2F</url>
+    <content type="text"><![CDATA[how to expend the capicity of /boot partition in linux use the Disks offered in the System to build a partition for new /boot, and click “Mount the filesystem” signed by a triangle icon copy all the things form old /boot partition to new /boot partition . new /boot partition willbe mounted in /mnt click the old /boot prtition in Disks, click buttons as following “More actions” signed by a gear “Edit Mount Options…”, meanwhile, wtrite the config down for later uncheck “Mount at Startup” modify “Mount Point” to something else, such as “/boot_old” and click OK click the old /boot prtition in Disks, and “Unmount the filesystem”. click buttons as following “More actions” signed by a gear, and click “Edit Partition” modify “Type” to linux filesystem and Change “Edit Mount Options…” copy the config form old one OK and now it can work almost, but there is something broken likely.to solve this , you can use the Boot Repair. here is its brochure: installation123sudo add-apt-repository ppa:yannubuntu/boot-repairsudo apt-get updatesudo apt-get install -y boot-repair &amp;&amp; boot-repair Recommended repairlaunch Boot-Repair from either :the Dash (the Ubuntu logo at the top-left of the screen)or by typing ‘boot-repair’ in a terminalThen click the “Recommended repair” button. When repair is finished, note the URL (paste.ubuntu.com/XXXXX) that appeared on a paper, then reboot and check if you recovered access to your OSs. If the repair did not succeed, indicate the URL to people who help you by email or forum. if you have trouble in booting, if you computer is booted by grub2, here is you solutions: lsfind the boot file location set root = (hd0, gpt0)(hd0,gpt0) is your boot file location linux /path/to/your/bootfile(vmlinuz*) root=/dev/sda0/dev/sda0 is your root location initrd /path/to/your/bootfile(initrd*) boot now you can boot your computer.]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -399,9 +410,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
-    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
-    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 &lt;u, v&gt;， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
+    <title><![CDATA[分治策略]]></title>
+    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
+    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -410,9 +421,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[分治策略]]></title>
-    <url>%2F2018%2F04%2F07%2FCA3%2F</url>
-    <content type="text"><![CDATA[分治策略一般方法给定函数来计算n个输入， 分治策略 建议将输入分成k个子集，1&lt;k&lt;=n,得到k个子问题 解递归关系很多分治算法的复杂度是这样的 $$T(n)= a_{1}^n $$ 残缺棋盘描述: 有2k* 2k个方格的棋盘中恰好有一个方格是坏的 要求：用三方块把残缺棋盘铺满，三方块不能重叠，不能盖住坏的方格 —–&gt; 需要用(22k-1)/3个三方块 解决思路(分治法)： 划分成小棋盘比如4个2k-1* 2k-1，这样只有一个小棋盘有坏的 我们用一个三方块盖住没有坏方格的三个棋盘 递归 棋盘的大小缩为1*1时，递归终止 二分搜索描述： 在n个已经按升序/降序排列好的元素中搜索是否存在元素x 要求： 已经按 升序/降序 排列好]]></content>
+    <title><![CDATA[计算机算法 C++描述 第二章]]></title>
+    <url>%2F2018%2F04%2F07%2FCA2%2F</url>
+    <content type="text"><![CDATA[template 模板 类模板假设一个类中数据成员的数据类型不能确定。或者是某个成员函数的參数或返回值的类型不能确定。就必须将此类声明为模板，它的存在不是代表一个详细的、实际的类，而是代表着一类类。 123456template &lt;class Type&gt;class foo&#123; private: Type a;&#125; 类模板的使用 1类名&lt;实际的类型&gt; 类模板的使用实际上是将类模板实例化成一个详细的类 在类外面定义函数模板 12345template&lt;typename（或class) T&gt;&lt;返回类型&gt;&lt;函数名&gt;(參数表)&#123; 函数体&#125; 123456template&lt;typename（或class) T&gt;T fuc(T x, T y)&#123; T x; //……&#125; 模板函数 12345678910double d; int a; fuc(d,a);则系统将用实參d的数据类型double去取代函数模板中的T生成函数：double fuc(double x,int y)&#123; double x; //……&#125; 模板函数的生成就是将函数模板的类型形參实例化的过程。 队列 队列的一种有效表示方法是用数组，把他看成环形结构 判断队列为空 rear == front 队尾插入操作 rear = (++rear)%MaxSize 二叉树 引理 一棵二叉树第i层上最多结点个数为2i-1, 一个深度为k的二叉树最多节点数为2k-1 n个节点的完全二叉树可以存放在一维数组tree[n+1]中 任何一个包含n个节点的完全二叉树，如果采用上述的方法表示，对于任何下标的节点i来说，1 &lt;= i &lt;= n有： 当 i != 1 时，parent(i)在 ⌊i/2⌋。当i == 1时，i是树根没有parent 当 2i &lt;= n 时，lchild(i)在2i。如果2i &gt; n，i没有左孩子 当 2i + 1 &lt;= n 时，rchild(i)在2i+1，否则没有右孩子 二叉搜索树 特征 每个元素都有一个键值，并且没有两个元素键值相同 左子树的键值(如果有的话)都小于树根的键值 右子树的键值(如果有的话)都大于树根的键值 左右子树也都是二叉搜索树 堆(Heap) 堆性质：每个节点的值都至少与其孩子一样大（一样小） —&gt; 依次递增（减） 堆排序：这可真的是一个秀的头疼的操作。靠其自身的insert和deletemax构建新堆获得旧堆的顺序 集合与 不相交 集合的并集 用森林表示集合，每个集合都可以表示为一棵树。把孩子节点链接到父节点上 为了得到两个集合的并集，我们可以把一课树的树根的父节点域设置为另一棵树的树根( 不相交) 忽略集合的名字并且用表示集合的树的树根来标志该集合 权重规则 ： 如果以i为树根的树所包含的节点少于以j为树根的树，那么就令j成为i的父节点。否则i成为j的父节点 收缩规则 ： 如果节点j在节点i到树根的路径上，并且p[i] != root[i],那么将p[i]置为root[i]—–&gt; p[j]及路径上所有节点的父节点置为root[i] 图 图的定义和特点 欧拉定义定点的度等于与他相接的边的条数 对于有向图来说：V的入/出度是以v为头/尾的所有边的条数 当且仅当所有定点的度数都是偶数，满足这样条件的路径被成为 欧拉路径 我们通常用G=(V, E)来表示一个图 V 是有穷非空的定点的集合 E 是顶点对称的集合，又被称为边 无向图中任意边的顶点对都是无序的 (u, v) 有向图中任意边的顶点对都是有序的 &lt;u, v&gt;， u是头，v是尾 图不能包含定点v到自己的边。这样的边被称为自边或者自环 图不能有一条边重复多次，如果去掉这个限制那么我们得到的是多图 任意包含n个顶点的无向图的最大边数为 n(n-1)/2，包含最大边数的无向图是完全的 任意包含n个顶点的有向图的最大边数为 n(n-1) 路径的长度就是其中的边数 简单路径： 路径中可能除了第一个和最后一个都是不同的顶点（只有可能第一个和最后一个相同，其他的都不同） 环： 第一个和最后一个相同的路径 图的表示 邻接矩阵 邻接矩阵是一个n*n的矩阵 若存在边(i, j)，则a[i, j] = 1,其他的等于0 无向图的邻接矩阵是对称的 无向图上的顶点i其度数等于它对应的行之和 有向图上行之和是出度，列之和是入度 邻接表 邻接多重表]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -440,17 +451,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[编程珠玑]]></title>
-    <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
-    <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[终端使用代理]]></title>
     <url>%2F2018%2F04%2F01%2Fproxychains%2F</url>
     <content type="text"><![CDATA[ProxyChains是本人目前为止用到的最方便的代理工具，使用十分简单。 在源里有这个软件，直接安装 启动Shawdowsocks，并连接至服务器。 编辑/etc/proxychains.conf sudo vim /etc/proxychains.conf 在最后的ProxyList里加入Shawdowsocks的代理设置： socks5 127.0.0.1 1080 查找libproxychains.so.3位置 1find /usr/ -name libproxychains.so.3 编辑/usr/bin/proxychains 修改 LD_PRELOAD=libproxychains.so.3 为上一步的查找结果 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libproxychains.so.3 需要注意的是Ｐｒｏｘｙｃｈａｉｎｓ代理ＴＣＰ流量，所以ｐｉｎｇ命令可能不能使用 作者：萧一二 链接：https://www.jianshu.com/p/bd898d4ae415 来源：简书 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。]]></content>
@@ -459,6 +459,17 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[编程珠玑]]></title>
+    <url>%2F2018%2F04%2F01%2FProgrammingPearlsKnown%2F</url>
+    <content type="text"><![CDATA[编程珠玑新知识点记录第一章 开篇 位图，位向量 位向量(亦作位图，不过与图形学中的位图混淆，下作位向量)。一个n位的二进制数据，数据i如果出现在该二进制的第i位，则该位置为1，否则为0。如：用一个10位长的二进制数据表示元素都小于10的集合，{1,2,3,5,8},该集合用二进制数据的表现形式：0111010010 算法分析 初始化集合，每个位都置为0； 读入文件的每个整数，将对应的位置为1； 遍历二进制数据，如果该位为1，则输出相应的整数。 bitsetC++语言的一个类库，用来方便地管理一系列的bit位而不用程序员自己来写代码。 1234bitset&lt;N&gt;varm (M)其中varm为变量名。N表示该类型在内存中占的位数，是二进制。M表示变量varm的初始值。 相关函数 any(); //当bitset对象的一位或多个位被设置为1 时any()返回true none(); // 如果bitset 对象的所有位都被设置为0 ,则none()操作返回true count(); // count()操作返回被设置为1的位的个数. set(); //我们可以用set()操作或者下标操作符来设置某个单独的位 test(); //测试某个单独的位是否为1 test()操作。用位置做参数，返回true或false reset(); // 要将某个单独的位设置为0 ,我们可以用reset()或下标操作符 wc -l/c/w filename 统计文件行/字节/字数]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -495,9 +506,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[apache2跨域]]></title>
-    <url>%2F2017%2F12%2F15%2Fapache2cors%2F</url>
-    <content type="text"><![CDATA[加载服务器组件1a2enmod headers 修改服务器配置 在想要可以跨域访问的目录下 Header set Access-Control-Allow-Origin * 重启服务器1service apache2 restart]]></content>
+    <title><![CDATA[Android Stdio配置]]></title>
+    <url>%2F2017%2F12%2F15%2FAndroidStudio%2F</url>
+    <content type="text"><![CDATA[Cause: dl.google.com:443 failed to respond vim ~/.gradle/gradle.properties 123456# org.gradle.parallel=true#Fri Jun 29 10:45:08 CST 2018#systemProp.https.proxyPort=1080systemProp.http.proxyHost=127.0.0.1#systemProp.https.proxyHost=127.0.0.1systemProp.http.proxyPort=1080 创建桌面图标 1vim /usr/share/applications/Studio.desktop 1234567[Desktop Entry]Name = ASComment= android studioExec=/home/huhaobin/android-studio/bin/studio.shIcon=/home/huhaobin/android-studio/bin/studio.pngTerminal=falseType=Application Grant current user access to /dev/kvm 1chown :$USER /dev/kvm]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -506,9 +517,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Android Stdio配置]]></title>
-    <url>%2F2017%2F12%2F15%2FAndroidStudio%2F</url>
-    <content type="text"><![CDATA[Cause: dl.google.com:443 failed to respond vim ~/.gradle/gradle.properties 123456# org.gradle.parallel=true#Fri Jun 29 10:45:08 CST 2018#systemProp.https.proxyPort=1080systemProp.http.proxyHost=127.0.0.1#systemProp.https.proxyHost=127.0.0.1systemProp.http.proxyPort=1080 创建桌面图标 1vim /usr/share/applications/Studio.desktop 1234567[Desktop Entry]Name = ASComment= android studioExec=/home/huhaobin/android-studio/bin/studio.shIcon=/home/huhaobin/android-studio/bin/studio.pngTerminal=falseType=Application Grant current user access to /dev/kvm 1chown :$USER /dev/kvm]]></content>
+    <title><![CDATA[apache2跨域]]></title>
+    <url>%2F2017%2F12%2F15%2Fapache2cors%2F</url>
+    <content type="text"><![CDATA[加载服务器组件1a2enmod headers 修改服务器配置 在想要可以跨域访问的目录下 Header set Access-Control-Allow-Origin * 重启服务器1service apache2 restart]]></content>
       <categories>
         <category>linux</category>
       </categories>
@@ -651,14 +662,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AutoStartInUbuntuMate]]></title>
-    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
-    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[uart_raspberry]]></title>
     <url>%2F2017%2F10%2F10%2Fuart_raspberry3B%2F</url>
     <content type="text"><![CDATA[串口配置1sudo raspi-config 123interfacedisable shell and enable hardware 禁用蓝牙 1echo &quot;dtoverlay=pi3-disable-bt&quot; &gt;&gt; /boot/config.txt 禁用串行控制台 串行控制台就是从串口登录树莓派，打开/boot/cmdline.txt 1234#dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consolesdwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=y 注意:打开第一句就是打开串口命令行]]></content>
@@ -670,6 +673,14 @@
     <title><![CDATA[StartWithBoot]]></title>
     <url>%2F2017%2F10%2F10%2Fstartwithboot%2F</url>
     <content type="text"><![CDATA[定时任务的方法是使用cron和crontab。 开机自启动任务树莓派开机启动任务是由rc.local控制的1sudo nano /etc/rc.local 在注释后面添加命令，但是要保证exit 0这行代码在最后，然后保存文件退出。 注意如果你的命令需要长时间运行（例如死循环）或者运行后不能退出，那么你必须确保在命令的最后添加“&amp;”符号让命令运行在其它进程.]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[AutoStartInUbuntuMate]]></title>
+    <url>%2F2017%2F10%2F10%2FAutoStartInUbuntuMate%2F</url>
+    <content type="text"><![CDATA[只有登录之后ubuntu mate才会联网1sudo nano /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf file 在文件末尾添加1[SeatDefaults] greeter-session=lightdm-gtk-greeter autologin-user=username]]></content>
       <categories>
         <category>树莓派</category>
       </categories>
