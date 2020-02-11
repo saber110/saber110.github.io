@@ -1,0 +1,186 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: saber
+subtitle: 船到桥头自然直
+signature: 越努力，越幸运
+description: 我自横刀向天笑，笑完我就去自闭
+keywords: saber jm
+author: saber
+language: zh-Hans
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://blog.huhaobin.cn
+root: /
+#permalink: :year/:month/:day/:title/ #对搜索引擎是十分不友好的
+#permalink: :title.html
+permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
+permalink_defaults:
+
+# 文章链接唯一永久化
+abbrlink:
+  alg: crc32  #算法： crc16(default) and crc32
+  rep: dec    #进制： dec(default) and hex
+
+baidu_url_submit:
+  count: 6 ## 比如3，代表提交最新的三个链接
+  host: https://www.liaofuzhan.com ## 在百度站长平台中注册的域名
+  token: XXXXXX ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+#skip_render:
+
+skip_render: README.md
+
+# Writing
+#https://hexo.io/zh-cn/docs/writing
+#new_post_name: :year-:month-:day-:title.md #方便已日期来管理文章
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+#theme: landscape
+theme: leaf
+
+Plugins:
+- hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
+
+baidusitemap:
+  path: baidusitemap.xml
+sitemap:
+  path: sitemap.xml
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+- type: git
+  repository: 
+            github: git@github.com:saber110/saber110.github.io.git
+  branch: master
+
+# - type: baidu_url_submitter
+
+
+backup:
+  type: git
+  theme: leaf
+  message: Back up my blog.huhaobin.cn blog
+  repository:
+    github: git@github.com:saber110/saber110.github.io.git,backup
+    
+# Search
+search:
+  path: ./public/search.xml
+  field: post
+  format: html
+  limit: 10000
+
+# feed
+# Dependencies: https://github.com/hexojs/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+
+# https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md
+permalink_pinyin:
+  enable: false
+  separator: '-' # default: '-'
+
+# https://blog.csdn.net/lewky_liu/article/details/82432003
+# https://github.com/rozbo/hexo-neat
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+# 压缩css
+neat_css:
+  enable: true
+  exclude:
+  - '**/*.min.css'
+  - '**/needsharebutton.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+  - '**/*.min.js'
+  - '**/jquery.fancybox.pack.js'
+  - '**/index.js'
+  - '**/waifu-tips.js'
+  - '**/iframe.js'
+  - '**/fireworks.js'
+  
+# https://github.com/mythsman/hexo-douban
+douban:
+  user: your_id
+  builtin: false  #否将生成页面的功能嵌入hexo s和hexo g中(false则需要使用hexo douban命令)
+  book:
+    title: '读书系列' # 该页面的标题
+    quote: '书山有路勤为径，学海无涯苦作舟' # 写在页面开头的一段话,支持html语法.
+  movie:
+    title: '观影系列'
+    quote: 'Life was like a box of chocolates, you never know what you’re going to get'
+  timeout: 10000 # 爬取数据的超时时间
+
+live2d:
+  enable: true
