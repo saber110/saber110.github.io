@@ -38,7 +38,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  since: 2019 #建站时间
+  since: 2016 #建站时间
 
   # Icon between year and copyright info.
 #  icon: user
