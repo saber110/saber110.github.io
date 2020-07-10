@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>saber</title>
+  
+  <subtitle>船到桥头自然直</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.huhaobin.cn/"/>
+  <updated>2020-07-10T01:07:58.010Z</updated>
+  <id>http://blog.huhaobin.cn/</id>
+  
+  <author>
+    <name>saber</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://blog.huhaobin.cn/posts/1243066710.html"/>
+    <id>http://blog.huhaobin.cn/posts/1243066710.html</id>
+    <published>2020-07-10T01:07:58.009Z</published>
+    <updated>2020-07-10T01:07:58.010Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hex
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>cordova开发安卓</title>
+    <link href="http://blog.huhaobin.cn/posts/143294469.html"/>
+    <id>http://blog.huhaobin.cn/posts/143294469.html</id>
+    <published>2020-07-10T01:07:58.006Z</published>
+    <updated>2020-07-10T01:07:58.007Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;hr&gt;&lt;p&gt;title: cordova开发安卓&lt;br&gt;abbrlink: 143294467&lt;br&gt;date: 2020-02-10 19:12:
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>黑苹果安装</title>
+    <link href="http://blog.huhaobin.cn/posts/2521564445.html"/>
+    <id>http://blog.huhaobin.cn/posts/2521564445.html</id>
+    <published>2020-07-10T00:41:17.000Z</published>
+    <updated>2020-07-10T01:07:58.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;Lenovo-ideapad-700s-14ISK-黑苹果安装配置&quot;&gt;&lt;a href=&quot;#Lenovo-ideapad-700s-14
+      
+    
+    </summary>
+    
+    
+      <category term="uncategorized" scheme="http://blog.huhaobin.cn/categories/uncategorized/"/>
+    
+    
+      <category term="系统" scheme="http://blog.huhaobin.cn/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>扩展/boot分区</title>
+    <link href="http://blog.huhaobin.cn/posts/3711347257.html"/>
+    <id>http://blog.huhaobin.cn/posts/3711347257.html</id>
+    <published>2020-02-11T05:47:17.000Z</published>
+    <updated>2020-07-10T01:07:58.027Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#ho
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络1</title>
+    <link href="http://blog.huhaobin.cn/posts/1676366600.html"/>
+    <id>http://blog.huhaobin.cn/posts/1676366600.html</id>
+    <published>2020-02-11T05:46:32.000Z</published>
+    <updated>2020-07-10T01:07:58.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat --&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>复试准备</title>
+    <link href="http://blog.huhaobin.cn/posts/757859542.html"/>
+    <id>http://blog.huhaobin.cn/posts/757859542.html</id>
+    <published>2020-02-11T05:39:32.000Z</published>
+    <updated>2020-07-10T01:07:58.025Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h4 id=&quot;sort&quot;&gt;&lt;a href=&quot;#sort&quot; class=&quot;headerlink&quot; title=&quot;sort&quot;&gt;&lt;/a&gt;sort&lt;/h4&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="oj" scheme="http://blog.huhaobin.cn/tags/oj/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>红米note增强版刷入android7.1</title>
+    <link href="http://blog.huhaobin.cn/posts/4162857404.html"/>
+    <id>http://blog.huhaobin.cn/posts/4162857404.html</id>
+    <published>2020-02-11T05:38:03.000Z</published>
+    <updated>2020-07-10T01:07:58.033Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;root&quot;&gt;&lt;a href=&quot;#root&quot; class=&quot;headerlink&quot; title=&quot;root&quot;&gt;&lt;/a&gt;root&lt;/h3&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="刷机" scheme="http://blog.huhaobin.cn/tags/%E5%88%B7%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>访问校内网资源</title>
+    <link href="http://blog.huhaobin.cn/posts/1589577150.html"/>
+    <id>http://blog.huhaobin.cn/posts/1589577150.html</id>
+    <published>2020-02-11T05:30:33.000Z</published>
+    <updated>2020-07-10T01:07:58.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;需求现状：&quot;&gt;&lt;a href=&quot;#需求现状：&quot; class=&quot;headerlink&quot; title=&quot;需求现状：&quot;&gt;&lt;/a&gt;需求现状：&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="学习" scheme="http://blog.huhaobin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程</title>
+    <link href="http://blog.huhaobin.cn/posts/52063040.html"/>
+    <id>http://blog.huhaobin.cn/posts/52063040.html</id>
+    <published>2020-02-11T05:20:23.000Z</published>
+    <updated>2020-07-10T01:07:58.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;进程介绍&quot;&gt;&lt;a href=&quot;#进程介绍&quot; class=&quot;headerlink&quot; title=&quot;进程介绍&quot;&gt;&lt;/a&gt;进程介绍&lt;/h2&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="OS" scheme="http://blog.huhaobin.cn/tags/OS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python3-mysqldb安装</title>
+    <link href="http://blog.huhaobin.cn/posts/3993308688.html"/>
+    <id>http://blog.huhaobin.cn/posts/3993308688.html</id>
+    <published>2020-02-11T05:16:57.000Z</published>
+    <updated>2020-07-10T01:07:58.014Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autocapital
+      
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建ssr搭建ssr</title>
+    <link href="http://blog.huhaobin.cn/posts/872076193.html"/>
+    <id>http://blog.huhaobin.cn/posts/872076193.html</id>
+    <published>2020-02-11T05:12:46.000Z</published>
+    <updated>2020-07-10T01:07:58.029Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;服务部署&quot;&gt;&lt;a href=&quot;#服务部署&quot; class=&quot;headerlink&quot; title=&quot;服务部署&quot;&gt;&lt;/a&gt;服务部署&lt;/h3&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="ssr" scheme="http://blog.huhaobin.cn/tags/ssr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux网络连接后执行脚本</title>
+    <link href="http://blog.huhaobin.cn/posts/2497004773.html"/>
+    <id>http://blog.huhaobin.cn/posts/2497004773.html</id>
+    <published>2020-02-11T05:11:42.000Z</published>
+    <updated>2020-07-10T01:07:58.012Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;/p&gt;&lt;div 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux定时执行任务</title>
+    <link href="http://blog.huhaobin.cn/posts/2223700806.html"/>
+    <id>http://blog.huhaobin.cn/posts/2223700806.html</id>
+    <published>2020-02-11T05:07:54.000Z</published>
+    <updated>2020-07-10T01:07:58.012Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh反向代理进行内网穿透</title>
+    <link href="http://blog.huhaobin.cn/posts/967289922.html"/>
+    <id>http://blog.huhaobin.cn/posts/967289922.html</id>
+    <published>2020-02-11T05:01:14.000Z</published>
+    <updated>2020-07-10T01:07:58.017Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;公网主机配置&quot;&gt;&lt;a href=&quot;#公网主机配置&quot; class=&quot;headerlink&quot; title=&quot;公网主机配置&quot;&gt;&lt;/a&gt;公网主
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程间通信</title>
+    <link href="http://blog.huhaobin.cn/posts/2851953132.html"/>
+    <id>http://blog.huhaobin.cn/posts/2851953132.html</id>
+    <published>2020-02-10T13:35:20.000Z</published>
+    <updated>2020-07-10T01:07:58.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;信号&quot;&gt;&lt;a href=&quot;#信号&quot; class=&quot;headerlink&quot; title=&quot;信号&quot;&gt;&lt;/a&gt;信号&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="unix" scheme="http://blog.huhaobin.cn/tags/unix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>终端使用代理</title>
+    <link href="http://blog.huhaobin.cn/posts/973073571.html"/>
+    <id>http://blog.huhaobin.cn/posts/973073571.html</id>
+    <published>2020-02-10T13:31:08.000Z</published>
+    <updated>2020-07-10T01:07:58.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;ProxyChains是本人目前为止用到的最方便的代理工具，使用十分简单。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;在源里有这个软件，直接安装&lt;/p&gt;&lt;/l
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编程珠玑</title>
+    <link href="http://blog.huhaobin.cn/posts/2284540863.html"/>
+    <id>http://blog.huhaobin.cn/posts/2284540863.html</id>
+    <published>2020-02-10T13:23:31.000Z</published>
+    <updated>2020-07-10T01:07:58.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识
+      
+    
+    </summary>
+    
+    
+    
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux关机前执行脚本</title>
+    <link href="http://blog.huhaobin.cn/posts/2766769718.html"/>
+    <id>http://blog.huhaobin.cn/posts/2766769718.html</id>
+    <published>2020-02-10T13:22:15.000Z</published>
+    <updated>2020-07-10T01:07:58.012Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;建立关机需要执行的脚本文件&lt;/p&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; a
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sizeof与strlen的区别</title>
+    <link href="http://blog.huhaobin.cn/posts/2422235321.html"/>
+    <id>http://blog.huhaobin.cn/posts/2422235321.html</id>
+    <published>2020-02-10T13:21:15.000Z</published>
+    <updated>2020-07-10T01:07:58.016Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;ul&gt;&lt;li&gt;sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C语言" scheme="http://blog.huhaobin.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>qt mysql数据库找不到</title>
+    <link href="http://blog.huhaobin.cn/posts/62490762.html"/>
+    <id>http://blog.huhaobin.cn/posts/62490762.html</id>
+    <published>2020-02-10T13:19:31.000Z</published>
+    <updated>2020-07-10T01:07:58.030Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Fri Jul 10 2020 09:21:43 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;div cla
+      
+    
+    </summary>
+    
+    
+    
+      <category term="qt" scheme="http://blog.huhaobin.cn/tags/qt/"/>
+    
+  </entry>
+  
+</feed>
