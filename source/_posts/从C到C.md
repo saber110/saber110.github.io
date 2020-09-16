@@ -17,9 +17,8 @@ date: 2019-04-24 14:16:05
 
 4.  引用的用法
 
-    *   用作形参类型，改变实参的值
-
-        *   用作函数返回值类型，可以将函数放在等式左边（相当于给return的那个变量进行赋值）
+    - 用作形参类型，改变实参的值
+    - 用作函数返回值类型，可以将函数放在等式左边（相当于给return的那个变量进行赋值）
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>

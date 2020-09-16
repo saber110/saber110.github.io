@@ -12,23 +12,49 @@
 }
 
 .right-siders{
-   border-radius: 8px;
-   margin-top: 5px;
+   border-radius: 10px;
+   /*margin-top: 5px;*/
    margin-bottom: 5px;
 }
 
+.my-carousel:hover{
+  margin-left: 5px;
+  //padding: 5px 1px;
+  border-radius: 5px;
+  transform: scale(1.1);
+  box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);
+}
+
 @media (max-width: 767px){
-	.rights{
-		display: none;
-	}
-	.carousel{
-		width: 100% !important;
-		height: 100% !important;
-	}
-	.slide{
-		width: 100% !important;
-		height: 100% !important;
-	}
+   .rights{
+      display: none;
+   }
+   .carousel{
+      width: 100% !important;
+      height: 100% !important;
+   }
+   .slide{
+      width: 100% !important;
+      height: 100% !important;
+   }
+	
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -10px;
+  }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+   /* margin-right: -10px; */
+  }
 
 }
 
@@ -122,7 +148,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 5%;
+  /*width: 5%;*/
   opacity: 0.5;
   filter: alpha(opacity=50);
   font-size: 20px;
@@ -193,7 +219,7 @@
   background: url('/images/icon-slides.png');
   background-position-x: -50px;
   background-position-y: -20px;
-  right: 9px;
+  right: 0px;
 }
 
 .carousel-control .icon-prev,
@@ -282,7 +308,7 @@
 }
 </style>
 
-<div width="100%" height="320px" style="border: 0px; overflow: hidden; border-radius: 10px;" scrolling="no">
+<div width="100%" height="320px" style="border: 0px; overflow: hidden; border-radius: 10px; margin-bottom: 25px;" scrolling="no">
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500" style="float:left">
 
@@ -314,38 +340,48 @@
       </div>
 
       <!-- 轮播（Carousel）导航 -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <a class="left carousel-control" data-target="#myCarousel" href="javascript:void(0);" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <a class="right carousel-control" data-target="#myCarousel" href="javascript:void(0);" role="button" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       </a>
 
 	  </div>
 
-		<div  class="rights" style="width: 30%; height: 300px; margin-right: 0px;margin-left: 20px;float: left;">
+		<div  class="rights" style="width: 30%; height: 290px; margin-right: 0px;margin-left: 20px;float: left;">
   	   <!-- 天气插件 -->
-       <iframe class="blog-weather" width="420" scrolling="no" height="15%" frameborder="0" allowtransparency="true" src="https://i.tianqi.com/index.php?c=code&id=12&icon=1&py=beijing&num=2&site=12"></iframe>
+       <iframe width="300px" scrolling="no" height="50px" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&color=%23&bdc=%23&icon=1&py=beijing&num=2&site=12"></iframe>
 
   	   <!-- r热门排行 -->
-  	   <a href="/top/">
-  	      <img class="right-siders nofancybox" src="/images/hot.png" width="100%"/>
-  	   </a>
+  	   <div class="my-carousel">
+         <a href="https://saber110.github.io/top/" target="_blank">
+            <img class="right-siders nofancybox" src="/images/hot.png" width="100%"/>
+         </a>
+  	   </div>
 
   	   <!-- 时光留影 -->
-  	   <a href="/">
-  	     <img class="right-siders nofancybox" src="/images/time.png"/>
-  	   </a>
+  	   <div class="my-carousel">
+         <a href="https://saber110.github.io/photos/" target="_blank">
+           <img class="right-siders nofancybox" src="/images/time.png"/>
+         </a>
+  	   </div>
 
-  	  <!-- 小小胡同 -->
-  	  <a href="/xiaohutong/">
-  	    <img class="right-siders nofancybox" src="/images/xiaohutong.png"/>
-  	  </a>
+      <!-- 推荐阅读 -->
+      <div class="my-carousel">
+        <a href="https://saber110.github.io/books/" target="_blank">
+          <img class="right-siders nofancybox" src="/images/read.png"/>
+        </a>
+      </div>
 
-      <!-- 关于博主 -->
-      <a href="/about/">
-        <img class="right-siders nofancybox" src="/images/about-me.png"/>
-      </a>
+      <!-- 订阅本站 -->
+      <!--
+      <div class="my-carousel">
+         <a href="https://mailchi.mp/e92415d27722/leaf" target="_blank">
+           <img class="right-siders nofancybox" src="/images/subscribe.png"/>
+         </a>
+      </div>
+      -->
 
    </div>
 

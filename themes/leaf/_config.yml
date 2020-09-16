@@ -174,7 +174,7 @@ mylinks:
 # in site  directory(source/uploads): /uploads/avatar.gif
 #avatar: /images/avatar.gif
 
-avatar: /images/beichen.png
+avatar: "http://img02.fs.yiban.cn/7041045/avatar/user/200"
 
 # Table Of Contents in the Sidebar
 toc:
