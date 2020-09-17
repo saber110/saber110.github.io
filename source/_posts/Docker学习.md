@@ -41,13 +41,12 @@ docker exec -it mysql bash  用命令行链接到mysql容器
 ### [](#生成镜像 "生成镜像")生成镜像
 
 ```
-docker commit -a "author" -m "comments"; container_name image_name:TAG
+docker commit -a "author" -m "comments" container_name image_name:TAG
 ```
 
 ### [](#提交镜像 "提交镜像")提交镜像
 
 1.  修改正式的TAG
-
 ```
 docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）
 ```
@@ -71,3 +70,26 @@ docker run -d --name db training/mysql
 docker run -d -P --name web --link db:db training/webapp python app.py
 ```
 ‘db:db’： 子容器名字：别名
+
+- 使用宿主机的代理
+  -修改宿主机文件
+  ```
+  ~/.docker/config.json
+  # 添加
+  {
+    "proxies":
+    {
+      "default":
+      {
+        "httpProxy": "http://127.0.0.1:8118",
+        "httpsProxy": "http://127.0.0.1:8118",
+        "noProxy": "localhost"
+      }
+    }
+  }
+  ```
+
+  - 启动容器时用主机网络
+  ```
+  --net host
+  ```
