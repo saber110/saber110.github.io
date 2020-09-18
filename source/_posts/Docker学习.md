@@ -93,3 +93,7 @@ docker run -d -P --name web --link db:db training/webapp python app.py
   ```
   --net host
   ```
+  ### 容器刚安装成功不能使用`apt`等，要
+  ```
+  apt update
+  ```

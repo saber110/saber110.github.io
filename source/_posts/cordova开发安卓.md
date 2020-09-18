@@ -1,12 +1,9 @@
 ---
-abbrlink: 143294469
----
----
 title: cordova开发安卓
-abbrlink: 143294467
-date: 2020-02-10 19:12:54
 tags: Android
---- 
+abbrlink: 143294467
+date: 2020-02-10 14:47:59
+---
 
 ## 命令
 ```bash
