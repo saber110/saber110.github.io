@@ -7,6 +7,26 @@ date: 2020-09-18 19:26:30
 
 **时光如梭，日月永恒。这个hexo维护真的太费劲了！！！**
 
+## 日常使用
+### 编译后文件
+- 编辑可在`_source`中直接进行
+- 预览，上传需进入hexo docker `docker exec -it hexo bash`
+    - `cd /your/hexo/`
+    - `hexo g`
+    - `hexo s`
+- 上传 `hexo d`
+    这里需要注意的是使用的是该容器的公钥进行ssh认证，所以要自行加入github
+### 源文件日常备份
+- 在`backup`分支上进行，避免影响blog
+```bash
+git checkout backup
+git add .
+git commit -m "update"
+git push origin backup
+```
+
+
+
 ## Docker版本可用
 - pull
 ```
@@ -35,7 +55,11 @@ docker run --name hexo -p 4000:4000 -v /home/hhb/project/:/home/ -it hexo
     ```
     docker push saber110/hexo:v2
     ```
+
+
 ## 以后更新hexo的时候直接安装新环境
+
+
 ## 目前版本信息
 - hexo version
 ```
@@ -58,7 +82,8 @@ icu: 67.1
 tz: 2020a
 unicode: 13.0
 ```
-## 安装新环境
+## 安装新docker环境
+
 ### 安装新的node
 - 下载解压
 ```
