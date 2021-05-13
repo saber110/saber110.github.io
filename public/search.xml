@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>配置gitlab容器</title>
+      <link href="posts/548755248.html"/>
+      <url>posts/548755248.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h3><ul><li>拉取<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull gitlab/gitlab-ee:12.9.0-ee.0</span><br></pre></td></tr></table></figure></div></li><li>配置持久化路径<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GITLAB_HOME=/srv/gitlab</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">docker run --detach \</span><br><span class="line">    --hostname gitlab.huhaobin.cn\</span><br><span class="line">    --publish 150:443 --publish 151:80 --publish 152:22 \</span><br><span class="line">    --name gitlab \</span><br><span class="line">    --restart always \</span><br><span class="line">    --volume <span class="variable">$GITLAB_HOME</span>/config:/etc/gitlab \</span><br><span class="line">    --volume <span class="variable">$GITLAB_HOME</span>/logs:/var/<span class="built_in">log</span>/gitlab \</span><br><span class="line">    --volume <span class="variable">$GITLAB_HOME</span>/data:/var/opt/gitlab \</span><br><span class="line">    --log-driver none \</span><br><span class="line">    gitlab/gitlab-ee:12.9.0-ee.0</span><br></pre></td></tr></table></figure></div></li></ul><h3 id="设置clone端口"><a href="#设置clone端口" class="headerlink" title="设置clone端口"></a>设置clone端口</h3><ul><li>修改<code>$GITLAB_HOME/config/gitlab.rb</code>文件<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 修改如下语句</span><br><span class="line">external_url <span class="string">&#x27;http://gitlab.huhaobin.cn:151&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># https需要下面这句</span></span><br><span class="line"><span class="comment"># nginx[&#x27;redirect_http_to_https_port&#x27;] = 8180</span></span><br><span class="line"><span class="comment"># 这里nginx的监听端口是容器内部的，不使用151</span></span><br><span class="line">nginx[<span class="string">&#x27;listen_port&#x27;</span>] = 80</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 配置151端口，clone时ssh使用的端口</span></span><br><span class="line">gitlab_rails[<span class="string">&#x27;gitlab_shell_ssh_port&#x27;</span>] = 152</span><br></pre></td></tr></table></figure></div></li></ul><h3 id="重启gitlab-docker即可"><a href="#重启gitlab-docker即可" class="headerlink" title="重启gitlab docker即可"></a>重启gitlab docker即可</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo重新搭建</title>
       <link href="posts/318287987.html"/>
       <url>posts/318287987.html</url>
@@ -27,7 +46,7 @@
       <link href="posts/4017356380.html"/>
       <url>posts/4017356380.html</url>
       
-        <content type="html"><![CDATA[<h2 id="go-get-很慢"><a href="#go-get-很慢" class="headerlink" title="go get 很慢"></a>go get 很慢</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure></div>]]></content>
+        <content type="html"><![CDATA[<h2 id="go-get-很慢"><a href="#go-get-很慢" class="headerlink" title="go get 很慢"></a>go get 很慢</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure></div><p>*可能会引起<code>go: cannot find main module</code>*，此时需要关闭代理</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="APACHE"><figure class="iseeu highlight /apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">go</span> env -w GO<span class="number">111</span>MODULE=<span class="literal">off</span></span><br></pre></td></tr></table></figure></div><h4 id="go-源文件要放在GO的src下面"><a href="#go-源文件要放在GO的src下面" class="headerlink" title="go 源文件要放在GO的src下面"></a>go 源文件要放在GO的src下面</h4>]]></content>
       
       
       
