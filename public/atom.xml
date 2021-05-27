@@ -6,7 +6,7 @@
   <link href="http://blog.huhaobin.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2021-05-13T09:19:11.294Z</updated>
+  <updated>2021-05-27T13:07:15.538Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ajax跨域小结</title>
+    <link href="http://blog.huhaobin.cn/posts/2471479807.html"/>
+    <id>http://blog.huhaobin.cn/posts/2471479807.html</id>
+    <published>2021-05-27T19:09:08.000Z</published>
+    <updated>2021-05-27T13:07:15.538Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;问题来源于：&lt;/strong&gt;&lt;br&gt;前后端分析的项目中，身份识别与鉴定&lt;/p&gt;
+&lt;h2 id=&quot;来源&quot;&gt;&lt;a href=&quot;#来源&quot; class=&quot;headerlink&quot; title=&quot;来源&quot;&gt;&lt;/a&gt;来源&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;我们需要了解的</summary>
+      
+    
+    
+    
+    
+    <category term="HTML" scheme="http://blog.huhaobin.cn/tags/HTML/"/>
+    
+  </entry>
   
   <entry>
     <title>配置gitlab容器</title>
@@ -411,28 +434,6 @@
     
     
     <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sizeof与strlen的区别</title>
-    <link href="http://blog.huhaobin.cn/posts/2422235321.html"/>
-    <id>http://blog.huhaobin.cn/posts/2422235321.html</id>
-    <published>2020-02-10T21:21:15.000Z</published>
-    <updated>2020-09-18T03:34:27.301Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;sizeof是一个操作符,结果类型是size_t，它在头文件中typedef为unsigned　int类型。该类型保证能容纳实现所建立的最大对象的字节大小.而strlen是一个库函数,使用需要包含&amp;lt;string.h&amp;gt;头文件.&lt;/li&gt;
-&lt;li&gt;siz</summary>
-      
-    
-    
-    
-    
-    <category term="C语言" scheme="http://blog.huhaobin.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
