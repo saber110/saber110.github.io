@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ajax跨域小结</title>
+      <link href="posts/2471479807.html"/>
+      <url>posts/2471479807.html</url>
+      
+        <content type="html"><![CDATA[<hr><p><strong>问题来源于：</strong><br>前后端分析的项目中，身份识别与鉴定</p><h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><ul><li>我们需要了解的常识有：session其实也是基于cookie来识别的</li><li>在项目开发过程中发现前面设置的session，在后面的ajax请求中为null</li><li>开端调试发现ajax发起请求时默认不发送跨域的cookie，导致session不可用</li></ul><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="n年前"><a href="#n年前" class="headerlink" title="n年前"></a>n年前</h3><ul><li>前端ajax中设置<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xhrFields: &#123;</span><br><span class="line">    withCredentials:<span class="literal">true</span> <span class="comment">//默认情况下，标准的跨域请求是不会发送cookie的</span></span><br><span class="line">&#125;,</span><br><span class="line">crossDomain: <span class="literal">true</span>,  <span class="comment">// 允许跨域</span></span><br></pre></td></tr></table></figure></div></li><li>后端header设置<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">&#x27;Access-Control-Allow-Credentials: true&#x27;</span>);</span><br><span class="line">header(<span class="string">&#x27;Access-Control-Allow-Origin: http://localhost:8087&#x27;</span>); </span><br></pre></td></tr></table></figure></div></li></ul><p><strong>设置完credentials之后，origin要用具体的，不能再使用通配符</strong></p><h3 id="2021年"><a href="#2021年" class="headerlink" title="2021年"></a>2021年</h3><p>社会大发展，人民更幸福</p><ul><li>chrome对ajax跨域做了非常严格的限制<br>在设置完前面的内容之后还不够，需要设置<code>samesite = none</code>，但是设置完这个只能用<code>HTTPS</code>，必须同时设置Secure属性</li></ul><h2 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>配置gitlab容器</title>
       <link href="posts/548755248.html"/>
       <url>posts/548755248.html</url>
