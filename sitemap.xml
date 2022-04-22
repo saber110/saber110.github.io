@@ -362,15 +362,6 @@
   </url>
   
   <url>
-    <loc>http://blog.huhaobin.cn/posts/2628694986.html</loc>
-    
-    <lastmod>2022-04-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.huhaobin.cn/posts/139679387.html</loc>
     
     <lastmod>2022-04-22</lastmod>
@@ -822,6 +813,15 @@
   
   <url>
     <loc>http://blog.huhaobin.cn/tags/index.html</loc>
+    
+    <lastmod>2022-04-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.huhaobin.cn/posts/2628694986.html</loc>
     
     <lastmod>2022-04-22</lastmod>
     
