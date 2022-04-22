@@ -3,10 +3,10 @@
   <title>saber</title>
   
   <subtitle>船到桥头自然直</subtitle>
-  <link href="http://blog.huhaobin.cn/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2021-05-27T13:07:15.538Z</updated>
+  <updated>2022-04-22T08:50:48.424Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -17,109 +17,125 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ajax跨域小结</title>
-    <link href="http://blog.huhaobin.cn/posts/2471479807.html"/>
-    <id>http://blog.huhaobin.cn/posts/2471479807.html</id>
-    <published>2021-05-27T19:09:08.000Z</published>
-    <updated>2021-05-27T13:07:15.538Z</updated>
+    <title>cordova开发安卓</title>
+    <link href="http://blog.huhaobin.cn/posts/143294469.html"/>
+    <id>http://blog.huhaobin.cn/posts/143294469.html</id>
+    <published>2022-04-22T08:50:48.424Z</published>
+    <updated>2022-04-22T08:50:48.424Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;问题来源于：&lt;/strong&gt;&lt;br&gt;前后端分析的项目中，身份识别与鉴定&lt;/p&gt;
-&lt;h2 id=&quot;来源&quot;&gt;&lt;a href=&quot;#来源&quot; class=&quot;headerlink&quot; title=&quot;来源&quot;&gt;&lt;/a&gt;来源&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;我们需要了解的</summary>
+        &lt;hr&gt;&lt;p&gt;title: cordova开发安卓&lt;br&gt;abbrlink: 143294467&lt;br&gt;date: 2020-02-10 19:12:54&lt;br&gt;tags: Android&lt;/p&gt;&lt;hr&gt;&lt;h2 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;heade
       
     
+    </summary>
     
     
-    
-    <category term="HTML" scheme="http://blog.huhaobin.cn/tags/HTML/"/>
     
   </entry>
   
   <entry>
-    <title>配置gitlab容器</title>
-    <link href="http://blog.huhaobin.cn/posts/548755248.html"/>
-    <id>http://blog.huhaobin.cn/posts/548755248.html</id>
-    <published>2021-05-13T00:00:00.000Z</published>
-    <updated>2021-05-13T09:19:11.294Z</updated>
+    <title>Hello World</title>
+    <link href="http://blog.huhaobin.cn/posts/1243066710.html"/>
+    <id>http://blog.huhaobin.cn/posts/1243066710.html</id>
+    <published>2022-04-22T08:50:48.424Z</published>
+    <updated>2022-04-22T08:50:48.424Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h3 id=&quot;docker&quot;&gt;&lt;a href=&quot;#docker&quot; class=&quot;headerlink&quot; title=&quot;docker&quot;&gt;&lt;/a&gt;docker&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;拉取&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; </summary>
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
     
+    </summary>
     
     
-    
-    <category term="网站" scheme="http://blog.huhaobin.cn/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
   <entry>
-    <title>hexo重新搭建</title>
-    <link href="http://blog.huhaobin.cn/posts/318287987.html"/>
-    <id>http://blog.huhaobin.cn/posts/318287987.html</id>
-    <published>2020-09-18T19:26:30.000Z</published>
-    <updated>2021-05-13T09:35:13.425Z</updated>
+    <title>hexo自动部署</title>
+    <link href="http://blog.huhaobin.cn/posts/3636034258.html"/>
+    <id>http://blog.huhaobin.cn/posts/3636034258.html</id>
+    <published>2022-04-21T16:00:00.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;p&gt;&lt;strong&gt;时光如梭，日月永恒。这个hexo维护真的太费劲了！！！&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;日常使用&quot;&gt;&lt;a href=&quot;#日常使用&quot; class=&quot;headerlink&quot; title=&quot;日常使用&quot;&gt;&lt;/a&gt;日常使用&lt;/h2&gt;&lt;h3 id=&quot;编译后文件</summary>
+        &lt;p&gt;测试&lt;/p&gt;
       
     
+    </summary>
     
     
     
-    <category term="hexo" scheme="http://blog.huhaobin.cn/tags/hexo/"/>
+      <category term="hexo" scheme="http://blog.huhaobin.cn/tags/hexo/"/>
     
   </entry>
   
   <entry>
-    <title>go get</title>
-    <link href="http://blog.huhaobin.cn/posts/4017356380.html"/>
-    <id>http://blog.huhaobin.cn/posts/4017356380.html</id>
-    <published>2020-09-16T00:00:00.000Z</published>
-    <updated>2020-09-19T00:30:13.621Z</updated>
+    <title>Chapter 2 - Making &amp; Using Objects C+学习01</title>
+    <link href="http://blog.huhaobin.cn/posts/109245409.html"/>
+    <id>http://blog.huhaobin.cn/posts/109245409.html</id>
+    <published>2020-04-10T01:50:15.000Z</published>
+    <updated>2022-04-22T08:50:48.424Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h2 id=&quot;go-get-很慢&quot;&gt;&lt;a href=&quot;#go-get-很慢&quot; class=&quot;headerlink&quot; title=&quot;go get 很慢&quot;&gt;&lt;/a&gt;go get 很慢&lt;/h2&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot;</summary>
+        &lt;h1 id=&quot;编译过程&quot;&gt;&lt;a href=&quot;#编译过程&quot; class=&quot;headerlink&quot; title=&quot;编译过程&quot;&gt;&lt;/a&gt;编译过程&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;预处理：提高代码的可读性&lt;/li&gt;&lt;li&gt;编译器&lt;ul&gt;&lt;li&gt;解析预处理过的代码：解析成解析树&lt;/li&gt;&lt;li&gt;
       
     
+    </summary>
     
     
     
-    <category term="网站" scheme="http://blog.huhaobin.cn/tags/%E7%BD%91%E7%AB%99/"/>
+      <category term="Thinking in C++" scheme="http://blog.huhaobin.cn/tags/Thinking-in-C/"/>
     
   </entry>
   
   <entry>
-    <title>黑苹果安装</title>
-    <link href="http://blog.huhaobin.cn/posts/2521564445.html"/>
-    <id>http://blog.huhaobin.cn/posts/2521564445.html</id>
-    <published>2020-07-10T08:41:17.000Z</published>
-    <updated>2020-09-18T03:34:27.313Z</updated>
+    <title>Chapter 1-Introduction to Objects C++学习</title>
+    <link href="http://blog.huhaobin.cn/posts/681064763.html"/>
+    <id>http://blog.huhaobin.cn/posts/681064763.html</id>
+    <published>2020-04-08T08:41:13.000Z</published>
+    <updated>2022-04-22T08:50:48.424Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h1 id=&quot;Lenovo-ideapad-700s-14ISK-黑苹果安装配置&quot;&gt;&lt;a href=&quot;#Lenovo-ideapad-700s-14ISK-黑苹果安装配置&quot; class=&quot;headerlink&quot; title=&quot;Lenovo ideapad 700s 14ISK </summary>
+        &lt;h1 id=&quot;Introduction-to-Objects&quot;&gt;&lt;a href=&quot;#Introduction-to-Objects&quot; class=&quot;headerlink&quot; title=&quot;Introduction to Objects&quot;&gt;&lt;/a&gt;Introduction to O
       
     
+    </summary>
     
     
-    <category term="uncategorized" scheme="http://blog.huhaobin.cn/categories/uncategorized/"/>
+    
+      <category term="Thinking in C++" scheme="http://blog.huhaobin.cn/tags/Thinking-in-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用zmirror搭建镜像站</title>
+    <link href="http://blog.huhaobin.cn/posts/2159013759.html"/>
+    <id>http://blog.huhaobin.cn/posts/2159013759.html</id>
+    <published>2020-02-12T10:14:31.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
     
     
-    <category term="系统" scheme="http://blog.huhaobin.cn/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
     
   </entry>
   
@@ -127,19 +143,21 @@
     <title>扩展/boot分区</title>
     <link href="http://blog.huhaobin.cn/posts/3711347257.html"/>
     <id>http://blog.huhaobin.cn/posts/3711347257.html</id>
-    <published>2020-02-11T13:47:17.000Z</published>
-    <updated>2020-09-18T03:34:27.305Z</updated>
+    <published>2020-02-11T05:47:17.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h3 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade</summary>
+        &lt;h3 id=&quot;how-to-expend-the-capicity-of-boot-partition-in-linux&quot;&gt;&lt;a href=&quot;#how-to-expend-the-capicity-of-boot-partition-in-linux&quot; class=&quot;heade
       
     
+    </summary>
     
     
     
-    <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
     
   </entry>
   
@@ -147,10 +165,12 @@
     <title>计算机网络1</title>
     <link href="http://blog.huhaobin.cn/posts/1676366600.html"/>
     <id>http://blog.huhaobin.cn/posts/1676366600.html</id>
-    <published>2020-02-11T13:46:32.000Z</published>
-    <updated>2020-09-18T03:34:27.309Z</updated>
+    <published>2020-02-11T05:46:32.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
+    </summary>
     
     
     
@@ -160,19 +180,21 @@
     <title>复试准备</title>
     <link href="http://blog.huhaobin.cn/posts/757859542.html"/>
     <id>http://blog.huhaobin.cn/posts/757859542.html</id>
-    <published>2020-02-11T13:39:32.000Z</published>
-    <updated>2020-09-18T03:34:27.305Z</updated>
+    <published>2020-02-11T05:39:32.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h4 id=&quot;sort&quot;&gt;&lt;a href=&quot;#sort&quot; class=&quot;headerlink&quot; title=&quot;sort&quot;&gt;&lt;/a&gt;sort&lt;/h4&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; a</summary>
+        &lt;h4 id=&quot;sort&quot;&gt;&lt;a href=&quot;#sort&quot; class=&quot;headerlink&quot; title=&quot;sort&quot;&gt;&lt;/a&gt;sort&lt;/h4&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; a
       
     
+    </summary>
     
     
     
-    <category term="oj" scheme="http://blog.huhaobin.cn/tags/oj/"/>
+      <category term="oj" scheme="http://blog.huhaobin.cn/tags/oj/"/>
     
   </entry>
   
@@ -180,19 +202,21 @@
     <title>红米note增强版刷入android7.1</title>
     <link href="http://blog.huhaobin.cn/posts/4162857404.html"/>
     <id>http://blog.huhaobin.cn/posts/4162857404.html</id>
-    <published>2020-02-11T13:38:03.000Z</published>
-    <updated>2020-09-18T03:34:27.309Z</updated>
+    <published>2020-02-11T05:38:03.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h3 id=&quot;root&quot;&gt;&lt;a href=&quot;#root&quot; class=&quot;headerlink&quot; title=&quot;root&quot;&gt;&lt;/a&gt;root&lt;/h3&gt;&lt;p&gt;参考链接&lt;a href=&quot;http://en.miui.com/thread-208274-1-1.html&quot;&gt;http:/</summary>
+        &lt;h3 id=&quot;root&quot;&gt;&lt;a href=&quot;#root&quot; class=&quot;headerlink&quot; title=&quot;root&quot;&gt;&lt;/a&gt;root&lt;/h3&gt;&lt;p&gt;参考链接&lt;a href=&quot;http://en.miui.com/thread-208274-1-1.html&quot; target
       
     
+    </summary>
     
     
     
-    <category term="刷机" scheme="http://blog.huhaobin.cn/tags/%E5%88%B7%E6%9C%BA/"/>
+      <category term="刷机" scheme="http://blog.huhaobin.cn/tags/%E5%88%B7%E6%9C%BA/"/>
     
   </entry>
   
@@ -200,20 +224,21 @@
     <title>访问校内网资源</title>
     <link href="http://blog.huhaobin.cn/posts/1589577150.html"/>
     <id>http://blog.huhaobin.cn/posts/1589577150.html</id>
-    <published>2020-02-11T13:30:33.000Z</published>
-    <updated>2020-09-18T03:34:27.309Z</updated>
+    <published>2020-02-11T05:30:33.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h2 id=&quot;需求现状：&quot;&gt;&lt;a href=&quot;#需求现状：&quot; class=&quot;headerlink&quot; title=&quot;需求现状：&quot;&gt;&lt;/a&gt;需求现状：&lt;/h2&gt;&lt;p&gt;回家之后需要访问学校内网资源学习，手头闲置一枚树莓派，用树莓派作转发服务器.&lt;/p&gt;
-&lt;h2 id=&quot;问题简述：&quot;&gt;</summary>
+        &lt;h2 id=&quot;需求现状：&quot;&gt;&lt;a href=&quot;#需求现状：&quot; class=&quot;headerlink&quot; title=&quot;需求现状：&quot;&gt;&lt;/a&gt;需求现状：&lt;/h2&gt;&lt;p&gt;回家之后需要访问学校内网资源学习，手头闲置一枚树莓派，用树莓派作转发服务器.&lt;/p&gt;&lt;h2 id=&quot;问题简述：&quot;&gt;&lt;
       
     
+    </summary>
     
     
     
-    <category term="学习" scheme="http://blog.huhaobin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://blog.huhaobin.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -221,25 +246,21 @@
     <title>进程</title>
     <link href="http://blog.huhaobin.cn/posts/52063040.html"/>
     <id>http://blog.huhaobin.cn/posts/52063040.html</id>
-    <published>2020-02-11T13:20:23.000Z</published>
-    <updated>2020-09-18T03:34:27.313Z</updated>
+    <published>2020-02-11T05:20:23.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h2 id=&quot;进程介绍&quot;&gt;&lt;a href=&quot;#进程介绍&quot; class=&quot;headerlink&quot; title=&quot;进程介绍&quot;&gt;&lt;/a&gt;进程介绍&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;进程的创建&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;原因：&lt;ul&gt;
-&lt;li&gt;系统初始化&lt;/li&gt;
-&lt;li&gt;正在运</summary>
+        &lt;h2 id=&quot;进程介绍&quot;&gt;&lt;a href=&quot;#进程介绍&quot; class=&quot;headerlink&quot; title=&quot;进程介绍&quot;&gt;&lt;/a&gt;进程介绍&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;进程的创建&lt;/li&gt;&lt;/ol&gt;&lt;ul&gt;&lt;li&gt;原因：&lt;ul&gt;&lt;li&gt;系统初始化&lt;/li&gt;&lt;li&gt;正在运行的进程执行
       
     
+    </summary>
     
     
     
-    <category term="OS" scheme="http://blog.huhaobin.cn/tags/OS/"/>
+      <category term="OS" scheme="http://blog.huhaobin.cn/tags/OS/"/>
     
   </entry>
   
@@ -247,19 +268,21 @@
     <title>python3-mysqldb安装</title>
     <link href="http://blog.huhaobin.cn/posts/3993308688.html"/>
     <id>http://blog.huhaobin.cn/posts/3993308688.html</id>
-    <published>2020-02-11T13:16:57.000Z</published>
-    <updated>2020-09-18T03:34:27.301Z</updated>
+    <published>2020-02-11T05:16:57.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; spellcheck=&quot;false&quot; contenteditable=&quot;true&quot;data-rel=&quot;BASH</summary>
+        &lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; spellcheck=&quot;false&quot; contenteditable=&quot;true&quot;data-rel=&quot;BASH
       
     
+    </summary>
     
     
     
-    <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
+      <category term="python" scheme="http://blog.huhaobin.cn/tags/python/"/>
     
   </entry>
   
@@ -267,21 +290,21 @@
     <title>搭建ssr搭建ssr</title>
     <link href="http://blog.huhaobin.cn/posts/872076193.html"/>
     <id>http://blog.huhaobin.cn/posts/872076193.html</id>
-    <published>2020-02-11T13:12:46.000Z</published>
-    <updated>2020-09-18T03:34:27.309Z</updated>
+    <published>2020-02-11T05:12:46.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h3 id=&quot;服务部署&quot;&gt;&lt;a href=&quot;#服务部署&quot; class=&quot;headerlink&quot; title=&quot;服务部署&quot;&gt;&lt;/a&gt;服务部署&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;脚本&lt;/p&gt;
-&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; </summary>
+        &lt;h3 id=&quot;服务部署&quot;&gt;&lt;a href=&quot;#服务部署&quot; class=&quot;headerlink&quot; title=&quot;服务部署&quot;&gt;&lt;/a&gt;服务部署&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;脚本&lt;/p&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; au
       
     
+    </summary>
     
     
     
-    <category term="ssr" scheme="http://blog.huhaobin.cn/tags/ssr/"/>
+      <category term="ssr" scheme="http://blog.huhaobin.cn/tags/ssr/"/>
     
   </entry>
   
@@ -289,20 +312,21 @@
     <title>linux网络连接后执行脚本</title>
     <link href="http://blog.huhaobin.cn/posts/2497004773.html"/>
     <id>http://blog.huhaobin.cn/posts/2497004773.html</id>
-    <published>2020-02-11T13:11:42.000Z</published>
-    <updated>2020-09-18T03:34:27.301Z</updated>
+    <published>2020-02-11T05:11:42.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;/p&gt;
-&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autoc</summary>
+        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;/p&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autoca
       
     
+    </summary>
     
     
     
-    <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
     
   </entry>
   
@@ -310,19 +334,21 @@
     <title>linux定时执行任务</title>
     <link href="http://blog.huhaobin.cn/posts/2223700806.html"/>
     <id>http://blog.huhaobin.cn/posts/2223700806.html</id>
-    <published>2020-02-11T13:07:54.000Z</published>
-    <updated>2020-09-18T03:34:27.301Z</updated>
+    <published>2020-02-11T05:07:54.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;of</summary>
+        &lt;h2 id=&quot;用户级任务&quot;&gt;&lt;a href=&quot;#用户级任务&quot; class=&quot;headerlink&quot; title=&quot;用户级任务&quot;&gt;&lt;/a&gt;用户级任务&lt;/h2&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;of
       
     
+    </summary>
     
     
     
-    <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
     
   </entry>
   
@@ -330,20 +356,21 @@
     <title>ssh反向代理进行内网穿透</title>
     <link href="http://blog.huhaobin.cn/posts/967289922.html"/>
     <id>http://blog.huhaobin.cn/posts/967289922.html</id>
-    <published>2020-02-11T13:01:14.000Z</published>
-    <updated>2020-09-18T03:34:27.301Z</updated>
+    <published>2020-02-11T05:01:14.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h3 id=&quot;公网主机配置&quot;&gt;&lt;a href=&quot;#公网主机配置&quot; class=&quot;headerlink&quot; title=&quot;公网主机配置&quot;&gt;&lt;/a&gt;公网主机配置&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;修改sshd的配置文件，&lt;div class=&quot;highlight-wrap&quot;autocompl</summary>
+        &lt;h3 id=&quot;公网主机配置&quot;&gt;&lt;a href=&quot;#公网主机配置&quot; class=&quot;headerlink&quot; title=&quot;公网主机配置&quot;&gt;&lt;/a&gt;公网主机配置&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;修改sshd的配置文件，&lt;div class=&quot;highlight-wrap&quot;autocomple
       
     
+    </summary>
     
     
     
-    <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
     
   </entry>
   
@@ -351,21 +378,21 @@
     <title>进程间通信</title>
     <link href="http://blog.huhaobin.cn/posts/2851953132.html"/>
     <id>http://blog.huhaobin.cn/posts/2851953132.html</id>
-    <published>2020-02-10T21:35:20.000Z</published>
-    <updated>2020-09-18T03:34:27.313Z</updated>
+    <published>2020-02-10T13:35:20.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;h2 id=&quot;信号&quot;&gt;&lt;a href=&quot;#信号&quot; class=&quot;headerlink&quot; title=&quot;信号&quot;&gt;&lt;/a&gt;信号&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;由于某些错误而产生的事件&lt;/li&gt;
-&lt;li&gt;可以设定信号触发之后的处理方式，但信号是系统已经确定的&lt;div class=&quot;hig</summary>
+        &lt;h2 id=&quot;信号&quot;&gt;&lt;a href=&quot;#信号&quot; class=&quot;headerlink&quot; title=&quot;信号&quot;&gt;&lt;/a&gt;信号&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;由于某些错误而产生的事件&lt;/li&gt;&lt;li&gt;可以设定信号触发之后的处理方式，但信号是系统已经确定的&lt;div class=&quot;highl
       
     
+    </summary>
     
     
     
-    <category term="unix" scheme="http://blog.huhaobin.cn/tags/unix/"/>
+      <category term="unix" scheme="http://blog.huhaobin.cn/tags/unix/"/>
     
   </entry>
   
@@ -373,25 +400,21 @@
     <title>终端使用代理</title>
     <link href="http://blog.huhaobin.cn/posts/973073571.html"/>
     <id>http://blog.huhaobin.cn/posts/973073571.html</id>
-    <published>2020-02-10T21:31:08.000Z</published>
-    <updated>2020-09-18T03:34:27.309Z</updated>
+    <published>2020-02-10T13:31:08.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;p&gt;ProxyChains是本人目前为止用到的最方便的代理工具，使用十分简单。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在源里有这个软件，直接安装&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;启动Shawdowsocks，并连接至服务器。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;编辑/etc/prox</summary>
+        &lt;p&gt;ProxyChains是本人目前为止用到的最方便的代理工具，使用十分简单。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;在源里有这个软件，直接安装&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;启动Shawdowsocks，并连接至服务器。&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;编辑/etc/proxychain
       
     
+    </summary>
     
     
     
-    <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
     
   </entry>
   
@@ -399,41 +422,21 @@
     <title>编程珠玑</title>
     <link href="http://blog.huhaobin.cn/posts/2284540863.html"/>
     <id>http://blog.huhaobin.cn/posts/2284540863.html</id>
-    <published>2020-02-10T21:23:31.000Z</published>
-    <updated>2020-09-18T03:34:27.309Z</updated>
+    <published>2020-02-10T13:23:31.000Z</published>
+    <updated>2022-04-22T08:50:48.428Z</updated>
     
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://blog.huhaobin.cn/2018/04/01/ProgrammingP</summary>
-      
-    
-    
-    
-    
-    <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux关机前执行脚本</title>
-    <link href="http://blog.huhaobin.cn/posts/2766769718.html"/>
-    <id>http://blog.huhaobin.cn/posts/2766769718.html</id>
-    <published>2020-02-10T21:22:15.000Z</published>
-    <updated>2020-09-18T03:34:27.301Z</updated>
-    
+    <summary type="html">
     
       
       
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;建立关机需要执行的脚本文件&lt;/p&gt;
-&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; spellcheck=&quot;false&quot; conten</summary>
+        &lt;h3 id=&quot;编程珠玑新知识点记录&quot;&gt;&lt;a href=&quot;#编程珠玑新知识点记录&quot; class=&quot;headerlink&quot; title=&quot;编程珠玑新知识点记录&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://blog.huhaobin.cn/2018/04/01/ProgrammingP
       
     
+    </summary>
     
     
     
-    <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+      <category term="算法" scheme="http://blog.huhaobin.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
