@@ -1290,25 +1290,6 @@
     
     
     <entry>
-      <title>cordova开发安卓</title>
-      <link href="/posts/143294467.html"/>
-      <url>/posts/143294467.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cordova create hello com.example.hello HelloWorld</span><br><span class="line">cordova platform add android/ios/browser --save</span><br><span class="line">cordova build &lt;ios/android&gt;</span><br><span class="line">cordova run &lt;ios/android&gt;</span><br><span class="line">cordova plugin add cordova-plugin-camera</span><br><span class="line">cordova plugin add cordova-plugin-camera</span><br></pre></td></tr></table></figure></div>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Docker学习</title>
       <link href="/posts/1736621667.html"/>
       <url>/posts/1736621667.html</url>
