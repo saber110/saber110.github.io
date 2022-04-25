@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>docker gitlab修改域名</title>
+      <link href="/posts/3783021433.html"/>
+      <url>/posts/3783021433.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>不要修改<code>gitlab.yml</code>，因为这个文件是自动生成的，修改了没用</li><li>域名是受<code>gitlab.rb</code>文件中的<code>external_url</code>控制的，修改此处</li><li>重新启动即可</li></ul><p>【注】查找文件命令<code>find / -name gitlab.yml</code></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Gitlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo自动部署</title>
       <link href="/posts/3636034258.html"/>
       <url>/posts/3636034258.html</url>
