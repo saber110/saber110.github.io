@@ -4,17 +4,17 @@
   
     
     <entry>
-      <title>我也不知道学个啥</title>
-      <link href="/posts/1657091324.html"/>
-      <url>/posts/1657091324.html</url>
+      <title>我也不知道学个啥，把刚才学的复习一遍吧</title>
+      <link href="/posts/3454308621.html"/>
+      <url>/posts/3454308621.html</url>
       
-        <content type="html"><![CDATA[<h2 id="我想试一下自己上传博客"><a href="#我想试一下自己上传博客" class="headerlink" title="我想试一下自己上传博客"></a>我想试一下自己上传博客</h2><p>可是好像又忘得差不多了。但是我认为多写几遍就好了 加油加油<br>滴滴滴<br>滴滴滴<br>滴滴</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="ACTIONSCRIPT"><figure class="iseeu highlight /actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main</span><br><span class="line"><span class="number">123456</span></span><br><span class="line"><span class="meta"><span class="meta-keyword">include</span></span></span><br></pre></td></tr></table></figure></div><ul><li>wo</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="我想试一下自己上传博客"><a href="#我想试一下自己上传博客" class="headerlink" title="我想试一下自己上传博客"></a>我想试一下自己上传博客</h2><p>可是好像又忘得差不多了。脑子仿佛一个漏斗，但是我认为多写几遍就好了 加油加油</p><ul><li><h3 id="忘记的几点内容"><a href="#忘记的几点内容" class="headerlink" title="忘记的几点内容"></a>忘记的几点内容</h3><ul><li>第一次没有成功的原因：没有仔细看小胡给的说明书，要先pull，同步对方的更改，再push上传</li><li>第二次没有成功的原因：vscode里面新建的文件夹没有写文件类型，后缀需是.md才可以</li><li>再次没有成功的原因是：改完忘记push了</li><li>md文件中，三个点后面的第一行并不是写内容的，三个点后面的那行是指定后面的内容在哪里执行的，或者后面的内容是什么语言之类的，比如说在命令行里面执行就可以写 bash</li><li>bash特指linux的命令行；windows的叫cmd</li><li>在vscode中打开md的预览，快捷键为ctrl + shift + p</li></ul></li><li><p>wo是个大迷糊</p></li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> jmm的感想 </tag>
+            <tag> 第一次使用blog </tag>
             
         </tags>
       
