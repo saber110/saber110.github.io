@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2022-04-27T13:27:51.519Z</updated>
+  <updated>2022-04-29T11:48:13.611Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>GCP不能免密码登录</title>
+    <link href="http://blog.huhaobin.cn/posts/1793721376.html"/>
+    <id>http://blog.huhaobin.cn/posts/1793721376.html</id>
+    <published>2022-04-28T16:00:00.000Z</published>
+    <updated>2022-04-29T11:48:13.611Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;GCP中的一台主力服务器一直不能使用ssh key进行免密码登录，最近正好有时间处理一下。&lt;/p&gt;&lt;h2 id=&quot;官网解决方案&quot;&gt;&lt;a href=&quot;#官网解决方案&quot; class=&quot;headerlink&quot; title=&quot;官网解决方案&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https:/
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
+    
+      <category term="GCP" scheme="http://blog.huhaobin.cn/tags/GCP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我也不知道学个啥，把刚才学的复习一遍吧</title>
     <link href="http://blog.huhaobin.cn/posts/3454308621.html"/>
     <id>http://blog.huhaobin.cn/posts/3454308621.html</id>
     <published>2022-04-26T16:00:00.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -43,7 +67,7 @@
     <link href="http://blog.huhaobin.cn/posts/3788239620.html"/>
     <id>http://blog.huhaobin.cn/posts/3788239620.html</id>
     <published>2022-04-26T16:00:00.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -65,7 +89,7 @@
     <link href="http://blog.huhaobin.cn/posts/3783021433.html"/>
     <id>http://blog.huhaobin.cn/posts/3783021433.html</id>
     <published>2022-04-24T16:00:00.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -87,7 +111,7 @@
     <link href="http://blog.huhaobin.cn/posts/4096242045.html"/>
     <id>http://blog.huhaobin.cn/posts/4096242045.html</id>
     <published>2022-04-24T16:00:00.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -109,7 +133,7 @@
     <link href="http://blog.huhaobin.cn/posts/3636034258.html"/>
     <id>http://blog.huhaobin.cn/posts/3636034258.html</id>
     <published>2022-04-21T16:00:00.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -131,7 +155,7 @@
     <link href="http://blog.huhaobin.cn/posts/109245409.html"/>
     <id>http://blog.huhaobin.cn/posts/109245409.html</id>
     <published>2020-04-10T01:50:15.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -153,7 +177,7 @@
     <link href="http://blog.huhaobin.cn/posts/681064763.html"/>
     <id>http://blog.huhaobin.cn/posts/681064763.html</id>
     <published>2020-04-08T08:41:13.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -177,7 +201,7 @@
     <link href="http://blog.huhaobin.cn/posts/2159013759.html"/>
     <id>http://blog.huhaobin.cn/posts/2159013759.html</id>
     <published>2020-02-12T10:14:31.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -194,7 +218,7 @@
     <link href="http://blog.huhaobin.cn/posts/3711347257.html"/>
     <id>http://blog.huhaobin.cn/posts/3711347257.html</id>
     <published>2020-02-11T05:47:17.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -216,7 +240,7 @@
     <link href="http://blog.huhaobin.cn/posts/1676366600.html"/>
     <id>http://blog.huhaobin.cn/posts/1676366600.html</id>
     <published>2020-02-11T05:46:32.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -231,7 +255,7 @@
     <link href="http://blog.huhaobin.cn/posts/757859542.html"/>
     <id>http://blog.huhaobin.cn/posts/757859542.html</id>
     <published>2020-02-11T05:39:32.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -253,7 +277,7 @@
     <link href="http://blog.huhaobin.cn/posts/4162857404.html"/>
     <id>http://blog.huhaobin.cn/posts/4162857404.html</id>
     <published>2020-02-11T05:38:03.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -275,7 +299,7 @@
     <link href="http://blog.huhaobin.cn/posts/1589577150.html"/>
     <id>http://blog.huhaobin.cn/posts/1589577150.html</id>
     <published>2020-02-11T05:30:33.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -297,7 +321,7 @@
     <link href="http://blog.huhaobin.cn/posts/52063040.html"/>
     <id>http://blog.huhaobin.cn/posts/52063040.html</id>
     <published>2020-02-11T05:20:23.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -319,7 +343,7 @@
     <link href="http://blog.huhaobin.cn/posts/3993308688.html"/>
     <id>http://blog.huhaobin.cn/posts/3993308688.html</id>
     <published>2020-02-11T05:16:57.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -341,7 +365,7 @@
     <link href="http://blog.huhaobin.cn/posts/872076193.html"/>
     <id>http://blog.huhaobin.cn/posts/872076193.html</id>
     <published>2020-02-11T05:12:46.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
+    <updated>2022-04-29T11:48:13.615Z</updated>
     
     <summary type="html">
     
@@ -363,7 +387,7 @@
     <link href="http://blog.huhaobin.cn/posts/2497004773.html"/>
     <id>http://blog.huhaobin.cn/posts/2497004773.html</id>
     <published>2020-02-11T05:11:42.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -385,7 +409,7 @@
     <link href="http://blog.huhaobin.cn/posts/2223700806.html"/>
     <id>http://blog.huhaobin.cn/posts/2223700806.html</id>
     <published>2020-02-11T05:07:54.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -407,7 +431,7 @@
     <link href="http://blog.huhaobin.cn/posts/967289922.html"/>
     <id>http://blog.huhaobin.cn/posts/967289922.html</id>
     <published>2020-02-11T05:01:14.000Z</published>
-    <updated>2022-04-27T13:27:51.519Z</updated>
+    <updated>2022-04-29T11:48:13.611Z</updated>
     
     <summary type="html">
     
@@ -421,28 +445,6 @@
     
     
       <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>进程间通信</title>
-    <link href="http://blog.huhaobin.cn/posts/2851953132.html"/>
-    <id>http://blog.huhaobin.cn/posts/2851953132.html</id>
-    <published>2020-02-10T13:35:20.000Z</published>
-    <updated>2022-04-27T13:27:51.523Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;信号&quot;&gt;&lt;a href=&quot;#信号&quot; class=&quot;headerlink&quot; title=&quot;信号&quot;&gt;&lt;/a&gt;信号&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;由于某些错误而产生的事件&lt;/li&gt;&lt;li&gt;可以设定信号触发之后的处理方式，但信号是系统已经确定的&lt;div class=&quot;highl
-      
-    
-    </summary>
-    
-    
-    
-      <category term="unix" scheme="http://blog.huhaobin.cn/tags/unix/"/>
     
   </entry>
   

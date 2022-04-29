@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>GCP不能免密码登录</title>
+      <link href="/posts/1793721376.html"/>
+      <url>/posts/1793721376.html</url>
+      
+        <content type="html"><![CDATA[<p>GCP中的一台主力服务器一直不能使用ssh key进行免密码登录，最近正好有时间处理一下。</p><h2 id="官网解决方案"><a href="#官网解决方案" class="headerlink" title="官网解决方案"></a><a href="https://cloud.google.com/compute/docs/instances/access-overview" target="_blank" rel="noopener">官网解决方案</a></h2><ul><li><p>将元数据<code>enable-oslogin</code> 设为 <code>FALSE</code></p></li><li><p>生成ssh key</p><p>谷歌对ssh key 的长度要求为2048</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f C:\Users\&lt;WINDOWS_USER&gt;\.ssh\&lt;KEY_FILENAME&gt; -C &lt;VM_USER&gt; -b 2048</span><br></pre></td></tr></table></figure></div><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GROOVY"><figure class="iseeu highlight /groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">WINDOWS_USER:</span> Windows登录用户名.</span><br><span class="line"><span class="string">KEY_FILENAME:</span> ssh key文件名.</span><br><span class="line"><span class="string">VM_USER :</span> 要登陆的用户名，注意不能是之前已有的用户名。</span><br></pre></td></tr></table></figure></div></li><li><p>添加ssh key</p><p>将<code>C:\Users\&lt;WINDOWS_USER&gt;\.ssh\&lt;KEY_FILENAME&gt;</code>文件内容添加到GCP项目或者对应实例的ssh key中。</p></li></ul><p>理论上此时就已经可以使用<code>ssh -i &lt;PATH_TO_PRIVATE_KEY&gt; &lt;VM_USER&gt;@&lt;EXTERNAL_IP&gt;</code>来登录了，<strong>但是我的实例仍然不能登录</strong></p><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>我新建了<code>instance-2</code>，结果发现可以免密码登录，这只能说明是之前的实例<code>instance-1</code>内部环境出现了问题，通过分析对比<code>Serial log</code>发现<code>instance-2</code>的日志中有<code>debian google_guest_agent[378]: Updating keys for user VM_USER.</code>,但是<code>instance-1</code>的日志中根本没有关于<code>google_guest_agent</code>的任何内容。</p><p>搜索发现<a href="https://cloud.google.com/compute/docs/images/guest-environment" target="_blank" rel="noopener">文档</a>，当您使用 Google 提供的公共映像启动虚拟机 (VM) 实例时，系统会自动在虚拟机实例上安装访客环境。客机环境是读取元数据服务器内容以使虚拟机在 Compute Engine 上正常运行的一组脚本、守护程序和二进制文件。元数据服务器是用于将信息从客户端转移到客机操作系统的通信渠道。</p><p>也就是说要想将GCP中添加的元数据或者ssh-key同步到实例内部就必须有所谓的<em>客机环境</em>，接下来安装</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install google-compute-engine google-compute-engine-oslogin \</span><br><span class="line">google-guest-agent google-osconfig-agent</span><br></pre></td></tr></table></figure></div><p>重启解决问题</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> GCP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我也不知道学个啥，把刚才学的复习一遍吧</title>
       <link href="/posts/3454308621.html"/>
       <url>/posts/3454308621.html</url>
