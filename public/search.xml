@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>初学comsol</title>
+      <link href="/posts/2610858781.html"/>
+      <url>/posts/2610858781.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="一些重要的理解"><a href="#一些重要的理解" class="headerlink" title="一些重要的理解"></a>一些重要的理解</h2><h3 id="关于-体载荷"><a href="#关于-体载荷" class="headerlink" title="关于 体载荷"></a>关于 体载荷</h3><blockquote><p>加入的体载荷Fv设置为：-solid_rho*g_const*acc是简谐激励<br>可以理解为： 密度*9.8*acc ，其中 acc = 1 ，表示的是结构加速度幅值为9.8m*s-2</p></blockquote><h2 id="解决的一些问题"><a href="#解决的一些问题" class="headerlink" title="解决的一些问题"></a>解决的一些问题</h2><p>报错为:</p><blockquote><p>特征: 稳态求解器 1 (sol1/s1)<br>未定义“压电材料 1”所需的材料属性“eES”</p></blockquote><p>解决办法：</p><ol><li>在“材料”里的lead zirconate，在图中选中属于压电材料的那几层。<br>但是在实际仿真中检查以上操作已经做过了，没有问题，但还是报以上错误，并且mat2 即 structural steel 中的材料属性中的几个矩阵显示stop；多种尝试未果后，使用以下方法2解决：</li><li>检查发现与例程的唯一区别是我的仿真中多了几个物理场接口：固体力学2-5，和静电2-5，可能是由于一开始不熟悉，多添加了几个物理场接口，但是在后面没有用到，遂删之，重新点击“计算”，仿真成功–就很离谱！</li></ol><h2 id="还需要学习的地方"><a href="#还需要学习的地方" class="headerlink" title="还需要学习的地方"></a>还需要学习的地方</h2><ul><li>电路中电阻和外部I终端<br>静电中的终端和接地<br>固体力学中的线弹性材料固定约束压电材料<br><strong>到底基于什么进行配置的？</strong></li></ul><h1 id="大新闻：今天压电实验有进展了！"><a href="#大新闻：今天压电实验有进展了！" class="headerlink" title="大新闻：今天压电实验有进展了！"></a>大新闻：今天压电实验有进展了！</h1><p>有了一个新想法，哈哈哈哈哈，突然觉得我还挺聪明，突然觉得我没那么吊车尾了<br>但是小胡提醒我要计算定滑轮的阻尼，哈哈哈，天哪，定滑轮还有阻尼？菜鸟每天飞过~哈哈哈</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> comsol </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GCP不能免密码登录</title>
       <link href="/posts/1793721376.html"/>
       <url>/posts/1793721376.html</url>
@@ -54,7 +73,7 @@
       
         <tags>
             
-            <tag> 第一次使用blog </tag>
+            <tag> jm第一次使用blog </tag>
             
         </tags>
       
