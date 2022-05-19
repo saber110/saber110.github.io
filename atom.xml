@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.huhaobin.cn/"/>
-  <updated>2022-05-07T11:15:52.818Z</updated>
+  <updated>2022-05-19T06:24:24.672Z</updated>
   <id>http://blog.huhaobin.cn/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>修改服务器IP及域名</title>
+    <link href="http://blog.huhaobin.cn/posts/3795575793.html"/>
+    <id>http://blog.huhaobin.cn/posts/3795575793.html</id>
+    <published>2022-05-19T13:23:31.000Z</published>
+    <updated>2022-05-19T06:24:24.672Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;修改ip&quot;&gt;&lt;a href=&quot;#修改ip&quot; class=&quot;headerlink&quot; title=&quot;修改ip&quot;&gt;&lt;/a&gt;修改ip&lt;/h2&gt;&lt;p&gt;ip修改没啥说法，改完之后换绑服务器ip，更新域名指向ip即可&lt;/p&gt;&lt;h2 id=&quot;修改域名&quot;&gt;&lt;a href=&quot;#修改域
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://blog.huhaobin.cn/categories/Linux/"/>
+    
+    
+      <category term="服务器" scheme="http://blog.huhaobin.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初学comsol</title>
     <link href="http://blog.huhaobin.cn/posts/2610858781.html"/>
     <id>http://blog.huhaobin.cn/posts/2610858781.html</id>
-    <published>2022-05-07T11:15:52.818Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <published>2022-05-19T06:24:24.672Z</published>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -43,7 +67,7 @@
     <link href="http://blog.huhaobin.cn/posts/1793721376.html"/>
     <id>http://blog.huhaobin.cn/posts/1793721376.html</id>
     <published>2022-04-28T16:00:00.000Z</published>
-    <updated>2022-05-07T11:15:52.814Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -67,7 +91,7 @@
     <link href="http://blog.huhaobin.cn/posts/1765130564.html"/>
     <id>http://blog.huhaobin.cn/posts/1765130564.html</id>
     <published>2022-04-28T16:00:00.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -89,7 +113,7 @@
     <link href="http://blog.huhaobin.cn/posts/3454308621.html"/>
     <id>http://blog.huhaobin.cn/posts/3454308621.html</id>
     <published>2022-04-26T16:00:00.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -111,7 +135,7 @@
     <link href="http://blog.huhaobin.cn/posts/3788239620.html"/>
     <id>http://blog.huhaobin.cn/posts/3788239620.html</id>
     <published>2022-04-26T16:00:00.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -133,7 +157,7 @@
     <link href="http://blog.huhaobin.cn/posts/3783021433.html"/>
     <id>http://blog.huhaobin.cn/posts/3783021433.html</id>
     <published>2022-04-24T16:00:00.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -155,7 +179,7 @@
     <link href="http://blog.huhaobin.cn/posts/4096242045.html"/>
     <id>http://blog.huhaobin.cn/posts/4096242045.html</id>
     <published>2022-04-24T16:00:00.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -177,7 +201,7 @@
     <link href="http://blog.huhaobin.cn/posts/3636034258.html"/>
     <id>http://blog.huhaobin.cn/posts/3636034258.html</id>
     <published>2022-04-21T16:00:00.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -199,7 +223,7 @@
     <link href="http://blog.huhaobin.cn/posts/109245409.html"/>
     <id>http://blog.huhaobin.cn/posts/109245409.html</id>
     <published>2020-04-10T01:50:15.000Z</published>
-    <updated>2022-05-07T11:15:52.814Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -221,7 +245,7 @@
     <link href="http://blog.huhaobin.cn/posts/681064763.html"/>
     <id>http://blog.huhaobin.cn/posts/681064763.html</id>
     <published>2020-04-08T08:41:13.000Z</published>
-    <updated>2022-05-07T11:15:52.814Z</updated>
+    <updated>2022-05-19T06:24:24.668Z</updated>
     
     <summary type="html">
     
@@ -245,7 +269,7 @@
     <link href="http://blog.huhaobin.cn/posts/2159013759.html"/>
     <id>http://blog.huhaobin.cn/posts/2159013759.html</id>
     <published>2020-02-12T10:14:31.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -262,7 +286,7 @@
     <link href="http://blog.huhaobin.cn/posts/3711347257.html"/>
     <id>http://blog.huhaobin.cn/posts/3711347257.html</id>
     <published>2020-02-11T05:47:17.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -284,7 +308,7 @@
     <link href="http://blog.huhaobin.cn/posts/1676366600.html"/>
     <id>http://blog.huhaobin.cn/posts/1676366600.html</id>
     <published>2020-02-11T05:46:32.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.676Z</updated>
     
     <summary type="html">
     
@@ -299,7 +323,7 @@
     <link href="http://blog.huhaobin.cn/posts/757859542.html"/>
     <id>http://blog.huhaobin.cn/posts/757859542.html</id>
     <published>2020-02-11T05:39:32.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -321,7 +345,7 @@
     <link href="http://blog.huhaobin.cn/posts/4162857404.html"/>
     <id>http://blog.huhaobin.cn/posts/4162857404.html</id>
     <published>2020-02-11T05:38:03.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.676Z</updated>
     
     <summary type="html">
     
@@ -343,7 +367,7 @@
     <link href="http://blog.huhaobin.cn/posts/1589577150.html"/>
     <id>http://blog.huhaobin.cn/posts/1589577150.html</id>
     <published>2020-02-11T05:30:33.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.676Z</updated>
     
     <summary type="html">
     
@@ -365,7 +389,7 @@
     <link href="http://blog.huhaobin.cn/posts/52063040.html"/>
     <id>http://blog.huhaobin.cn/posts/52063040.html</id>
     <published>2020-02-11T05:20:23.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.676Z</updated>
     
     <summary type="html">
     
@@ -387,7 +411,7 @@
     <link href="http://blog.huhaobin.cn/posts/3993308688.html"/>
     <id>http://blog.huhaobin.cn/posts/3993308688.html</id>
     <published>2020-02-11T05:16:57.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -409,7 +433,7 @@
     <link href="http://blog.huhaobin.cn/posts/872076193.html"/>
     <id>http://blog.huhaobin.cn/posts/872076193.html</id>
     <published>2020-02-11T05:12:46.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
+    <updated>2022-05-19T06:24:24.672Z</updated>
     
     <summary type="html">
     
@@ -423,28 +447,6 @@
     
     
       <category term="ssr" scheme="http://blog.huhaobin.cn/tags/ssr/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux网络连接后执行脚本</title>
-    <link href="http://blog.huhaobin.cn/posts/2497004773.html"/>
-    <id>http://blog.huhaobin.cn/posts/2497004773.html</id>
-    <published>2020-02-11T05:11:42.000Z</published>
-    <updated>2022-05-07T11:15:52.818Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在Debian/Ubuntu的发行版本里，网络建立前、后和网络断开前、后都会到/etc/network/里运行相应目录下的脚本&lt;/p&gt;&lt;div class=&quot;highlight-wrap&quot;autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autoca
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Linux" scheme="http://blog.huhaobin.cn/tags/Linux/"/>
     
   </entry>
   

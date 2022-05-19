@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>修改服务器IP及域名</title>
+      <link href="/posts/3795575793.html"/>
+      <url>/posts/3795575793.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="修改ip"><a href="#修改ip" class="headerlink" title="修改ip"></a>修改ip</h2><p>ip修改没啥说法，改完之后换绑服务器ip，更新域名指向ip即可</p><h2 id="修改域名"><a href="#修改域名" class="headerlink" title="修改域名"></a>修改域名</h2><ul><li>一般来说修改域名也不需要啥操作，但是我的服务器上启用了https，部署了gitlab以及seafile，其都需要手动指定资源域名，故需修改服务器配置文件。</li></ul><h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><ul><li><p>重新申请HTTPS证书</p></li><li><p>HTTPS主要用在seafile传输层加密上，本来是seafile负责维护的，故使用seafile重新申请</p><ul><li>修改seafile nginx配置文件<code>/opt/seafile-data/nginx/conf</code>，注释掉ssl相关部分即可<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># listen 443 ssl;</span></span><br><span class="line"><span class="comment"># ssl on;</span></span><br><span class="line"><span class="comment"># ssl_certificate      /shared/ssl/jm.huhaobin.cn.crt;</span></span><br><span class="line"><span class="comment"># ssl_certificate_key  /shared/ssl/jm.huhaobin.cn.key;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> More SSL security hardening: ssl_session_tickets &amp; ssl_dhparam</span></span><br><span class="line"><span class="comment"># ssl_session_tickets on;</span></span><br><span class="line"><span class="comment"># ssl_session_ticket_key /etc/nginx/sessionticket.key;</span></span><br><span class="line"><span class="comment"># ssl_session_cache shared:SSL:10m;</span></span><br><span class="line"><span class="comment"># ssl_session_timeout 10m;</span></span><br></pre></td></tr></table></figure></div></li><li>删除<code>/shared/ssl</code>文件夹</li><li>把域名的境外解析指向服务器ip，用以验证证书申请</li><li>重新在<code>~/seafile/</code>下面进行<code>docker-composer up</code><ul><li>若链接github有问题，则修改容器内部<code>/scripts/ssl.sh</code><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker cp seafile:/scripts/ssl.sh .</span><br><span class="line"><span class="comment"># 将git clone 链接中的git://换成https://</span></span><br><span class="line">docker cp ssh.sh seafile:/scripts/ssl.sh</span><br></pre></td></tr></table></figure></div></li><li>删除<code>/shared/ssl</code>文件夹，重新<code>docker-composer up</code></li></ul></li><li>申请完成之后恢复seafile nginx配置文件<code>/opt/seafile-data/nginx/conf</code></li></ul></li><li><p>为了避免境外ip的无关访问，把域名的境外解析指向<code>127.0.0.1</code></p></li><li><p>每90天要更新一次证书</p></li><li><p>修改seafile文件目录地址</p><p>修改<code>/opt/seafile-data/seafile/conf/seahub_settings.py</code>中的<code>FILE_SERVER_ROOT</code></p></li></ul><h3 id="trojan"><a href="#trojan" class="headerlink" title="trojan"></a>trojan</h3><ul><li>更改启动命令即可</li><li>修改<code>config.json</code>文件中指定的证书文件</li></ul><h3 id="gitlab"><a href="#gitlab" class="headerlink" title="gitlab"></a>gitlab</h3><ul><li>更改<code>/etc/gitlab/gitlab.rb</code>中的<code>external_url</code></li><li>在容器中执行<code>gitlab-ctl reconfigure</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>初学comsol</title>
       <link href="/posts/2610858781.html"/>
       <url>/posts/2610858781.html</url>
